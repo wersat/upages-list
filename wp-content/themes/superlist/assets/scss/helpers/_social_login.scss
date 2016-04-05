@@ -37,7 +37,7 @@
 
 .wp-social-login-provider-facebook {
     background-color: $color-facebook;
-    color: #fff;
+    color: $color-white;
 
     &:hover {
         background-color: darken($color-facebook,5%);
@@ -50,14 +50,14 @@
     }
 
     &:after, &:focus, &:hover {
-        color: #fff;
+        color: $color-white;
         text-decoration: none;
     }
 }
 
 .wp-social-login-provider-twitter {
     background-color: $color-twitter;
-    color: #fff;
+    color: $color-white;
 
     &:hover {
         background-color: darken($color-twitter,5%);
@@ -70,14 +70,14 @@
     }
 
     &:after, &:focus, &:hover {
-        color: #fff;
+        color: $color-white;
         text-decoration: none;
     }
 }
 
 .wp-social-login-provider-google {
     background-color: $color-google-plus;
-    color: #fff;
+    color: $color-white;
 
     &:hover {
         background-color: darken($color-google-plus,5%);
@@ -90,7 +90,7 @@
     }
 
     &:after, &:focus, &:hover {
-        color: #fff;
+        color: $color-white;
         text-decoration: none;
     }
 }

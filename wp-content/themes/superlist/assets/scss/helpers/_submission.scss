@@ -1,5 +1,5 @@
 .widget .submission-steps {
-    background-color: #fff;
+    background-color: $color-white;
     margin: 0px;
     padding: 20px;
 
@@ -28,7 +28,7 @@
         &.current {
             .submission-step-index {
                 background-color: $color-primary;
-                color: #fff;
+                color: $color-white;
                 font-size: 12px;
 
                 .dot {
@@ -44,7 +44,7 @@
 }
 
 .submission-type-not-found {
-    background-color: #fff;
+    background-color: $color-white;
     padding: 40px;
 
     p {
@@ -62,7 +62,7 @@
 }
 
 .package-info-wrapper {
-    background-color: #fff;
+    background-color: $color-white;
     padding: 20px;
 }
 
@@ -80,7 +80,7 @@
         border: 2px solid $color-gray-medium;
         display: inline-block;
         border-radius: 0;
-        box-shadow: 0px 0px 0px 2px #fff inset;
+        box-shadow: 0px 0px 0px 2px $color-white inset;
         height: 40px;
         padding: 0;
         position: relative;

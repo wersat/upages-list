@@ -1,5 +1,5 @@
 .footer {
-    color: #fff;
+    color: $color-white;
     display: table-row;
     font-size: 13px;
     height: 1px;
@@ -43,7 +43,7 @@
     @media (max-width: $screen-xs-max) {
         .widget.widget_nav_menu ul.menu {
             li {
-                border-bottom: 1px solid rgba(#fff, .05);
+                border-bottom: 1px solid rgba($color-white, .05);
                 display: block;
                 float: none;
                 margin: 0px;
@@ -57,7 +57,7 @@
     }
 
     h2 {
-        color: #fff !important;
+        color: $color-white !important;
         font-size: 20px !important;
         font-weight: 300;
         margin: 0px 0px 30px 0px;
@@ -68,7 +68,7 @@
     }
 
     a {
-        color: #fff !important;
+        color: $color-white !important;
 
         &:hover {
             color: lighten($color-primary, 10%) !important;
@@ -127,14 +127,14 @@
     @extend .clearfix;
 
     background-color: lighten($color-black-dark, 1.5%);
-    color: #fff;
+    color: $color-white;
     font-size: 13px;
     padding: 25px 0px;
     text-align: center;
 
     a {
-        border-bottom: 1px solid #fff;
-        color: #fff;
+        border-bottom: 1px solid $color-white;
+        color: $color-white;
 
         &:hover {
             border-bottom-color: lighten($color-primary, 10%);
@@ -158,7 +158,7 @@
 
             > a {
                 border-radius: 0px;
-                color: #fff;
+                color: $color-white;
                 padding: 0px 10px !important;
 
                 &:hover {
@@ -193,7 +193,7 @@
     position: relative;
 
     &:after {
-        background-color: rgba(#fff, .2);
+        background-color: rgba($color-white, .2);
         content: '';
         display: block;
         height: 1px;

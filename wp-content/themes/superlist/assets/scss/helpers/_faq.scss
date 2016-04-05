@@ -1,12 +1,12 @@
 .faq-item {
-    background-color: #fff;
+    background-color: $color-white;
     margin: 0px 0px 30px 60px;
     padding: 20px;
     position: relative;
 
     &:before {
         background-color: $color-primary;
-        color: #fff;
+        color: $color-white;
         content: 'Q';
         display: block;
         font-size: 20px;

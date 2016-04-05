@@ -128,7 +128,7 @@
 
         &.heart.marked {
             i {
-                background-color: #fff;
+                background-color: $color-white;
                 color: $color-black-light;
             }
 
@@ -184,7 +184,7 @@
 
 .listing-box-label-top {
     background-color: $color-black-light;
-    color: #fff;
+    color: $color-white;
     left: 50%;
     font-size: 13px;
     padding: 3px 15px;
@@ -197,10 +197,10 @@
     z-index: 2;
 
     a {
-        color: #fff;
+        color: $color-white;
 
         &:hover {
-            color: #fff;
+            color: $color-white;
             text-decoration: none;
         }
     }
@@ -221,7 +221,7 @@
     z-index: 2;
 
     h2 {
-        color: #fff;
+        color: $color-white;
         display: block;
         font-size: 20px;
         margin: 0px;
@@ -232,7 +232,7 @@
         white-space: nowrap;
 
         a {
-            color: #fff;
+            color: $color-white;
             text-shadow: 0px 1px 2px rgba(0,0,0,0.1);
 
             &:hover {
@@ -256,7 +256,7 @@
 }
 
 .listing-box-actions {
-    color: #fff;
+    color: $color-white;
     margin-top: 10px;
     opacity: 0;
     text-align: center;
@@ -267,9 +267,9 @@
     }
 
     .fa {
-        border: 1px solid #fff;
+        border: 1px solid $color-white;
         border-radius: 50%;
-        color: #fff;
+        color: $color-white;
         height: 32px;
         margin: 0px 6px;
         padding-top: 8px;
@@ -277,7 +277,7 @@
         width: 32px;
 
         &:hover {
-            background-color: #fff;
+            background-color: $color-white;
             color: $color-black;
         }
     }
@@ -293,7 +293,7 @@
 .listing-box-label-bottom {
     background-color: $color-primary;
     bottom: 0px;
-    color: #fff;
+    color: $color-white;
     font-size: 13px;
     left: 50%;
     padding: 3px 15px;
@@ -358,7 +358,7 @@
 }
 
 .listing-row {
-    background-color: #fff;
+    background-color: $color-white;
     border: none;
     overflow: hidden;
 
@@ -488,7 +488,7 @@
 
 .listing-row-label-top {
     background-color: $color-black-light;
-    color: #fff;
+    color: $color-white;
     left: 50%;
     font-size: 13px;
     padding: 3px 15px;
@@ -501,10 +501,10 @@
 
     a {
         border: 0px !important;
-        color: #fff;
+        color: $color-white;
 
         &:hover {
-            color: #fff;
+            color: $color-white;
             text-decoration: none;
         }
     }
@@ -513,7 +513,7 @@
 .listing-row-label-bottom {
     background-color: $color-primary;
     bottom: 0px;
-    color: #fff;
+    color: $color-white;
     font-size: 13px;
     left: 50%;
     padding: 3px 15px;
@@ -531,14 +531,14 @@
         border-bottom-width: 1px;
 
         &:hover {
-            border-bottom: solid 1px white;
+            border-bottom: solid 1px $color-white;
         }
     }
 }
 
 .listing-row-actions {
     background-color: transparent;
-    color: #fff;
+    color: $color-white;
     left: 50%;
     opacity: 0;
     padding: 0;
@@ -563,9 +563,9 @@
     }
 
     .fa {
-        border: 1px solid #fff;
+        border: 1px solid $color-white;
         border-radius: 50%;
-        color: #fff;
+        color: $color-white;
         height: 32px;
         margin: 0px 6px;
         padding-top: 8px;
@@ -573,7 +573,7 @@
         width: 32px;
 
         &:hover {
-            background-color: #fff;
+            background-color: $color-white;
             color: $color-black;
         }
     }
@@ -594,7 +594,7 @@
  * Listing small
  *****************************************************************/
  .listing-small {
-     background-color: #fff;
+     background-color: $color-white;
      display: table;
      margin-bottom: 20px;
      min-height: 75px;
@@ -677,7 +677,7 @@
         color: $color-gray-darker;
 
         .footer & {
-            color: rgba(#fff, .75) !important;
+            color: rgba($color-white, .75) !important;
         }
     }
 }
@@ -702,7 +702,7 @@
         width: 100%;
 
         &:hover:before {
-            background-color: #fff;
+            background-color: $color-white;
             color: $color-black;
         }
 
@@ -711,8 +711,8 @@
             -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
             border-radius: 50%;
-            border: 1px solid #fff;
-            color: #fff;
+            border: 1px solid $color-white;
+            color: $color-white;
             content: "\f06e";
             display: inline-block;
             font-family: 'FontAwesome';
@@ -810,7 +810,7 @@
 
         &.heart.marked {
             i {
-                background-color: #fff;
+                background-color: $color-white;
                 color: $color-black-light;
             }
 
@@ -855,7 +855,7 @@
 }
 
 .listing-masonry-title {
-    color: #fff;
+    color: $color-white;
     font-weight: 400;
     font-size: 26px;
     margin: 0px;
@@ -863,7 +863,7 @@
     text-shadow: 0px 0px 6px rgba(0,0,0, .85);
 
     a {
-        color: #fff;
+        color: $color-white;
 
         &:hover {
             text-decoration: none;
@@ -873,7 +873,7 @@
 
 .listing-masonry-label-top {
     background-color: $color-primary;
-    color: #fff;
+    color: $color-white;
     left: 50%;
     font-size: 13px;
     padding: 3px 15px;
@@ -886,10 +886,10 @@
     z-index: 2;
 
     a {
-        color: #fff;
+        color: $color-white;
 
         &:hover {
-            color: #fff;
+            color: $color-white;
             text-decoration: none;
         }
     }
@@ -933,7 +933,7 @@
 }
 
 .listing-masonry-actions {
-    color: #fff;
+    color: $color-white;
     opacity: 0;
     margin-top: 20px;
     text-align: center;
@@ -944,9 +944,9 @@
     }
 
     .fa {
-        border: 1px solid #fff;
+        border: 1px solid $color-white;
         border-radius: 50%;
-        color: #fff;
+        color: $color-white;
         height: 32px;
         margin: 0px 6px;
         padding-top: 8px;
@@ -954,12 +954,12 @@
         width: 32px;
 
         &:hover {
-            background-color: #fff;
+            background-color: $color-white;
             color: $color-black;
         }
 
         &.marked {
-            background-color: #fff;
+            background-color: $color-white;
             color: $color-black;
 
             &.fa-heart-o:before {
@@ -983,7 +983,7 @@
 }
 
 .listing-masonry-meta {
-    color: #fff;
+    color: $color-white;
     font-size: 0px;
     font-weight: 500;
     margin-bottom: 5px;
@@ -992,17 +992,17 @@
     -webkit-font-smoothing: antialiased;
 
     .separator {
-        color: #fff;
+        color: $color-white;
         transition: font-size ease .35s;
     }
 
     a {
-        color: #fff;
+        color: $color-white;
         transition: font-size ease .35s;
 
         &:hover {
-            color: #fff;
-            border-bottom: 1px solid #fff;
+            color: $color-white;
+            border-bottom: 1px solid $color-white;
         }
     }
 
@@ -1043,7 +1043,7 @@
     .fa {
         background-color: $color-green;
         border-radius: 50%;
-        color: #fff;
+        color: $color-white;
         font-size: 12px;
         height: 20px;
         line-height: 20px;
@@ -1062,7 +1062,7 @@
 }
 
 .listing-system {
-    background-color: #fff;
+    background-color: $color-white;
     display: table;
     margin: 0px 0px 30px 0px;
     position: relative;
@@ -1070,7 +1070,7 @@
 }
 
 .listing-system-row {
-    background-color: #fff;
+    background-color: $color-white;
     display: table-row;
     overflow: hidden;
     position: relative;
@@ -1117,8 +1117,8 @@
             -webkit-transform: translateY(-50%) translateX(-50%);
             transform: translateY(-50%) translateX(-50%);
             border-radius: 50%;
-            border: 1px solid #fff;
-            color: #fff;
+            border: 1px solid $color-white;
+            color: $color-white;
             content: "\f002";
             display: inline-block;
             font-family: 'FontAwesome';

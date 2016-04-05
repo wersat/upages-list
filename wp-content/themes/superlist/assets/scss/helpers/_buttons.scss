@@ -48,11 +48,11 @@
 
 .btn-transparent {
     background-color: rgba(black, .4);
-    color: #fff;
+    color: $color-white;
 
     &:hover {
         background-color: rgba(black, .5);
-        color: #fff;
+        color: $color-white;
     }
 
     .fa {
@@ -62,14 +62,14 @@
 }
 
 .btn-white {
-    background-color: #fff;
+    background-color: $color-white;
     color: $color-black-light;
     display: inline-block;
     padding: 9px 15px;
     transition: background-color .15s linear;
 
     &:active, &:focus, &:hover {
-        background-color: darken(#fff, 5%) !important;
+        background-color: darken($color-white, 5%) !important;
         box-shadow: none !important;
         color: $color-black-light;
         outline: 0px !important;
@@ -79,7 +79,7 @@
 
 .btn-black {
     background-color: $color-black;
-    color: #fff;
+    color: $color-white;
     display: inline-block;
     padding: 9px 15px;
     transition: background-color .15s linear;
@@ -87,7 +87,7 @@
     &:active, &:focus, &:hover {
         background-color: darken($color-black, 5%) !important;
         box-shadow: none !important;
-        color: #fff;
+        color: $color-white;
         outline: 0px !important;
         text-decoration: none;
     }

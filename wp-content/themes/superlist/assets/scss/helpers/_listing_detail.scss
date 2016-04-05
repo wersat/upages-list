@@ -18,7 +18,7 @@
 #listing-detail-section-social {
     a {
         background-color: $color-primary;
-        color: #fff;
+        color: $color-white;
         font-size: 12px;
         font-weight: 600;
         margin: 0px 10px 0px 0px;
@@ -43,7 +43,7 @@
 
 .listing-detail-attributes {
     @extend .clearfix;
-    background-color: #fff;
+    background-color: $color-white;
     margin: 0px 0px 30px 0px;
     padding: 30px;
 
@@ -93,7 +93,7 @@
 
 .listing-detail-contact {
     @extend .clearfix;
-    background-color: #fff;
+    background-color: $color-white;
     margin: 0px 0px 30px 0px;
     padding: 30px;
 
@@ -156,7 +156,7 @@
 }
 
 .listing-detail-section-faq-list {
-    background-color: #fff;
+    background-color: $color-white;
     padding: 30px;
 
     dt {
@@ -214,7 +214,7 @@
     }
 
     ul {
-        color: rgba(#fff, .85);
+        color: rgba($color-white, .85);
         font-size: 13px;
         list-style: none;
         margin: 0px;
@@ -228,13 +228,13 @@
             a {
                 border-radius: 0px;
                 border-bottom: 2px solid transparent;
-                color: rgba(#fff, .85);
+                color: rgba($color-white, .85);
                 display: block;
                 padding: 14px 0px 12px 0px;
 
                 &:active, &:focus, &:hover {
                     background-color: transparent;
-                    color: #fff;
+                    color: $color-white;
                 }
             }
 
@@ -245,7 +245,7 @@
 
                     &:active, &:focus, &:hover {
                         background-color: transparent;
-                        color: #fff;
+                        color: $color-white;
                     }
                 }
             }
@@ -279,7 +279,7 @@
 
         a {
             border-radius: 2px;
-            background-color: #fff;
+            background-color: $color-white;
             font-size: 14px;
             margin-right: 15px;
             padding: 6px 12px;
@@ -316,10 +316,10 @@
             font-weight: 500;
             border-color: $color-primary;
             background-color: $color-primary;
-            color: #fff;
+            color: $color-white;
 
             &:before {
-                color: #fff;
+                color: $color-white;
                 content: "\f00c";
             }
 
@@ -343,7 +343,7 @@
 }
 
 .widget_listing_details {
-    background-color: #fff;
+    background-color: $color-white;
     font-size: 17px;
     font-weight: 300;
     padding: 15px;
@@ -437,7 +437,7 @@
 }
 
 .listing-detail-gallery-preview {
-    background-color: #fff;
+    background-color: $color-white;
     padding: 0px 50px;
 
     .owl-item {
@@ -498,7 +498,7 @@
             background-color: $color-primary;
 
             i {
-                color: #fff;
+                color: $color-white;
             }
         }
     }
@@ -531,7 +531,7 @@
 
 
 .listing-detail-location-wrapper {
-    background-color: #fff;
+    background-color: $color-white;
     padding: 20px;
 
     .tab-content {
@@ -560,7 +560,7 @@
 
     li.active a {
         background-color: $color-primary;
-        color: #fff;
+        color: $color-white;
 
         &:hover {
             background-color: darken($color-primary, 3%);
@@ -572,7 +572,7 @@
 
         a {
             background-color: $color-primary;
-            color: #fff;
+            color: $color-white;
             margin-right: 0 !important;
 
             &:hover {
@@ -619,7 +619,7 @@
 .review-count {
     background-color: darken($color-gray-medium, 5%);
     border-radius: 12px;
-    color: #fff;
+    color: $color-white;
     display: inline-block;
     font-size: 14px;
     font-weight: 400;
@@ -646,7 +646,7 @@
 
 .detail-verified {
     background-color: $color-green;
-    color: #fff;
+    color: $color-white;
     display: inline-block;
     font-size: 13px;
     margin: 0px 0px 0px 10px;
@@ -699,10 +699,10 @@
 }
 
 .opening-hours {
-    background-color: #fff;
+    background-color: $color-white;
 
     th, td {
-        background-color: #fff;
+        background-color: $color-white;
         border: 0px;
         font-size: 12px;
         padding: 10px 15px;
@@ -779,7 +779,7 @@
 }
 
 .listing-detail-food-wrapper {
-    background-color: #fff;
+    background-color: $color-white;
     padding: 30px;
 
     h3 {
@@ -808,7 +808,7 @@
         }
 
         span {
-            background-color: #fff;
+            background-color: $color-white;
             padding: 0px 20px 0px 0px;
             position: relative;
             z-index: 2;
@@ -840,7 +840,7 @@
 
 .listing-detail-food-speciality {
     background-color: $color-green;
-    color: #fff;
+    color: $color-white;
     float: left;
     font-size: 10px;
     font-weight: 700;
@@ -851,7 +851,7 @@
 
 .listing-detail-food-serving {
     background-color: $color-black-light;
-    color: #fff;
+    color: $color-white;
     float: left;
     font-size: 10px;
     font-weight: 700;
@@ -957,7 +957,7 @@
 }
 
 .listing-detail-property-public-facility {
-    background-color: #fff;
+    background-color: $color-white;
     border: solid 1px $gray-lighter;
     overflow: hidden;
 }

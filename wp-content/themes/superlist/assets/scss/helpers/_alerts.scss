@@ -1,6 +1,6 @@
 .alert {
     border-radius: 0px;
-    color: #fff;
+    color: $color-white;
     line-height: 2;
     overflow: hidden;
     padding: 20px 30px;
@@ -11,7 +11,7 @@
         border-color: darken($color-danger, 5%);
 
         a {
-            border-bottom: 1px solid rgba(#fff, .8) !important;
+            border-bottom: 1px solid rgba($color-white, .8) !important;
         }
     }
 
@@ -48,17 +48,17 @@
 
     a {
         border-bottom: 1px solid red;
-        color: #fff;
+        color: $color-white;
         padding-bottom: 3px;
 
         &:active, &:focus, &:hover {
-            border-bottom: 1px solid rgba(#fff, .6);
+            border-bottom: 1px solid rgba($color-white, .6);
             text-decoration: none;
         }
     }
 
     p {
-        color: #fff;
+        color: $color-white;
         margin: 0px !important;
     }
 }
@@ -116,7 +116,7 @@
 
         &:active, &:focus, &:hover {
             background-color: transparent !important;
-            color: #fff !important;
+            color: $color-white !important;
             opacity: 1 !important;
         }
     }

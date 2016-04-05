@@ -1,14 +1,14 @@
 .payment-info {
   background-color: $color-green;
   border: 1px solid darken($color-green, 3%);
-  color: #fff;
+  color: $color-white;
   padding: 30px;
   font-size: 16px;
   font-weight: 300;
   margin: 0px 0px 30px 0px;
 
   strong {
-    color: #fff;
+    color: $color-white;
     font-weight: 400;
   }
 }
@@ -37,7 +37,7 @@
 }
 
 .gateway-header {
-  background-color: #fff;
+  background-color: $color-white;
   border: 1px solid darken($color-gray-light, 3%);
   margin: 0px 0px 15px 0px;
   padding: 20px;
@@ -156,7 +156,7 @@
 }
 
 .packages {
-  background-color: #fff;
+  background-color: $color-white;
 }
 
 .package {

@@ -152,7 +152,7 @@
     }
 
     .tagcloud {
-        background-color: #fff;
+        background-color: $color-white;
         clear: both;
         display: inline-block;
         font-size: 13px;
@@ -165,7 +165,7 @@
         a {
             background-color: $color-primary;
             border-radius: 3px;
-            color: #fff;
+            color: $color-white;
             display: inline-block;
             font-size: 13px !important;
             font-weight: 300;
@@ -194,7 +194,7 @@
             }
 
             &:after {
-                background-color: #fff;
+                background-color: $color-white;
                 border-radius: 50%;
                 content: "";
                 display: block;
@@ -217,7 +217,7 @@
 
     &.widget_filter {
         form {
-            background-color: #fff;
+            background-color: $color-white;
             padding: 20px;
         }
 
@@ -233,7 +233,7 @@
     }
 
     &.widget_call_to_action {
-        color: #fff;
+        color: $color-white;
         font-size: 28px;
         font-weight: 300;
 
@@ -439,7 +439,7 @@
 
 .widget_dashboard_navigation {
     ul {
-        background-color: #fff;
+        background-color: $color-white;
         padding: 20px;
 
         li {

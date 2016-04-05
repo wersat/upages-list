@@ -28,7 +28,7 @@
 }
 
 .comment-inner {
-    background-color: #fff;
+    background-color: $color-white;
     border: 2px solid $color-gray;
     margin: 0px 0px 0px 120px;
     padding: 20px;
@@ -46,7 +46,7 @@
 
     &:after {
         border: 19px solid transparent;
-        border-right-color: #fff;
+        border-right-color: $color-white;
         content: '';
         display: block;
         left: -38px;
@@ -155,7 +155,7 @@
 
 .comment-form {
     @extend .clearfix;
-    background-color: #fff;
+    background-color: $color-white;
     padding: 20px;
 }
 

@@ -3,17 +3,17 @@
 }
 
 .background-white {
-    background-color: #fff;
+    background-color: $color-white;
 }
 
 .background-primary {
     background-color: $color-primary;
-    color: #fff;
+    color: $color-white;
 }
 
 .background-secondary {
     background-color: $color-primary;
-    color: #fff;
+    color: $color-white;
 }
 
 .background-transparent-image {
@@ -24,7 +24,7 @@
 
 .background-black-light {
     background-color: $color-black-light;
-    color: #fff;
+    color: $color-white;
 }
 
 .fullwidth {
@@ -105,9 +105,9 @@
     margin-top: -10px;
 
     .fa {
-        border: 2px solid rgba(#fff, .3);
+        border: 2px solid rgba($color-white, .3);
         border-radius: 50%;
-        color: rgba(#fff, .8);
+        color: rgba($color-white, .8);
         font-size: 22px;
         height: 50px;
         line-height: 46px;
@@ -179,11 +179,11 @@
 
     .box-body {
         .box-title {
-            color: #fff;
+            color: $color-white;
         }
 
         .box-content {
-            color: rgba(#fff, .8);
+            color: rgba($color-white, .8);
         }
 
         .box-read-more {
@@ -193,13 +193,13 @@
 
     .box-icon {
         background-color: transparent;
-        border: 2px solid rgba(#fff, .4);
+        border: 2px solid rgba($color-white, .4);
         color: lighten($color-primary, 20%);
     }
 }
 
 .badge {
-    background-color: #fff;
+    background-color: $color-white;
 
     .btn.btn-primary & {
         color: $color-primary;
@@ -338,7 +338,7 @@ img.alignright {
         &.active, &:hover {
             .currency-symbol {
                 background-color: $color-primary;
-                color: #fff;
+                color: $color-white;
             }
         }
 
@@ -410,7 +410,7 @@ h3.registration-title {
 .ribbon {
     background-color: $color-green;
     box-shadow: 0px 2px 4px rgba(black, .12);
-    color: #fff;
+    color: $color-white;
     font-size: 11px;
     font-weight: 700;
     left: 0;    

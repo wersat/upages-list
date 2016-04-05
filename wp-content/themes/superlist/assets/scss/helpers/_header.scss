@@ -16,7 +16,7 @@
 }
 
 .header-bar {
-    background-color: #fff;
+    background-color: $color-white;
     position: relative;
     z-index: 200;
 
@@ -27,7 +27,7 @@
     .menu {
         a strong {
             background-color: $color-black-light;
-            color: #fff !important;
+            color: $color-white !important;
             padding: 4px 8px;
         }
     }
@@ -153,7 +153,7 @@
 }
 
 .header-wrapper {
-    background-color: #fff;
+    background-color: $color-white;
     box-shadow: 0px 1px 1px rgba(black, .1);
     padding: 0px;
     position: relative;
@@ -217,12 +217,12 @@
             text-decoration: none;
 
             .header-transparent .affix-top & {
-                color: #fff;
+                color: $color-white;
             }
         }
 
         .header-transparent .affix-top & {
-            color: #fff;
+            color: $color-white;
         }
     }
 
@@ -249,7 +249,7 @@
         vertical-align: -6px;
 
         .header-transparent .affix-top & {
-            color: #fff !important;
+            color: $color-white !important;
         }
     }
 
@@ -311,7 +311,7 @@
                     }
 
                     .header-transparent .affix-top & {
-                        color: #fff;
+                        color: $color-white;
                     }
                 }
 
@@ -332,7 +332,7 @@
                 }
 
                 .sub-menu {
-                    background-color: #fff;
+                    background-color: $color-white;
                     border: 1px solid $color-gray-medium;
                     display: block;
                     left: 0;
@@ -350,21 +350,21 @@
                         border: 0px;
 
                         li > a {
-                            color: rgba(#fff, .9);
+                            color: rgba($color-white, .9);
 
                             &:hover {
                                 background-color: rgba(white, .1);
-                                color: #fff;
+                                color: $color-white;
                             }
                         }
 
                         li {
                             &:hover {
                                 background-color: rgba(white, .1);
-                                color: #fff;
+                                color: $color-white;
 
                                 > a {
-                                    color: #fff;
+                                    color: $color-white;
                                 }
                             }
                         }
@@ -464,7 +464,7 @@
         }
 
         @media (max-width: $screen-xs-max) {
-            background-color: #fff;
+            background-color: $color-white;
             float: none;
             left: -15px;
             margin-top: 62px;
@@ -507,7 +507,7 @@
 
                 &.active {
                     a {
-                        background-color: #fff;
+                        background-color: $color-white;
 
                         &:hover {
                             color: $color-primary;
@@ -645,7 +645,7 @@
 .header-action-inner {
     background-color: $color-primary;
     border-radius: 50%;
-    color: #fff;
+    color: $color-white;
     cursor: pointer;
     display: block;
     font-size: 12px;
@@ -656,12 +656,12 @@
     width: 30px;
 
     i {
-        color: #fff;
+        color: $color-white;
     }
 
     &:hover {
         background-color: darken($color-primary, 5%);
-        color: #fff;
+        color: $color-white;
     }
 }
 
@@ -719,12 +719,12 @@
             padding: 0px 20px 0px 0px;
 
             a {
-                color: rgba(#fff, .85);
+                color: rgba($color-white, .85);
                 font-size: 12px;
                 line-height: 1;
 
                 &:hover {
-                    color: #fff;
+                    color: $color-white;
                 }
             }
 

@@ -20,7 +20,7 @@
 }
 
 .box-icon {
-    background-color: #fff;
+    background-color: $color-white;
     border: 1px solid #f0f0f0;
     border-radius: 50%;
     color: $color-primary;
@@ -78,7 +78,7 @@
         margin: 24px 0px 20px 0px;
 
         .footer & {
-            color: #fff;
+            color: $color-white;
             font-size: 16px;
             margin: 0px 0px 15px 0px;
         }
@@ -90,7 +90,7 @@
         margin: 0px;
 
         .footer & {
-            color: rgba(#fff, 0.8);
+            color: rgba($color-white, 0.8);
         }
     }
 
@@ -123,7 +123,7 @@
         transition: all linear .15s;
 
         &:hover {
-            color: #fff;
+            color: $color-white;
         }
     }
 }

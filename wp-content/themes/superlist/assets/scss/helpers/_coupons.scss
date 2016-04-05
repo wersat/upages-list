@@ -47,7 +47,7 @@
 }
 
 .coupon-detail-gallery-preview {
-    background-color: #fff;
+    background-color: $color-white;
     padding: 0px 50px;
 
     .owl-item {
@@ -94,7 +94,7 @@
             background-color: $color-primary;
 
             i {
-                color: #fff;
+                color: $color-white;
             }
         }
     }
@@ -114,7 +114,7 @@
  * Coupon Small
  ******************************************************************/
 .coupon-small {
-    background-color: #fff;
+    background-color: $color-white;
     margin: 0px 0px 30px 0px;
 
     &:hover {
@@ -157,8 +157,8 @@
         -webkit-transform: translateY(-50%) translateX(-50%);
         transform: translateY(-50%) translateX(-50%);
         border-radius: 50%;
-        border: 1px solid #fff;
-        color: #fff;
+        border: 1px solid $color-white;
+        color: $color-white;
         content: "\f06e";
         display: inline-block;
         font-family: 'FontAwesome';
@@ -175,7 +175,7 @@
 
 .coupon-small-image-label {
     background-color: $color-green;
-    color: #fff;
+    color: $color-white;
     font-size: 13px;
     font-weight: 500;
     left: 20px;
@@ -188,7 +188,7 @@
 
 .coupon-small-image-location {
     bottom: 10px;
-    color: #fff;
+    color: $color-white;
     display: block;
     font-size: 12px;
     font-weight: 500;
@@ -196,7 +196,7 @@
     position: absolute;
 
     a {
-        color: #fff;
+        color: $color-white;
     }
 }
 
@@ -243,7 +243,7 @@
  * Coupon Box
  ******************************************************************/
 .coupon-box {
-    background-color: #fff;
+    background-color: $color-white;
     margin: 0px 0px 30px 0px;
 }
 
@@ -280,7 +280,7 @@
 
 .coupon-box-image-discount {
     background-color: $color-green;
-    color: #fff;
+    color: $color-white;
     font-size: 15px;
     font-weight: 500;
     left: 20px;
@@ -293,7 +293,7 @@
 
 .coupon-box-image-location {
     bottom: 20px;
-    color: #fff;
+    color: $color-white;
     display: block;
     font-size: 12px;
     font-weight: 500;
@@ -301,7 +301,7 @@
     position: absolute;
 
     a {
-        color: #fff;
+        color: $color-white;
     }
 }
 
@@ -317,7 +317,7 @@
 .coupon-box-image-content {
     background-color: rgba($color-primary, .9);
     bottom: 10px;
-    color: #fff;
+    color: $color-white;
     left: 10px;
     opacity: 0;
     position: absolute;
@@ -380,7 +380,7 @@
  ******************************************************************/
 .widget_coupon_detail {
     .widget-content {
-        background-color: #fff;
+        background-color: $color-white;
         padding: 20px;
 
         h3 {
@@ -393,7 +393,7 @@
 
 .widget_coupon_detail_button {
     background-color: $color-green;
-    color: #fff;
+    color: $color-white;
     display: block;
     font-size: 13px;
     font-weight: 700;
@@ -404,7 +404,7 @@
 
     &:active, &:focus, &:hover {
         background-color: darken($color-green, 4%);
-        color: #fff;
+        color: $color-white;
         text-decoration: none;
     }
 
@@ -439,6 +439,6 @@
 
 .widget_coupon_detail_warning {
     background-color: $color-warning;
-    color: #fff;
+    color: $color-white;
     padding: 12px 20px;
 }

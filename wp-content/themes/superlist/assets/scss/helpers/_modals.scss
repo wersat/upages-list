@@ -18,7 +18,7 @@
     }
 
     .modal-close {
-        color: rgba(#fff, .8);
+        color: rgba($color-white, .8);
         cursor: pointer;
         font-size: 32px;
         position: absolute;
@@ -27,7 +27,7 @@
         transition: color .15s linear;
 
         &:hover {
-            color: #fff;
+            color: $color-white;
         }
     }
 
@@ -41,7 +41,7 @@
         -webkit-transform: translateX(-50%) translateY(-50%);
 
         h2 {
-            color: #fff;
+            color: $color-white;
             font-size: 52px;
             font-weight: 400;
             margin: 0px 0px 120px 0px;
@@ -59,7 +59,7 @@
             }
 
             .fa {
-                background-color: rgba(#fff, .8) !important;
+                background-color: rgba($color-white, .8) !important;
                 border-radius: 50%;
                 color: rgba(black, .8) !important;
                 display: block;
@@ -70,7 +70,7 @@
                 width: 140px;
 
                 &:active, &:hover, &:focus {
-                    background-color: #fff !important;
+                    background-color: $color-white !important;
                     border: 0px;
                     color: rgba(black, .8) !important;
                 }

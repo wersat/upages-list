@@ -1,14 +1,19 @@
 $color-primary: #009f8b;
 
-$color-black: #363636;
-$color-black-light: #444;
+//$color-black: #363636;
+$color-black: #231f20;
+$color-black-light: #444444;
+
 $color-black-dark: #242424;
+
+//@debug lighten($color-black, 12.39%);
 
 $color-yellow: #ffd925;
 $color-red: #d81814;
 $color-green: #8dc63f;
 $color-orange: #ea823f;
 
+$color-white:#ffffff;
 $color-gray: #f7f7f7;
 $color-gray-lighter: #fdfdfd;
 $color-gray-light: #fafafa;

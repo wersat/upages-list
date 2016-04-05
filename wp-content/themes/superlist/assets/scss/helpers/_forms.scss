@@ -110,7 +110,7 @@ textarea {
 // }
 
 // input[type=checkbox] + label:before, input[type=radio] + label:before {
-//     background-color: #fff;
+//     background-color: $color-white;
 //     border: 1px solid darken($color-gray-medium, 4%);
 //     border-radius: 2px;
 //     content: "";
@@ -125,7 +125,7 @@ textarea {
 // }
 
 // input[type=checkbox] + label:after {
-//     color: #fff;
+//     color: $color-white;
 //     content: "\f00c";
 //     font-family: FontAwesome;
 //     font-size: 0px;
@@ -217,7 +217,7 @@ input[type=file] {
     width: 100% !important;
 
     .dropdown-toggle {
-        background-color: #fff !important;
+        background-color: $color-white !important;
         border: 1px solid $color-gray-medium !important;
         height: 40px;
 
@@ -226,7 +226,7 @@ input[type=file] {
         }
 
         &:active, &:focus, &:hover {
-            background-color: #fff !important;
+            background-color: $color-white !important;
             border: 1px solid $color-gray-medium !important;
             box-shadow: none !important;
             outline: 0px !important;
@@ -325,7 +325,7 @@ ul.dropdown-menu {
     width: 100%;
 
     .input-group-addon {
-        background-color: #fff;
+        background-color: $color-white;
         border-color: $color-gray-medium;
         border-radius: 0px;
         border-width: 1px;
@@ -480,7 +480,7 @@ ul.dropdown-menu {
 .cmb-form {
     @extend .clearfix;
 
-    background-color: #fff;
+    background-color: $color-white;
     padding: 40px;
 
     h2 {
@@ -745,7 +745,7 @@ ul.dropdown-menu {
             border: 1px solid $color-primary;
             border-bottom-color: darken($color-primary, 10%);
             font-size: 13px;
-            color: #fff;
+            color: $color-white;
             padding: 15px 20px;
         }
     }
@@ -840,7 +840,7 @@ ul.dropdown-menu {
 }
 
 button.ui-state-default {
-    color: #fff !important;
+    color: $color-white !important;
     font-size: 13px !important;
     min-height: auto;
     padding: 6px 12px !important;

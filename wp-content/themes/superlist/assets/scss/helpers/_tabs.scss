@@ -22,7 +22,7 @@
 
         &.active {
             a {
-                background-color: #fff;
+                background-color: $color-white;
                 border: 0px !important;
                 color: $color-black;
                 font-weight: 500;
@@ -34,7 +34,7 @@
 .tab-content {
     @extend .clearfix;
 
-    background-color: #fff;
+    background-color: $color-white;
     padding: 20px 10px;
 
     ul {
@@ -43,7 +43,7 @@
         position: relative;
 
         &:after {
-            background-color: #fff;
+            background-color: $color-white;
             bottom: 0px;
             content: '';
             display: block;

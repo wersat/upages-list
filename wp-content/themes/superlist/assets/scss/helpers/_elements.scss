@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: #fff;
+    background-color: $color-white;
     color: $color-gray-darker;
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 14px;
@@ -22,12 +22,12 @@ body {
 }
 
 ::-moz-selection {
-    color: #fff;
+    color: $color-white;
     background: rgba($color-primary, .7);
 }
 
 ::selection {
-    color: #fff;
+    color: $color-white;
     background: rgba($color-primary, .7);
 }
 
@@ -43,7 +43,7 @@ a {
 
 table {
     @extend .table;
-    background-color: #fff;
+    background-color: $color-white;
     margin-bottom: 40px;
 }
 
@@ -99,7 +99,7 @@ mark {
     border-radius: 4px;
     background-color: $color-primary;
     box-shadow: 4px 0 0 $color-primary, -4px 0 0 $color-primary;
-    color: #fff;
+    color: $color-white;
     margin: 0px 3px;
     padding: 2px;
 }
@@ -113,7 +113,7 @@ code {
 }
 
 blockquote {
-    background-color: #fff;
+    background-color: $color-white;
     border-left: none;
     color: $color-black-light;
     font-size: 24px;
