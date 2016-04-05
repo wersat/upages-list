@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Inventor Stripe\n"
+"POT-Creation-Date: 2015-11-26 11:24+0100\n"
+"PO-Revision-Date: 2015-11-26 11:24+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: libraries\n"
+
+#: includes/class-inventor-stripe-logic.php:42
+msgid "Stripe Checkout"
+msgstr ""
+
+#: includes/class-inventor-stripe-logic.php:122
+msgid "The card has been declined."
+msgstr ""
+
+#: includes/class-inventor-stripe-logic.php:179
+msgid "Payment is invalid."
+msgstr ""
+
+#: includes/class-inventor-stripe-logic.php:181
+msgid "Undefined payment type."
+msgstr ""
+
+#: includes/class-inventor-stripe-logic.php:183
+msgid "Payment has been successful."
+msgstr ""
+
+#: includes/class-inventor-stripe-logic.php:186
+msgid "Payment failed, canceled or is invalid."
+msgstr ""
+
+#: includes/customizations/class-inventor-stripe-customizations-stripe.php:34
+msgid "Inventor Stripe"
+msgstr ""
+
+#: includes/customizations/class-inventor-stripe-customizations-stripe.php:46
+msgid "Secret Key"
+msgstr ""
+
+#: includes/customizations/class-inventor-stripe-customizations-stripe.php:59
+msgid "Publishable Key"
+msgstr ""

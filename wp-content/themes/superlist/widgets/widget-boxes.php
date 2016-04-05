@@ -1,0 +1,74 @@
+<?php
+/**
+ * Widget definition file
+ *
+ * @package Superlist
+ * @subpackage Widgets
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Class Superlist_Widget_Boxes
+ *
+ * @class Superlist_Widget_Boxes
+ * @package Superlist/Widgets
+ * @author Pragmatic Mates
+ */
+class Superlist_Widget_Boxes extends WP_Widget {
+	/**
+	 * Initialize widget
+	 *
+	 * @access public
+	 * @return void
+	 */
+	function Superlist_Widget_Boxes() {
+		parent::__construct(
+			'boxes',
+			__( 'Boxes', 'superlist' ),
+			array(
+				'description' => __( 'Text boxes with icons.', 'superlist' ),
+			)
+		);
+	}
+
+	/**
+	 * Frontend
+	 *
+	 * @access public
+	 * @param array $args Widget arguments.
+	 * @param array $instance Current widget instance.
+	 * @return void
+	 */
+	function widget( $args, $instance ) {
+		include 'templates/widget-boxes.php';
+	}
+
+	/**
+	 * Update
+	 *
+	 * @access public
+	 * @param array $new_instance New widget instance.
+	 * @param array $old_instance Old widget instance.
+	 * @return array
+	 */
+	function update( $new_instance, $old_instance ) {
+		return $new_instance;
+	}
+
+	/**
+	 * Backend
+	 *
+	 * @access public
+	 * @param array $instance Current widget instance.
+	 * @return void
+	 */
+	function form( $instance ) {
+		include 'templates/widget-boxes-admin.php';
+		if ( class_exists( 'Inventor_Template_Loader' ) ) {
+			include Inventor_Template_Loader::locate( 'widgets/advanced-options-admin' );
+		}
+	}
+}

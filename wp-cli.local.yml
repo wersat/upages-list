@@ -1,0 +1,21 @@
+url: http://upages.com.ua/
+user: JazzMan
+color: true
+disabled_commands:
+  - db drop
+  - plugin install
+prompt: true
+core config:
+	dbname: helperua_upages
+	dbuser: helperua_upages
+	dbpass: brjukcj3
+	dbhost: helperua.mysql.ukraine.com.ua
+	dbcharset: utf8
+	dbprefix: wp_
+	extra-php: |
+		define('WP_DEBUG', true );
+		define('SAVEQUERIES', true );
+		define('SCRIPT_DEBUG', true );
+		define('WP_DEBUG_DISPLAY', true );
+		define('WP_DEBUG_LOG', true );
+		define('WP_HOME', 'http://upages.com.ua/' );

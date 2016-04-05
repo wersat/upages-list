@@ -1,0 +1,378 @@
+.detail-banner {
+    background-position: center center;
+    background-size: 100% auto;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: $screen-sm-max) {
+        height: 400px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+        background-size: cover;
+    }
+
+    video {
+        height: auto;
+        width: 100%;
+        position: absolute;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        top: 50%;
+    }
+
+    .detail-banner-shadow {
+        background: -webkit-linear-gradient(to right, rgba(0,0,0,.3) -10%, rgba(0,0,0,.5) 20%, rgba(0,0,0,.5) 40%, rgba(0,0,0,0) 80%);
+        background: -moz-linear-gradient(to right, rgba(0,0,0,.3) -10%, rgba(0,0,0,.5) 20%, rgba(0,0,0,.5) 40%, rgba(0,0,0,0) 80%);
+        background: linear-gradient(to right, rgba(0,0,0,.3) -10%, rgba(0,0,0,.5) 20%, rgba(0,0,0,.5) 40%, rgba(0,0,0,0) 80%);
+        bottom: 0px;
+        content: '';
+        left: 0px;
+        pointer-events: none;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        z-index: 2;
+    }
+
+    .container {
+        height: 100%;
+        position: relative;
+    }
+
+    .detail-banner-left, .detail-banner-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        z-index: 3;
+
+        @media (max-width: $screen-xs-max) {
+            margin-left: 15px;
+        }
+    }
+
+    .detail-banner-left {
+        left: 15px;
+        pointer-events: none;
+
+        .detail-banner-address, .detail-banner-after a {
+            pointer-events: auto;
+        }
+    }
+
+    .detail-banner-right {
+        pointer-events: none;
+        right: 15px;
+        text-align: right;
+        width: 50%;
+
+        .detail-banner-price {
+            box-shadow: 0px 0px 50px rgba(0,0,0,.2);
+            background-color: $color-green;
+            color: #fff;
+            display: inline-block;
+            font-size: 21px;
+            font-weight: 300;
+            pointer-events: auto;
+            vertical-align: -1px;
+            transition: all ease .3s;
+
+            &.reduced-price {
+                background-color: $color-orange;
+            }
+
+            span.detail-banner-price-label {
+                display: inline-block;
+                padding: 6px 2px 6px 18px;
+            }
+
+            span.detail-banner-price-value {
+                display: inline-block;
+                font-size: 24px;
+                font-weight: 500;
+                padding: 6px 18px 6px 2px;
+                vertical-align: 0px;
+            }
+
+            .inventor-shop-wrapper {
+                border-left: solid 1px rgba(255, 255, 255, 0.5);
+                float: right;
+
+                button {
+                    background-color: rgba(255, 255, 255, 0.2);
+                    font-size: 0px;
+                    height: 46px;
+                    opacity: 0.7;
+                    transition: opacity .15s linear;
+
+                    &:before {
+                        color: #fff;
+                        content: "\f07a";
+                        display: inline-block;
+                        font-family: fontawesome;
+                        font-size: 23px;
+                        -webkit-font-smoothing: antialiased;
+                        height: 20px;
+                        line-height: 20px;
+                        margin-right: 5px;
+                        text-align: center;
+                        //vertical-align: 9px;
+                        width: 20px;
+                    }
+
+                    &:after {
+                        height: 0px;
+                    }
+
+                    &:hover, &:active, &:focus {
+                        background-color: rgba(255, 255, 255, 0.3) !important;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $screen-xs-max) {
+            top: 23px;
+            right: 0;
+            width: auto;
+        }
+
+        &.affix {
+            @extend .container;
+            height: 0px;
+            left: 15px;
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            z-index: 999;
+
+            .admin-bar & {
+                margin-top: 32px;
+            }
+
+            .header-sticky & {
+                margin-top: 60px;
+            }
+
+            .admin-bar.header-sticky & {
+                margin-top: 92px;
+            }
+
+            .detail-banner-price {
+                box-shadow: 0px 0px 50px rgba(0,0,0,0);
+                pointer-events: auto;
+            }
+
+            @media (max-width: $screen-xs-max) {
+                height: 0;
+                padding-right: 0;
+                position: relative;
+                right: 0;
+                top: 0;
+
+                .admin-bar & {
+                    margin-top: 0px;
+                }
+
+                .header-sticky & {
+                    margin-top: 0px;
+                }
+
+                .admin-bar.header-sticky & {
+                    margin-top: 0px;
+                }
+            }
+        }
+    }
+
+    h2 {
+        color: #fff;
+        font-size: 36px;
+        text-shadow: 0px 0px 20px #000;
+        margin-bottom: 11px;
+
+        @media (max-width: $screen-xs-max) {
+            font-size: 30px;
+        }
+
+        .listing-title-logo {
+            max-height: 65px;
+            max-width: 130px;
+        }
+
+        .listing-verified {
+            font-size: 0px;
+
+            &:before {
+                background-color: $color-green;
+                border: solid 1px #fff;
+                border-radius: 50%;
+                content: "\f00c";
+                display: inline-block;
+                font-family: fontawesome;
+                font-size: 10px;
+                -webkit-font-smoothing: antialiased;
+                height: 20px;
+                line-height: 18px;
+                margin-left: 7px;
+                text-align: center;
+                vertical-align: 9px;
+                width: 20px;
+            }
+        }
+
+        .claim-listing {
+            color: #fff;
+            font-size: 12px;
+            pointer-events: auto;
+            opacity: .7;
+            transition: opacity .15s linear;
+            vertical-align: 8px;
+
+            &:before {
+                border: dashed 1px #fff;
+                border-radius: 50%;
+                color: #fff;
+                content: "\f00c";
+                display: inline-block;
+                font-family: fontawesome;
+                font-size: 10px;
+                -webkit-font-smoothing: antialiased;
+                height: 20px;
+                line-height: 18px;
+                margin-left: 7px;
+                margin-right: 5px;
+                text-align: center;
+                vertical-align: 1px;
+                width: 20px;
+            }
+
+            &:hover {
+                opacity: 1;
+
+                &:before {
+                //    border: solid 1px #fff;
+                //    background-color: #fff;
+                //    color: transparent;
+                }
+            }
+        }
+    }
+
+    .detail-banner-address {
+        color: #fff;
+        font-weight: 300;
+        text-shadow: 0px 0px 18px #000;
+        padding-top: 1px;
+
+        a {
+            color: #fff;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        i {
+            margin-right: 10px;
+        }
+    }
+
+    .inventor-reviews-rating {
+        color: $color-yellow;
+        font-size: 21px;
+        margin-top: 10px;
+        text-shadow: 0px 0px 20px rgba(0,0,0,.5);
+    }
+
+    .detail-label {
+        background-color: $color-primary;
+        color: #fff;
+        display: inline-block;
+        font-size: 13px;
+        padding: 3px 15px;
+
+        a {
+            color: #fff;
+
+            &:hover {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .detail-banner-btn {
+        text-shadow: 0px 0px 10px rgba(0,0,0,.3);
+        border: 1px solid #fff;
+        color: #fff;
+        float: left;
+        margin-top: 20px;
+        margin-right: 20px;
+        padding: 9px 15px;
+        cursor: pointer;
+        transition: all linear .15s;
+
+        i {
+            font-size: 16px;
+            margin-right: 5px;
+        }
+
+        &:hover {
+            background-color: #fff;
+            color: $color-black;
+            text-decoration: none;
+            text-shadow: none;
+        }
+
+        &:focus, &:active {
+            text-decoration: none;
+        }
+
+        &.heart.marked {
+            background-color: #fff;
+            color: $color-black-light;
+            text-shadow: none;
+
+            i:before {
+                content: "\f004";
+                color: $color-red;
+            }
+        }
+
+        &.bookmark.marked {
+            background-color: #fff;
+            color: $color-black-light;
+            text-shadow: none;
+
+            i:before {
+                content: "\f02e";
+                color: $color-primary;
+            }
+        }
+    }
+
+    .inventor-favorites-btn-toggle {
+        @extend .detail-banner-btn;
+    }
+
+    .print-listing {
+        @extend .detail-banner-btn;
+    }
+
+    .share-listing {
+        @extend .detail-banner-btn;
+    }
+
+    .detail-banner-slogan {
+        color: $color-gray-medium;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: -4px;
+        margin-bottom: 15px;
+        text-shadow: 0px 0px 18px #000;
+    }
+}

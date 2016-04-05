@@ -1,0 +1,206 @@
+.footer {
+    color: #fff;
+    display: table-row;
+    font-size: 13px;
+    height: 1px;
+}
+
+.footer-area {
+    border-bottom: 1px solid rgba(white, .08);
+    padding: 0px 0px 30px 0px;
+
+    dl {
+        padding-left: 35px;
+        position: relative;
+
+        dt {
+            border-top: 1px solid rgba(white, .1);
+            margin-top: 15px;
+            padding-top: 15px;
+
+        }
+
+        dd {
+            color: rgba(white, .7);
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .fa {
+            color: $color-primary;
+            font-size: 22px;
+            position: absolute;
+            left: 0px;
+            margin-top: 8px;
+            vertical-align: top;
+        }
+    }
+}
+
+.footer-top {
+    background-color: $color-black-dark;
+
+    @media (max-width: $screen-xs-max) {
+        .widget.widget_nav_menu ul.menu {
+            li {
+                border-bottom: 1px solid rgba(#fff, .05);
+                display: block;
+                float: none;
+                margin: 0px;
+
+                a {
+                    display: block;
+                    padding: 3px 0px;
+                }
+            }
+        }
+    }
+
+    h2 {
+        color: #fff !important;
+        font-size: 20px !important;
+        font-weight: 300;
+        margin: 0px 0px 30px 0px;
+
+        &.widgettitle {
+            margin: 45px 0px !important;
+        }
+    }
+
+    a {
+        color: #fff !important;
+
+        &:hover {
+            color: lighten($color-primary, 10%) !important;
+        }
+    }
+
+    li {
+        margin-right: 20px;
+
+        a {
+            line-height: 40px !important;
+
+        }
+    }
+
+    p {
+        margin: 0px;
+    }
+
+    form {
+        margin: 0px;
+    }
+
+    .input-group {
+        margin: 0px;
+        max-width: 263px;
+    }
+
+    .form-control {
+        border: 0px;
+    }
+}
+
+.footer-top-inner {
+    @extend .clearfix;
+    padding: 20px 0px;
+}
+
+.footer-first {
+    float: left;
+
+    @media (max-width: $screen-xs-max) {
+        float: none;
+    }
+}
+
+.footer-second {
+    float: right;
+
+    @media (max-width: $screen-xs-max) {
+        float: none;
+    }
+}
+
+.footer-bottom {
+    @extend .clearfix;
+
+    background-color: lighten($color-black-dark, 1.5%);
+    color: #fff;
+    font-size: 13px;
+    padding: 25px 0px;
+    text-align: center;
+
+    a {
+        border-bottom: 1px solid #fff;
+        color: #fff;
+
+        &:hover {
+            border-bottom-color: lighten($color-primary, 10%);
+            color: lighten($color-primary, 10%);
+        }
+    }
+
+    .widget {
+        margin: 0px;
+    }
+
+    .nav {
+        .sub-menu {
+            display: none;
+        }
+
+        > li {
+            display: inline-block;
+            float: none;
+            margin: 0px;
+
+            > a {
+                border-radius: 0px;
+                color: #fff;
+                padding: 0px 10px !important;
+
+                &:hover {
+                    background-color: transparent;
+
+                    i {
+                        color: lighten($color-primary, 10%);
+                    }
+                }
+
+                i {
+                    background-color: transparent !important;
+                    border-radius: 50%;
+                    font-size: 16px;
+                    height: 32px;
+                    line-height: 30px;
+                    text-align: center;
+                    width: 32px;
+                }
+
+                &:active, &:focus, &:hover {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+.footer-bottom-second {
+    margin: 15px 0px 0px 0px;
+    padding: 15px 0px 0px 0px;
+    position: relative;
+
+    &:after {
+        background-color: rgba(#fff, .2);
+        content: '';
+        display: block;
+        height: 1px;
+        left: 50%;
+        position: absolute;
+        top: 0px;
+        transform: translateX(-50%);
+        width: 30px;
+    }
+}

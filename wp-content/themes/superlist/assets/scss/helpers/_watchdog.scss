@@ -1,0 +1,63 @@
+.watchdog-row {
+    background-color: #fff;
+    margin: 0px 0px 30px 0px;
+    padding: 20px;
+
+    h2 {
+        color: $color-black-light;
+        font-size: 18px;
+        font-weight: 300;
+        margin: 0px 0px 15px 0px;
+        padding: 0px 0px 15px 0px;
+        text-transform: none;
+
+        a {
+            border: 0px !important;
+        }
+    }
+
+    h3 {
+        font-size: 13px;
+        font-weight: 400;
+        margin-top: -6px;
+    }
+}
+
+.watchdog-row-date {
+    color: $color-gray-darker;
+    font-size: 13px;
+    margin: 15px 0px 0px 0px;
+}
+
+.watchdog-row-remove {
+    color: $color-red !important;
+    float: right;
+    font-size: 13px;
+    margin: 4px 0px 0px 0px;
+}
+
+.watchdog-lookup {
+    @extend .clearfix;
+    margin: 0px;
+
+    dt, dd {
+        float: left;
+    }
+
+    dt {
+        background-color: $color-primary;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 1;
+        margin: 0px 8px 0px 0px;
+        padding: 4px 8px 2px 8px;
+        text-transform: uppercase;
+    }
+
+    dd {
+        color: $color-black-light;
+        margin: 0px 20px 0px 0px;
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,3663 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Inventor\n"
+"POT-Creation-Date: 2016-03-15 16:35+0100\n"
+"PO-Revision-Date: 2016-03-20 09:52+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: libraries\n"
+
+#: includes/admin/class-inventor-admin-menu.php:101
+msgid "Inventor"
+msgstr "Inventor"
+
+#: includes/admin/class-inventor-admin-menu.php:102
+#: includes/taxonomies/class-inventor-taxonomy-colors.php:34
+#: includes/taxonomies/class-inventor-taxonomy-colors.php:44
+msgid "Colors"
+msgstr "Farby"
+
+#: includes/admin/class-inventor-admin-menu.php:103
+#: includes/class-inventor-filter.php:42
+#: includes/taxonomies/class-inventor-taxonomy-locations.php:34
+#: includes/taxonomies/class-inventor-taxonomy-locations.php:44
+#: templates/widgets/listings-admin.php:233
+msgid "Locations"
+msgstr "Umiestnenia"
+
+#: includes/admin/class-inventor-admin-menu.php:104
+#: includes/class-inventor-filter.php:43
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:35
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:45
+msgid "Categories"
+msgstr "Kategórie"
+
+#: includes/admin/class-inventor-admin-menu.php:107
+#: includes/post-types/class-inventor-post-type-listing.php:58
+#: includes/post-types/class-inventor-post-type-listing.php:64
+#: includes/widgets/class-inventor-widget-listings.php:24
+#: templates/misc/breadcrumb.php:14 templates/misc/breadcrumb.php:48
+msgid "Listings"
+msgstr "Položky"
+
+#: includes/admin/class-inventor-admin-menu.php:108
+msgid "Lexicon"
+msgstr "Lexikón"
+
+#: includes/admin/class-inventor-admin-notices.php:60
+msgid "Please refresh the page and retry action."
+msgstr "Obnovte stránku a skúste ešte raz."
+
+#: includes/class-inventor-billing.php:35
+#: includes/post-types/class-inventor-post-type-report.php:93
+#: templates/mails/inquire.php:8 templates/mails/report.php:13
+#: templates/misc/report-form.php:92
+#: templates/widgets/listing-inquire-admin.php:46
+#: templates/widgets/listing-inquire.php:45
+msgid "Name"
+msgstr "Meno"
+
+#: includes/class-inventor-billing.php:36
+msgid "Reg. No."
+msgstr "IČO"
+
+#: includes/class-inventor-billing.php:37
+msgid "VAT No."
+msgstr "IČ DPH"
+
+#: includes/class-inventor-billing.php:38
+#: includes/post-types/class-inventor-post-type-user.php:140
+msgid "Street and number"
+msgstr "Ulica a číslo"
+
+#: includes/class-inventor-billing.php:39
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:40
+#: includes/post-types/class-inventor-post-type-user.php:122
+#: templates/payment/gateways/wire-transfer.php:58
+msgid "Country"
+msgstr "Krajina"
+
+#: includes/class-inventor-billing.php:40
+#: includes/post-types/class-inventor-post-type-user.php:128
+msgid "State / County"
+msgstr "Okres / Kraj"
+
+#: includes/class-inventor-billing.php:41
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:39
+#: includes/post-types/class-inventor-post-type-user.php:134
+#: templates/payment/gateways/wire-transfer.php:53
+msgid "City"
+msgstr "Mesto"
+
+#: includes/class-inventor-billing.php:42
+#: includes/post-types/class-inventor-post-type-user.php:146
+msgid "Postal code"
+msgstr "PSČ"
+
+#: includes/class-inventor-billing.php:81 templates/payment/payment-form.php:47
+msgid "Billing details"
+msgstr "Fakturačné údaje"
+
+#: includes/class-inventor-filter.php:35
+#: templates/widgets/filter-fields/listing-type.php:4
+#: templates/widgets/filter-fields/listing-type.php:16
+msgid "Listing type"
+msgstr "Typ položky"
+
+#: includes/class-inventor-filter.php:36 includes/class-inventor-filter.php:67
+#: includes/class-inventor-metaboxes.php:58
+#: includes/post-types/class-inventor-post-type-food.php:121
+#: includes/post-types/class-inventor-post-type-report.php:125
+#: templates/widgets/filter-admin.php:18
+#: templates/widgets/filter-fields/title.php:4
+#: templates/widgets/filter-fields/title.php:8
+#: templates/widgets/listing-author-admin.php:12
+#: templates/widgets/listing-categories-admin.php:15
+#: templates/widgets/listing-categories-boxes-admin.php:15
+#: templates/widgets/listing-details-admin.php:12
+#: templates/widgets/listing-inquire-admin.php:23
+#: templates/widgets/listings-admin.php:22
+#: templates/widgets/opening-hours-admin.php:12
+msgid "Title"
+msgstr "Názov"
+
+#: includes/class-inventor-filter.php:37
+#: includes/class-inventor-metaboxes.php:68
+#: includes/class-inventor-post-types.php:512
+#: includes/post-types/class-inventor-post-type-food.php:127
+#: templates/widgets/filter-fields/description.php:4
+#: templates/widgets/filter-fields/description.php:8
+#: templates/widgets/listing-categories-admin.php:28
+#: templates/widgets/listing-categories-boxes-admin.php:28
+#: templates/widgets/listings-admin.php:35
+msgid "Description"
+msgstr "Opis"
+
+#: includes/class-inventor-filter.php:38
+#: templates/widgets/filter-fields/keyword.php:4
+#: templates/widgets/filter-fields/keyword.php:8
+msgid "Keyword"
+msgstr "Kľúčové slovo"
+
+#: includes/class-inventor-filter.php:39
+#: templates/widgets/filter-fields/distance.php:4
+#: templates/widgets/filter-fields/distance.php:10
+msgid "Distance"
+msgstr "Vzdialenosť"
+
+#: includes/class-inventor-filter.php:40 includes/class-inventor-filter.php:66
+#: includes/class-inventor-metaboxes.php:532
+#: includes/class-inventor-metaboxes.php:541
+#: includes/class-inventor-post-types.php:381
+#: includes/post-types/class-inventor-post-type-food.php:133
+#: includes/post-types/class-inventor-post-type-transaction.php:107
+#: includes/post-types/class-inventor-post-type-transaction.php:142
+#: templates/payment/transactions.php:19
+msgid "Price"
+msgstr "Cena"
+
+#: includes/class-inventor-filter.php:41
+msgid "Geolocation"
+msgstr "Geolokácia"
+
+#: includes/class-inventor-filter.php:44
+#: includes/class-inventor-metaboxes.php:601
+#: templates/widgets/filter-fields/featured.php:7
+msgid "Featured"
+msgstr "Významné"
+
+#: includes/class-inventor-filter.php:45
+#: includes/class-inventor-metaboxes.php:608
+#: templates/widgets/filter-fields/reduced.php:6
+msgid "Reduced"
+msgstr "Zlacnené"
+
+#: includes/class-inventor-filter.php:68 templates/submissions/list.php:44
+msgid "Published"
+msgstr "Publikované"
+
+#: includes/class-inventor-metaboxes.php:50
+#: includes/post-types/class-inventor-post-type-report.php:74
+#: includes/post-types/class-inventor-post-type-transaction.php:74
+#: includes/post-types/class-inventor-post-type-user.php:73
+msgid "General"
+msgstr "Všeobecné"
+
+#: includes/class-inventor-metaboxes.php:79
+#: includes/class-inventor-metaboxes.php:193
+msgid "Featured Image"
+msgstr "Významný obrázok"
+
+#: includes/class-inventor-metaboxes.php:95
+#: includes/class-inventor-metaboxes.php:115
+#: includes/class-inventor-post-types.php:520
+msgid "FAQ"
+msgstr "Najčastejšie otázky"
+
+#: includes/class-inventor-metaboxes.php:116
+msgid "Add Another FAQ"
+msgstr "Pridať ďalšiu otázku"
+
+#: includes/class-inventor-metaboxes.php:117
+msgid "Remove FAQ"
+msgstr "Zmazať otázku"
+
+#: includes/class-inventor-metaboxes.php:123
+msgid "Question"
+msgstr "Otázka"
+
+#: includes/class-inventor-metaboxes.php:130
+msgid "Answer"
+msgstr "Odpoveď"
+
+#: includes/class-inventor-metaboxes.php:146
+msgid "Branding"
+msgstr "Značka"
+
+#: includes/class-inventor-metaboxes.php:153
+msgid "Slogan"
+msgstr "Slogan"
+
+#: includes/class-inventor-metaboxes.php:160
+msgid "Brand color"
+msgstr "Farba značky"
+
+#: includes/class-inventor-metaboxes.php:167
+msgid "Logo"
+msgstr "Logo"
+
+#: includes/class-inventor-metaboxes.php:185
+msgid "Banner"
+msgstr "Baner"
+
+#: includes/class-inventor-metaboxes.php:194
+#: includes/class-inventor-metaboxes.php:223
+msgid "Custom Image"
+msgstr "Vlastný obrázok"
+
+#: includes/class-inventor-metaboxes.php:195
+#: includes/class-inventor-metaboxes.php:233
+#: includes/class-inventor-metaboxes.php:350
+#: includes/class-inventor-post-types.php:514
+msgid "Video"
+msgstr "Video"
+
+#: includes/class-inventor-metaboxes.php:199
+msgid "Google Map"
+msgstr "Google mapa"
+
+#: includes/class-inventor-metaboxes.php:202
+msgid "Google Street View"
+msgstr "Google street view"
+
+#: includes/class-inventor-metaboxes.php:203
+msgid "Google Inside View"
+msgstr "Google inside view"
+
+#: includes/class-inventor-metaboxes.php:209
+msgid "Banner Type"
+msgstr "Typ banera"
+
+#: includes/class-inventor-metaboxes.php:216
+msgid "To set map position go to section <strong>Location</strong>."
+msgstr "Na nastavenie pozície mapy choďte do sekcie <strong>Poloha</strong>."
+
+#: includes/class-inventor-metaboxes.php:217
+msgid ""
+"To set Street View go to section <strong>Location</strong>. Do not forget to "
+"<strong>enable</strong> Street View."
+msgstr ""
+"Na nastavenie pohľadu z ulice choďte do sekcie <strong>Poloha</strong>. "
+"Nezabudnite <strong>povoliť</strong> Street View."
+
+#: includes/class-inventor-metaboxes.php:218
+msgid ""
+"To set Inside View go to section <strong>Location</strong>. Do not forget to "
+"<strong>enable</strong> Inside View."
+msgstr ""
+"Na nastavenie pohľadu z vnútra choďte do sekcie <strong>Poloha</strong>. "
+"Nezabudnite <strong>povoliť</strong> Inside View."
+
+#: includes/class-inventor-metaboxes.php:226
+msgid "Upload an image."
+msgstr "Nahrať obrázok."
+
+#: includes/class-inventor-metaboxes.php:236
+msgid "Upload video file in .mp4 format."
+msgstr "Nahrať video vo formáte .mp4."
+
+#: includes/class-inventor-metaboxes.php:242
+msgid "Loop"
+msgstr "Slučka"
+
+#: includes/class-inventor-metaboxes.php:245
+msgid "Check to loop video"
+msgstr "Zaškrnite pre opakovanie prehrávania videa"
+
+#: includes/class-inventor-metaboxes.php:253
+msgid "Zoom"
+msgstr "Priblíženie"
+
+#: includes/class-inventor-metaboxes.php:257
+msgid "Minimum value of zoom is 0. Maximum value depends on location (12-25)."
+msgstr "Minimálna hodnota je 0. Maximálna závisí od polohy (12-25)."
+
+#: includes/class-inventor-metaboxes.php:268
+msgid "Map Type"
+msgstr "Typ mapy"
+
+#: includes/class-inventor-metaboxes.php:272
+msgid "Roadmap"
+msgstr "Cesta"
+
+#: includes/class-inventor-metaboxes.php:273
+msgid "Satellite"
+msgstr "Satelit"
+
+#: includes/class-inventor-metaboxes.php:274
+msgid "Hybrid"
+msgstr "Hybrid"
+
+#: includes/class-inventor-metaboxes.php:281
+msgid "Marker"
+msgstr "Značka"
+
+#: includes/class-inventor-metaboxes.php:285
+msgid "Check to show marker."
+msgstr "Zaškrnite pre zobrazenie značky."
+
+#: includes/class-inventor-metaboxes.php:300
+#: includes/class-inventor-metaboxes.php:308
+#: includes/class-inventor-post-types.php:511
+msgid "Gallery"
+msgstr "Galéria"
+
+#: includes/class-inventor-metaboxes.php:325
+#: includes/class-inventor-metaboxes.php:332
+#: includes/post-types/class-inventor-post-type-car.php:181
+#: includes/post-types/class-inventor-post-type-shopping.php:115
+#: includes/taxonomies/class-inventor-taxonomy-colors.php:35
+msgid "Color"
+msgstr "Farba"
+
+#: includes/class-inventor-metaboxes.php:358 templates/mails/inquire.php:25
+#: templates/mails/report.php:9
+msgid "URL"
+msgstr "URL"
+
+#: includes/class-inventor-metaboxes.php:361
+msgid ""
+"For more information about embeding videos and video links support please "
+"read this <a href=\"http://codex.wordpress.org/Embeds\">article</a>."
+msgstr ""
+"Viac informácií o vkladaní videí a o podpore videa sa dočítate v tomto <a "
+"href=\"http://codex.wordpress.org/Embeds\">článku</a>."
+
+#: includes/class-inventor-metaboxes.php:376
+#: includes/class-inventor-metaboxes.php:383
+#: templates/widgets/listing-categories-admin.php:40
+#: templates/widgets/listing-categories-boxes-admin.php:40
+msgid "Listing categories"
+msgstr "Kategórie položiek"
+
+#: includes/class-inventor-metaboxes.php:401
+#: includes/class-inventor-post-types.php:516
+msgid "Opening Hours"
+msgstr "Otváracie hodiny"
+
+#: includes/class-inventor-metaboxes.php:445
+#: includes/class-inventor-post-types.php:518
+#: templates/listings/detail/section-contact.php:9
+msgid "Contact"
+msgstr "Kontakt"
+
+#: includes/class-inventor-metaboxes.php:454
+#: includes/post-types/class-inventor-post-type-user.php:97
+#: templates/accounts/register.php:16
+#: templates/listings/detail/section-contact.php:17
+#: templates/mails/inquire.php:12 templates/mails/report.php:17
+#: templates/misc/report-form.php:96
+#: templates/widgets/listing-inquire-admin.php:59
+#: templates/widgets/listing-inquire.php:51
+msgid "E-mail"
+msgstr "E-mail"
+
+#: includes/class-inventor-metaboxes.php:461
+#: includes/post-types/class-inventor-post-type-user.php:109
+#: templates/listings/detail/section-contact.php:33
+#: templates/mails/inquire.php:16
+#: templates/widgets/listing-inquire-admin.php:72
+#: templates/widgets/listing-inquire.php:57
+msgid "Phone"
+msgstr "Telefón"
+
+#: includes/class-inventor-metaboxes.php:468
+#: includes/post-types/class-inventor-post-type-user.php:103
+#: templates/listings/detail/section-contact.php:25
+#: templates/widgets/listing-author.php:55
+msgid "Website"
+msgstr "Webstránka"
+
+#: includes/class-inventor-metaboxes.php:475
+#: includes/post-types/class-inventor-post-type-user.php:116
+#: templates/listings/detail/section-contact.php:43
+msgid "Address"
+msgstr "Adresa"
+
+#: includes/class-inventor-metaboxes.php:491
+msgid "Social"
+msgstr "Sociálne siete"
+
+#: includes/class-inventor-metaboxes.php:544
+#: includes/post-types/class-inventor-post-type-food.php:137
+#, php-format
+msgid "In %s."
+msgstr "V %s."
+
+#: includes/class-inventor-metaboxes.php:557
+msgid "Prefix"
+msgstr "Predpona"
+
+#: includes/class-inventor-metaboxes.php:559
+msgid "Any text shown before price (for example \"from\")."
+msgstr "Ľubovoľný text zobrazený pred cenou (napríklad “od”)"
+
+#: includes/class-inventor-metaboxes.php:565
+msgid "Suffix"
+msgstr "Prípona"
+
+#: includes/class-inventor-metaboxes.php:567
+msgid "Any text shown after price (for example \"per night\")."
+msgstr "Ľubovoľný text zobrazený za cenou (napríklad “za noc”)"
+
+#: includes/class-inventor-metaboxes.php:573
+msgid "Custom"
+msgstr "Vlastné"
+
+#: includes/class-inventor-metaboxes.php:575
+msgid ""
+"Any text instead of numeric price (for example \"by agreement\"). Prefix and "
+"Suffix will be ignored."
+msgstr ""
+"Ľubovoľný text zobrazený namiesto číselnej ceny (napríklad “cena dohodou”). "
+"Predpona a prípona budú odignorované."
+
+#: includes/class-inventor-metaboxes.php:594
+msgid "Flags"
+msgstr "Značky"
+
+#: includes/class-inventor-metaboxes.php:625
+#: includes/class-inventor-metaboxes.php:632
+#: includes/class-inventor-metaboxes.php:773
+#: includes/post-types/class-inventor-post-type-report.php:129
+#: includes/post-types/class-inventor-post-type-transaction.php:146
+#: templates/mails/inquire.php:20 templates/payment/transactions.php:24
+#: templates/widgets/listing-inquire-admin.php:98
+msgid "Date"
+msgstr "Dátum"
+
+#: includes/class-inventor-metaboxes.php:649
+#: includes/class-inventor-metaboxes.php:656
+msgid "Time"
+msgstr "Čas"
+
+#: includes/class-inventor-metaboxes.php:673
+msgid "Date interval"
+msgstr "Dátumový interval"
+
+#: includes/class-inventor-metaboxes.php:680
+msgid "Date from"
+msgstr "Dátum od"
+
+#: includes/class-inventor-metaboxes.php:687
+msgid "Date to"
+msgstr "Dátum do"
+
+#: includes/class-inventor-metaboxes.php:704
+#: includes/class-inventor-metaboxes.php:766
+msgid "Date and time interval"
+msgstr "Dátumový a časový interval"
+
+#: includes/class-inventor-metaboxes.php:711
+msgid "Date and time from"
+msgstr "Dátum a čas od"
+
+#: includes/class-inventor-metaboxes.php:718
+msgid "Date and time to"
+msgstr "Dátum a čas do"
+
+#: includes/class-inventor-metaboxes.php:735
+msgid "Time interval"
+msgstr "Časový interval"
+
+#: includes/class-inventor-metaboxes.php:742
+#: includes/class-inventor-metaboxes.php:780
+#: templates/controls/opening-hours.php:16
+msgid "Time from"
+msgstr "Čas od"
+
+#: includes/class-inventor-metaboxes.php:749
+#: includes/class-inventor-metaboxes.php:787
+#: templates/controls/opening-hours.php:17
+msgid "Time to"
+msgstr "Čas do"
+
+#: includes/class-inventor-metaboxes.php:804
+#: includes/class-inventor-metaboxes.php:880
+#: includes/class-inventor-post-types.php:517
+#: includes/taxonomies/class-inventor-taxonomy-locations.php:35
+#: templates/listings/row.php:38
+#: templates/widgets/filter-fields/geolocation.php:4
+#: templates/widgets/filter-fields/geolocation.php:8
+#: templates/widgets/filter-fields/locations.php:54
+#: templates/widgets/filter-fields/locations.php:68
+msgid "Location"
+msgstr "Poloha"
+
+#: includes/class-inventor-metaboxes.php:813
+msgid "Map Location"
+msgstr "Poloha na mape"
+
+#: includes/class-inventor-metaboxes.php:825
+msgid "Map Location Polygon"
+msgstr "Polygón umiestnenia na mape"
+
+#: includes/class-inventor-metaboxes.php:827
+msgid ""
+"Enter encoded path. It can be constructed using <a href=\"https://google-"
+"developers.appspot.com/maps/documentation/utilities/"
+"polylineutility_6dfa1f29011ecf2cf389dba27e343637.frame?hl=en&redesign=true\" "
+"target=\"_blank\">Interactive Polyline Encoder Utility</a>."
+msgstr ""
+"Zadajte zakódovanú cestu. Môžete ju zostrojiť použitím nástroja <a href="
+"\"https://google-developers.appspot.com/maps/documentation/utilities/"
+"polylineutility_6dfa1f29011ecf2cf389dba27e343637.frame?hl=en&redesign=true\" "
+"target=\"_blank\">Interactive Polyline Encoder Utility</a>."
+
+#: includes/class-inventor-metaboxes.php:837
+#: templates/listings/detail/section-google-map.php:29
+msgid "Street View"
+msgstr "Street View"
+
+#: includes/class-inventor-metaboxes.php:840
+msgid "Check to enable Street View"
+msgstr "Zaškrtnite pre povolenie zobrazenia z ulice"
+
+#: includes/class-inventor-metaboxes.php:847
+msgid "Street View Location"
+msgstr "Street View poloha"
+
+#: includes/class-inventor-metaboxes.php:859
+msgid "Inside View"
+msgstr "Inside View"
+
+#: includes/class-inventor-metaboxes.php:862
+msgid "Check to enable Inside View"
+msgstr "Zaškrtnite pre povolenie zobrazenia z vnútra"
+
+#: includes/class-inventor-metaboxes.php:869
+msgid "Inside View Location"
+msgstr "Inside View poloha"
+
+#: includes/class-inventor-post-types.php:466
+msgid "Yes"
+msgstr "Áno"
+
+#: includes/class-inventor-post-types.php:468
+msgid "No"
+msgstr "Nie"
+
+#: includes/class-inventor-post-types.php:513
+#: includes/post-types/class-inventor-post-type-car.php:100
+#: includes/post-types/class-inventor-post-type-dating.php:88
+#: includes/post-types/class-inventor-post-type-education.php:101
+#: includes/post-types/class-inventor-post-type-event.php:100
+#: includes/post-types/class-inventor-post-type-food.php:87
+#: includes/post-types/class-inventor-post-type-hotel.php:87
+#: includes/post-types/class-inventor-post-type-pet.php:101
+#: includes/post-types/class-inventor-post-type-shopping.php:101
+#: includes/post-types/class-inventor-post-type-travel.php:100
+msgid "Details"
+msgstr "Detaily"
+
+#: includes/class-inventor-post-types.php:515
+msgid "Meals And Drinks"
+msgstr "Jedlá a nápoje"
+
+#: includes/class-inventor-post-types.php:519
+msgid "Social connections"
+msgstr "Sociálne siete"
+
+#: includes/class-inventor-reports.php:34
+msgid "Listing was reported"
+msgstr "Položka bola nahlásená"
+
+#: includes/class-inventor-reports.php:140
+msgid "Listing was reported. Please, wait for admin review."
+msgstr "Položka bola nahlásená. Počkajte za schválením administrátora."
+
+#: includes/class-inventor-reports.php:142
+#: includes/post-types/class-inventor-post-type-listing.php:175
+msgid "Unable to send a message."
+msgstr "Nepodarilo sa odoslať správu."
+
+#: includes/class-inventor-shortcodes.php:52
+msgid "You have been successfully logged out."
+msgstr "Boli ste úspešne odhlásený."
+
+#: includes/class-inventor-shortcodes.php:152
+msgid "Check your package."
+msgstr "Skontrolujte svoj balík."
+
+#: includes/class-inventor-shortcodes.php:188
+msgid "Proceed to next step"
+msgstr "Pokračovať na ďalší krok"
+
+#: includes/class-inventor-shortcodes.php:188
+msgid "Save"
+msgstr "Uložiť"
+
+#: includes/class-inventor-shortcodes.php:318
+msgid "Save profile"
+msgstr "Uložiť profil"
+
+#: includes/class-inventor-submission.php:244
+msgid "New submission has been successfully created."
+msgstr "Nová položka bola úspešne vytvorená."
+
+#: includes/class-inventor-submission.php:250
+msgid "Submission has been successfully updated."
+msgstr "Položka bola úspešne aktualizovaná."
+
+#: includes/class-inventor-submission.php:342
+msgid "Item has been successfully removed."
+msgstr "Položka bola úspešne zmazaná."
+
+#: includes/class-inventor-submission.php:344
+msgid "An error occurred when removing an item."
+msgstr "Pri mazaní položky nastala chyba."
+
+#: includes/class-inventor-utilities.php:58
+msgid "Please sign in before accessing this page."
+msgstr "Pred vstupom na túto stránku sa musíte prihlásiť."
+
+#: includes/class-inventor-utilities.php:66 templates/misc/not-allowed.php:11
+msgid "You are not allowed to access this page."
+msgstr "Nemáte povolenie na zobrazenie tejto stránky."
+
+#: includes/class-inventor-utilities.php:124
+msgid "Not set"
+msgstr "Nenastavené"
+
+#: includes/class-inventor-wire-transfer.php:36
+msgid "Wire Transfer"
+msgstr "Bankový prevod"
+
+#: includes/class-inventor-wire-transfer.php:90
+msgid "Missing payment data."
+msgstr "Chýbajú platobné údaje."
+
+#: includes/class-inventor-wire-transfer.php:95
+#: includes/post-types/class-inventor-post-type-user.php:391
+msgid "You must agree terms &amp; conditions."
+msgstr "Musíte súhlasiť s obchodnými podmienkami."
+
+#: includes/customizations/class-inventor-customizations-currency.php:34
+msgid "Inventor Currency"
+msgstr "Inventor mena"
+
+#: includes/customizations/class-inventor-customizations-currency.php:46
+msgid "Currency Symbol"
+msgstr "Symbol meny"
+
+#: includes/customizations/class-inventor-customizations-currency.php:59
+msgid "Currency Code"
+msgstr "Kód meny"
+
+#: includes/customizations/class-inventor-customizations-currency.php:73
+msgid "Show Symbol After Amount"
+msgstr "Zobraziť symbol za číslom"
+
+#: includes/customizations/class-inventor-customizations-currency.php:85
+msgid "Decimal places"
+msgstr "Desatinné miesta"
+
+#: includes/customizations/class-inventor-customizations-currency.php:104
+msgid "Decimal Separator"
+msgstr "Desatinná čiarka"
+
+#: includes/customizations/class-inventor-customizations-currency.php:109
+#: includes/customizations/class-inventor-customizations-currency.php:127
+msgid ". (dot)"
+msgstr ". (bodka)"
+
+#: includes/customizations/class-inventor-customizations-currency.php:110
+#: includes/customizations/class-inventor-customizations-currency.php:128
+msgid ", (comma)"
+msgstr ", (čiarka)"
+
+#: includes/customizations/class-inventor-customizations-currency.php:122
+msgid "Thousands Separator"
+msgstr "Oddeľovač tisícoviek"
+
+#: includes/customizations/class-inventor-customizations-currency.php:129
+msgid "\" \" (space)"
+msgstr "\" \" (medzera)"
+
+#: includes/customizations/class-inventor-customizations-currency.php:130
+msgid "\"\" (empty string)"
+msgstr "\"\" (prázdny reťazec)"
+
+#: includes/customizations/class-inventor-customizations-general.php:36
+msgid "Inventor General"
+msgstr "Inventor všeobecné"
+
+#: includes/customizations/class-inventor-customizations-general.php:63
+msgid "Post types"
+msgstr "Typy položiek"
+
+#: includes/customizations/class-inventor-customizations-general.php:65
+msgid ""
+"After changing post types make sure that your resave permalinks in "
+"\"Settings - Permalinks\""
+msgstr ""
+"Po zmene typov nezabudnite preuložiť trvalé odkazy v “Nastavenia - Trvalé "
+"odkazy”"
+
+#: includes/customizations/class-inventor-customizations-general.php:78
+msgid "Default sorting for listing archive"
+msgstr "Prednastavené triedenie pre archív položiek"
+
+#: includes/customizations/class-inventor-customizations-general.php:93
+msgid "Default ordering for listing archive"
+msgstr "Prednastavené zoradenie pre archív položiek"
+
+#: includes/customizations/class-inventor-customizations-general.php:111
+msgid "Automatically log user in after registration"
+msgstr "Automaticky prihlásiť používateľa po registrácii"
+
+#: includes/customizations/class-inventor-customizations-general.php:125
+msgid "Show listing archive as grid"
+msgstr "Zobraziť archív položiek ako mriežku"
+
+#: includes/customizations/class-inventor-customizations-general.php:139
+msgid "Purchase code"
+msgstr "Kód objednávky"
+
+#: includes/customizations/class-inventor-customizations-general.php:153
+msgid "Google Browser Key"
+msgstr "Google Browser Key"
+
+#: includes/customizations/class-inventor-customizations-general.php:154
+msgid ""
+"Browser API key. Read more <a href=\"https://developers.google.com/maps/"
+"documentation/javascript/get-api-key\" target=\"_blank\">here</a>."
+msgstr ""
+"Browser API kľúč. Čitajte viac <a href=\"https://developers.google.com/maps/"
+"documentation/javascript/get-api-key\" target=\"_blank\">tu</a>."
+
+#: includes/customizations/class-inventor-customizations-measurement.php:34
+msgid "Inventor Measurement"
+msgstr "Inventor meranie"
+
+#: includes/customizations/class-inventor-customizations-measurement.php:46
+msgid "Area Unit"
+msgstr "Plošná jednotka"
+
+#: includes/customizations/class-inventor-customizations-measurement.php:59
+msgid "Short Distance Unit"
+msgstr "Jednotka krátkej vzdialenosti"
+
+#: includes/customizations/class-inventor-customizations-measurement.php:62
+msgid "Example: \"ft\" or \"m\""
+msgstr "Napríklad: “ft” alebo \"m\""
+
+#: includes/customizations/class-inventor-customizations-measurement.php:73
+msgid "Long Distance Unit"
+msgstr "Jednotka dlhej vzdialenosti"
+
+#: includes/customizations/class-inventor-customizations-measurement.php:76
+msgid "Example: \"mi\" or \"km\""
+msgstr "Napríklad: “mi” alebo \"m\""
+
+#: includes/customizations/class-inventor-customizations-measurement.php:87
+msgid "Weight unit"
+msgstr "Jednotka hmotnosti"
+
+#: includes/customizations/class-inventor-customizations-measurement.php:90
+msgid "Example: \"lbs\" or \"kg\""
+msgstr "Napríklad: “lbs” alebo “kg”"
+
+#: includes/customizations/class-inventor-customizations-pages.php:36
+msgid "Inventor Pages"
+msgstr "Inventor stránky"
+
+#: includes/customizations/class-inventor-customizations-pages.php:59
+msgid "Login Required"
+msgstr "Potrebné prihlásenie"
+
+#: includes/customizations/class-inventor-customizations-pages.php:74
+msgid "After Login"
+msgstr "Po prihlásení"
+
+#: includes/customizations/class-inventor-customizations-pages.php:89
+msgid "Registration"
+msgstr "Registrácia"
+
+#: includes/customizations/class-inventor-customizations-pages.php:104
+msgid "After Register"
+msgstr "Po registrácii"
+
+#: includes/customizations/class-inventor-customizations-pages.php:119
+msgid "Profile"
+msgstr "Profil"
+
+#: includes/customizations/class-inventor-customizations-pages.php:134
+msgid "Change password"
+msgstr "Zmena hesla"
+
+#: includes/customizations/class-inventor-customizations-pages.php:149
+#: templates/payment/payment-form.php:83
+msgid "Terms & Conditions"
+msgstr "Obchodné podmienky"
+
+#: includes/customizations/class-inventor-customizations-pages.php:164
+msgid "Report listing"
+msgstr "Nahlásiť položku"
+
+#: includes/customizations/class-inventor-customizations-pages.php:179
+msgid "Payment"
+msgstr "Platba"
+
+#: includes/customizations/class-inventor-customizations-pages.php:194
+msgid "After Payment"
+msgstr "Po platbe"
+
+#: includes/customizations/class-inventor-customizations-pages.php:209
+#: includes/post-types/class-inventor-post-type-transaction.php:37
+#: includes/post-types/class-inventor-post-type-transaction.php:43
+#: includes/post-types/class-inventor-post-type-transaction.php:49
+msgid "Transactions"
+msgstr "Transakcie"
+
+#: includes/customizations/class-inventor-customizations-submission.php:36
+msgid "Inventor Submission"
+msgstr "Inventor podanie"
+
+#: includes/customizations/class-inventor-customizations-submission.php:49
+msgid "Type"
+msgstr "Typ"
+
+#: includes/customizations/class-inventor-customizations-submission.php:53
+msgid "Free for all"
+msgstr "Zdarma pre všetkých"
+
+#: includes/customizations/class-inventor-customizations-submission.php:66
+msgid "Review Before Submission"
+msgstr "Shváliť pred publikáciou"
+
+#: includes/customizations/class-inventor-customizations-submission.php:80
+msgid "User listings"
+msgstr "Položky používateľa"
+
+#: includes/customizations/class-inventor-customizations-submission.php:95
+msgid "Add listing"
+msgstr "Pridať položku"
+
+#: includes/customizations/class-inventor-customizations-submission.php:110
+msgid "Edit listing"
+msgstr "Upraviť položku"
+
+#: includes/customizations/class-inventor-customizations-submission.php:125
+msgid "Remove listing"
+msgstr "Zmazať položku"
+
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:34
+msgid "Account number"
+msgstr "Číslo účtu"
+
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:35
+msgid "Bank code"
+msgstr "Kód banky"
+
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:36
+msgid "Full name"
+msgstr "Celé meno"
+
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:37
+#: templates/payment/gateways/wire-transfer.php:43
+msgid "Street / P.O.Box"
+msgstr "Ulica / P.O.Box"
+
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:38
+msgid "Postcode"
+msgstr "PSČ"
+
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:55
+msgid "Inventor Wire Transfer"
+msgstr "Inventor bankový prevod"
+
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:70
+msgid "Bank account number [mandatory]"
+msgstr "Číslo účtu [povinné]"
+
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:84
+msgid "SWIFT or BIC of your bank [mandatory]"
+msgstr "SWIFT alebo BIC kód banky [povinné]"
+
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:98
+msgid "Your full name [mandatory]"
+msgstr "Vaše celé meno [povinné]"
+
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:112
+msgid "Enter your street."
+msgstr "Zadajte svoje ulicu."
+
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:126
+msgid "Enter your postcode (ZIP)."
+msgstr "Zadajte svoje PSČ."
+
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:140
+msgid "Enter your city."
+msgstr "Zadajte svoje mesto."
+
+#: includes/customizations/class-inventor-customizations-wire-transfer.php:154
+msgid "Enter your country [mandatory]"
+msgstr "Zadajte svoju krajinu [povinné]"
+
+#: includes/field-types/class-inventor-field-types-taxonomy-select-hierarchy.php:47
+msgid "No terms"
+msgstr "Žiadne termy"
+
+#: includes/field-types/class-inventor-field-types-unique-user-email.php:61
+msgid "Invalid E-mail value."
+msgstr "Neplatný E-mail."
+
+#: includes/field-types/class-inventor-field-types-unique-user-email.php:68
+msgid "E-mail already exists."
+msgstr "E-mail už existuje."
+
+#: includes/post-types/class-inventor-post-type-business.php:47
+#: includes/post-types/class-inventor-post-type-business.php:53
+#: includes/post-types/class-inventor-post-type-business.php:59
+msgid "Businesses"
+msgstr "Biznisy"
+
+#: includes/post-types/class-inventor-post-type-business.php:48
+msgid "Business"
+msgstr "Biznis"
+
+#: includes/post-types/class-inventor-post-type-business.php:49
+#: includes/post-types/class-inventor-post-type-business.php:50
+msgid "Add New Business"
+msgstr "Pridať nový biznis"
+
+#: includes/post-types/class-inventor-post-type-business.php:51
+msgid "Edit Business"
+msgstr "Upraviť biznis"
+
+#: includes/post-types/class-inventor-post-type-business.php:52
+msgid "New Business"
+msgstr "Nový biznis"
+
+#: includes/post-types/class-inventor-post-type-business.php:54
+msgid "View Business"
+msgstr "Zobraziť biznis"
+
+#: includes/post-types/class-inventor-post-type-business.php:55
+msgid "Search Business"
+msgstr "Zobraziť biznis"
+
+#: includes/post-types/class-inventor-post-type-business.php:56
+msgid "No Businesses found"
+msgstr "Nenašli sa žiadne biznisy"
+
+#: includes/post-types/class-inventor-post-type-business.php:57
+msgid "No Businesses Found in Trash"
+msgstr "V koši sa nenašli žiadne biznisy"
+
+#: includes/post-types/class-inventor-post-type-business.php:68
+msgctxt "URL slug"
+msgid "businesses"
+msgstr "biznisy"
+
+#: includes/post-types/class-inventor-post-type-car.php:60
+#: includes/post-types/class-inventor-post-type-car.php:66
+#: includes/post-types/class-inventor-post-type-car.php:72
+#: includes/post-types/class-inventor-post-type-event.php:72
+msgid "Cars"
+msgstr "Automobily"
+
+#: includes/post-types/class-inventor-post-type-car.php:61
+msgid "Car"
+msgstr "Automobil"
+
+#: includes/post-types/class-inventor-post-type-car.php:62
+#: includes/post-types/class-inventor-post-type-car.php:63
+msgid "Add New Car"
+msgstr "Pridať nový automobil"
+
+#: includes/post-types/class-inventor-post-type-car.php:64
+msgid "Edit Car"
+msgstr "Upraviť automobil"
+
+#: includes/post-types/class-inventor-post-type-car.php:65
+msgid "New Car"
+msgstr "Nový automobil"
+
+#: includes/post-types/class-inventor-post-type-car.php:67
+msgid "View Car"
+msgstr "Zobraziť automobil"
+
+#: includes/post-types/class-inventor-post-type-car.php:68
+msgid "Search Car"
+msgstr "Vyhľadať automobil"
+
+#: includes/post-types/class-inventor-post-type-car.php:69
+msgid "No Cars found"
+msgstr "Nenašli sa žiadne automobily"
+
+#: includes/post-types/class-inventor-post-type-car.php:70
+msgid "No Cars Found in Trash"
+msgstr "V koši sa nenašli žiadne automobily"
+
+#: includes/post-types/class-inventor-post-type-car.php:81
+msgctxt "URL slug"
+msgid "cars"
+msgstr "automobily"
+
+#: includes/post-types/class-inventor-post-type-car.php:107
+msgid "Engine type"
+msgstr "Motorizácia"
+
+#: includes/post-types/class-inventor-post-type-car.php:115
+msgid "Body style"
+msgstr "Karoséria"
+
+#: includes/post-types/class-inventor-post-type-car.php:123
+msgid "Transmission"
+msgstr "Prevodovka"
+
+#: includes/post-types/class-inventor-post-type-car.php:131
+msgid "Model"
+msgstr "Model"
+
+#: includes/post-types/class-inventor-post-type-car.php:139
+msgid "Year manufactured"
+msgstr "Rok výroby"
+
+#: includes/post-types/class-inventor-post-type-car.php:150
+msgid "Mileage"
+msgstr "Najazdených km"
+
+#: includes/post-types/class-inventor-post-type-car.php:161
+msgid "Condition"
+msgstr "Stav"
+
+#: includes/post-types/class-inventor-post-type-car.php:165
+msgid "new"
+msgstr "nové"
+
+#: includes/post-types/class-inventor-post-type-car.php:166
+msgid "used"
+msgstr "použité"
+
+#: includes/post-types/class-inventor-post-type-car.php:172
+msgid "Leasing available"
+msgstr "Dostupný lízing"
+
+#: includes/post-types/class-inventor-post-type-car.php:188
+msgid "Interior color"
+msgstr "Farba interéru"
+
+#: includes/post-types/class-inventor-post-type-car.php:196
+msgid "Exterior color"
+msgstr "Farba exteriéru"
+
+#: includes/post-types/class-inventor-post-type-dating.php:48
+#: includes/post-types/class-inventor-post-type-dating.php:54
+#: includes/post-types/class-inventor-post-type-dating.php:60
+msgid "Datings"
+msgstr "Zoznamky"
+
+#: includes/post-types/class-inventor-post-type-dating.php:49
+msgid "Dating"
+msgstr "Zoznamka"
+
+#: includes/post-types/class-inventor-post-type-dating.php:50
+#: includes/post-types/class-inventor-post-type-dating.php:51
+msgid "Add New Dating"
+msgstr "Pridať novú zoznamku"
+
+#: includes/post-types/class-inventor-post-type-dating.php:52
+msgid "Edit Dating"
+msgstr "Upraviť zoznamku"
+
+#: includes/post-types/class-inventor-post-type-dating.php:53
+msgid "New Dating"
+msgstr "Nová zoznamka"
+
+#: includes/post-types/class-inventor-post-type-dating.php:55
+msgid "View Dating"
+msgstr "Zobraziť zoznamku"
+
+#: includes/post-types/class-inventor-post-type-dating.php:56
+msgid "Search Dating"
+msgstr "Vyhľadať zoznamku"
+
+#: includes/post-types/class-inventor-post-type-dating.php:57
+msgid "No Datings found"
+msgstr "Nenašli sa žiadne zoznamky"
+
+#: includes/post-types/class-inventor-post-type-dating.php:58
+msgid "No Datings Found in Trash"
+msgstr "V koši sa nenašli žiadne zoznamky"
+
+#: includes/post-types/class-inventor-post-type-dating.php:69
+msgctxt "URL slug"
+msgid "datings"
+msgstr "zoznamky"
+
+#: includes/post-types/class-inventor-post-type-dating.php:95
+msgid "Dating groups"
+msgstr "Skupiny zoznamiek"
+
+#: includes/post-types/class-inventor-post-type-dating.php:102
+msgid "Gender"
+msgstr "Pohlavie"
+
+#: includes/post-types/class-inventor-post-type-dating.php:106
+msgid "Male"
+msgstr "Muž"
+
+#: includes/post-types/class-inventor-post-type-dating.php:107
+msgid "Female"
+msgstr "Žena"
+
+#: includes/post-types/class-inventor-post-type-dating.php:112
+msgid "Age"
+msgstr "Vek"
+
+#: includes/post-types/class-inventor-post-type-dating.php:122
+#: includes/post-types/class-inventor-post-type-shopping.php:129
+msgid "Weight"
+msgstr "Hmotnosť"
+
+#: includes/post-types/class-inventor-post-type-dating.php:132
+#: templates/payment/transactions.php:23
+msgid "Status"
+msgstr "Stav"
+
+#: includes/post-types/class-inventor-post-type-dating.php:139
+msgid "Eye color"
+msgstr "Farba očí"
+
+#: includes/post-types/class-inventor-post-type-dating.php:146
+msgid "Interests"
+msgstr "Záujmy"
+
+#: includes/post-types/class-inventor-post-type-education.php:61
+#: includes/post-types/class-inventor-post-type-education.php:67
+#: includes/post-types/class-inventor-post-type-education.php:73
+msgid "Educations"
+msgstr "Vzdelania"
+
+#: includes/post-types/class-inventor-post-type-education.php:62
+msgid "Education"
+msgstr "Vzdelanie"
+
+#: includes/post-types/class-inventor-post-type-education.php:63
+#: includes/post-types/class-inventor-post-type-education.php:64
+msgid "Add New Education"
+msgstr "Pridať nové vzdelanie"
+
+#: includes/post-types/class-inventor-post-type-education.php:65
+msgid "Edit Education"
+msgstr "Upraviť vzdelanie"
+
+#: includes/post-types/class-inventor-post-type-education.php:66
+msgid "New Education"
+msgstr "Nové vzdelanie"
+
+#: includes/post-types/class-inventor-post-type-education.php:68
+msgid "View Education"
+msgstr "Zobraziť vzdelanie"
+
+#: includes/post-types/class-inventor-post-type-education.php:69
+msgid "Search Education"
+msgstr "Vyhľadať vzdelanie"
+
+#: includes/post-types/class-inventor-post-type-education.php:70
+msgid "No Educations found"
+msgstr "Nenašli sa žiadne vzdelania"
+
+#: includes/post-types/class-inventor-post-type-education.php:71
+msgid "No Educations Found in Trash"
+msgstr "V koši sa nenašli žiadne vzdelania"
+
+#: includes/post-types/class-inventor-post-type-education.php:82
+msgctxt "URL slug"
+msgid "educations"
+msgstr "vzdelania"
+
+#: includes/post-types/class-inventor-post-type-education.php:108
+msgid "Education subject"
+msgstr "Predmet vzdelania"
+
+#: includes/post-types/class-inventor-post-type-education.php:115
+msgid "Education level"
+msgstr "Úroveň vzdelania"
+
+#: includes/post-types/class-inventor-post-type-education.php:122
+msgid "Lector"
+msgstr "Prednášajúci"
+
+#: includes/post-types/class-inventor-post-type-event.php:60
+#: includes/post-types/class-inventor-post-type-event.php:66
+msgid "Events"
+msgstr "Podujatia"
+
+#: includes/post-types/class-inventor-post-type-event.php:61
+msgid "Event"
+msgstr "Podujatie"
+
+#: includes/post-types/class-inventor-post-type-event.php:62
+#: includes/post-types/class-inventor-post-type-event.php:63
+msgid "Add New Event"
+msgstr "Pridať nové podujatie"
+
+#: includes/post-types/class-inventor-post-type-event.php:64
+msgid "Edit Event"
+msgstr "Upraviť podujatie"
+
+#: includes/post-types/class-inventor-post-type-event.php:65
+msgid "New Event"
+msgstr "Nové podujatie"
+
+#: includes/post-types/class-inventor-post-type-event.php:67
+msgid "View Event"
+msgstr "Zobraziť podujatie"
+
+#: includes/post-types/class-inventor-post-type-event.php:68
+msgid "Search Events"
+msgstr "Vyhľadať podujatie"
+
+#: includes/post-types/class-inventor-post-type-event.php:69
+msgid "No Events found"
+msgstr "Nenašli sa žiadne podujatia"
+
+#: includes/post-types/class-inventor-post-type-event.php:70
+msgid "No Events Found in Trash"
+msgstr "V koši sa nenašli žiadne podujatia"
+
+#: includes/post-types/class-inventor-post-type-event.php:81
+msgctxt "URL slug"
+msgid "events"
+msgstr "podujatia"
+
+#: includes/post-types/class-inventor-post-type-event.php:107
+msgid "Event type"
+msgstr "Typ podujatia"
+
+#: includes/post-types/class-inventor-post-type-food.php:47
+#: includes/post-types/class-inventor-post-type-food.php:53
+#: includes/post-types/class-inventor-post-type-food.php:59
+msgid "Food & Drinks"
+msgstr "Jedlá a nápoje"
+
+#: includes/post-types/class-inventor-post-type-food.php:48
+msgid "Food & Drink"
+msgstr "Jedlo a nápoj"
+
+#: includes/post-types/class-inventor-post-type-food.php:49
+#: includes/post-types/class-inventor-post-type-food.php:50
+msgid "Add New Food & Drink"
+msgstr "Pridať nové jedlo a nápoj"
+
+#: includes/post-types/class-inventor-post-type-food.php:51
+msgid "Edit Food & Drink"
+msgstr "Upraviť jedlo a nápoj"
+
+#: includes/post-types/class-inventor-post-type-food.php:52
+msgid "New Food & Drink"
+msgstr "Nové jedlo a nápoj"
+
+#: includes/post-types/class-inventor-post-type-food.php:54
+msgid "View Food & Drink"
+msgstr "Zobraziť jedlo a nápoj"
+
+#: includes/post-types/class-inventor-post-type-food.php:55
+msgid "Search Food & Drink"
+msgstr "Vyhľadať jedlo a nápoj"
+
+#: includes/post-types/class-inventor-post-type-food.php:56
+msgid "No Food & Drinks found"
+msgstr "Nenašli sa žiadne jedlá a nápoje"
+
+#: includes/post-types/class-inventor-post-type-food.php:57
+msgid "No Food & Drinks Found in Trash"
+msgstr "V koši sa nenašli žiadne jedlá a nápoje"
+
+#: includes/post-types/class-inventor-post-type-food.php:68
+msgctxt "URL slug"
+msgid "foods"
+msgstr "jedla"
+
+#: includes/post-types/class-inventor-post-type-food.php:94
+msgid "Food kind"
+msgstr "Typ jedla a nápoja"
+
+#: includes/post-types/class-inventor-post-type-food.php:102
+msgid "Meals and drinks menu"
+msgstr "Ponukový lístok"
+
+#: includes/post-types/class-inventor-post-type-food.php:112
+msgid "Item"
+msgstr "Položka"
+
+#: includes/post-types/class-inventor-post-type-food.php:113
+msgid "Add Another"
+msgstr "Pridať ďalšiu"
+
+#: includes/post-types/class-inventor-post-type-food.php:114
+#: templates/submissions/list.php:93
+msgid "Remove"
+msgstr "Zmazať"
+
+#: includes/post-types/class-inventor-post-type-food.php:142
+msgid "Serving day"
+msgstr "Deň servírovania"
+
+#: includes/post-types/class-inventor-post-type-food.php:144
+msgid "Leave blank if it is not daily menu"
+msgstr "Nechajte prázdne pokiaľ to nie je denné menu"
+
+#: includes/post-types/class-inventor-post-type-food.php:149
+#: templates/post-types/food/menu-item.php:26
+msgid "Speciality"
+msgstr "Špecialita"
+
+#: includes/post-types/class-inventor-post-type-food.php:154
+msgid "Photo"
+msgstr "Fotografia"
+
+#: includes/post-types/class-inventor-post-type-hotel.php:47
+#: includes/post-types/class-inventor-post-type-hotel.php:53
+#: includes/post-types/class-inventor-post-type-hotel.php:59
+msgid "Hotels"
+msgstr "Hotely"
+
+#: includes/post-types/class-inventor-post-type-hotel.php:48
+msgid "Hotel"
+msgstr "Hotel"
+
+#: includes/post-types/class-inventor-post-type-hotel.php:49
+#: includes/post-types/class-inventor-post-type-hotel.php:50
+msgid "Add New Hotel"
+msgstr "Pridať nový hotel"
+
+#: includes/post-types/class-inventor-post-type-hotel.php:51
+msgid "Edit Hotel"
+msgstr "Upraviť hotel"
+
+#: includes/post-types/class-inventor-post-type-hotel.php:52
+msgid "New Hotel"
+msgstr "Nový hotel"
+
+#: includes/post-types/class-inventor-post-type-hotel.php:54
+msgid "View Hotel"
+msgstr "Zobraziť hotel"
+
+#: includes/post-types/class-inventor-post-type-hotel.php:55
+msgid "Search Hotel"
+msgstr "Vyhľadať hotel"
+
+#: includes/post-types/class-inventor-post-type-hotel.php:56
+msgid "No Hotels found"
+msgstr "Nenašli sa žiadne hotely"
+
+#: includes/post-types/class-inventor-post-type-hotel.php:57
+msgid "No Hotels Found in Trash"
+msgstr "V koši sa nenašli žiadne hotely"
+
+#: includes/post-types/class-inventor-post-type-hotel.php:68
+msgctxt "URL slug"
+msgid "hotels"
+msgstr "hotely"
+
+#: includes/post-types/class-inventor-post-type-hotel.php:94
+msgid "Hotel class"
+msgstr "Trieda hotal"
+
+#: includes/post-types/class-inventor-post-type-hotel.php:101
+msgid "Rooms"
+msgstr "Izby"
+
+#: includes/post-types/class-inventor-post-type-listing.php:59
+#: includes/post-types/class-inventor-post-type-listing.php:70
+#: includes/post-types/class-inventor-post-type-report.php:126
+msgid "Listing"
+msgstr "Položka"
+
+#: includes/post-types/class-inventor-post-type-listing.php:60
+#: includes/post-types/class-inventor-post-type-listing.php:61
+msgid "Add New Listing"
+msgstr "Pridať novú položku"
+
+#: includes/post-types/class-inventor-post-type-listing.php:62
+msgid "Edit Listing"
+msgstr "Upraviť položku"
+
+#: includes/post-types/class-inventor-post-type-listing.php:63
+msgid "New Listing"
+msgstr "Nová položka"
+
+#: includes/post-types/class-inventor-post-type-listing.php:65
+msgid "View Listing"
+msgstr "Zobraziť položku"
+
+#: includes/post-types/class-inventor-post-type-listing.php:66
+msgid "Search Listing"
+msgstr "Vyhľadať položku"
+
+#: includes/post-types/class-inventor-post-type-listing.php:67
+msgid "No Listings found"
+msgstr "Nenašli sa žiadne položky"
+
+#: includes/post-types/class-inventor-post-type-listing.php:68
+msgid "No Listings Found in Trash"
+msgstr "V koši sa nenašli žiadne položky"
+
+#: includes/post-types/class-inventor-post-type-listing.php:79
+msgctxt "URL slug"
+msgid "listings"
+msgstr "polozky"
+
+#: includes/post-types/class-inventor-post-type-listing.php:123
+msgid "Message from enquire form"
+msgstr "Správa z dopytového formulára"
+
+#: includes/post-types/class-inventor-post-type-listing.php:173
+msgid "Message has been successfully sent."
+msgstr "Správa bola úspešne odoslaná"
+
+#: includes/post-types/class-inventor-post-type-music.php:34
+#: includes/post-types/class-inventor-post-type-music.php:40
+#: includes/post-types/class-inventor-post-type-music.php:46
+msgid "Musics"
+msgstr "Hudby"
+
+#: includes/post-types/class-inventor-post-type-music.php:35
+msgid "Music"
+msgstr "Hudba"
+
+#: includes/post-types/class-inventor-post-type-music.php:36
+#: includes/post-types/class-inventor-post-type-music.php:37
+msgid "Add New Music"
+msgstr "Pridať novú hudbu"
+
+#: includes/post-types/class-inventor-post-type-music.php:38
+msgid "Edit Music"
+msgstr "Upraviť hudbu"
+
+#: includes/post-types/class-inventor-post-type-music.php:39
+msgid "New Music"
+msgstr "Nová hudba"
+
+#: includes/post-types/class-inventor-post-type-music.php:41
+msgid "View Music"
+msgstr "Zobraziť hudbu"
+
+#: includes/post-types/class-inventor-post-type-music.php:42
+msgid "Search Music"
+msgstr "Vyhľadať hudbu"
+
+#: includes/post-types/class-inventor-post-type-music.php:43
+msgid "No Musics found"
+msgstr "Nenašli sa žiadne hudby"
+
+#: includes/post-types/class-inventor-post-type-music.php:44
+msgid "No Musics Found in Trash"
+msgstr "V koši sa nenašli žiadne hudby"
+
+#: includes/post-types/class-inventor-post-type-music.php:55
+msgctxt "URL slug"
+msgid "musics"
+msgstr "hudby"
+
+#: includes/post-types/class-inventor-post-type-pet.php:61
+#: includes/post-types/class-inventor-post-type-pet.php:67
+#: includes/post-types/class-inventor-post-type-pet.php:73
+msgid "Pets"
+msgstr "Domáce zvieratá"
+
+#: includes/post-types/class-inventor-post-type-pet.php:62
+msgid "Pet"
+msgstr "Domáce zviera"
+
+#: includes/post-types/class-inventor-post-type-pet.php:63
+#: includes/post-types/class-inventor-post-type-pet.php:64
+msgid "Add New Pet"
+msgstr "Pridať nové domáce zviera"
+
+#: includes/post-types/class-inventor-post-type-pet.php:65
+msgid "Edit Pet"
+msgstr "Upraviť domáce zviera"
+
+#: includes/post-types/class-inventor-post-type-pet.php:66
+msgid "New Pet"
+msgstr "Nové domáce zviera"
+
+#: includes/post-types/class-inventor-post-type-pet.php:68
+msgid "View Pet"
+msgstr "Zobraziť domáce zviera"
+
+#: includes/post-types/class-inventor-post-type-pet.php:69
+msgid "Search Pet"
+msgstr "Vyhľadať domáce zviera"
+
+#: includes/post-types/class-inventor-post-type-pet.php:70
+msgid "No Pets found"
+msgstr "Nenašli sa žiadne domáce zvieratá"
+
+#: includes/post-types/class-inventor-post-type-pet.php:71
+msgid "No Pets Found in Trash"
+msgstr "V koši sa nenašli žiadne domáce zvieratá"
+
+#: includes/post-types/class-inventor-post-type-pet.php:82
+msgctxt "URL slug"
+msgid "pets"
+msgstr "domace-zvierata"
+
+#: includes/post-types/class-inventor-post-type-pet.php:108
+msgid "Animal"
+msgstr "Zviera"
+
+#: includes/post-types/class-inventor-post-type-report.php:37
+#: includes/post-types/class-inventor-post-type-report.php:43
+#: includes/post-types/class-inventor-post-type-report.php:49
+msgid "Reports"
+msgstr "Hlásenia"
+
+#: includes/post-types/class-inventor-post-type-report.php:38
+msgid "Report"
+msgstr "Hlásenie"
+
+#: includes/post-types/class-inventor-post-type-report.php:39
+#: includes/post-types/class-inventor-post-type-report.php:40
+msgid "Add New Report"
+msgstr "Pridať nové hlásenie"
+
+#: includes/post-types/class-inventor-post-type-report.php:41
+msgid "Edit Report"
+msgstr "Upraviť hlásenie"
+
+#: includes/post-types/class-inventor-post-type-report.php:42
+msgid "New Report"
+msgstr "Nové hlásenie"
+
+#: includes/post-types/class-inventor-post-type-report.php:44
+msgid "View Report"
+msgstr "Zobraziť hlásenie"
+
+#: includes/post-types/class-inventor-post-type-report.php:45
+msgid "Search Report"
+msgstr "Vyhľadať hlásenie"
+
+#: includes/post-types/class-inventor-post-type-report.php:46
+msgid "No Reports found"
+msgstr "Nenašli sa žiadne hlásenia"
+
+#: includes/post-types/class-inventor-post-type-report.php:47
+msgid "No Reports Found in Trash"
+msgstr "V koši sa nenašli žiadne hlásenia"
+
+#: includes/post-types/class-inventor-post-type-report.php:83
+msgid "Listing ID"
+msgstr "ID položky"
+
+#: includes/post-types/class-inventor-post-type-report.php:99
+msgid "Email"
+msgstr "Emal"
+
+#: includes/post-types/class-inventor-post-type-report.php:105
+#: includes/post-types/class-inventor-post-type-report.php:127
+msgid "Reason"
+msgstr "Dôvod"
+
+#: includes/post-types/class-inventor-post-type-report.php:111
+#: templates/widgets/listing-author.php:59
+#: templates/widgets/listing-inquire-admin.php:111
+#: templates/widgets/listing-inquire.php:75
+msgid "Message"
+msgstr "Správa"
+
+#: includes/post-types/class-inventor-post-type-report.php:128
+#: includes/post-types/class-inventor-post-type-transaction.php:145
+msgid "Author"
+msgstr "Autor"
+
+#: includes/post-types/class-inventor-post-type-shopping.php:61
+#: includes/post-types/class-inventor-post-type-shopping.php:67
+#: includes/post-types/class-inventor-post-type-shopping.php:73
+msgid "Shoppings"
+msgstr "Tovar"
+
+#: includes/post-types/class-inventor-post-type-shopping.php:62
+msgid "Shopping"
+msgstr "Tovar"
+
+#: includes/post-types/class-inventor-post-type-shopping.php:63
+#: includes/post-types/class-inventor-post-type-shopping.php:64
+msgid "Add New Shopping"
+msgstr "Pridať nový tovar"
+
+#: includes/post-types/class-inventor-post-type-shopping.php:65
+msgid "Edit Shopping"
+msgstr "Upraviť tovar"
+
+#: includes/post-types/class-inventor-post-type-shopping.php:66
+msgid "New Shopping"
+msgstr "Nový tovar"
+
+#: includes/post-types/class-inventor-post-type-shopping.php:68
+msgid "View Shopping"
+msgstr "Zobraziť tovar"
+
+#: includes/post-types/class-inventor-post-type-shopping.php:69
+msgid "Search Shopping"
+msgstr "Vyhľadať tovar"
+
+#: includes/post-types/class-inventor-post-type-shopping.php:70
+msgid "No Shoppings found"
+msgstr "Nenašiel sa žiaden tovar"
+
+#: includes/post-types/class-inventor-post-type-shopping.php:71
+msgid "No Shoppings Found in Trash"
+msgstr "V koši sa nenašiel žiaden tovar"
+
+#: includes/post-types/class-inventor-post-type-shopping.php:82
+msgctxt "URL slug"
+msgid "shoppings"
+msgstr "tovar"
+
+#: includes/post-types/class-inventor-post-type-shopping.php:108
+msgid "Shopping category"
+msgstr "Kategória tovaru"
+
+#: includes/post-types/class-inventor-post-type-shopping.php:122
+msgid "Size"
+msgstr "Veľkosť"
+
+#: includes/post-types/class-inventor-post-type-shopping.php:125
+msgid "For example M, 10cm, 47 ..."
+msgstr "Napríklad M, 10cm, 47 …"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:38
+msgid "Transaction"
+msgstr "Transakcia"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:39
+#: includes/post-types/class-inventor-post-type-transaction.php:40
+msgid "Add New Transaction"
+msgstr "Pridať novú transakciu"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:41
+msgid "Edit Transaction"
+msgstr "Upraviť transakciu"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:42
+msgid "New Transaction"
+msgstr "Nová transkacia"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:44
+msgid "View Transaction"
+msgstr "Zobraziť transakciu"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:45
+msgid "Search Transaction"
+msgstr "Vyhľadať transakciu"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:46
+msgid "No Transactions found"
+msgstr "Nenašli sa žiadne transakcie"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:47
+msgid "No Transactions Found in Trash"
+msgstr "V koši sa nenašli žiadne transakcie"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:83
+#: includes/post-types/class-inventor-post-type-transaction.php:140
+msgid "Payment type"
+msgstr "Typ platby"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:89
+#: includes/post-types/class-inventor-post-type-transaction.php:141
+#: templates/payment/transactions.php:20
+msgid "Gateway"
+msgstr "Platobná brána"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:95
+msgid "Object ID"
+msgstr "ID objektu"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:101
+#: includes/post-types/class-inventor-post-type-transaction.php:139
+msgid "Payment ID"
+msgstr "ID platby"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:113
+msgid "Currency"
+msgstr "Mena"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:119
+#: includes/post-types/class-inventor-post-type-transaction.php:144
+msgid "Success"
+msgstr "Úspech"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:125
+msgid "Data"
+msgstr "Dáta"
+
+#: includes/post-types/class-inventor-post-type-transaction.php:143
+#: templates/payment/transactions.php:21
+msgid "Object"
+msgstr "Objekt"
+
+#: includes/post-types/class-inventor-post-type-travel.php:60
+#: includes/post-types/class-inventor-post-type-travel.php:66
+#: includes/post-types/class-inventor-post-type-travel.php:72
+msgid "Travels"
+msgstr "Cestovanie"
+
+#: includes/post-types/class-inventor-post-type-travel.php:61
+msgid "Travel"
+msgstr "Cestovanie"
+
+#: includes/post-types/class-inventor-post-type-travel.php:62
+#: includes/post-types/class-inventor-post-type-travel.php:63
+msgid "Add New Travel"
+msgstr "Pridať nové cestovanie"
+
+#: includes/post-types/class-inventor-post-type-travel.php:64
+msgid "Edit Travel"
+msgstr "Upraviť cestovanie"
+
+#: includes/post-types/class-inventor-post-type-travel.php:65
+msgid "New Travel"
+msgstr "Nové cestovanie"
+
+#: includes/post-types/class-inventor-post-type-travel.php:67
+msgid "View Travel"
+msgstr "Zobraziť cestovanie"
+
+#: includes/post-types/class-inventor-post-type-travel.php:68
+msgid "Search Travel"
+msgstr "Vyhľadať cestovanie"
+
+#: includes/post-types/class-inventor-post-type-travel.php:69
+msgid "No Travels found"
+msgstr "Nenašlo sa žiadne cestovanie"
+
+#: includes/post-types/class-inventor-post-type-travel.php:70
+msgid "No Travels Found in Trash"
+msgstr "V koši sa nenašlo žiadne cestovanie"
+
+#: includes/post-types/class-inventor-post-type-travel.php:81
+msgctxt "URL slug"
+msgid "travels"
+msgstr "cestovanie"
+
+#: includes/post-types/class-inventor-post-type-travel.php:107
+msgid "Travel activities"
+msgstr "Cestovné aktivity"
+
+#: includes/post-types/class-inventor-post-type-user.php:79
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:96
+msgid "Image"
+msgstr "Obrázok"
+
+#: includes/post-types/class-inventor-post-type-user.php:85
+msgid "First name"
+msgstr "Krstné meno"
+
+#: includes/post-types/class-inventor-post-type-user.php:91
+msgid "Last name"
+msgstr "Priezvisko"
+
+#: includes/post-types/class-inventor-post-type-user.php:153
+msgid "Social Connections"
+msgstr "Sociálne siete"
+
+#: includes/post-types/class-inventor-post-type-user.php:234
+msgid "Profile has been successfully updated."
+msgstr "Profil bol úspešne aktualizovaný."
+
+#: includes/post-types/class-inventor-post-type-user.php:256
+msgid "All fields are required."
+msgstr "Všetky polia sú povinné."
+
+#: includes/post-types/class-inventor-post-type-user.php:261
+msgid "New and retyped password are not same."
+msgstr "Nové a prepísané heslo nie sú rovnaké."
+
+#: includes/post-types/class-inventor-post-type-user.php:267
+msgid "Your old password is not correct."
+msgstr "Vaše staré heslo je nesprávne."
+
+#: includes/post-types/class-inventor-post-type-user.php:272
+msgid "Your password has been successfully changed."
+msgstr "Vaše heslo bolo úspešne zmenené."
+
+#: includes/post-types/class-inventor-post-type-user.php:292
+msgid "Login and password are required."
+msgstr "Login a heslo sú povinné."
+
+#: includes/post-types/class-inventor-post-type-user.php:308
+msgid "You have been successfully logged in."
+msgstr "Úspešne ste sa prihlásili."
+
+#: includes/post-types/class-inventor-post-type-user.php:342
+msgid "Unable to send an e-mail."
+msgstr "Nepodarilo sa odoslať e-mail."
+
+#: includes/post-types/class-inventor-post-type-user.php:344
+msgid "Please check inbox for more information."
+msgstr "Pre viac informácií si prosím skontrolujte došlú poštu."
+
+#: includes/post-types/class-inventor-post-type-user.php:363
+msgid "Username and e-mail are required."
+msgstr "Používateľské meno a e-mail sú povinné."
+
+#: includes/post-types/class-inventor-post-type-user.php:370
+msgid "Username already exists."
+msgstr "Používateľské meno už existuje."
+
+#: includes/post-types/class-inventor-post-type-user.php:377
+msgid "Email already exists."
+msgstr "Email už existuje."
+
+#: includes/post-types/class-inventor-post-type-user.php:383
+#: includes/post-types/class-inventor-post-type-user.php:397
+msgid "Passwords must be same."
+msgstr "Heslá musia byť zhodné."
+
+#: includes/post-types/class-inventor-post-type-user.php:415
+msgid "You have been successfully registered."
+msgstr "Úspešne ste sa zaregistrovali."
+
+#: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:34
+#: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:44
+msgid "Car Body Styles"
+msgstr "Typy karosérie"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:35
+msgid "Car Body Style"
+msgstr "Typ karosérie"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:36
+msgid "Search Car Body Style"
+msgstr "Vyhľadať karosériu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:37
+msgid "All Car Body Styles"
+msgstr "Všetky karosérie"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:38
+msgid "Parent Car Body Style"
+msgstr "Nadradená karoséria"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:39
+msgid "Parent Car Body Style:"
+msgstr "Nadradená karoséria:"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:40
+msgid "Edit Car Body Style"
+msgstr "Upraviť karosériu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:41
+msgid "Update Car Body Style"
+msgstr "Aktualizovať karosériu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:42
+msgid "Add New Car Body Style"
+msgstr "Pridať novú karosériu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:43
+msgid "New Car Body Style"
+msgstr "Nová karoséria"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:45
+msgid "No car body styles found."
+msgstr "Nenašli sa žiadne karosérie."
+
+#: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:52
+msgctxt "URL slug"
+msgid "car-body-style"
+msgstr "karoseria-automobilu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-engine-types.php:34
+#: includes/taxonomies/class-inventor-taxonomy-car-engine-types.php:44
+msgid "Car Engine Types"
+msgstr "Motorizácie"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-engine-types.php:35
+msgid "Car Engine Type"
+msgstr "Motorizácia"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-engine-types.php:36
+msgid "Search Car Engine Type"
+msgstr "Vyhľadať motorizáciu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-engine-types.php:37
+msgid "All Car Engine Types"
+msgstr "Všetky motorizácie"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-engine-types.php:38
+msgid "Parent Car Engine Type"
+msgstr "Nadradená motorizácia"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-engine-types.php:39
+msgid "Parent Car Engine Type:"
+msgstr "Nadradená motorizácia:"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-engine-types.php:40
+msgid "Edit Car Engine Type"
+msgstr "Upraviť motorizáciu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-engine-types.php:41
+msgid "Update Car Engine Type"
+msgstr "Aktualizovať motorizáciu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-engine-types.php:42
+msgid "Add New Car Engine Type"
+msgstr "Pridať novú motorizáciu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-engine-types.php:43
+msgid "New Car Engine Type"
+msgstr "Nová motorizácia"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-engine-types.php:45
+msgid "No car engine types found."
+msgstr "Nenašli sa žiadne motorizácie."
+
+#: includes/taxonomies/class-inventor-taxonomy-car-engine-types.php:52
+msgctxt "URL slug"
+msgid "car-engine-type"
+msgstr "motorizacia-automobilu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-models.php:34
+#: includes/taxonomies/class-inventor-taxonomy-car-models.php:44
+msgid "Car Models"
+msgstr "Modely automobilov"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-models.php:35
+msgid "Car Model"
+msgstr "Model automobilu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-models.php:36
+msgid "Search Car Model"
+msgstr "Vyhľadať model automobilu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-models.php:37
+msgid "All Car Models"
+msgstr "Všetky modely automobilov"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-models.php:38
+msgid "Parent Car Model"
+msgstr "Nadradený model automobilu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-models.php:39
+msgid "Parent Car Model:"
+msgstr "Nadradený model automobilu:"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-models.php:40
+msgid "Edit Car Model"
+msgstr "Upraviť model automobilu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-models.php:41
+msgid "Update Car Model"
+msgstr "Aktualizovať model automobilu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-models.php:42
+msgid "Add New Car Model"
+msgstr "Pridať nový model automobilu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-models.php:43
+msgid "New Car Model"
+msgstr "Nový model automobilu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-models.php:45
+msgid "No car models found."
+msgstr "Nenašli sa žiadne modely automobilov"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-models.php:52
+msgctxt "URL slug"
+msgid "car-model"
+msgstr "model-automobilu"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-transmissions.php:34
+#: includes/taxonomies/class-inventor-taxonomy-car-transmissions.php:44
+msgid "Car Transmissions"
+msgstr "Prevodovky"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-transmissions.php:35
+msgid "Car Transmission"
+msgstr "Prevodovka"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-transmissions.php:36
+msgid "Search Car Transmission"
+msgstr "Vyhľadať prevodovku"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-transmissions.php:37
+msgid "All Car Transmissions"
+msgstr "Všetky prevodovky"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-transmissions.php:38
+msgid "Parent Car Transmission"
+msgstr "Nadradená prevodovka"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-transmissions.php:39
+msgid "Parent Car Transmission:"
+msgstr "Nadradená prevodovka:"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-transmissions.php:40
+msgid "Edit Car Transmission"
+msgstr "Upraviť prevodovku"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-transmissions.php:41
+msgid "Update Car Transmission"
+msgstr "Aktualizovať prevodovku"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-transmissions.php:42
+msgid "Add New Car Transmission"
+msgstr "Pridať novú prevodovku"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-transmissions.php:43
+msgid "New Car Transmission"
+msgstr "Nová prevodovka"
+
+#: includes/taxonomies/class-inventor-taxonomy-car-transmissions.php:45
+msgid "No car transmissions found."
+msgstr "Nenašli sa žiadne prevodovky."
+
+#: includes/taxonomies/class-inventor-taxonomy-car-transmissions.php:52
+msgctxt "URL slug"
+msgid "car-transmission"
+msgstr "prevodovka-automobilu"
+
+#: includes/taxonomies/class-inventor-taxonomy-colors.php:36
+msgid "Search Color"
+msgstr "Vyhľadať farbu"
+
+#: includes/taxonomies/class-inventor-taxonomy-colors.php:37
+msgid "All Colors"
+msgstr "Všetky farby"
+
+#: includes/taxonomies/class-inventor-taxonomy-colors.php:38
+msgid "Parent Color"
+msgstr "Nadradená farba"
+
+#: includes/taxonomies/class-inventor-taxonomy-colors.php:39
+msgid "Parent Color:"
+msgstr "Nadradená farba:"
+
+#: includes/taxonomies/class-inventor-taxonomy-colors.php:40
+msgid "Edit Color"
+msgstr "Upraviť farbu"
+
+#: includes/taxonomies/class-inventor-taxonomy-colors.php:41
+msgid "Update Color"
+msgstr "Aktualizovať farbu"
+
+#: includes/taxonomies/class-inventor-taxonomy-colors.php:42
+msgid "Add New Color"
+msgstr "Pridať novú farbu"
+
+#: includes/taxonomies/class-inventor-taxonomy-colors.php:43
+msgid "New Color"
+msgstr "Nová farba"
+
+#: includes/taxonomies/class-inventor-taxonomy-colors.php:45
+msgid "No colors found."
+msgstr "Nenašli sa žiadne farby"
+
+#: includes/taxonomies/class-inventor-taxonomy-colors.php:52
+msgctxt "URL slug"
+msgid "color"
+msgstr "farba"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-groups.php:34
+#: includes/taxonomies/class-inventor-taxonomy-dating-groups.php:44
+msgid "Dating Groups"
+msgstr "Skupiny zoznamiek"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-groups.php:35
+msgid "Dating Group"
+msgstr "Skupina zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-groups.php:36
+msgid "Search Dating Group"
+msgstr "Vyhľadať skupinu zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-groups.php:37
+msgid "All Dating Groups"
+msgstr "Všetky skupiny zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-groups.php:38
+msgid "Parent Dating Group"
+msgstr "Nadradená skupina zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-groups.php:39
+msgid "Parent Dating Group:"
+msgstr "Nadradená skupina zoznamky:"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-groups.php:40
+msgid "Edit Dating Group"
+msgstr "Upraviť skupinu zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-groups.php:41
+msgid "Update Dating Group"
+msgstr "Aktualizovať skupinu zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-groups.php:42
+msgid "Add New Dating Group"
+msgstr "Pridať novú skupinu zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-groups.php:43
+msgid "New Dating Group"
+msgstr "Nová skupina zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-groups.php:45
+msgid "No dating groups found."
+msgstr "Nenašli sa žiadne skupiny zoznamky."
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-groups.php:52
+msgctxt "URL slug"
+msgid "dating-group"
+msgstr "skupina-zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-interests.php:34
+#: includes/taxonomies/class-inventor-taxonomy-dating-interests.php:44
+msgid "Dating Interests"
+msgstr "Záujmy zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-interests.php:35
+#: includes/taxonomies/class-inventor-taxonomy-dating-statuses.php:35
+msgid "Dating Status"
+msgstr "Stav zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-interests.php:36
+#: includes/taxonomies/class-inventor-taxonomy-dating-statuses.php:36
+msgid "Search Dating Status"
+msgstr "Vyhľadať stav zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-interests.php:37
+msgid "All Dating Interests"
+msgstr "Všetky záujmy zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-interests.php:38
+#: includes/taxonomies/class-inventor-taxonomy-dating-statuses.php:38
+msgid "Parent Dating Status"
+msgstr "Nadradený stav zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-interests.php:39
+#: includes/taxonomies/class-inventor-taxonomy-dating-statuses.php:39
+msgid "Parent Dating Status:"
+msgstr "Nadradený stav zoznamky:"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-interests.php:40
+#: includes/taxonomies/class-inventor-taxonomy-dating-statuses.php:40
+msgid "Edit Dating Status"
+msgstr "Upraviť stav zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-interests.php:41
+#: includes/taxonomies/class-inventor-taxonomy-dating-statuses.php:41
+msgid "Update Dating Status"
+msgstr "Aktualizovať stav zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-interests.php:42
+#: includes/taxonomies/class-inventor-taxonomy-dating-statuses.php:42
+msgid "Add New Dating Status"
+msgstr "Pridať nový stav zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-interests.php:43
+#: includes/taxonomies/class-inventor-taxonomy-dating-statuses.php:43
+msgid "New Dating Status"
+msgstr "Nový stav zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-interests.php:45
+msgid "No dating interests found."
+msgstr "Nenašli sa žiadne záujmy zoznamky."
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-interests.php:52
+msgctxt "URL slug"
+msgid "dating-interest"
+msgstr "zaujem-zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-statuses.php:34
+#: includes/taxonomies/class-inventor-taxonomy-dating-statuses.php:44
+msgid "Dating Statuses"
+msgstr "Stavy zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-statuses.php:37
+msgid "All Dating Statuses"
+msgstr "Všetky stavy zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-statuses.php:45
+msgid "No dating statuses found."
+msgstr "Nenašli sa žiadne stavy zoznamky."
+
+#: includes/taxonomies/class-inventor-taxonomy-dating-statuses.php:52
+msgctxt "URL slug"
+msgid "dating-status"
+msgstr "stav-zoznamky"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-levels.php:34
+#: includes/taxonomies/class-inventor-taxonomy-education-levels.php:44
+msgid "Education Levels"
+msgstr "Úrovne vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-levels.php:35
+msgid "Education Level"
+msgstr "Úroveň vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-levels.php:36
+msgid "Search Education Level"
+msgstr "Vyhľadať úroveň vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-levels.php:37
+msgid "All Education Levels"
+msgstr "Všetky úrovne vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-levels.php:38
+msgid "Parent Education Level"
+msgstr "Nadradená úroveň vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-levels.php:39
+msgid "Parent Education Level:"
+msgstr "Nadradená úroveň vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-levels.php:40
+msgid "Edit Education Level"
+msgstr "Upraviť úroveň vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-levels.php:41
+msgid "Update Education Level"
+msgstr "Aktualizovať úroveň vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-levels.php:42
+msgid "Add New Education Level"
+msgstr "Pridať novú úroveň vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-levels.php:43
+msgid "New Education Level"
+msgstr "Nová úroveň vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-levels.php:45
+msgid "No education levels found."
+msgstr "Nenašli sa žiadne úrovne vzdelania."
+
+#: includes/taxonomies/class-inventor-taxonomy-education-levels.php:52
+msgctxt "URL slug"
+msgid "education-level"
+msgstr "uroven-vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-subjects.php:34
+#: includes/taxonomies/class-inventor-taxonomy-education-subjects.php:44
+msgid "Education Subjects"
+msgstr "Predmety vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-subjects.php:35
+msgid "Education Subject"
+msgstr "Predmet vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-subjects.php:36
+msgid "Search Education Subject"
+msgstr "Vyhľadať predmet vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-subjects.php:37
+msgid "All Education Subjects"
+msgstr "Všetky predmety vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-subjects.php:38
+msgid "Parent Education Subject"
+msgstr "Nadradený predmet vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-subjects.php:39
+msgid "Parent Education Subject:"
+msgstr "Nadradený predmet vzdelania:"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-subjects.php:40
+msgid "Edit Education Subject"
+msgstr "Upraviť predmet vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-subjects.php:41
+msgid "Update Education Subject"
+msgstr "Aktualizovať predmet vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-subjects.php:42
+msgid "Add New Education Subject"
+msgstr "Pridať nový predmet vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-subjects.php:43
+msgid "New Education Subject"
+msgstr "Nový predmet vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-education-subjects.php:45
+msgid "No education subjects found."
+msgstr "Nenašli sa žiadne predmety vzdelania."
+
+#: includes/taxonomies/class-inventor-taxonomy-education-subjects.php:52
+msgctxt "URL slug"
+msgid "education-subject"
+msgstr "predmet-vzdelania"
+
+#: includes/taxonomies/class-inventor-taxonomy-event-types.php:34
+#: includes/taxonomies/class-inventor-taxonomy-event-types.php:44
+msgid "Event Types"
+msgstr "Typy podujatí"
+
+#: includes/taxonomies/class-inventor-taxonomy-event-types.php:35
+msgid "Event Type"
+msgstr "Typ podujatia"
+
+#: includes/taxonomies/class-inventor-taxonomy-event-types.php:36
+msgid "Search Event Type"
+msgstr "Vyhľadať typ podujatia"
+
+#: includes/taxonomies/class-inventor-taxonomy-event-types.php:37
+msgid "All Event Types"
+msgstr "Všetky typy podujatí"
+
+#: includes/taxonomies/class-inventor-taxonomy-event-types.php:38
+msgid "Parent Event Type"
+msgstr "Nadradený typ podujatia"
+
+#: includes/taxonomies/class-inventor-taxonomy-event-types.php:39
+msgid "Parent Event Type:"
+msgstr "Nadradený typ podujatia:"
+
+#: includes/taxonomies/class-inventor-taxonomy-event-types.php:40
+msgid "Edit Event Type"
+msgstr "Upraviť typ podujatia"
+
+#: includes/taxonomies/class-inventor-taxonomy-event-types.php:41
+msgid "Update Event Type"
+msgstr "Aktualizovať typ podujatia"
+
+#: includes/taxonomies/class-inventor-taxonomy-event-types.php:42
+msgid "Add New Event Type"
+msgstr "Pridať nový typ podujatia"
+
+#: includes/taxonomies/class-inventor-taxonomy-event-types.php:43
+msgid "New Event Type"
+msgstr "Nový typ podujatia"
+
+#: includes/taxonomies/class-inventor-taxonomy-event-types.php:45
+msgid "No event types found."
+msgstr "Nenašli sa žiadne typy podujatí"
+
+#: includes/taxonomies/class-inventor-taxonomy-event-types.php:52
+msgctxt "URL slug"
+msgid "event-type"
+msgstr "typ-podujatia"
+
+#: includes/taxonomies/class-inventor-taxonomy-food-kinds.php:34
+#: includes/taxonomies/class-inventor-taxonomy-food-kinds.php:44
+msgid "Food Kinds"
+msgstr "Druhy jedál"
+
+#: includes/taxonomies/class-inventor-taxonomy-food-kinds.php:35
+msgid "Food Kind"
+msgstr "Druh jedla"
+
+#: includes/taxonomies/class-inventor-taxonomy-food-kinds.php:36
+msgid "Search Food Kind"
+msgstr "Vyhľadať druh jedál"
+
+#: includes/taxonomies/class-inventor-taxonomy-food-kinds.php:37
+msgid "All Food Kinds"
+msgstr "Všetky druhy jedál"
+
+#: includes/taxonomies/class-inventor-taxonomy-food-kinds.php:38
+msgid "Parent Food Kind"
+msgstr "Nadradený druh jedla"
+
+#: includes/taxonomies/class-inventor-taxonomy-food-kinds.php:39
+msgid "Parent Food Kind:"
+msgstr "Nadradený druh jedla:"
+
+#: includes/taxonomies/class-inventor-taxonomy-food-kinds.php:40
+msgid "Edit Food Kind"
+msgstr "Upraviť druh jedla"
+
+#: includes/taxonomies/class-inventor-taxonomy-food-kinds.php:41
+msgid "Update Food Kind"
+msgstr "Aktualizovať druh jedla"
+
+#: includes/taxonomies/class-inventor-taxonomy-food-kinds.php:42
+msgid "Add New Food Kind"
+msgstr "Pridať nový druh jedla"
+
+#: includes/taxonomies/class-inventor-taxonomy-food-kinds.php:43
+msgid "New Food Kind"
+msgstr "Nový druh jedla"
+
+#: includes/taxonomies/class-inventor-taxonomy-food-kinds.php:45
+msgid "No food kinds found."
+msgstr "Nenašli sa žiadne druhy jedál."
+
+#: includes/taxonomies/class-inventor-taxonomy-food-kinds.php:52
+msgctxt "URL slug"
+msgid "food-kind"
+msgstr "druh-jedla"
+
+#: includes/taxonomies/class-inventor-taxonomy-hotel-classes.php:34
+#: includes/taxonomies/class-inventor-taxonomy-hotel-classes.php:44
+msgid "Hotel Classes"
+msgstr "Triedy hotelov"
+
+#: includes/taxonomies/class-inventor-taxonomy-hotel-classes.php:35
+msgid "Hotel Class"
+msgstr "Trieda hotela"
+
+#: includes/taxonomies/class-inventor-taxonomy-hotel-classes.php:36
+msgid "Search Hotel Class"
+msgstr "Vyhľadať triedu hotela"
+
+#: includes/taxonomies/class-inventor-taxonomy-hotel-classes.php:37
+msgid "All Hotel Classes"
+msgstr "Všetky triedy hotelov"
+
+#: includes/taxonomies/class-inventor-taxonomy-hotel-classes.php:38
+msgid "Parent Hotel Class"
+msgstr "Nadradená trieda hotela"
+
+#: includes/taxonomies/class-inventor-taxonomy-hotel-classes.php:39
+msgid "Parent Hotel Class:"
+msgstr "Nadradená trieda hotela:"
+
+#: includes/taxonomies/class-inventor-taxonomy-hotel-classes.php:40
+msgid "Edit Hotel Class"
+msgstr "Upraviť triedu hotela"
+
+#: includes/taxonomies/class-inventor-taxonomy-hotel-classes.php:41
+msgid "Update Hotel Class"
+msgstr "Aktualizovať triedu hotela"
+
+#: includes/taxonomies/class-inventor-taxonomy-hotel-classes.php:42
+msgid "Add New Hotel Class"
+msgstr "Pridať novú triedu hotela"
+
+#: includes/taxonomies/class-inventor-taxonomy-hotel-classes.php:43
+msgid "New Hotel Class"
+msgstr "Nová trieda hotela"
+
+#: includes/taxonomies/class-inventor-taxonomy-hotel-classes.php:45
+msgid "No hotel classes found."
+msgstr "Nenašli sa žiadne triedy hotela."
+
+#: includes/taxonomies/class-inventor-taxonomy-hotel-classes.php:52
+msgctxt "URL slug"
+msgid "hotel-class"
+msgstr "trieda-hotela"
+
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:36
+#: templates/listings/row.php:32
+#: templates/widgets/filter-fields/listing-categories.php:4
+#: templates/widgets/filter-fields/listing-categories.php:18
+msgid "Category"
+msgstr "Kategória"
+
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:37
+msgid "Search Categories"
+msgstr "Vyhľadať kategórie"
+
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:38
+msgid "All Categories"
+msgstr "Všetky kategórie"
+
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:39
+msgid "Parent Category"
+msgstr "Nadradená kategória"
+
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:40
+msgid "Parent Category:"
+msgstr "Nadradená kategória:"
+
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:41
+msgid "Edit Category"
+msgstr "Upraviť kategóriu"
+
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:42
+msgid "Update Category"
+msgstr "Aktualizovať kategóriu"
+
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:43
+msgid "Add New Category"
+msgstr "Pridať novú kategóriu"
+
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:44
+msgid "New Category"
+msgstr "Nová kategória"
+
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:46
+msgid "No categories found."
+msgstr "Nenašli sa žiadne kategórie."
+
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:53
+msgctxt "URL slug"
+msgid "listing-category"
+msgstr "kategoria-poloziek"
+
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:102
+msgid "POI"
+msgstr "POI"
+
+#: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:201
+msgid "Listing Category Options"
+msgstr "Možnosti kategórie položiek"
+
+#: includes/taxonomies/class-inventor-taxonomy-locations.php:36
+msgid "Search Location"
+msgstr "Vyhľadať umiestnenie"
+
+#: includes/taxonomies/class-inventor-taxonomy-locations.php:37
+msgid "All Locations"
+msgstr "Všetky umiestnenia"
+
+#: includes/taxonomies/class-inventor-taxonomy-locations.php:38
+msgid "Parent Location"
+msgstr "Nadradené umiestnenie"
+
+#: includes/taxonomies/class-inventor-taxonomy-locations.php:39
+msgid "Parent Location:"
+msgstr "Nadradené umiestnenie:"
+
+#: includes/taxonomies/class-inventor-taxonomy-locations.php:40
+msgid "Edit Location"
+msgstr "Upraviť umiestnenie"
+
+#: includes/taxonomies/class-inventor-taxonomy-locations.php:41
+msgid "Update Location"
+msgstr "Aktualizovať umiestnenie"
+
+#: includes/taxonomies/class-inventor-taxonomy-locations.php:42
+msgid "Add New Location"
+msgstr "Pridať nové umiestnenie"
+
+#: includes/taxonomies/class-inventor-taxonomy-locations.php:43
+msgid "New Location"
+msgstr "Nové umiestnenie"
+
+#: includes/taxonomies/class-inventor-taxonomy-locations.php:45
+msgid "No locations found."
+msgstr "Nenašli sa žiadne umiestnenia."
+
+#: includes/taxonomies/class-inventor-taxonomy-locations.php:52
+msgctxt "URL slug"
+msgid "location"
+msgstr "umiestnenie"
+
+#: includes/taxonomies/class-inventor-taxonomy-music-genres.php:34
+#: includes/taxonomies/class-inventor-taxonomy-music-genres.php:44
+msgid "Music Genres"
+msgstr "Hudobné žánre"
+
+#: includes/taxonomies/class-inventor-taxonomy-music-genres.php:35
+msgid "Music Genre"
+msgstr "Hudobný žáner"
+
+#: includes/taxonomies/class-inventor-taxonomy-music-genres.php:36
+msgid "Search Music Genre"
+msgstr "Vyhľadať hudobný žáner"
+
+#: includes/taxonomies/class-inventor-taxonomy-music-genres.php:37
+msgid "All Music Genres"
+msgstr "Všetky hudobné žánre"
+
+#: includes/taxonomies/class-inventor-taxonomy-music-genres.php:38
+msgid "Parent Music Genre"
+msgstr "Nadradený hudobný žáner"
+
+#: includes/taxonomies/class-inventor-taxonomy-music-genres.php:39
+msgid "Parent Music Genre:"
+msgstr "Nadradený hudobný žáner:"
+
+#: includes/taxonomies/class-inventor-taxonomy-music-genres.php:40
+msgid "Edit Music Genre"
+msgstr "Upraviť žáner hudby"
+
+#: includes/taxonomies/class-inventor-taxonomy-music-genres.php:41
+msgid "Update Music Genre"
+msgstr "Aktualizovať hudobný žáner"
+
+#: includes/taxonomies/class-inventor-taxonomy-music-genres.php:42
+msgid "Add New Music Genre"
+msgstr "Pridať nový hudobný žáner"
+
+#: includes/taxonomies/class-inventor-taxonomy-music-genres.php:43
+msgid "New Music Genre"
+msgstr "Nový hudobný žáner"
+
+#: includes/taxonomies/class-inventor-taxonomy-music-genres.php:45
+msgid "No music genres found."
+msgstr "Nenašli sa žiadne hudobné žánre."
+
+#: includes/taxonomies/class-inventor-taxonomy-music-genres.php:52
+msgctxt "URL slug"
+msgid "music-genre"
+msgstr "hudobny-zaner"
+
+#: includes/taxonomies/class-inventor-taxonomy-pet-animals.php:34
+#: includes/taxonomies/class-inventor-taxonomy-pet-animals.php:44
+msgid "Pet Animals"
+msgstr "Domáce zvieratá"
+
+#: includes/taxonomies/class-inventor-taxonomy-pet-animals.php:35
+msgid "Pet Animal"
+msgstr "Domáce zviera"
+
+#: includes/taxonomies/class-inventor-taxonomy-pet-animals.php:36
+msgid "Search Pet Animal"
+msgstr "Vyhľadať domáce zviera"
+
+#: includes/taxonomies/class-inventor-taxonomy-pet-animals.php:37
+msgid "All Pet Animals"
+msgstr "Všetky domáce zvieratá"
+
+#: includes/taxonomies/class-inventor-taxonomy-pet-animals.php:38
+msgid "Parent Pet Animal"
+msgstr "Nadradené domáce zviera"
+
+#: includes/taxonomies/class-inventor-taxonomy-pet-animals.php:39
+msgid "Parent Pet Animal:"
+msgstr "Nadradené domáce zviera:"
+
+#: includes/taxonomies/class-inventor-taxonomy-pet-animals.php:40
+msgid "Edit Pet Animal"
+msgstr "Upraviť domáce zviera"
+
+#: includes/taxonomies/class-inventor-taxonomy-pet-animals.php:41
+msgid "Update Pet Animal"
+msgstr "Aktualizovať domáce zviera"
+
+#: includes/taxonomies/class-inventor-taxonomy-pet-animals.php:42
+msgid "Add New Pet Animal"
+msgstr "Pridať nové domáce zviera"
+
+#: includes/taxonomies/class-inventor-taxonomy-pet-animals.php:43
+msgid "New Pet Animal"
+msgstr "Nové domáce zviera"
+
+#: includes/taxonomies/class-inventor-taxonomy-pet-animals.php:45
+msgid "No pet animals found."
+msgstr "Nenašli sa žiadne domáce zvieratá."
+
+#: includes/taxonomies/class-inventor-taxonomy-pet-animals.php:52
+msgctxt "URL slug"
+msgid "pet-animal"
+msgstr "zviera"
+
+#: includes/taxonomies/class-inventor-taxonomy-shopping-categories.php:34
+#: includes/taxonomies/class-inventor-taxonomy-shopping-categories.php:44
+msgid "Shopping Categories"
+msgstr "Kategórie tovaru"
+
+#: includes/taxonomies/class-inventor-taxonomy-shopping-categories.php:35
+msgid "Shopping Category"
+msgstr "Kategória tovaru"
+
+#: includes/taxonomies/class-inventor-taxonomy-shopping-categories.php:36
+msgid "Search Shopping Category"
+msgstr "Vyhľadať kategóriu tovaru"
+
+#: includes/taxonomies/class-inventor-taxonomy-shopping-categories.php:37
+msgid "All Shopping Categories"
+msgstr "Všetky kategórie tovaru"
+
+#: includes/taxonomies/class-inventor-taxonomy-shopping-categories.php:38
+msgid "Parent Shopping Category"
+msgstr "Nadradená kategória tovaru"
+
+#: includes/taxonomies/class-inventor-taxonomy-shopping-categories.php:39
+msgid "Parent Shopping Category:"
+msgstr "Nadradená kategória tovaru:"
+
+#: includes/taxonomies/class-inventor-taxonomy-shopping-categories.php:40
+msgid "Edit Shopping Category"
+msgstr "Upraviť kategóriu tovaru"
+
+#: includes/taxonomies/class-inventor-taxonomy-shopping-categories.php:41
+msgid "Update Shopping Category"
+msgstr "Aktualizovať kategóriu tovaru"
+
+#: includes/taxonomies/class-inventor-taxonomy-shopping-categories.php:42
+msgid "Add New Shopping Category"
+msgstr "Pridať novú kategóriu tovaru"
+
+#: includes/taxonomies/class-inventor-taxonomy-shopping-categories.php:43
+msgid "New Shopping Category"
+msgstr "Nová kategória tovaru"
+
+#: includes/taxonomies/class-inventor-taxonomy-shopping-categories.php:45
+msgid "No shopping categories found."
+msgstr "Nenašli sa žiadne kategórie tovaru."
+
+#: includes/taxonomies/class-inventor-taxonomy-shopping-categories.php:52
+msgctxt "URL slug"
+msgid "shopping-category"
+msgstr "kategoria-tovaru"
+
+#: includes/taxonomies/class-inventor-taxonomy-travel-activities.php:34
+#: includes/taxonomies/class-inventor-taxonomy-travel-activities.php:44
+msgid "Travel Activities"
+msgstr "Aktivity cestovania"
+
+#: includes/taxonomies/class-inventor-taxonomy-travel-activities.php:35
+msgid "Travel Activity"
+msgstr "Aktivita cestovania"
+
+#: includes/taxonomies/class-inventor-taxonomy-travel-activities.php:36
+msgid "Search Travel Activity"
+msgstr "Vyhľadať aktivitu cestovania"
+
+#: includes/taxonomies/class-inventor-taxonomy-travel-activities.php:37
+msgid "All Travel Activities"
+msgstr "Všetky aktivity cestovania"
+
+#: includes/taxonomies/class-inventor-taxonomy-travel-activities.php:38
+msgid "Parent Travel Activity"
+msgstr "Nadradená aktivita cestovania"
+
+#: includes/taxonomies/class-inventor-taxonomy-travel-activities.php:39
+msgid "Parent Travel Activity:"
+msgstr "Nadradená aktivita cestovania:"
+
+#: includes/taxonomies/class-inventor-taxonomy-travel-activities.php:40
+msgid "Edit Travel Activity"
+msgstr "Upraviť aktivitu cestovania"
+
+#: includes/taxonomies/class-inventor-taxonomy-travel-activities.php:41
+msgid "Update Travel Activity"
+msgstr "Aktualizovať aktivitu cestovania"
+
+#: includes/taxonomies/class-inventor-taxonomy-travel-activities.php:42
+msgid "Add New Travel Activity"
+msgstr "Pridať novú aktivitu cestovania"
+
+#: includes/taxonomies/class-inventor-taxonomy-travel-activities.php:43
+msgid "New Travel Activity"
+msgstr "Nová aktivita cestovania"
+
+#: includes/taxonomies/class-inventor-taxonomy-travel-activities.php:45
+msgid "No travel activities found."
+msgstr "Nenašli sa žiadne aktivity cestovania"
+
+#: includes/taxonomies/class-inventor-taxonomy-travel-activities.php:52
+msgctxt "URL slug"
+msgid "travel-activity"
+msgstr "aktivita-cestovania"
+
+#: includes/widgets/class-inventor-widget-filter.php:24
+msgid "Filter"
+msgstr "Filter"
+
+#: includes/widgets/class-inventor-widget-filter.php:26
+msgid "Filter for filtering listings."
+msgstr "Filter pre vyhľadávanie položiek."
+
+#: includes/widgets/class-inventor-widget-listing-author.php:24
+msgid "Listing Author"
+msgstr "Autor položky"
+
+#: includes/widgets/class-inventor-widget-listing-author.php:26
+msgid "Listing author widget for displaying information about listing author."
+msgstr "Widget s informáciami o autorovi položky."
+
+#: includes/widgets/class-inventor-widget-listing-categories-boxes.php:24
+msgid "Listing Categories Boxes"
+msgstr "Boxy kategórií položiek"
+
+#: includes/widgets/class-inventor-widget-listing-categories-boxes.php:26
+msgid "Displays listing categories in boxes."
+msgstr "Zobrazí kategórie položiek v boxoch."
+
+#: includes/widgets/class-inventor-widget-listing-categories.php:24
+#: templates/widgets/listings-admin.php:191
+msgid "Listing Categories"
+msgstr "Kategórie položiek"
+
+#: includes/widgets/class-inventor-widget-listing-categories.php:26
+msgid "Displays listing categories."
+msgstr "Zobrazí kategórie položiek."
+
+#: includes/widgets/class-inventor-widget-listing-details.php:24
+msgid "Listing details"
+msgstr "Detaily položky"
+
+#: includes/widgets/class-inventor-widget-listing-details.php:26
+msgid "Displays listing details."
+msgstr "Dobrazí detaily položky."
+
+#: includes/widgets/class-inventor-widget-listing-inquire.php:24
+msgid "Listing Inquire"
+msgstr "Žiadosť o položku"
+
+#: includes/widgets/class-inventor-widget-listing-inquire.php:26
+msgid "Listing inquire widget for sending inquire messages."
+msgstr "Widget pre odoslanie požiadavky."
+
+#: includes/widgets/class-inventor-widget-listings.php:26
+msgid "Displays listings."
+msgstr "Zobrazí položky."
+
+#: includes/widgets/class-inventor-widget-opening-hours.php:24
+msgid "Opening hours"
+msgstr "Otváracie hodiny"
+
+#: includes/widgets/class-inventor-widget-opening-hours.php:26
+msgid "Displays opening hours for current listing."
+msgstr "Zobrazí otváracie hodiny pre danú položku."
+
+#: templates/accounts/login.php:10 templates/accounts/register.php:11
+msgid "Username"
+msgstr "Používateľské meno"
+
+#: templates/accounts/login.php:15 templates/accounts/register.php:21
+msgid "Password"
+msgstr "Heslo"
+
+#: templates/accounts/login.php:21
+msgid "Log in"
+msgstr "Prihlásiť"
+
+#: templates/accounts/login.php:25 templates/accounts/register.php:49
+#: templates/accounts/reset.php:18
+msgid "You are already logged in."
+msgstr "Už ste prihlásený."
+
+#: templates/accounts/password.php:9
+msgid "Old password"
+msgstr "Staré heslo"
+
+#: templates/accounts/password.php:14
+msgid "New password"
+msgstr "Nové heslo"
+
+#: templates/accounts/password.php:19
+msgid "Retype password"
+msgstr "Prepísať heslo"
+
+#: templates/accounts/password.php:23
+msgid "Change Password"
+msgstr "Zmeniť heslo"
+
+#: templates/accounts/register.php:26
+msgid "Retype Password"
+msgstr "Prepísať heslo"
+
+#: templates/accounts/register.php:37 templates/payment/payment-form.php:92
+#, php-format
+msgid "I agree with <a href=\"%s\">terms & conditions</a>"
+msgstr "Súhlasím s <a href=\"%s\">obchodnými podmienkami</a>"
+
+#: templates/accounts/register.php:45
+msgid "Sign Up"
+msgstr "Zaregistrovať sa"
+
+#: templates/accounts/register.php:54
+msgid "Registrations are not allowed."
+msgstr "Registrácie nie sú povolené."
+
+#: templates/accounts/reset.php:10
+msgid "Username or E-mail:"
+msgstr "Používateľské meno alebo e-mail."
+
+#: templates/accounts/reset.php:14
+msgid "Get New Password"
+msgstr "Získať nové heslo"
+
+#: templates/admin/purchase-code.php:4
+msgid "Please enter valid purchase code to get an update"
+msgstr "Na získanie aktualizácie prosím zadajte platný kód objednávky"
+
+#: templates/admin/purchase-code.php:10
+msgid "Confirm"
+msgstr "Potvrdiť"
+
+#: templates/admin/purchase-code.php:17
+msgid "How to find purchase code."
+msgstr "Ako získať kód objednávky."
+
+#: templates/archive-listing.php:66 templates/taxonomy-listing.php:66
+msgid "Previous"
+msgstr "Predchádzajúce"
+
+#: templates/archive-listing.php:67 templates/taxonomy-listing.php:67
+msgid "Next"
+msgstr "Nasledujúce"
+
+#: templates/controls/opening-hours.php:2
+#: templates/listings/detail/section-opening-hours.php:12
+msgid "Monday"
+msgstr "Pondelok"
+
+#: templates/controls/opening-hours.php:3
+#: templates/listings/detail/section-opening-hours.php:13
+msgid "Tuesday"
+msgstr "Utorok"
+
+#: templates/controls/opening-hours.php:4
+#: templates/listings/detail/section-opening-hours.php:14
+msgid "Wednesday"
+msgstr "Streda"
+
+#: templates/controls/opening-hours.php:5
+#: templates/listings/detail/section-opening-hours.php:15
+msgid "Thursday"
+msgstr "Štvrtok"
+
+#: templates/controls/opening-hours.php:6
+#: templates/listings/detail/section-opening-hours.php:16
+msgid "Friday"
+msgstr "Piatok"
+
+#: templates/controls/opening-hours.php:7
+#: templates/listings/detail/section-opening-hours.php:17
+msgid "Saturday"
+msgstr "Sobota"
+
+#: templates/controls/opening-hours.php:8
+#: templates/listings/detail/section-opening-hours.php:18
+msgid "Sunday"
+msgstr "Nedeľa"
+
+#: templates/controls/opening-hours.php:15
+msgid "Day"
+msgstr "Deň"
+
+#: templates/controls/opening-hours.php:18
+msgid "Custom text"
+msgstr "Vlastný text"
+
+#: templates/listings/detail/section-food-menu.php:10
+msgid "Daily Menu"
+msgstr "Denné menu"
+
+#: templates/listings/detail/section-food-menu.php:22
+msgid "Menu"
+msgstr "Menu"
+
+#: templates/listings/detail/section-google-map.php:21
+msgid "Map"
+msgstr "Mapa"
+
+#: templates/listings/detail/section-google-map.php:37
+msgid "See Inside"
+msgstr "Pozrieť dnu"
+
+#: templates/listings/detail/section-google-map.php:44
+msgid "Directions"
+msgstr "Smer"
+
+#: templates/listings/detail/section-report.php:7
+msgid "Report spam, abuse, or inappropriate content"
+msgstr "Nahlásiť spam, zneužitie alebo nevhodný obsah"
+
+#: templates/mails/report.php:21
+msgid "Report reason"
+msgstr "Dôvod"
+
+#: templates/misc/breadcrumb.php:3 templates/misc/breadcrumb.php:6
+#: templates/misc/breadcrumb.php:9
+msgid "Home"
+msgstr "Domov"
+
+#: templates/misc/breadcrumb.php:84
+msgid "Page not found"
+msgstr "Stránka sa nenašla"
+
+#: templates/misc/breadcrumb.php:91 templates/misc/breadcrumb.php:93
+#: templates/misc/breadcrumb.php:95
+msgid "Archive for"
+msgstr "Archív pre"
+
+#: templates/misc/breadcrumb.php:97
+msgid "Author Archive"
+msgstr "Archív autorov"
+
+#: templates/misc/breadcrumb.php:99
+msgid "Blog Archives"
+msgstr "Archív blogu"
+
+#: templates/misc/breadcrumb.php:101
+msgid "Search Results"
+msgstr "Výsledky hľadania"
+
+#: templates/misc/not-allowed.php:9
+msgid "You need to log in at first."
+msgstr "Najprv sa musíte prihlásiť"
+
+#: templates/misc/not-allowed.php:21
+msgid "Login"
+msgstr "Prihlásenie"
+
+#: templates/misc/not-allowed.php:26
+msgid "Register"
+msgstr "Registrácia"
+
+#: templates/misc/object-does-not-exist.php:8
+msgid "Object does not exist."
+msgstr "Objekt neexistuje."
+
+#: templates/misc/print-button.php:2
+msgid "Print"
+msgstr "Vytlačiť"
+
+#: templates/misc/remove-form.php:3 templates/misc/report-form.php:3
+msgid "You have to specify listing!"
+msgstr "Musíte špecifikovať položku!"
+
+#: templates/misc/remove-form.php:15
+msgid "Delete"
+msgstr "Zmazať"
+
+#: templates/misc/report-form.php:6
+#, php-format
+msgid "What's wrong with %s?"
+msgstr "Čo je zlé s %s?"
+
+#: templates/misc/report-form.php:14 templates/misc/report-form.php:15
+msgid "It is spam"
+msgstr "Je to spam"
+
+#: templates/misc/report-form.php:21 templates/misc/report-form.php:22
+msgid "It is nudity or pornography"
+msgstr "Je to nahota alebo pornografia"
+
+#: templates/misc/report-form.php:28 templates/misc/report-form.php:29
+msgid "It humiliates somebody"
+msgstr "Niekoho ponižuje"
+
+#: templates/misc/report-form.php:35 templates/misc/report-form.php:36
+msgid "It is inappropriate"
+msgstr "Je to nevhodné"
+
+#: templates/misc/report-form.php:42 templates/misc/report-form.php:43
+msgid ""
+"It insults or attacks someone based on their religion, ethnicity or sexual "
+"orientation"
+msgstr ""
+"Uráža alebo útočí na niekoho na základe ich náboženstva, etnického pôvodu "
+"alebo sexuálnej orientácie"
+
+#: templates/misc/report-form.php:49 templates/misc/report-form.php:50
+msgid "It advocates violence or harm to a person or animal"
+msgstr "Obhajuje násilie alebo ubližuje osobe alebo zvieraťu"
+
+#: templates/misc/report-form.php:56 templates/misc/report-form.php:57
+msgid "It displays someone harming themself or planning to harm themself"
+msgstr "Zobrazuje ako niekto ubližuje sám sebe alebo si plánuje ublížiť"
+
+#: templates/misc/report-form.php:63 templates/misc/report-form.php:64
+msgid "It describes buying or selling drugs, guns or regulated products"
+msgstr "Popisuje nákup alebo predaj drog, zbraní alebo regulovaných výrobkov"
+
+#: templates/misc/report-form.php:71 templates/misc/report-form.php:72
+msgid "It is an unauthorized use of my intellectual property"
+msgstr "Jedná sa o neoprávnené použitie môjho duševného vlastníctva"
+
+#: templates/misc/report-form.php:78 templates/misc/report-form.php:79
+msgid "Something else"
+msgstr "Niečo iné"
+
+#: templates/misc/report-form.php:85
+msgid "Other reason or additional information"
+msgstr "Iný dôvod alebo dodatočné informácie"
+
+#: templates/misc/report-form.php:88
+msgid "Contact to you"
+msgstr "Kontakt na vás"
+
+#: templates/misc/report-form.php:107
+msgid "Submit to review"
+msgstr "Poslať na kontrolu"
+
+#: templates/misc/share.php:3 templates/misc/share.php:7
+msgid "Share"
+msgstr "Zdieľať"
+
+#: templates/notices/welcome.php:3
+msgid ""
+"<strong>Welcome to Inventor</strong> - please read <a href=\"http://"
+"inventorwp.com/documentation/\" target=\"_blank\">documentation</a> for more "
+"information."
+msgstr ""
+"<strong>Inventor Vás víta</strong> - pre viac informácii si prosím "
+"prečítajte <a href=\"http://inventorwp.com/documentation/\" target=\"_blank"
+"\">dokumentáciu</a>."
+
+#: templates/notices/welcome.php:7
+msgid ""
+"All available features are listed at <a href=\"http://inventorwp.com\" "
+"target=\"_blank\">inventorwp.com</a>."
+msgstr ""
+"Všetky dostupné vlastnosti a funkcie sú spísané na <a href=\"http://"
+"inventorwp.com\" target=\"_blank\">inventorwp.com</a>."
+
+#: templates/notices/welcome.php:12
+msgid "Documentation"
+msgstr "Dokumentácia"
+
+#: templates/notices/welcome.php:16
+msgid "Plugins"
+msgstr "Moduly"
+
+#: templates/notices/welcome.php:20
+msgid "Hide"
+msgstr "Schovať"
+
+#: templates/payment/gateways/wire-transfer.php:10
+#, php-format
+msgid "for package \"%s\""
+msgstr "za balík \"%s\""
+
+#: templates/payment/gateways/wire-transfer.php:16
+msgid "Beneficiary's account number"
+msgstr "Číslo účtu príjemcu"
+
+#: templates/payment/gateways/wire-transfer.php:21
+msgid "Bank code (SWIFT/BIC)"
+msgstr "Kód banky (SWIFT/BIC)"
+
+#: templates/payment/gateways/wire-transfer.php:26
+msgid "Variable symbol"
+msgstr "Variabilný symbol"
+
+#: templates/payment/gateways/wire-transfer.php:31
+msgid "Information / reference"
+msgstr "Informácia / referencia"
+
+#: templates/payment/gateways/wire-transfer.php:38
+msgid "Beneficiary's name"
+msgstr "Meno príjemcu"
+
+#: templates/payment/gateways/wire-transfer.php:48
+msgid "Postcode (ZIP)"
+msgstr "Poštové smerovacie číslo (PSČ)"
+
+#: templates/payment/gateways/wire-transfer.php:65
+msgid "Your payment will be manually reviewed when transfer will be completed."
+msgstr "Vaša platba bude manuálne overená po uskutočnení transakcie."
+
+#: templates/payment/payment-form.php:16
+msgid "You are missing payment type."
+msgstr "Chýba typ platby."
+
+#: templates/payment/payment-form.php:20
+msgid "Invalid payment type."
+msgstr "Neplatný typ platby."
+
+#: templates/payment/payment-form.php:24
+msgid "Object is missing."
+msgstr "Objekt neexistuje."
+
+#: templates/payment/payment-form.php:51
+msgid "Payment gateway"
+msgstr "Platobná brána"
+
+#: templates/payment/payment-form.php:101
+msgid "Proceed payment"
+msgstr "Pokračovať v platbe"
+
+#: templates/payment/payment-form.php:106
+msgid "No payment gateways found."
+msgstr "Nenašli sa žiadne platobné brány."
+
+#: templates/payment/payment-form.php:113
+msgid "Back to"
+msgstr "Späť na"
+
+#: templates/payment/transactions.php:18
+msgid "ID"
+msgstr "ID"
+
+#: templates/payment/transactions.php:22
+msgid "Payment Type"
+msgstr "Typ platby"
+
+#: templates/payment/transactions.php:48
+msgid "Package"
+msgstr "Balík"
+
+#: templates/payment/transactions.php:72 templates/submissions/list.php:105
+msgid "Previous page"
+msgstr "Predchádzajúca strana"
+
+#: templates/payment/transactions.php:73 templates/submissions/list.php:106
+msgid "Next page"
+msgstr "Nasledujúca strana"
+
+#: templates/payment/transactions.php:74 templates/submissions/list.php:107
+msgid "Page"
+msgstr "Strana"
+
+#: templates/payment/transactions.php:77
+msgid "No transactions found."
+msgstr "Nenašli sa žiadne transakcie."
+
+#: templates/submissions/list.php:11
+msgid "Create listing"
+msgstr "Vytvoriť položku"
+
+#: templates/submissions/list.php:26
+msgid "Listing published"
+msgstr "Položka publikovaná"
+
+#: templates/submissions/list.php:27
+msgid "Waiting for review"
+msgstr "Čaká na schválenie"
+
+#: templates/submissions/list.php:28
+msgid "Listing disabled"
+msgstr "Položka deaktivovaná"
+
+#: templates/submissions/list.php:40
+msgid "Pending"
+msgstr "Vyčkáva"
+
+#: templates/submissions/list.php:48
+msgid "Disabled"
+msgstr "Deaktivované"
+
+#: templates/submissions/list.php:87
+msgid "Edit"
+msgstr "Upraviť"
+
+#: templates/submissions/list.php:113
+msgid "You don't have any listings, yet. Start by creating new one."
+msgstr "Nemáte ešte žiadne položky. Začnite jej vytvorením."
+
+#: templates/submissions/step-title.php:8
+msgid "step"
+msgstr "krok"
+
+#: templates/submissions/steps-not-found.php:1
+msgid "Custom post type does not have any metaboxes."
+msgstr "Vlastný typ položky nemá žiadne metaboxy."
+
+#: templates/submissions/steps.php:28
+msgid "Nothing to show."
+msgstr "Niet čo ukázať."
+
+#: templates/submissions/type-not-found.php:3
+msgid "Please define type of your submission"
+msgstr "Zadefinujte prosím typ podania"
+
+#: templates/widgets/advanced-options-admin.php:16
+msgid "Advanced Options"
+msgstr "Pokročilé možnosti"
+
+#: templates/widgets/advanced-options-admin.php:24
+msgid "Background Color"
+msgstr "Farba pozadia"
+
+#: templates/widgets/advanced-options-admin.php:37
+msgid "Background Image (URL)"
+msgstr "Obrázok na pozadí (URL)"
+
+#: templates/widgets/advanced-options-admin.php:55
+msgid "Padding Top"
+msgstr "Odsadenie zhora"
+
+#: templates/widgets/advanced-options-admin.php:68
+msgid "Padding Bottom"
+msgstr "Odsadenie dola"
+
+#: templates/widgets/advanced-options-admin.php:75
+msgid "Classes"
+msgstr "Triedy"
+
+#: templates/widgets/advanced-options-admin.php:84
+msgid "Additional classes e.g. <i>background-gray</i>"
+msgstr "Dodatočné triedy, napr. <i>background-gray</i>"
+
+#: templates/widgets/filter-admin.php:31
+msgid "Button text"
+msgstr "Text tlačidla"
+
+#: templates/widgets/filter-admin.php:49
+msgid "Sorting Options"
+msgstr "Možnosti zoradenia"
+
+#: templates/widgets/filter-admin.php:54
+msgid "Input titles"
+msgstr "Nadpisy vstupov"
+
+#: templates/widgets/filter-admin.php:65
+msgid "Labels"
+msgstr "Etiketa"
+
+#: templates/widgets/filter-admin.php:77
+msgid "Placeholders"
+msgstr "Text v poliach"
+
+#: templates/widgets/filter-admin.php:83
+msgid "Result numbers"
+msgstr "Čísla výsledkov"
+
+#: templates/widgets/filter-admin.php:94
+msgid "Show result numbers"
+msgstr "Zobrazí výsledky v číslach"
+
+#: templates/widgets/filter-admin.php:106
+msgid "Show total count"
+msgstr "Zobraziť celkový počet"
+
+#: templates/widgets/filter-fields/listing-categories.php:20
+msgid "All categories"
+msgstr "Všetky kategórie"
+
+#: templates/widgets/filter-fields/listing-type.php:18
+msgid "All listing types"
+msgstr "Všetky typy položiek"
+
+#: templates/widgets/filter-fields/locations.php:70
+msgid "All locations"
+msgstr "Všeky umiestnenia"
+
+#: templates/widgets/filter-fields/price.php:4
+#: templates/widgets/filter-fields/price.php:8
+msgid "Price from"
+msgstr "Od ceny"
+
+#: templates/widgets/filter-fields/price.php:15
+#: templates/widgets/filter-fields/price.php:19
+msgid "Price to"
+msgstr "Po cenu"
+
+#: templates/widgets/filter-form.php:39
+msgid "Sort"
+msgstr "Zoskupiť"
+
+#: templates/widgets/filter-form.php:55 templates/widgets/listings-admin.php:91
+msgid "Order"
+msgstr "Zoradiť"
+
+#: templates/widgets/filter-form.php:61
+msgid "Asc"
+msgstr "Vzostupne"
+
+#: templates/widgets/filter-form.php:67
+msgid "Desc"
+msgstr "Zostupne"
+
+#: templates/widgets/filter-form.php:77
+msgid "Rows"
+msgstr "Riadky"
+
+#: templates/widgets/filter-form.php:84
+msgid "Grid"
+msgstr "Mriežka"
+
+#: templates/widgets/filter.php:43
+#, php-format
+msgid ""
+"<span class=\"match\">%d</span> listing from <span class=\"total\">%d</span> "
+"matches your search criteria"
+msgid_plural ""
+"<span class=\"match\">%d</span> listings from <span class=\"total\">%d</"
+"span> match your search criteria"
+msgstr[0] ""
+"<span class=\"match\">%d</span> položka z <span class=\"total\">%d</span> sa "
+"zhoduje s vašimi vyhľadávacími kritériami"
+msgstr[1] ""
+"<span class=\"match\">%d</span> položiek z <span class=\"total\">%d</span> "
+"sa zhoduje s vašimi vyhľadávacími kritériami"
+
+#: templates/widgets/filter.php:45
+#, php-format
+msgid "<span class=\"match\">%d</span> listing matches your search criteria"
+msgid_plural ""
+"<span class=\"match\">%d</span> listings match your search criteria"
+msgstr[0] ""
+"<span class=\"match\">%d</span> položka sa zhoduje s vašimi vyhľadávacími "
+"kritériami"
+msgstr[1] ""
+"<span class=\"match\">%d</span> položiek sa zhoduje s vašimi vyhľadávacími "
+"kritériami"
+
+#: templates/widgets/listing-categories-admin.php:64
+msgid "Show count"
+msgstr "Zobraziť počet."
+
+#: templates/widgets/listing-categories-boxes-admin.php:59
+#: templates/widgets/listings-admin.php:75
+msgid "Items per row"
+msgstr "Položiek na riadok"
+
+#: templates/widgets/listing-inquire-admin.php:35
+msgid "Form fields"
+msgstr "Polia formulára"
+
+#: templates/widgets/listing-inquire-admin.php:85
+#: templates/widgets/listing-inquire.php:63
+msgid "Subject"
+msgstr "Predmet"
+
+#: templates/widgets/listing-inquire-admin.php:116
+msgid "Who will receive an e-mail?"
+msgstr "Kto dostane e-mail?"
+
+#: templates/widgets/listing-inquire-admin.php:128
+msgid "Site admin"
+msgstr "Administrátor"
+
+#: templates/widgets/listing-inquire-admin.php:141
+msgid "Listing author"
+msgstr "Autor položky"
+
+#: templates/widgets/listing-inquire-admin.php:154
+msgid "Listing email"
+msgstr "Email položky"
+
+#: templates/widgets/listing-inquire-admin.php:159
+msgid "If none selected, post author will receive an email by default."
+msgstr "Štandardne bude správa odoslaná na email autora."
+
+#: templates/widgets/listing-inquire.php:80
+msgid "Send Message"
+msgstr "Odoslať správu"
+
+#: templates/widgets/listings-admin.php:47
+msgid "Count"
+msgstr "Počet"
+
+#: templates/widgets/listings-admin.php:61
+#: templates/widgets/listings-admin.php:125
+msgid "IDs"
+msgstr "Identifikátory"
+
+#: templates/widgets/listings-admin.php:69
+msgid ""
+"For specific listings please insert post ids, separated by comma. Example: "
+"1,2,3"
+msgstr ""
+"Pre špecifické položky zadajte ID príspevkov, oddelené čiarkami. Napríklad: "
+"1,2,3"
+
+#: templates/widgets/listings-admin.php:101
+msgid "Default"
+msgstr "Štandardné"
+
+#: templates/widgets/listings-admin.php:113
+msgid "Random"
+msgstr "Náhodne"
+
+#: templates/widgets/listings-admin.php:133
+msgid "Choose attribute"
+msgstr "Zvoľte atribút"
+
+#: templates/widgets/listings-admin.php:143
+msgid "None"
+msgstr "Žiaden"
+
+#: templates/widgets/listings-admin.php:155
+msgid "Featured only"
+msgstr "Iba významné"
+
+#: templates/widgets/listings-admin.php:168
+msgid "Reduced only"
+msgstr "Iba zlacnené"
+
+#: templates/widgets/listings-admin.php:177
+msgid "Display as"
+msgstr "Zobraziť ako"
+
+#: templates/widgets/listings-admin.php:182
+msgid "Small"
+msgstr "Malé"
+
+#: templates/widgets/listings-admin.php:183
+msgid "Box"
+msgstr "Box"
+
+#: templates/widgets/listings-admin.php:184
+msgid "Row"
+msgstr "Riadok"
+
+#: templates/widgets/listings-admin.php:185
+msgid "Masonry"
+msgstr "Masonry"
+
+#: templates/widgets/listings-admin.php:211
+msgid "Types"
+msgstr "Typy"
+
+#: templates/widgets/listings.php:80
+msgid "No listings found."
+msgstr "Nenašli sa žiadne položky."
+
+#: templates/widgets/opening-hours.php:10
+msgid "Mon"
+msgstr "Po"
+
+#: templates/widgets/opening-hours.php:11
+msgid "Tue"
+msgstr "Ut"
+
+#: templates/widgets/opening-hours.php:12
+msgid "Wed"
+msgstr "St"
+
+#: templates/widgets/opening-hours.php:13
+msgid "Thu"
+msgstr "Št"
+
+#: templates/widgets/opening-hours.php:14
+msgid "Fri"
+msgstr "Pi"
+
+#: templates/widgets/opening-hours.php:15
+msgid "Sat"
+msgstr "So"
+
+#: templates/widgets/opening-hours.php:16
+msgid "Sun"
+msgstr "Ne"
+
+#: templates/widgets/opening-hours.php:49
+msgid "It is <span class=\"open\">open</span>."
+msgstr "Je <span class=\"open\">otvorené</span>."
+
+#: templates/widgets/opening-hours.php:54
+msgid "It is <span class=\"closed\">closed</span>."
+msgstr "Je <span class=\"closed\">zatvorené</span>."
+
+#~ msgid "businesses"
+#~ msgstr "biznisy"
+
+#~ msgid "cars"
+#~ msgstr "automobily"
+
+#~ msgid "datings"
+#~ msgstr "zoznamky"
+
+#~ msgid "educations"
+#~ msgstr "vzdelania"
+
+#~ msgid "events"
+#~ msgstr "podujatia"
+
+#~ msgid "foods"
+#~ msgstr "jedla"
+
+#~ msgid "hotels"
+#~ msgstr "hotely"
+
+#~ msgid "listings"
+#~ msgstr "položky"
+
+#~ msgid "musics"
+#~ msgstr "hudby"
+
+#~ msgid "pets"
+#~ msgstr "domácezvieratá"
+
+#~ msgid "shoppings"
+#~ msgstr "tovar"
+
+#~ msgid "travels"
+#~ msgstr "cestovanie"
+
+#~ msgid "car-body-style"
+#~ msgstr "karoseria"
+
+#~ msgid "car-engine-type"
+#~ msgstr "motorizacia"
+
+#~ msgid "car-model"
+#~ msgstr "model-automobilu"
+
+#~ msgid "car-transmission"
+#~ msgstr "prevodovka"
+
+#~ msgid "color"
+#~ msgstr "farba"
+
+#~ msgid "dating-group"
+#~ msgstr "skupiny-zoznamky"
+
+#~ msgid "dating-interest"
+#~ msgstr "zaujem-zoznamky"
+
+#~ msgid "dating-status"
+#~ msgstr "stav-zoznamky"
+
+#~ msgid "education-level"
+#~ msgstr "uroven-vzdelania"
+
+#~ msgid "education-subject"
+#~ msgstr "predmet-vzdelania"
+
+#~ msgid "event-type"
+#~ msgstr "typ-podujatia"
+
+#~ msgid "food-kind"
+#~ msgstr "druh-jedla"
+
+#~ msgid "hotel-class"
+#~ msgstr "trieda-hotela"
+
+#~ msgid "listing-category"
+#~ msgstr "kategoria-poloziek"
+
+#~ msgid "location"
+#~ msgstr "umiestnenie"
+
+#~ msgid "music-genre"
+#~ msgstr "zaner-hudby"
+
+#~ msgid "pet-animal"
+#~ msgstr "domace-zviera"
+
+#~ msgid "shopping-category"
+#~ msgstr "kategoria-tovaru"
+
+#~ msgid "travel-activity"
+#~ msgstr "aktivita-cestovania"
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid ""
+#~ "Any text instead of price (for example \"by agreement\"). Prefix and "
+#~ "Suffix will be ignored."
+#~ msgstr ""
+#~ "Ľubovoľný text zobrazený namiesto číselnej ceny (napríklad “za noc”)"
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
+
+#~ msgid "Instagram"
+#~ msgstr "Instagram"
+
+#~ msgid "Vimeo"
+#~ msgstr "Vimeo"

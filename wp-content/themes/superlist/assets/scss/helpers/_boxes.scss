@@ -1,0 +1,129 @@
+.widget_boxes {
+    .footer & {
+        .row > div {
+            @extend .clearfix;
+
+            float: none;
+            width: 100%;
+        }
+    }   
+}
+
+.box {    
+    @media (max-width: $screen-xs-max) {
+        margin-bottom: 30px;
+    }
+
+    .footer & {
+        margin: 0px 0px 20px 0px;
+    }
+}
+
+.box-icon {
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 50%;
+    color: $color-primary;
+    float: left;
+    font-size: 34px;
+    height: 72px;
+    line-height: 68px;
+    margin: 0px 20px 0px 0px;
+    position: relative;
+    text-align: center;
+    width: 72px;
+
+    .fa {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+    }
+
+    .fa-map {
+        font-size: 32px;
+    }
+
+    .footer & {
+        background-color: transparent;
+        border: 0px;
+        border-radius: 0px;
+        color: $color-primary;
+        font-size: 25px;
+        line-height: 1;
+        margin: -3px 20px 0px 0px;
+        width: 28px;
+
+        .fa-mobile {
+            font-size: 32px;
+        }
+
+        .fa {
+            position: relative;
+            left: auto;
+            top: auto;
+            transform: none;
+            -webkit-transform: none;
+        }
+    }
+}
+
+.box-body {
+    display: table-cell;
+
+    .box-title {
+        font-size: 24px;
+        font-weight: 300;
+        margin: 24px 0px 20px 0px;
+
+        .footer & {
+            color: #fff;
+            font-size: 16px;
+            margin: 0px 0px 15px 0px;
+        }
+    }
+
+    .box-content {
+        color: $color-gray-darker;
+        line-height: 1.5;
+        margin: 0px;
+
+        .footer & {
+            color: rgba(#fff, 0.8);
+        }
+    }
+
+    .box-read-more {
+        color: $color-primary;
+        display: block;
+        margin-top: 10px;
+
+        .fa {
+            background-color: transparent;
+            font-size: 18px;
+            height: auto;
+            margin-left: 5px;
+            vertical-align: -1px;
+            width: auto;
+        }
+    }
+
+    a.fa, a .fa {
+        background-color: $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        font-size: 12px;
+        height: 24px;
+        line-height: 25px;
+        margin-left: 0px;
+        margin-right: 10px;
+        text-align: center;
+        width: 24px;
+        transition: all linear .15s;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}

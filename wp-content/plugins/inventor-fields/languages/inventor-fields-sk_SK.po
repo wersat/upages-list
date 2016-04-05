@@ -1,0 +1,460 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Inventor-fields\n"
+"POT-Creation-Date: 2016-03-15 16:34+0100\n"
+"PO-Revision-Date: 2016-03-15 16:34+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: libraries\n"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:37
+#: includes/post-types/class-inventor-fields-post-type-field.php:43
+#: includes/post-types/class-inventor-fields-post-type-field.php:49
+msgid "Fields"
+msgstr "Polia"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:38
+msgid "Field"
+msgstr "Pole"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:39
+#: includes/post-types/class-inventor-fields-post-type-field.php:40
+msgid "Add New Field"
+msgstr "Pridať nové pole"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:41
+msgid "Edit Field"
+msgstr "Upraviť pole"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:42
+msgid "New Field"
+msgstr "Nové pole"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:44
+msgid "View Field"
+msgstr "Zobraziť pole"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:45
+msgid "Search Field"
+msgstr "Vyhľadať pole"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:46
+msgid "No Fields found"
+msgstr "Nenašli sa žiadne polia"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:47
+msgid "No Fields found in Trash"
+msgstr "V koši sa nenašli žiadne polia"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:75
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:206
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:73
+msgid "Settings"
+msgstr "Nastavenia"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:83
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:225
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:81
+msgid "Identifier"
+msgstr "Identifikátor"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:84
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:82
+msgid "Unique identifier"
+msgstr "Jedinečný identifikátor"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:94
+msgid "Required"
+msgstr "Požadované"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:101
+msgid "Skip"
+msgstr "Preskočiť"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:102
+msgid "From attributes section on listing detail"
+msgstr "V sekcii atribútov na detaile položky"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:109
+msgid "Description"
+msgstr "Opis"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:116
+msgid "Type"
+msgstr "Typ"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:121
+msgid "Text"
+msgstr "Text"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:122
+msgid "Small text"
+msgstr "Krátky text"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:123
+msgid "Medium text"
+msgstr "Stredne dlhý text"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:124
+msgid "Email address"
+msgstr "Emailová adresa"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:125
+msgid "URL"
+msgstr "URL"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:126
+msgid "Money"
+msgstr "Peniaze"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:127
+msgid "Textarea"
+msgstr "Textové pole"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:128
+msgid "Smaller textarea"
+msgstr "Menšie textové pole"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:129
+msgid "Code textarea"
+msgstr "Textové pole pre zdrojový kód"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:130
+msgid "TinyMCE wysiwyg editor"
+msgstr "TinyMCE wysiwyg editor"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:131
+msgid "Time picker"
+msgstr "Výber času"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:132
+msgid "Timezone"
+msgstr "Časová zóna"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:133
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:280
+msgid "Date"
+msgstr "Dátum"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:134
+msgid "Date and time"
+msgstr "Dátum a čas"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:135
+msgid "Date, time and timezone"
+msgstr "Dátum, čas a časová zóna"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:137
+msgid "Colorpicker"
+msgstr "Výber farby"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:138
+msgid "Checkbox"
+msgstr "Checkbox"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:139
+msgid "Multicheck"
+msgstr "Výber viacerých hodnôt"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:140
+msgid "Multicheck inline"
+msgstr "Výber viacerých hodnôt v riadku"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:141
+msgid "Radio"
+msgstr "Prepínač"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:142
+msgid "Radio inline"
+msgstr "Prepínač v riadku"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:143
+msgid "Select"
+msgstr "Selektívna voľba"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:144
+msgid "File uploader"
+msgstr "Nahrávač súboru"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:145
+msgid "Files uploader"
+msgstr "Nahrávač súborov"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:146
+msgid "Embed media"
+msgstr "Vložené médiá"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:152
+msgid "Value Type"
+msgstr "Typ hodnoty"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:156
+msgid "Characters"
+msgstr "Znaky"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:157
+msgid "Integer"
+msgstr "Celé číslo"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:158
+msgid "Positive integer"
+msgstr "Kladné celé číslo"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:159
+msgid "Decimal"
+msgstr "Desatinné číslo"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:160
+msgid "Positive decimal"
+msgstr "Kladné desatinné číslo"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:166
+msgid "Options"
+msgstr "Možnosti"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:169
+msgid "Comma separated options if type support choices"
+msgstr "Čiarkou oddelené možnosti pokiaľ typ podporuje voľbu"
+
+#: includes/post-types/class-inventor-fields-post-type-field.php:188
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:36
+msgid "Metabox"
+msgstr "Metabox"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:168
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:174
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:180
+msgid "Listing Types"
+msgstr "Typy položiek"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:169
+msgid "Listing Type"
+msgstr "Typ položky"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:170
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:171
+msgid "Add New Listing Type"
+msgstr "Pridať nový typ položky"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:172
+msgid "Edit Listing Type"
+msgstr "Upraviť typ položky"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:173
+msgid "New Listing Type"
+msgstr "Nový typ položky"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:175
+msgid "View Listing Type"
+msgstr "Zobraziť typ položky"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:176
+msgid "Search Listing Type"
+msgstr "Vyhľadať typ položky"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:177
+msgid "No Listing Types found"
+msgstr "Nenašli sa žiadne typy položiek"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:178
+msgid "No Listing Types found in Trash"
+msgstr "V koši sa nenašli žiadne typy položiek"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:214
+msgid "Singular name"
+msgstr "Názov v jednotnom čísle"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:215
+msgid "Name for one object of this post type (Set title to plural name)."
+msgstr ""
+"Názov jedného objektu tohto typu (Nadpis slúži ako názov v množnom čísle)."
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:226
+msgid "Unique identifier (Slug with lowercase characters)."
+msgstr "Jedinečný identifikátor (slug s malými písmenami)."
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:237
+msgid "URL Slug"
+msgstr "URL slug"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:238
+msgid "Don't forget to resave permalinks in Settings > Permalinks."
+msgstr "Nezabudnite uložiť trvalé odkazy v Nastavenia > Trvalé odkazy."
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:248
+msgid "Allowed purchasing"
+msgstr "Povolený nákup"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:255
+msgid "Allowed claiming"
+msgstr "Povolené nárokovanie"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:262
+msgid "Predefined metaboxes"
+msgstr "Preddefinované metaboxy"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:263
+msgid ""
+"For custom metaboxes and fields, go to Inventor > Metaboxes or Inventor > "
+"Fields"
+msgstr ""
+"Pre vlastné metaboxy a polia, choďte do Inventor > Metaboxy alebo Inventor > "
+"Polia"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:268
+msgid "Branding: slogan, brand color, logo"
+msgstr "Značka: slogan, farba, logo"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:269
+msgid "Banner"
+msgstr "Baner"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:270
+msgid "Gallery"
+msgstr "Galéria"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:271
+msgid "Video"
+msgstr "Video"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:272
+msgid "Price"
+msgstr "Cena"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:273
+msgid "Color"
+msgstr "Farba"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:274
+msgid "Listing category"
+msgstr "Kategória položky"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:275
+msgid "Location"
+msgstr "Umiestnenie"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:276
+msgid "Contact: email, phone, website, address"
+msgstr "Kontakt: email, telefón, webstránka, adresa"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:277
+msgid "Social connection"
+msgstr "Sociálne siete"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:278
+msgid "Opening hours"
+msgstr "Otváracie hodiny"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:279
+msgid "Flags: featured, reduced, verified"
+msgstr "Značky: významné, zlacnené, overené"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:281
+msgid "Time"
+msgstr "Čas"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:282
+msgid "Date interval: date from, date to"
+msgstr "Dátumový interval: dátum od, dátum do"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:283
+msgid "Datetime interval: date and time from, date and time to"
+msgstr "Dátumový a časový interval: dátum a čas od, dátum a čas do"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:284
+msgid "Time interval: time from, time to"
+msgstr "Časový interval: čas od, čas do"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:285
+msgid "Date and time interval: date, time from, time to"
+msgstr "Dátum a časový interval: dátum, čas od, čas do"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:311
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:312
+#, php-format
+msgid "Add New %s"
+msgstr "Pridať %s"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:313
+#, php-format
+msgid "Edit %s"
+msgstr "Upraviť %s"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:314
+#, php-format
+msgid "New %s"
+msgstr "Nový %s"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:316
+#, php-format
+msgid "View %s"
+msgstr "Zobraziť %s"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:317
+#, php-format
+msgid "Search %s"
+msgstr "Vyhľadať %s"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:318
+#, php-format
+msgid "No %s found"
+msgstr "Nenašli sa žiadne %s"
+
+#: includes/post-types/class-inventor-fields-post-type-listing-type.php:319
+#, php-format
+msgid "No %s found in Trash"
+msgstr "V koši sa nenašli žiadne %s"
+
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:35
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:41
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:47
+msgid "Metaboxes"
+msgstr "Metaboxy"
+
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:37
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:38
+msgid "Add New Metabox"
+msgstr "Pridať nový metabox"
+
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:39
+msgid "Edit Metabox"
+msgstr "Upraviť metabox"
+
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:40
+msgid "New Metabox"
+msgstr "Nový metabox"
+
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:42
+msgid "View Metabox"
+msgstr "Zobraziť metabox"
+
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:43
+msgid "Search Metabox"
+msgstr "Zobraziť metabox"
+
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:44
+msgid "No Metaboxes found"
+msgstr "Nenašli sa žiadne metaboxy"
+
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:45
+msgid "No Metaboxes found in Trash"
+msgstr "V koši sa nenašli žiadne metaboxy"
+
+#: includes/post-types/class-inventor-fields-post-type-metabox.php:103
+msgid "Listing type"
+msgstr "Typ položky"
+
+#~ msgid "Date and time interval, time from, time to"
+#~ msgstr "Dátum a časový interval: dátum, čas od, čas do"
