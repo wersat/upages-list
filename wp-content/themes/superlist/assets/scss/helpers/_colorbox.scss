@@ -1,100 +1,100 @@
 #cboxOverlay {
-	background-color: rgba(black, .9);
-	background-image: none;
-}
+  background-color : rgba(black, .9);
+  background-image : none;
+  }
 
 #cboxTopLeft, #cboxTopCenter, #cboxTopRight, #cboxMiddleLeft, #cboxMiddleRight, #cboxBottomLeft, #cboxBottomCenter, #cboxBottomRight {
-	display: none;
-}
+  display : none;
+  }
 
-#cboxCurrent { 
-	display: none !important;
-}
+#cboxCurrent {
+  display : none !important;
+  }
 
 #cboxPrevious, #cboxNext {
-    background-color: rgba(black, .7);
-	background-image: none;
-    height: 0;
-	font-size: 0px;
-	left: 0px;
-	position: absolute;
-	transform: transitionY(-50%);
-	text-indent: 0px;
-	top: 50%;
-	width: 40px;
+  position         : absolute;
+  top              : 50%;
+  left             : 0;
+  width            : 40px;
+  height           : 0;
+  background-color : rgba(black, .7);
+  background-image : none;
+  text-indent      : 0;
+  font-size        : 0;
+  transform        : transitionY(-50%);
 
-	&:after {
-        background-color: transparent;
-		font-family: 'FontAwesome';
-        font-size: 24px;
-        height: auto;
-        position: relative;
-		transition: color .15s linear;
-        -webkit-font-smoothing: antialiased;
-        width: 40px;
-	}
+  &:after {
+    position               : relative;
+    width                  : 40px;
+    height                 : auto;
+    background-color       : transparent;
+    font-size              : 24px;
+    font-family            : 'FontAwesome';
+    transition             : color .15s linear;
+    -webkit-font-smoothing : antialiased;
+    }
 
-	&:focus {
-		outline: 0px !important;
-	}
-}
+  &:focus {
+    outline : 0 !important;
+    }
+  }
 
 #cboxPrevious {
-    left: 0px;
-    position: absolute;    
+  position : absolute;
+  left     : 0;
 
-	&:after {
-		content: '\f053';
-		margin-left: -3px;
-	}
-}
+  &:after {
+    margin-left : -3px;
+    content     : '\f053';
+    }
+  }
 
 #cboxNext {
-	left: auto !important;
-	right: 0px;
+  right : 0;
+  left  : auto !important;
 
-	&:after {
-		content: '\f054';
-		margin-right: -5px;
-	}
-}
+  &:after {
+    margin-right : -5px;
+    content      : '\f054';
+    }
+  }
 
 #colorbox, #cboxOverlay, #cboxWrapper, #cboxContent {
-	overflow: visible !important;
-}
+  overflow : visible !important;
+  }
 
 #colorbox {
-    z-index: 99999;
-}
+  z-index : 99999;
+  }
 
 #cboxLoadedContent {
-	margin: 0px;
-}
+  margin : 0;
+  }
 
 #cboxClose {
-    background-color: rgba(black, .7);
-    background-image: none;
-    font-size: 0px;
-    height: 40px;
-    right: 0;
-    top: 0;
-    position: absolute;
-    text-indent: 0px;
-    width: 40px;
+  position         : absolute;
+  top              : 0;
+  right            : 0;
+  width            : 40px;
+  height           : 40px;
+  background-color : rgba(black, .7);
+  background-image : none;
+  text-indent      : 0;
+  font-size        : 0;
 
-	&:after {
-		color: $color-white;
-		content: '\f00d';
-		display: block;
-		font-family: 'FontAwesome';
-        font-size: 24px;
-        height: 40px;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        text-indent: 0px;
-        transition: color .15s linear;
-        -webkit-font-smoothing: antialiased;
-        width: 40px;
-	}
-}
+  &:after {
+    position               : relative;
+    display                : block;
+    margin                 : 0;
+    padding                : 0;
+    width                  : 40px;
+    height                 : 40px;
+    color                  : $color-white;
+    content                : '\f00d';
+    text-indent            : 0;
+    font-size              : 24px;
+    font-family            : 'FontAwesome';
+    transition             : color .15s linear;
+    -webkit-font-smoothing : antialiased;
+    }
+  }

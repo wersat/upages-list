@@ -1,97 +1,97 @@
 .invoice {
-    background-color: $color-white;
-    font-size: 13px;
-    margin: 60px 0px 0px 0px;
-    padding: 30px;
+  margin           : 60px 0 0 0;
+  padding          : 30px;
+  background-color : $color-white;
+  font-size        : 13px;
 
-    h1 {
-        margin: 0px 0px 40px 0px;
-        padding: 0px
+  h1 {
+    margin  : 0 0 40px 0;
+    padding : 0
     }
 
-    section {
-        border: 1px solid $color-gray;
-        margin: 0px 0px 30px 0px;
-        padding: 20px;
+  section {
+    margin  : 0 0 30px 0;
+    padding : 20px;
+    border  : 1px solid $color-gray;
 
-        dl {
-            margin: 0px;
-            padding: 0px;
-        }
+    dl {
+      margin  : 0;
+      padding : 0;
+      }
 
-        dt {
-            color: $color-gray-darker;
-            float: left;
-            font-weight: 500;
-            line-height: 28px;
-            min-width: 170px;
-        }
+    dt {
+      float       : left;
+      min-width   : 170px;
+      color       : $color-gray-darker;
+      font-weight : 500;
+      line-height : 28px;
+      }
 
-        dd {
-            color: $color-black-light;
-            display: table-cell;
-            line-height: 28px;
-        }
+    dd {
+      display     : table-cell;
+      color       : $color-black-light;
+      line-height : 28px;
+      }
     }
 
-    #general {
-        float: left;
-        width: 32%;
+  #general {
+    float : left;
+    width : 32%;
     }
 
-    #details {
-        float: right;
-        width: 64%;
+  #details {
+    float : right;
+    width : 64%;
     }
 
-    #supplier, #customer {
-        float: left;
-        width: 48%;
+  #supplier, #customer {
+    float : left;
+    width : 48%;
 
-        h2 {
-            font-size: 18px;
-            font-weight: 500;
-            margin: 0px 0px 30px 0px;
-            padding: 0px;
-        }
+    h2 {
+      margin      : 0 0 30px 0;
+      padding     : 0;
+      font-weight : 500;
+      font-size   : 18px;
+      }
     }
 
-    #supplier {
-        clear: left;
+  #supplier {
+    clear : left;
     }
 
-    #customer {
-        float: right;
+  #customer {
+    float : right;
     }
 
-    #items {
-        clear: both;
+  #items {
+    clear : both;
 
-        table {
-            margin: 0px;
-        }
+    table {
+      margin : 0;
+      }
     }
 
-    #total {
-        background-color: $color-gray;
-        border: 0px;
-        color: $color-black-light;
-        font-size: 30px;
-        font-weight: 500;
-        margin: 0px;
-        text-align: right;
+  #total {
+    margin           : 0;
+    border           : 0;
+    background-color : $color-gray;
+    color            : $color-black-light;
+    text-align       : right;
+    font-weight      : 500;
+    font-size        : 30px;
 
-        label {
-            color: $color-gray-darker;
-            font-weight: 500;
-            margin: 0px 30px 0px 0px;
-            text-transform: uppercase;
-            vertical-align: middle;
-        }
+    label {
+      margin         : 0 30px 0 0;
+      color          : $color-gray-darker;
+      vertical-align : middle;
+      text-transform : uppercase;
+      font-weight    : 500;
+      }
     }
 
-    @media print {
-        margin: 0px;
-        padding: 0px;
+  @media print {
+    margin  : 0;
+    padding : 0;
     }
-}
+  }

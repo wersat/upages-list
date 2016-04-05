@@ -1,129 +1,129 @@
 .widget_boxes {
-    .footer & {
-        .row > div {
-            @extend .clearfix;
+  .footer & {
+    .row > div {
+      @extend .clearfix;
 
-            float: none;
-            width: 100%;
-        }
-    }   
-}
+      float : none;
+      width : 100%;
+      }
+    }
+  }
 
-.box {    
-    @media (max-width: $screen-xs-max) {
-        margin-bottom: 30px;
+.box {
+  @media (max-width : $screen-xs-max) {
+    margin-bottom : 30px;
     }
 
-    .footer & {
-        margin: 0px 0px 20px 0px;
+  .footer & {
+    margin : 0 0 20px 0;
     }
-}
+  }
 
 .box-icon {
-    background-color: $color-white;
-    border: 1px solid #f0f0f0;
-    border-radius: 50%;
-    color: $color-primary;
-    float: left;
-    font-size: 34px;
-    height: 72px;
-    line-height: 68px;
-    margin: 0px 20px 0px 0px;
-    position: relative;
-    text-align: center;
-    width: 72px;
+  position         : relative;
+  float            : left;
+  margin           : 0 20px 0 0;
+  width            : 72px;
+  height           : 72px;
+  border           : 1px solid #f0f0f0;
+  border-radius    : 50%;
+  background-color : $color-white;
+  color            : $color-primary;
+  text-align       : center;
+  font-size        : 34px;
+  line-height      : 68px;
+
+  .fa {
+    position          : absolute;
+    top               : 50%;
+    left              : 50%;
+    -webkit-transform : translateX(-50%) translateY(-50%);
+    transform         : translateX(-50%) translateY(-50%);
+    }
+
+  .fa-map {
+    font-size : 32px;
+    }
+
+  .footer & {
+    margin           : -3px 20px 0 0;
+    width            : 28px;
+    border           : 0;
+    border-radius    : 0;
+    background-color : transparent;
+    color            : $color-primary;
+    font-size        : 25px;
+    line-height      : 1;
+
+    .fa-mobile {
+      font-size : 32px;
+      }
 
     .fa {
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        -webkit-transform: translateX(-50%) translateY(-50%);
+      position          : relative;
+      top               : auto;
+      left              : auto;
+      -webkit-transform : none;
+      transform         : none;
+      }
     }
-
-    .fa-map {
-        font-size: 32px;
-    }
-
-    .footer & {
-        background-color: transparent;
-        border: 0px;
-        border-radius: 0px;
-        color: $color-primary;
-        font-size: 25px;
-        line-height: 1;
-        margin: -3px 20px 0px 0px;
-        width: 28px;
-
-        .fa-mobile {
-            font-size: 32px;
-        }
-
-        .fa {
-            position: relative;
-            left: auto;
-            top: auto;
-            transform: none;
-            -webkit-transform: none;
-        }
-    }
-}
+  }
 
 .box-body {
-    display: table-cell;
+  display : table-cell;
 
-    .box-title {
-        font-size: 24px;
-        font-weight: 300;
-        margin: 24px 0px 20px 0px;
+  .box-title {
+    margin      : 24px 0 20px 0;
+    font-weight : 300;
+    font-size   : 24px;
 
-        .footer & {
-            color: $color-white;
-            font-size: 16px;
-            margin: 0px 0px 15px 0px;
-        }
+    .footer & {
+      margin    : 0 0 15px 0;
+      color     : $color-white;
+      font-size : 16px;
+      }
     }
 
-    .box-content {
-        color: $color-gray-darker;
-        line-height: 1.5;
-        margin: 0px;
+  .box-content {
+    margin      : 0;
+    color       : $color-gray-darker;
+    line-height : 1.5;
 
-        .footer & {
-            color: rgba($color-white, 0.8);
-        }
+    .footer & {
+      color : rgba($color-white, 0.8);
+      }
     }
 
-    .box-read-more {
-        color: $color-primary;
-        display: block;
-        margin-top: 10px;
+  .box-read-more {
+    display    : block;
+    margin-top : 10px;
+    color      : $color-primary;
 
-        .fa {
-            background-color: transparent;
-            font-size: 18px;
-            height: auto;
-            margin-left: 5px;
-            vertical-align: -1px;
-            width: auto;
-        }
+    .fa {
+      margin-left      : 5px;
+      width            : auto;
+      height           : auto;
+      background-color : transparent;
+      vertical-align   : -1px;
+      font-size        : 18px;
+      }
     }
 
-    a.fa, a .fa {
-        background-color: $color-primary;
-        border-radius: 50%;
-        display: inline-block;
-        font-size: 12px;
-        height: 24px;
-        line-height: 25px;
-        margin-left: 0px;
-        margin-right: 10px;
-        text-align: center;
-        width: 24px;
-        transition: all linear .15s;
+  a.fa, a .fa {
+    display          : inline-block;
+    margin-right     : 10px;
+    margin-left      : 0;
+    width            : 24px;
+    height           : 24px;
+    border-radius    : 50%;
+    background-color : $color-primary;
+    text-align       : center;
+    font-size        : 12px;
+    line-height      : 25px;
+    transition       : all linear .15s;
 
-        &:hover {
-            color: $color-white;
-        }
+    &:hover {
+      color : $color-white;
+      }
     }
-}
+  }

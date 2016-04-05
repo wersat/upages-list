@@ -1,41 +1,41 @@
 .promotion {
-    @extend .clearfix;
+  @extend .clearfix;
 
-    background-color: $color-primary;
-    border-bottom: 3px solid darken($color-primary, 5%);
-    margin-bottom: 80px;
-    padding: 30px;
-    position: relative;
+  position         : relative;
+  margin-bottom    : 80px;
+  padding          : 30px;
+  border-bottom    : 3px solid darken($color-primary, 5%);
+  background-color : $color-primary;
 
-    h1 {
-        color: $color-white;
-        font-size: 30px;
-        font-weight: 300;
-        margin: 10px 0px 0px 0px;
+  h1 {
+    margin      : 10px 0 0 0;
+    color       : $color-white;
+    font-weight : 300;
+    font-size   : 30px;
     }
 
-    h2 {
-        color: rgba(black, .4);
-        font-size: 16px;
-        margin: 8px 0px 0px 0px;
+  h2 {
+    margin    : 8px 0 0 0;
+    color     : rgba(black, .4);
+    font-size : 16px;
     }
-}
+  }
 
 .promotion-icon {
-    color: $color-white;
-    float: left;
-    height: 70px;
-    margin: 0px 30px 0px 0px;
+  float  : left;
+  margin : 0 30px 0 0;
+  height : 70px;
+  color  : $color-white;
 
-    i {
-        font-size: 80px;
+  i {
+    font-size : 80px;
     }
-}
+  }
 
 .promotion-btn {
-    position: absolute;
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-}
+  position          : absolute;
+  top               : 50%;
+  right             : 30px;
+  -webkit-transform : translateY(-50%);
+  transform         : translateY(-50%);
+  }

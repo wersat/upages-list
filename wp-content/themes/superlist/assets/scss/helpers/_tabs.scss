@@ -1,103 +1,100 @@
 .nav-tabs {
-    border: 0px;
+  border : 0;
 
-    li {
-        border: 0px !important;
-        padding: 0px !important;
+  li {
+    padding : 0 !important;
+    border  : 0 !important;
 
-        @media (max-width: $screen-xs-max) {
-            background-color: rgba(black, .03);
-            float: none;
+    @media (max-width : $screen-xs-max) {
+      background-color : rgba(black, .03);
+      float            : none;
+      }
+
+    a {
+      display       : block;
+      margin        : 0;
+      padding       : 15px 25px;
+      border        : 0 !important;
+      border-radius : 0 !important;
+      color         : $color-gray-darker;
+      font-weight   : 400;
+      }
+
+    &.active {
+      a {
+        border           : 0 !important;
+        background-color : $color-white;
+        color            : $color-black;
+        font-weight      : 500;
         }
-
-        a {
-            border: 0px !important;
-            border-radius: 0px !important;
-            color: $color-gray-darker;
-            display: block;
-            font-weight: 400;
-            margin: 0px;
-            padding: 15px 25px;
-        }
-
-        &.active {
-            a {
-                background-color: $color-white;
-                border: 0px !important;
-                color: $color-black;
-                font-weight: 500;
-            }
-        }
+      }
     }
-}
+  }
 
 .tab-content {
-    @extend .clearfix;
+  @extend .clearfix;
 
-    background-color: $color-white;
-    padding: 20px 10px;
+  padding          : 20px 10px;
+  background-color : $color-white;
 
-    ul {
-        @extend .row;
-        overflow: hidden;
-        position: relative;
+  ul {
+    @extend .row;
+    position : relative;
+    overflow : hidden;
 
-        &:after {
-            background-color: $color-white;
-            bottom: 0px;
-            content: '';
-            display: block;
-            height: 1px;
-            left: 0px;
-            position: absolute;
-            right: 0px;
-        }
+    &:after {
+      position         : absolute;
+      right            : 0;
+      bottom           : 0;
+      left             : 0;
+      display          : block;
+      height           : 1px;
+      background-color : $color-white;
+      content          : '';
+      }
     }
 
-    li {
-        @extend .col-sm-4, .col-md-3;
-        border: 0px !important;
-        color: $color-black;
-        display: block;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-        padding-bottom: 0px !important;
-        padding-top: 0px !important;
+  li {
+    @extend .col-sm-4, .col-md-3;
+    display : block;
+    padding : 0 15px !important;
+    border  : 0 !important;
+    color   : $color-black;
 
-        a {
-            border-bottom: 1px dashed $color-gray-medium;
-            color: $color-black;
-            display: block;
-            padding: 8px 0px;
+    a {
+      display       : block;
+      padding       : 8px 0;
+      border-bottom : 1px dashed $color-gray-medium;
+      color         : $color-black;
 
-            span {
-                color: $color-gray-darker;
-                display: inline-block;
-                font-size: 11px;
-                margin: 0 0 0 5px;
-                vertical-align: 1px;
-            }
-
-            &:before {
-                color: $color-primary;
-                content: '\f10c';
-                display: inline-block;
-                font-family: 'FontAwesome';
-                font-size: 6px;
-                margin: 0px 13px 0px 0px;
-                vertical-align: 2px;
-            }
-
-            &:after {
-                color: $color-gray-dark;
-                content: '\f054';
-                display: block;
-                float: right;
-                font-family: 'FontAwesome';
-                font-size: 8px;
-                margin-right: 5px;
-                margin-top: 5px;
-            }
+      span {
+        display        : inline-block;
+        margin         : 0 0 0 5px;
+        color          : $color-gray-darker;
+        vertical-align : 1px;
+        font-size      : 11px;
         }
+
+      &:before {
+        display        : inline-block;
+        margin         : 0 13px 0 0;
+        color          : $color-primary;
+        content        : '\f10c';
+        vertical-align : 2px;
+        font-size      : 6px;
+        font-family    : 'FontAwesome';
+        }
+
+      &:after {
+        display      : block;
+        float        : right;
+        margin-top   : 5px;
+        margin-right : 5px;
+        color        : $color-gray-dark;
+        content      : '\f054';
+        font-size    : 8px;
+        font-family  : 'FontAwesome';
+        }
+      }
     }
-}
+  }

@@ -1,92 +1,92 @@
 body.layout-boxed {
-    #video-cover-wrap, #video-cover {
-        width: auto !important;
+  #video-cover-wrap, #video-cover {
+    width : auto !important;
     }
-}
+  }
 
 .widget_video_cover {
-    position: relative;
-}
+  position : relative;
+  }
 
 .video-cover {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 550px;
-    position: relative;
-    overflow: hidden;
+  position            : relative;
+  overflow            : hidden;
+  height              : 550px;
+  background-position : center center;
+  background-size     : cover;
+  background-repeat   : no-repeat;
 
-    video {
-        position: absolute;
-        width: 100%;
+  video {
+    position : absolute;
+    width    : 100%;
     }
-}
+  }
 
 .video-wrapper-overlay {
-    background-color: #000;
-    bottom: 0px;
-    content: '';
-    display: block;
-    left: 0px;
-    position: absolute;
-    opacity: 0.4;
-    right: 0px;
-    top: 0px;
-    z-index: 10;
-}
+  position         : absolute;
+  top              : 0;
+  right            : 0;
+  bottom           : 0;
+  left             : 0;
+  z-index          : 10;
+  display          : block;
+  background-color : #000000;
+  content          : '';
+  opacity          : 0.4;
+  }
 
 .video-cover-title {
-    color: $color-white;
-    left: 50%;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    z-index: 91;
+  position          : absolute;
+  top               : 50%;
+  left              : 50%;
+  z-index           : 91;
+  color             : $color-white;
+  text-align        : center;
+  -webkit-transform : translateX(-50%) translateY(-50%);
+  transform         : translateX(-50%) translateY(-50%);
 
-    h1, h2 {
-        color: $color-white;
-        text-shadow: 1px 1px 1px rgba(black, .2);
+  h1, h2 {
+    color       : $color-white;
+    text-shadow : 1px 1px 1px rgba(black, .2);
     }
 
-    h1 {
-        font-weight: 300;
-        font-size: 60px;
-        margin: 0px;
+  h1 {
+    margin      : 0;
+    font-weight : 300;
+    font-size   : 60px;
     }
 
-    h2 {
-        color: rgba(white, .9);
-        font-size: 23px;
-        font-weight: 400;
-        line-height: 40px;
+  h2 {
+    color       : rgba(white, .9);
+    font-weight : 400;
+    font-size   : 23px;
+    line-height : 40px;
     }
-}
+  }
 
 .video-cover-filter {
-    form {
-        @extend .row;
+  form {
+    @extend .row;
 
-        margin-top: 80px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 84%;
+    margin-top   : 80px;
+    margin-right : auto;
+    margin-left  : auto;
+    width        : 84%;
     }
 
-    .dropdown-menu {
-        border-color: $color-white;
+  .dropdown-menu {
+    border-color : $color-white;
     }
 
-    .form-group {
-        @extend .col-sm-4;
+  .form-group {
+    @extend .col-sm-4;
 
-        .dropdown-toggle, > input {
-            border-color: $color-white !important;
-        }
+    .dropdown-toggle, > input {
+      border-color : $color-white !important;
+      }
 
-        button {
-            width: 100%;
-        }
+    button {
+      width : 100%;
+      }
     }
-}
+  }

@@ -9,7 +9,12 @@ var browserslist = require('browserslist');
 gulp.task('compile-main', function() {
   gulp.src('./assets/scss/upages.scss')
       .pipe(sourcemaps.init())
-      .pipe(autoprefixer(browserslist('> 15% in my stats', { stats: 'stats.json' })))
+      .pipe(autoprefixer(browserslist(
+        '> 5%',
+        'Firefox >= 20',
+        'ie >= 8',
+        'iOS 7'
+      )))
       .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
       .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest('./assets/css/'));

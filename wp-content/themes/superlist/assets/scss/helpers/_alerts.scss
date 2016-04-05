@@ -1,123 +1,123 @@
 .alert {
-    border-radius: 0px;
-    color: $color-white;
-    line-height: 2;
-    overflow: hidden;
-    padding: 20px 30px;
-    width: 100%;
+  overflow      : hidden;
+  padding       : 20px 30px;
+  width         : 100%;
+  border-radius : 0;
+  color         : $color-white;
+  line-height   : 2;
 
-    &.alert-danger {
-        background-color: $color-danger;
-        border-color: darken($color-danger, 5%);
-
-        a {
-            border-bottom: 1px solid rgba($color-white, .8) !important;
-        }
-    }
-
-    &.alert-warning {
-        background-color: $color-warning;
-        border-color: darken($color-warning, 10%); 
-        color: darken($color-warning, 45%);
-
-        a {
-            color: darken($color-warning, 45%);
-            border-bottom: 1px solid darken($color-warning, 45%) !important;
-        }
-    }
-
-    &.alert-success {
-        background-color: $color-success;
-        border-color: darken($color-success, 5%);
-    }
-
-    &.alert-info {
-        background-color: $color-info;
-        border-color: darken($color-info, 5%);
-    }
-
-    .close {
-        line-height: 1.5;
-    }
-
-    &:hover {
-        .close {
-            opacity: .5;
-        }
-    }
+  &.alert-danger {
+    border-color     : darken($color-danger, 5%);
+    background-color : $color-danger;
 
     a {
-        border-bottom: 1px solid red;
-        color: $color-white;
-        padding-bottom: 3px;
-
-        &:active, &:focus, &:hover {
-            border-bottom: 1px solid rgba($color-white, .6);
-            text-decoration: none;
-        }
+      border-bottom : 1px solid rgba($color-white, .8) !important;
+      }
     }
 
-    p {
-        color: $color-white;
-        margin: 0px !important;
+  &.alert-warning {
+    border-color     : darken($color-warning, 10%);
+    background-color : $color-warning;
+    color            : darken($color-warning, 45%);
+
+    a {
+      border-bottom : 1px solid darken($color-warning, 45%) !important;
+      color         : darken($color-warning, 45%);
+      }
     }
-}
+
+  &.alert-success {
+    border-color     : darken($color-success, 5%);
+    background-color : $color-success;
+    }
+
+  &.alert-info {
+    border-color     : darken($color-info, 5%);
+    background-color : $color-info;
+    }
+
+  .close {
+    line-height : 1.5;
+    }
+
+  &:hover {
+    .close {
+      opacity : .5;
+      }
+    }
+
+  a {
+    padding-bottom : 3px;
+    border-bottom  : 1px solid red;
+    color          : $color-white;
+
+    &:active, &:focus, &:hover {
+      border-bottom   : 1px solid rgba($color-white, .6);
+      text-decoration : none;
+      }
+    }
+
+  p {
+    margin : 0 !important;
+    color  : $color-white;
+    }
+  }
 
 .alert-icon {
-    &:before {
-        display: inline-block;
-        font-family: fontawesome;
-        font-size: 24px;
-        -webkit-font-smoothing: antialiased;
-        line-height: 0;
-        margin-right: 10px;
-        vertical-align: -3px;
+  &:before {
+    display                : inline-block;
+    margin-right           : 10px;
+    vertical-align         : -3px;
+    font-size              : 24px;
+    font-family            : fontawesome;
+    line-height            : 0;
+    -webkit-font-smoothing : antialiased;
     }
 
-    &.alert-danger:before {
-        content: "\f057";
+  &.alert-danger:before {
+    content : "\f057";
     }
 
-    &.alert-warning:before {
-        content: "\f071";
+  &.alert-warning:before {
+    content : "\f071";
     }
 
-    &.alert-success:before {
-        content: "\f164";
+  &.alert-success:before {
+    content : "\f164";
     }
 
-    &.alert-info:before {
-        content: "\f05a";
+  &.alert-info:before {
+    content : "\f05a";
     }
-}
+  }
 
 .alert-primary {
-    border: 0px;
-    margin: 0px;
-    position: relative;
+  position : relative;
+  margin   : 0;
+  border   : 0;
 
-    .container {
-        position: relative;
+  .container {
+    position : relative;
     }
 
-    button.close {
-        font-size: 15px;
-        opacity: 1 !important;
-        position: absolute;
-        right: 24px;
-        text-shadow: none;
-        top: 50%;
-        transform: translateY(-50%);
+  button.close {
+    position    : absolute;
+    top         : 50%;
+    right       : 24px;
+    text-shadow : none;
+    font-size   : 15px;
+    opacity     : 1 !important;
+    transform   : translateY(-50%);
 
-        &:after {
-            display: none;
-            font-size: 15px;
-        }
+    &:after {
+      display   : none;
+      font-size : 15px;
+      }
 
-        &:active, &:focus, &:hover {
-            background-color: transparent !important;
-            color: $color-white !important;
-            opacity: 1 !important;
-        }
+    &:active, &:focus, &:hover {
+      background-color : transparent !important;
+      color            : $color-white !important;
+      opacity          : 1 !important;
+      }
     }
-}
+  }

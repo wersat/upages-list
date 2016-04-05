@@ -1,38 +1,38 @@
 .pagination {
-    margin: 60px 0px 0px 0px;
-    text-align: center;
-    width: 100%;
+  margin     : 60px 0 0 0;
+  width      : 100%;
+  text-align : center;
 
-    .page-numbers {
-        background-color: $color-white;
-        border-radius: 15px;
-        color: $color-gray-darker;
-        margin: 0px 4px;
-        padding: 6px 15px;
-        transition: all .15s linear;
+  .page-numbers {
+    margin           : 0 4px;
+    padding          : 6px 15px;
+    border-radius    : 15px;
+    background-color : $color-white;
+    color            : $color-gray-darker;
+    transition       : all .15s linear;
 
-        &:hover {
-            background-color: $color-primary;
-            color: $color-white;
-        }
+    &:hover {
+      background-color : $color-primary;
+      color            : $color-white;
+      }
 
-        &.dots:hover {
-            background-color: $color-gray-lighter;
-            color: $color-gray-darker;
-        }
+    &.dots:hover {
+      background-color : $color-gray-lighter;
+      color            : $color-gray-darker;
+      }
 
-        &.current {
-            background-color: $color-primary;
-            border-color: $color-primary;
-            color: $color-white;
-        }
+    &.current {
+      border-color     : $color-primary;
+      background-color : $color-primary;
+      color            : $color-white;
+      }
     }
-}
+  }
 
 .screen-reader-text {
-    display: none;
-}
+  display : none;
+  }
 
 .content + .pagination {
-    margin: 0px 0px 60px;
-}
+  margin : 0 0 60px;
+  }

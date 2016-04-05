@@ -1,100 +1,100 @@
 .wp-social-login-provider-list {
-    margin: 0px;
-    padding: 0px;
-}
+  margin  : 0;
+  padding : 0;
+  }
 
 .wp-social-login-provider {
-    background-color: $color-gray-medium;
-    border: 0px !important;
-    color: $color-black;
-    display: block;
-    font-size: 16px;
-    font-weight: 500;
-    margin: 0px 0px 5px 0px;
-    min-height: 40px;
-    padding: 8px 15px;
-    text-align: center;
-    position: relative;
+  position         : relative;
+  display          : block;
+  margin           : 0 0 5px 0;
+  padding          : 8px 15px;
+  min-height       : 40px;
+  border           : 0 !important;
+  background-color : $color-gray-medium;
+  color            : $color-black;
+  text-align       : center;
+  font-weight      : 500;
+  font-size        : 16px;
 
-    &:after, &:focus, &:hover {
-        color: $color-black;
-        text-decoration: none;
+  &:after, &:focus, &:hover {
+    color           : $color-black;
+    text-decoration : none;
     }
 
-    img {
-        display: none;
+  img {
+    display : none;
     }
 
-    &:last-child {
-        margin-bottom: 0px;
+  &:last-child {
+    margin-bottom : 0;
     }
 
-    &:before {
-        position: absolute;
-        left: 15px;
+  &:before {
+    position : absolute;
+    left     : 15px;
     }
-}
+  }
 
 .wp-social-login-provider-facebook {
-    background-color: $color-facebook;
-    color: $color-white;
+  background-color : $color-facebook;
+  color            : $color-white;
 
-    &:hover {
-        background-color: darken($color-facebook,5%);
+  &:hover {
+    background-color : darken($color-facebook, 5%);
     }
 
-    &:before {
-        content: '\f09a';
-        font-family: 'FontAwesome';
-        margin: 0px 10px 0px 0px;
+  &:before {
+    margin      : 0 10px 0 0;
+    content     : '\f09a';
+    font-family : 'FontAwesome';
     }
 
-    &:after, &:focus, &:hover {
-        color: $color-white;
-        text-decoration: none;
+  &:after, &:focus, &:hover {
+    color           : $color-white;
+    text-decoration : none;
     }
-}
+  }
 
 .wp-social-login-provider-twitter {
-    background-color: $color-twitter;
-    color: $color-white;
+  background-color : $color-twitter;
+  color            : $color-white;
 
-    &:hover {
-        background-color: darken($color-twitter,5%);
+  &:hover {
+    background-color : darken($color-twitter, 5%);
     }
 
-    &:before {
-        content: '\f099';
-        font-family: 'FontAwesome';
-        margin: 0px 10px 0px 0px;
+  &:before {
+    margin      : 0 10px 0 0;
+    content     : '\f099';
+    font-family : 'FontAwesome';
     }
 
-    &:after, &:focus, &:hover {
-        color: $color-white;
-        text-decoration: none;
+  &:after, &:focus, &:hover {
+    color           : $color-white;
+    text-decoration : none;
     }
-}
+  }
 
 .wp-social-login-provider-google {
-    background-color: $color-google-plus;
-    color: $color-white;
+  background-color : $color-google-plus;
+  color            : $color-white;
 
-    &:hover {
-        background-color: darken($color-google-plus,5%);
+  &:hover {
+    background-color : darken($color-google-plus, 5%);
     }
 
-    &:before {
-        content: '\f1a0';
-        font-family: 'FontAwesome';
-        margin: 0px 10px 0px 0px;
+  &:before {
+    margin      : 0 10px 0 0;
+    content     : '\f1a0';
+    font-family : 'FontAwesome';
     }
 
-    &:after, &:focus, &:hover {
-        color: $color-white;
-        text-decoration: none;
+  &:after, &:focus, &:hover {
+    color           : $color-white;
+    text-decoration : none;
     }
-}
+  }
 
 .wp-social-login-connect-with {
-    margin-bottom: 5px;
-}
+  margin-bottom : 5px;
+  }

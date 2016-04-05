@@ -1,51 +1,51 @@
 .faq-item {
-    background-color: $color-white;
-    margin: 0px 0px 30px 60px;
-    padding: 20px;
-    position: relative;
+  position         : relative;
+  margin           : 0 0 30px 60px;
+  padding          : 20px;
+  background-color : $color-white;
 
-    &:before {
-        background-color: $color-primary;
-        color: $color-white;
-        content: 'Q';
-        display: block;
-        font-size: 20px;
-        font-weight: 400;
-        height: 44px;
-        left: -60px;
-        line-height: 46px;
-        position: absolute;
-        text-align: center;
-        top: 0px;
-        width: 44px;
+  &:before {
+    position         : absolute;
+    top              : 0;
+    left             : -60px;
+    display          : block;
+    width            : 44px;
+    height           : 44px;
+    background-color : $color-primary;
+    color            : $color-white;
+    content          : 'Q';
+    text-align       : center;
+    font-weight      : 400;
+    font-size        : 20px;
+    line-height      : 46px;
     }
 
-    &:after {
-        border: 5px solid transparent;
-        border-bottom-color: $color-primary;
-        content: '';
-        display: block;
-        height: 0px;
-        left: -21px;
-        position: absolute;
-        top: -5px;
-        transform: rotate(-45deg);
-        -webkit-transform: rotate(-45deg);
-        width: 0px;
+  &:after {
+    position            : absolute;
+    top                 : -5px;
+    left                : -21px;
+    display             : block;
+    width               : 0;
+    height              : 0;
+    border              : 5px solid transparent;
+    border-bottom-color : $color-primary;
+    content             : '';
+    -webkit-transform   : rotate(-45deg);
+    transform           : rotate(-45deg);
     }
 
-    &:last-of-type {
-        margin-bottom: 0px;
+  &:last-of-type {
+    margin-bottom : 0;
     }
-}
+  }
 
 .faq-item-question {
-    border-bottom: 1px solid $color-gray;
-    margin: 0px 0px 15px 0px;
-    padding: 0px 0px 15px 0px;
+  margin        : 0 0 15px 0;
+  padding       : 0 0 15px 0;
+  border-bottom : 1px solid $color-gray;
 
-    h2 {
-        margin: 0px;
-        padding: 0px;
+  h2 {
+    margin  : 0;
+    padding : 0;
     }
-}
+  }

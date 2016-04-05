@@ -1,978 +1,977 @@
 .type-box {
-    .listing-container {
-        @media (max-width: $screen-xs-max) {
-            margin: 0px 0px 30px 0px;
-            width: 100%;
-        }
+  .listing-container {
+    @media (max-width : $screen-xs-max) {
+      margin : 0 0 30px 0;
+      width  : 100%;
+      }
     }
-}
+  }
 
 .listing-detail {
-    margin-top: 52px;
-}
+  margin-top : 52px;
+  }
 
 .listing-detail-section {
-    margin: 0px 0px 60px 0px;
-}
+  margin : 0 0 60px 0;
+  }
 
 #listing-detail-section-social {
-    a {
-        background-color: $color-primary;
-        color: $color-white;
-        font-size: 12px;
-        font-weight: 600;
-        margin: 0px 10px 0px 0px;
-        padding: 5px 8px;
-        text-transform: capitalize;
+  a {
+    margin           : 0 10px 0 0;
+    padding          : 5px 8px;
+    background-color : $color-primary;
+    color            : $color-white;
+    text-transform   : capitalize;
+    font-weight      : 600;
+    font-size        : 12px;
 
-        &:hover {
-            background-color: darken($color-primary, 5%);
-        }
+    &:hover {
+      background-color : darken($color-primary, 5%);
+      }
     }
 
-    i {
-        background-color: rgba(black, .07);
-        display: inline-block;
-        font-size: 15px;
-        height: 32px;
-        line-height: 32px;
-        text-align: center;
-        width: 32px;
-    }    
-}
+  i {
+    display          : inline-block;
+    width            : 32px;
+    height           : 32px;
+    background-color : rgba(black, .07);
+    text-align       : center;
+    font-size        : 15px;
+    line-height      : 32px;
+    }
+  }
 
 .listing-detail-attributes {
-    @extend .clearfix;
-    background-color: $color-white;
-    margin: 0px 0px 30px 0px;
-    padding: 30px;
+  @extend .clearfix;
+  margin           : 0 0 30px 0;
+  padding          : 30px;
+  background-color : $color-white;
 
-    ul {
-        list-style: none;
-        margin: 0px;
-        padding: 0px;
+  ul {
+    margin     : 0;
+    padding    : 0;
+    list-style : none;
 
-        li {
-            border-bottom: 1px dashed $color-gray-medium;
-            display: block;
-            float: left;
-            line-height: 40px;
-            width: 47%;
+    li {
+      display       : block;
+      float         : left;
+      width         : 47%;
+      border-bottom : 1px dashed $color-gray-medium;
+      line-height   : 40px;
 
-            &:nth-child(even) {
-                float: right;
-            }
-
-            strong.key {
-                font-size: 13px;
-                font-weight: 400;
-            }
-
-            span.value {
-                color: $color-black;
-                display: block;
-                float: right;
-                font-size: 13px;
-                font-weight: 500;
-                line-height: 40px;
-            }
-
-            @media (max-width: $screen-sm-max) {
-                width: 100%;
-            }
+      &:nth-child(even) {
+        float : right;
         }
+
+      strong.key {
+        font-weight : 400;
+        font-size   : 13px;
+        }
+
+      span.value {
+        display     : block;
+        float       : right;
+        color       : $color-black;
+        font-weight : 500;
+        font-size   : 13px;
+        line-height : 40px;
+        }
+
+      @media (max-width : $screen-sm-max) {
+        width : 100%;
+        }
+      }
     }
 
-    .listing-color {
-        display: inline-block;
-        height: 15px;
-        vertical-align: -4px;
-        width: 15px;
+  .listing-color {
+    display        : inline-block;
+    width          : 15px;
+    height         : 15px;
+    vertical-align : -4px;
     }
-}
+  }
 
 .listing-detail-contact {
-    @extend .clearfix;
-    background-color: $color-white;
-    margin: 0px 0px 30px 0px;
-    padding: 30px;
+  @extend .clearfix;
+  margin           : 0 0 30px 0;
+  padding          : 30px;
+  background-color : $color-white;
 
-    ul {
-        list-style: none;
-        margin: 0px;
-        padding: 0px;
+  ul {
+    margin     : 0;
+    padding    : 0;
+    list-style : none;
 
-        li {
-            display: block;
-            float: left;
-            line-height: 40px;
-            width: 100%;
+    li {
+      display     : block;
+      float       : left;
+      width       : 100%;
+      line-height : 40px;
 
-            &:nth-child(even) {
-                float: right;
-            }
-
-            strong.key {
-                display: inline-block;
-                float: left;
-                font-size: 13px;
-                font-weight: 400;
-                width: 33%;
-            }
-
-            span.value {
-                color: $color-black;
-                display: block;
-                float: right;
-                font-size: 13px;
-                font-weight: 500;
-                line-height: 40px;
-                text-align: left;
-                width: 66%;
-            }
-
-            @media (max-width: $screen-sm-max) {
-                width: 100%;
-            }
+      &:nth-child(even) {
+        float : right;
         }
+
+      strong.key {
+        display     : inline-block;
+        float       : left;
+        width       : 33%;
+        font-weight : 400;
+        font-size   : 13px;
+        }
+
+      span.value {
+        display     : block;
+        float       : right;
+        width       : 66%;
+        color       : $color-black;
+        text-align  : left;
+        font-weight : 500;
+        font-size   : 13px;
+        line-height : 40px;
+        }
+
+      @media (max-width : $screen-sm-max) {
+        width : 100%;
+        }
+      }
     }
 
-    .listing-color {
-        display: inline-block;
-        height: 15px;
-        width: 15px;
+  .listing-color {
+    display : inline-block;
+    width   : 15px;
+    height  : 15px;
     }
-}
+  }
 
 #listing-detail-section-description {
-    h3, h4, h5, h6 {
-        margin-bottom: 10px;
-        margin-top: 25px;
+  h3, h4, h5, h6 {
+    margin-top    : 25px;
+    margin-bottom : 10px;
     }
 
-    li {
-        line-height: 1.7;
+  li {
+    line-height : 1.7;
     }
-}
+  }
 
 .listing-detail-section-faq-list {
-    background-color: $color-white;
-    padding: 30px;
+  padding          : 30px;
+  background-color : $color-white;
 
-    dt {
-        border-bottom: 1px solid rgba(black, .02);
-        color: $color-black;
-        font-size: 16px;
-        font-weight: 400;
-        padding: 0px 0px 12px 0px;
+  dt {
+    padding       : 0 0 12px 0;
+    border-bottom : 1px solid rgba(black, .02);
+    color         : $color-black;
+    font-weight   : 400;
+    font-size     : 16px;
     }
 
-    dd {
-        border-left: 2px solid $color-primary;
-        margin: 20px 0px;
-        padding: 10px 0px 10px 30px;
-
-        &:last-child {
-            margin-bottom: 0px;
-        }
-    }
-}
-
-.listing-detail-menu-wrapper {
-    min-height: 44px;
-}
-
-.listing-detail-menu {
-    background-color: rgba($color-black-light, .9);
-    left: 0px;
-    margin-left: -750px;
-    margin-right: -750px;
-    padding-left: 750px;
-    padding-right: 750px;
-    right: 0px;
-    top: 0px;
-    z-index: 998;
-
-    &.affix {
-        @media (max-width: $screen-xs-max) {
-            position: relative;
-        }
-
-        @media (min-width: $screen-sm-min) {
-            .admin-bar & {
-                top: 32px;
-            }
-
-            .header-sticky & {
-                top: 60px;
-            }
-
-            .admin-bar.header-sticky & {
-                top: 92px;
-            }
-        }
-    }
-
-    ul {
-        color: rgba($color-white, .85);
-        font-size: 13px;
-        list-style: none;
-        margin: 0px;
-        padding: 0px;
-        position: relative;
-
-        li {
-            display: inline-block;
-            margin: 0px 40px 0px 0px;
-
-            a {
-                border-radius: 0px;
-                border-bottom: 2px solid transparent;
-                color: rgba($color-white, .85);
-                display: block;
-                padding: 14px 0px 12px 0px;
-
-                &:active, &:focus, &:hover {
-                    background-color: transparent;
-                    color: $color-white;
-                }
-            }
-
-            &.active {
-                a {
-                    background-color: transparent;
-                    border-bottom: 2px solid $color-primary;
-
-                    &:active, &:focus, &:hover {
-                        background-color: transparent;
-                        color: $color-white;
-                    }
-                }
-            }
-
-            &:last-child {
-                margin-right: 0px;
-            }
-
-            &.listing-detail-section-attributes,
-            &.listing-detail-section-social,
-            &.listing-detail-section-property-amenities,
-            &.listing-detail-section-property-valuation,
-            &.listing-detail-section-property-public-facilities,
-            {
-                display: none;
-            }
-        }
-    }
-}
-
-.listing-detail-property-amenities ul {
-    list-style: none;
-    margin-bottom: 0px;
-    margin-top: -10px;
-    padding-left: 0px;
-
-    li {
-        display: inline-block;
-        line-height: 3;
-        text-align: justify;
-
-        a {
-            border-radius: 2px;
-            background-color: $color-white;
-            font-size: 14px;
-            margin-right: 15px;
-            padding: 6px 12px;
-            color: $color-gray-dark;
-
-            &:before {
-                color: $color-gray-dark;
-                content: "\f00d";
-                font-family: fontawesome;
-                font-size: 10px;
-                display: inline-block;
-                line-height: 1;
-                margin-right: 5px;
-                text-align: center;
-                vertical-align: 2px;
-                -webkit-font-smoothing: antialiased;
-            }
-
-            &:hover {
-                background-color: $color-gray-medium;
-                color: $color-gray-darker;
-
-                &:before {
-                    color: $color-gray-darker;
-                }
-            }
-
-            &:focus {
-                text-decoration: none;
-            }
-        }
-
-        &.yes a {
-            font-weight: 500;
-            border-color: $color-primary;
-            background-color: $color-primary;
-            color: $color-white;
-
-            &:before {
-                color: $color-white;
-                content: "\f00c";
-            }
-
-            &:hover {
-                background-color: darken($color-primary, 6%);
-            }
-        }
-    }
-}
-
-.amenities {
-    @extend .clearfix;
-    margin: 0px;
-    padding: 0px;
-
-    li {
-        float: left;
-        margin: 10px 0px !important;
-        width: 33%;
-    }
-}
-
-.widget_listing_details {
-    background-color: $color-white;
-    font-size: 17px;
-    font-weight: 300;
-    padding: 15px;
-
-    strong {
-        color: $color-black;
-        font-weight: 500;
-    }
-
-    i {
-        margin: 0px 10px 0px 0px;
-    }
-
-    .widget-inner > div {
-        margin: 10px 0px;
-
-        &:first-child {
-            margin-top: 0px;
-        }
-
-        &:last-child {
-            margin-bottom: 0px;
-        }
-    }
-
-    .inventor-favorites-total {
-        i {
-            color: $color-red;
-        }
-    }
-
-    .inventor-statistics-total-post-views {
-        i {
-            color: $color-primary;
-        }
-    }
-
-    .inventor-reviews-total-rating {
-        i {
-            color: $color-yellow;
-        }
-
-        a {
-            border-bottom: 1px dashed $color-gray-dark;
-            color: $color-gray-darker;
-            padding-bottom: 2px;
-        }
-    }
-
-    .detail-actions {
-        margin-top: 12px;
-    }
-}
-
-#listing-detail-section-gallery {
-    margin-top: -12px;
-
-    .page-header {
-        display: none;
-    }
-}
-
-.listing-detail-gallery {
-    a {
-        visibility: hidden;
-    }
-
-    .owl-item a {
-        visibility: visible;
-    }
-
-    .item-image {
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 100% auto;
-        display: block;
-        height: 450px;
-
-        @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-            height: 380px;
-        }
-
-        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-            height: 300px;
-        }
-
-        @media (max-width: $screen-xs-max) {
-            height: 250px;
-        }
-    }
-}
-
-.listing-detail-gallery-preview {
-    background-color: $color-white;
-    padding: 0px 50px;
-
-    .owl-item {
-        cursor: pointer;
-        border-bottom: 2px solid transparent;
-        transition: all linear .15s;
-
-        &.highlighted {
-            border-color: $color-primary;
-        }
-
-        div {
-            display: block;
-            margin: 0px 10px;
-            padding: 20px 0px 14px;
-
-            @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-                margin: 0px 7px;
-            }
-
-            @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-                margin: 0px 5px;
-            }
-
-            @media (max-width: $screen-xs-max) {
-                margin: 0px 4px;
-            }
-        }
-    }
-
-    .owl-stage {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .owl-next, .owl-prev {
-        @extend .btn-primary;
-
-        display: block !important;
-        line-height: 1;
-        padding: 0px;
-        position: absolute;
-        transition: all linear .15s;
-        transform: translateY(-50%);
-        -webkit-transform: translateY(-50%);
-        top: 50%;
-
-        i {
-            background-color: transparent;
-            font-size: 18px;
-            height: auto;
-            margin: 0px;
-            padding: 3px 0px;
-            transition: all linear .15s;
-        }
-
-        &:hover {
-            background-color: $color-primary;
-
-            i {
-                color: $color-white;
-            }
-        }
-    }
-
-    .owl-next {
-        right: -34px;
-        padding: 5px 9px 4px 10px;
-    }
-
-    .owl-prev {
-        left: -34px;
-        padding: 5px 10px 4px 9px;
-    }
-}
-
-.video-embed-wrapper {
-    width: 100%;
-    height: 0;
-    padding-top: 56.25%;
-    position: relative;
-
-    iframe {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-}
-
-
-.listing-detail-location-wrapper {
-    background-color: $color-white;
-    padding: 20px;
-
-    .tab-content {
-        padding: 0px !important;
-    }
-}
-
-#listing-detail-location {
-    border-bottom: none;
-
-    &.nav-tabs li a {
-        background-color: $color-gray;
-        border: none;
-        border-radius: 0px;
-        color: $color-gray-darker;
-        font-size: 13px;
-        margin-bottom: 4px;
-        margin-right: 3px;
-        padding: 10px 15px;
-        transition: all linear .12s;
-
-        &:hover {
-            background-color: darken($color-gray, 3%);
-        }
-    }
-
-    li.active a {
-        background-color: $color-primary;
-        color: $color-white;
-
-        &:hover {
-            background-color: darken($color-primary, 3%);
-        }
-    }
-
-    li.directions {
-        float: right;
-
-        a {
-            background-color: $color-primary;
-            color: $color-white;
-            margin-right: 0 !important;
-
-            &:hover {
-                background-color: darken($color-primary, 3%);
-            }
-        }
-    }
-
-    i {
-        display: inline-block;
-        margin-right: 10px;
-
-        &.fa-map-o, &.fa-map {
-            font-size: 10px;
-            vertical-align: 1px;
-        }
-
-        &.fa-street-view {
-            font-size: 12px;
-        }
-
-        &.fa-compass, &.fa-map-signs {
-            font-size: 18px;
-            vertical-align: -2px;
-        }
-
-        &.fa-level-down {
-            font-size: 16px;
-            transform: rotate(-90deg);
-            -webkit-transform: rotate(-90deg);
-            vertical-align: -2px;
-        }
-    }
-}
-
-#listing-detail-map, #listing-detail-street-view, #listing-detail-inside-view {
-    height: 350px;
-
-    img {
-        height:auto !important;
-    }
-}
-
-.review-count {
-    background-color: darken($color-gray-medium, 5%);
-    border-radius: 12px;
-    color: $color-white;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 400;
-    height: 24px;
-    margin-left: 6px;
-    margin-top: 1px;
-    min-width: 24px;
-    padding: 5px 4px 0px;
-    text-align: center;
-    vertical-align: top;
-}
-
-.listing-detail-menu .review-count {
-    background-color: $color-gray-light;
-    color: $color-gray-darker;
-    font-size: 11px;
-    font-weight: 500;
-    height: 18px;
-    min-width: 18px;
-    margin-left: 4px;
-    margin-top: -1px;
-    padding: 2px 4px 0px;
-}
-
-.detail-verified {
-    background-color: $color-green;
-    color: $color-white;
-    display: inline-block;
-    font-size: 13px;
-    margin: 0px 0px 0px 10px;
-    padding: 3px 15px;
-    text-shadow: none;
-    text-align: center;
-}
-
-.detail-payments {
-    border-top: 1px solid $color-gray-medium;
-    margin: 50px 0px;
-
-    h3 {
-        color: $color-gray-darker;
-        font-size: 18px;
-        margin-top: 35px;
-        text-align: center;
-    }
-
-    ul {
-        margin: 0px;
-        padding: 0px;
-        text-align: center;
-
-        li {
-            display: inline-block;
-            font-size: 34px;
-            margin: 0px 15px;
-
-            a {
-                color: rgba(black, .25);
-
-                &:hover {
-                    color: rgba(black, .35);
-                }
-            }
-        }
-    }
-}
-
-#listing-detail-section-opening-hours {
-    @media (max-width: $screen-xs-max) {
-        overflow-x: scroll;
-        width: 100%;
-
-        .opening-hours.horizontal {
-            margin: 0px;
-        }
-    }
-}
-
-.opening-hours {
-    background-color: $color-white;
-
-    th, td {
-        background-color: $color-white;
-        border: 0px;
-        font-size: 12px;
-        padding: 10px 15px;
-    }
-
-    &.horizontal {
-        th, td {
-            border-right: 1px solid $color-gray;
-            text-align: center;
-
-            &:last-child {
-                border-right: 0px;
-            }
-
-            @media (max-width: $screen-xs-max) {
-
-            }
-        }
-    }
-
-    th {
-        color: $color-gray-darker;
-        font-weight: normal;
-        text-transform: capitalize;
-    }
-
-    td {
-        color: $color-black;
-        white-space: nowrap;
-
-        &.open {
-            color: $color-primary;
-            font-weight: 500;
-        }
-
-        &.closed {
-            color: $color-red;
-            font-weight: 500;
-        }
-
-        span {
-            display: block;
-        }
-    }
-}
-
-.widget_opening_hours {
-    .alert {
-        margin: 0px 0px 30px 0px;
-        padding: 10px;
-        text-align: center;
-    }
-}
-
-.listing-report {
-    border-top: 1px solid $color-gray-medium;
-    padding: 15px 0px;
-    text-align: center;
-}
-
-.listing-report-btn {
-    color: $color-gray-darker;
-    font-size: 12px;
-
-    .fa {
-        font-size: 14px;
-        margin: 0px 10px 0px 0px;
-        transition: color .15s linear;
-    }
-
-    &:active, &:hover, &:focus {
-        color: $color-red;
-    }
-}
-
-.listing-detail-food-wrapper {
-    background-color: $color-white;
-    padding: 30px;
-
-    h3 {
-        color: $color-black-light;
-        font-size: 13px;
-        font-weight: 500;
-        margin: 50px 0px;
-        padding: 0px;
-        position: relative;
-        text-transform: uppercase;
-
-        &:first-child {
-            margin-top: 0px;
-        }
-
-        &:after {
-            background-color: $color-gray;
-            content: '';
-            display: block;
-            height: 1px;
-            left: 0px;
-            position: absolute;
-            right: 0px;
-            top: 50%;
-            z-index: 1;
-        }
-
-        span {
-            background-color: $color-white;
-            padding: 0px 20px 0px 0px;
-            position: relative;
-            z-index: 2;
-        }
-    }
-}
-
-.listing-detail-food {
-    @extend .clearfix;
-
-    border-bottom: 1px dashed $color-gray-medium;
-    margin: 0px 0px 25px 0px;
-    padding: 0px 0px 25px 0px;
+  dd {
+    margin      : 20px 0;
+    padding     : 10px 0 10px 30px;
+    border-left : 2px solid $color-primary;
 
     &:last-child {
-        border-bottom: 0px;
-        margin-bottom: 0px;
-        padding-bottom: 0px;
+      margin-bottom : 0;
+      }
+    }
+  }
+
+.listing-detail-menu-wrapper {
+  min-height : 44px;
+  }
+
+.listing-detail-menu {
+  top              : 0;
+  right            : 0;
+  left             : 0;
+  z-index          : 998;
+  margin-right     : -750px;
+  margin-left      : -750px;
+  padding-right    : 750px;
+  padding-left     : 750px;
+  background-color : rgba($color-black-light, .9);
+
+  &.affix {
+    @media (max-width : $screen-xs-max) {
+      position : relative;
+      }
+
+    @media (min-width : $screen-sm-min) {
+      .admin-bar & {
+        top : 32px;
+        }
+
+      .header-sticky & {
+        top : 60px;
+        }
+
+      .admin-bar.header-sticky & {
+        top : 92px;
+        }
+      }
     }
 
-    h4 {
-        font-size: 15px;
-        font-weight: 400;
-        float: left;
-        margin: 7px 0px 0px 0px;
-        padding: 0px;
+  ul {
+    position   : relative;
+    margin     : 0;
+    padding    : 0;
+    color      : rgba($color-white, .85);
+    list-style : none;
+    font-size  : 13px;
+
+    li {
+      display : inline-block;
+      margin  : 0 40px 0 0;
+
+      a {
+        display       : block;
+        padding       : 14px 0 12px 0;
+        border-bottom : 2px solid transparent;
+        border-radius : 0;
+        color         : rgba($color-white, .85);
+
+        &:active, &:focus, &:hover {
+          background-color : transparent;
+          color            : $color-white;
+          }
+        }
+
+      &.active {
+        a {
+          border-bottom    : 2px solid $color-primary;
+          background-color : transparent;
+
+          &:active, &:focus, &:hover {
+            background-color : transparent;
+            color            : $color-white;
+            }
+          }
+        }
+
+      &:last-child {
+        margin-right : 0;
+        }
+
+      &.listing-detail-section-attributes,
+      &.listing-detail-section-social,
+      &.listing-detail-section-property-amenities,
+      &.listing-detail-section-property-valuation,
+      &.listing-detail-section-property-public-facilities,
+      {
+        display : none;
+        }
+      }
     }
-}
+  }
+
+.listing-detail-property-amenities ul {
+  margin-top    : -10px;
+  margin-bottom : 0;
+  padding-left  : 0;
+  list-style    : none;
+
+  li {
+    display     : inline-block;
+    text-align  : justify;
+    line-height : 3;
+
+    a {
+      margin-right     : 15px;
+      padding          : 6px 12px;
+      border-radius    : 2px;
+      background-color : $color-white;
+      color            : $color-gray-dark;
+      font-size        : 14px;
+
+      &:before {
+        display                : inline-block;
+        margin-right           : 5px;
+        color                  : $color-gray-dark;
+        content                : "\f00d";
+        vertical-align         : 2px;
+        text-align             : center;
+        font-size              : 10px;
+        font-family            : fontawesome;
+        line-height            : 1;
+        -webkit-font-smoothing : antialiased;
+        }
+
+      &:hover {
+        background-color : $color-gray-medium;
+        color            : $color-gray-darker;
+
+        &:before {
+          color : $color-gray-darker;
+          }
+        }
+
+      &:focus {
+        text-decoration : none;
+        }
+      }
+
+    &.yes a {
+      border-color     : $color-primary;
+      background-color : $color-primary;
+      color            : $color-white;
+      font-weight      : 500;
+
+      &:before {
+        color   : $color-white;
+        content : "\f00c";
+        }
+
+      &:hover {
+        background-color : darken($color-primary, 6%);
+        }
+      }
+    }
+  }
+
+.amenities {
+  @extend .clearfix;
+  margin  : 0;
+  padding : 0;
+
+  li {
+    float  : left;
+    margin : 10px 0 !important;
+    width  : 33%;
+    }
+  }
+
+.widget_listing_details {
+  padding          : 15px;
+  background-color : $color-white;
+  font-weight      : 300;
+  font-size        : 17px;
+
+  strong {
+    color       : $color-black;
+    font-weight : 500;
+    }
+
+  i {
+    margin : 0 10px 0 0;
+    }
+
+  .widget-inner > div {
+    margin : 10px 0;
+
+    &:first-child {
+      margin-top : 0;
+      }
+
+    &:last-child {
+      margin-bottom : 0;
+      }
+    }
+
+  .inventor-favorites-total {
+    i {
+      color : $color-red;
+      }
+    }
+
+  .inventor-statistics-total-post-views {
+    i {
+      color : $color-primary;
+      }
+    }
+
+  .inventor-reviews-total-rating {
+    i {
+      color : $color-yellow;
+      }
+
+    a {
+      padding-bottom : 2px;
+      border-bottom  : 1px dashed $color-gray-dark;
+      color          : $color-gray-darker;
+      }
+    }
+
+  .detail-actions {
+    margin-top : 12px;
+    }
+  }
+
+#listing-detail-section-gallery {
+  margin-top : -12px;
+
+  .page-header {
+    display : none;
+    }
+  }
+
+.listing-detail-gallery {
+  a {
+    visibility : hidden;
+    }
+
+  .owl-item a {
+    visibility : visible;
+    }
+
+  .item-image {
+    display             : block;
+    height              : 450px;
+    background-position : center center;
+    background-size     : 100% auto;
+    background-repeat   : no-repeat;
+
+    @media (min-width : $screen-md-min) and (max-width : $screen-md-max) {
+      height : 380px;
+      }
+
+    @media (min-width : $screen-sm-min) and (max-width : $screen-sm-max) {
+      height : 300px;
+      }
+
+    @media (max-width : $screen-xs-max) {
+      height : 250px;
+      }
+    }
+  }
+
+.listing-detail-gallery-preview {
+  padding          : 0 50px;
+  background-color : $color-white;
+
+  .owl-item {
+    border-bottom : 2px solid transparent;
+    cursor        : pointer;
+    transition    : all linear .15s;
+
+    &.highlighted {
+      border-color : $color-primary;
+      }
+
+    div {
+      display : block;
+      margin  : 0 10px;
+      padding : 20px 0 14px;
+
+      @media (min-width : $screen-md-min) and (max-width : $screen-md-max) {
+        margin : 0 7px;
+        }
+
+      @media (min-width : $screen-sm-min) and (max-width : $screen-sm-max) {
+        margin : 0 5px;
+        }
+
+      @media (max-width : $screen-xs-max) {
+        margin : 0 4px;
+        }
+      }
+    }
+
+  .owl-stage {
+    margin-right : auto;
+    margin-left  : auto;
+    }
+
+  .owl-next, .owl-prev {
+    @extend .btn-primary;
+
+    position          : absolute;
+    top               : 50%;
+    display           : block !important;
+    padding           : 0;
+    line-height       : 1;
+    transition        : all linear .15s;
+    -webkit-transform : translateY(-50%);
+    transform         : translateY(-50%);
+
+    i {
+      margin           : 0;
+      padding          : 3px 0;
+      height           : auto;
+      background-color : transparent;
+      font-size        : 18px;
+      transition       : all linear .15s;
+      }
+
+    &:hover {
+      background-color : $color-primary;
+
+      i {
+        color : $color-white;
+        }
+      }
+    }
+
+  .owl-next {
+    right   : -34px;
+    padding : 5px 9px 4px 10px;
+    }
+
+  .owl-prev {
+    left    : -34px;
+    padding : 5px 10px 4px 9px;
+    }
+  }
+
+.video-embed-wrapper {
+  position    : relative;
+  padding-top : 56.25%;
+  width       : 100%;
+  height      : 0;
+
+  iframe {
+    position : absolute;
+    top      : 0;
+    left     : 0;
+    width    : 100%;
+    height   : 100%;
+    }
+  }
+
+.listing-detail-location-wrapper {
+  padding          : 20px;
+  background-color : $color-white;
+
+  .tab-content {
+    padding : 0 !important;
+    }
+  }
+
+#listing-detail-location {
+  border-bottom : none;
+
+  &.nav-tabs li a {
+    margin-right     : 3px;
+    margin-bottom    : 4px;
+    padding          : 10px 15px;
+    border           : none;
+    border-radius    : 0;
+    background-color : $color-gray;
+    color            : $color-gray-darker;
+    font-size        : 13px;
+    transition       : all linear .12s;
+
+    &:hover {
+      background-color : darken($color-gray, 3%);
+      }
+    }
+
+  li.active a {
+    background-color : $color-primary;
+    color            : $color-white;
+
+    &:hover {
+      background-color : darken($color-primary, 3%);
+      }
+    }
+
+  li.directions {
+    float : right;
+
+    a {
+      margin-right     : 0 !important;
+      background-color : $color-primary;
+      color            : $color-white;
+
+      &:hover {
+        background-color : darken($color-primary, 3%);
+        }
+      }
+    }
+
+  i {
+    display      : inline-block;
+    margin-right : 10px;
+
+    &.fa-map-o, &.fa-map {
+      vertical-align : 1px;
+      font-size      : 10px;
+      }
+
+    &.fa-street-view {
+      font-size : 12px;
+      }
+
+    &.fa-compass, &.fa-map-signs {
+      vertical-align : -2px;
+      font-size      : 18px;
+      }
+
+    &.fa-level-down {
+      vertical-align    : -2px;
+      font-size         : 16px;
+      -webkit-transform : rotate(-90deg);
+      transform         : rotate(-90deg);
+      }
+    }
+  }
+
+#listing-detail-map, #listing-detail-street-view, #listing-detail-inside-view {
+  height : 350px;
+
+  img {
+    height : auto !important;
+    }
+  }
+
+.review-count {
+  display          : inline-block;
+  margin-top       : 1px;
+  margin-left      : 6px;
+  padding          : 5px 4px 0;
+  min-width        : 24px;
+  height           : 24px;
+  border-radius    : 12px;
+  background-color : darken($color-gray-medium, 5%);
+  color            : $color-white;
+  vertical-align   : top;
+  text-align       : center;
+  font-weight      : 400;
+  font-size        : 14px;
+  }
+
+.listing-detail-menu .review-count {
+  margin-top       : -1px;
+  margin-left      : 4px;
+  padding          : 2px 4px 0;
+  min-width        : 18px;
+  height           : 18px;
+  background-color : $color-gray-light;
+  color            : $color-gray-darker;
+  font-weight      : 500;
+  font-size        : 11px;
+  }
+
+.detail-verified {
+  display          : inline-block;
+  margin           : 0 0 0 10px;
+  padding          : 3px 15px;
+  background-color : $color-green;
+  color            : $color-white;
+  text-align       : center;
+  text-shadow      : none;
+  font-size        : 13px;
+  }
+
+.detail-payments {
+  margin     : 50px 0;
+  border-top : 1px solid $color-gray-medium;
+
+  h3 {
+    margin-top : 35px;
+    color      : $color-gray-darker;
+    text-align : center;
+    font-size  : 18px;
+    }
+
+  ul {
+    margin     : 0;
+    padding    : 0;
+    text-align : center;
+
+    li {
+      display   : inline-block;
+      margin    : 0 15px;
+      font-size : 34px;
+
+      a {
+        color : rgba(black, .25);
+
+        &:hover {
+          color : rgba(black, .35);
+          }
+        }
+      }
+    }
+  }
+
+#listing-detail-section-opening-hours {
+  @media (max-width : $screen-xs-max) {
+    overflow-x : scroll;
+    width      : 100%;
+
+    .opening-hours.horizontal {
+      margin : 0;
+      }
+    }
+  }
+
+.opening-hours {
+  background-color : $color-white;
+
+  th, td {
+    padding          : 10px 15px;
+    border           : 0;
+    background-color : $color-white;
+    font-size        : 12px;
+    }
+
+  &.horizontal {
+    th, td {
+      border-right : 1px solid $color-gray;
+      text-align   : center;
+
+      &:last-child {
+        border-right : 0;
+        }
+
+      @media (max-width : $screen-xs-max) {
+
+        }
+      }
+    }
+
+  th {
+    color          : $color-gray-darker;
+    text-transform : capitalize;
+    font-weight    : normal;
+    }
+
+  td {
+    color       : $color-black;
+    white-space : nowrap;
+
+    &.open {
+      color       : $color-primary;
+      font-weight : 500;
+      }
+
+    &.closed {
+      color       : $color-red;
+      font-weight : 500;
+      }
+
+    span {
+      display : block;
+      }
+    }
+  }
+
+.widget_opening_hours {
+  .alert {
+    margin     : 0 0 30px 0;
+    padding    : 10px;
+    text-align : center;
+    }
+  }
+
+.listing-report {
+  padding    : 15px 0;
+  border-top : 1px solid $color-gray-medium;
+  text-align : center;
+  }
+
+.listing-report-btn {
+  color     : $color-gray-darker;
+  font-size : 12px;
+
+  .fa {
+    margin     : 0 10px 0 0;
+    font-size  : 14px;
+    transition : color .15s linear;
+    }
+
+  &:active, &:hover, &:focus {
+    color : $color-red;
+    }
+  }
+
+.listing-detail-food-wrapper {
+  padding          : 30px;
+  background-color : $color-white;
+
+  h3 {
+    position       : relative;
+    margin         : 50px 0;
+    padding        : 0;
+    color          : $color-black-light;
+    text-transform : uppercase;
+    font-weight    : 500;
+    font-size      : 13px;
+
+    &:first-child {
+      margin-top : 0;
+      }
+
+    &:after {
+      position         : absolute;
+      top              : 50%;
+      right            : 0;
+      left             : 0;
+      z-index          : 1;
+      display          : block;
+      height           : 1px;
+      background-color : $color-gray;
+      content          : '';
+      }
+
+    span {
+      position         : relative;
+      z-index          : 2;
+      padding          : 0 20px 0 0;
+      background-color : $color-white;
+      }
+    }
+  }
+
+.listing-detail-food {
+  @extend .clearfix;
+
+  margin        : 0 0 25px 0;
+  padding       : 0 0 25px 0;
+  border-bottom : 1px dashed $color-gray-medium;
+
+  &:last-child {
+    margin-bottom  : 0;
+    padding-bottom : 0;
+    border-bottom  : 0;
+    }
+
+  h4 {
+    float       : left;
+    margin      : 7px 0 0 0;
+    padding     : 0;
+    font-weight : 400;
+    font-size   : 15px;
+    }
+  }
 
 .listing-detail-food-speciality {
-    background-color: $color-green;
-    color: $color-white;
-    float: left;
-    font-size: 10px;
-    font-weight: 700;
-    margin: 6px 0px 0px 15px;
-    padding: 2px 6px;
-    text-transform: uppercase;
-}
+  float            : left;
+  margin           : 6px 0 0 15px;
+  padding          : 2px 6px;
+  background-color : $color-green;
+  color            : $color-white;
+  text-transform   : uppercase;
+  font-weight      : 700;
+  font-size        : 10px;
+  }
 
 .listing-detail-food-serving {
-    background-color: $color-black-light;
-    color: $color-white;
-    float: left;
-    font-size: 10px;
-    font-weight: 700;
-    margin: 6px 15px 0px 0px;
-    padding: 2px 6px;
-    text-transform: uppercase;
+  float            : left;
+  margin           : 6px 15px 0 0;
+  padding          : 2px 6px;
+  background-color : $color-black-light;
+  color            : $color-white;
+  text-transform   : uppercase;
+  font-weight      : 700;
+  font-size        : 10px;
 
-    &.today {
-        background-color: $color-primary;
+  &.today {
+    background-color : $color-primary;
     }
-}
+  }
 
 .listing-detail-food-photo {
-    background-size: cover;
-    float: left;
-    height: 50px;
-    margin: 0px 20px 0px 0px;
-    width: 70px;
-}
+  float           : left;
+  margin          : 0 20px 0 0;
+  width           : 70px;
+  height          : 50px;
+  background-size : cover;
+  }
 
 .listing-detail-food-content {
-    float: left;
-}
+  float : left;
+  }
 
 .listing-detail-food-description {
-    clear: both;
-    float: left;
-    font-size: 12px;
-    margin: 5px 0px 0px 0px;
+  float     : left;
+  clear     : both;
+  margin    : 5px 0 0 0;
+  font-size : 12px;
 
-    p {
-        margin: 0px;
+  p {
+    margin : 0;
     }
-}
+  }
 
 .listing-detail-food-price {
-    color: $color-primary;
-    float: right;
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: 10px;
-}
+  float       : right;
+  margin-top  : 10px;
+  color       : $color-primary;
+  font-weight : 500;
+  font-size   : 20px;
+  }
 
 /*******************************************************************
  * Property Valuation
  *******************************************************************/
 
 .listing-detail-property-valuation-item {
-    margin-bottom: 15px;
-}
+  margin-bottom : 15px;
+  }
 
 .listing-detail-property-valuation dt {
-    display: inline-block;
-    font-weight: normal;
-    width: 140px;
-}
+  display     : inline-block;
+  width       : 140px;
+  font-weight : normal;
+  }
 
 .listing-detail-property-valuation dd {
-    display: inline-block;
-    height: 15px;
-    margin: 0px 15px 0px 0px;
-    position: relative;
-    width: 60%;
-}
+  position : relative;
+  display  : inline-block;
+  margin   : 0 15px 0 0;
+  width    : 60%;
+  height   : 15px;
+  }
 
 .listing-detail-property-valuation dd .bar-valuation {
-    background-color: $color-primary;
-    height: 100%;
-}
+  height           : 100%;
+  background-color : $color-primary;
+  }
 
 .listing-detail-property-valuation dd span {
-    background-color: rgba(0, 0, 0, .1);
-    margin-left: 40px;
-}
+  margin-left      : 40px;
+  background-color : rgba(0, 0, 0, .1);
+  }
 
 .listing-detail-property-valuation dd strong {
-    display: block;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 30px;
-    margin: 0px 0px 0px 10px;
-}
+  display     : block;
+  margin      : 0 0 0 10px;
+  font-weight : normal;
+  font-size   : 14px;
+  line-height : 30px;
+  }
 
 /*******************************************************************
  * Property Facilities
  *******************************************************************/
 .listing-detail-property-public-facilities {
-    overflow: hidden;
-}
+  overflow : hidden;
+  }
 
 .listing-detail-property-public-facility-wrapper {
-    float: left;
-    padding-bottom: 20px;
-    width: 50%;
-}
+  float          : left;
+  padding-bottom : 20px;
+  width          : 50%;
+  }
 
 .listing-detail-property-public-facility-wrapper:nth-child(2n+1) {
-    padding-right: 10px;
-}
+  padding-right : 10px;
+  }
 
 .listing-detail-property-public-facility-wrapper:nth-child(2n+2) {
-    padding-left: 10px;
-}
+  padding-left : 10px;
+  }
 
 .listing-detail-property-public-facility {
-    background-color: $color-white;
-    border: solid 1px $gray-lighter;
-    overflow: hidden;
-}
+  overflow         : hidden;
+  border           : solid 1px $gray-lighter;
+  background-color : $color-white;
+  }
 
 .listing-detail-property-public-facility-info {
-    background-color: $gray-lighter;
-    float: left;
-    line-height: 3;
-    text-align: center;
-    width: 30%;
-}
+  float            : left;
+  width            : 30%;
+  background-color : $gray-lighter;
+  text-align       : center;
+  line-height      : 3;
+  }
 
 .listing-detail-property-public-facility-title {
-    float: right;
-    line-height: 3;
-    padding: 0px 20px 0px 20px;
-    width: 70%;
-}
+  float       : right;
+  padding     : 0 20px 0 20px;
+  width       : 70%;
+  line-height : 3;
+  }

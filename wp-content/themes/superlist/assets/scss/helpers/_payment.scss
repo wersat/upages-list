@@ -1,260 +1,260 @@
 .payment-info {
-  background-color: $color-green;
-  border: 1px solid darken($color-green, 3%);
-  color: $color-white;
-  padding: 30px;
-  font-size: 16px;
-  font-weight: 300;
-  margin: 0px 0px 30px 0px;
+  margin           : 0 0 30px 0;
+  padding          : 30px;
+  border           : 1px solid darken($color-green, 3%);
+  background-color : $color-green;
+  color            : $color-white;
+  font-weight      : 300;
+  font-size        : 16px;
 
   strong {
-    color: $color-white;
-    font-weight: 400;
-  }
-}
-
-.payment-form {
-  margin: 0px 0px 30px 0px;
-
-  &:after {
-    clear: both;
-    content: '';
-    display: block;
-  }
-}
-
-.payment-form-bottom {
-  clear: both;
-  overflow: hidden;
-
-  .terms-conditions-input {
-    float: left;
-  }
-}
-
-.gateway {
-  margin: 0px 0px 15px 0px;
-}
-
-.gateway-header {
-  background-color: $color-white;
-  border: 1px solid darken($color-gray-light, 3%);
-  margin: 0px 0px 15px 0px;
-  padding: 20px;
-
-  label {
-    margin: 0px;
-  }
-}
-
-.gateway-content {
-  display: none;
-
-  label {
-    display: block;
-  }
-
-  &:after {
-    clear: both;
-    content: '';
-    display: block;
-  }
-}
-
-.payment-back {
-  float: left;
-  display: block;
-  padding-top: 7px;
-
-  a  {
-    border-bottom: 1px solid $color-primary;
-    text-decoration: none;
-
-    &:hover {
-      color: $color-primary;
-      text-decoration: none !important;
+    color       : $color-white;
+    font-weight : 400;
     }
   }
-}
+
+.payment-form {
+  margin : 0 0 30px 0;
+
+  &:after {
+    display : block;
+    clear   : both;
+    content : '';
+    }
+  }
+
+.payment-form-bottom {
+  clear    : both;
+  overflow : hidden;
+
+  .terms-conditions-input {
+    float : left;
+    }
+  }
+
+.gateway {
+  margin : 0 0 15px 0;
+  }
+
+.gateway-header {
+  margin           : 0 0 15px 0;
+  padding          : 20px;
+  border           : 1px solid darken($color-gray-light, 3%);
+  background-color : $color-white;
+
+  label {
+    margin : 0;
+    }
+  }
+
+.gateway-content {
+  display : none;
+
+  label {
+    display : block;
+    }
+
+  &:after {
+    display : block;
+    clear   : both;
+    content : '';
+    }
+  }
+
+.payment-back {
+  display     : block;
+  float       : left;
+  padding-top : 7px;
+
+  a {
+    border-bottom   : 1px solid $color-primary;
+    text-decoration : none;
+
+    &:hover {
+      color           : $color-primary;
+      text-decoration : none !important;
+      }
+    }
+  }
 
 .payment-process {
   @extend .btn;
 
-  float: right;
-}
+  float : right;
+  }
 
 .gateway-paypal-credit-card-first-name {
-  clear: left;
-  float: left;
-  width: 48%;
-}
+  float : left;
+  clear : left;
+  width : 48%;
+  }
 
 .gateway-paypal-credit-card-last-name {
-  clear: right;
-  float: right;
-  width: 48%;
-}
+  float : right;
+  clear : right;
+  width : 48%;
+  }
 
 .gateway-paypal-credit-card-number {
-  float: left;
-  width: 48%;
-}
+  float : left;
+  width : 48%;
+  }
 
 .gateway-paypal-credit-card-cvv {
-  float: left;
-  margin-left: 4%;
-  width: 15%;
-}
+  float       : left;
+  margin-left : 4%;
+  width       : 15%;
+  }
 
 .gateway-paypal-credit-card-expires {
-  float: left;
-  margin-left: 4%;
-  width: 29%;
-}
+  float       : left;
+  margin-left : 4%;
+  width       : 29%;
+  }
 
 .gateway-paypal-credit-card-expires-month {
-  float: left !important;
-  width: 48% !important;
-}
+  float : left !important;
+  width : 48% !important;
+  }
 
 .gateway-paypal-credit-card-expires-year {
-  float: right !important;
-  width: 48% !important;
-}
+  float : right !important;
+  width : 48% !important;
+  }
 
 .wire-transfer-info {
-  margin-bottom: 20px;
+  margin-bottom : 20px;
 
   dt {
-    color: $color-black-light;
+    color : $color-black-light;
+    }
   }
-}
 
 .wire-transfer-section-one {
-  float: left;
-  width: 45%
-}
+  float : left;
+  width : 45%
+  }
 
 .wire-transfer-section-two {
-  float: right;
-  width: 45%
-}
+  float : right;
+  width : 45%
+  }
 
 .stripe-button-el {
-  background-image: none !important;
-  border: 0px !important;
-  border-radius: 0px !important;
-  float: right;
+  float            : right;
+  border           : 0 !important;
+  border-radius    : 0 !important;
+  background-image : none !important;
 
   span {
-    background-color: transparent !important;
-    background-image: none !important;
-    border: 0px !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
+    border           : 0 !important;
+    background-color : transparent !important;
+    background-image : none !important;
+    box-shadow       : none !important;
+    text-shadow      : none !important;
+    }
   }
-}
 
 .packages {
-  background-color: $color-white;
-}
+  background-color : $color-white;
+  }
 
 .package {
-  border-bottom: 1px solid $color-gray;
-  padding: 20px;
+  padding       : 20px;
+  border-bottom : 1px solid $color-gray;
 
   &:last-child {
-    margin-bottom: 0px;
-  }
+    margin-bottom : 0;
+    }
 
   span, strong {
-    font-size: 13px;
-  }
+    font-size : 13px;
+    }
 
   strong {
-    color: $color-gray-darker;
-    font-weight: 400;
-    line-height: 22px;
-  }
+    color       : $color-gray-darker;
+    font-weight : 400;
+    line-height : 22px;
+    }
 
   span {
-    color: $color-black;
-  }
+    color : $color-black;
+    }
 
   form {
-    float: right;
-  }
+    float : right;
+    }
 
   button {
-    background-color: transparent;
-    border-bottom: 1px solid $color-primary;
-    color: $color-primary;
-    font-size: 12px;
-    float: right;
-    line-height: 1;
-    margin: 2px 0px 0px 0px;
-    min-height: inherit;
-    padding: 0px;
+    float            : right;
+    margin           : 2px 0 0 0;
+    padding          : 0;
+    min-height       : inherit;
+    border-bottom    : 1px solid $color-primary;
+    background-color : transparent;
+    color            : $color-primary;
+    font-size        : 12px;
+    line-height      : 1;
 
     &:active, &:focus, &:hover {
-      background-color: transparent !important;
-      border-color: $color-primary;
-      color: $color-primary;
-    }
+      border-color     : $color-primary;
+      background-color : transparent !important;
+      color            : $color-primary;
+      }
 
     &:after {
-      display: none;
+      display : none;
+      }
     }
   }
-}
 
 .package-title {
-  font-size: 15px;
-  font-weight: 400;
-  margin: 0px 0px 10px 0px;
-}
+  margin      : 0 0 10px 0;
+  font-weight : 400;
+  font-size   : 15px;
+  }
 
 .billing-details {
-  overflow: hidden;
-  margin-bottom: 30px;
+  overflow      : hidden;
+  margin-bottom : 30px;
 
   .billing-registration-number {
-    clear: left;
-    float: left;
-    width: 48%;
-  }
+    float : left;
+    clear : left;
+    width : 48%;
+    }
 
   .billing-vat-number {
-    clear: right;
-    float: right;
-    width: 48%;
-  }
+    float : right;
+    clear : right;
+    width : 48%;
+    }
 
   .billing-country {
-    clear: left;
-    float: left;
-    width: 48%;
-  }
+    float : left;
+    clear : left;
+    width : 48%;
+    }
 
   .billing-county {
-    clear: right;
-    float: right;
-    width: 48%;
-  }
+    float : right;
+    clear : right;
+    width : 48%;
+    }
 
   .billing-city {
-    clear: left;
-    float: left;
-    width: 48%;
-  }
+    float : left;
+    clear : left;
+    width : 48%;
+    }
 
   .billing-postal-code {
-    clear: right;
-    float: right;
-    width: 48%;
-  }
+    float : right;
+    clear : right;
+    width : 48%;
+    }
 
   .billing-street-and-number {
-    clear: both;
+    clear : both;
+    }
   }
-}
