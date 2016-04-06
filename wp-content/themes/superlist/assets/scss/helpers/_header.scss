@@ -219,20 +219,27 @@
       margin-right   : 20px !important;
       font-size      : 1em;
 
+      .yellow {
+        fill : $color-primary;
+        }
+      .black {
+        fill : $color-black;
+        }
+
       }
 
     &:active, &:focus, &:hover {
       color           : $color-black;
       text-decoration : none;
 
-      .header-transparent .affix-top & {
-        color : $color-white;
-        }
+      //.header-transparent .affix-top & {
+      //  color : $color-white;
+      //  }
       }
 
-    .header-transparent .affix-top & {
-      color : $color-white;
-      }
+    //.header-transparent .affix-top & {
+    //  color : $color-white;
+    //  }
     }
 
   span {
@@ -249,17 +256,6 @@
     padding-right  : 10px;
     max-height     : 44px;
     vertical-align : middle;
-    }
-
-  i.superlist-logo {
-    margin-right   : 10px;
-    color          : $color-primary;
-    vertical-align : -6px;
-    font-size      : 32px;
-
-    .header-transparent .affix-top & {
-      color : $color-white !important;
-      }
     }
 
   .header-minimal & {
