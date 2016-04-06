@@ -95,9 +95,8 @@
   color       : $color-gray-dark;
   font-size   : 14px;
 
-  i line-height : 1
-
-  {
+  i {
+    line-height : 1;
     margin-right   : 5px;
     color          : $color-primary;
     vertical-align : 2px;
