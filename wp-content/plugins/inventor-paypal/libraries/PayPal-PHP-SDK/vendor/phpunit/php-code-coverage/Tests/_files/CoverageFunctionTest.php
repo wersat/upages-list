@@ -1,11 +1,12 @@
 <?php
-class CoverageFunctionTest extends PHPUnit_Framework_TestCase
-{
-    /**
-     * @covers ::globalFunction
-     */
-    public function testSomething()
+
+    class CoverageFunctionTest extends PHPUnit_Framework_TestCase
     {
-        globalFunction();
+        /**
+         * @covers ::globalFunction
+         */
+        public function testSomething()
+        {
+            globalFunction();
+        }
     }
-}

@@ -1,46 +1,41 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
     exit;
 }
 
 /**
- * Class Inventor_Packages_Widgets
+ * Class Inventor_Packages_Widgets.
  *
  * @class Inventor_Packages_Widgets
- * @package Inventor/Classes/Widgets
+ *
  * @author Pragmatic Mates
  */
-class Inventor_Packages_Widgets {
+class Inventor_Packages_Widgets
+{
     /**
-     * Initialize widgets
-     *
-     * @access public
-     * @return void
+     * Initialize widgets.
      */
-    public static function init() {
+    public static function init()
+    {
         self::includes();
-        add_action( 'widgets_init', array( __CLASS__, 'register' ) );
+        add_action('widgets_init', array(__CLASS__, 'register'));
     }
 
     /**
-     * Include widget classes
-     *
-     * @access public
-     * @return void
+     * Include widget classes.
      */
-    public static function includes() {
-        require_once INVENTOR_DIR . 'includes/widgets/class-inventor-packages-widget-packages.php';
+    public static function includes()
+    {
+        require_once INVENTOR_DIR.'includes/widgets/class-inventor-packages-widget-packages.php';
     }
 
     /**
-     * Register widgets
-     *
-     * @access public
-     * @return void
+     * Register widgets.
      */
-    public static function register() {
-        register_widget( 'Inventor_Packages_Widget_Packages' );
+    public static function register()
+    {
+        register_widget('Inventor_Packages_Widget_Packages');
     }
 }
 

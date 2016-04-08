@@ -1,5 +1,6 @@
 <?php
-abstract class AbstractMockTestClass
-{
-    abstract public function doSomething();
-}
+
+    abstract class AbstractMockTestClass
+    {
+        abstract public function doSomething();
+    }

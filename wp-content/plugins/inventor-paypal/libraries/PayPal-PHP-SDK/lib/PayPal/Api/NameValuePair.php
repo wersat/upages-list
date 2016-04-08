@@ -1,65 +1,61 @@
 <?php
+    namespace PayPal\Api;
 
-namespace PayPal\Api;
-
-use PayPal\Common\PayPalModel;
-
-/**
- * Class NameValuePair
- *
- * Used to define a type for name-value pairs.  The use of name value pairs in an API should be limited and approved by architecture.
- *
- * @package PayPal\Api
- *
- * @property string name
- * @property string value
- */
-class NameValuePair extends PayPalModel
-{
-    /**
-     * Key for the name value pair.  The value name types should be correlated 
-     *
-     * @param string $name
-     * 
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-        return $this;
-    }
+    use PayPal\Common\PayPalModel;
 
     /**
-     * Key for the name value pair.  The value name types should be correlated 
-     *
-     * @return string
+     * Class NameValuePair
+     * Used to define a type for name-value pairs.  The use of name value pairs in an API should be limited and approved by architecture.
+     * @package PayPal\Api
+     * @property string name
+     * @property string value
      */
-    public function getName()
+    class NameValuePair extends PayPalModel
     {
-        return $this->name;
-    }
+        /**
+         * Key for the name value pair.  The value name types should be correlated
+         *
+         * @param string $name
+         *
+         * @return $this
+         */
+        public function setName($name)
+        {
+            $this->name = $name;
 
-    /**
-     * Value for the name value pair.
-     *
-     * @param string $value
-     * 
-     * @return $this
-     */
-    public function setValue($value)
-    {
-        $this->value = $value;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Value for the name value pair.
-     *
-     * @return string
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
+        /**
+         * Value for the name value pair.
+         *
+         * @param string $value
+         *
+         * @return $this
+         */
+        public function setValue($value)
+        {
+            $this->value = $value;
 
-}
+            return $this;
+        }
+
+        /**
+         * Key for the name value pair.  The value name types should be correlated
+         * @return string
+         */
+        public function getName()
+        {
+            return $this->name;
+        }
+
+        /**
+         * Value for the name value pair.
+         * @return string
+         */
+        public function getValue()
+        {
+            return $this->value;
+        }
+
+    }

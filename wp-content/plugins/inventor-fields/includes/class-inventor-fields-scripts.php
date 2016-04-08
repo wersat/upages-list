@@ -1,37 +1,32 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-
-/**
- * Class Inventor_Fields_Scripts
- *
- * @class Inventor_Fields_Scripts
- * @package Inventor/Classes
- * @author Pragmatic Mates
- */
-class Inventor_Fields_Scripts {
-    /**
-     * Initialize scripts
-     *
-     * @access public
-     * @return void
-     */
-    public static function init() {
-        add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_backend' ) );
+    if ( ! defined('ABSPATH')) {
+        exit;
     }
 
     /**
-     * Loads backend files
-     *
-     * @access public
-     * @return void
+     * Class Inventor_Fields_Scripts.
+     * @class  Inventor_Fields_Scripts
+     * @author Pragmatic Mates
      */
-    public static function enqueue_backend() {
-        wp_register_script( 'inventor-fields', plugins_url( '/inventor-fields/assets/js/inventor-fields.js' ), array( 'jquery' ), false, true );
-        wp_enqueue_script( 'inventor-fields' );
-    }
-}
+    class Inventor_Fields_Scripts
+    {
+        /**
+         * Initialize scripts.
+         */
+        public static function init()
+        {
+            add_action('admin_enqueue_scripts', [__CLASS__, 'enqueue_backend']);
+        }
 
-Inventor_Fields_Scripts::init();
+        /**
+         * Loads backend files.
+         */
+        public static function enqueue_backend()
+        {
+            wp_register_script('inventor-fields', plugins_url('/inventor-fields/assets/js/inventor-fields.js'),
+                ['jquery'], false, true);
+            wp_enqueue_script('inventor-fields');
+        }
+    }
+
+    Inventor_Fields_Scripts::init();

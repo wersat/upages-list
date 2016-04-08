@@ -1,23 +1,24 @@
 <?php
-class MultiDependencyTest extends PHPUnit_Framework_TestCase
-{
-    public function testOne()
-    {
-        return 'foo';
-    }
 
-    public function testTwo()
+    class MultiDependencyTest extends PHPUnit_Framework_TestCase
     {
-        return 'bar';
-    }
+        public function testOne()
+        {
+            return 'foo';
+        }
 
-    /**
-     * @depends testOne
-     * @depends testTwo
-     */
-    public function testThree($a, $b)
-    {
-        $this->assertEquals('foo', $a);
-        $this->assertEquals('bar', $b);
+        public function testTwo()
+        {
+            return 'bar';
+        }
+
+        /**
+         * @depends testOne
+         * @depends testTwo
+         */
+        public function testThree($a, $b)
+        {
+            $this->assertEquals('foo', $a);
+            $this->assertEquals('bar', $b);
+        }
     }
-}

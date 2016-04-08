@@ -1,74 +1,72 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
     exit;
 }
 
 /**
- * Class Inventor_Packages_Widget_Packages
+ * Class Inventor_Packages_Widget_Packages.
  *
  * @class Inventor_Packages_Widget_Packages
- * @package Inventor/Classes/Widgets
+ *
  * @author Pragmatic Mates
  */
-class Inventor_Packages_Widget_Packages extends WP_Widget {
+class Inventor_Packages_Widget_Packages extends WP_Widget
+{
     /**
-     * Initialize widget
-     *
-     * @access public
-     * @return void
+     * Initialize widget.
      */
-    function Inventor_Packages_Widget_Packages() {
+    public function Inventor_Packages_Widget_Packages()
+    {
         parent::__construct(
             'packages',
-            __( 'Packages', 'inventor-packages' ),
+            __('Packages', 'inventor-packages'),
             array(
-                'description' => __( 'Displays available packages.', 'inventor-packages' ),
+                'description' => __('Displays available packages.', 'inventor-packages'),
             )
         );
     }
 
     /**
-     * Frontend
+     * Frontend.
      *
-     * @access public
      * @param array $args
      * @param array $instance
-     * @return void
      */
-    function widget( $args, $instance ) {
-        query_posts( array(
-            'post_type'         => 'package',
-            'posts_per_page'    => -1,
-            'post_status'       => 'publish',
-        ) );
+    public function widget($args, $instance)
+    {
+        query_posts(array(
+            'post_type' => 'package',
+            'posts_per_page' => -1,
+            'post_status' => 'publish',
+        ));
 
-        include Inventor_Template_Loader::locate( 'widgets/packages', INVENTOR_PACKAGES_DIR );
+        include Inventor_Template_Loader::locate('widgets/packages', INVENTOR_PACKAGES_DIR);
 
         wp_reset_query();
     }
 
     /**
-     * Update
+     * Update.
      *
-     * @access public
      * @param array $new_instance
      * @param array $old_instance
+     *
      * @return array
      */
-    function update( $new_instance, $old_instance ) {
+    public function update($new_instance, $old_instance)
+    {
         return $new_instance;
     }
 
     /**
-     * Backend
+     * Backend.
      *
-     * @access public
      * @param array $instance
-     * @return void
      */
-    function form( $instance ) {
-        include Inventor_Template_Loader::locate( 'widgets/packages-admin', INVENTOR_PACKAGES_DIR );
-        include Inventor_Template_Loader::locate( 'widgets/advanced-options-admin' );
+    public function form($instance)
+    {
+        include Inventor_Template_Loader::locate('widgets/packages-admin', INVENTOR_PACKAGES_DIR);
+        include Inventor_Template_Loader::locate('widgets/advanced-options-admin');
     }
 }

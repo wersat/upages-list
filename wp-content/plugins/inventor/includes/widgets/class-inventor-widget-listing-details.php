@@ -1,66 +1,59 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-
-/**
- * Class Inventor_Widget_Listing_Details
- *
- * @class Inventor_Widget_Listing_Details
- * @package Inventor/Classes/Widgets
- * @author Pragmatic Mates
- */
-class Inventor_Widget_Listing_Details extends WP_Widget {
-    /**
-     * Initialize widget
-     *
-     * @access public
-     * @return void
-     */
-    function Inventor_Widget_Listing_Details() {
-        parent::__construct(
-            'listing_details',
-            __( 'Listing details', 'inventor' ),
-            array(
-                'description' => __( 'Displays listing details.', 'inventor' ),
-            )
-        );
+    if (!defined('ABSPATH')) {
+        exit;
     }
 
     /**
-     * Frontend
+     * Class Inventor_Widget_Listing_Details.
      *
-     * @access public
-     * @param array $args
-     * @param array $instance
-     * @return void
+     * @class  Inventor_Widget_Listing_Details
+     *
+     * @author Pragmatic Mates
      */
-    function widget( $args, $instance ) {
-        include Inventor_Template_Loader::locate( 'widgets/listing-details' );
-    }
+    class Inventor_Widget_Listing_Details extends WP_Widget
+    {
+        /**
+         * Initialize widget.
+         */
+        public function __construct()
+        {
+            parent::__construct('listing_details', __('Listing details', 'inventor'), [
+                    'description' => __('Displays listing details.', 'inventor'),
+                ]);
+        }
 
-    /**
-     * Update
-     *
-     * @access public
-     * @param array $new_instance
-     * @param array $old_instance
-     * @return array
-     */
-    function update( $new_instance, $old_instance ) {
-        return $new_instance;
-    }
+        /**
+         * Backend.
+         *
+         * @param array $instance
+         */
+        public function form($instance)
+        {
+            include Inventor_Template_Loader::locate('widgets/listing-details-admin');
+            include Inventor_Template_Loader::locate('widgets/advanced-options-admin');
+        }
 
-    /**
-     * Backend
-     *
-     * @access public
-     * @param array $instance
-     * @return void
-     */
-    function form( $instance ) {
-        include Inventor_Template_Loader::locate( 'widgets/listing-details-admin' );
-        include Inventor_Template_Loader::locate( 'widgets/advanced-options-admin' );
+        /**
+         * Update.
+         *
+         * @param array $new_instance
+         * @param array $old_instance
+         *
+         * @return array
+         */
+        public function update($new_instance, $old_instance)
+        {
+            return $new_instance;
+        }
+
+        /**
+         * Frontend.
+         *
+         * @param array $args
+         * @param array $instance
+         */
+        public function widget($args, $instance)
+        {
+            include Inventor_Template_Loader::locate('widgets/listing-details');
+        }
     }
-}

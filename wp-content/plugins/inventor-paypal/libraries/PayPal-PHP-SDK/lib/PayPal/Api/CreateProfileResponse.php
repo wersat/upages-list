@@ -1,40 +1,35 @@
 <?php
-
-namespace PayPal\Api;
-
-/**
- * Class CreateProfileResponse
- *
- * Response schema for create profile api
- *
- * @package PayPal\Api
- *
- * @property string id
- */
-class CreateProfileResponse extends WebProfile
-{
-    /**
-     * ID of the payment web experience profile.
-     * 
-     *
-     * @param string $id
-     * 
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-        return $this;
-    }
+    namespace PayPal\Api;
 
     /**
-     * ID of the payment web experience profile.
-     *
-     * @return string
+     * Class CreateProfileResponse
+     * Response schema for create profile api
+     * @package PayPal\Api
+     * @property string id
      */
-    public function getId()
+    class CreateProfileResponse extends WebProfile
     {
-        return $this->id;
-    }
+        /**
+         * ID of the payment web experience profile.
+         * @return string
+         */
+        public function getId()
+        {
+            return $this->id;
+        }
 
-}
+        /**
+         * ID of the payment web experience profile.
+         *
+         * @param string $id
+         *
+         * @return $this
+         */
+        public function setId($id)
+        {
+            $this->id = $id;
+
+            return $this;
+        }
+
+    }

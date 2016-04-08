@@ -1,35 +1,36 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-/**
- * Class Inventor_Properties_Taxonomies
- *
- * @class Inventor_Properties_Taxonomies
- * @package Inventor/Classes/Taxonomies
- * @author Pragmatic Mates
- */
-class Inventor_Properties_Taxonomies {
-    /**
-     * Initialize taxonomies
-     *
-     * @access public
-     * @return void
-     */
-    public static function init() {
-        self::includes();
+    if ( ! defined('ABSPATH')) {
+        exit;
     }
 
     /**
-     * Includes all taxonomies
-     *
-     * @access public
-     * @return void
+     * Class Inventor_Properties_Taxonomies
+     * @class   Inventor_Properties_Taxonomies
+     * @package Inventor/Classes/Taxonomies
+     * @author  Pragmatic Mates
      */
-    public static function includes() {
-        require_once INVENTOR_PROPERTIES_DIR . 'includes/taxonomies/class-inventor-properties-taxonomy-property-amenities.php';
-        require_once INVENTOR_PROPERTIES_DIR . 'includes/taxonomies/class-inventor-properties-taxonomy-property-types.php';
-    }
-}
+    class Inventor_Properties_Taxonomies
+    {
+        /**
+         * Initialize taxonomies
+         * @access public
+         * @return void
+         */
+        public static function init()
+        {
+            self::includes();
+        }
 
-Inventor_Properties_Taxonomies::init();
+        /**
+         * Includes all taxonomies
+         * @access public
+         * @return void
+         */
+        public static function includes()
+        {
+            require_once INVENTOR_PROPERTIES_DIR . 'includes/taxonomies/class-inventor-properties-taxonomy-property-amenities.php';
+            require_once INVENTOR_PROPERTIES_DIR . 'includes/taxonomies/class-inventor-properties-taxonomy-property-types.php';
+        }
+    }
+
+    Inventor_Properties_Taxonomies::init();
