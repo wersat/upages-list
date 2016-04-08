@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-03-01 18:27:32+0000\n"
+"PO-Revision-Date: 2016-04-07 16:18:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,175 +10,175 @@ msgstr ""
 "X-Generator: GlotPress/1.1.0-alpha\n"
 "Project-Id-Version: Administration\n"
 
-#: wp-admin/user-edit.php:180
+#: wp-admin/user-edit.php:181
 msgid "&larr; Back to Users"
 msgstr "&larr; Επιστροφή στα Μέλη"
 
-#: wp-admin/user-edit.php:196 wp-admin/users.php:477
+#: wp-admin/user-edit.php:197 wp-admin/users.php:477
 msgctxt "user"
 msgid "Add Existing"
 msgstr "Προσθήκη υφιστάμενου μέλους"
 
-#: wp-admin/user-edit.php:217
+#: wp-admin/user-edit.php:218
 msgid "Personal Options"
 msgstr "Προσωπικές ρυθμίσεις"
 
-#: wp-admin/user-edit.php:222
+#: wp-admin/user-edit.php:223
 msgid "Visual Editor"
 msgstr "Επεξεργαστής WYSIWYG"
 
-#: wp-admin/user-edit.php:223
+#: wp-admin/user-edit.php:224
 msgid "Disable the visual editor when writing"
 msgstr "Απενεργοποίηση κειμενογράφου WYSIWYG"
 
-#: wp-admin/user-edit.php:249
+#: wp-admin/user-edit.php:250
 msgid "Enable keyboard shortcuts for comment moderation."
 msgstr "Χρήση πληκτροσυντομεύσεων για συντονισμό σχολίων. "
 
-#: wp-admin/user-edit.php:249
+#: wp-admin/user-edit.php:250
 msgid "<a href=\"https://codex.wordpress.org/Keyboard_Shortcuts\" target=\"_blank\">More information</a>"
 msgstr "<a href=\"https://codex.wordpress.org/Keyboard_Shortcuts\" target=\"_blank\">Περισσότερες πληροφορίες</a>"
 
-#: wp-admin/user-edit.php:257
+#: wp-admin/user-edit.php:258
 msgid "Show Toolbar when viewing site"
 msgstr "Προβολή και στη δημόσια όψη"
 
-#: wp-admin/user-edit.php:293
+#: wp-admin/user-edit.php:294
 msgid "Usernames cannot be changed."
 msgstr "Το όνομα χρήστη δεν αλλάζει"
 
-#: wp-admin/user-edit.php:309 wp-admin/user-edit.php:311
+#: wp-admin/user-edit.php:310 wp-admin/user-edit.php:312
 msgid "&mdash; No role for this site &mdash;"
 msgstr "– Χωρίς ρόλο στον ιστότοπο –"
 
-#: wp-admin/user-edit.php:320
+#: wp-admin/user-edit.php:321
 msgid "Grant this user super admin privileges for the Network."
 msgstr "Αποδώστε στο μέλος αυτό διαχειριστικά δικαιώματα στο δίκτυο."
 
-#: wp-admin/user-edit.php:322
+#: wp-admin/user-edit.php:323
 msgid "Super admin privileges cannot be removed because this user has the network admin email."
 msgstr "Η αφαίρεση δικαιωμάτων υπερδιαχειριστή είναι αδύνατη: Η ηλ. διεύθυνση του διαχειριστή δικτύου είναι του μέλους αυτού."
 
-#: wp-admin/user-edit.php:328 wp-admin/user-new.php:386
+#: wp-admin/user-edit.php:329 wp-admin/user-new.php:386
 msgid "First Name"
 msgstr "Όνομα"
 
-#: wp-admin/user-edit.php:333 wp-admin/user-new.php:390
+#: wp-admin/user-edit.php:334 wp-admin/user-new.php:390
 msgid "Last Name"
 msgstr "Επίθετο"
 
-#: wp-admin/user-edit.php:338
+#: wp-admin/user-edit.php:339
 msgid "Nickname"
 msgstr "Ψευδώνυμο"
 
-#: wp-admin/user-edit.php:343
+#: wp-admin/user-edit.php:344
 msgid "Display name publicly as"
 msgstr "Προβολή δημοσίως&nbsp;ως"
 
-#: wp-admin/user-edit.php:379
+#: wp-admin/user-edit.php:380
 msgid "Contact Info"
 msgstr "Στοιχεία επικοινωνίας"
 
-#: wp-admin/user-edit.php:391
+#: wp-admin/user-edit.php:392
 msgid "There is a pending change of your email to %1$s. <a href=\"%2$s\">Cancel</a>"
 msgstr "Εκκρεμεί αλλαγή της ηλ. διεύθυνσής σας στο %1$s. <a href=\"%2$s\">Ακύρωση</a>"
 
-#: wp-admin/user-edit.php:431
+#: wp-admin/user-edit.php:432
 msgid "About Yourself"
 msgstr "Λίγα λόγια για σας"
 
-#: wp-admin/user-edit.php:431
+#: wp-admin/user-edit.php:432
 msgid "About the user"
 msgstr "Για το μέλος"
 
-#: wp-admin/user-edit.php:435
+#: wp-admin/user-edit.php:436
 msgid "Biographical Info"
 msgstr "Βιογραφικά στοιχεία"
 
-#: wp-admin/user-edit.php:437
+#: wp-admin/user-edit.php:438
 msgid "Share a little biographical information to fill out your profile. This may be shown publicly."
 msgstr "Λίγα βιογραφικά στοιχεία για να έχει κάτι το προφίλ σας. Τα στοιχεία αυτά ενδέχεται να προβάλλονται δημόσια."
 
-#: wp-admin/user-edit.php:442
+#: wp-admin/user-edit.php:443
 msgid "Profile Picture"
 msgstr "Εικόνα προφίλ"
 
 #. translators: %s: Gravatar URL
-#: wp-admin/user-edit.php:448
+#: wp-admin/user-edit.php:449
 msgid "You can change your profile picture on <a href=\"%s\">Gravatar</a>."
 msgstr "Μπορείτε να αλλάξετε την εικόνα του προφίλ σας στο <a href=\"%s\">Gravatar</a>."
 
-#: wp-admin/user-edit.php:449
+#: wp-admin/user-edit.php:450
 msgid "https://en.gravatar.com/"
 msgstr "https://en.gravatar.com/"
 
-#: wp-admin/user-edit.php:483
+#: wp-admin/user-edit.php:484
 msgid "Account Management"
-msgstr "ΔΙαχείριση Λογαριασμού"
+msgstr "Διαχείριση Λογαριασμού"
 
-#: wp-admin/user-edit.php:486
+#: wp-admin/user-edit.php:487
 msgid "New Password"
 msgstr "Νέο συνθηματικό"
 
-#: wp-admin/user-edit.php:489
+#: wp-admin/user-edit.php:490
 msgid "Generate Password"
 msgstr "Δημιουργία συνθηματικού"
 
-#: wp-admin/user-edit.php:498 wp-admin/user-new.php:416
+#: wp-admin/user-edit.php:499 wp-admin/user-new.php:416
 msgid "Cancel password change"
 msgstr "Ακύρωση αλλαγής συνθηματικού"
 
-#: wp-admin/user-edit.php:506
+#: wp-admin/user-edit.php:507
 msgid "Repeat New Password"
 msgstr "Αναπληκτρολόγηση νέου συνθηματικού"
 
-#: wp-admin/user-edit.php:509
+#: wp-admin/user-edit.php:510
 msgid "Type your new password again."
 msgstr "Ξαναπληκτρολογήστε το νέο συνθηματικό."
 
-#: wp-admin/user-edit.php:526 wp-admin/user-edit.php:536
-#: wp-admin/user-edit.php:546
+#: wp-admin/user-edit.php:527 wp-admin/user-edit.php:537
+#: wp-admin/user-edit.php:547
 msgid "Sessions"
 msgstr "Σύνοδοι"
 
-#: wp-admin/user-edit.php:528 wp-admin/user-edit.php:538
+#: wp-admin/user-edit.php:529 wp-admin/user-edit.php:539
 msgid "Log Out Everywhere Else"
 msgstr "Αποσύνδεση από παντού"
 
-#: wp-admin/user-edit.php:530
+#: wp-admin/user-edit.php:531
 msgid "You are only logged in at this location."
 msgstr "Είστε συνδεδεμένος μόνο από αυτή την τοποθεσία."
 
-#: wp-admin/user-edit.php:540
+#: wp-admin/user-edit.php:541
 msgid "Did you lose your phone or leave your account logged in at a public computer? You can log out everywhere else, and stay logged in here."
 msgstr "Χάσατε τον τηλέφωνό σας ή αφήσατε συνδεδεμένο λογαριασμό από μια έναν δημόσιο υπολογιστή; Μπορείτε να αποσυνδεθείτε από παντού, και να παραμείνετε συνδεδεμένοι εδώ."
 
-#: wp-admin/user-edit.php:548
+#: wp-admin/user-edit.php:549
 msgid "Log Out Everywhere"
 msgstr "Αποσύνδεση από παντού"
 
 #. translators: 1: User's display name.
-#: wp-admin/user-edit.php:552
+#: wp-admin/user-edit.php:553
 msgid "Log %s out of all locations."
 msgstr "Αποσύνδεση %s από όλες τις τοποθεσίες."
 
-#: wp-admin/user-edit.php:601
+#: wp-admin/user-edit.php:602
 msgid "Additional Capabilities"
 msgstr "Πρόσθετες δυνατότητες"
 
-#: wp-admin/user-edit.php:604
+#: wp-admin/user-edit.php:605
 msgid "Capabilities"
 msgstr "Δυνατότητες"
 
-#: wp-admin/user-edit.php:612
+#: wp-admin/user-edit.php:613
 msgid "Denied: %s"
 msgstr "Άρνηση : %s"
 
-#: wp-admin/user-edit.php:625
+#: wp-admin/user-edit.php:626
 msgid "Update Profile"
 msgstr "Ενημέρωση προφίλ"
 
-#: wp-admin/user-edit.php:625
+#: wp-admin/user-edit.php:626
 msgid "Update User"
 msgstr "Ενημέρωση μέλους"
 
@@ -761,7 +761,7 @@ msgstr "Μεταφόρτωση θέματος"
 msgid "Number of Themes found: %d"
 msgstr "Αριθμός Θεμάτων που βρέθηκαν: %d"
 
-#: wp-admin/theme-install.php:53 wp-admin/theme-install.php:195
+#: wp-admin/theme-install.php:53 wp-admin/theme-install.php:201
 #: wp-admin/themes.php:142 wp-admin/themes.php:290
 msgid "No themes found. Try a different search."
 msgstr "Δεν βρέθηκαν θέματα. Δοκιμάστε μια διαφορετική αναζήτηση."
@@ -817,43 +817,43 @@ msgctxt "themes"
 msgid "Favorites"
 msgstr "Αγαπημένα"
 
-#: wp-admin/theme-install.php:154
+#: wp-admin/theme-install.php:159
 msgid "If you have marked themes as favorites on WordPress.org, you can browse them here."
 msgstr "Εάν έχετε επισημάνει θέματα ως αγαπημένα στο WordPress.org, μπορείτε να περιηγηθείτε σ' αυτά εδώ."
 
-#: wp-admin/theme-install.php:165
+#: wp-admin/theme-install.php:171
 msgid "Apply Filters"
 msgstr "Εφαρμογή φίλτρων"
 
-#: wp-admin/theme-install.php:185
+#: wp-admin/theme-install.php:191
 msgid "Filtering by:"
 msgstr "Φιλτράρισμα κατά:"
 
-#: wp-admin/theme-install.php:191
+#: wp-admin/theme-install.php:197
 msgid "Themes list"
 msgstr "Λίστα θεμάτων"
 
-#: wp-admin/theme-install.php:225
+#: wp-admin/theme-install.php:231
 msgctxt "theme"
 msgid "Details &amp; Preview"
 msgstr "Λεπτομέρειες &amp; Προεπισκόπηση"
 
-#: wp-admin/theme-install.php:235
+#: wp-admin/theme-install.php:241
 msgctxt "theme"
 msgid "Already Installed"
 msgstr "Ήδη εγκατεστημένο"
 
-#: wp-admin/theme-install.php:243
+#: wp-admin/theme-install.php:249
 msgctxt "Button label for a theme"
 msgid "Previous"
 msgstr "Προηγούμενο"
 
-#: wp-admin/theme-install.php:244
+#: wp-admin/theme-install.php:250
 msgctxt "Button label for a theme"
 msgid "Next"
 msgstr "Επόμενο"
 
-#: wp-admin/theme-install.php:265
+#: wp-admin/theme-install.php:271
 msgid "This theme has not been rated yet."
 msgstr "Το θέμα δεν αξιολογήθηκε ακόμη"
 
@@ -1482,20 +1482,20 @@ msgstr "Όταν είστε έτοιμοι, πιέστε <i>Ενημέρωση �
 msgid "<a href=\"https://codex.wordpress.org/Users_Your_Profile_Screen\" target=\"_blank\">Documentation on User Profiles</a>"
 msgstr "<a href=\"https://codex.wordpress.org/Users_Your_Profile_Screen\" target=\"_blank\">Documentation on User Profiles</a>"
 
-#: wp-admin/user-edit.php:80 wp-admin/user-edit.php:109
-#: wp-admin/user-edit.php:162
+#: wp-admin/user-edit.php:80 wp-admin/user-edit.php:110
+#: wp-admin/user-edit.php:163
 msgid "You do not have permission to edit this user."
 msgstr "Δεν επιτρέπεται να επεξεργαστείτε τα στοιχεία του μέλος αυτού."
 
-#: wp-admin/user-edit.php:170
+#: wp-admin/user-edit.php:171
 msgid "This user has super admin privileges."
 msgstr "Το μέλος αυτό έχει δικαιώματα υπερδιαχειριστή."
 
-#: wp-admin/user-edit.php:175
+#: wp-admin/user-edit.php:176
 msgid "Profile updated."
 msgstr "Το προφίλ ενημερώθηκε."
 
-#: wp-admin/user-edit.php:177
+#: wp-admin/user-edit.php:178
 msgid "User updated."
 msgstr "Το προφίλ ενημερώθηκε."
 
@@ -2716,7 +2716,7 @@ msgstr "Το μέλος ή τα μέλη υπάρχουν ήδη."
 msgid "Usernames can have only alphanumeric characters, spaces, underscores, hyphens, periods, and the @ symbol."
 msgstr "Τα ονόματα χρηστών μπορούν να έχουν μόνο αριθμούς, γράμματα, κενά, κάτω παύλες, ενωτικά, τελείες και το χαρακτήρα @."
 
-#: wp-admin/install.php:151 wp-admin/user-edit.php:170
+#: wp-admin/install.php:151 wp-admin/user-edit.php:171
 msgid "Important:"
 msgstr "Προσοχή:"
 
@@ -2730,12 +2730,12 @@ msgstr "Χρειάζεστε το συνθηματικό για σύνδεση. 
 msgid "Repeat Password"
 msgstr "Επαναπληκτρολόγηση συνθηματικού"
 
-#: wp-admin/install.php:167 wp-admin/user-edit.php:513
+#: wp-admin/install.php:167 wp-admin/user-edit.php:514
 #: wp-admin/user-new.php:430
 msgid "Confirm Password"
 msgstr "Επικύρωση κωδικού πρόσβασης"
 
-#: wp-admin/install.php:171 wp-admin/user-edit.php:517
+#: wp-admin/install.php:171 wp-admin/user-edit.php:518
 #: wp-admin/user-new.php:434
 msgid "Confirm use of weak password"
 msgstr "Επιβεβαιώστε τη χρήση αδύναμου συνθηματικό"
@@ -3127,7 +3127,7 @@ msgstr "Προφίλ"
 msgid "All Users"
 msgstr "Όλα τα μέλη"
 
-#: wp-admin/menu.php:220 wp-admin/menu.php:222 wp-admin/user-edit.php:194
+#: wp-admin/menu.php:220 wp-admin/menu.php:222 wp-admin/user-edit.php:195
 #: wp-admin/users.php:475
 msgctxt "user"
 msgid "Add New"
@@ -3822,133 +3822,133 @@ msgstr "Αν έχετε ένα πρόσθετο σε φορμάτ ZIP, μετα�
 msgid "Plugin zip file"
 msgstr "Αρχειοθήκη προσθέτου"
 
-#: wp-admin/includes/plugin-install.php:305
+#: wp-admin/includes/plugin-install.php:306
 msgid "If you have marked plugins as favorites on WordPress.org, you can browse them here."
 msgstr "Εδώ βλέπετε τα πρόσθετα που έχετε ορίσει ως αγαπημένα στο WordPress.org."
 
-#: wp-admin/includes/plugin-install.php:309 wp-admin/theme-install.php:157
+#: wp-admin/includes/plugin-install.php:310 wp-admin/theme-install.php:162
 msgid "Your WordPress.org username:"
 msgstr "Όνομα χρήστη στο WordPress.org:"
 
-#: wp-admin/includes/plugin-install.php:311 wp-admin/theme-install.php:159
+#: wp-admin/includes/plugin-install.php:312 wp-admin/theme-install.php:165
 msgid "Get Favorites"
 msgstr "Προβολή αγαπημένων"
 
-#: wp-admin/includes/plugin-install.php:334
+#: wp-admin/includes/plugin-install.php:336
 msgid "These suggestions are based on the plugins you and other users have installed."
 msgstr "Οι προτάσεις αυτές είναι βασισμένες στα πρόσθετα έχετε εγκαταστήσει εσείς και οι άλλοι χρήστες."
 
-#: wp-admin/includes/plugin-install.php:460
+#: wp-admin/includes/plugin-install.php:462
 msgctxt "Plugin installer section title"
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: wp-admin/includes/plugin-install.php:461
+#: wp-admin/includes/plugin-install.php:463
 msgctxt "Plugin installer section title"
 msgid "Installation"
 msgstr "Εγκατάσταση"
 
-#: wp-admin/includes/plugin-install.php:462
+#: wp-admin/includes/plugin-install.php:464
 msgctxt "Plugin installer section title"
 msgid "FAQ"
 msgstr "Κοινές απορίες"
 
-#: wp-admin/includes/plugin-install.php:463
+#: wp-admin/includes/plugin-install.php:465
 msgctxt "Plugin installer section title"
 msgid "Screenshots"
 msgstr "Εικόνες"
 
-#: wp-admin/includes/plugin-install.php:464
+#: wp-admin/includes/plugin-install.php:466
 msgctxt "Plugin installer section title"
 msgid "Changelog"
 msgstr "Σύνοψη αλλαγών"
 
-#: wp-admin/includes/plugin-install.php:465
+#: wp-admin/includes/plugin-install.php:467
 msgctxt "Plugin installer section title"
 msgid "Reviews"
 msgstr "Κριτικές"
 
-#: wp-admin/includes/plugin-install.php:466
+#: wp-admin/includes/plugin-install.php:468
 msgctxt "Plugin installer section title"
 msgid "Other Notes"
 msgstr "Σημειώσεις"
 
-#: wp-admin/includes/plugin-install.php:488 wp-admin/update.php:123
+#: wp-admin/includes/plugin-install.php:490 wp-admin/update.php:123
 msgid "Plugin Install"
 msgstr "Εγκατάσταση προσθέτων"
 
-#: wp-admin/includes/plugin-install.php:553
+#: wp-admin/includes/plugin-install.php:555
 msgid "Requires WordPress Version:"
 msgstr "Απαιτεί έκδ. WordPress:"
 
-#: wp-admin/includes/plugin-install.php:553
+#: wp-admin/includes/plugin-install.php:555
 msgid "%s or higher"
 msgstr "%s ή νεότερη"
 
-#: wp-admin/includes/plugin-install.php:555
+#: wp-admin/includes/plugin-install.php:557
 msgid "Compatible up to:"
 msgstr "Συμβατό μέχρι έκδ.:"
 
-#: wp-admin/includes/plugin-install.php:557
+#: wp-admin/includes/plugin-install.php:559
 msgid "Active Installs:"
 msgstr "Ενεργές Εγκαταστάσεις:"
 
-#: wp-admin/includes/plugin-install.php:565
+#: wp-admin/includes/plugin-install.php:567
 msgid "WordPress.org Plugin Page &#187;"
 msgstr "Σελίδα προσθέτου στο WordPress.org »"
 
-#: wp-admin/includes/plugin-install.php:567
+#: wp-admin/includes/plugin-install.php:569
 msgid "Plugin Homepage &#187;"
 msgstr "Σελίδα προσθέτου  &#187;"
 
-#: wp-admin/includes/plugin-install.php:569
-#: wp-admin/includes/plugin-install.php:616
+#: wp-admin/includes/plugin-install.php:571
+#: wp-admin/includes/plugin-install.php:618
 msgid "Donate to this plugin &#187;"
 msgstr "Δωρίστε στο πρόσθετο &#187;"
 
-#: wp-admin/includes/plugin-install.php:573
+#: wp-admin/includes/plugin-install.php:575
 msgid "Average Rating"
 msgstr "Μέσος όρος"
 
-#: wp-admin/includes/plugin-install.php:575
+#: wp-admin/includes/plugin-install.php:577
 msgid "(based on %s rating)"
 msgid_plural "(based on %s ratings)"
 msgstr[0] "(βάσει %s αξιολόγησης)"
 msgstr[1] "(βάσει %s αξιολογήσεων)"
 
-#: wp-admin/includes/plugin-install.php:586
+#: wp-admin/includes/plugin-install.php:588
 msgid "Click to see reviews that provided a rating of %d star"
 msgid_plural "Click to see reviews that provided a rating of %d stars"
 msgstr[0] "Πατήστε για να δείτε τα σχόλια που παρέχουν βαθμολογία %d αστεριού"
 msgstr[1] "Πατήστε για να δείτε τα σχόλια που παρέχουν βαθμολογία %d αστεριών"
 
-#: wp-admin/includes/plugin-install.php:586
+#: wp-admin/includes/plugin-install.php:588
 msgid "%d star"
 msgid_plural "%d stars"
 msgstr[0] "%d αστέρι"
 msgstr[1] "%d αστέρια"
 
-#: wp-admin/includes/plugin-install.php:596
+#: wp-admin/includes/plugin-install.php:598
 msgid "Contributors"
 msgstr "Συντελεστές"
 
-#: wp-admin/includes/plugin-install.php:623
+#: wp-admin/includes/plugin-install.php:625
 msgid "<strong>Warning:</strong> This plugin has <strong>not been tested</strong> with your current version of WordPress."
 msgstr "<strong>Προειδοποίηση</strong> Το πρόσθετο αυτό <strong>δεν έχει δοκιμαστεί</strong> στην έκδοση WordPress που χρησιμοποιείτε."
 
-#: wp-admin/includes/plugin-install.php:625
+#: wp-admin/includes/plugin-install.php:627
 msgid "<strong>Warning:</strong> This plugin has <strong>not been marked as compatible</strong> with your version of WordPress."
 msgstr "<strong>Προειδοποίηση:</strong> Το πρόσθετο <strong>δεν έχει σημειωθεί ως συμβατό</strong> με την έκδοση σας WordPress. "
 
-#: wp-admin/includes/plugin-install.php:654
+#: wp-admin/includes/plugin-install.php:656
 msgid "Install Update Now"
 msgstr "Εγκατάσταση ενημέρωσης"
 
-#: wp-admin/includes/plugin-install.php:658
+#: wp-admin/includes/plugin-install.php:660
 msgid "Newer Version (%s) Installed"
 msgstr "Η εγκατεστημένη έκδοση (%s) είναι νεότερη"
 
-#: wp-admin/includes/plugin-install.php:661
+#: wp-admin/includes/plugin-install.php:663
 msgid "Latest Version Installed"
 msgstr "Έχετε εγκατεστημένη την τελευταία έκδοση"
 
@@ -4373,44 +4373,44 @@ msgstr "Αρχική Σελίδα"
 msgid "Posts Page"
 msgstr "Σελίδα Άρθρων"
 
-#: wp-admin/includes/template.php:1900 wp-admin/nav-menus.php:650
+#: wp-admin/includes/template.php:1901 wp-admin/nav-menus.php:650
 #: wp-admin/options.php:293
 msgid "Save Changes"
 msgstr "Αποθήκευση αλλαγών"
 
-#: wp-admin/includes/template.php:1977
+#: wp-admin/includes/template.php:1978
 msgid "Likely direct inclusion of wp-admin/includes/template.php in order to use add_meta_box(). This is very wrong. Hook the add_meta_box() call into the add_meta_boxes action instead."
 msgstr "Πιθανή απευθείας συμπερίληψη του wp-admin/includes/template.php προκειμένου να γίνει χρήση του add_meta_box(). Αυτό αντενδείκνυται! Ο ενδεδειγμένος τρόπος είναι η προσάρτηση της κλήσης add_meta_box() στην ενέργεια add_meta_boxes."
 
-#: wp-admin/includes/template.php:1994
+#: wp-admin/includes/template.php:1995
 msgid "The backup of this post in your browser is different from the version below."
 msgstr "Το αντίγραφο του άρθρου στο πρόγραμμα περιήγησης σας είναι διαφορετική από την παρακάτω έκδοση."
 
-#: wp-admin/includes/template.php:1995
+#: wp-admin/includes/template.php:1996
 msgid "Restore the backup."
 msgstr "Επαναφορά αντιγράφου ασφαλείας."
 
-#: wp-admin/includes/template.php:1998
+#: wp-admin/includes/template.php:1999
 msgid "Post restored successfully."
 msgstr "Το άρθρο αποκαταστάθηκε επιτυχώς!"
 
-#: wp-admin/includes/template.php:1999
+#: wp-admin/includes/template.php:2000
 msgid "Undo."
 msgstr "Αναίρεση."
 
 #. translators: 1: The rating, 2: The number of ratings
-#: wp-admin/includes/template.php:2051
+#: wp-admin/includes/template.php:2052
 msgid "%1$s rating based on %2$s rating"
 msgid_plural "%1$s rating based on %2$s ratings"
 msgstr[0] "%1$s αξιολόγηση βασισμένη στην %2$s αξιολόγηση"
 msgstr[1] "%1$s αξιολογήσεις βασισμένες στις %2$s αξιολογήσεις"
 
 #. translators: 1: The rating
-#: wp-admin/includes/template.php:2055
+#: wp-admin/includes/template.php:2056
 msgid "%s rating"
 msgstr "%s αξιολόγηση"
 
-#: wp-admin/includes/template.php:2079
+#: wp-admin/includes/template.php:2080
 msgid "You are currently editing the page that shows your latest posts."
 msgstr "Αυτή τη στιγμή επεξεργάζεστε την σελίδα που εμφανίζει τα τελευταία άρθρα σας."
 
@@ -4681,7 +4681,7 @@ msgstr "Κλείσιμο διαλόγου λεπτομερειών "
 msgid "Current Theme"
 msgstr "Ενεργό θέμα"
 
-#: wp-admin/includes/theme.php:608 wp-admin/theme-install.php:267
+#: wp-admin/includes/theme.php:608 wp-admin/theme-install.php:273
 #: wp-admin/themes.php:425
 msgid "Version: %s"
 msgstr "Έκδοση: %s"
@@ -5266,7 +5266,7 @@ msgstr "Σημειώσεις"
 msgid "(Leave at 0 for no rating.)"
 msgstr "(Αφήστε 0 αν δεν θέλετε αξιολόγηση.)"
 
-#: wp-admin/includes/misc.php:657 wp-admin/user-edit.php:228
+#: wp-admin/includes/misc.php:657 wp-admin/user-edit.php:229
 msgid "Admin Color Scheme"
 msgstr "Χρώματα πίνακα ελέγχου"
 
@@ -7000,7 +7000,7 @@ msgid "Change"
 msgstr "Αλλαγή"
 
 #: wp-admin/includes/class-wp-users-list-table.php:318
-#: wp-admin/user-edit.php:297 wp-admin/user-new.php:318
+#: wp-admin/user-edit.php:298 wp-admin/user-new.php:318
 #: wp-admin/user-new.php:444
 msgid "Role"
 msgstr "Ρόλος"
@@ -7568,9 +7568,9 @@ msgid "%s from now"
 msgstr "%s από τώρα"
 
 #: wp-admin/includes/class-wp-media-list-table.php:446
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:533
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:538
 #: wp-admin/includes/class-wp-posts-list-table.php:938
-#: wp-admin/includes/plugin-install.php:550 wp-admin/includes/revision.php:209
+#: wp-admin/includes/plugin-install.php:552 wp-admin/includes/revision.php:209
 #: wp-admin/includes/revision.php:251
 msgid "%s ago"
 msgstr "%s πριν"
@@ -7809,7 +7809,7 @@ msgid "Registered"
 msgstr "Εγγραφή"
 
 #: wp-admin/includes/class-wp-ms-users-list-table.php:240
-#: wp-admin/user-edit.php:317
+#: wp-admin/user-edit.php:318
 msgid "Super Admin"
 msgstr "Υπερδιαχειριστής"
 
@@ -7849,97 +7849,97 @@ msgstr "Beta Δοκιμή"
 msgid "Upload Plugin"
 msgstr "Μεταφόρτωση προσθέτου"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:231
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:236
 #: wp-admin/includes/class-wp-theme-install-list-table.php:145
 #: wp-admin/setup-config.php:247
 msgid "Try again"
 msgstr "Ξαναδοκιμάστε"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:233
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:238
 msgid "No plugins match your request."
 msgstr "Δεν βρέθηκαν πρόσθετα για την αναζήτησή σας."
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:401
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:406
 msgctxt "Plugin installer group title"
 msgid "Performance"
 msgstr "Απόδοση"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:402
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:407
 msgctxt "Plugin installer group title"
 msgid "Social"
 msgstr "Κοινωνικό"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:403
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:408
 msgctxt "Plugin installer group title"
 msgid "Tools"
 msgstr "Εργαλεία"
 
 #. translators: 1: Plugin name and version.
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:457
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:462
 msgid "Install %s now"
 msgstr "Εγκατάσταση %s τώρα"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:457
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:462
 #: wp-admin/includes/class-wp-theme-install-list-table.php:286
 #: wp-admin/includes/plugin-install.php:291
-#: wp-admin/includes/plugin-install.php:649
+#: wp-admin/includes/plugin-install.php:651
 #: wp-admin/includes/theme-install.php:147
 msgid "Install Now"
 msgstr "Εγκατάσταση"
 
 #. translators: 1: Plugin name and version
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:464
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:469
 msgid "Update %s now"
 msgstr "Αναβάθμιση %s τώρα"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:464
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:469
 #: wp-admin/update-core.php:50
 msgid "Update Now"
 msgstr "Αναβάθμιση τώρα"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:470
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:475
 msgid "This plugin is already installed and is up to date"
 msgstr "Έχετε ήδη την τελευταία έκδοση του προσθέτου"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:470
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:475
 msgctxt "plugin"
 msgid "Installed"
 msgstr "Εγκατεστημένο"
 
 #. translators: 1: Plugin name and version.
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:479
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:484
 #: wp-admin/includes/class-wp-plugins-list-table.php:739
 msgid "More information about %s"
 msgstr "Περισσότερα για το %s"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:479
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:484
 msgid "More Details"
 msgstr "Περισσότερες λεπτομέρειες"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:532
-#: wp-admin/includes/plugin-install.php:549
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:537
+#: wp-admin/includes/plugin-install.php:551
 msgid "Last Updated:"
 msgstr "Τελευταία ενημέρωση:"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:539
-#: wp-admin/includes/plugin-install.php:559
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:544
+#: wp-admin/includes/plugin-install.php:561
 msgctxt "Active plugin installs"
 msgid "1+ Million"
 msgstr "1+ Εκατομμύρια"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:543
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:548
 msgid "%s Active Installs"
 msgstr "%s Ενεργές Εγκαταστάσεις"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:549
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:554
 msgid "Untested with your version of WordPress"
 msgstr "Δέν έχει δοκιμαστεί στην έκδοση WordPress σας"
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:551
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:556
 msgid "<strong>Incompatible</strong> with your version of WordPress"
 msgstr "<strong>Ασύμβατο</strong> με την έκδοση σας WordPress "
 
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:553
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:558
 msgid "<strong>Compatible</strong> with your version of WordPress"
 msgstr "<strong>Συμβατό</strong> με την έκδοση σας WordPress "
 
@@ -8427,7 +8427,7 @@ msgstr "Το θέμα είναι ήδη εγκατεστημένο και στη
 
 #: wp-admin/includes/class-wp-theme-install-list-table.php:282
 #: wp-admin/includes/class-wp-theme-install-list-table.php:405
-#: wp-admin/theme-install.php:246
+#: wp-admin/theme-install.php:252
 msgctxt "theme"
 msgid "Installed"
 msgstr "Εγκατεστημένο"
@@ -8447,13 +8447,13 @@ msgstr "Λεπτομέρειες"
 
 #: wp-admin/includes/class-wp-theme-install-list-table.php:409
 #: wp-admin/includes/dashboard.php:1193 wp-admin/includes/network.php:312
-#: wp-admin/theme-install.php:230 wp-admin/theme-install.php:248
+#: wp-admin/theme-install.php:236 wp-admin/theme-install.php:254
 msgid "Install"
 msgstr "Εγκατάσταση"
 
 #: wp-admin/includes/class-wp-theme-install-list-table.php:420
 #: wp-admin/includes/class-wp-themes-list-table.php:235
-#: wp-admin/includes/plugin-install.php:545
+#: wp-admin/includes/plugin-install.php:547
 msgid "Version:"
 msgstr "Έκδοση:"
 
@@ -8627,11 +8627,11 @@ msgstr "Αντιγραφή μικρολίνκ"
 msgid "Word count: %s"
 msgstr "Αριθμός λέξεων: %s"
 
-#: wp-admin/edit-form-advanced.php:634 wp-admin/includes/ajax-actions.php:2239
+#: wp-admin/edit-form-advanced.php:634 wp-admin/includes/ajax-actions.php:2241
 msgid "Last edited by %1$s on %2$s at %3$s"
 msgstr "Τελευταία επεξεργασία από %1$s, %2$s %3$s"
 
-#: wp-admin/edit-form-advanced.php:636 wp-admin/includes/ajax-actions.php:2241
+#: wp-admin/edit-form-advanced.php:636 wp-admin/includes/ajax-actions.php:2243
 msgid "Last edited on %1$s at %2$s"
 msgstr "Τελευταία επεξεργασία %1$s %2$s"
 
@@ -8656,7 +8656,7 @@ msgstr "URL:"
 msgid "Comment"
 msgstr "Σχόλιο"
 
-#: wp-admin/edit-form-comment.php:76 wp-admin/includes/ajax-actions.php:1759
+#: wp-admin/edit-form-comment.php:76 wp-admin/includes/ajax-actions.php:1761
 #: wp-admin/includes/class-wp-posts-list-table.php:1533
 msgid "Status"
 msgstr "Κατάσταση"
@@ -9244,20 +9244,20 @@ msgid "If the importer you need is not listed, <a href=\"%s\">search the plugin 
 msgstr "Αν δεν βλέπετε τον εισαγωγέα που θέλετε, <a href=\"%s\">κάντε αναζήτηση στο αποθετήριο προσθέτων</a> να δείτε μήπως υπάρχει εκεί."
 
 #. translators: 1: user_login, 2: user_email
-#: wp-admin/includes/ajax-actions.php:292
+#: wp-admin/includes/ajax-actions.php:294
 msgid "%1$s (%2$s)"
 msgstr "%1$s (%2$s)"
 
 #. translators: Number of comments in moderation
-#: wp-admin/includes/ajax-actions.php:371
-#: wp-admin/includes/ajax-actions.php:1072 wp-admin/includes/dashboard.php:263
+#: wp-admin/includes/ajax-actions.php:373
+#: wp-admin/includes/ajax-actions.php:1074 wp-admin/includes/dashboard.php:263
 msgctxt "comments"
 msgid "%s in moderation"
 msgid_plural "%s in moderation"
 msgstr[0] "%s για έλεγχο"
 msgstr[1] "%s για έλεγχο"
 
-#: wp-admin/includes/ajax-actions.php:416
+#: wp-admin/includes/ajax-actions.php:418
 #: wp-admin/includes/class-wp-list-table.php:763
 #: wp-admin/includes/class-wp-list-table.php:1349
 msgid "%s item"
@@ -9265,81 +9265,81 @@ msgid_plural "%s items"
 msgstr[0] "%s αντικείμενο"
 msgstr[1] "%s αντικείμενα"
 
-#: wp-admin/includes/ajax-actions.php:738
+#: wp-admin/includes/ajax-actions.php:740
 msgid "Comment %d does not exist"
 msgstr "Το σχόλιο %d δεν υπάρχει."
 
-#: wp-admin/includes/ajax-actions.php:991
+#: wp-admin/includes/ajax-actions.php:993
 msgid "ERROR: you are replying to a comment on a draft post."
 msgstr "ΣΦΑΛΜΑ:  Απαντάτε σε σχόλιο σε προσχέδιο."
 
-#: wp-admin/includes/ajax-actions.php:1011
+#: wp-admin/includes/ajax-actions.php:1013
 msgid "Sorry, you must be logged in to reply to a comment."
 msgstr "Για να σχολιάσετε πρέπει να συνδεθείτε!"
 
-#: wp-admin/includes/ajax-actions.php:1015
-#: wp-admin/includes/ajax-actions.php:1104
+#: wp-admin/includes/ajax-actions.php:1017
+#: wp-admin/includes/ajax-actions.php:1106
 msgid "ERROR: please type a comment."
 msgstr "ΣΦΑΛΜΑ: παρακαλώ γράψτε ένα σχόλιο."
 
-#: wp-admin/includes/ajax-actions.php:1240
+#: wp-admin/includes/ajax-actions.php:1242
 msgid "Draft created on %1$s at %2$s"
 msgstr "Δημιουργία προσχεδίου %1$s %2$s"
 
-#: wp-admin/includes/ajax-actions.php:1253
-#: wp-admin/includes/ajax-actions.php:1258
-#: wp-admin/includes/ajax-actions.php:1278
+#: wp-admin/includes/ajax-actions.php:1255
+#: wp-admin/includes/ajax-actions.php:1260
+#: wp-admin/includes/ajax-actions.php:1280
 msgid "Please provide a custom field value."
 msgstr "Ορίστε τιμή για το πεδίο. "
 
-#: wp-admin/includes/ajax-actions.php:1276
+#: wp-admin/includes/ajax-actions.php:1278
 msgid "Please provide a custom field name."
 msgstr "Ορίστε όνομα για το πεδίο."
 
 #. translators: %s: the new user
-#: wp-admin/includes/ajax-actions.php:1344
+#: wp-admin/includes/ajax-actions.php:1346
 msgid "User %s added"
 msgstr "Ο χρήστης %s προστέθηκε"
 
-#: wp-admin/includes/ajax-actions.php:1598 wp-admin/includes/post.php:206
+#: wp-admin/includes/ajax-actions.php:1600 wp-admin/includes/post.php:206
 msgid "You are not allowed to edit this page."
 msgstr "Δεν επιτρέπεται να επεξεργαστείτε τη σελίδα αυτή."
 
-#: wp-admin/includes/ajax-actions.php:1601 wp-admin/includes/media.php:3098
+#: wp-admin/includes/ajax-actions.php:1603 wp-admin/includes/media.php:3098
 #: wp-admin/includes/post.php:208 wp-admin/includes/post.php:1716
 #: wp-admin/includes/post.php:1720
 msgid "You are not allowed to edit this post."
 msgstr "Δεν επιτρέπεται να επεξεργαστείτε το άρθρο αυτό."
 
-#: wp-admin/includes/ajax-actions.php:1606
+#: wp-admin/includes/ajax-actions.php:1608
 msgid "Someone"
 msgstr "Κάποιος"
 
-#: wp-admin/includes/ajax-actions.php:1607
+#: wp-admin/includes/ajax-actions.php:1609
 msgid "Saving is disabled: %s is currently editing this page."
 msgstr "Αποθήκευση απενεργοποιημένη: τη σελίδα την επεξεργάζεται ο/η %s."
 
-#: wp-admin/includes/ajax-actions.php:1607
+#: wp-admin/includes/ajax-actions.php:1609
 msgid "Saving is disabled: %s is currently editing this post."
 msgstr "Αποθήκευση απενεργοποιημένη: το άρθρο το επεξεργάζεται ο/η %s."
 
-#: wp-admin/includes/ajax-actions.php:1713
-#: wp-admin/includes/ajax-actions.php:1718
+#: wp-admin/includes/ajax-actions.php:1715
+#: wp-admin/includes/ajax-actions.php:1720
 #: wp-admin/includes/edit-tag-messages.php:18
 msgid "Item not updated."
 msgstr "Το στοιχείο δεν ενημερώθηκε."
 
-#: wp-admin/includes/ajax-actions.php:1759
+#: wp-admin/includes/ajax-actions.php:1761
 msgid "Type"
 msgstr "Τύπος"
 
-#: wp-admin/includes/ajax-actions.php:1759
+#: wp-admin/includes/ajax-actions.php:1761
 #: wp-admin/includes/class-wp-posts-list-table.php:543
 #: wp-admin/includes/class-wp-posts-list-table.php:1322
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#: wp-admin/includes/ajax-actions.php:1771
+#: wp-admin/includes/ajax-actions.php:1773
 #: wp-admin/includes/class-wp-posts-list-table.php:950
 #: wp-admin/includes/class-wp-posts-list-table.php:1540
 #: wp-admin/includes/meta-boxes.php:88 wp-admin/includes/meta-boxes.php:111
@@ -9347,47 +9347,47 @@ msgstr "Ημερομηνία"
 msgid "Scheduled"
 msgstr "Προγραμματισμένο"
 
-#: wp-admin/includes/ajax-actions.php:2008
+#: wp-admin/includes/ajax-actions.php:2010
 msgid "You don't have permission to attach files to this post."
 msgstr "Δεν έχετε δικαιώματα επισύναψης αρχείων στο άρθρο αυτό."
 
-#: wp-admin/includes/ajax-actions.php:2916
+#: wp-admin/includes/ajax-actions.php:2918
 msgid "%s failed to embed."
 msgstr "%s απέτυχε να ενσωματωθεί."
 
-#: wp-admin/includes/ajax-actions.php:2946
+#: wp-admin/includes/ajax-actions.php:2948
 msgid "This preview is unavailable in the editor."
 msgstr "Η προεπισκόπηση δεν ειναι διαθέσιμη στον διορθωτή."
 
-#: wp-admin/includes/ajax-actions.php:3039
+#: wp-admin/includes/ajax-actions.php:3041
 msgid "Could not log out user sessions. Please try again."
 msgstr "Δε μπορείτε να αποσυνδεθείτε από την συνεδρίες χρηστών. Παρακαλούμε προσπαθείστε ξανά."
 
-#: wp-admin/includes/ajax-actions.php:3047
+#: wp-admin/includes/ajax-actions.php:3049
 msgid "You are now logged out everywhere else."
 msgstr "Έχετε αποσυνδεθεί από παντού."
 
 #. translators: 1: User's display name.
-#: wp-admin/includes/ajax-actions.php:3051
+#: wp-admin/includes/ajax-actions.php:3053
 msgid "%s has been logged out."
 msgstr "%s έχει αποσυνδεθεί."
 
-#: wp-admin/includes/ajax-actions.php:3084 wp-admin/update.php:24
+#: wp-admin/includes/ajax-actions.php:3086 wp-admin/update.php:24
 #: wp-admin/update.php:50 wp-admin/update.php:71
 msgid "You do not have sufficient permissions to update plugins for this site."
 msgstr "Δεν επιτρέπεται να αναβαθμίζετε πρόσθετα στον ιστότοπο αυτό."
 
-#: wp-admin/includes/ajax-actions.php:3114
-#: wp-admin/includes/ajax-actions.php:3143
+#: wp-admin/includes/ajax-actions.php:3116
+#: wp-admin/includes/ajax-actions.php:3145
 #: wp-admin/includes/class-wp-upgrader.php:801
 msgid "Plugin update failed."
 msgstr "Η αναβάθμιση προσθέτου απέτυχε."
 
-#: wp-admin/includes/ajax-actions.php:3132
+#: wp-admin/includes/ajax-actions.php:3134
 msgid "Unable to connect to the filesystem. Please confirm your credentials."
 msgstr "Αδύνατη η σύνδεση στο σύστημα αρχείων. Παρακαλώ επιβεβαιώστε τα διαπιστευτήρια σας."
 
-#: wp-admin/includes/ajax-actions.php:3198
+#: wp-admin/includes/ajax-actions.php:3200
 msgid "Image could not be processed."
 msgstr "Η μπορεί να γίνει επεξεργασία της εικόνας."
 
@@ -10298,7 +10298,7 @@ msgid "Attachment"
 msgstr "Συνημμένο"
 
 #: wp-admin/custom-background.php:374 wp-admin/custom-header.php:812
-#: wp-admin/includes/ajax-actions.php:2028
+#: wp-admin/includes/ajax-actions.php:2030
 msgid "The uploaded file is not a valid image. Please try again."
 msgstr "Το αρχείο δεν είναι εικόνα. Δοκιμάστε ένα άλλο αρχείο."
 
@@ -10503,7 +10503,7 @@ msgstr "Ο Προσαρμογέας σας επιτρέπει την προεπ�
 
 #: wp-admin/customize.php:153
 #: wp-admin/includes/class-wp-theme-install-list-table.php:341
-#: wp-admin/theme-install.php:275
+#: wp-admin/theme-install.php:281
 msgid "Collapse"
 msgstr "Σύμπτυξη"
 
@@ -10667,9 +10667,9 @@ msgstr "Προβολή σελίδας"
 
 #. translators: Publish box date format, see http://php.net/date
 #: wp-admin/edit-form-advanced.php:133 wp-admin/edit-form-comment.php:93
-#: wp-admin/includes/class-wp-plugin-install-list-table.php:501
+#: wp-admin/includes/class-wp-plugin-install-list-table.php:506
 #: wp-admin/includes/meta-boxes.php:174 wp-admin/includes/meta-boxes.php:311
-#: wp-admin/includes/plugin-install.php:534 wp-admin/includes/revision.php:207
+#: wp-admin/includes/plugin-install.php:536 wp-admin/includes/revision.php:207
 #: wp-admin/includes/revision.php:249
 msgid "M j, Y @ H:i"
 msgstr "j M Y @ H:i"
@@ -10899,8 +10899,8 @@ msgid "Thank you for updating! WordPress %s makes your site more connected and r
 msgstr "Σας ευχαριστούμε για την ενημέρωση! Το WordPress %s κάνει το site σας πιο συνδεδεμένο και προσαρμοσμένο σε κινητές συσκευές."
 
 #: wp-admin/about.php:43 wp-admin/credits.php:25 wp-admin/freedoms.php:24
-#: wp-admin/includes/ajax-actions.php:3080
-#: wp-admin/includes/ajax-actions.php:3122
+#: wp-admin/includes/ajax-actions.php:3082
+#: wp-admin/includes/ajax-actions.php:3124
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:493
 #: wp-admin/includes/class-wp-plugins-list-table.php:726
 #: wp-admin/includes/update.php:186 wp-admin/includes/update.php:210

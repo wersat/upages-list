@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the 4.4.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-03-27 09:56:24+0000\n"
+"PO-Revision-Date: 2016-04-07 14:21:15+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -4318,22 +4318,22 @@ msgstr "Σα"
 #. translators: month name
 #: wp-includes/locale.php:139 wp-includes/locale.php:167
 msgid "January"
-msgstr "Ιανουαρίου"
+msgstr "Ιανουάριος"
 
 #. translators: month name
 #: wp-includes/locale.php:140 wp-includes/locale.php:168
 msgid "February"
-msgstr "Φεβρουαρίου"
+msgstr "Φεβρουάριος"
 
 #. translators: month name
 #: wp-includes/locale.php:141 wp-includes/locale.php:169
 msgid "March"
-msgstr "Μαρτίου"
+msgstr "Μάρτιος"
 
 #. translators: month name
 #: wp-includes/locale.php:142 wp-includes/locale.php:170
 msgid "April"
-msgstr "Απριλίου"
+msgstr "Απρίλιος"
 
 #. translators: month name
 #: wp-includes/locale.php:143 wp-includes/locale.php:171
@@ -4343,27 +4343,27 @@ msgstr "Μαΐου"
 #. translators: month name
 #: wp-includes/locale.php:144 wp-includes/locale.php:172
 msgid "June"
-msgstr "Ιουνίου"
+msgstr "Ιούνιος"
 
 #. translators: month name
 #: wp-includes/locale.php:145 wp-includes/locale.php:173
 msgid "July"
-msgstr "Ιουλίου"
+msgstr "Ιούλιος"
 
 #. translators: month name
 #: wp-includes/locale.php:146 wp-includes/locale.php:174
 msgid "August"
-msgstr "Αυγούστου"
+msgstr "Αύγουστος"
 
 #. translators: month name
 #: wp-includes/locale.php:147 wp-includes/locale.php:175
 msgid "September"
-msgstr "Σεπτεμβρίου"
+msgstr "Σεπτέμβριος"
 
 #. translators: month name
 #: wp-includes/locale.php:148 wp-includes/locale.php:176
 msgid "October"
-msgstr "Οκτωβρίου"
+msgstr "Οκτώβριος"
 
 #. translators: month name
 #: wp-includes/locale.php:149 wp-includes/locale.php:177
@@ -4373,31 +4373,31 @@ msgstr "Νοεμβρίου"
 #. translators: month name
 #: wp-includes/locale.php:150 wp-includes/locale.php:178
 msgid "December"
-msgstr "Δεκεμβρίου"
+msgstr "Δεκέμβριος"
 
 #. translators: month name, genitive
 #: wp-includes/locale.php:153
 msgctxt "genitive"
 msgid "January"
-msgstr "Ιανουάριος"
+msgstr "Ιανουαρίου"
 
 #. translators: month name, genitive
 #: wp-includes/locale.php:154
 msgctxt "genitive"
 msgid "February"
-msgstr "Φεβρουάριος"
+msgstr "Φεβρουαρίου"
 
 #. translators: month name, genitive
 #: wp-includes/locale.php:155
 msgctxt "genitive"
 msgid "March"
-msgstr "Μάρτιος"
+msgstr "Μαρτίου"
 
 #. translators: month name, genitive
 #: wp-includes/locale.php:156
 msgctxt "genitive"
 msgid "April"
-msgstr "Απρίλιος"
+msgstr "Απριλίου"
 
 #. translators: month name, genitive
 #: wp-includes/locale.php:157
@@ -4409,43 +4409,43 @@ msgstr "Μάϊος"
 #: wp-includes/locale.php:158
 msgctxt "genitive"
 msgid "June"
-msgstr "Ιούνιος"
+msgstr "Ιουνίου"
 
 #. translators: month name, genitive
 #: wp-includes/locale.php:159
 msgctxt "genitive"
 msgid "July"
-msgstr "Ιούλιος"
+msgstr "Ιουλίου"
 
 #. translators: month name, genitive
 #: wp-includes/locale.php:160
 msgctxt "genitive"
 msgid "August"
-msgstr "Αύγουστος"
+msgstr "Αυγούστου"
 
 #. translators: month name, genitive
 #: wp-includes/locale.php:161
 msgctxt "genitive"
 msgid "September"
-msgstr "Σεπτέμβριος"
+msgstr "Σεπτεμβρίου"
 
 #. translators: month name, genitive
 #: wp-includes/locale.php:162
 msgctxt "genitive"
 msgid "October"
-msgstr "Οκτώβριος"
+msgstr "Οκτωβρίου "
 
 #. translators: month name, genitive
 #: wp-includes/locale.php:163
 msgctxt "genitive"
 msgid "November"
-msgstr "Νοέμβριος"
+msgstr "Νοεμβρίου"
 
 #. translators: month name, genitive
 #: wp-includes/locale.php:164
 msgctxt "genitive"
 msgid "December"
-msgstr "Δεκέμβριος"
+msgstr "Δεκεμβρίου"
 
 #. translators: three-letter abbreviation of the month
 #: wp-includes/locale.php:167
@@ -4481,13 +4481,13 @@ msgstr "Μαι"
 #: wp-includes/locale.php:172
 msgctxt "June abbreviation"
 msgid "Jun"
-msgstr "Ιουν"
+msgstr "Ιούν"
 
 #. translators: three-letter abbreviation of the month
 #: wp-includes/locale.php:173
 msgctxt "July abbreviation"
 msgid "Jul"
-msgstr "Ιουλ"
+msgstr "Ιούλ"
 
 #. translators: three-letter abbreviation of the month
 #: wp-includes/locale.php:174
@@ -5911,7 +5911,7 @@ msgstr "%s. και %s"
 #: wp-includes/functions.php:183
 msgctxt "decline months names: on or off"
 msgid "off"
-msgstr "off"
+msgstr "on"
 
 #: wp-includes/functions.php:1221
 msgid "ERROR: This is not a valid feed template."

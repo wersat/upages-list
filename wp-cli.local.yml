@@ -3,7 +3,6 @@ user: JazzMan
 color: true
 disabled_commands:
   - db drop
-  - plugin install
 prompt: true
 core config:
 	dbname: helperua_upages

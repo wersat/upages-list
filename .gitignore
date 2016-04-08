@@ -1,3 +1,5 @@
+/wp-content/plugins/wp-php-console
+/wp-content/plugins/*debug-*
 # Created by .ignore support plugin (hsz.mobi)
 ### Sass template
 .sass-cache/

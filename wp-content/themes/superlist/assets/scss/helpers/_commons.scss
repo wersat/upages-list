@@ -187,14 +187,14 @@
       }
 
     .box-read-more {
-      color : lighten($color-primary, 20%);
+      color : $color-info//lighten($color-primary, 20%);
       }
     }
 
   .box-icon {
     border           : 2px solid rgba($color-white, .4);
     background-color : transparent;
-    color            : lighten($color-primary, 20%);
+    color            : $color-primary//lighten($color-primary, 20%);
     }
   }
 

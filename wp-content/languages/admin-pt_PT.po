@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-04-01 11:45:59+0000\n"
+"PO-Revision-Date: 2016-04-07 13:40:53+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -4092,7 +4092,7 @@ msgstr "A guardar a revisão&hellip;"
 
 #: wp-admin/includes/post.php:1615
 msgid "Your latest changes were saved as a revision."
-msgstr "As últimas modificações foram guardadas como uma revisão."
+msgstr "As últimas alterações foram guardadas como uma revisão."
 
 #: wp-admin/includes/revision.php:208 wp-admin/includes/revision.php:250
 msgctxt "revision date short format"
@@ -6093,7 +6093,7 @@ msgstr "Pré-visualização da imagem"
 
 #: wp-admin/includes/image-edit.php:199
 msgid "There are unsaved changes that will be lost. 'OK' to continue, 'Cancel' to return to the Image Editor."
-msgstr "Existem modificações por guardar que serão perdidas. 'OK' para continuar, 'Cancelar' para voltar ao Editor de Imagem."
+msgstr "Existem alterações por guardar que serão perdidas. 'OK' para continuar, 'Cancelar' para voltar ao Editor de Imagem."
 
 #: wp-admin/includes/image-edit.php:231 wp-admin/includes/image-edit.php:296
 #: wp-admin/includes/image-edit.php:438
@@ -7628,7 +7628,7 @@ msgstr "Não é spam"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:212
 msgid "Last Updated"
-msgstr "Última Actualização"
+msgstr "Última actualização"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:213
 msgctxt "site"
@@ -7915,7 +7915,7 @@ msgstr "Mais detalhes"
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:537
 #: wp-admin/includes/plugin-install.php:551
 msgid "Last Updated:"
-msgstr "Última Actualização:"
+msgstr "Última actualização:"
 
 #: wp-admin/includes/class-wp-plugin-install-list-table.php:544
 #: wp-admin/includes/plugin-install.php:561
@@ -8108,7 +8108,7 @@ msgstr "Agendamento falhado"
 
 #: wp-admin/includes/class-wp-posts-list-table.php:953
 msgid "Last Modified"
-msgstr "Última Modificação"
+msgstr "Última modificação"
 
 #: wp-admin/includes/class-wp-posts-list-table.php:1174
 msgid "Edit this item"

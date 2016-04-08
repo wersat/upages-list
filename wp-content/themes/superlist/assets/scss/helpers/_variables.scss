@@ -1,60 +1,59 @@
 @import "../superlist-dufault-colour-sheme";
 
+$color-primary : #ffd400;
+
 // Yellowpages color sheme
-$white: #fff;
-$black: #000;
-$yellow: #ff0;
-$silver:  silver;
-$color_celeste_approx: #ccc;
-$color_mountain_mist_approx: #999;
-$color_gallery_approx: #f0f0f0;
-$color_school_bus_yellow_approx: #fd0;
-$color_deep_cerulean_approx: #067ab4;
-$color_cararra_approx: #f0efeb;
-$color_iron_approx: #d6d6d6;
-$color_storm_dust_approx: #666;
-$color_log_cabin_approx: #222;
-$color_mine_shaft_approx: #2f2f2f;
-$color_fuscous_gray_approx: #545350;
-$color_supernova_approx: #fc0;
-$color_alto_approx: #ddd;
-$color_corn_harvest_approx: #960;
-$color_chantilly_approx: #f6c2db;
-$color_zeus_approx: #231f20;
-$color_zeus_75_approx: rgba(35,31,32,.75);
-$black_50: rgba(0,0,0,.5);
-$color_silver_approx: #c1c1c1;
-$color_gold_approx: #ffd400;
-$color_tundora_approx: #444;
-$color_hot_cinnamon_approx: #e05f1e;
-$black_20: rgba(0,0,0,.2);
-$color_chicago_approx: #5a5a5a;
-$color_suva_gray_approx: #878787;
-$color_chicago_75_approx: rgba(90,90,90,.75);
-$color_trinidad_approx: #ed5400;
-$color_monsoon_approx: #898989;
-$seashell: #f1f1f1;
-$color_tapa_approx: #77766f;
-$color_pig_pink_approx: #ffd2e8;
-$color_cape_cod_approx: #404040;
-$color_mustard_approx: #f7d851;
-$color_concrete_approx: #f3f3f3;
-$white_95: rgba(255,255,255,.95);
-$color_log_cabin_50_approx: rgba(33,33,33,.5);
-$color_ironside_gray_approx: #686868;
-$color_rangoon_green_approx: #1d1d1d;
-$color_mine_shaft_50_approx: rgba(51,51,51,.5);
-$black_30: rgba(0,0,0,.3);
-$red: red;
-$white_30: rgba(255,255,255,.3);
-$white_60: rgba(255,255,255,.6);
-$black_80: rgba(0,0,0,.8);
+$white : #ffffff;
+$black : #000000;
+$yellow : #ffff00;
+$silver : silver;
+$color_celeste_approx : #cccccc;
+$color_mountain_mist_approx : #999999;
+$color_gallery_approx : #f0f0f0;
+$color_school_bus_yellow_approx : #ffdd00;
+$color_deep_cerulean_approx : #067ab4;
+$color_cararra_approx : #f0efeb;
+$color_iron_approx : #d6d6d6;
+$color_storm_dust_approx : #666666;
+$color_log_cabin_approx : #222222;
+$color_mine_shaft_approx : #2f2f2f;
+$color_fuscous_gray_approx : #545350;
+$color_supernova_approx : #ffcc00;
+$color_alto_approx : #dddddd;
+$color_corn_harvest_approx : #996600;
+$color_chantilly_approx : #f6c2db;
+$color_zeus_approx : #231f20;
+$color_zeus_75_approx : rgba(35, 31, 32, .75);
+$black_50 : rgba(0, 0, 0, .5);
+$color_silver_approx : #c1c1c1;
+$color_tundora_approx : #444444;
+$color_hot_cinnamon_approx : #e05f1e;
+$black_20 : rgba(0, 0, 0, .2);
+$color_chicago_approx : #5a5a5a;
+$color_suva_gray_approx : #878787;
+$color_chicago_75_approx : rgba(90, 90, 90, .75);
+$color_trinidad_approx : #ed5400;
+$color_monsoon_approx : #898989;
+$seashell : #f1f1f1;
+$color_tapa_approx : #77766f;
+$color_pig_pink_approx : #ffd2e8;
+$color_cape_cod_approx : #404040;
+$color_mustard_approx : #f7d851;
+$color_concrete_approx : #f3f3f3;
+$white_95 : rgba(255, 255, 255, .95);
+$color_log_cabin_50_approx : rgba(33, 33, 33, .5);
+$color_ironside_gray_approx : #686868;
+$color_rangoon_green_approx : #1d1d1d;
+$color_mine_shaft_50_approx : rgba(51, 51, 51, .5);
+$black_30 : rgba(0, 0, 0, .3);
+$red : red;
+$white_30 : rgba(255, 255, 255, .3);
+$white_60 : rgba(255, 255, 255, .6);
+$black_80 : rgba(0, 0, 0, .8);
 
-
-$color-black: #363636;
+$color-black : #363636;
 $color-black-light : #444444;
 $color-black-dark : #242424;
-
 
 $color-yellow : #ffd925;
 $color-red : #d81814;
@@ -69,11 +68,6 @@ $color-gray-medium : #e9e9e9;
 $color-gray-dark : #b8b8b8;
 $color-gray-darker : #868686;
 $color-gray-darkest : #676767;
-
-$color-danger : #d9534f;
-$color-warning : #eee0b7;
-$color-success : #6bd072;
-$color-info : #67bbe5;
 
 // Brand colors
 $color-facebook : #365397;
@@ -92,6 +86,9 @@ $color-foursquare : #f84777;
 $color-behance : #1769ff;
 
 // Bootstrap colors
-$color-primary : #ffd400;
+$color-danger : #d9534f;
+$color-warning : #eee0b7;
+$color-success : #6bd072;
+$color-info : #067ab4;
 $code-bg : $color-gray-light;
 $code-color : $color-gray-darkest;
