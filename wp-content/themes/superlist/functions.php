@@ -361,19 +361,19 @@ function superlist_customizations( $wp_customize ) {
 		'priority'      => 40,
 	) ) );
 
-	// Customizer.
-	$wp_customize->add_setting( 'superlist_general_customizer', array(
-		'default'           => false,
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
-	) );
-
-	$wp_customize->add_control( 'superlist_general_customizer', array(
-		'label'             => __( 'Customizer', 'superlist' ),
-		'section'           => 'superlist_general',
-		'settings'          => 'superlist_general_customizer',
-		'type'              => 'checkbox',
-	) );
+//	// Customizer.
+//	$wp_customize->add_setting( 'superlist_general_customizer', array(
+//		'default'           => false,
+//		'capability'        => 'edit_theme_options',
+//		'sanitize_callback' => 'sanitize_text_field',
+//	) );
+//
+//	$wp_customize->add_control( 'superlist_general_customizer', array(
+//		'label'             => __( 'Customizer', 'superlist' ),
+//		'section'           => 'superlist_general',
+//		'settings'          => 'superlist_general_customizer',
+//		'type'              => 'checkbox',
+//	) );
 
 	// Style.
 	$wp_customize->add_setting( 'superlist_general_style', array(

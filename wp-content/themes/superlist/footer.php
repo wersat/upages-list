@@ -81,12 +81,6 @@
 
 <?php get_template_part( 'templates/modal' ); ?>
 
-<?php $customizer = get_theme_mod( 'superlist_general_customizer', false ); ?>
-<?php if ( ! empty( $customizer ) ) : ?>
-	<?php get_template_part( 'templates/action-bar' ); ?>
-<?php endif; ?>
-
-
 <?php wp_footer(); ?>
 
 </body>
