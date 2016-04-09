@@ -6,22 +6,22 @@
 			<div class="one-click-state-title-wrapper no-margin">
 				<div class="one-click-state-icon">
 					<i class="dashicons dashicons-warning"></i>
-				</div><!-- /.one-click-state-icon -->
+				</div>
 
 				<h1 class="one-click-state-title">
 					<span><?php echo __( 'Exports folder in your current theme does not exists.', 'one-click' ); ?></span>
-				</h1><!-- /.one-click-state-title -->
-			</div><!-- /.one-click-state-title-wrapper -->
+				</h1>
+			</div>
 		<?php elseif ( true === One_Click_Launcher::is_completed() ) : ?>
 			<div class="one-click-state-title-wrapper">
 				<div class="one-click-state-icon">
 					<i class="dashicons dashicons-thumbs-up"></i>
-				</div><!-- /.one-click-state-icon -->
+				</div>
 
 				<h1 class="one-click-state-title">
 					<span><?php echo __( 'All available steps has been successfully processed.', 'one-click' ); ?></span>
-				</h1><!-- /.one-click-state-title -->
-			</div><!-- /.one-click-state-title-wrapper -->
+				</h1>
+			</div>
 		<?php elseif ( 0 === count( One_Click_Launcher::get_missing_plugins() ) ) : ?>
 			<a class="one-click-run">
 				<strong><i class="dashicons dashicons-controls-play"></i></strong>
@@ -35,12 +35,12 @@
 			<div class="one-click-state-title-wrapper">
 				<div class="one-click-state-icon">
 					<i class="dashicons dashicons-warning"></i>
-				</div><!-- /.one-click-state-icon -->
+				</div>
 
 				<h1 class="one-click-state-title">
 					<span><?php echo __( 'Missing Plugins Detected', 'one-click' ); ?></span>
-				</h1><!-- /.one-click-state-title -->
-			</div><!-- /.one-click-state-title-wrapper -->
+				</h1>
+			</div>
 
 			<div class="one-click-missing-plugins-content">
 				<p>
@@ -61,9 +61,9 @@
 							</li>
 							<?php $index++; ?>
 						<?php endforeach; ?>
-					</ul><!-- /.one-click-missing-plugins-list -->
+					</ul>
 				<?php endif; ?>
-			</div><!-- /.one-click-missing-plugins-content -->
+			</div>
 
 			<hr>
 		<?php endif; ?>
@@ -84,14 +84,14 @@
 							<div class="one-click-step-content">
 								<div class="one-click-step-title"><?php echo $step['title']; ?></div>
 
-								<div class="one-click-step-description"><?php echo $step['description']; ?></div><!-- /.one-click-step-description -->
-							</div><!-- /.one-click-step-content -->
-						</li><!-- /.one-click-step -->
+								<div class="one-click-step-description"><?php echo $step['description']; ?></div>
+							</div>
+						</li>
 
 						<?php $index++; ?>
 					<?php endif; ?>
 				<?php endforeach; ?>
-			</ul><!-- /.one-click-steps -->
+			</ul>
 		<?php endif; ?>
-	</div><!-- /.one-click-wrapper -->
-</div><!-- /.wrap -->
+	</div>
+</div>

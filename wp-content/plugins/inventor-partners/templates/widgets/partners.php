@@ -29,7 +29,7 @@ if (!defined('ABSPATH')) {
 <?php if (!empty($instance['description'])) : ?>
 	<div class="description">
 		<?php echo wp_kses($instance['description'], wp_kses_allowed_html('post')); ?>
-	</div><!-- /.description -->
+	</div>
 <?php endif; ?>
 
 <?php if (have_posts()) : ?>
@@ -46,13 +46,13 @@ if (!defined('ABSPATH')) {
 						<a href="<?php echo get_post_meta(get_the_ID(), INVENTOR_PARTNERS_PREFIX.'url', true); ?>">
 							<?php the_post_thumbnail(); ?>
 						</a>
-					</div><!-- /.partner-featured-image -->
+					</div>
 				<?php else : ?>
 					<div class="alert alert-warning">
 						<?php echo __('Featured image not found.', 'inventor-partners'); ?>
-					</div><!-- /.alert -->
+					</div>
 				<?php endif; ?>
-			</div><!-- /.partners-container -->
+			</div>
 
 			<?php if (($index + 1) % $instance['per_row'] == 0 && $instance['per_row'] != 1 && Inventor_Query::loop_has_next()) : ?>
 				</div><div class="partners-row">
@@ -62,15 +62,15 @@ if (!defined('ABSPATH')) {
 		<?php endwhile; ?>
 
 		<?php if ($instance['per_row'] != 1) : ?>
-			</div><!-- /.properties-row -->
+			</div>
 		<?php endif; ?>
 	</div>
 <?php else : ?>
 	<div class="alert alert-warning">
 		<?php echo __('No partners found.', 'inventor-partners'); ?>
-	</div><!-- /.alert -->
+	</div>
 <?php endif; ?>
 
-</div><!-- /.widget-inner -->
+</div>
 
 <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post')); ?>

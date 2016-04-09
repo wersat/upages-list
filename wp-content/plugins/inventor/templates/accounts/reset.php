@@ -1,10 +1,10 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
 ?>
 
-<?php if (!is_user_logged_in()) : ?>
+<?php if ( ! is_user_logged_in()) : ?>
   <form class="reset-form" action="<?php echo wp_lostpassword_url(); ?>" method="post">
     <div class="form-group">
       <label for="reset-form-username"><?php echo esc_attr__('Username or E-mail:', 'inventor'); ?></label>

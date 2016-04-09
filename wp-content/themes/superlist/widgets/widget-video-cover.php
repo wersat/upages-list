@@ -30,7 +30,7 @@
          */
         public function form($instance)
         {
-            include WIDGETS_TPL_DIR . '/widget-video-cover-admin.php';
+            include THEME_WIDGETS_TPL_DIR . '/widget-video-cover-admin.php';
         }
 
         /**
@@ -54,6 +54,6 @@
          */
         public function widget($args, $instance)
         {
-            include WIDGETS_TPL_DIR . '/widget-video-cover.php';
+            include THEME_WIDGETS_TPL_DIR . '/widget-video-cover.php';
         }
     }

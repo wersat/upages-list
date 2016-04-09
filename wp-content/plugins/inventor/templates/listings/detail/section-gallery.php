@@ -1,6 +1,6 @@
 <?php if (apply_filters('inventor_submission_listing_metabox_allowed', true, 'gallery', get_the_author_meta('ID'))): ?>
-  <?php $gallery = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX.'gallery', true); ?>
-  <?php if (!empty($gallery) && is_array($gallery)) : ?>
+  <?php $gallery = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX . 'gallery', true); ?>
+  <?php if ( ! empty($gallery) && is_array($gallery)) : ?>
     <div class="listing-detail-section" id="listing-detail-section-gallery">
       <h2 class="page-header"><?php echo $section_title; ?></h2>
       <div class="listing-detail-gallery-wrapper">

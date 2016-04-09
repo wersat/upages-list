@@ -48,7 +48,7 @@ if (!defined('ABSPATH')) {
                         <?php endif; ?>
                     </p>
                 <?php endif; ?>
-            </div><!-- /.package-info -->
+            </div>
         <?php endif; ?>
 
         <?php $packages = Inventor_Packages_Logic::get_packages_choices(); ?>
@@ -72,10 +72,10 @@ if (!defined('ABSPATH')) {
                             </option>
                         <?php endforeach; ?>
                     </select>
-                </div><!-- /.form-group -->
+                </div>
 
                 <button type="submit" class="btn btn-primary btn-block" name="change-package"><?php echo __('Change', 'inventor-packages'); ?></button>
             </form>
         <?php endif; ?>
 
-    </div><!-- /.package-info-wrapper -->
+    </div>

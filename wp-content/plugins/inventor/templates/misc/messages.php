@@ -1,5 +1,5 @@
 <?php $session = $_SESSION; ?>
-<?php if (!empty($session['messages']) && is_array($session['messages'])) : ?>
+<?php if ( ! empty($session['messages']) && is_array($session['messages'])) : ?>
   <?php $session['messages'] = Inventor_Utilities::array_unique_multidimensional($session['messages']); ?>
   <div class="alerts">
     <?php foreach ($session['messages'] as $message) : ?>

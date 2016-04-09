@@ -30,7 +30,7 @@
          */
         public function form($instance)
         {
-            include WIDGETS_TPL_DIR . '/widget-boxes-admin.php';
+            include THEME_WIDGETS_TPL_DIR . '/widget-boxes-admin.php';
             if (class_exists('Inventor_Template_Loader')) {
                 include Inventor_Template_Loader::locate('widgets/advanced-options-admin');
             }
@@ -57,6 +57,6 @@
          */
         public function widget($args, $instance)
         {
-            include WIDGETS_TPL_DIR . '/widget-boxes.php';
+            include THEME_WIDGETS_TPL_DIR . '/widget-boxes.php';
         }
     }

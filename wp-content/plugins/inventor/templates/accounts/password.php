@@ -1,6 +1,6 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
 ?>
 <form method="post" action="<?php the_permalink(); ?>" class="change-password-form">

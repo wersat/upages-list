@@ -10,4 +10,4 @@
            : ''); ?>"
          size="30"
          required="required">
-</div><!-- /.form-group -->
+</div>

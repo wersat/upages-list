@@ -1,10 +1,10 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
 ?>
 
-<?php if (!is_user_logged_in()) : ?>
+<?php if ( ! is_user_logged_in()) : ?>
   <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>" class="login-form">
     <div class="form-group">
       <label for="login-form-username"><?php echo __('Username', 'inventor'); ?></label>

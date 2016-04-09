@@ -1,14 +1,14 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
-  $title = !empty($instance['title']) ? $instance['title'] : '';
-  $button_text = !empty($instance['button_text']) ? $instance['button_text'] : '';
-  $input_titles = !empty($instance['input_titles']) ? $instance['input_titles'] : '';
+  $title                  = ! empty($instance['title']) ? $instance['title'] : '';
+  $button_text            = ! empty($instance['button_text']) ? $instance['button_text'] : '';
+  $input_titles           = ! empty($instance['input_titles']) ? $instance['input_titles'] : '';
   $result_numbers_enabled = isset($instance['result_numbers_enabled']) ? $instance['result_numbers_enabled'] : '';
-  $result_numbers_total = isset($instance['result_numbers_total']) ? $instance['result_numbers_total'] : '';
-  $sort = !empty($instance['sort']) ? $instance['sort'] : '';
-  $sorting_options = !empty($instance['sorting_options']) ? $instance['sorting_options'] : '';
+  $result_numbers_total   = isset($instance['result_numbers_total']) ? $instance['result_numbers_total'] : '';
+  $sort                   = ! empty($instance['sort']) ? $instance['sort'] : '';
+  $sorting_options        = ! empty($instance['sorting_options']) ? $instance['sorting_options'] : '';
 ?>
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">
@@ -33,7 +33,7 @@
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('sorting_options')); ?>">
     <input type="checkbox"
-           <?php if (!empty($sorting_options)) : ?>checked="checked"<?php endif; ?>
+           <?php if ( ! empty($sorting_options)) : ?>checked="checked"<?php endif; ?>
            name="<?php echo esc_attr($this->get_field_name('sorting_options')); ?>"
            id="<?php echo esc_attr($this->get_field_id('sorting_options')); ?>">
     <?php echo __('Sorting Options', 'inventor'); ?>

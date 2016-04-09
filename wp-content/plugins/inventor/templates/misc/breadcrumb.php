@@ -11,7 +11,7 @@
       <a href="<?php echo site_url(); ?>"><?php echo __('Home', 'inventor'); ?></a>
     </li>
     <li><?php echo get_the_title(get_option('page_for_posts')); ?></li>
-  <?php elseif (!is_home()) : ?>
+  <?php elseif ( ! is_home()) : ?>
     <li>
       <a href="<?php echo site_url(); ?>"><?php echo __('Home', 'inventor'); ?></a>
     </li>
@@ -24,8 +24,8 @@
         <?php endif; ?>
         <?php
         global $wp_query;
-        $tax = $wp_query->get_queried_object();
-        $term = get_term_by('slug', get_query_var('term'), $tax->taxonomy);
+        $tax       = $wp_query->get_queried_object();
+        $term      = get_term_by('slug', get_query_var('term'), $tax->taxonomy);
         $ancestors = get_ancestors($term->term_id, $tax->taxonomy);
         ?>
         <?php if (is_array($ancestors)) : ?>
@@ -54,7 +54,7 @@
           <li>
             <a href="<?php echo get_post_type_archive_link('listing'); ?>"><?php echo __('Listings', 'inventor'); ?></a>
           </li>
-          <?php if (!is_post_type_archive('listing')) : ?>
+          <?php if ( ! is_post_type_archive('listing')) : ?>
             <li><?php post_type_archive_title(); ?></li>
           <?php endif; ?>
         <?php else : ?>
@@ -97,7 +97,7 @@
     <li><?php echo __('Archive for', 'inventor'); ?><?php the_time('Y'); ?></li>
   <?php elseif (is_author()) : ?>
     <li><?php echo __('Author Archive', 'inventor'); ?></li>
-  <?php elseif (isset($_GET['paged']) && !empty($_GET['paged'])) : ?>
+  <?php elseif (isset($_GET['paged']) && ! empty($_GET['paged'])) : ?>
     <li><?php echo __('Blog Archives', 'inventor'); ?></li>
   <?php elseif (is_search()) : ?>
     <li><?php echo __('Search Results', 'inventor'); ?></li>

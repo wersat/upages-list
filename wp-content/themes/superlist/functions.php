@@ -4,15 +4,16 @@
      * @package Superlist
      * @since   Superlist 1.0.0
      */
+    //$theme_root = __DIR__;
     /**
      * Constants
      */
     define('POST_EXCERPT_LENGTH', 40);
     define('EXCERPT_LENGTH', 20);
-    define('LIB_DIR', __DIR__ . '/library');
-    define('TPL_DIR', __DIR__ . '/templates');
-    define('WIDGETS_DIR', __DIR__ . '/widgets');
-    define('WIDGETS_TPL_DIR', WIDGETS_DIR . '/templates');
+    define('THEME_LIB_DIR', __DIR__ . '/library');
+    define('THEME_TPL_DIR', __DIR__ . '/templates');
+    define('THEME_WIDGETS_DIR', __DIR__ . '/widgets');
+    define('THEME_WIDGETS_TPL_DIR', THEME_WIDGETS_DIR . '/templates');
     /**
      * Libraries
      */
@@ -20,10 +21,10 @@
     /**
      * Widgets
      */
-    require_once WIDGETS_DIR . '/widget-boxes.php';
-    require_once WIDGETS_DIR . '/widget-call-to-action.php';
-    require_once WIDGETS_DIR . '/widget-simple-map.php';
-    require_once WIDGETS_DIR . '/widget-video-cover.php';
+    require_once THEME_WIDGETS_DIR . '/widget-boxes.php';
+    require_once THEME_WIDGETS_DIR . '/widget-call-to-action.php';
+    require_once THEME_WIDGETS_DIR . '/widget-simple-map.php';
+    require_once THEME_WIDGETS_DIR . '/widget-video-cover.php';
     /**
      * Body classes
      * @filter body_class

@@ -1,11 +1,11 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
-  $title = !empty($instance['title']) ? $instance['title'] : '';
-  $description = !empty($instance['description']) ? $instance['description'] : '';
-  $listing_categories = !empty($instance['listing_categories']) ? $instance['listing_categories'] : [];
-  $show_count = !empty($instance['show_count']) ? $instance['show_count'] : '';
+  $title              = ! empty($instance['title']) ? $instance['title'] : '';
+  $description        = ! empty($instance['description']) ? $instance['description'] : '';
+  $listing_categories = ! empty($instance['listing_categories']) ? $instance['listing_categories'] : [];
+  $show_count         = ! empty($instance['show_count']) ? $instance['show_count'] : '';
 ?>
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">
@@ -48,7 +48,7 @@
   <label>
     <input type="checkbox"
            class="checkbox"
-      <?php echo (!empty($show_count)) ? 'checked="checked"' : ''; ?>
+      <?php echo ( ! empty($show_count)) ? 'checked="checked"' : ''; ?>
            id="<?php echo esc_attr($this->get_field_id('show_count')); ?>"
            name="<?php echo esc_attr($this->get_field_name('show_count')); ?>">
     <?php echo __('Show count', 'inventor'); ?>

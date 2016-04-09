@@ -9,4 +9,4 @@
          value="<?php echo esc_attr($commenter['comment_author']); ?>"
          size="30"
          required="required">
-</div><!-- /.form-group -->
+</div>

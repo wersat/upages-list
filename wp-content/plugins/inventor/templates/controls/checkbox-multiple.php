@@ -1,12 +1,12 @@
-<?php if (!empty($this->label)) : ?>
+<?php if ( ! empty($this->label)) : ?>
   <span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
 <?php endif; ?>
 
-<?php if (!empty($this->description)) : ?>
+<?php if ( ! empty($this->description)) : ?>
   <span class="description customize-control-description"><?php echo $this->description; ?></span>
 <?php endif; ?>
 
-<?php $multi_values = !is_array($this->value()) ? explode(',', $this->value()) : $this->value(); ?>
+<?php $multi_values = ! is_array($this->value()) ? explode(',', $this->value()) : $this->value(); ?>
 <ul>
   <?php foreach ($this->choices as $value => $label) : ?>
     <li>

@@ -26,7 +26,7 @@
     <?php if ( ! empty($instance['description'])) : ?>
       <div class="description">
         <?php echo wp_kses($instance['description'], wp_kses_allowed_html('post')); ?>
-      </div><!-- /.description -->
+      </div>
     <?php endif; ?>
 
     <?php if (have_posts()) : ?>
@@ -35,7 +35,7 @@
           <div class="testimonial">
             <?php if (has_post_thumbnail()) : ?>
               <?php $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail'); ?>
-              <div class="testimonial-image" style="background-image: url('<?php echo $thumbnail[0]; ?>');"></div><!-- /.testimonial-image -->
+              <div class="testimonial-image" style="background-image: url('<?php echo $thumbnail[0]; ?>');"></div>
             <?php endif; ?>
             <div class="testimonial-inner">
               <div class="testimonial-title">
@@ -46,8 +46,8 @@
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
-                </div><!-- /.testimonial-rating -->
-              </div><!-- /.testimonial-title -->
+                </div>
+              </div>
               <div class="testimonial-content">
                 <?php the_content(); ?>
               </div>
@@ -55,16 +55,16 @@
               <?php if ( ! empty($author)) : ?>
                 <div class="testimonial-sign">
                   - <?php echo esc_attr($author); ?>
-                </div><!-- /.testimonial-sign -->
+                </div>
               <?php endif; ?>
-            </div><!-- /.testimonial-inner -->
-          </div><!-- /.testimonial -->
+            </div>
+          </div>
         <?php endwhile; ?>
-      </div><!-- /.faq -->
+      </div>
     <?php else : ?>
       <div class="alert alert-warning">
         <?php echo __('No Testimonials found.', 'inventor-testimonials'); ?>
-      </div><!-- /.alert -->
+      </div>
     <?php endif; ?>
-  </div><!-- /.widget-inner -->
+  </div>
 <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post')); ?>

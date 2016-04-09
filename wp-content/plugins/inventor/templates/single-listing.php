@@ -1,11 +1,10 @@
 <?php
   /**
    * The template for displaying main file.
-   *
    * @since   Inventor Bootstrap 1.0.0
    */
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
   get_header(); ?>
 <div class="row">

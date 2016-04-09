@@ -13,7 +13,7 @@ $per_row = !empty($instance['per_row']) ? $instance['per_row'] : 3;
 $classes = !empty($instance['classes']) ? $instance['classes'] : '';
 ?>
 
-<!-- TITLE -->
+
 <p>
 	<label for="<?php echo esc_attr($this->get_field_id('title')); ?>">
 		<?php echo __('Title', 'inventor-partners'); ?>
@@ -26,7 +26,7 @@ $classes = !empty($instance['classes']) ? $instance['classes'] : '';
 	        value="<?php echo esc_attr($title); ?>">
 </p>
 
-<!-- DESCRIPTION -->
+
 <p>
 	<label for="<?php echo esc_attr($this->get_field_id('description')); ?>">
 		<?php echo __('Description', 'inventor-partners'); ?>
@@ -38,7 +38,7 @@ $classes = !empty($instance['classes']) ? $instance['classes'] : '';
 	          name="<?php echo esc_attr($this->get_field_name('description')); ?>"><?php echo esc_attr($description); ?></textarea>
 </p>
 
-<!-- COUNT -->
+
 <p>
 	<label for="<?php echo esc_attr($this->get_field_id('count')); ?>">
 		<?php echo __('Count', 'inventor'); ?>
@@ -52,7 +52,7 @@ $classes = !empty($instance['classes']) ? $instance['classes'] : '';
 </p>
 
 
-<!-- IDs -->
+
 <p>
 	<label for="<?php echo esc_attr($this->get_field_id('ids')); ?>">
 		<?php echo __('IDs', 'inventor'); ?>
@@ -66,7 +66,7 @@ $classes = !empty($instance['classes']) ? $instance['classes'] : '';
 	<i><?php echo __('For specific partners please insert post ids, separated by comma. Example: 1,2,3', 'inventor-partners'); ?></i>
 </p>
 
-<!-- PER ROW -->
+
 <p>
 	<label for="<?php echo esc_attr($this->get_field_id('per_row')); ?>">
 		<?php echo __('Items per row', 'inventor-partners'); ?>

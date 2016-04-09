@@ -1,13 +1,13 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
 ?>
 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 <?php query_posts([
   'post_type' => 'transaction',
-  'paged' => $paged,
-  'author' => get_current_user_id(),
+  'paged'     => $paged,
+  'author'    => get_current_user_id(),
 ]); ?>
 <?php if (have_posts()) : ?>
   <table class="transactions-table">
@@ -23,12 +23,12 @@
     <tbody>
       <?php while (have_posts()) : the_post(); ?>
         <?php
-        $data = get_post_meta(get_the_ID(), INVENTOR_TRANSACTION_PREFIX.'data', true);
-        $data = unserialize($data);
-        $object_id = get_post_meta(get_the_ID(), INVENTOR_TRANSACTION_PREFIX.'object_id', true);
-        $gateway = get_post_meta(get_the_ID(), INVENTOR_TRANSACTION_PREFIX.'gateway', true);
-        $success = Inventor_Post_Type_Transaction::is_successful(get_the_ID());
-        $payment_type = get_post_meta(get_the_ID(), INVENTOR_TRANSACTION_PREFIX.'payment_type', true);
+        $data            = get_post_meta(get_the_ID(), INVENTOR_TRANSACTION_PREFIX . 'data', true);
+        $data            = unserialize($data);
+        $object_id       = get_post_meta(get_the_ID(), INVENTOR_TRANSACTION_PREFIX . 'object_id', true);
+        $gateway         = get_post_meta(get_the_ID(), INVENTOR_TRANSACTION_PREFIX . 'gateway', true);
+        $success         = Inventor_Post_Type_Transaction::is_successful(get_the_ID());
+        $payment_type    = get_post_meta(get_the_ID(), INVENTOR_TRANSACTION_PREFIX . 'payment_type', true);
         $price_formatted = empty($data['price_formatted']) ? '' : $data['price_formatted'];
         ?>
         <tr>
@@ -53,9 +53,9 @@
           <td>
             <?php
               if ($success) {
-                  echo '<div class="dashicons-before dashicons-yes green"></div>';
+                echo '<div class="dashicons-before dashicons-yes green"></div>';
               } else {
-                  echo '<div class="dashicons-before dashicons-no red"></div>';
+                echo '<div class="dashicons-before dashicons-no red"></div>';
               }
             ?>
           </td>
@@ -67,9 +67,9 @@
     </tbody>
   </table>
   <?php the_posts_pagination([
-    'prev_text' => __('Previous page', 'inventor'),
-    'next_text' => __('Next page', 'inventor'),
-    'before_page_number' => '<span class="meta-nav screen-reader-text">'.__('Page', 'inventor').' </span>',
+    'prev_text'          => __('Previous page', 'inventor'),
+    'next_text'          => __('Next page', 'inventor'),
+    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'inventor') . ' </span>',
   ]); ?>
 <?php else : ?>
   <div class="alert alert-warning"><?php echo __('No transactions found.', 'inventor'); ?></div>

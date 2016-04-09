@@ -1,3 +1,2 @@
 <?php
-
-echo $form;
+    echo $form;

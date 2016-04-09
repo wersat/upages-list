@@ -4,4 +4,4 @@
     <textarea id="comment"
               name="comment"
               rows="4">REVIEW on "<?php the_title(); ?>" on <?php echo current_time('mysql'); ?></textarea>
-</div><!-- /.form-group -->
+</div>

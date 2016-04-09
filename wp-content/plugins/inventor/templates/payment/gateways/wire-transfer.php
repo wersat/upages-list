@@ -1,9 +1,9 @@
 <?php
-  $payment_type = !empty($_POST['payment_type']) ? $_POST['payment_type'] : null;
-  $object_id = !empty($_POST['object_id']) ? $_POST['object_id'] : null;
-  $title = get_the_title($object_id);
+  $payment_type    = ! empty($_POST['payment_type']) ? $_POST['payment_type'] : null;
+  $object_id       = ! empty($_POST['object_id']) ? $_POST['object_id'] : null;
+  $title           = get_the_title($object_id);
   $variable_symbol = $object_id;
-  $reference = $title;
+  $reference       = $title;
 ?>
 
 <?php if ('package' === $payment_type) : ?>

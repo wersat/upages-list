@@ -1,6 +1,6 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
   /*
    * The template for archive page
@@ -9,7 +9,7 @@
    */
   get_header(); ?>
 
-<?php $display_as_grid = (!empty($_GET['listing-display']) && 'grid' === $_GET['listing-display']) ? true
+<?php $display_as_grid = ( ! empty($_GET['listing-display']) && 'grid' === $_GET['listing-display']) ? true
   : get_theme_mod('inventor_general_show_listing_archive_as_grid', null); ?>
 <div class="row">
   <div class="<?php if (is_active_sidebar('sidebar-1')) : ?>col-lg-8 col-xl-9<?php else : ?>col-sm-12<?php endif; ?>">
@@ -58,7 +58,7 @@
         <?php the_posts_pagination([
           'prev_text' => __('Previous', 'inventor'),
           'next_text' => __('Next', 'inventor'),
-          'mid_size' => 2,
+          'mid_size'  => 2,
         ]); ?>
       <?php else : ?>
         <?php get_template_part('templates/content', 'none'); ?>

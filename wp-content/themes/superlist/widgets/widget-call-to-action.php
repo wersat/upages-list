@@ -30,7 +30,7 @@
          */
         public function form($instance)
         {
-            include WIDGETS_TPL_DIR . '/widget-call-to-action-admin.php';
+            include THEME_WIDGETS_TPL_DIR . '/widget-call-to-action-admin.php';
             if (class_exists('Inventor_Template_Loader')) {
                 include Inventor_Template_Loader::locate('widgets/advanced-options-admin');
             }

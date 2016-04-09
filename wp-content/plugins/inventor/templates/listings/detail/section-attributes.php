@@ -1,5 +1,5 @@
 <?php $attributes = Inventor_Post_Types::get_attributes(); ?>
-<?php if (!empty($attributes) && is_array($attributes) && count($attributes) > 0) : ?>
+<?php if ( ! empty($attributes) && is_array($attributes) && count($attributes) > 0) : ?>
   <div class="listing-detail-section" id="listing-detail-section-attributes">
     <h2 class="page-header"><?php echo $section_title; ?></h2>
     <div class="listing-detail-attributes">

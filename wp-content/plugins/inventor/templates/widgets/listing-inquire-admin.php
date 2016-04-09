@@ -1,20 +1,20 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
 ?>
 
 <?php
-  $title = !empty($instance['title']) ? $instance['title'] : '';
-  $receive_admin = !empty($instance['receive_admin']) ? $instance['receive_admin'] : '';
-  $receive_author = !empty($instance['receive_author']) ? $instance['receive_author'] : '';
-  $receive_listing_email = !empty($instance['receive_listing_email']) ? $instance['receive_listing_email'] : '';
-  $show_name = empty($instance['show_name']) ? '' : 'on';
-  $show_email = empty($instance['show_email']) ? '' : 'on';
-  $show_phone = empty($instance['show_phone']) ? '' : 'on';
-  $show_subject = empty($instance['show_subject']) ? '' : 'on';
-  $show_date = empty($instance['show_date']) ? '' : 'on';
-  $show_message = empty($instance['show_message']) ? '' : 'on';
+  $title                 = ! empty($instance['title']) ? $instance['title'] : '';
+  $receive_admin         = ! empty($instance['receive_admin']) ? $instance['receive_admin'] : '';
+  $receive_author        = ! empty($instance['receive_author']) ? $instance['receive_author'] : '';
+  $receive_listing_email = ! empty($instance['receive_listing_email']) ? $instance['receive_listing_email'] : '';
+  $show_name             = empty($instance['show_name']) ? '' : 'on';
+  $show_email            = empty($instance['show_email']) ? '' : 'on';
+  $show_phone            = empty($instance['show_phone']) ? '' : 'on';
+  $show_subject          = empty($instance['show_subject']) ? '' : 'on';
+  $show_date             = empty($instance['show_date']) ? '' : 'on';
+  $show_message          = empty($instance['show_message']) ? '' : 'on';
 ?>
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">
@@ -30,7 +30,7 @@
 <p>
   <input type="checkbox"
          class="checkbox"
-    <?php echo !empty($show_name) ? 'checked="checked"' : ''; ?>
+    <?php echo ! empty($show_name) ? 'checked="checked"' : ''; ?>
          id="<?php echo esc_attr($this->get_field_id('show_name')); ?>"
          name="<?php echo esc_attr($this->get_field_name('show_name')); ?>">
   <label for="<?php echo esc_attr($this->get_field_id('show_name')); ?>">
@@ -39,7 +39,7 @@
   <br>
   <input type="checkbox"
          class="checkbox"
-    <?php echo !empty($show_email) ? 'checked="checked"' : ''; ?>
+    <?php echo ! empty($show_email) ? 'checked="checked"' : ''; ?>
          id="<?php echo esc_attr($this->get_field_id('show_email')); ?>"
          name="<?php echo esc_attr($this->get_field_name('show_email')); ?>">
   <label for="<?php echo esc_attr($this->get_field_id('show_email')); ?>">
@@ -48,7 +48,7 @@
   <br>
   <input type="checkbox"
          class="checkbox"
-    <?php echo !empty($show_phone) ? 'checked="checked"' : ''; ?>
+    <?php echo ! empty($show_phone) ? 'checked="checked"' : ''; ?>
          id="<?php echo esc_attr($this->get_field_id('show_phone')); ?>"
          name="<?php echo esc_attr($this->get_field_name('show_phone')); ?>">
   <label for="<?php echo esc_attr($this->get_field_id('show_phone')); ?>">
@@ -57,7 +57,7 @@
   <br>
   <input type="checkbox"
          class="checkbox"
-    <?php echo !empty($show_subject) ? 'checked="checked"' : ''; ?>
+    <?php echo ! empty($show_subject) ? 'checked="checked"' : ''; ?>
          id="<?php echo esc_attr($this->get_field_id('show_subject')); ?>"
          name="<?php echo esc_attr($this->get_field_name('show_subject')); ?>">
   <label for="<?php echo esc_attr($this->get_field_id('show_subject')); ?>">
@@ -66,7 +66,7 @@
   <br>
   <input type="checkbox"
          class="checkbox"
-    <?php echo !empty($show_date) ? 'checked="checked"' : ''; ?>
+    <?php echo ! empty($show_date) ? 'checked="checked"' : ''; ?>
          id="<?php echo esc_attr($this->get_field_id('show_date')); ?>"
          name="<?php echo esc_attr($this->get_field_name('show_date')); ?>">
   <label for="<?php echo esc_attr($this->get_field_id('show_date')); ?>">
@@ -75,7 +75,7 @@
   <br>
   <input type="checkbox"
          class="checkbox"
-    <?php echo !empty($show_message) ? 'checked="checked"' : ''; ?>
+    <?php echo ! empty($show_message) ? 'checked="checked"' : ''; ?>
          id="<?php echo esc_attr($this->get_field_id('show_message')); ?>"
          name="<?php echo esc_attr($this->get_field_name('show_message')); ?>">
   <label for="<?php echo esc_attr($this->get_field_id('show_message')); ?>">
@@ -89,7 +89,7 @@
 <p>
   <input type="checkbox"
          class="checkbox"
-    <?php echo !empty($receive_admin) ? 'checked="checked"' : ''; ?>
+    <?php echo ! empty($receive_admin) ? 'checked="checked"' : ''; ?>
          id="<?php echo esc_attr($this->get_field_id('receive_admin')); ?>"
          name="<?php echo esc_attr($this->get_field_name('receive_admin')); ?>">
   <label for="<?php echo esc_attr($this->get_field_id('receive_admin')); ?>">
@@ -98,7 +98,7 @@
   <br>
   <input type="checkbox"
          class="checkbox"
-    <?php echo !empty($receive_author) ? 'checked="checked"' : ''; ?>
+    <?php echo ! empty($receive_author) ? 'checked="checked"' : ''; ?>
          id="<?php echo esc_attr($this->get_field_id('receive_author')); ?>"
          name="<?php echo esc_attr($this->get_field_name('receive_author')); ?>">
   <label for="<?php echo esc_attr($this->get_field_id('receive_author')); ?>">
@@ -107,7 +107,7 @@
   <br>
   <input type="checkbox"
          class="checkbox"
-    <?php echo !empty($receive_listing_email) ? 'checked="checked"' : ''; ?>
+    <?php echo ! empty($receive_listing_email) ? 'checked="checked"' : ''; ?>
          id="<?php echo esc_attr($this->get_field_id('receive_listing_email')); ?>"
          name="<?php echo esc_attr($this->get_field_name('receive_listing_email')); ?>">
   <label for="<?php echo esc_attr($this->get_field_id('receive_listing_email')); ?>">

@@ -24,5 +24,5 @@
 
   <?php Inventor_Watchdogs_Logic::render_watchdog_lookup(get_the_ID()); ?>
   <div class="watchdog-row-date">Record created: <?php echo get_the_date(); ?></div>
-</div><!-- /.watchdog-row -->
+</div>
 

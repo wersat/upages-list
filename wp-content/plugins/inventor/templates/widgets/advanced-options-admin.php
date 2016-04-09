@@ -1,12 +1,12 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
-  $background_color = !empty($instance['background_color']) ? $instance['background_color'] : '';
-  $background_image = !empty($instance['background_image']) ? $instance['background_image'] : '';
-  $padding_top = isset($instance['padding_top']) ? $instance['padding_top'] : '';
-  $padding_bottom = isset($instance['padding_bottom']) ? $instance['padding_bottom'] : '';
-  $classes = !empty($instance['classes']) ? $instance['classes'] : '';
+  $background_color = ! empty($instance['background_color']) ? $instance['background_color'] : '';
+  $background_image = ! empty($instance['background_image']) ? $instance['background_image'] : '';
+  $padding_top      = isset($instance['padding_top']) ? $instance['padding_top'] : '';
+  $padding_bottom   = isset($instance['padding_bottom']) ? $instance['padding_bottom'] : '';
+  $classes          = ! empty($instance['classes']) ? $instance['classes'] : '';
 ?>
 <div class="widget widget-advanced-options">
   <div class="widget-top" style="background-color: transparent;">

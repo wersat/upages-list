@@ -9,9 +9,9 @@
     <?php while (have_posts()) : the_post(); ?>
       <div class="listing-container">
         <?php echo Inventor_Template_Loader::load('listings/small'); ?>
-      </div><!-- /.listing-container -->
+      </div>
     <?php endwhile; ?>
-  </div><!-- /.listings-row -->
+  </div>
 <?php else : ?>
   <div class="alert alert-warning">
     <?php if (is_user_logged_in()): ?>

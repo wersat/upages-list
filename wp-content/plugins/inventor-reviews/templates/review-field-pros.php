@@ -7,4 +7,4 @@
     <textarea id="pros"
               name="pros"
               rows="4"></textarea>
-</div><!-- /.form-group -->
+</div>

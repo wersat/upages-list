@@ -1,28 +1,28 @@
 <ul class="inventor-filter-fields">
   <?php $fields = Inventor_Filter::get_fields(); ?>
 
-  <?php if (!empty($instance['sort'])) : ?>
+  <?php if ( ! empty($instance['sort'])) : ?>
     <?php
-    $keys = explode(',', $instance['sort']);
+    $keys          = explode(',', $instance['sort']);
     $filtered_keys = array_filter($keys);
-    $fields = array_replace(array_flip($filtered_keys), $fields);
+    $fields        = array_replace(array_flip($filtered_keys), $fields);
     ?>
   <?php endif; ?>
   <input type="hidden"
-         <?php if (!empty($sort)): ?>value="<?php echo esc_attr($sort); ?>"<?php endif; ?>
+         <?php if ( ! empty($sort)): ?>value="<?php echo esc_attr($sort); ?>"<?php endif; ?>
          id="<?php echo esc_attr($this->get_field_id('sort')); ?>"
          name="<?php echo esc_attr($this->get_field_name('sort')); ?>">
   <?php foreach ($fields as $key => $value) : ?>
     <?php if (array_key_exists($key, Inventor_Filter::get_fields())) : ?>
-      <li data-field-id="<?php echo esc_attr($key); ?>" <?php if (!empty($instance['hide_'.$key])) : ?>class="invisible"<?php endif; ?>>
+      <li data-field-id="<?php echo esc_attr($key); ?>" <?php if ( ! empty($instance['hide_' . $key])) : ?>class="invisible"<?php endif; ?>>
         <p>
-          <label for="<?php echo esc_attr($this->get_field_id('hide_'.$key)); ?>">
+          <label for="<?php echo esc_attr($this->get_field_id('hide_' . $key)); ?>">
             <?php echo esc_attr($value); ?>
           </label>
 
 					<span class="visibility">
-						<?php $input_name = esc_attr($this->get_field_name('hide_'.$key)); ?>
-            <input type="checkbox" class="checkbox field-visibility" name="<?php echo $input_name; ?>" <?php echo !empty($instance['hide_'.$key])
+						<?php $input_name = esc_attr($this->get_field_name('hide_' . $key)); ?>
+            <input type="checkbox" class="checkbox field-visibility" name="<?php echo $input_name; ?>" <?php echo ! empty($instance['hide_' . $key])
               ? 'checked="checked"' : ''; ?>>
 						<i class="dashicons dashicons-visibility"></i>
 					</span>

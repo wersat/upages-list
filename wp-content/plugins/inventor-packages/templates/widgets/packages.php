@@ -63,7 +63,7 @@ if (!defined('ABSPATH')) {
                             <div class="package-price">
                                 <strong><?php echo __('Price', 'inventor-packages'); ?>:</strong>
                                 <span><?php echo esc_attr($formatted_price); ?></span>
-                            </div><!-- /.package-price -->
+                            </div>
                         <?php endif; ?>
 
                         <?php $duration = Inventor_Packages_Logic::get_package_duration(get_the_ID(), true)?>
@@ -71,7 +71,7 @@ if (!defined('ABSPATH')) {
                             <div class="package-duration">
                                 <strong><?php echo __('Duration', 'inventor-packages'); ?>:</strong>
                                 <span><?php echo esc_attr($duration); ?></span>
-                            </div><!-- /.package-duration -->
+                            </div>
                         <?php endif; ?>
 
                         <?php $max_listings = get_post_meta(get_the_ID(), INVENTOR_PACKAGE_PREFIX.'max_listings', true); ?>
@@ -85,17 +85,17 @@ if (!defined('ABSPATH')) {
                                     <?php echo esc_attr($max_listings); ?>
                                 <?php endif; ?>
 							</span>
-                            </div><!-- /.package-of-items -->
+                            </div>
                         <?php endif; ?>
-                    </div><!-- /.package -->
+                    </div>
                 <?php endwhile; ?>
-            </div><!-- /.packages -->
+            </div>
         <?php else : ?>
             <div class="alert alert-warning">
                 <?php echo __('No packages found.', 'inventor-packages'); ?>
-            </div><!-- /.alert -->
+            </div>
         <?php endif; ?>
 
-    </div><!-- /.widget-inner -->
+    </div>
 
 <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post')); ?>

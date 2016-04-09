@@ -47,6 +47,20 @@
                 define('INVENTOR_TAX_DIR', INVENTOR_INC_DIR . '/taxonomies');
                 define('INVENTOR_WIDGETS_DIR', INVENTOR_INC_DIR . '/widgets');
                 define('INVENTOR_LIB_DIR', INVENTOR_DIR . '/libraries');
+
+                define('INVENTOR_TPL_DIR', INVENTOR_DIR . '/templates');
+                define('INVENTOR_TPL_ACCOUNTS_DIR', INVENTOR_TPL_DIR . '/accounts');
+                define('INVENTOR_TPL_ADMIN_DIR', INVENTOR_TPL_DIR . '/admin');
+                define('INVENTOR_TPL_CONTROLS_DIR', INVENTOR_TPL_DIR . '/controls');
+                define('INVENTOR_TPL_LISTINGS_DIR', INVENTOR_TPL_DIR . '/listings');
+                define('INVENTOR_TPL_MAILS_DIR', INVENTOR_TPL_DIR . '/mails');
+                define('INVENTOR_TPL_MISC_DIR', INVENTOR_TPL_DIR . '/misc');
+                define('INVENTOR_TPL_NOTICES_DIR', INVENTOR_TPL_DIR . '/notices');
+                define('INVENTOR_TPL_PAYMENT_DIR', INVENTOR_TPL_DIR . '/payment');
+                define('INVENTOR_TPL_POST_TYPES_DIR', INVENTOR_TPL_DIR . '/post-types');
+                define('INVENTOR_TPL_SUBMISSIONS_DIR', INVENTOR_TPL_DIR . '/submissions');
+                define('INVENTOR_TPL_WIDGETS_DIR', INVENTOR_TPL_DIR . '/widgets');
+
                 define('INVENTOR_LISTING_PREFIX', 'listing_');
                 define('INVENTOR_TRANSACTION_PREFIX', 'transaction_');
                 define('INVENTOR_REPORT_PREFIX', 'report_');

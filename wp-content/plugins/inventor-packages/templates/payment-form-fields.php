@@ -6,7 +6,7 @@
 
             <div class="payment-info">
                 <?php echo __('Trial packages can only be used as a default package. They cannot be purchased or chosen.', 'inventor-packages'); ?>
-            </div><!-- /.payment-info -->
+            </div>
 
         <?php elseif (Inventor_Packages_Logic::is_package_free($object_id)) : ?>
 
@@ -21,7 +21,7 @@
     <?php else : ?>
         <div class="payment-info">
             <?php echo __('Missing package.', 'inventor-packages'); ?>
-        </div><!-- /.payment-info -->
+        </div>
     <?php endif; ?>
 
 <?php endif; ?>

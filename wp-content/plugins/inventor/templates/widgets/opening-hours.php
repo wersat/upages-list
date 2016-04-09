@@ -1,36 +1,36 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
 ?>
 
 <?php if (apply_filters('inventor_submission_listing_metabox_allowed', true, 'opening_hours',
   get_the_author_meta('ID'))): ?>
   <?php $day_names = [
-    'MONDAY' => __('Mon', 'inventor'),
-    'TUESDAY' => __('Tue', 'inventor'),
+    'MONDAY'    => __('Mon', 'inventor'),
+    'TUESDAY'   => __('Tue', 'inventor'),
     'WEDNESDAY' => __('Wed', 'inventor'),
-    'THURSDAY' => __('Thu', 'inventor'),
-    'FRIDAY' => __('Fri', 'inventor'),
-    'SATURDAY' => __('Sat', 'inventor'),
-    'SUNDAY' => __('Sun', 'inventor'),
+    'THURSDAY'  => __('Thu', 'inventor'),
+    'FRIDAY'    => __('Fri', 'inventor'),
+    'SATURDAY'  => __('Sat', 'inventor'),
+    'SUNDAY'    => __('Sun', 'inventor'),
   ]; ?>
-  <?php $opening_hours = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX.'opening_hours', true); ?>
-  <?php if (!empty($opening_hours)) : ?>
+  <?php $opening_hours = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX . 'opening_hours', true); ?>
+  <?php if ( ! empty($opening_hours)) : ?>
     <?php echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
     <div class="widget-inner
-            <?php if (!empty($instance['classes'])) : ?><?php echo esc_attr($instance['classes']); ?><?php endif; ?>
+            <?php if ( ! empty($instance['classes'])) : ?><?php echo esc_attr($instance['classes']); ?><?php endif; ?>
             <?php echo (empty($instance['padding_top'])) ? '' : 'widget-pt'; ?>
             <?php echo (empty($instance['padding_bottom'])) ? '' : 'widget-pb'; ?>"
-         <?php if (!empty($instance['background_color']) || !empty($instance['background_image'])) : ?>style="
-         <?php if (!empty($instance['background_color'])) : ?>
+         <?php if ( ! empty($instance['background_color']) || ! empty($instance['background_image'])) : ?>style="
+         <?php if ( ! empty($instance['background_color'])) : ?>
            background-color: <?php echo esc_attr($instance['background_color']); ?>;
             <?php endif; ?>
-         <?php if (!empty($instance['background_image'])) : ?>
+         <?php if ( ! empty($instance['background_image'])) : ?>
            background-image: url('<?php echo esc_attr($instance['background_image']); ?>');
          <?php endif; ?>"<?php endif; ?>
     >
-      <?php if (!empty($instance['title'])) : ?>
+      <?php if ( ! empty($instance['title'])) : ?>
         <?php echo wp_kses($args['before_title'], wp_kses_allowed_html('post')); ?>
         <?php echo wp_kses($instance['title'], wp_kses_allowed_html('post')); ?>
         <?php echo wp_kses($args['after_title'], wp_kses_allowed_html('post')); ?>

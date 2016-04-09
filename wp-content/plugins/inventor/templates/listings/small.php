@@ -14,12 +14,12 @@
       <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
     </h4>
     <?php $location = Inventor_Query::get_listing_location_name(get_the_ID(), '/', false); ?>
-    <?php if (!empty($location)) : ?>
+    <?php if ( ! empty($location)) : ?>
       <div class="listing-small-location"><?php echo wp_kses($location, wp_kses_allowed_html('post')); ?></div>
     <?php endif; ?>
 
     <?php $price = Inventor_Price::get_price(); ?>
-    <?php if (!empty($price)) : ?>
+    <?php if ( ! empty($price)) : ?>
       <div class="listing-small-price"><?php echo wp_kses($price, wp_kses_allowed_html('post')); ?></div>
     <?php endif; ?>
   </div>

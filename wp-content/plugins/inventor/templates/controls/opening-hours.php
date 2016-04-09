@@ -1,11 +1,11 @@
 <?php $days = [
-  'MONDAY' => __('Monday', 'inventor'),
-  'TUESDAY' => __('Tuesday', 'inventor'),
+  'MONDAY'    => __('Monday', 'inventor'),
+  'TUESDAY'   => __('Tuesday', 'inventor'),
   'WEDNESDAY' => __('Wednesday', 'inventor'),
-  'THURSDAY' => __('Thursday', 'inventor'),
-  'FRIDAY' => __('Friday', 'inventor'),
-  'SATURDAY' => __('Saturday', 'inventor'),
-  'SUNDAY' => __('Sunday', 'inventor'),
+  'THURSDAY'  => __('Thursday', 'inventor'),
+  'FRIDAY'    => __('Friday', 'inventor'),
+  'SATURDAY'  => __('Saturday', 'inventor'),
+  'SUNDAY'    => __('Sunday', 'inventor'),
 ];
 ?>
 <table>
@@ -29,9 +29,9 @@
           <?php foreach ($field->value as $opening_hours) : ?>
             <?php if ($opening_hours['listing_day'] === $key) : ?>
               <?php
-              $time_from = !empty($opening_hours['listing_time_from']) ? $opening_hours['listing_time_from'] : '';
-              $time_to = !empty($opening_hours['listing_time_to']) ? $opening_hours['listing_time_to'] : '';
-              $custom = !empty($opening_hours['listing_custom']) ? $opening_hours['listing_custom'] : '';
+              $time_from = ! empty($opening_hours['listing_time_from']) ? $opening_hours['listing_time_from'] : '';
+              $time_to   = ! empty($opening_hours['listing_time_to']) ? $opening_hours['listing_time_to'] : '';
+              $custom    = ! empty($opening_hours['listing_custom']) ? $opening_hours['listing_custom'] : '';
               ?>
             <?php endif; ?>
           <?php endforeach; ?>

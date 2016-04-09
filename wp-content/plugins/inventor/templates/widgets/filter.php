@@ -1,26 +1,26 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
 ?>
 
-<?php $input_titles = !empty($instance['input_titles']) ? $instance['input_titles'] : 'labels'; ?>
+<?php $input_titles = ! empty($instance['input_titles']) ? $instance['input_titles'] : 'labels'; ?>
 
 <?php echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
 <div class="widget-inner
      <?php echo esc_attr($instance['classes']); ?>
      <?php echo (empty($instance['padding_top'])) ? '' : 'widget-pt'; ?>
      <?php echo (empty($instance['padding_bottom'])) ? '' : 'widget-pb'; ?>"
-  <?php if (!empty($instance['background_color']) || !empty($instance['background_image'])) : ?>
+  <?php if ( ! empty($instance['background_color']) || ! empty($instance['background_image'])) : ?>
     style="
-    <?php if (!empty($instance['background_color'])) : ?>
+    <?php if ( ! empty($instance['background_color'])) : ?>
       background-color: <?php echo esc_attr($instance['background_color']); ?>;
         <?php endif; ?>
-    <?php if (!empty($instance['background_image'])) : ?>
+    <?php if ( ! empty($instance['background_image'])) : ?>
       background-image: url('<?php echo esc_attr($instance['background_image']); ?>');
     <?php endif; ?>"
   <?php endif; ?>>
-  <?php if (!empty($instance['title'])) : ?>
+  <?php if ( ! empty($instance['title'])) : ?>
     <?php echo wp_kses($args['before_title'], wp_kses_allowed_html('post')); ?>
     <?php echo esc_attr($instance['title']); ?>
     <?php echo wp_kses($args['after_title'], wp_kses_allowed_html('post')); ?>
@@ -28,14 +28,14 @@
 
   <?php include Inventor_Template_Loader::locate('widgets/filter-form'); ?>
 
-  <?php if (!empty($instance['result_numbers_enabled'])) : ?>
+  <?php if ( ! empty($instance['result_numbers_enabled'])) : ?>
     <?php global $wp_query; ?>
     <?php $matches = $wp_query->found_posts; ?>
     <?php $post_type = $wp_query->query_vars['post_type']; ?>
     <?php $total = Inventor_Post_Types::count_post_types($post_type); ?>
     <?php if (Inventor_Filter::has_filter(true) && $total !== 0 && $matches !== 0 and $total !== $matches) : ?>
       <h3 class="filter-result-numbers">
-        <?php if (!empty($instance['result_numbers_total'])) : ?>
+        <?php if ( ! empty($instance['result_numbers_total'])) : ?>
           <?php printf(_n('<span class="match">%d</span> listing from <span class="total">%d</span> matches your search criteria',
             '<span class="match">%d</span> listings from <span class="total">%d</span> match your search criteria',
             $matches, 'inventor'), $matches, $total); ?>

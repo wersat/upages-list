@@ -1,20 +1,20 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
 ?>
 
-<?php $title = !empty($instance['title']) ? $instance['title'] : ''; ?>
-<?php $description = !empty($instance['description']) ? $instance['description'] : ''; ?>
-<?php $count = !empty($instance['count']) ? $instance['count'] : 3; ?>
-<?php $ids = !empty($instance['ids']) ? $instance['ids'] : ''; ?>
-<?php $per_row = !empty($instance['per_row']) ? $instance['per_row'] : 1; ?>
-<?php $order = !empty($instance['order']) ? $instance['order'] : ''; ?>
-<?php $attribute = !empty($instance['attribute']) ? $instance['attribute'] : ''; ?>
-<?php $display = !empty($instance['display']) ? $instance['display'] : ''; ?>
-<?php $listing_categories = !empty($instance['listing_categories']) ? $instance['listing_categories'] : []; ?>
-<?php $listing_types = !empty($instance['listing_types']) ? $instance['listing_types'] : []; ?>
-<?php $locations = !empty($instance['locations']) ? $instance['locations'] : []; ?>
+<?php $title = ! empty($instance['title']) ? $instance['title'] : ''; ?>
+<?php $description = ! empty($instance['description']) ? $instance['description'] : ''; ?>
+<?php $count = ! empty($instance['count']) ? $instance['count'] : 3; ?>
+<?php $ids = ! empty($instance['ids']) ? $instance['ids'] : ''; ?>
+<?php $per_row = ! empty($instance['per_row']) ? $instance['per_row'] : 1; ?>
+<?php $order = ! empty($instance['order']) ? $instance['order'] : ''; ?>
+<?php $attribute = ! empty($instance['attribute']) ? $instance['attribute'] : ''; ?>
+<?php $display = ! empty($instance['display']) ? $instance['display'] : ''; ?>
+<?php $listing_categories = ! empty($instance['listing_categories']) ? $instance['listing_categories'] : []; ?>
+<?php $listing_types = ! empty($instance['listing_types']) ? $instance['listing_types'] : []; ?>
+<?php $locations = ! empty($instance['locations']) ? $instance['locations'] : []; ?>
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">
     <?php echo __('Title', 'inventor'); ?>
@@ -157,8 +157,8 @@
         'inventor'); ?></option>
     <option value="row" <?php echo ('row' === $display) ? 'selected="selected"' : ''; ?>><?php echo __('Row',
         'inventor'); ?></option>
-    <option value="masonry" <?php echo ('masonry' === $display) ? 'selected="selected"' : ''; ?>><?php echo __('Masonry',
-        'inventor'); ?></option>
+    <option value="masonry" <?php echo ('masonry' === $display) ? 'selected="selected"'
+      : ''; ?>><?php echo __('Masonry', 'inventor'); ?></option>
   </select>
 </p>
 <p>

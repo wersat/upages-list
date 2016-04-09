@@ -1,16 +1,16 @@
 <?php if (apply_filters('inventor_submission_listing_metabox_allowed', true, 'location', get_the_author_meta('ID'))): ?>
-  <?php $map_latitude = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX.'map_location_latitude', true); ?>
-  <?php $map_longitude = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX.'map_location_longitude', true); ?>
-  <?php $map_polygon = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX.'map_location_polygon', true); ?>
-  <?php $map = !empty($map_latitude) || !empty($map_longitude); ?>
-  <?php $street_view = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX.'street_view', true); ?>
-  <?php $inside_view = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX.'inside_view', true); ?>
-  <?php if (class_exists('Inventor_Google_Map') && (!empty($map) || !empty($street_view))) : ?>
+  <?php $map_latitude = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX . 'map_location_latitude', true); ?>
+  <?php $map_longitude = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX . 'map_location_longitude', true); ?>
+  <?php $map_polygon = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX . 'map_location_polygon', true); ?>
+  <?php $map = ! empty($map_latitude) || ! empty($map_longitude); ?>
+  <?php $street_view = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX . 'street_view', true); ?>
+  <?php $inside_view = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX . 'inside_view', true); ?>
+  <?php if (class_exists('Inventor_Google_Map') && ( ! empty($map) || ! empty($street_view))) : ?>
     <div class="listing-detail-section" id="listing-detail-section-location">
       <h2 class="page-header"><?php echo $section_title; ?></h2>
       <div class="listing-detail-location-wrapper">
         <ul id="listing-detail-location" class="nav nav-tabs" role="tablist">
-          <?php if (!empty($map)) : ?>
+          <?php if ( ! empty($map)) : ?>
             <li role="presentation" class="nav-item active">
               <a href="#simple-map-panel" aria-controls="simple-map-panel" role="tab" data-toggle="tab" class="nav-link">
                 <i class="fa fa-map"></i><?php echo __('Map', 'inventor'); ?>
@@ -18,7 +18,7 @@
             </li>
           <?php endif; ?>
 
-          <?php if (!empty($street_view)) : ?>
+          <?php if ( ! empty($street_view)) : ?>
             <li role="presentation" class="nav-item <?php echo empty($map) ? 'active' : ''; ?>">
               <a href="#street-view-panel" aria-controls="street-view-panel" role="tab" data-toggle="tab" class="nav-link">
                 <i class="fa fa-street-view"></i><?php echo __('Street View', 'inventor'); ?>
@@ -26,7 +26,7 @@
             </li>
           <?php endif; ?>
 
-          <?php if (!empty($inside_view)) : ?>
+          <?php if ( ! empty($inside_view)) : ?>
             <li role="presentation" class="nav-item <?php echo (empty($map) && empty($street_view)) ? 'active'
               : ''; ?>">
               <a href="#inside-view-panel" aria-controls="inside-view-panel" role="tab" data-toggle="tab" class="nav-link">
@@ -41,7 +41,7 @@
           </li>
         </ul>
         <div class="tab-content">
-          <?php if (!empty($map)) : ?>
+          <?php if ( ! empty($map)) : ?>
             <div role="tabpanel" class="tab-pane fade in active" id="simple-map-panel">
               <div class="detail-map">
                 <div class="map-position">
@@ -57,16 +57,16 @@
             </div>
           <?php endif; ?>
 
-          <?php if (!empty($street_view)) : ?>
+          <?php if ( ! empty($street_view)) : ?>
             <?php $street_view_latitude = get_post_meta(get_the_ID(),
-              INVENTOR_LISTING_PREFIX.'street_view_location_latitude', true); ?>
+              INVENTOR_LISTING_PREFIX . 'street_view_location_latitude', true); ?>
             <?php $street_view_longitude = get_post_meta(get_the_ID(),
-              INVENTOR_LISTING_PREFIX.'street_view_location_longitude', true); ?>
+              INVENTOR_LISTING_PREFIX . 'street_view_location_longitude', true); ?>
             <?php $street_view_heading = get_post_meta(get_the_ID(),
-              INVENTOR_LISTING_PREFIX.'street_view_location_heading', true); ?>
+              INVENTOR_LISTING_PREFIX . 'street_view_location_heading', true); ?>
             <?php $street_view_pitch = get_post_meta(get_the_ID(),
-              INVENTOR_LISTING_PREFIX.'street_view_location_pitch', true); ?>
-            <?php $street_view_zoom = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX.'street_view_location_zoom',
+              INVENTOR_LISTING_PREFIX . 'street_view_location_pitch', true); ?>
+            <?php $street_view_zoom = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX . 'street_view_location_zoom',
               true); ?>
             <div role="tabpanel" class="tab-pane fade<?php echo empty($map) ? ' in active'
               : ''; ?>" id="street-view-panel">
@@ -80,16 +80,16 @@
             </div>
           <?php endif; ?>
 
-          <?php if (!empty($inside_view)) : ?>
+          <?php if ( ! empty($inside_view)) : ?>
             <?php $inside_view_latitude = get_post_meta(get_the_ID(),
-              INVENTOR_LISTING_PREFIX.'inside_view_location_latitude', true); ?>
+              INVENTOR_LISTING_PREFIX . 'inside_view_location_latitude', true); ?>
             <?php $inside_view_longitude = get_post_meta(get_the_ID(),
-              INVENTOR_LISTING_PREFIX.'inside_view_location_longitude', true); ?>
+              INVENTOR_LISTING_PREFIX . 'inside_view_location_longitude', true); ?>
             <?php $inside_view_heading = get_post_meta(get_the_ID(),
-              INVENTOR_LISTING_PREFIX.'inside_view_location_heading', true); ?>
+              INVENTOR_LISTING_PREFIX . 'inside_view_location_heading', true); ?>
             <?php $inside_view_pitch = get_post_meta(get_the_ID(),
-              INVENTOR_LISTING_PREFIX.'inside_view_location_pitch', true); ?>
-            <?php $inside_view_zoom = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX.'inside_view_location_zoom',
+              INVENTOR_LISTING_PREFIX . 'inside_view_location_pitch', true); ?>
+            <?php $inside_view_zoom = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX . 'inside_view_location_zoom',
               true); ?>
             <div role="tabpanel" class="tab-pane fade<?php echo (empty($map) && empty($street_view)) ? ' in active'
               : ''; ?>" id="inside-view-panel">

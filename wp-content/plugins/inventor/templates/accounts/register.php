@@ -1,11 +1,11 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
 ?>
 
 <?php if (get_option('users_can_register')) : ?>
-  <?php if (!is_user_logged_in()) : ?>
+  <?php if ( ! is_user_logged_in()) : ?>
     <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>" class="register-form">
       <div class="form-group">
         <label for="register-form-name"><?php echo __('Username', 'inventor'); ?></label>
@@ -25,7 +25,7 @@
       </div>
       <?php $terms = get_theme_mod('inventor_general_terms_and_conditions_page', false); ?>
 
-      <?php if (!empty($terms)) : ?>
+      <?php if ( ! empty($terms)) : ?>
         <div class="form-group terms-conditions-input">
           <div class="checkbox">
             <label for="register-form-conditions">

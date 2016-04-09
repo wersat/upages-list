@@ -7,12 +7,12 @@
       <?php else : ?>
         <?php echo wp_kses(get_avatar($review), wp_kses_allowed_html('post')); ?>
       <?php endif; ?>
-    </div><!-- /.review-image -->
+    </div>
     <div class="review-inner">
       <?php if ($review->comment_approved == '0') : ?>
         <div class="alert alert-info review-awaiting-moderation">
           <?php echo __('Your review is awaiting moderation.', 'inventor-reviews'); ?>
-        </div><!-- /.review-awaiting-moderation -->
+        </div>
       <?php endif; ?>
       <div class="review-header">
         <h2><?php comment_author(); ?></h2>
@@ -49,9 +49,9 @@
                               :</strong> <?php echo esc_attr($rating); ?>
                           <span class="separator">/</span> 5
                         </span>
-          </div><!-- /.review-rating-wrapper -->
+          </div>
         <?php endif; ?>
-      </div><!-- /.review-header -->
+      </div>
       <?php $pros = get_comment_meta(get_comment_ID(), 'pros', true); ?>
       <?php $cons = get_comment_meta(get_comment_ID(), 'cons', true); ?>
 
@@ -62,20 +62,20 @@
               <div class="review-pros">
                 <div class="review-comment-subtitle">
                   <strong><?php echo esc_attr__('Pros', 'inventor-reviews'); ?></strong>
-                </div><!-- /.review-comment-subtitle -->
+                </div>
                 <p><?php echo esc_attr($pros); ?></p>
-              </div><!-- /.review-pros -->
+              </div>
             <?php endif; ?>
             <?php if ( ! empty($cons)) : ?>
               <div class="review-cons">
                 <div class="review-comment-subtitle">
                   <strong><?php echo esc_attr__('Cons', 'inventor-reviews'); ?></strong>
-                </div><!-- /.review-comment-subtitle -->
+                </div>
                 <p><?php echo esc_attr($cons); ?></p>
-              </div><!-- /.review-cons -->
+              </div>
             <?php endif; ?>
-          </div><!-- /.review-content -->
-        </div><!-- /.review-content-wrapper -->
+          </div>
+        </div>
       <?php else : ?>
         <?php comment_text(); ?>
       <?php endif; ?>
@@ -86,7 +86,7 @@
           <a href="<?php echo wp_kses($image, wp_kses_allowed_html('post')); ?>">
             <img src="<?php echo wp_kses($image, wp_kses_allowed_html('post')); ?>">
           </a>
-        </div><!-- /.review-attachment -->
+        </div>
       <?php endif; ?>
-    </div><!-- /.review-inner -->
-  </div><!-- /.review -->
+    </div>
+  </div>

@@ -1,5 +1,5 @@
-<?php $meals = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX.'food_menu_group', true); ?>
-<?php if (!empty($meals)) : ?>
+<?php $meals = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX . 'food_menu_group', true); ?>
+<?php if ( ! empty($meals)) : ?>
   <div class="listing-detail-section" id="listing-detail-section-meals-and-drinks">
     <h2 class="page-header"><?php echo $section_title; ?></h2>
     <div class="listing-detail-food-wrapper">

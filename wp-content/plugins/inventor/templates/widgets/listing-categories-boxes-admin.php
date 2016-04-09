@@ -1,11 +1,11 @@
 <?php
-  if (!defined('ABSPATH')) {
-      exit;
+  if ( ! defined('ABSPATH')) {
+    exit;
   }
-  $title = !empty($instance['title']) ? $instance['title'] : '';
-  $description = !empty($instance['description']) ? $instance['description'] : '';
-  $listing_categories = !empty($instance['listing_categories']) ? $instance['listing_categories'] : [];
-  $per_row = !empty($instance['per_row']) ? $instance['per_row'] : 3;
+  $title              = ! empty($instance['title']) ? $instance['title'] : '';
+  $description        = ! empty($instance['description']) ? $instance['description'] : '';
+  $listing_categories = ! empty($instance['listing_categories']) ? $instance['listing_categories'] : [];
+  $per_row            = ! empty($instance['per_row']) ? $instance['per_row'] : 3;
 ?>
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">

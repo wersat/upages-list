@@ -11,7 +11,7 @@
   $per_row     = ! empty($instance['per_row']) ? $instance['per_row'] : 3;
   $classes     = ! empty($instance['classes']) ? $instance['classes'] : '';
 ?>
-<!-- TITLE -->
+
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">
     <?php echo __('Title', 'inventor-testimonials'); ?>
@@ -22,7 +22,7 @@
          type="text"
          value="<?php echo esc_attr($title); ?>">
 </p>
-<!-- DESCRIPTION -->
+
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('description')); ?>">
     <?php echo __('Description', 'inventor-testimonials'); ?>
@@ -33,7 +33,7 @@
             id="<?php echo esc_attr($this->get_field_id('description')); ?>"
             name="<?php echo esc_attr($this->get_field_name('description')); ?>"><?php echo esc_attr($description); ?></textarea>
 </p>
-<!-- COUNT -->
+
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('count')); ?>">
     <?php echo __('Count', 'inventor-testimonials'); ?>

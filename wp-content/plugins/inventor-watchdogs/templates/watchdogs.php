@@ -3,9 +3,9 @@
     <?php while (have_posts()) : the_post(); ?>
       <div class="listing-container">
         <?php echo Inventor_Template_Loader::load('watchdogs-row', [], $plugin_dir = INVENTOR_WATCHDOGS_DIR); ?>
-      </div><!-- /.listing-container -->
+      </div>
     <?php endwhile; ?>
-  </div><!-- /.listings-row -->
+  </div>
   <?php the_posts_pagination([
     'prev_text' => __('Previous', 'inventor-watchdogs'),
     'next_text' => __('Next', 'inventor-watchdogs'),

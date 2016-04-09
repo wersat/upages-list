@@ -21,5 +21,5 @@
             ? $i : $i . '+'; ?></option>
       <?php endfor; ?>
     </select>
-  </div><!-- /.form-group -->
+  </div>
 <?php endif; ?>

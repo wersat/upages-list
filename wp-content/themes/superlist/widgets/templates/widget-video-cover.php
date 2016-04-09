@@ -45,7 +45,7 @@
 
     <?php if ( ! empty($instance['filter'])) : ?>
       <div class="video-cover-filter">
-        <?php include Inventor_Template_Loader::locate('widgets/filter-form'); ?>
+        <?php include INVENTOR_TPL_WIDGETS_DIR . '/filter-form.php'; ?>
       </div>
     <?php endif; ?>
   </div>
