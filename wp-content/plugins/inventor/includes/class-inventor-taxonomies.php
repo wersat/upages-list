@@ -25,24 +25,24 @@
          */
         public static function includes()
         {
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-colors.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-locations.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-listing-categories.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-car-models.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-car-body-styles.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-car-engine-types.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-car-transmissions.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-dating-groups.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-dating-interests.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-dating-statuses.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-education-levels.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-education-subjects.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-event-types.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-food-kinds.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-hotel-classes.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-pet-animals.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-shopping-categories.php';
-            require_once INVENTOR_DIR.'includes/taxonomies/class-inventor-taxonomy-travel-activities.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-colors.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-locations.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-listing-categories.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-car-models.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-car-body-styles.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-car-engine-types.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-car-transmissions.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-dating-groups.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-dating-interests.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-dating-statuses.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-education-levels.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-education-subjects.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-event-types.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-food-kinds.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-hotel-classes.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-pet-animals.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-shopping-categories.php';
+            require_once INVENTOR_TAX_DIR.'/class-inventor-taxonomy-travel-activities.php';
         }
 
         /**

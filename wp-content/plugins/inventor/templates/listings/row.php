@@ -1,6 +1,6 @@
 <?php $featured = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX.'featured', true); ?>
 <?php $reduced = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX.'reduced', true); ?>
-<div class="listing-row <?php if (!empty($featured) && 'on' == $featured) : ?>listing-featured<?php endif; ?> <?php if (!empty($reduced) && 'on' == $reduced) : ?>listing-reduced<?php endif; ?>">
+<div class="listing-row <?php if (!empty($featured) && 'on' === $featured) : ?>listing-featured<?php endif; ?> <?php if (!empty($reduced) && 'on' === $reduced) : ?>listing-reduced<?php endif; ?>">
   <div class="listing-row-image">
     <?php if (has_post_thumbnail()) : ?>
       <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'thumbnail'); ?>

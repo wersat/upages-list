@@ -51,7 +51,7 @@
             $key = empty($browser_key) ? '' : 'key='.$browser_key.'&';
             wp_enqueue_script('google-maps',
                 '//maps.googleapis.com/maps/api/js?'.$key.'libraries=weather,geometry,visualization,places,drawing');
-            if ('widgets.php' == $hook) {
+            if ('widgets.php' === $hook) {
                 wp_enqueue_style('wp-color-picker');
                 wp_enqueue_script('wp-color-picker');
             }

@@ -65,7 +65,7 @@
              */
             public function load_plugin_textdomain()
             {
-                load_plugin_textdomain('inventor-claims', false, plugin_basename(dirname(__FILE__)) . '/languages');
+                load_plugin_textdomain('inventor-claims', false, plugin_basename(__FILE__) . '/languages');
             }
         }
 

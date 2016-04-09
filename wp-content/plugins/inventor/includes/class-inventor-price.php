@@ -38,7 +38,7 @@
          */
         public static function get_price($post_id = null)
         {
-            if (null == $post_id) {
+            if (null === $post_id) {
                 $post_id = get_the_ID();
             }
             $custom = get_post_meta($post_id, INVENTOR_LISTING_PREFIX.'price_custom', true);
@@ -131,7 +131,7 @@
             $dec_point = !empty($currencies[$currency_index]['money_dec_point'])
                 ? $currencies[$currency_index]['money_dec_point'] : '.';
             $thousands_separator = (!empty($currencies[$currency_index]['money_thousands_separator'])
-                                     || (isset($currencies[$currency_index]['money_thousands_separator']) && $currencies[$currency_index]['money_thousands_separator'] == ''))
+                                     || (isset($currencies[$currency_index]['money_thousands_separator']) && $currencies[$currency_index]['money_thousands_separator'] === ''))
                 ? $currencies[$currency_index]['money_thousands_separator'] : ',';
 
             return [

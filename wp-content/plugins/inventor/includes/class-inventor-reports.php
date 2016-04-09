@@ -94,7 +94,7 @@
             foreach ($emails as $email) {
                 $status = wp_mail($email, $subject, $body, $headers);
             }
-            if (!empty($status) && 1 == $status) {
+            if (!empty($status) && 1 === $status) {
                 self::save_report($listing->ID, get_current_user_id(), $reason, $name, $email, $message);
                 $_SESSION['messages'][] = [
                     'success',

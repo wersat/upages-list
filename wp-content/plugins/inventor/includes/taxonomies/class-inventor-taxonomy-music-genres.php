@@ -63,7 +63,7 @@
         {
             global $current_screen;
             $taxonomy = $current_screen->taxonomy;
-            if ('music_genres' == $taxonomy) {
+            if ('music_genres' === $taxonomy) {
                 return 'lexicon';
             }
 

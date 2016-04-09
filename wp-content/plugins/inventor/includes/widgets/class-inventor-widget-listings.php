@@ -62,21 +62,21 @@
                 ],
             ];
             if (!empty($instance['order'])) {
-                if ('rand' == $instance['order']) {
+                if ('rand' === $instance['order']) {
                     $query['orderby'] = 'rand';
                 }
-                if ('ids' == $instance['order']) {
+                if ('ids' === $instance['order']) {
                     $query['orderby'] = 'post__in';
                 }
             }
             if (!empty($instance['attribute'])) {
-                if ('featured' == $instance['attribute']) {
+                if ('featured' === $instance['attribute']) {
                     $query['meta_query'][] = [
                         'key' => INVENTOR_LISTING_PREFIX.'featured',
                         'value' => 'on',
                         'compare' => '=',
                     ];
-                } elseif ('reduced' == $instance['attribute']) {
+                } elseif ('reduced' === $instance['attribute']) {
                     $query['meta_query'][] = [
                         'key' => INVENTOR_LISTING_PREFIX.'reduced',
                         'value' => 'on',

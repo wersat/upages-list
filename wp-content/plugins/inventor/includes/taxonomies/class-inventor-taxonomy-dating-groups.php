@@ -63,7 +63,7 @@
         {
             global $current_screen;
             $taxonomy = $current_screen->taxonomy;
-            if ('dating_groups' == $taxonomy) {
+            if ('dating_groups' === $taxonomy) {
                 return 'lexicon';
             }
 

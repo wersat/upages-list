@@ -19,7 +19,7 @@
         public function __construct()
         {
             parent::__construct('boxes', __('Boxes', 'superlist'), [
-                    'description' => __('Text boxes with icons.', 'superlist'),
+                    'description' => __('Text boxes with icons.', 'superlist')
                 ]);
         }
 

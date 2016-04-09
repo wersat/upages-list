@@ -64,7 +64,7 @@
       <?php $maps = Inventor_Google_Map_Styles::styles(); ?>
       <?php if (is_array($maps)) : ?>
         <?php foreach ($maps as $map) : ?>
-          <option <?php if ($style == $map['slug']) : ?>selected="selected" <?php endif; ?>value="<?php echo esc_attr($map['slug']); ?>"><?php echo esc_html($map['title']); ?></option>
+          <option <?php if ($style === $map['slug']) : ?>selected="selected" <?php endif; ?>value="<?php echo esc_attr($map['slug']); ?>"><?php echo esc_html($map['title']); ?></option>
         <?php endforeach; ?>
       <?php endif; ?>
     </select>

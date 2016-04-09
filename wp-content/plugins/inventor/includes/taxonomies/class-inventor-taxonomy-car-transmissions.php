@@ -65,7 +65,7 @@
         {
             global $current_screen;
             $taxonomy = $current_screen->taxonomy;
-            if ('car_transmissions' == $taxonomy) {
+            if ('car_transmissions' === $taxonomy) {
                 return 'lexicon';
             }
 

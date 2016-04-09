@@ -6,7 +6,7 @@
   $reference = $title;
 ?>
 
-<?php if ('package' == $payment_type) : ?>
+<?php if ('package' === $payment_type) : ?>
   <?php $reference = sprintf(__('for package "%s"', 'inventor'), $title); ?>
 <?php endif; ?>
 <div class="wire-transfer clearfix">

@@ -56,7 +56,7 @@
              */
             public function load_plugin_textdomain()
             {
-                load_plugin_textdomain('inventor-coupons', false, plugin_basename(dirname(__FILE__)) . '/languages');
+                load_plugin_textdomain('inventor-coupons', false, plugin_basename(__FILE__) . '/languages');
             }
         }
 

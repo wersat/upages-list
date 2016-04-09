@@ -11,12 +11,10 @@
      * License: GNU General Public License v3.0
      * License URI: http://www.gnu.org/licenses/gpl-3.0.html.
      */
-    if (!class_exists('Inventor')) {
+    if ( ! class_exists('Inventor')) {
         /**
          * Class Inventor.
-         *
          * @class   Inventor
-         *
          * @author  Pragmatic Mates
          */
         final class inventor
@@ -40,15 +38,23 @@
              */
             public function constants()
             {
-                define('INVENTOR_DIR', plugin_dir_path(__FILE__));
+                define('INVENTOR_DIR', __DIR__);
+                define('INVENTOR_INC_DIR', INVENTOR_DIR . '/includes');
+                define('INVENTOR_ADM_DIR', INVENTOR_INC_DIR . '/admin');
+                define('INVENTOR_CUSTOM_DIR', INVENTOR_INC_DIR . '/customizations');
+                define('INVENTOR_FIELD_DIR', INVENTOR_INC_DIR . '/field-types');
+                define('INVENTOR_POST_TYPES_DIR', INVENTOR_INC_DIR . '/post-types');
+                define('INVENTOR_TAX_DIR', INVENTOR_INC_DIR . '/taxonomies');
+                define('INVENTOR_WIDGETS_DIR', INVENTOR_INC_DIR . '/widgets');
+                define('INVENTOR_LIB_DIR', INVENTOR_DIR . '/libraries');
                 define('INVENTOR_LISTING_PREFIX', 'listing_');
                 define('INVENTOR_TRANSACTION_PREFIX', 'transaction_');
                 define('INVENTOR_REPORT_PREFIX', 'report_');
                 define('INVENTOR_USER_PREFIX', 'user_');
                 define('INVENTOR_MAIL_ACTION_REPORTED_LISTING', 'REPORTED_LISTING');
                 if (defined('INVENTOR_API_DEBUG_URL')) {
-                    define('INVENTOR_API_PLUGINS_URL', INVENTOR_API_DEBUG_URL.'/api/v1/plugins/');
-                    define('INVENTOR_API_VERIFY_URL', INVENTOR_API_DEBUG_URL.'/api/v1/verify/');
+                    define('INVENTOR_API_PLUGINS_URL', INVENTOR_API_DEBUG_URL . '/api/v1/plugins/');
+                    define('INVENTOR_API_VERIFY_URL', INVENTOR_API_DEBUG_URL . '/api/v1/verify/');
                 } else {
                     define('INVENTOR_API_PLUGINS_URL', 'http://inventorwp.com/api/v1/plugins/');
                     define('INVENTOR_API_VERIFY_URL', 'http://inventorwp.com/api/v1/verify/');
@@ -60,28 +66,28 @@
              */
             public function includes()
             {
-                require_once INVENTOR_DIR.'includes/class-inventor-scripts.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-template-loader.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-metaboxes.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-post-types.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-field-types.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-taxonomies.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-price.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-widgets.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-filter.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-utilities.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-query.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-shortcodes.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-submission.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-billing.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-wire-transfer.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-reports.php';
-                require_once INVENTOR_DIR.'includes/class-inventor-customizations.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-scripts.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-template-loader.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-metaboxes.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-post-types.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-field-types.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-taxonomies.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-price.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-widgets.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-filter.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-utilities.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-query.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-shortcodes.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-submission.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-billing.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-wire-transfer.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-reports.php';
+                require_once INVENTOR_INC_DIR . '/class-inventor-customizations.php';
                 // Admin
                 if (is_admin()) {
-                    require_once INVENTOR_DIR.'includes/admin/class-inventor-admin-menu.php';
-                    require_once INVENTOR_DIR.'includes/admin/class-inventor-admin-notices.php';
-                    require_once INVENTOR_DIR.'includes/admin/class-inventor-admin-updates.php';
+                    require_once INVENTOR_ADM_DIR . '/class-inventor-admin-menu.php';
+                    require_once INVENTOR_ADM_DIR . '/class-inventor-admin-notices.php';
+                    require_once INVENTOR_ADM_DIR . '/class-inventor-admin-updates.php';
                 }
             }
 
@@ -90,11 +96,11 @@
              */
             public static function libraries()
             {
-                require_once INVENTOR_DIR.'libraries/class-tgm-plugin-activation.php';
-                require_once INVENTOR_DIR.'libraries/cmb_field_map/cmb-field-map.php';
-                require_once INVENTOR_DIR.'libraries/cmb_field_street_view/cmb-field-street-view.php';
-                require_once INVENTOR_DIR.'libraries/cmb_field_taxonomy_multicheck_hierarchy/cmb-field-taxonomy-multicheck-hierarchy.php';
-                require_once INVENTOR_DIR.'libraries/cmb_taxonomy_metadata/Taxonomy_MetaData_CMB2.php';
+                require_once INVENTOR_LIB_DIR . '/class-tgm-plugin-activation.php';
+                require_once INVENTOR_LIB_DIR . '/cmb_field_map/cmb-field-map.php';
+                require_once INVENTOR_LIB_DIR . '/cmb_field_street_view/cmb-field-street-view.php';
+                require_once INVENTOR_LIB_DIR . '/cmb_field_taxonomy_multicheck_hierarchy/cmb-field-taxonomy-multicheck-hierarchy.php';
+                require_once INVENTOR_LIB_DIR . '/cmb_taxonomy_metadata/Taxonomy_MetaData_CMB2.php';
             }
 
             /**
@@ -102,7 +108,7 @@
              */
             public function load_plugin_textdomain()
             {
-                load_plugin_textdomain('inventor', false, plugin_basename(dirname(__FILE__)).'/languages');
+                load_plugin_textdomain('inventor', false, plugin_basename(__FILE__) . '/languages');
             }
 
             /**
@@ -112,8 +118,8 @@
             {
                 $plugins = [
                     [
-                        'name' => 'CMB2',
-                        'slug' => 'cmb2',
+                        'name'     => 'CMB2',
+                        'slug'     => 'cmb2',
                         'required' => true,
                     ],
                 ];
@@ -125,7 +131,7 @@
              */
             public static function start_session()
             {
-                if (!session_id()) {
+                if ( ! session_id()) {
                     session_start();
                 }
             }
@@ -135,10 +141,10 @@
              */
             public static function plugin_order()
             {
-                $wp_path_to_this_file = preg_replace('/(.*)plugins\/(.*)$/', WP_PLUGIN_DIR.'/$2', __FILE__);
-                $this_plugin = plugin_basename(trim($wp_path_to_this_file));
-                $active_plugins = get_option('active_plugins');
-                $this_plugin_key = array_search($this_plugin, $active_plugins);
+                $wp_path_to_this_file = preg_replace('/(.*)plugins\/(.*)$/', WP_PLUGIN_DIR . '/$2', __FILE__);
+                $this_plugin          = plugin_basename(trim($wp_path_to_this_file));
+                $active_plugins       = get_option('active_plugins');
+                $this_plugin_key      = array_search($this_plugin, $active_plugins);
                 if ($this_plugin_key) {
                     array_splice($active_plugins, $this_plugin_key, 1);
                     array_unshift($active_plugins, $this_plugin);

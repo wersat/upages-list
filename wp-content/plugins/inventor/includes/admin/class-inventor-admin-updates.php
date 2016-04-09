@@ -33,7 +33,7 @@
         public static function check_update($transient)
         {
             $purchase_code = get_theme_mod('inventor_purchase_code', null);
-            if (count(self::$plugins) == 0) {
+            if (count(self::$plugins) === 0) {
                 if (!empty($purchase_code)) {
                     $response = wp_remote_get(INVENTOR_API_PLUGINS_URL.'?purchase-code='.$purchase_code);
                 } else {
@@ -118,7 +118,7 @@
             }
             $result = json_decode($response['body']);
             // Purchase code is valid
-            if ('1' == $result->valid) {
+            if ('1' === $result->valid) {
                 set_theme_mod('inventor_purchase_code', $_GET['purchase-code']);
                 echo json_encode([
                     'valid' => true,

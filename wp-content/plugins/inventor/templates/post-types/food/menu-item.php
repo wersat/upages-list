@@ -9,7 +9,7 @@
   <div class="listing-detail-food-photo" style="background-image: url('<?php echo $image_url; ?>')"></div>
   <div class="listing-detail-food-content">
     <?php if (!empty($meal[INVENTOR_LISTING_PREFIX.'food_menu_serving'])) : ?>
-      <div class="listing-detail-food-serving <?php if (date('Ymd') == date('Ymd',
+      <div class="listing-detail-food-serving <?php if (date('Ymd') === date('Ymd',
           $meal[INVENTOR_LISTING_PREFIX.'food_menu_serving'])
       ) : ?>today<?php endif; ?>">
         <?php echo date(get_option('date_format'), $meal[INVENTOR_LISTING_PREFIX.'food_menu_serving']); ?>

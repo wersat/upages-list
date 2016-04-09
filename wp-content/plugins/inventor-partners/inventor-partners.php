@@ -66,7 +66,7 @@ if (!class_exists('Inventor_Partners') && class_exists('Inventor')) {
          */
         public function load_plugin_textdomain()
         {
-            load_plugin_textdomain('inventor-partners', false, plugin_basename(dirname(__FILE__)).'/languages');
+            load_plugin_textdomain('inventor-partners', false, plugin_basename(__FILE__).'/languages');
         }
     }
 

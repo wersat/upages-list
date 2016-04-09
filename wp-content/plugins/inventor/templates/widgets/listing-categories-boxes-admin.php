@@ -50,11 +50,11 @@
   </label>
   <select id="<?php echo esc_attr($this->get_field_id('per_row')); ?>"
           name="<?php echo esc_attr($this->get_field_name('per_row')); ?>">
-    <option value="1" <?php echo ('1' == $per_row) ? 'selected="selected"' : ''; ?>>1</option>
-    <option value="2" <?php echo ('2' == $per_row) ? 'selected="selected"' : ''; ?>>2</option>
-    <option value="3" <?php echo ('3' == $per_row) ? 'selected="selected"' : ''; ?>>3</option>
-    <option value="4" <?php echo ('4' == $per_row) ? 'selected="selected"' : ''; ?>>4</option>
-    <option value="6" <?php echo ('5' == $per_row) ? 'selected="selected"' : ''; ?>>5</option>
-    <option value="6" <?php echo ('6' == $per_row) ? 'selected="selected"' : ''; ?>>6</option>
+    <option value="1" <?php echo ('1' === $per_row) ? 'selected="selected"' : ''; ?>>1</option>
+    <option value="2" <?php echo ('2' === $per_row) ? 'selected="selected"' : ''; ?>>2</option>
+    <option value="3" <?php echo ('3' === $per_row) ? 'selected="selected"' : ''; ?>>3</option>
+    <option value="4" <?php echo ('4' === $per_row) ? 'selected="selected"' : ''; ?>>4</option>
+    <option value="6" <?php echo ('5' === $per_row) ? 'selected="selected"' : ''; ?>>5</option>
+    <option value="6" <?php echo ('6' === $per_row) ? 'selected="selected"' : ''; ?>>6</option>
   </select>
 </p>

@@ -5,7 +5,7 @@
     <?php $found = false; ?>
 
     <?php foreach ($steps as $step) : ?>
-      <li class="submission-step <?php if ($found === false || !empty($_GET['id'])) : ?>processed<?php else : ?>awaiting<?php endif; ?> <?php if ($step['id'] == $current_step) :
+      <li class="submission-step <?php if ($found === false || !empty($_GET['id'])) : ?>processed<?php else : ?>awaiting<?php endif; ?> <?php if ($step['id'] === $current_step) :
         $found = true; ?>current<?php endif; ?>">
         <?php if ($clickable) : ?>
         <a href="?type=<?php echo esc_attr($post_type); ?>&step=<?php echo esc_attr($step['id']); ?><?php if (!empty($_GET['id'])) {
@@ -20,7 +20,7 @@
           </a>
           <?php ++$index; ?>
       </li>
-      <?php if ($step['id'] == $current_step && empty($_GET['id'])) : ?>
+      <?php if ($step['id'] === $current_step && empty($_GET['id'])) : ?>
         <?php $clickable = false; ?>
       <?php endif; ?>
     <?php endforeach; ?>

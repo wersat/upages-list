@@ -53,7 +53,7 @@
             public function load_plugin_textdomain()
             {
                 load_plugin_textdomain('inventor-listing-slider', false,
-                    plugin_basename(dirname(__FILE__)) . '/languages');
+                    plugin_basename(__FILE__) . '/languages');
             }
         }
 

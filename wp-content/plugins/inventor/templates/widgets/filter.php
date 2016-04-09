@@ -33,7 +33,7 @@
     <?php $matches = $wp_query->found_posts; ?>
     <?php $post_type = $wp_query->query_vars['post_type']; ?>
     <?php $total = Inventor_Post_Types::count_post_types($post_type); ?>
-    <?php if (Inventor_Filter::has_filter(true) && $total != 0 && $matches != 0 and $total != $matches) : ?>
+    <?php if (Inventor_Filter::has_filter(true) && $total !== 0 && $matches !== 0 and $total !== $matches) : ?>
       <h3 class="filter-result-numbers">
         <?php if (!empty($instance['result_numbers_total'])) : ?>
           <?php printf(_n('<span class="match">%d</span> listing from <span class="total">%d</span> matches your search criteria',

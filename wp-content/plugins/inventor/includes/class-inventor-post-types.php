@@ -49,20 +49,20 @@
          */
         public static function includes()
         {
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-transaction.php';
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-report.php';
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-user.php';
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-listing.php';
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-business.php';
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-car.php';
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-dating.php';
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-education.php';
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-event.php';
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-food.php';
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-hotel.php';
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-pet.php';
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-shopping.php';
-            require_once INVENTOR_DIR.'includes/post-types/class-inventor-post-type-travel.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-transaction.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-report.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-user.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-listing.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-business.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-car.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-dating.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-education.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-event.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-food.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-hotel.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-pet.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-shopping.php';
+            require_once INVENTOR_POST_TYPES_DIR.'/class-inventor-post-type-travel.php';
         }
 
         /**
@@ -248,7 +248,7 @@
                     $opening = "{$time_from} - {$time_to}";
                 }
             }
-            $trim_characters = $time_from == '' && $time_to == '' ? ' -' : ' ';
+            $trim_characters = $time_from === '' && $time_to === '' ? ' -' : ' ';
             trim($opening, $trim_characters);
 
             return $opening;
@@ -281,14 +281,14 @@
             // week day
             $today_index = date('N');
             $week_day = $week[$today_index - 1];
-            if ($day != null && $day != $week_day) {
+            if ($day !== null && $day !== $week_day) {
                 $status = 'other-day';
             } else {
                 // default status
                 $status = 'closed';
                 // find opening hours for today
                 foreach ($opening_hours as $opening_day) {
-                    if ($opening_day['listing_day'] == $week_day) {
+                    if ($opening_day['listing_day'] === $week_day) {
                         if (!empty($opening_day['listing_time_from']) && !empty($opening_day['listing_time_to'])) {
                             // if opening hours is set, check current time
                             $time_from = strtotime($opening_day['listing_time_from']);
@@ -317,7 +317,7 @@
          */
         public static function opening_hours_visible($listing_id = null)
         {
-            if ($listing_id == null) {
+            if ($listing_id === null) {
                 $listing_id = get_the_ID();
             }
             $opening_hours = get_post_meta($listing_id, INVENTOR_LISTING_PREFIX.'opening_hours', true);
@@ -362,13 +362,13 @@
                 ) {
                     continue;
                 }
-                if (!empty($meta_box->meta_box['skip']) && true == $meta_box->meta_box['skip']) {
+                if (!empty($meta_box->meta_box['skip']) && true === $meta_box->meta_box['skip']) {
                     continue;
                 }
                 $fields = $meta_box->meta_box['fields'];
                 foreach ($fields as $field) {
                     $value = get_post_meta($post_id, $field['id'], true);
-                    if (!empty($field['skip']) && true == $field['skip']) {
+                    if (!empty($field['skip']) && true === $field['skip']) {
                         continue;
                     }
                     // Select
@@ -390,7 +390,7 @@
                             $index = 0;
                             foreach ($terms as $term) {
                                 $value .= $term->name;
-                                if ($index + 1 != $count) {
+                                if ($index + 1 !== $count) {
                                     $value .= ', ';
                                 }
                                 ++$index;
@@ -401,8 +401,8 @@
                         continue;
                     }
                     // Taxonomy multicheck hierarchy for locations
-                    if ('taxonomy_multicheck_hierarchy' == $field['type']) {
-                        if ('locations' == $field['taxonomy']) {
+                    if ('taxonomy_multicheck_hierarchy' === $field['type']) {
+                        if ('locations' === $field['taxonomy']) {
                             $value = Inventor_Query::get_listing_location_name($post_id);
                         }
                     }
@@ -413,41 +413,41 @@
                         // TODO: it won't work for fields defined in source code. we need to pick 'options' attribute from field definition
                     }
                     // Email
-                    if ('text_email' == $field['type']) {
+                    if ('text_email' === $field['type']) {
                         $value = '<a href="mailto:'.$value.'">'.$value.'</a>';
                     }
                     // URL
-                    if ('text_url' == $field['type']) {
+                    if ('text_url' === $field['type']) {
                         $value = '<a href="'.$value.'">'.str_replace(['http://', 'https://'], '',
                                 $value).'</a>';
                     }
                     // Money
-                    if ('text_money' == $field['type']) {
+                    if ('text_money' === $field['type']) {
                         $value = Inventor_Price::format_price($value);
                     }
                     // Checkbox
-                    if ('checkbox' == $field['type']) {
-                        if ('on' == $value) {
+                    if ('checkbox' === $field['type']) {
+                        if ('on' === $value) {
                             $value = __('Yes', 'inventor');
                         } else {
                             $value = __('No', 'inventor');
                         }
                     }
                     // Text Date Timestamp
-                    if ('text_date_timestamp' == $field['type']) {
+                    if ('text_date_timestamp' === $field['type']) {
                         $value = date_i18n(get_option('date_format'), $value);
                     }
-                    if ('text_datetime_timestamp' == $field['type']) {
+                    if ('text_datetime_timestamp' === $field['type']) {
                         $date = date_i18n(get_option('date_format'), $value);
                         $time = date_i18n(get_option('time_format'), $value);
                         $value = $date.' '.$time;
                     }
                     // ColorPicker
-                    if ('colorpicker' == $field['type']) {
+                    if ('colorpicker' === $field['type']) {
                         $value = sprintf('<span class="listing-color" style="background-color: %s"></span>', $value);
                     }
                     // Weight
-                    if (INVENTOR_LISTING_PREFIX.'weight' == $field['id']) {
+                    if (INVENTOR_LISTING_PREFIX.'weight' === $field['id']) {
                         $weight_unit = get_theme_mod('inventor_measurement_weight_unit', 'lbs');
                         $value = sprintf('%s %s', $value, $weight_unit);
                     }

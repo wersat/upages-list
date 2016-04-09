@@ -167,7 +167,7 @@
             }
             $steps = Inventor_Submission::get_submission_steps($post_type);
             // No steps defined for current post type
-            if (is_array($steps) && count($steps) == 0) {
+            if (is_array($steps) && count($steps) === 0) {
                 return Inventor_Template_Loader::load('submissions/steps-not-found');
             }
             $current_step = !empty($_GET['step']) ? $_GET['step'] : $steps[0]['id'];

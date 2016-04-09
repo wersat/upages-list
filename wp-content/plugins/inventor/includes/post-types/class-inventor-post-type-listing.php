@@ -84,7 +84,7 @@
          */
         public static function show_all_listings($query)
         {
-            if (is_post_type_archive('listing') && $query->is_main_query() && !is_admin() && 'listing' == $query->query_vars['post_type']) {
+            if (is_post_type_archive('listing') && $query->is_main_query() && !is_admin() && 'listing' === $query->query_vars['post_type']) {
                 $query->set('post_type', Inventor_Post_Types::get_listing_post_types(true));
 
                 return $query;
@@ -140,7 +140,7 @@
             foreach ($emails as $email) {
                 $status = wp_mail($email, $subject, $message, $headers);
             }
-            $success = !empty($status) && 1 == $status;
+            $success = !empty($status) && 1 === $status;
             do_action('inventor_inquire_message_sent', $success, $_POST['post_id'], $_POST['name'], $_POST['email'],
                 $_POST['subject'], $_POST['date'], $_POST['message'], !empty($_POST['receive_author']),
                 !empty($_POST['receive_admin']), !empty($_POST['receive_listing_email']));

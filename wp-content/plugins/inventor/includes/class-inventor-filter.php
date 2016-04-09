@@ -311,7 +311,7 @@
             $radius_km = 6371;
             $radius_mi = 3959;
             $radius = $radius_mi;
-            if ('km' == get_theme_mod('inventor_measurement_distance_unit_long', 'mi')) {
+            if ('km' === get_theme_mod('inventor_measurement_distance_unit_long', 'mi')) {
                 $radius = $radius_km;
             }
             $sql

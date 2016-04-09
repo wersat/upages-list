@@ -58,7 +58,7 @@
             }
             if (!empty($_GET['id'])) {
                 $post = get_post($_GET['id']);
-                if ($post->post_author != get_current_user_id()) {
+                if ($post->post_author !== get_current_user_id()) {
                     $_SESSION['messages'][] = ['warning', __('You are not allowed to access this page.', 'inventor')];
                     wp_redirect('/');
                     exit();
@@ -78,7 +78,7 @@
         {
             $item = get_post($item_id);
             if (!empty($item->post_author)) {
-                if ($item->post_author == $user_id) {
+                if ($item->post_author === $user_id) {
                     return true;
                 }
             }

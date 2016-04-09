@@ -65,7 +65,7 @@
         {
             global $current_screen;
             $taxonomy = $current_screen->taxonomy;
-            if ('education_subjects' == $taxonomy) {
+            if ('education_subjects' === $taxonomy) {
                 return 'lexicon';
             }
 

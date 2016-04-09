@@ -181,13 +181,13 @@
         {
             $object_type = $sanitizer_object->field->object_type;
             $field_id = $sanitizer_object->field->args['id'];
-            if ($object_type != 'user') {
+            if ($object_type !== 'user') {
                 return $value;
             }
-            if ($field_id == INVENTOR_USER_PREFIX.'general_first_name') {
+            if ($field_id === INVENTOR_USER_PREFIX.'general_first_name') {
                 wp_update_user(['ID' => $object_id, 'first_name' => $value]);
             }
-            if ($field_id == INVENTOR_USER_PREFIX.'general_last_name') {
+            if ($field_id === INVENTOR_USER_PREFIX.'general_last_name') {
                 wp_update_user(['ID' => $object_id, 'last_name' => $value]);
             }
 
@@ -224,7 +224,7 @@
 
                 return;
             }
-            if ($new_password != $retype_password) {
+            if ($new_password !== $retype_password) {
                 $_SESSION['messages'][] = ['warning', __('New and retyped password are not same.', 'inventor')];
             }
             $user = wp_get_current_user();
@@ -273,7 +273,7 @@
             // if user logs in at login page, redirect him to after login page. Otherwise, redirect him back to previous URL.
             $protocol = is_ssl() ? 'https://' : 'http://';
             $current_url = $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-            $after_login_url = $current_url == $login_required_page_url ? $after_login_page_url : $current_url;
+            $after_login_url = $current_url === $login_required_page_url ? $after_login_page_url : $current_url;
             wp_redirect($after_login_url);
             exit();
         }
@@ -321,7 +321,7 @@
                 wp_redirect($_SERVER['HTTP_REFERER']);
                 exit();
             }
-            if ($_POST['password'] != $_POST['password_retype']) {
+            if ($_POST['password'] !== $_POST['password_retype']) {
                 $_SESSION['messages'][] = ['danger', __('Passwords must be same.', 'inventor')];
                 wp_redirect($_SERVER['HTTP_REFERER']);
                 exit();
@@ -332,7 +332,7 @@
                 wp_redirect($_SERVER['HTTP_REFERER']);
                 exit();
             }
-            if ($_POST['password'] != $_POST['password_retype']) {
+            if ($_POST['password'] !== $_POST['password_retype']) {
                 $_SESSION['messages'][] = ['danger', __('Passwords must be same.', 'inventor')];
                 wp_redirect($_SERVER['HTTP_REFERER']);
                 exit();
@@ -366,7 +366,7 @@
             // if user registers at registration page, redirect him to after register page. Otherwise, redirect him back to previous URL.
             $protocol = is_ssl() ? 'https://' : 'http://';
             $current_url = $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-            $after_register_url = $current_url == $registration_page_url ? $after_register_page_url : $current_url;
+            $after_register_url = $current_url === $registration_page_url ? $after_register_page_url : $current_url;
             wp_redirect($after_register_url);
             exit();
         }
@@ -397,7 +397,7 @@
             global $current_user;
             $and = wp_post_mime_type_where('');
             $count
-                 = $wpdb->get_results("SELECT post_mime_type, COUNT( * ) AS num_posts FROM $wpdb->posts WHERE post_type = 'attachment' AND post_status != 'trash' AND post_author = {$current_user->ID} $and GROUP BY post_mime_type",
+                 = $wpdb->get_results("SELECT post_mime_type, COUNT( * ) AS num_posts FROM $wpdb->posts WHERE post_type = 'attachment' AND post_status !== 'trash' AND post_author = {$current_user->ID} $and GROUP BY post_mime_type",
                 ARRAY_A);
             $counts = [];
             foreach ((array) $count as $row) {

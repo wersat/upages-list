@@ -69,7 +69,7 @@
             </div>
           </div>
         </div>
-        <?php if (0 == (($index + 1) % $instance['per_row']) && 1 != $instance['per_row']) : ?>
+        <?php if (0 === (($index + 1) % $instance['per_row']) && 1 !== $instance['per_row']) : ?>
       </div>
       <div class="listing-categories-boxes-row">
         <?php endif; ?>

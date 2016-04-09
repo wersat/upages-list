@@ -42,7 +42,7 @@
       <h2><?php echo __('Billing details', 'inventor') ?></h2>
       <?php echo Inventor_Template_Loader::load('payment/billing-details'); ?>
 
-      <?php if (!empty($price) && $price != 0) : ?>
+      <?php if (!empty($price) && $price !== 0) : ?>
         <h2><?php echo __('Payment gateway', 'inventor') ?></h2>
         <input type="hidden" name="price" value="<?php echo esc_attr($price); ?>">
         <?php $payment_gateways = apply_filters('inventor_payment_gateways', []); ?>
@@ -53,7 +53,7 @@
               <div class="gateway-header">
                 <div class="radio-wrapper">
                   <label for="gateway-<?php echo esc_attr($gateway['id']); ?>">
-                    <input type="radio" id="gateway-<?php echo esc_attr($gateway['id']); ?>" name="payment_gateway" value="<?php echo esc_attr($gateway['id']); ?>" data-proceed="<?php var_export($gateway['proceed']); ?>" <?php if (!empty($gateway['submit_title'])) : ?>data-submit-title="<?php echo $gateway['submit_title']; ?>"<?php endif; ?> <?php if ($payment_gateway == $gateway['id']) : ?>checked="checked"<?php endif; ?>>
+                    <input type="radio" id="gateway-<?php echo esc_attr($gateway['id']); ?>" name="payment_gateway" value="<?php echo esc_attr($gateway['id']); ?>" data-proceed="<?php var_export($gateway['proceed']); ?>" <?php if (!empty($gateway['submit_title'])) : ?>data-submit-title="<?php echo $gateway['submit_title']; ?>"<?php endif; ?> <?php if ($payment_gateway === $gateway['id']) : ?>checked="checked"<?php endif; ?>>
                     <span><?php echo esc_attr($gateway['title']); ?></span>
                   </label>
                 </div>

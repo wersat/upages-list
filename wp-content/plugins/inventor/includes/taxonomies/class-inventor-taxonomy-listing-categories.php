@@ -64,7 +64,7 @@
         {
             global $current_screen;
             $taxonomy = $current_screen->taxonomy;
-            if ('listing_categories' == $taxonomy) {
+            if ('listing_categories' === $taxonomy) {
                 return 'inventor';
             }
 

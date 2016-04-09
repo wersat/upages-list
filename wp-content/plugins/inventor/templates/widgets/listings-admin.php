@@ -63,12 +63,12 @@
   </label>
   <select id="<?php echo esc_attr($this->get_field_id('per_row')); ?>"
           name="<?php echo esc_attr($this->get_field_name('per_row')); ?>">
-    <option value="1" <?php echo ('1' == $per_row) ? 'selected="selected"' : ''; ?>>1</option>
-    <option value="2" <?php echo ('2' == $per_row) ? 'selected="selected"' : ''; ?>>2</option>
-    <option value="3" <?php echo ('3' == $per_row) ? 'selected="selected"' : ''; ?>>3</option>
-    <option value="4" <?php echo ('4' == $per_row) ? 'selected="selected"' : ''; ?>>4</option>
-    <option value="5" <?php echo ('5' == $per_row) ? 'selected="selected"' : ''; ?>>5</option>
-    <option value="6" <?php echo ('6' == $per_row) ? 'selected="selected"' : ''; ?>>6</option>
+    <option value="1" <?php echo ('1' === $per_row) ? 'selected="selected"' : ''; ?>>1</option>
+    <option value="2" <?php echo ('2' === $per_row) ? 'selected="selected"' : ''; ?>>2</option>
+    <option value="3" <?php echo ('3' === $per_row) ? 'selected="selected"' : ''; ?>>3</option>
+    <option value="4" <?php echo ('4' === $per_row) ? 'selected="selected"' : ''; ?>>4</option>
+    <option value="5" <?php echo ('5' === $per_row) ? 'selected="selected"' : ''; ?>>5</option>
+    <option value="6" <?php echo ('6' === $per_row) ? 'selected="selected"' : ''; ?>>6</option>
   </select>
 </p>
 <p>
@@ -78,7 +78,7 @@
     <label>
       <input type="radio"
              class="radio"
-        <?php echo (empty($order) || 'on' == $order) ? 'checked="checked"' : ''; ?>
+        <?php echo (empty($order) || 'on' === $order) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('order')); ?>"
              name="<?php echo esc_attr($this->get_field_name('order')); ?>">
       <?php echo __('Default', 'inventor'); ?>
@@ -89,7 +89,7 @@
       <input type="radio"
              class="radio"
              value="rand"
-        <?php echo ('rand' == $order) ? 'checked="checked"' : ''; ?>
+        <?php echo ('rand' === $order) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('order')); ?>"
              name="<?php echo esc_attr($this->get_field_name('order')); ?>">
       <?php echo __('Random', 'inventor'); ?>
@@ -100,7 +100,7 @@
       <input type="radio"
              class="radio"
              value="ids"
-        <?php echo ('ids' == $order) ? 'checked="checked"' : ''; ?>
+        <?php echo ('ids' === $order) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('order')); ?>"
              name="<?php echo esc_attr($this->get_field_name('order')); ?>">
       <?php echo __('IDs', 'inventor'); ?>
@@ -115,7 +115,7 @@
     <label>
       <input type="radio"
              class="radio"
-        <?php echo (empty($attribute) || 'on' == $attribute) ? 'checked="checked"' : ''; ?>
+        <?php echo (empty($attribute) || 'on' === $attribute) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('attribute')); ?>"
              name="<?php echo esc_attr($this->get_field_name('attribute')); ?>">
       <?php echo __('None', 'inventor'); ?>
@@ -126,7 +126,7 @@
       <input type="radio"
              class="radio"
              value="featured"
-        <?php echo ('featured' == $attribute) ? 'checked="checked"' : ''; ?>
+        <?php echo ('featured' === $attribute) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('attribute')); ?>"
              name="<?php echo esc_attr($this->get_field_name('attribute')); ?>">
       <?php echo __('Featured only', 'inventor'); ?>
@@ -137,7 +137,7 @@
       <input type="radio"
              class="radio"
              value="reduced"
-        <?php echo ('reduced' == $attribute) ? 'checked="checked"' : ''; ?>
+        <?php echo ('reduced' === $attribute) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('attribute')); ?>"
              name="<?php echo esc_attr($this->get_field_name('attribute')); ?>">
       <?php echo __('Reduced only', 'inventor'); ?>
@@ -151,13 +151,13 @@
   </label>
   <select id="<?php echo esc_attr($this->get_field_id('display')); ?>"
           name="<?php echo esc_attr($this->get_field_name('display')); ?>">
-    <option value="small" <?php echo ('small' == $display || empty($display)) ? 'selected="selected"'
+    <option value="small" <?php echo ('small' === $display || empty($display)) ? 'selected="selected"'
       : ''; ?>><?php echo __('Small', 'inventor'); ?></option>
-    <option value="box" <?php echo ('box' == $display) ? 'selected="selected"' : ''; ?>><?php echo __('Box',
+    <option value="box" <?php echo ('box' === $display) ? 'selected="selected"' : ''; ?>><?php echo __('Box',
         'inventor'); ?></option>
-    <option value="row" <?php echo ('row' == $display) ? 'selected="selected"' : ''; ?>><?php echo __('Row',
+    <option value="row" <?php echo ('row' === $display) ? 'selected="selected"' : ''; ?>><?php echo __('Row',
         'inventor'); ?></option>
-    <option value="masonry" <?php echo ('masonry' == $display) ? 'selected="selected"' : ''; ?>><?php echo __('Masonry',
+    <option value="masonry" <?php echo ('masonry' === $display) ? 'selected="selected"' : ''; ?>><?php echo __('Masonry',
         'inventor'); ?></option>
   </select>
 </p>

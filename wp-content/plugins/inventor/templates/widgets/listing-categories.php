@@ -36,7 +36,7 @@
     <ul class="nav nav-tabs listing-categories-tabs" role="tablist">
       <?php $index = 0; ?>
       <?php foreach ($terms as $term) : ?>
-        <li class="nav-item <?php if ($index == 0) : ?>active<?php endif; ?>">
+        <li class="nav-item <?php if ($index === 0) : ?>active<?php endif; ?>">
           <a href="#listing-categories-<?php echo esc_attr($term->term_id); ?>" class="nav-link">
             <?php echo esc_attr($term->name); ?>
           </a>
@@ -55,7 +55,7 @@
           'hide_empty' => false,
           'parent' => $term->term_id,
         ]); ?>
-        <div role="tabpanel" class="tab-pane <?php if ($index == 0) : ?>active<?php endif; ?>" id="listing-categories-<?php echo esc_attr($term->term_id); ?>">
+        <div role="tabpanel" class="tab-pane <?php if ($index === 0) : ?>active<?php endif; ?>" id="listing-categories-<?php echo esc_attr($term->term_id); ?>">
           <ul>
             <?php foreach ($subterms as $subterm) : ?>
               <li>

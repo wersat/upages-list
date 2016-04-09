@@ -110,14 +110,14 @@
             $taxonomies = get_taxonomies([], 'objects');
             $enabled_post_types = Inventor_Post_Types::get_listing_post_types();
             foreach ($taxonomies as $taxonomy) {
-                if ($taxonomy->show_in_menu != 'lexicon') {
+                if ($taxonomy->show_in_menu !== 'lexicon') {
                     continue;
                 }
                 $name = $taxonomy->name;
                 $label = $taxonomy->label;
                 $object_type = $taxonomy->object_type;
                 $add_submenu = true;
-                if (is_array($object_type) && count($object_type) == 1) {
+                if (is_array($object_type) && count($object_type) === 1) {
                     $object_type = $object_type[0];
                     $add_submenu = in_array($object_type, $enabled_post_types);
                 }

@@ -80,7 +80,7 @@
          */
         public static function loop_listings_similar($post_id = null, $count = 3)
         {
-            if (null == $post_id) {
+            if (null === $post_id) {
                 $post_id = get_the_ID();
             }
             $categories = wp_get_post_terms($post_id, 'listing_categories');
@@ -131,7 +131,7 @@
          */
         public static function get_listing_location_name($post_id = null, $separator = '/', $hierarchical = true)
         {
-            if (null == $post_id) {
+            if (null === $post_id) {
                 $post_id = get_the_ID();
             }
             if (!empty($listing_locations[$post_id])) {

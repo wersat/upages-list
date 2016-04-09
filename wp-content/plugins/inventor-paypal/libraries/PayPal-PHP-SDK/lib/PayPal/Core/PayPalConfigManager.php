@@ -31,7 +31,7 @@
             if (defined('PP_CONFIG_PATH')) {
                 $configFile = constant('PP_CONFIG_PATH') . '/sdk_config.ini';
             } else {
-                $configFile = implode(DIRECTORY_SEPARATOR, [dirname(__FILE__), "..", "config", "sdk_config.ini"]);
+                $configFile = implode(DIRECTORY_SEPARATOR, [__FILE__, "..", "config", "sdk_config.ini"]);
             }
             if (file_exists($configFile)) {
                 $this->addConfigFromIni($configFile);

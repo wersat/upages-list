@@ -63,7 +63,7 @@
         {
             global $current_screen;
             $taxonomy = $current_screen->taxonomy;
-            if ('hotel_classes' == $taxonomy) {
+            if ('hotel_classes' === $taxonomy) {
                 return 'lexicon';
             }
 

@@ -65,7 +65,7 @@
                 return;
             }
             $gateway = empty($_POST['payment_gateway']) ? null : $_POST['payment_gateway'];
-            if ($gateway != 'wire-transfer') {
+            if ($gateway !== 'wire-transfer') {
                 return;
             }
             // if required param is missing, payment is not valid

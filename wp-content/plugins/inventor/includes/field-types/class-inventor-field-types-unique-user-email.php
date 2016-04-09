@@ -45,7 +45,7 @@
         {
             $old_value = $sanitizer_object->field->value;
             $object_type = $sanitizer_object->field->object_type;
-            if ($object_type != 'user') {
+            if ($object_type !== 'user') {
                 return $value;
             }
             // not an email?
@@ -55,13 +55,13 @@
                 return $old_value;
             }
             $user_with_email = email_exists($value);
-            if ($user_with_email && $user_with_email != $object_id) {
+            if ($user_with_email && $user_with_email !== $object_id) {
                 // message
                 $_SESSION['messages'][] = ['danger', __('E-mail already exists.', 'inventor')];
 
                 return $old_value;
             }
-            if ($object_type == 'user') {
+            if ($object_type === 'user') {
                 wp_update_user(['ID' => $object_id, 'user_email' => $value]);
             }
 

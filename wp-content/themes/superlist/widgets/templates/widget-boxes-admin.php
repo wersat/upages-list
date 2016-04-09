@@ -4,8 +4,8 @@
    * @package    Superlist
    * @subpackage Widgets/Templates
    */
-  $title       = (isset($instance['title'])) ? $instance['title'] : '';
-  $description = (isset($instance['description'])) ? $instance['description'] : '';
+  $title       = isset($instance['title']) ? $instance['title'] : '';
+  $description = isset($instance['description']) ? $instance['description'] : '';
 ?>
 <p>
   <?php echo esc_attr__('Title', 'superlist'); ?>:
@@ -27,7 +27,7 @@
   <p>
     <div class="widget">
       <div class="widget-top">
-        <span class="dashicons dashicons-arrow-down" style="color: #aaa; cursor: pointer; float: right; padding: 12px 12px 0px; position: relative;"></span>
+        <span class="dashicons dashicons-arrow-down" style="color: #aaa; cursor: pointer; float: right; padding: 12px 12px 0; position: relative;"></span>
         <div class="widget-title" style="cursor: pointer;">
           <h4><?php echo esc_attr($i . '. ' . $title); ?></h4>
         </div>

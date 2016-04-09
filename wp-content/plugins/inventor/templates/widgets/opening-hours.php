@@ -40,12 +40,12 @@
 
       <?php if ($visible) : ?>
         <?php $opening_hours_status = Inventor_Post_Types::opening_hours_status(get_the_ID()); ?>
-        <?php if ($opening_hours_status == 'open'): ?>
+        <?php if ($opening_hours_status === 'open'): ?>
           <div class="alert alert-success">
             <?php echo __('It is <span class="open">open</span>.', 'inventor'); ?>
           </div>
         <?php endif; ?>
-        <?php if ($opening_hours_status == 'closed'): ?>
+        <?php if ($opening_hours_status === 'closed'): ?>
           <div class="alert alert-danger">
             <?php echo __('It is <span class="closed">closed</span>.', 'inventor'); ?>
           </div>

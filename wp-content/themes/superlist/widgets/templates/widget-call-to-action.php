@@ -9,8 +9,8 @@
 <?php echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
 <div class="widget-inner
 	<?php echo esc_attr($instance['classes']); ?>
-	<?php echo (empty($instance['padding_top'])) ? '' : 'widget-pt'; ?>
-	<?php echo (empty($instance['padding_bottom'])) ? '' : 'widget-pb'; ?>"
+	<?php echo empty($instance['padding_top']) ? '' : 'widget-pt'; ?>
+	<?php echo empty($instance['padding_bottom']) ? '' : 'widget-pb'; ?>"
   <?php if ( ! empty($instance['background_color']) || ! empty($instance['background_image'])) : ?>
     style="
     <?php if ( ! empty($instance['background_color'])) : ?>

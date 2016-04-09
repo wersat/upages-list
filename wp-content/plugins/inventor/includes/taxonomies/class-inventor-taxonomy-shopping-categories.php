@@ -65,7 +65,7 @@
         {
             global $current_screen;
             $taxonomy = $current_screen->taxonomy;
-            if ('shopping_categories' == $taxonomy) {
+            if ('shopping_categories' === $taxonomy) {
                 return 'lexicon';
             }
 

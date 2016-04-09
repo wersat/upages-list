@@ -19,7 +19,7 @@
         public function __construct()
         {
             parent::__construct('call_to_action', __('Call to action', 'superlist'), [
-                'description' => __('Call to action widget.', 'superlist'),
+                'description' => __('Call to action widget.', 'superlist')
             ]);
         }
 
@@ -57,6 +57,6 @@
          */
         public function widget($args, $instance)
         {
-            include 'templates/widget-call-to-action.php';
+            include __DIR__.'/templates/widget-call-to-action.php';
         }
     }

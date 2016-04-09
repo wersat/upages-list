@@ -63,7 +63,7 @@
         {
             global $current_screen;
             $taxonomy = $current_screen->taxonomy;
-            if ('locations' == $taxonomy) {
+            if ('locations' === $taxonomy) {
                 return 'inventor';
             }
 

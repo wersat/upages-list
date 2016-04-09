@@ -25,8 +25,8 @@
           //				'value' => $term->slug,
           'label' => str_repeat('&raquo;&nbsp;', $depth - 1).' '.$term->name,
         ];
-        //			if ( $term->slug == $selected ) {
-        if ($term->term_id == $selected) {
+        //			if ( $term->slug === $selected ) {
+        if ($term->term_id === $selected) {
             $args['checked'] = 'checked';
         }
               $output .= sprintf("\t".'<option value="%s" %s>%s</option>', $args['value'],
@@ -45,7 +45,7 @@
 
 <?php if (empty($instance['hide_location'])) : ?>
   <div class="form-group">
-    <?php if ('labels' == $input_titles) : ?>
+    <?php if ('labels' === $input_titles) : ?>
       <label for="<?php echo !empty($field_id_prefix) ? $field_id_prefix
         : ''; ?><?php echo esc_attr($args['widget_id']); ?>_locations"><?php echo __('Location', 'inventor'); ?></label>
     <?php endif; ?>
@@ -60,7 +60,7 @@
             id="<?php echo !empty($field_id_prefix) ? $field_id_prefix
               : ''; ?><?php echo esc_attr($args['widget_id']); ?>_locations">
       <option value="">
-        <?php if ('placeholders' == $input_titles) : ?>
+        <?php if ('placeholders' === $input_titles) : ?>
           <?php echo __('Location', 'inventor'); ?>
         <?php else : ?>
           <?php echo __('All locations', 'inventor'); ?>

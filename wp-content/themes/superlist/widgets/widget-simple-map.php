@@ -19,7 +19,7 @@
         public function __construct()
         {
             parent::__construct('simple_map', __('Simple Map', 'superlist'), [
-                'description' => __('Displays 1 place in the map.', 'superlist'),
+                'description' => __('Displays 1 place in the map.', 'superlist')
             ]);
         }
 

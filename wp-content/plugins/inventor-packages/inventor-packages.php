@@ -59,7 +59,7 @@ if (!class_exists('Inventor_Packages') && class_exists('Inventor')) {
          */
         public function load_plugin_textdomain()
         {
-            load_plugin_textdomain('inventor-packages', false, plugin_basename(dirname(__FILE__)).'/languages');
+            load_plugin_textdomain('inventor-packages', false, plugin_basename(__FILE__).'/languages');
         }
     }
 

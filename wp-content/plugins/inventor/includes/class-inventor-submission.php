@@ -49,7 +49,7 @@
                 return;
             }
             self::process_submission_step($step, $_POST);
-            if ($valid_type && !empty($_GET['action']) && $_GET['action'] == 'save') {
+            if ($valid_type && !empty($_GET['action']) && $_GET['action'] === 'save') {
                 $post_id = self::process_submission_save($_GET['type']);
                 $review_before_submission = get_theme_mod('inventor_submission_review_before', false);
                 $url = home_url();
@@ -95,7 +95,7 @@
          */
         public static function get_submission_steps($post_type)
         {
-            if ($post_type == null) {
+            if ($post_type === null) {
                 return [];
             }
             $meta_boxes = CMB2_Boxes::get_all();
@@ -131,7 +131,7 @@
             $data = [];
             foreach ($raw as $key => $value) {
                 $parts = explode('_', $key);
-                if (INVENTOR_LISTING_PREFIX == $parts[0].'_') {
+                if (INVENTOR_LISTING_PREFIX === $parts[0].'_') {
                     if (!empty($value)) {
                         $data[$key] = $value;
                     }
@@ -154,7 +154,7 @@
             $post_id = !empty($_GET['id']) ? $_GET['id'] : false;
             $review_before = get_theme_mod('inventor_submission_review_before', false);
             $post_status = 'publish';
-            if ($review_before && get_post_status($post_id) != 'publish') {
+            if ($review_before && get_post_status($post_id) !== 'publish') {
                 $post_status = 'pending';
             }
             // If we are updating the post get old one. We need old post to set proper
@@ -241,13 +241,13 @@
                 if (!empty($_SESSION['submission']) && !empty($_SESSION['submission'][$meta_box_id]) && !empty($_SESSION['submission'][$meta_box_id][$field_id])) {
                     return $_SESSION['submission'][$meta_box_id][$field_id];
                 } elseif (!empty($_GET['id'])) {
-                    if (INVENTOR_LISTING_PREFIX.'title' == $field_id) {
+                    if (INVENTOR_LISTING_PREFIX.'title' === $field_id) {
                         return get_the_title($_GET['id']);
-                    } elseif (INVENTOR_LISTING_PREFIX.'description' == $field_id) {
+                    } elseif (INVENTOR_LISTING_PREFIX.'description' === $field_id) {
                         $post = get_post($_GET['id']);
 
                         return $post->post_content;
-                    } elseif (INVENTOR_LISTING_PREFIX.'featured_image' == $field_id) {
+                    } elseif (INVENTOR_LISTING_PREFIX.'featured_image' === $field_id) {
                         return wp_get_attachment_url(get_post_thumbnail_id($_GET['id']));
                     }
 
@@ -271,7 +271,7 @@
             $steps = self::get_submission_steps($post_type);
             $index = 0;
             foreach ($steps as $step) {
-                if ($step['id'] == $current_step) {
+                if ($step['id'] === $current_step) {
                     if (array_key_exists($index + 1, $steps)) {
                         return $steps[$index + 1]['id'];
                     }

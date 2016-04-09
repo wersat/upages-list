@@ -33,7 +33,7 @@
       </div>
     <?php endif; ?>
     <div class="type-<?php echo esc_attr($instance['display']); ?> items-per-row-<?php echo esc_attr($instance['per_row']); ?>">
-      <?php if ('masonry' == $instance['display']) : ?>
+      <?php if ('masonry' === $instance['display']) : ?>
         <div class="listings-row">
           <?php $index = 0; ?>
           <?php while (have_posts()) : the_post(); ?>
@@ -52,7 +52,7 @@
           <div class="listing-container">
             <?php include Inventor_Template_Loader::locate('listings/'.$instance['display']); ?>
           </div>
-          <?php if (0 == (($index + 1) % $instance['per_row']) && 1 != $instance['per_row'] && Inventor_Query::loop_has_next()) : ?>
+          <?php if (0 === (($index + 1) % $instance['per_row']) && 1 !== $instance['per_row'] && Inventor_Query::loop_has_next()) : ?>
             </div><div class="listings-row">
           <?php endif; ?>
           <?php ++$index; ?>

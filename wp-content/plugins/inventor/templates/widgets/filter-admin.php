@@ -46,7 +46,7 @@
       <input type="radio"
              class="radio"
              value="labels"
-        <?php echo (empty($input_titles) || 'labels' == $input_titles) ? 'checked="checked"' : ''; ?>
+        <?php echo (empty($input_titles) || 'labels' === $input_titles) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('input_titles')); ?>"
              name="<?php echo esc_attr($this->get_field_name('input_titles')); ?>">
       <?php echo __('Labels', 'inventor'); ?>
@@ -57,7 +57,7 @@
       <input type="radio"
              class="radio"
              value="placeholders"
-        <?php echo ('placeholders' == $input_titles) ? 'checked="checked"' : ''; ?>
+        <?php echo ('placeholders' === $input_titles) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('input_titles')); ?>"
              name="<?php echo esc_attr($this->get_field_name('input_titles')); ?>">
       <?php echo __('Placeholders', 'inventor'); ?>

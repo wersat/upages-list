@@ -35,15 +35,15 @@
           <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium'); ?>
           <div class="listing-system-row-image">
             <a href="<?php the_permalink(); ?>" style="background-image: url('<?php if (has_post_thumbnail()) : ?><?php echo esc_attr($image[0]); ?><?php else : ?><?php echo plugins_url('inventor'); ?>/assets/img/default-item.png<?php endif; ?>')">
-              <?php if (get_post_status() == 'pending') : ?>
+              <?php if (get_post_status() === 'pending') : ?>
                 <div class="ribbon warning">
                   <?php echo esc_attr__('Pending', 'inventor'); ?>
                 </div>
-              <?php elseif (get_post_status() == 'publish') : ?>
+              <?php elseif (get_post_status() === 'publish') : ?>
                 <div class="ribbon publish">
                   <?php echo esc_attr__('Published', 'inventor'); ?>
                 </div>
-              <?php elseif (get_post_status() == 'draft') : ?>
+              <?php elseif (get_post_status() === 'draft') : ?>
                 <div class="ribbon draft">
                   <?php echo esc_attr__('Disabled', 'inventor'); ?>
                 </div>

@@ -63,7 +63,7 @@
         {
             global $current_screen;
             $taxonomy = $current_screen->taxonomy;
-            if ('food_kinds' == $taxonomy) {
+            if ('food_kinds' === $taxonomy) {
                 return 'lexicon';
             }
 

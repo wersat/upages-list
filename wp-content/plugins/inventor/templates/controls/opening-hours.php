@@ -27,7 +27,7 @@
 
         <?php if (is_array($field->value)) : ?>
           <?php foreach ($field->value as $opening_hours) : ?>
-            <?php if ($opening_hours['listing_day'] == $key) : ?>
+            <?php if ($opening_hours['listing_day'] === $key) : ?>
               <?php
               $time_from = !empty($opening_hours['listing_time_from']) ? $opening_hours['listing_time_from'] : '';
               $time_to = !empty($opening_hours['listing_time_to']) ? $opening_hours['listing_time_to'] : '';

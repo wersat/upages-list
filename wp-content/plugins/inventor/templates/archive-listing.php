@@ -9,7 +9,7 @@
    */
   get_header(); ?>
 
-<?php $display_as_grid = (!empty($_GET['listing-display']) && 'grid' == $_GET['listing-display']) ? true
+<?php $display_as_grid = (!empty($_GET['listing-display']) && 'grid' === $_GET['listing-display']) ? true
   : get_theme_mod('inventor_general_show_listing_archive_as_grid', null); ?>
 <div class="row">
   <div class="<?php if (is_active_sidebar('sidebar-1')) : ?>col-lg-8 col-xl-9<?php else : ?>col-sm-12<?php endif; ?>">
@@ -38,7 +38,7 @@
             <?php include Inventor_Template_Loader::locate('listings/row'); ?>
           <?php endif; ?>
         </div>
-        <?php if (0 == (($index + 1) % 4) && Inventor_Query::loop_has_next()) : ?>
+        <?php if (0 === (($index + 1) % 4) && Inventor_Query::loop_has_next()) : ?>
         </div>
         <div class="listings-row">
       <?php endif; ?>

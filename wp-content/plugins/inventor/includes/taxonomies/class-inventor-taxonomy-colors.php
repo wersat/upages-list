@@ -63,7 +63,7 @@
         {
             global $current_screen;
             $taxonomy = $current_screen->taxonomy;
-            if ('colors' == $taxonomy) {
+            if ('colors' === $taxonomy) {
                 return 'inventor';
             }
 

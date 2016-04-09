@@ -63,7 +63,7 @@
         {
             global $current_screen;
             $taxonomy = $current_screen->taxonomy;
-            if ('event_types' == $taxonomy) {
+            if ('event_types' === $taxonomy) {
                 return 'lexicon';
             }
 

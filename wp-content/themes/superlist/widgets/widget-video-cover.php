@@ -19,7 +19,7 @@
         public function __construct()
         {
             parent::__construct('video_cover', __('Video Cover', 'superlist'), [
-                'description' => __('Displays small filter with video or image background.', 'superlist'),
+                'description' => __('Displays small filter with video or image background.', 'superlist')
             ]);
         }
 

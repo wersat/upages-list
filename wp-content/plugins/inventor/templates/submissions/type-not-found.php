@@ -12,7 +12,7 @@
         <li>
           <a href="?type=<?php echo esc_attr($post_type); ?><?php if (!empty($_GET['id'])) {
     echo esc_attr('&id='.$_GET['id']);
-}; ?>"><?php echo esc_attr($obj->labels->singular_name); ?></a><?php if (count($post_types) != $index + 1) : ?>
+}; ?>"><?php echo esc_attr($obj->labels->singular_name); ?></a><?php if (count($post_types) !== $index + 1) : ?>
             <span>,</span><?php endif; ?>
         </li>
         <?php ++$index; ?>
