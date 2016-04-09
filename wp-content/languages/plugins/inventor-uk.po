@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Inventor\n"
 "POT-Creation-Date: 2016-04-07 11:43+0300\n"
-"PO-Revision-Date: 2016-04-07 18:20+0300\n"
+"PO-Revision-Date: 2016-04-09 13:51+0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,7 +68,7 @@ msgstr "Будь-ласка перезавантажте сторінку та �
 #: templates/widgets/listing-inquire-admin.php:46
 #: templates/widgets/listing-inquire.php:45
 msgid "Name"
-msgstr ""
+msgstr "Ім'я"
 
 #: includes/class-inventor-billing.php:36
 msgid "Reg. No."
@@ -76,40 +76,40 @@ msgstr ""
 
 #: includes/class-inventor-billing.php:37
 msgid "VAT No."
-msgstr ""
+msgstr "Ідентифікаційний номер"
 
 #: includes/class-inventor-billing.php:38
 #: includes/post-types/class-inventor-post-type-user.php:140
 msgid "Street and number"
-msgstr ""
+msgstr "Вулиця та номер будинку (квартири)"
 
 #: includes/class-inventor-billing.php:39
 #: includes/customizations/class-inventor-customizations-wire-transfer.php:40
 #: includes/post-types/class-inventor-post-type-user.php:122
 #: templates/payment/gateways/wire-transfer.php:58
 msgid "Country"
-msgstr ""
+msgstr "Країна"
 
 #: includes/class-inventor-billing.php:40
 #: includes/post-types/class-inventor-post-type-user.php:128
 msgid "State / County"
-msgstr ""
+msgstr "Область"
 
 #: includes/class-inventor-billing.php:41
 #: includes/customizations/class-inventor-customizations-wire-transfer.php:39
 #: includes/post-types/class-inventor-post-type-user.php:134
 #: templates/payment/gateways/wire-transfer.php:53
 msgid "City"
-msgstr ""
+msgstr "Місто"
 
 #: includes/class-inventor-billing.php:42
 #: includes/post-types/class-inventor-post-type-user.php:146
 msgid "Postal code"
-msgstr ""
+msgstr "Поштовий індекс"
 
 #: includes/class-inventor-billing.php:81 templates/payment/payment-form.php:47
 msgid "Billing details"
-msgstr ""
+msgstr "Платіжні дані"
 
 #: includes/class-inventor-filter.php:35
 #: templates/widgets/filter-fields/listing-type.php:4
@@ -194,7 +194,7 @@ msgstr ""
 #: includes/post-types/class-inventor-post-type-transaction.php:74
 #: includes/post-types/class-inventor-post-type-user.php:73
 msgid "General"
-msgstr ""
+msgstr "Загальні"
 
 #: includes/class-inventor-metaboxes.php:79
 #: includes/class-inventor-metaboxes.php:193
@@ -594,24 +594,24 @@ msgstr ""
 
 #: includes/class-inventor-post-types.php:519
 msgid "Social connections"
-msgstr ""
+msgstr "Соціальні мережі"
 
 #: includes/class-inventor-reports.php:34
 msgid "Listing was reported"
-msgstr ""
+msgstr "Скаргу отримано"
 
 #: includes/class-inventor-reports.php:140
 msgid "Listing was reported. Please, wait for admin review."
-msgstr ""
+msgstr "Скаргу отримано. Зачекайте, поки адміністратор її не огляне."
 
 #: includes/class-inventor-reports.php:142
 #: includes/post-types/class-inventor-post-type-listing.php:175
 msgid "Unable to send a message."
-msgstr ""
+msgstr "Не вдалось відправити повідомлення."
 
 #: includes/class-inventor-shortcodes.php:52
 msgid "You have been successfully logged out."
-msgstr ""
+msgstr "Ви вийшли з профілю."
 
 #: includes/class-inventor-shortcodes.php:152
 msgid "Check your package."
@@ -623,11 +623,11 @@ msgstr ""
 
 #: includes/class-inventor-shortcodes.php:188
 msgid "Save"
-msgstr ""
+msgstr "Зберегти"
 
 #: includes/class-inventor-shortcodes.php:318
 msgid "Save profile"
-msgstr ""
+msgstr "Зберегти"
 
 #: includes/class-inventor-submission.php:244
 msgid "New submission has been successfully created."
@@ -659,16 +659,16 @@ msgstr ""
 
 #: includes/class-inventor-wire-transfer.php:36
 msgid "Wire Transfer"
-msgstr ""
+msgstr "Грошовий переказ"
 
 #: includes/class-inventor-wire-transfer.php:90
 msgid "Missing payment data."
-msgstr ""
+msgstr "Пропущені платіжні дані."
 
 #: includes/class-inventor-wire-transfer.php:95
 #: includes/post-types/class-inventor-post-type-user.php:391
 msgid "You must agree terms &amp; conditions."
-msgstr ""
+msgstr "Погодьтеся з правилами та умовами."
 
 #: includes/customizations/class-inventor-customizations-currency.php:34
 msgid "Inventor Currency"
@@ -1434,7 +1434,7 @@ msgstr "Підприємство не знайдено"
 
 #: includes/post-types/class-inventor-post-type-listing.php:68
 msgid "No Listings Found in Trash"
-msgstr "У кошику підприємство не знайдено"
+msgstr "У кошику підприємства не знайдено"
 
 #: includes/post-types/class-inventor-post-type-listing.php:79
 msgctxt "URL slug"
@@ -1783,51 +1783,51 @@ msgstr ""
 #: includes/post-types/class-inventor-post-type-user.php:79
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:96
 msgid "Image"
-msgstr ""
+msgstr "Аватар"
 
 #: includes/post-types/class-inventor-post-type-user.php:85
 msgid "First name"
-msgstr ""
+msgstr "Ім'я"
 
 #: includes/post-types/class-inventor-post-type-user.php:91
 msgid "Last name"
-msgstr ""
+msgstr "Прізвище"
 
 #: includes/post-types/class-inventor-post-type-user.php:153
 msgid "Social Connections"
-msgstr ""
+msgstr "Соціальні мережі"
 
 #: includes/post-types/class-inventor-post-type-user.php:234
 msgid "Profile has been successfully updated."
-msgstr ""
+msgstr "Ваш профіль оновлено."
 
 #: includes/post-types/class-inventor-post-type-user.php:256
 msgid "All fields are required."
-msgstr ""
+msgstr "Всі поля обов'язкові для заповнення."
 
 #: includes/post-types/class-inventor-post-type-user.php:261
 msgid "New and retyped password are not same."
-msgstr ""
+msgstr "Ви невірно підтвердили новий пароль."
 
 #: includes/post-types/class-inventor-post-type-user.php:267
 msgid "Your old password is not correct."
-msgstr ""
+msgstr "Ви невірно ввели старий пароль."
 
 #: includes/post-types/class-inventor-post-type-user.php:272
 msgid "Your password has been successfully changed."
-msgstr ""
+msgstr "Пароль змінено."
 
 #: includes/post-types/class-inventor-post-type-user.php:292
 msgid "Login and password are required."
-msgstr ""
+msgstr "Логін та пароль обов'язкові для заповнення."
 
 #: includes/post-types/class-inventor-post-type-user.php:308
 msgid "You have been successfully logged in."
-msgstr ""
+msgstr "Ви успішно зайшли в профіль."
 
 #: includes/post-types/class-inventor-post-type-user.php:342
 msgid "Unable to send an e-mail."
-msgstr ""
+msgstr "Не вдалось відправити повідомлення."
 
 #: includes/post-types/class-inventor-post-type-user.php:344
 msgid "Please check inbox for more information."
@@ -2476,7 +2476,7 @@ msgstr ""
 #: templates/widgets/filter-fields/listing-categories.php:4
 #: templates/widgets/filter-fields/listing-categories.php:18
 msgid "Category"
-msgstr ""
+msgstr "Категорія"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:37
 msgid "Search Categories"
@@ -2770,7 +2770,7 @@ msgstr ""
 
 #: includes/widgets/class-inventor-widget-filter.php:24
 msgid "Filter"
-msgstr ""
+msgstr "Пошук"
 
 #: includes/widgets/class-inventor-widget-filter.php:26
 msgid "Filter for filtering listings."
@@ -2831,49 +2831,49 @@ msgstr ""
 
 #: templates/accounts/login.php:10 templates/accounts/register.php:11
 msgid "Username"
-msgstr ""
+msgstr "Логін"
 
 #: templates/accounts/login.php:15 templates/accounts/register.php:21
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: templates/accounts/login.php:21
 msgid "Log in"
-msgstr ""
+msgstr "Увійти"
 
 #: templates/accounts/login.php:25 templates/accounts/register.php:49
 #: templates/accounts/reset.php:18
 msgid "You are already logged in."
-msgstr ""
+msgstr "Ви вже залогінені."
 
 #: templates/accounts/password.php:9
 msgid "Old password"
-msgstr ""
+msgstr "Старий пароль"
 
 #: templates/accounts/password.php:14
 msgid "New password"
-msgstr ""
+msgstr "Новий пароль"
 
 #: templates/accounts/password.php:19
 msgid "Retype password"
-msgstr ""
+msgstr "Повторіть пароль"
 
 #: templates/accounts/password.php:23
 msgid "Change Password"
-msgstr ""
+msgstr "Змінити пароль"
 
 #: templates/accounts/register.php:26
 msgid "Retype Password"
-msgstr ""
+msgstr "Повторіть пароль"
 
 #: templates/accounts/register.php:37 templates/payment/payment-form.php:92
 #, php-format
 msgid "I agree with <a href=\"%s\">terms & conditions</a>"
-msgstr ""
+msgstr "Я погоджуюсь з <a href=\"%s\">правилами та умовами</a>"
 
 #: templates/accounts/register.php:45
 msgid "Sign Up"
-msgstr ""
+msgstr "Зареєструватися"
 
 #: templates/accounts/register.php:54
 msgid "Registrations are not allowed."
@@ -2881,11 +2881,11 @@ msgstr ""
 
 #: templates/accounts/reset.php:10
 msgid "Username or E-mail:"
-msgstr ""
+msgstr "Логін чи електронна пошта"
 
 #: templates/accounts/reset.php:14
 msgid "Get New Password"
-msgstr ""
+msgstr "Отримати новий пароль"
 
 #: templates/admin/purchase-code.php:4
 msgid "Please enter valid purchase code to get an update"
@@ -2960,7 +2960,7 @@ msgstr ""
 
 #: templates/listings/detail/section-google-map.php:21
 msgid "Map"
-msgstr ""
+msgstr "Мапа"
 
 #: templates/listings/detail/section-google-map.php:37
 msgid "See Inside"
@@ -2972,7 +2972,7 @@ msgstr ""
 
 #: templates/listings/detail/section-report.php:7
 msgid "Report spam, abuse, or inappropriate content"
-msgstr ""
+msgstr "Повідомити про спам, образи чи неприпустимий вміст"
 
 #: templates/mails/report.php:21
 msgid "Report reason"
@@ -3022,7 +3022,7 @@ msgstr ""
 
 #: templates/misc/print-button.php:2
 msgid "Print"
-msgstr ""
+msgstr "Роздрукувати"
 
 #: templates/misc/remove-form.php:3 templates/misc/report-form.php:3
 msgid "You have to specify listing!"
@@ -3035,61 +3035,63 @@ msgstr ""
 #: templates/misc/report-form.php:6
 #, php-format
 msgid "What's wrong with %s?"
-msgstr ""
+msgstr "Причина скарги на %s:"
 
 #: templates/misc/report-form.php:14 templates/misc/report-form.php:15
 msgid "It is spam"
-msgstr ""
+msgstr "Це спам"
 
 #: templates/misc/report-form.php:21 templates/misc/report-form.php:22
 msgid "It is nudity or pornography"
-msgstr ""
+msgstr "Присутній порнографічний контент"
 
 #: templates/misc/report-form.php:28 templates/misc/report-form.php:29
 msgid "It humiliates somebody"
-msgstr ""
+msgstr "Вміст сторінки когось принижує"
 
 #: templates/misc/report-form.php:35 templates/misc/report-form.php:36
 msgid "It is inappropriate"
-msgstr ""
+msgstr "Недоречний контент"
 
 #: templates/misc/report-form.php:42 templates/misc/report-form.php:43
 msgid ""
 "It insults or attacks someone based on their religion, ethnicity or sexual "
 "orientation"
 msgstr ""
+"Приниження відвідувачів у зв'язку з їх релігією, етнічною приналежністю чи "
+"сексуальною орієнтацією"
 
 #: templates/misc/report-form.php:49 templates/misc/report-form.php:50
 msgid "It advocates violence or harm to a person or animal"
-msgstr ""
+msgstr "Пропаганда насильства"
 
 #: templates/misc/report-form.php:56 templates/misc/report-form.php:57
 msgid "It displays someone harming themself or planning to harm themself"
-msgstr ""
+msgstr "Показано, як хтось завдає собі шкоди"
 
 #: templates/misc/report-form.php:63 templates/misc/report-form.php:64
 msgid "It describes buying or selling drugs, guns or regulated products"
-msgstr ""
+msgstr "Описана нелегальна торгівля"
 
 #: templates/misc/report-form.php:71 templates/misc/report-form.php:72
 msgid "It is an unauthorized use of my intellectual property"
-msgstr ""
+msgstr "Незаконне використання інтелектуальної власності"
 
 #: templates/misc/report-form.php:78 templates/misc/report-form.php:79
 msgid "Something else"
-msgstr ""
+msgstr "Інша причина"
 
 #: templates/misc/report-form.php:85
 msgid "Other reason or additional information"
-msgstr ""
+msgstr "Інша причина чи додаткова інформація"
 
 #: templates/misc/report-form.php:88
 msgid "Contact to you"
-msgstr ""
+msgstr "Контактні дані"
 
 #: templates/misc/report-form.php:107
 msgid "Submit to review"
-msgstr ""
+msgstr "Надіслати скаргу"
 
 #: templates/misc/share.php:3 templates/misc/share.php:7
 msgid "Share"
@@ -3167,7 +3169,7 @@ msgstr ""
 
 #: templates/payment/payment-form.php:51
 msgid "Payment gateway"
-msgstr ""
+msgstr "Платіжний шлюз"
 
 #: templates/payment/payment-form.php:101
 msgid "Proceed payment"
@@ -3400,7 +3402,7 @@ msgstr ""
 #: templates/widgets/listing-inquire-admin.php:85
 #: templates/widgets/listing-inquire.php:63
 msgid "Subject"
-msgstr ""
+msgstr "Тема повідомлення"
 
 #: templates/widgets/listing-inquire-admin.php:116
 msgid "Who will receive an e-mail?"
@@ -3495,36 +3497,36 @@ msgstr ""
 
 #: templates/widgets/opening-hours.php:10
 msgid "Mon"
-msgstr ""
+msgstr "Пн"
 
 #: templates/widgets/opening-hours.php:11
 msgid "Tue"
-msgstr ""
+msgstr "Вт"
 
 #: templates/widgets/opening-hours.php:12
 msgid "Wed"
-msgstr ""
+msgstr "Ср"
 
 #: templates/widgets/opening-hours.php:13
 msgid "Thu"
-msgstr ""
+msgstr "Чт"
 
 #: templates/widgets/opening-hours.php:14
 msgid "Fri"
-msgstr ""
+msgstr "Пт"
 
 #: templates/widgets/opening-hours.php:15
 msgid "Sat"
-msgstr ""
+msgstr "Сб"
 
 #: templates/widgets/opening-hours.php:16
 msgid "Sun"
-msgstr ""
+msgstr "Нд"
 
 #: templates/widgets/opening-hours.php:49
 msgid "It is <span class=\"open\">open</span>."
-msgstr ""
+msgstr "<span class=\"open\">Відчинено</span>."
 
 #: templates/widgets/opening-hours.php:54
 msgid "It is <span class=\"closed\">closed</span>."
-msgstr ""
+msgstr "<span class=\"open\">Зачинено</span>."
