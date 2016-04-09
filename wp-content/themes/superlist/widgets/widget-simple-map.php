@@ -1,74 +1,62 @@
 <?php
-/**
- * Widget definition file
- *
- * @package Superlist
- * @subpackage Widgets
- */
+    /**
+     * Widget definition file.
+     */
+    if ( ! defined('ABSPATH')) {
+        exit;
+    }
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+    /**
+     * Class Superlist_Widget_Simple_Map.
+     * @class  Superlist_Widget_Simple_Map
+     * @author Pragmatic Mates
+     */
+    class Superlist_Widget_Simple_Map extends WP_Widget
+    {
+        /**
+         * Initialize widget.
+         */
+        public function __construct()
+        {
+            parent::__construct('simple_map', __('Simple Map', 'superlist'), [
+                'description' => __('Displays 1 place in the map.', 'superlist')
+            ]);
+        }
 
-/**
- * Class Superlist_Widget_Simple_Map
- *
- * @class Superlist_Widget_Simple_Map
- * @package Superlist/Widgets
- * @author Pragmatic Mates
- */
-class Superlist_Widget_Simple_Map extends WP_Widget {
-	/**
-	 * Initialize widget
-	 *
-	 * @access public
-	 * @return void
-	 */
-	function Superlist_Widget_Simple_Map() {
-		parent::__construct(
-			'simple_map',
-			__( 'Simple Map', 'superlist' ),
-			array(
-				'description' => __( 'Displays 1 place in the map.', 'superlist' ),
-			)
-		);
-	}
+        /**
+         * Backend.
+         *
+         * @param array $instance Current widget instance.
+         */
+        public function form($instance)
+        {
+            include WIDGETS_TPL_DIR . '/widget-simple-map-admin.php';
+            if (class_exists('Inventor_Template_Loader')) {
+                include Inventor_Template_Loader::locate('widgets/advanced-options-admin');
+            }
+        }
 
-	/**
-	 * Frontend
-	 *
-	 * @access public
-	 * @param array $args Widget arguments.
-	 * @param array $instance Current widget instance.
-	 * @return void
-	 */
-	function widget( $args, $instance ) {
-		include 'templates/widget-simple-map.php';
-	}
+        /**
+         * Update.
+         *
+         * @param array $new_instance New widget instance.
+         * @param array $old_instance Old widget instance.
+         *
+         * @return array
+         */
+        public function update($new_instance, $old_instance)
+        {
+            return $new_instance;
+        }
 
-	/**
-	 * Update
-	 *
-	 * @access public
-	 * @param array $new_instance New widget instance.
-	 * @param array $old_instance Old widget instance.
-	 * @return array
-	 */
-	function update( $new_instance, $old_instance ) {
-		return $new_instance;
-	}
-
-	/**
-	 * Backend
-	 *
-	 * @access public
-	 * @param array $instance Current widget instance.
-	 * @return void
-	 */
-	function form( $instance ) {
-		include 'templates/widget-simple-map-admin.php';
-		if ( class_exists( 'Inventor_Template_Loader' ) ) {
-			include Inventor_Template_Loader::locate( 'widgets/advanced-options-admin' );
-		}
-	}
-}
+        /**
+         * Frontend.
+         *
+         * @param array $args     Widget arguments.
+         * @param array $instance Current widget instance.
+         */
+        public function widget($args, $instance)
+        {
+            include WIDGETS_TPL_DIR . '/widget-simple-map.php';
+        }
+    }

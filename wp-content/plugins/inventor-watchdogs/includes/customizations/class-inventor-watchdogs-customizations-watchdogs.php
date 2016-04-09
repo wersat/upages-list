@@ -1,71 +1,67 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-
-/**
- * Class Inventor_Watchdogs_Customizations_Watchdogs
- *
- * @class Inventor_Watchdogs_Customizations_Watchdogs
- * @package Inventor_Watchdogs/Classes/Customizations
- * @author Pragmatic Mates
- */
-class Inventor_Watchdogs_Customizations_Watchdogs {
-    /**
-     * Initialize customization type
-     *
-     * @access public
-     * @return void
-     */
-    public static function init() {
-        add_action( 'customize_register', array( __CLASS__, 'customizations' ) );
+    if ( ! defined('ABSPATH')) {
+        exit;
     }
 
     /**
-     * Customizations
-     *
-     * @access public
-     * @param object $wp_customize
-     * @return void
+     * Class Inventor_Watchdogs_Customizations_Watchdogs
+     * @class   Inventor_Watchdogs_Customizations_Watchdogs
+     * @package Inventor_Watchdogs/Classes/Customizations
+     * @author  Pragmatic Mates
      */
-    public static function customizations( $wp_customize ) {
-        $pages = Inventor_Utilities::get_pages();
+    class Inventor_Watchdogs_Customizations_Watchdogs
+    {
+        /**
+         * Initialize customization type
+         * @access public
+         * @return void
+         */
+        public static function init()
+        {
+            add_action('customize_register', [__CLASS__, 'customizations']);
+        }
 
-        $wp_customize->add_section( 'inventor_watchdogs', array(
-            'title'     => __( 'Inventor Watchdogs', 'inventor-watchdogs' ),
-            'priority'  => 1,
-        ) );
-
-        // Watchdogs
-        $wp_customize->add_setting('inventor_watchdogs_page', array(
-            'default' => null,
-            'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'sanitize_text_field',
-        ));
-
-        $wp_customize->add_control('inventor_watchdogs_page', array(
-            'type' => 'select',
-            'label' => __('Watchdogs', 'inventor-watchdogs'),
-            'section' => 'inventor_pages',
-            'settings' => 'inventor_watchdogs_page',
-            'choices' => $pages,
-        ));
-
-        // Listing logging
-        $wp_customize->add_setting( 'inventor_watchdogs_enable_search_queries', array(
-            'default'           => false,
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'sanitize_text_field',
-        ) );
-
-        $wp_customize->add_control( 'inventor_watchdogs_enable_search_queries', array(
-            'type'     => 'checkbox',
-            'label'    => __( 'Enable Search Queries Watchdogs', 'inventor-watchdogs' ),
-            'section'  => 'inventor_watchdogs',
-            'settings' => 'inventor_watchdogs_enable_search_queries',
-        ) );
+        /**
+         * Customizations
+         * @access public
+         *
+         * @param object $wp_customize
+         *
+         * @return void
+         */
+        public static function customizations($wp_customize)
+        {
+            $pages = Inventor_Utilities::get_pages();
+            $wp_customize->add_section('inventor_watchdogs', [
+                'title'    => __('Inventor Watchdogs', 'inventor-watchdogs'),
+                'priority' => 1,
+            ]);
+            // Watchdogs
+            $wp_customize->add_setting('inventor_watchdogs_page', [
+                'default'           => null,
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'sanitize_text_field',
+            ]);
+            $wp_customize->add_control('inventor_watchdogs_page', [
+                'type'     => 'select',
+                'label'    => __('Watchdogs', 'inventor-watchdogs'),
+                'section'  => 'inventor_pages',
+                'settings' => 'inventor_watchdogs_page',
+                'choices'  => $pages,
+            ]);
+            // Listing logging
+            $wp_customize->add_setting('inventor_watchdogs_enable_search_queries', [
+                'default'           => false,
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'sanitize_text_field',
+            ]);
+            $wp_customize->add_control('inventor_watchdogs_enable_search_queries', [
+                'type'     => 'checkbox',
+                'label'    => __('Enable Search Queries Watchdogs', 'inventor-watchdogs'),
+                'section'  => 'inventor_watchdogs',
+                'settings' => 'inventor_watchdogs_enable_search_queries',
+            ]);
+        }
     }
-}
 
-Inventor_Watchdogs_Customizations_Watchdogs::init();
+    Inventor_Watchdogs_Customizations_Watchdogs::init();

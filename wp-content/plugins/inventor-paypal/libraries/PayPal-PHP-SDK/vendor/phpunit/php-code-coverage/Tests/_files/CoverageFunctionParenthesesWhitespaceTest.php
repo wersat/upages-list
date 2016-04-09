@@ -1,11 +1,12 @@
 <?php
-class CoverageFunctionParenthesesWhitespaceTest extends PHPUnit_Framework_TestCase
-{
-    /**
-     * @covers ::globalFunction ( )
-     */
-    public function testSomething()
+
+    class CoverageFunctionParenthesesWhitespaceTest extends PHPUnit_Framework_TestCase
     {
-        globalFunction();
+        /**
+         * @covers ::globalFunction ( )
+         */
+        public function testSomething()
+        {
+            globalFunction();
+        }
     }
-}

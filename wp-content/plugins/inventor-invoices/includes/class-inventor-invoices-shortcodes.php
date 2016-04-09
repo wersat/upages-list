@@ -1,44 +1,39 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-
-/**
- * Class Inventor_Invoices_Shortcodes
- *
- * @class Inventor_Invoices_Shortcodes
- * @package Inventor/Classes
- * @author Pragmatic Mates
- */
-class Inventor_Invoices_Shortcodes {
-    /**
-     * Initialize shortcodes
-     *
-     * @access public
-     * @return void
-     */
-    public static function init() {
-        add_shortcode( 'inventor_invoices', array( __CLASS__, 'invoices' ) );
+    if ( ! defined('ABSPATH')) {
+        exit;
     }
 
     /**
-     * Invoices
-     *
-     * @access public
-     * @param $atts
-     * @return void
+     * Class Inventor_Invoices_Shortcodes.
+     * @class  Inventor_Invoices_Shortcodes
+     * @author Pragmatic Mates
      */
-    public static function invoices( $atts ) {
-        if ( ! is_user_logged_in() ) {
-            echo Inventor_Template_Loader::load( 'misc/not-allowed' );
-            return;
+    class Inventor_Invoices_Shortcodes
+    {
+        /**
+         * Initialize shortcodes.
+         */
+        public static function init()
+        {
+            add_shortcode('inventor_invoices', [__CLASS__, 'invoices']);
         }
 
-        Inventor_Invoices_Logic::loop_my_invoices();
-        echo Inventor_Template_Loader::load( 'invoices', $atts, $plugin_dir = INVENTOR_INVOICES_DIR );
-        wp_reset_query();
-    }
-}
+        /**
+         * Invoices.
+         *
+         * @param $atts
+         */
+        public static function invoices($atts)
+        {
+            if ( ! is_user_logged_in()) {
+                echo Inventor_Template_Loader::load('misc/not-allowed');
 
-Inventor_Invoices_Shortcodes::init();
+                return;
+            }
+            Inventor_Invoices_Logic::loop_my_invoices();
+            echo Inventor_Template_Loader::load('invoices', $atts, $plugin_dir = INVENTOR_INVOICES_DIR);
+            wp_reset_query();
+        }
+    }
+
+    Inventor_Invoices_Shortcodes::init();

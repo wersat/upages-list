@@ -1,35 +1,28 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
     exit;
 }
 
 /**
- * Class Inventor_Packages_Customizations
- *
- * @access public
- * @package Inventor_Packages/Classes/Customizations
- * @return void
+ * Class Inventor_Packages_Customizations.
  */
-class Inventor_Packages_Customizations {
+class Inventor_Packages_Customizations
+{
     /**
-     * Initialize customizations
-     *
-     * @access public
-     * @return void
+     * Initialize customizations.
      */
-    public static function init() {
+    public static function init()
+    {
         self::includes();
     }
 
     /**
-     * Include all customizations
-     *
-     * @access public
-     * @return void
+     * Include all customizations.
      */
-    public static function includes() {
-        require_once INVENTOR_PACKAGES_DIR . 'includes/customizations/class-inventor-packages-customizations-packages.php';
+    public static function includes()
+    {
+        require_once INVENTOR_PACKAGES_DIR.'includes/customizations/class-inventor-packages-customizations-packages.php';
     }
 }
 

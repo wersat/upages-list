@@ -1,23 +1,21 @@
 <?php
-
-namespace PayPal\Exception;
-
-/**
- * Class PayPalConfigurationException
- *
- * @package PayPal\Exception
- */
-class PayPalConfigurationException extends \Exception
-{
+    namespace PayPal\Exception;
 
     /**
-     * Default Constructor
-     *
-     * @param string|null $message
-     * @param int  $code
+     * Class PayPalConfigurationException
+     * @package PayPal\Exception
      */
-    public function __construct($message = null, $code = 0)
+    class PayPalConfigurationException extends \Exception
     {
-        parent::__construct($message, $code);
+
+        /**
+         * Default Constructor
+         *
+         * @param string|null $message
+         * @param int         $code
+         */
+        public function __construct($message = null, $code = 0)
+        {
+            parent::__construct($message, $code);
+        }
     }
-}

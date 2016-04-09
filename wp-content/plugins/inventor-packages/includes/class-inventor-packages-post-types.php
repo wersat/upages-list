@@ -1,35 +1,32 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
     exit;
 }
 
 /**
- * Class Inventor_Packages_Post_Types
+ * Class Inventor_Packages_Post_Types.
  *
  * @class Inventor_Packages_Post_Types
- * @package Inventor_Packages/Classes
+ *
  * @author Pragmatic Mates
  */
-class Inventor_Packages_Post_Types {
+class Inventor_Packages_Post_Types
+{
     /**
-     * Initialize post types
-     *
-     * @access public
-     * @return void
+     * Initialize post types.
      */
-    public static function init() {
+    public static function init()
+    {
         self::includes();
     }
 
     /**
-     * Loads post types
-     *
-     * @access public
-     * @return void
+     * Loads post types.
      */
-    public static function includes() {
-        require_once INVENTOR_PACKAGES_DIR . 'includes/post-types/class-inventor-packages-post-type-package.php';
+    public static function includes()
+    {
+        require_once INVENTOR_PACKAGES_DIR.'includes/post-types/class-inventor-packages-post-type-package.php';
     }
 }
 

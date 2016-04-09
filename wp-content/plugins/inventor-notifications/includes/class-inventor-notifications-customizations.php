@@ -1,36 +1,28 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-
-/**
- * Class Inventor_Notifications_Customizations
- *
- * @access public
- * @package Inventor_Notifications/Classes/Customizations
- * @return void
- */
-class Inventor_Notifications_Customizations {
-    /**
-     * Initialize customizations
-     *
-     * @access public
-     * @return void
-     */
-    public static function init() {
-        self::includes();
+    if ( ! defined('ABSPATH')) {
+        exit;
     }
 
     /**
-     * Include all customizations
-     *
-     * @access public
-     * @return void
+     * Class Inventor_Notifications_Customizations.
      */
-    public static function includes() {
-        require_once INVENTOR_NOTIFICATIONS_DIR . 'includes/customizations/class-inventor-notifications-customizations-notifications.php';
-    }
-}
+    class Inventor_Notifications_Customizations
+    {
+        /**
+         * Initialize customizations.
+         */
+        public static function init()
+        {
+            self::includes();
+        }
 
-Inventor_Notifications_Customizations::init();
+        /**
+         * Include all customizations.
+         */
+        public static function includes()
+        {
+            require_once INVENTOR_NOTIFICATIONS_DIR . 'includes/customizations/class-inventor-notifications-customizations-notifications.php';
+        }
+    }
+
+    Inventor_Notifications_Customizations::init();

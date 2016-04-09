@@ -1,8 +1,6 @@
 <?php
+    namespace Stripe;
 
-namespace Stripe;
-
-class BankAccount extends ExternalAccount
-{
-
-}
+    class BankAccount extends ExternalAccount
+    {
+    }

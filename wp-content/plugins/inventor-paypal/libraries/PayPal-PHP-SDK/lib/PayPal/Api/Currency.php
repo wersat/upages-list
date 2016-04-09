@@ -1,69 +1,65 @@
 <?php
+    namespace PayPal\Api;
 
-namespace PayPal\Api;
-
-use PayPal\Common\PayPalModel;
-use PayPal\Converter\FormatConverter;
-use PayPal\Validation\NumericValidator;
-
-/**
- * Class Currency
- *
- * Base object for all financial value related fields (balance, payment due, etc.)
- *
- * @package PayPal\Api
- *
- * @property string currency
- * @property string value
- */
-class Currency extends PayPalModel
-{
-    /**
-     * 3 letter currency code as defined by ISO 4217.
-     *
-     * @param string $currency
-     * 
-     * @return $this
-     */
-    public function setCurrency($currency)
-    {
-        $this->currency = $currency;
-        return $this;
-    }
+    use PayPal\Common\PayPalModel;
+    use PayPal\Converter\FormatConverter;
+    use PayPal\Validation\NumericValidator;
 
     /**
-     * 3 letter currency code as defined by ISO 4217.
-     *
-     * @return string
+     * Class Currency
+     * Base object for all financial value related fields (balance, payment due, etc.)
+     * @package PayPal\Api
+     * @property string currency
+     * @property string value
      */
-    public function getCurrency()
+    class Currency extends PayPalModel
     {
-        return $this->currency;
-    }
+        /**
+         * 3 letter currency code as defined by ISO 4217.
+         *
+         * @param string $currency
+         *
+         * @return $this
+         */
+        public function setCurrency($currency)
+        {
+            $this->currency = $currency;
 
-    /**
-     * amount up to N digit after the decimals separator as defined in ISO 4217 for the appropriate currency code.
-     *
-     * @param string|double $value
-     * 
-     * @return $this
-     */
-    public function setValue($value)
-    {
-        NumericValidator::validate($value, "Value");
-        $value = FormatConverter::formatToPrice($value, $this->getCurrency());
-        $this->value = $value;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * amount up to N digit after the decimals separator as defined in ISO 4217 for the appropriate currency code.
-     *
-     * @return string
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
+        /**
+         * 3 letter currency code as defined by ISO 4217.
+         * @return string
+         */
+        public function getCurrency()
+        {
+            return $this->currency;
+        }
 
-}
+        /**
+         * amount up to N digit after the decimals separator as defined in ISO 4217 for the appropriate currency code.
+         *
+         * @param string|double $value
+         *
+         * @return $this
+         */
+        public function setValue($value)
+        {
+            NumericValidator::validate($value, "Value");
+            $value       = FormatConverter::formatToPrice($value, $this->getCurrency());
+            $this->value = $value;
+
+            return $this;
+        }
+
+        /**
+         * amount up to N digit after the decimals separator as defined in ISO 4217 for the appropriate currency code.
+         * @return string
+         */
+        public function getValue()
+        {
+            return $this->value;
+        }
+
+    }
