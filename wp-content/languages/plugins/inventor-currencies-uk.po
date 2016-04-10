@@ -1,0 +1,90 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Inventor Currencies\n"
+"POT-Creation-Date: 2016-04-09 15:38+0300\n"
+"PO-Revision-Date: 2016-04-10 19:35+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"Last-Translator: \n"
+"Language: uk\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:34
+msgid "Inventor Currencies"
+msgstr "Inventor Валюти"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:47
+msgid "Number of additional currencies"
+msgstr "Кількість додаткових валют"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:50
+msgid "Input positive integer or 0 for no other currencies."
+msgstr "Ввести ціле додатнє число або 0 для однієї валюти"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:66
+msgid "currencylayer.com API key"
+msgstr ""
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:69
+msgid "Enter if you want to automatically update rates of currencies."
+msgstr "Ввести, якщо потрібно автоматично оновлювати курс валют."
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:84
+msgid "Currency"
+msgstr "Валюта"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:96
+msgid "Currency Symbol"
+msgstr "Символ валюти"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:109
+msgid "Currency Code"
+msgstr "Код валюти"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:123
+msgid "Show Symbol After Amount"
+msgstr "Показувати символ після значення валюти"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:136
+msgid "Decimal places"
+msgstr "Кількість знаків після коми"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:155
+msgid "Decimal Separator"
+msgstr "Роздільник десяткових знаків"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:160
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:178
+msgid ". (dot)"
+msgstr ". (крапка)"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:161
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:179
+msgid ", (comma)"
+msgstr ", (кома)"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:173
+msgid "Thousands Separator"
+msgstr "Роздільник тисячних значень"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:180
+msgid "\" \" (space)"
+msgstr "\" \" (пробіл)"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:181
+msgid "\"\" (empty string)"
+msgstr "без відступу"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:193
+msgid "Rate"
+msgstr "Курс валюти"
+
+#: includes/customizations/class-inventor-currencies-customizations-currencies.php:196
+msgid "Rate from default currency"
+msgstr "Курс до валюти за замовчуванням"

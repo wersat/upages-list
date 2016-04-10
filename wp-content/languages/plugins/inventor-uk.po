@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Inventor\n"
 "POT-Creation-Date: 2016-04-07 11:43+0300\n"
-"PO-Revision-Date: 2016-04-09 15:45+0300\n"
+"PO-Revision-Date: 2016-04-10 22:09+0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -472,7 +472,7 @@ msgstr "Час"
 
 #: includes/class-inventor-metaboxes.php:673
 msgid "Date interval"
-msgstr "Період"
+msgstr "Проміжок дати"
 
 #: includes/class-inventor-metaboxes.php:680
 msgid "Date from"
@@ -2481,11 +2481,11 @@ msgstr "Категорія"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:37
 msgid "Search Categories"
-msgstr ""
+msgstr "Знайти категорію"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:38
 msgid "All Categories"
-msgstr ""
+msgstr "Всі категорії"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:39
 msgid "Parent Category"
@@ -3096,7 +3096,7 @@ msgstr "Надіслати скаргу"
 
 #: templates/misc/share.php:3 templates/misc/share.php:7
 msgid "Share"
-msgstr ""
+msgstr "Поділитися"
 
 #: templates/notices/welcome.php:3
 msgid ""
@@ -3494,7 +3494,7 @@ msgstr ""
 
 #: templates/widgets/listings.php:80
 msgid "No listings found."
-msgstr ""
+msgstr "Підприємства не знайдені."
 
 #: templates/widgets/opening-hours.php:10
 msgid "Mon"
