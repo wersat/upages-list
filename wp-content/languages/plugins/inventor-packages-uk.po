@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Inventor Packages\n"
 "POT-Creation-Date: 2016-04-11 16:22+0300\n"
-"PO-Revision-Date: 2016-04-11 17:52+0300\n"
+"PO-Revision-Date: 2016-04-12 11:52+0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: includes/post-types/class-inventor-packages-post-type-package.php:49
 #: includes/widgets/class-inventor-packages-widget-packages.php:24
 msgid "Packages"
-msgstr "Тарифні плани"
+msgstr "Тарифні пакети"
 
 #: includes/class-inventor-packages-logic.php:217
 msgid "Listing details"
@@ -64,7 +64,7 @@ msgstr "Нескінченна"
 #: includes/class-inventor-packages-logic.php:517
 #: includes/post-types/class-inventor-packages-post-type-package.php:38
 msgid "Package"
-msgstr "Тарифний план"
+msgstr "Тарифний пакет"
 
 #: includes/class-inventor-packages-logic.php:465
 msgid "Package Information"
@@ -76,7 +76,7 @@ msgstr "Нескінченна тривалість"
 
 #: includes/class-inventor-packages-logic.php:494
 msgid "Validity"
-msgstr ""
+msgstr "Термін дії"
 
 #: includes/class-inventor-packages-logic.php:520
 msgid ""
@@ -86,7 +86,7 @@ msgstr ""
 
 #: includes/class-inventor-packages-logic.php:966
 msgid "Package is not free."
-msgstr ""
+msgstr "Тарифний план не безкоштовний."
 
 #: includes/class-inventor-packages-logic.php:972
 msgid "Package has been set."
@@ -115,31 +115,31 @@ msgstr "Для зареєстрованих користувачів"
 #: includes/post-types/class-inventor-packages-post-type-package.php:39
 #: includes/post-types/class-inventor-packages-post-type-package.php:40
 msgid "Add New Package"
-msgstr "Додати новий тарифний план"
+msgstr "Додати новий тарифний пакет"
 
 #: includes/post-types/class-inventor-packages-post-type-package.php:41
 msgid "Edit Package"
-msgstr "Редагувати тарифний план"
+msgstr "Редагувати тарифний пакет"
 
 #: includes/post-types/class-inventor-packages-post-type-package.php:42
 msgid "New Package"
-msgstr "Новий тарифний план"
+msgstr "Новий тарифний пакет"
 
 #: includes/post-types/class-inventor-packages-post-type-package.php:44
 msgid "View Package"
-msgstr "Переглянути тарифний план"
+msgstr "Переглянути тарифний пакет"
 
 #: includes/post-types/class-inventor-packages-post-type-package.php:45
 msgid "Search Package"
-msgstr "Знайти тарифний план"
+msgstr "Знайти тарифний пакет"
 
 #: includes/post-types/class-inventor-packages-post-type-package.php:46
 msgid "No Packages found"
-msgstr "Тарифний план не знайдено"
+msgstr "Тарифний пакет не знайдено"
 
 #: includes/post-types/class-inventor-packages-post-type-package.php:47
 msgid "No Packages Found in Trash"
-msgstr "У кошику тарифний план не знайдено"
+msgstr "У кошику тарифний пакет не знайдено"
 
 #: includes/post-types/class-inventor-packages-post-type-package.php:76
 msgid "General"
@@ -316,45 +316,45 @@ msgstr "Виберіть тарифний план"
 
 #: templates/package-info.php:77 templates/widgets/packages.php:55
 msgid "Change"
-msgstr ""
+msgstr "Змінити"
 
 #: templates/payment-form-before.php:9
 msgid "You can't choose trial package."
-msgstr ""
+msgstr "Ви не можете вибрати пробний тарифний план."
 
 #: templates/payment-form-before.php:13
 #, php-format
 msgid "You choosed package <strong>\"%s\"</strong>."
-msgstr ""
+msgstr "Ви вибрали <strong>\"%s\"</strong> тарифний план."
 
 #: templates/payment-form-before.php:17
 #, php-format
 msgid ""
 "You are going to pay <strong>%s</strong> for package <strong>\"%s\"</strong>."
-msgstr ""
+msgstr "Оплатіть <strong>%s</strong> за <strong>\"%s\"</strong> тарифний план."
 
 #: templates/payment-form-before.php:23 templates/payment-form-fields.php:23
 msgid "Missing package."
-msgstr ""
+msgstr "Відсутній тарифний план."
 
 #: templates/payment-form-fields.php:8
 msgid ""
 "Trial packages can only be used as a default package. They cannot be "
 "purchased or chosen."
-msgstr ""
+msgstr "Пробний тарифний план не може бути купленим чи обраним."
 
 #: templates/payment-form-fields.php:16
 msgid "Confirm"
-msgstr ""
+msgstr "Підтвердити"
 
 #: templates/widgets/packages.php:53
 msgid "Purchase"
-msgstr ""
+msgstr "Придбати"
 
 #: templates/widgets/packages.php:83
 msgid "Unlimited"
-msgstr ""
+msgstr "Необмежений"
 
 #: templates/widgets/packages.php:95
 msgid "No packages found."
-msgstr ""
+msgstr "Тарифні плани не знайдені."

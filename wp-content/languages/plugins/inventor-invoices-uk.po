@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Inventor Invoices\n"
 "POT-Creation-Date: 2016-04-11 12:50+0300\n"
-"PO-Revision-Date: 2016-04-11 14:23+0300\n"
+"PO-Revision-Date: 2016-04-12 16:13+0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -82,7 +82,7 @@ msgstr "Назва"
 #: includes/customizations/class-inventor-invoices-customizations-invoices.php:104
 #: templates/content-invoice.php:44 templates/content-invoice.php:54
 msgid "Reg. No."
-msgstr ""
+msgstr "Реєстраційний номер"
 
 #: includes/customizations/class-inventor-invoices-customizations-invoices.php:117
 #: includes/post-types/class-inventor-invoices-post-type-invoice.php:199
@@ -196,7 +196,7 @@ msgstr "Назва"
 #: includes/post-types/class-inventor-invoices-post-type-invoice.php:193
 #: includes/post-types/class-inventor-invoices-post-type-invoice.php:227
 msgid "Registration No."
-msgstr ""
+msgstr "Реєстраційний номер"
 
 #: includes/post-types/class-inventor-invoices-post-type-invoice.php:205
 #: includes/post-types/class-inventor-invoices-post-type-invoice.php:239
