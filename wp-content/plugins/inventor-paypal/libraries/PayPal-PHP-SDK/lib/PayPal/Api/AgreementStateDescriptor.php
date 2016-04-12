@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class AgreementStateDescriptor
+     * Class AgreementStateDescriptor.
      * Description of the current state of the agreement.
-     * @package PayPal\Api
      * @property string               note
      * @property \PayPal\Api\Currency amount
      */
@@ -57,5 +56,4 @@
         {
             return $this->amount;
         }
-
     }

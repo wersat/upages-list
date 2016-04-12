@@ -6,7 +6,6 @@
     /**
      * Class BankAccount
      * A resource representing a bank account that can be used to fund a payment.
-     * @package PayPal\Api
      * @property string              account_number
      * @property string              account_number_type
      * @property string              routing_number
@@ -64,7 +63,7 @@
 
         /**
          * Type of the bank account number (International or Basic Bank Account Number). For more information refer to http://en.wikipedia.org/wiki/International_Bank_Account_Number.
-         * Valid Values: ["BBAN", "IBAN"]
+         * Valid Values: ["BBAN", "IBAN"].
          *
          * @param string $account_number_type
          *
@@ -93,7 +92,7 @@
 
         /**
          * Type of the bank account.
-         * Valid Values: ["CHECKING", "SAVINGS"]
+         * Valid Values: ["CHECKING", "SAVINGS"].
          *
          * @param string $account_type
          *
@@ -122,7 +121,7 @@
 
         /**
          * Type of the check when this information was obtained through a check by the facilitator or merchant.
-         * Valid Values: ["PERSONAL", "COMPANY"]
+         * Valid Values: ["PERSONAL", "COMPANY"].
          *
          * @param string $check_type
          *
@@ -137,7 +136,7 @@
 
         /**
          * How the check was obtained from the customer, if check was the source of the information provided.
-         * Valid Values: ["CCD", "PPD", "TEL", "POP", "ARC", "RCK", "WEB"]
+         * Valid Values: ["CCD", "PPD", "TEL", "POP", "ARC", "RCK", "WEB"].
          *
          * @param string $auth_type
          *
@@ -250,7 +249,7 @@
 
         /**
          * State of this funding instrument.
-         * Valid Values: ["ACTIVE", "INACTIVE", "DELETED"]
+         * Valid Values: ["ACTIVE", "INACTIVE", "DELETED"].
          *
          * @param string $state
          *
@@ -265,7 +264,7 @@
 
         /**
          * Confirmation status of a bank account.
-         * Valid Values: ["UNCONFIRMED", "CONFIRMED"]
+         * Valid Values: ["UNCONFIRMED", "CONFIRMED"].
          *
          * @param string $confirmation_status
          *
@@ -587,7 +586,7 @@
         }
 
         /**
-         * Gets Links
+         * Gets Links.
          * @return \PayPal\Api\Links[]
          */
         public function getLinks()
@@ -596,7 +595,7 @@
         }
 
         /**
-         * Sets Links
+         * Sets Links.
          *
          * @param \PayPal\Api\Links[] $links
          *
@@ -620,5 +619,4 @@
         {
             return $this->setLinks(array_diff($this->getLinks(), [$links]));
         }
-
     }

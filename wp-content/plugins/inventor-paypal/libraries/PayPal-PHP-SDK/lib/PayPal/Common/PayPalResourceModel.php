@@ -7,15 +7,13 @@
 
     /**
      * Class PayPalResourceModel
-     * An Executable PayPalModel Class
+     * An Executable PayPalModel Class.
      * @property \PayPal\Api\Links[] links
-     * @package PayPal\Common
      */
     class PayPalResourceModel extends PayPalModel implements IResource
     {
-
         /**
-         * Sets Links
+         * Sets Links.
          *
          * @param \PayPal\Api\Links[] $links
          *
@@ -29,7 +27,7 @@
         }
 
         /**
-         * Gets Links
+         * Gets Links.
          * @return \PayPal\Api\Links[]
          */
         public function getLinks()
@@ -45,7 +43,7 @@
                 }
             }
 
-            return null;
+            return;
         }
 
         /**
@@ -77,7 +75,7 @@
         }
 
         /**
-         * Execute SDK Call to Paypal services
+         * Execute SDK Call to Paypal services.
          *
          * @param string         $url
          * @param string         $method

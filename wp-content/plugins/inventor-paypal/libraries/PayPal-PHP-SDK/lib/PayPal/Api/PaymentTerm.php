@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class PaymentTerm
+     * Class PaymentTerm.
      * Payment term of the invoice. If term_type is present, due_date must not be present and vice versa.
-     * @package PayPal\Api
      * @property string term_type
      * @property string due_date
      */
@@ -14,7 +13,7 @@
     {
         /**
          * Terms by which the invoice payment is due.
-         * Valid Values: ["DUE_ON_RECEIPT", "NET_10", "NET_15", "NET_30", "NET_45"]
+         * Valid Values: ["DUE_ON_RECEIPT", "NET_10", "NET_15", "NET_30", "NET_45"].
          *
          * @param string $term_type
          *
@@ -58,5 +57,4 @@
         {
             return $this->due_date;
         }
-
     }

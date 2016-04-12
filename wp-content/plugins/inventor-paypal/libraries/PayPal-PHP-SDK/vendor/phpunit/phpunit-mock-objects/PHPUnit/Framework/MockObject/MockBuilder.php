@@ -104,28 +104,6 @@
         }
 
         /**
-         * Creates a mock object using a fluent interface.
-         * @return PHPUnit_Framework_MockObject_MockObject
-         */
-        public function getMock()
-        {
-            return $this->testCase->getMock($this->className, $this->methods, $this->constructorArgs,
-                $this->mockClassName, $this->originalConstructor, $this->originalClone, $this->autoload,
-                $this->cloneArguments);
-        }
-
-        /**
-         * Creates a mock object for an abstract class using a fluent interface.
-         * @return PHPUnit_Framework_MockObject_MockObject
-         */
-        public function getMockForAbstractClass()
-        {
-            return $this->testCase->getMockForAbstractClass($this->className, $this->constructorArgs,
-                $this->mockClassName, $this->originalConstructor, $this->originalClone, $this->autoload, $this->methods,
-                $this->cloneArguments);
-        }
-
-        /**
          * Specifies the subset of methods to mock. Default is to mock all of them.
          *
          * @param  array|null $methods
@@ -165,6 +143,28 @@
             $this->mockClassName = $name;
 
             return $this;
+        }
+
+        /**
+         * Creates a mock object using a fluent interface.
+         * @return PHPUnit_Framework_MockObject_MockObject
+         */
+        public function getMock()
+        {
+            return $this->testCase->getMock($this->className, $this->methods, $this->constructorArgs,
+                $this->mockClassName, $this->originalConstructor, $this->originalClone, $this->autoload,
+                $this->cloneArguments);
+        }
+
+        /**
+         * Creates a mock object for an abstract class using a fluent interface.
+         * @return PHPUnit_Framework_MockObject_MockObject
+         */
+        public function getMockForAbstractClass()
+        {
+            return $this->testCase->getMockForAbstractClass($this->className, $this->constructorArgs,
+                $this->mockClassName, $this->originalConstructor, $this->originalClone, $this->autoload, $this->methods,
+                $this->cloneArguments);
         }
 
         /**

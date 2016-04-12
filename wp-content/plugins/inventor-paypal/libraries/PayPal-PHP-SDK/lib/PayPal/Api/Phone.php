@@ -6,7 +6,6 @@
     /**
      * Class Phone
      * Information related to the Payer. In case of PayPal Wallet payment, this information will be filled in by PayPal after the user approves the payment using their PayPal Wallet.
-     * @package PayPal\Api
      * @property string country_code
      * @property string national_number
      * @property string extension
@@ -14,7 +13,7 @@
     class Phone extends PayPalModel
     {
         /**
-         * Country code (from in E.164 format)
+         * Country code (from in E.164 format).
          *
          * @param string $country_code
          *
@@ -28,7 +27,7 @@
         }
 
         /**
-         * In-country phone number (from in E.164 format)
+         * In-country phone number (from in E.164 format).
          *
          * @param string $national_number
          *
@@ -42,7 +41,7 @@
         }
 
         /**
-         * Phone extension
+         * Phone extension.
          *
          * @param string $extension
          *
@@ -56,7 +55,7 @@
         }
 
         /**
-         * Country code (from in E.164 format)
+         * Country code (from in E.164 format).
          * @return string
          */
         public function getCountryCode()
@@ -65,7 +64,7 @@
         }
 
         /**
-         * In-country phone number (from in E.164 format)
+         * In-country phone number (from in E.164 format).
          * @return string
          */
         public function getNationalNumber()
@@ -74,12 +73,11 @@
         }
 
         /**
-         * Phone extension
+         * Phone extension.
          * @return string
          */
         public function getExtension()
         {
             return $this->extension;
         }
-
     }

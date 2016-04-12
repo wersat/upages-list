@@ -2,8 +2,7 @@
     namespace PayPal\Handler;
 
     /**
-     * Interface IPayPalHandler
-     * @package PayPal\Handler
+     * Interface IPayPalHandler.
      */
     interface IPayPalHandler
     {

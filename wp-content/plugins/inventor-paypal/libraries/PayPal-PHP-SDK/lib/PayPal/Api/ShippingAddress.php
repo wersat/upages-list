@@ -2,9 +2,8 @@
     namespace PayPal\Api;
 
     /**
-     * Class ShippingAddress
+     * Class ShippingAddress.
      * Extended Address object used as shipping address in a payment.
-     * @package PayPal\Api
      * @property string id
      * @property string recipient_name
      * @property bool   default_address
@@ -103,5 +102,4 @@
         {
             return $this->preferred_address;
         }
-
     }

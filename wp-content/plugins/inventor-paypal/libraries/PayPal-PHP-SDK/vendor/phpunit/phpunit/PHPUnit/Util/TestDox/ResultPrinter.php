@@ -117,7 +117,6 @@
 
         /**
          * Handler for 'start run' event.
-
          */
         protected function startRun()
         {
@@ -125,7 +124,6 @@
 
         /**
          * Flush buffer and close output.
-
          */
         public function flush()
         {
@@ -166,7 +164,6 @@
 
         /**
          * Handler for 'end run' event.
-
          */
         protected function endRun()
         {

@@ -6,7 +6,6 @@
     /**
      * Class Measurement
      * Measurement to represent item dimensions like length, width, height and weight etc.
-     * @package PayPal\Api
      * @property string value
      * @property string unit
      */
@@ -57,5 +56,4 @@
         {
             return $this->unit;
         }
-
     }

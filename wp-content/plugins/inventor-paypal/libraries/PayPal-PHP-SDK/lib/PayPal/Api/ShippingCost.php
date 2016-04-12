@@ -6,7 +6,6 @@
     /**
      * Class ShippingCost
      * Shipping cost in percent or amount.
-     * @package PayPal\Api
      * @property \PayPal\Api\Currency amount
      * @property \PayPal\Api\Tax      tax
      */
@@ -57,5 +56,4 @@
         {
             return $this->tax;
         }
-
     }

@@ -59,6 +59,6 @@
             $stack = debug_backtrace(false);
 
             return new PHPUnit_Framework_Exception(sprintf('Argument #%d%sof %s::%s() must be a %s', $argument,
-                    $value !== null ? ' (' . $value . ')' : ' ', $stack[1]['class'], $stack[1]['function'], $type));
+                $value !== null ? ' (' . $value . ')' : ' ', $stack[1]['class'], $stack[1]['function'], $type));
         }
     }

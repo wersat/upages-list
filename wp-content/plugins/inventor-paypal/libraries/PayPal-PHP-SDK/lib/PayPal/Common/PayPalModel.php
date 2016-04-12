@@ -2,25 +2,23 @@
     namespace PayPal\Common;
 
     use PayPal\Validation\JsonValidator;
-    use PayPal\Validation\ModelAccessorValidator;
 
     /**
      * Generic Model class that all API domain classes extend
      * Stores all member data in a Hashmap that enables easy
-     * JSON encoding/decoding
+     * JSON encoding/decoding.
      */
     class PayPalModel
     {
-
         /**
-         * OAuth Credentials to use for this call
-         * @var \PayPal\Auth\OAuthTokenCredential $credential
+         * OAuth Credentials to use for this call.
+         * @var \PayPal\Auth\OAuthTokenCredential
          */
         protected static $credential;
         private $_propMap = [];
 
         /**
-         * Default Constructor
+         * Default Constructor.
          * You can pass data as a json representation or array object. This argument eliminates the need
          * to do $obj->fromJson($data) later after creating the object.
          *
@@ -31,13 +29,13 @@
         public function __construct($data = null)
         {
             switch (gettype($data)) {
-                case "NULL":
+                case 'NULL':
                     break;
-                case "string":
+                case 'string':
                     JsonValidator::validate($data);
                     $this->fromJson($data);
                     break;
-                case "array":
+                case 'array':
                     $this->fromArray($data);
                     break;
                 default:
@@ -45,7 +43,7 @@
         }
 
         /**
-         * Fills object value from Json string
+         * Fills object value from Json string.
          *
          * @param $json
          *
@@ -57,7 +55,7 @@
         }
 
         /**
-         * Fills object value from Array list
+         * Fills object value from Array list.
          *
          * @param $arr
          *
@@ -126,7 +124,7 @@
         }
 
         /**
-         * Converts the input key into a valid Setter Method Name
+         * Converts the input key into a valid Setter Method Name.
          *
          * @param $key
          *
@@ -138,7 +136,7 @@
         }
 
         /**
-         * Sets Credential
+         * Sets Credential.
          * @deprecated Pass ApiContext to create/get methods instead
          *
          * @param \PayPal\Auth\OAuthTokenCredential $credential
@@ -150,7 +148,7 @@
 
         /**
          * Returns a list of Object from Array or Json String. It is generally used when your json
-         * contains an array of this object
+         * contains an array of this object.
          *
          * @param mixed $data Array object or json string representation
          *
@@ -160,7 +158,7 @@
         {
             // Return Null if Null
             if ($data === null) {
-                return null;
+                return;
             }
             if (is_a($data, get_class(new \stdClass()))) {
                 //This means, root element is object
@@ -191,7 +189,7 @@
         }
 
         /**
-         * Magic Get Method
+         * Magic Get Method.
          *
          * @param $key
          *
@@ -203,11 +201,11 @@
                 return $this->_propMap[$key];
             }
 
-            return null;
+            return;
         }
 
         /**
-         * Magic Set Method
+         * Magic Set Method.
          *
          * @param $key
          * @param $value
@@ -222,7 +220,7 @@
         }
 
         /**
-         * Magic isSet Method
+         * Magic isSet Method.
          *
          * @param $key
          *
@@ -234,7 +232,7 @@
         }
 
         /**
-         * Magic Unset Method
+         * Magic Unset Method.
          *
          * @param $key
          */
@@ -244,7 +242,7 @@
         }
 
         /**
-         * Converts Params to Array
+         * Converts Params to Array.
          *
          * @param $param
          *
@@ -254,11 +252,11 @@
         {
             $ret = [];
             foreach ($param as $k => $v) {
-                if ($v instanceof PayPalModel) {
+                if ($v instanceof self) {
                     $ret[$k] = $v->toArray();
-                } else if (sizeof($v) <= 0 && is_array($v)) {
+                } elseif (sizeof($v) <= 0 && is_array($v)) {
                     $ret[$k] = [];
-                } else if (is_array($v)) {
+                } elseif (is_array($v)) {
                     $ret[$k] = $this->_convertToArray($v);
                 } else {
                     $ret[$k] = $v;
@@ -268,14 +266,14 @@
             // we need to convert array to StdClass object to properly
             // represent JSON String
             if (sizeof($ret) <= 0) {
-                $ret = new PayPalModel();
+                $ret = new self();
             }
 
             return $ret;
         }
 
         /**
-         * Returns array representation of object
+         * Returns array representation of object.
          * @return array
          */
         public function toArray()
@@ -284,7 +282,7 @@
         }
 
         /**
-         * Magic Method for toString
+         * Magic Method for toString.
          * @return string
          */
         public function __toString()
@@ -293,7 +291,7 @@
         }
 
         /**
-         * Returns object JSON representation
+         * Returns object JSON representation.
          *
          * @param int $options http://php.net/manual/en/json.constants.php
          *

@@ -16,8 +16,32 @@
         public function __construct()
         {
             parent::__construct('partners', __('Partners', 'inventor-partners'), [
-                    'description' => __('Displays partners widget', 'inventor-partners'),
-                ]);
+                'description' => __('Displays partners widget', 'inventor-partners'),
+            ]);
+        }
+
+        /**
+         * Backend.
+         *
+         * @param array $instance
+         */
+        public function form($instance)
+        {
+            include Inventor_Template_Loader::locate('widgets/partners-admin', INVENTOR_PARTNERS_DIR);
+            include Inventor_Template_Loader::locate('widgets/advanced-options-admin');
+        }
+
+        /**
+         * Update.
+         *
+         * @param array $new_instance
+         * @param array $old_instance
+         *
+         * @return array
+         */
+        public function update($new_instance, $old_instance)
+        {
+            return $new_instance;
         }
 
         /**
@@ -39,29 +63,5 @@
             query_posts($query);
             include Inventor_Template_Loader::locate('widgets/partners', INVENTOR_PARTNERS_DIR);
             wp_reset_query();
-        }
-
-        /**
-         * Update.
-         *
-         * @param array $new_instance
-         * @param array $old_instance
-         *
-         * @return array
-         */
-        public function update($new_instance, $old_instance)
-        {
-            return $new_instance;
-        }
-
-        /**
-         * Backend.
-         *
-         * @param array $instance
-         */
-        public function form($instance)
-        {
-            include Inventor_Template_Loader::locate('widgets/partners-admin', INVENTOR_PARTNERS_DIR);
-            include Inventor_Template_Loader::locate('widgets/advanced-options-admin');
         }
     }

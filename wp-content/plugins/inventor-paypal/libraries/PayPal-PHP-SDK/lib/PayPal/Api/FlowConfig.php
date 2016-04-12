@@ -7,7 +7,6 @@
     /**
      * Class FlowConfig
      * Parameters for flow configuration.
-     * @package PayPal\Api
      * @property string landing_page_type
      * @property string bank_txn_pending_url
      */
@@ -37,7 +36,7 @@
          */
         public function setBankTxnPendingUrl($bank_txn_pending_url)
         {
-            UrlValidator::validate($bank_txn_pending_url, "BankTxnPendingUrl");
+            UrlValidator::validate($bank_txn_pending_url, 'BankTxnPendingUrl');
             $this->bank_txn_pending_url = $bank_txn_pending_url;
 
             return $this;
@@ -60,5 +59,4 @@
         {
             return $this->bank_txn_pending_url;
         }
-
     }

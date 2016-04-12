@@ -202,7 +202,7 @@
       if (empty($post_id)) {
         $post_id = get_the_ID();
       }
-      $sql = 'SELECT COUNT(comment_post_ID) as count FROM ' . $wpdb->prefix . 'comments
+      $sql     = 'SELECT COUNT(comment_post_ID) as count FROM ' . $wpdb->prefix . 'comments
 	              LEFT JOIN ' . $wpdb->prefix . 'commentmeta ON ' . $wpdb->prefix . 'comments.comment_ID=' . $wpdb->prefix . 'commentmeta.comment_id
                   WHERE comment_post_ID = ' . $post_id . ' AND
                         comment_approved = 1 AND
@@ -330,7 +330,7 @@
       if (empty($post_id)) {
         $post_id = get_the_ID();
       }
-      $sql = 'SELECT ROUND(AVG(meta_value), 2) as score FROM ' . $wpdb->prefix . 'comments
+      $sql     = 'SELECT ROUND(AVG(meta_value), 2) as score FROM ' . $wpdb->prefix . 'comments
 	              LEFT JOIN ' . $wpdb->prefix . 'commentmeta ON ' . $wpdb->prefix . 'comments.comment_ID=' . $wpdb->prefix . 'commentmeta.comment_id
                   WHERE comment_post_ID = ' . $post_id . ' AND
                         comment_approved = 1 AND

@@ -5,8 +5,7 @@
 
     /**
      * Class CreditCardList
-     * A list of Credit Card Resources
-     * @package PayPal\Api
+     * A list of Credit Card Resources.
      * @property \PayPal\Api\CreditCard[] items
      * @property \PayPal\Api\Links[]      links
      * @property int                      total_items
@@ -59,7 +58,7 @@
         }
 
         /**
-         * A list of credit card resources
+         * A list of credit card resources.
          * @return \PayPal\Api\CreditCard[]
          */
         public function getItems()
@@ -68,7 +67,7 @@
         }
 
         /**
-         * A list of credit card resources
+         * A list of credit card resources.
          *
          * @param \PayPal\Api\CreditCard[] $items
          *
@@ -110,5 +109,4 @@
         {
             return $this->total_pages;
         }
-
     }

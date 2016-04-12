@@ -9,19 +9,18 @@
      * Text Domain: inventor-paypal
      * Domain Path: /languages/
      * License: GNU General Public License v3.0
-     * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+     * License URI: http://www.gnu.org/licenses/gpl-3.0.html.
      */
     if ( ! class_exists('Inventor_PayPal') && class_exists('Inventor')) {
         /**
-         * Class Inventor_PayPal
+         * Class Inventor_PayPal.
          * @class   Inventor_PayPal
-         * @package Inventor_PayPal
          * @author  Pragmatic Mates
          */
         final class Inventor_PayPal
         {
             /**
-             * Initialize Inventor_PayPal plugin
+             * Initialize Inventor_PayPal plugin.
              */
             public function __construct()
             {
@@ -31,9 +30,7 @@
             }
 
             /**
-             * Defines constants
-             * @access public
-             * @return void
+             * Defines constants.
              */
             public function constants()
             {
@@ -41,9 +38,7 @@
             }
 
             /**
-             * Include classes
-             * @access public
-             * @return void
+             * Include classes.
              */
             public function includes()
             {
@@ -52,9 +47,7 @@
             }
 
             /**
-             * Loads localization files
-             * @access public
-             * @return void
+             * Loads localization files.
              */
             public function load_plugin_textdomain()
             {

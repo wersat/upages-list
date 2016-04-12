@@ -13,11 +13,10 @@
     use PayPal\Security\Cipher;
 
     /**
-     * Class OAuthTokenCredential
+     * Class OAuthTokenCredential.
      */
     class OAuthTokenCredential extends PayPalResourceModel
     {
-
         public static $CACHE_PATH = '/../../../var/auth.cache';
 
         /**
@@ -26,44 +25,44 @@
         public static $AUTH_HANDLER = 'PayPal\Handler\OauthHandler';
 
         /**
-         * Private Variable
-         * @var int $expiryBufferTime
+         * Private Variable.
+         * @var int
          */
         private static $expiryBufferTime = 120;
 
         /**
-         * Private Variable
-         * @var \PayPal\Core\PayPalLoggingManager $logger
+         * Private Variable.
+         * @var \PayPal\Core\PayPalLoggingManager
          */
         private $logger;
 
         /**
-         * Client ID as obtained from the developer portal
-         * @var string $clientId
+         * Client ID as obtained from the developer portal.
+         * @var string
          */
         private $clientId;
 
         /**
-         * Client secret as obtained from the developer portal
-         * @var string $clientSecret
+         * Client secret as obtained from the developer portal.
+         * @var string
          */
         private $clientSecret;
 
         /**
-         * Generated Access Token
-         * @var string $accessToken
+         * Generated Access Token.
+         * @var string
          */
         private $accessToken;
 
         /**
-         * Seconds for with access token is valid
-         * @var $tokenExpiresIn
+         * Seconds for with access token is valid.
+         * @var
          */
         private $tokenExpiresIn;
 
         /**
-         * Last time (in milliseconds) when access token was generated
-         * @var $tokenCreateTime
+         * Last time (in milliseconds) when access token was generated.
+         * @var
          */
         private $tokenCreateTime;
 
@@ -74,7 +73,7 @@
         private $cipher;
 
         /**
-         * Construct
+         * Construct.
          *
          * @param string $clientId     client id obtained from the developer portal
          * @param string $clientSecret client secret obtained from the developer portal
@@ -88,7 +87,7 @@
         }
 
         /**
-         * Get Client ID
+         * Get Client ID.
          * @return string
          */
         public function getClientId()
@@ -97,7 +96,7 @@
         }
 
         /**
-         * Get Client Secret
+         * Get Client Secret.
          * @return string
          */
         public function getClientSecret()
@@ -106,7 +105,7 @@
         }
 
         /**
-         * Get AccessToken
+         * Get AccessToken.
          *
          * @param $config
          *
@@ -158,7 +157,7 @@
         }
 
         /**
-         * Get a Refresh Token from Authorization Code
+         * Get a Refresh Token from Authorization Code.
          *
          * @param       $config
          * @param       $authorizationCode
@@ -172,7 +171,7 @@
                 'grant_type'    => 'authorization_code',
                 'code'          => 1,
                 'redirect_uri'  => 'urn:ietf:wg:oauth:2.0:oob',
-                'response_type' => 'token'
+                'response_type' => 'token',
             ];
             $params = is_array($params) ? $params : [];
             if ($authorizationCode) {
@@ -181,15 +180,15 @@
             }
             $payload = http_build_query(array_merge($allowedParams, array_intersect_key($params, $allowedParams)));
             $response = $this->getToken($config, $this->clientId, $this->clientSecret, $payload);
-            if ($response != null && isset($response["refresh_token"])) {
+            if ($response != null && isset($response['refresh_token'])) {
                 return $response['refresh_token'];
             }
 
-            return null;
+            return;
         }
 
         /**
-         * Updates Access Token based on given input
+         * Updates Access Token based on given input.
          *
          * @param array       $config
          * @param string|null $refreshToken
@@ -204,7 +203,7 @@
         }
 
         /**
-         * Retrieves the token based on the input configuration
+         * Retrieves the token based on the input configuration.
          *
          * @param array  $config
          * @param string $clientId
@@ -222,7 +221,7 @@
             /** @var IPayPalHandler $handler */
             foreach ($handlers as $handler) {
                 if ( ! is_object($handler)) {
-                    $fullHandler = "\\" . (string)$handler;
+                    $fullHandler = '\\' . (string)$handler;
                     $handler     = new $fullHandler(new ApiContext($this));
                 }
                 $handler->handle($httpConfig, $payload, ['clientId' => $clientId, 'clientSecret' => $clientSecret]);
@@ -235,12 +234,11 @@
         }
 
         /**
-         * Generates a new access token
+         * Generates a new access token.
          *
          * @param array       $config
          * @param null|string $refreshToken
          *
-         * @return null
          * @throws PayPalConnectionException
          */
         private function generateAccessToken($config, $refreshToken = null)
@@ -254,15 +252,15 @@
             }
             $payload  = http_build_query($params);
             $response = $this->getToken($config, $this->clientId, $this->clientSecret, $payload);
-            if ($response == null || ! isset($response["access_token"]) || ! isset($response["expires_in"])) {
+            if ($response == null || ! isset($response['access_token']) || ! isset($response['expires_in'])) {
                 $this->accessToken    = null;
                 $this->tokenExpiresIn = null;
-                $this->logger->warning("Could not generate new Access token. Invalid response from server: ");
+                $this->logger->warning('Could not generate new Access token. Invalid response from server: ');
                 throw new PayPalConnectionException(null,
-                    "Could not generate new Access token. Invalid response from server: ");
+                    'Could not generate new Access token. Invalid response from server: ');
             } else {
-                $this->accessToken    = $response["access_token"];
-                $this->tokenExpiresIn = $response["expires_in"];
+                $this->accessToken    = $response['access_token'];
+                $this->tokenExpiresIn = $response['expires_in'];
             }
             $this->tokenCreateTime = time();
 
@@ -270,7 +268,7 @@
         }
 
         /**
-         * Helper method to encrypt data using clientSecret as key
+         * Helper method to encrypt data using clientSecret as key.
          *
          * @param $data
          *
@@ -282,7 +280,7 @@
         }
 
         /**
-         * Helper method to decrypt data using clientSecret as key
+         * Helper method to decrypt data using clientSecret as key.
          *
          * @param $data
          *

@@ -1,10 +1,11 @@
 <?php
-    namespace Stripe;
 
-    class Token extends ApiResource
-    {
-        /**
-         * @param string            $id The ID of the token to retrieve.
+namespace Stripe;
+
+class Token extends ApiResource
+{
+    /**
+         * @param string            $id   The ID of the token to retrieve.
          * @param array|string|null $opts
          *
          * @return Token
@@ -24,4 +25,4 @@
         {
             return self::_create($params, $opts);
         }
-    }
+}

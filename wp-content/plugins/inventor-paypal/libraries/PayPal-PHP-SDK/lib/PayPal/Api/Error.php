@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class Error
+     * Class Error.
      * Details of an Error
-     * @package PayPal\Api
      * @property string                     name
      * @property string                     message
      * @property \PayPal\Api\ErrorDetails[] details
@@ -31,7 +30,7 @@
         }
 
         /**
-         * Reference ID of the purchase_unit associated with this error
+         * Reference ID of the purchase_unit associated with this error.
          * @deprecated Not publicly available
          *
          * @param string $purchase_unit_reference_id
@@ -90,7 +89,7 @@
         }
 
         /**
-         * Fraud filter details.  Only supported when the `payment_method` is set to `credit_card`
+         * Fraud filter details.  Only supported when the `payment_method` is set to `credit_card`.
          * @deprecated Not publicly available
          *
          * @param \PayPal\Api\FmfDetails $fmf_details
@@ -142,7 +141,7 @@
         }
 
         /**
-         * Reference ID of the purchase_unit associated with this error
+         * Reference ID of the purchase_unit associated with this error.
          * @deprecated Not publicly available
          * @return string
          */
@@ -187,7 +186,7 @@
         }
 
         /**
-         * Additional details of the error
+         * Additional details of the error.
          * @return \PayPal\Api\ErrorDetails[]
          */
         public function getDetails()
@@ -196,7 +195,7 @@
         }
 
         /**
-         * Additional details of the error
+         * Additional details of the error.
          *
          * @param \PayPal\Api\ErrorDetails[] $details
          *
@@ -232,7 +231,7 @@
         }
 
         /**
-         * Fraud filter details.  Only supported when the `payment_method` is set to `credit_card`
+         * Fraud filter details.  Only supported when the `payment_method` is set to `credit_card`.
          * @deprecated Not publicly available
          * @return \PayPal\Api\FmfDetails
          */
@@ -276,7 +275,7 @@
         }
 
         /**
-         * Gets Links
+         * Gets Links.
          * @return \PayPal\Api\Links[]
          */
         public function getLinks()
@@ -285,7 +284,7 @@
         }
 
         /**
-         * Sets Links
+         * Sets Links.
          *
          * @param \PayPal\Api\Links[] $links
          *
@@ -309,5 +308,4 @@
         {
             return $this->setLinks(array_diff($this->getLinks(), [$links]));
         }
-
     }

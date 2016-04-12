@@ -6,9 +6,8 @@
     use PayPal\Validation\NumericValidator;
 
     /**
-     * Class Cost
+     * Class Cost.
      * Cost as a percent. For example, 10% should be entered as 10. Alternatively, cost as an amount. For example, an amount of 5 should be entered as 5.
-     * @package PayPal\Api
      * @property string               percent
      * @property \PayPal\Api\Currency amount
      */
@@ -23,7 +22,7 @@
          */
         public function setPercent($percent)
         {
-            NumericValidator::validate($percent, "Percent");
+            NumericValidator::validate($percent, 'Percent');
             $percent       = FormatConverter::formatToNumber($percent);
             $this->percent = $percent;
 
@@ -61,5 +60,4 @@
         {
             return $this->amount;
         }
-
     }

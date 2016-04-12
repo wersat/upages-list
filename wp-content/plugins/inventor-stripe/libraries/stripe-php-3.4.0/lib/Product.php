@@ -1,10 +1,11 @@
 <?php
-    namespace Stripe;
 
-    class Product extends ApiResource
-    {
-        /**
-         * @param string            $id The ID of the Product to retrieve.
+namespace Stripe;
+
+class Product extends ApiResource
+{
+    /**
+         * @param string            $id   The ID of the Product to retrieve.
          * @param array|string|null $opts
          *
          * @return Product
@@ -45,4 +46,4 @@
         {
             return self::_all($params, $opts);
         }
-    }
+}

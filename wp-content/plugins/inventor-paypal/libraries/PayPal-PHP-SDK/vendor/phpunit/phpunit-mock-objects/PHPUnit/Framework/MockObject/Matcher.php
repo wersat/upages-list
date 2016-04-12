@@ -91,31 +91,6 @@
         }
 
         /**
-         * @return string
-         */
-        public function toString()
-        {
-            $list = [];
-            if ($this->invocationMatcher !== null) {
-                $list[] = $this->invocationMatcher->toString();
-            }
-            if ($this->methodNameMatcher !== null) {
-                $list[] = 'where ' . $this->methodNameMatcher->toString();
-            }
-            if ($this->parametersMatcher !== null) {
-                $list[] = 'and ' . $this->parametersMatcher->toString();
-            }
-            if ($this->afterMatchBuilderId !== null) {
-                $list[] = 'after ' . $this->afterMatchBuilderId;
-            }
-            if ($this->stub !== null) {
-                $list[] = 'will ' . $this->stub->toString();
-            }
-
-            return join(' ', $list);
-        }
-
-        /**
          * @param  PHPUnit_Framework_MockObject_Invocation $invocation
          *
          * @return mixed
@@ -133,7 +108,7 @@
                                               ->lookupId($this->afterMatchBuilderId);
                 if ( ! $builder) {
                     throw new PHPUnit_Framework_Exception(sprintf('No builder found for match builder identification <%s>',
-                            $this->afterMatchBuilderId));
+                        $this->afterMatchBuilderId));
                 }
                 $matcher = $builder->getMatcher();
                 if ($matcher && $matcher->invocationMatcher->hasBeenInvoked()) {
@@ -169,7 +144,7 @@
                                               ->lookupId($this->afterMatchBuilderId);
                 if ( ! $builder) {
                     throw new PHPUnit_Framework_Exception(sprintf('No builder found for match builder identification <%s>',
-                            $this->afterMatchBuilderId));
+                        $this->afterMatchBuilderId));
                 }
                 $matcher = $builder->getMatcher();
                 if ( ! $matcher) {
@@ -202,6 +177,31 @@
         }
 
         /**
+         * @return string
+         */
+        public function toString()
+        {
+            $list = [];
+            if ($this->invocationMatcher !== null) {
+                $list[] = $this->invocationMatcher->toString();
+            }
+            if ($this->methodNameMatcher !== null) {
+                $list[] = 'where ' . $this->methodNameMatcher->toString();
+            }
+            if ($this->parametersMatcher !== null) {
+                $list[] = 'and ' . $this->parametersMatcher->toString();
+            }
+            if ($this->afterMatchBuilderId !== null) {
+                $list[] = 'after ' . $this->afterMatchBuilderId;
+            }
+            if ($this->stub !== null) {
+                $list[] = 'will ' . $this->stub->toString();
+            }
+
+            return join(' ', $list);
+        }
+
+        /**
          * @throws PHPUnit_Framework_Exception
          * @throws PHPUnit_Framework_ExpectationFailedException
          */
@@ -225,7 +225,7 @@
                 }
             } catch (PHPUnit_Framework_ExpectationFailedException $e) {
                 throw new PHPUnit_Framework_ExpectationFailedException(sprintf("Expectation failed for %s when %s.\n%s",
-                        $this->methodNameMatcher->toString(), $this->invocationMatcher->toString(), $e->getMessage()));
+                    $this->methodNameMatcher->toString(), $this->invocationMatcher->toString(), $e->getMessage()));
             }
         }
     }

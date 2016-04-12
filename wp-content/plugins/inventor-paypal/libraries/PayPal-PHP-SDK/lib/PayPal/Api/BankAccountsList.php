@@ -5,8 +5,7 @@
 
     /**
      * Class BankAccountsList
-     * A list of Bank Account Resources
-     * @package PayPal\Api
+     * A list of Bank Account Resources.
      * @property \PayPal\Api\BankAccount[] bank_accounts
      * @property int                       count
      * @property string                    next_id
@@ -58,16 +57,16 @@
         }
 
         /**
-         * A list of bank account resources
+         * A list of bank account resources.
          * @return \PayPal\Api\BankAccount[]
          */
         public function getBankAccounts()
         {
-            return $this->{"bank-accounts"};
+            return $this->{'bank-accounts'};
         }
 
         /**
-         * A list of bank account resources
+         * A list of bank account resources.
          *
          * @param \PayPal\Api\BankAccount[] $bank_accounts
          *
@@ -75,7 +74,7 @@
          */
         public function setBankAccounts($bank_accounts)
         {
-            $this->{"bank-accounts"} = $bank_accounts;
+            $this->{'bank-accounts'} = $bank_accounts;
 
             return $this;
         }
@@ -109,5 +108,4 @@
         {
             return $this->next_id;
         }
-
     }

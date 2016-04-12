@@ -10,7 +10,6 @@
     /**
      * Class Plan
      * Billing plan resource that will be used to create a billing agreement.
-     * @package PayPal\Api
      * @property string                          id
      * @property string                          name
      * @property string                          description
@@ -322,10 +321,10 @@
         public static function get($planId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($planId, 'planId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/billing-plans/$planId", "GET", $payLoad, null, $apiContext,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/billing-plans/$planId", 'GET', $payLoad, null, $apiContext,
                 $restCall);
-            $ret     = new Plan();
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
@@ -342,7 +341,7 @@
         public function create($apiContext = null, $restCall = null)
         {
             $payLoad = $this->toJSON();
-            $json    = self::executeCall("/v1/payments/billing-plans/", "POST", $payLoad, null, $apiContext, $restCall);
+            $json    = self::executeCall('/v1/payments/billing-plans/', 'POST', $payLoad, null, $apiContext, $restCall);
             $this->fromJson($json);
 
             return $this;
@@ -359,10 +358,10 @@
          */
         public function update($patchRequest, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($patchRequest, 'patchRequest');
             $payLoad = $patchRequest->toJSON();
-            self::executeCall("/v1/payments/billing-plans/{$this->getId()}", "PATCH", $payLoad, null, $apiContext,
+            self::executeCall("/v1/payments/billing-plans/{$this->getId()}", 'PATCH', $payLoad, null, $apiContext,
                 $restCall);
 
             return true;
@@ -378,7 +377,7 @@
          */
         public function delete($apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             $patchRequest = new PatchRequest();
             $patch        = new Patch();
             $value        = new PayPalModel('{
@@ -404,20 +403,19 @@
         public static function all($params, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($params, 'params');
-            $payLoad       = "";
+            $payLoad       = '';
             $allowedParams = [
                 'page_size'      => 1,
                 'status'         => 1,
                 'page'           => 1,
-                'total_required' => 1
+                'total_required' => 1,
             ];
             $json
-                           = self::executeCall("/v1/payments/billing-plans/" . "?" . http_build_query(array_intersect_key($params,
-                    $allowedParams)), "GET", $payLoad, null, $apiContext, $restCall);
+                           = self::executeCall('/v1/payments/billing-plans/' . '?' . http_build_query(array_intersect_key($params,
+                    $allowedParams)), 'GET', $payLoad, null, $apiContext, $restCall);
             $ret           = new PlanList();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

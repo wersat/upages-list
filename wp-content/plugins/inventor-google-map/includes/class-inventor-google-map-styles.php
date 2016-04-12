@@ -4,14 +4,16 @@
     }
 
     /**
-     * Class Inventor_Google_Map_Styles.
-     * @class  Inventor_Google_Map_Styles
-     * @author Pragmatic Mates
+     * Class Inventor_Google_Map_Styles
+     * @class   Inventor_Google_Map_Styles
+     * @package Inventor/Classes
+     * @author  Pragmatic Mates
      */
     class Inventor_Google_Map_Styles
     {
         /**
-         * Gets style definition.
+         * Gets style definition
+         * @access public
          *
          * @param string $slug
          *
@@ -20,7 +22,7 @@
         public static function get_style($slug = '')
         {
             if (empty($slug)) {
-                return;
+                return null;
             }
             $snazzy_maps = self::styles();
             foreach ($snazzy_maps as $map) {
@@ -29,11 +31,12 @@
                 }
             }
 
-            return;
+            return null;
         }
 
         /**
-         * Gets list of styles.
+         * Gets list of styles
+         * @access public
          * @return array
          */
         public static function styles()

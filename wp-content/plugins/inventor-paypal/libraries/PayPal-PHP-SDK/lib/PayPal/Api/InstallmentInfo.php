@@ -5,8 +5,7 @@
 
     /**
      * Class InstallmentInfo
-     *  A resource representing installment information available for a transaction
-     * @package PayPal\Api
+     *  A resource representing installment information available for a transaction.
      * @property string                          installment_id
      * @property string                          network
      * @property string                          issuer
@@ -30,7 +29,7 @@
 
         /**
          * Credit card network.
-         * Valid Values: ["VISA", "MASTERCARD"]
+         * Valid Values: ["VISA", "MASTERCARD"].
          *
          * @param string $network
          *
@@ -134,5 +133,4 @@
         {
             return $this->setInstallmentOptions(array_diff($this->getInstallmentOptions(), [$installmentOption]));
         }
-
     }

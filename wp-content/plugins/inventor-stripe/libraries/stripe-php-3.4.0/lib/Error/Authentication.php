@@ -1,6 +1,7 @@
 <?php
-    namespace Stripe\Error;
 
-    class Authentication extends Base
-    {
-    }
+namespace Stripe\Error;
+
+class Authentication extends Base
+{
+}

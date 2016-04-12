@@ -60,16 +60,16 @@
           <div class="widget_coupon_detail_description widget_coupon_detail_available_code">
             <?php echo esc_attr__('Available codes', 'inventor-coupons'); ?>:
             <strong><?php echo esc_attr(count($codes)); ?>/<?php echo esc_attr($count); ?></strong>
-          </div>
+          </div><!-- /.widget_coupon_detail_description -->
         <?php elseif ( ! empty($count) && count($codes) >= $count) : ?>
           <div class="widget_coupon_detail_warning">
             <?php echo esc_attr('No coupons available', 'inventor-coupons'); ?>
-          </div>
+          </div><!-- /.widget_coupon_detail_warning -->
         <?php endif; ?>
       <?php else : ?>
         <div class="widget_coupon_detail_warning">
           <?php echo esc_attr__('You must be logged in to get the coupon code.', 'inventor-coupons'); ?>
-        </div>
+        </div><!-- /.widget_coupon_detail_warning -->
       <?php endif; ?>
     <?php endif; ?>
 
@@ -79,7 +79,7 @@
         <?php echo esc_attr__('Expires', 'inventor-coupons'); ?>:
         <strong><?php echo date_i18n(get_option('date_format'),
             $expiration); ?><?php echo date_i18n(get_option('time_format'), $expiration); ?></strong>
-      </div>
+      </div><!-- /.widget_coupon_detail_description -->
     <?php endif; ?>
 
     <?php $valid = get_post_meta(get_the_ID(), INVENTOR_COUPON_PREFIX . 'valid', true); ?>
@@ -87,7 +87,7 @@
       <h3><?php echo esc_attr__('Voucher valid', 'inventor-coupons'); ?></h3>
       <div class="widget_coupon_detail_description">
         <?php echo wp_kses($valid, wp_kses_allowed_html('post')); ?>
-      </div>
+      </div><!-- /.widget_coupon_detail_description -->
     <?php endif; ?>
 
     <?php $conditions = get_post_meta(get_the_ID(), INVENTOR_COUPON_PREFIX . 'conditions', true); ?>
@@ -95,8 +95,8 @@
       <h3><?php echo esc_attr__('Conditions of application', 'inventor-coupons'); ?></h3>
       <div class="widget_coupon_detail_description">
         <?php echo wp_kses($conditions, wp_kses_allowed_html('post')); ?>
-      </div>
+      </div><!-- /.widget_coupon_detail_description -->
     <?php endif; ?>
-  </div>
-</div>
+  </div><!-- /.widget-content -->
+</div><!-- /.widget-inner -->
 <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post')); ?>

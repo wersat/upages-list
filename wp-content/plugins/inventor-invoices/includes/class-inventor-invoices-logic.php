@@ -229,7 +229,7 @@
                 return;
             }
             $invoice_number = self::get_next_invoice_number();
-            $invoice_id = wp_insert_post([
+            $invoice_id     = wp_insert_post([
                 'post_type'   => 'invoice',
                 'post_title'  => $invoice_number,
                 'post_status' => 'publish',
@@ -253,14 +253,14 @@
                 ? $billing_details['billing_registration_number'] : null;
             $customer_vat_number          = ! empty($billing_details['billing_vat_number'])
                 ? $billing_details['billing_vat_number'] : null;
-            $customer_address = [];
+            $customer_address             = [];
             foreach (
                 [
                     'billing_street_and_number',
                     'billing_city',
                     'billing_postal_code',
                     'billing_county',
-                    'billing_country'
+                    'billing_country',
                 ] as $address_key
             ) {
                 $value = ! empty($billing_details[$address_key]) ? $billing_details[$address_key] : null;
@@ -272,23 +272,23 @@
             // item
             $tax_rate = get_theme_mod('inventor_invoices_tax_rate', 0);
             // tax rate filter
-            $tax_rate = apply_filters('inventor_invoices_tax_rate', $tax_rate, $supplier_vat_number,
+            $tax_rate        = apply_filters('inventor_invoices_tax_rate', $tax_rate, $supplier_vat_number,
                 $customer_vat_number);
             $item_tax_rate   = (float)$tax_rate;
             $rate            = (float)(100 + $item_tax_rate) / 100;
             $item_unit_price = round($price / $rate, 2);
-            $item  = [
+            $item            = [
                 INVENTOR_INVOICE_PREFIX . 'item_title'      => get_the_title($object_id),
                 INVENTOR_INVOICE_PREFIX . 'item_quantity'   => 1,
                 INVENTOR_INVOICE_PREFIX . 'item_unit_price' => strval($item_unit_price),
                 INVENTOR_INVOICE_PREFIX . 'item_tax_rate'   => strval($item_tax_rate),
             ];
-            $items = [$item];
+            $items           = [$item];
             // details
             $details = '';
             // Wire transfer gateway handle
             if ($gateway == 'wire-transfer') {
-                $type = 'ADVANCE';
+                $type         = 'ADVANCE';
                 $bank_details = [];
                 foreach (
                     [
@@ -298,7 +298,7 @@
                         'street',
                         'postcode',
                         'city',
-                        'country'
+                        'country',
                     ] as $details_key
                 ) {
                     $customize_key = 'inventor_wire_transfer_' . $details_key;
@@ -342,7 +342,7 @@
         public static function get_next_invoice_number()
         {
             $next_number = 1;
-            $invoices = self::get_all_invoices();
+            $invoices    = self::get_all_invoices();
             if (count($invoices) > 0) {
                 $last_invoice        = $invoices[0];
                 $last_invoice_number = get_the_title($last_invoice);

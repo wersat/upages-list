@@ -42,7 +42,7 @@
             $classes = [
                 'php_timer' => '/Timer.php'
             ];
-            $path = dirname(dirname(__FILE__));
+            $path    = dirname(dirname(__FILE__));
         }
         $cn = strtolower($class);
         if (isset($classes[$cn])) {

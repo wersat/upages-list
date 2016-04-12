@@ -1,20 +1,21 @@
 <?php
-    namespace Stripe;
 
-    class FileUpload extends ApiResource
+namespace Stripe;
+
+class FileUpload extends ApiResource
+{
+    public static function baseUrl()
     {
-        public static function baseUrl()
-        {
-            return Stripe::$apiUploadBase;
-        }
+        return Stripe::$apiUploadBase;
+    }
 
-        public static function className()
-        {
-            return 'file';
-        }
+    public static function className()
+    {
+        return 'file';
+    }
 
         /**
-         * @param string            $id The ID of the file upload to retrieve.
+         * @param string            $id   The ID of the file upload to retrieve.
          * @param array|string|null $opts
          *
          * @return FileUpload
@@ -45,4 +46,4 @@
         {
             return self::_all($params, $opts);
         }
-    }
+}

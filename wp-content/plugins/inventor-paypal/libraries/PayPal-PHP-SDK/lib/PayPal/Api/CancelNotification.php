@@ -6,7 +6,6 @@
     /**
      * Class CancelNotification
      * Email/SMS notification.
-     * @package PayPal\Api
      * @property string subject
      * @property string note
      * @property bool   send_to_merchant
@@ -105,5 +104,4 @@
         {
             return $this->send_to_payer;
         }
-
     }

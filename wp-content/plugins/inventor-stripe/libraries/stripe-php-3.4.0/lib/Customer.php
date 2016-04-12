@@ -1,10 +1,11 @@
 <?php
-    namespace Stripe;
 
-    class Customer extends ApiResource
-    {
-        /**
-         * @param string            $id The ID of the customer to retrieve.
+namespace Stripe;
+
+class Customer extends ApiResource
+{
+    /**
+         * @param string            $id   The ID of the customer to retrieve.
          * @param array|string|null $opts
          *
          * @return Customer
@@ -64,11 +65,11 @@
          */
         public function addInvoiceItem($params = null)
         {
-            if ( ! $params) {
+            if (!$params) {
                 $params = [];
             }
             $params['customer'] = $this->id;
-            $ii                 = InvoiceItem::create($params, $this->_opts);
+            $ii = InvoiceItem::create($params, $this->_opts);
 
             return $ii;
         }
@@ -80,11 +81,11 @@
          */
         public function invoices($params = null)
         {
-            if ( ! $params) {
+            if (!$params) {
                 $params = [];
             }
             $params['customer'] = $this->id;
-            $invoices           = Invoice::all($params, $this->_opts);
+            $invoices = Invoice::all($params, $this->_opts);
 
             return $invoices;
         }
@@ -96,11 +97,11 @@
          */
         public function invoiceItems($params = null)
         {
-            if ( ! $params) {
+            if (!$params) {
                 $params = [];
             }
             $params['customer'] = $this->id;
-            $iis                = InvoiceItem::all($params, $this->_opts);
+            $iis = InvoiceItem::all($params, $this->_opts);
 
             return $iis;
         }
@@ -112,11 +113,11 @@
          */
         public function charges($params = null)
         {
-            if ( ! $params) {
+            if (!$params) {
                 $params = [];
             }
             $params['customer'] = $this->id;
-            $charges            = Charge::all($params, $this->_opts);
+            $charges = Charge::all($params, $this->_opts);
 
             return $charges;
         }
@@ -128,7 +129,7 @@
          */
         public function updateSubscription($params = null)
         {
-            $url = $this->instanceUrl() . '/subscription';
+            $url = $this->instanceUrl().'/subscription';
             list($response, $opts) = $this->_request('post', $url, $params);
             $this->refreshFrom(['subscription' => $response], $opts, true);
 
@@ -142,7 +143,7 @@
          */
         public function cancelSubscription($params = null)
         {
-            $url = $this->instanceUrl() . '/subscription';
+            $url = $this->instanceUrl().'/subscription';
             list($response, $opts) = $this->_request('delete', $url, $params);
             $this->refreshFrom(['subscription' => $response], $opts, true);
 
@@ -156,8 +157,8 @@
          */
         public function deleteDiscount()
         {
-            $url = $this->instanceUrl() . '/discount';
+            $url = $this->instanceUrl().'/discount';
             list($response, $opts) = $this->_request('delete', $url);
             $this->refreshFrom(['discount' => null], $opts, true);
         }
-    }
+}

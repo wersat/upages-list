@@ -276,7 +276,7 @@
         {
             // PSR-4 lookup
             $logicalPathPsr4 = strtr($class, '\\', DIRECTORY_SEPARATOR) . $ext;
-            $first = $class[0];
+            $first           = $class[0];
             if (isset($this->prefixLengthsPsr4[$first])) {
                 foreach ($this->prefixLengthsPsr4[$first] as $prefix => $length) {
                     if (0 === strpos($class, $prefix)) {

@@ -7,7 +7,6 @@
     /**
      * Class CurrencyConversion
      * Object used to store the currency conversion rate.
-     * @package PayPal\Api
      * @property string              conversion_date
      * @property string              from_currency
      * @property string              from_amount
@@ -34,7 +33,7 @@
         }
 
         /**
-         * 3 letter currency code
+         * 3 letter currency code.
          *
          * @param string $from_currency
          *
@@ -48,7 +47,7 @@
         }
 
         /**
-         * Amount participating in currency conversion, set to 1 as default
+         * Amount participating in currency conversion, set to 1 as default.
          *
          * @param string $from_amount
          *
@@ -62,7 +61,7 @@
         }
 
         /**
-         * 3 letter currency code
+         * 3 letter currency code.
          *
          * @param string $to_currency
          *
@@ -91,7 +90,7 @@
 
         /**
          * Field indicating conversion type applied.
-         * Valid Values: ["PAYPAL", "VENDOR"]
+         * Valid Values: ["PAYPAL", "VENDOR"].
          *
          * @param string $conversion_type
          *
@@ -120,7 +119,7 @@
 
         /**
          * Base URL to web applications endpoint
-         * Valid Values: ["https://www.paypal.com/{country_code}/webapps/xocspartaweb/webflow/sparta/proxwebflow", "https://www.paypal.com/{country_code}/proxflow"]
+         * Valid Values: ["https://www.paypal.com/{country_code}/webapps/xocspartaweb/webflow/sparta/proxwebflow", "https://www.paypal.com/{country_code}/proxflow"].
          * @deprecated Not publicly available
          *
          * @param string $web_url
@@ -130,7 +129,7 @@
          */
         public function setWebUrl($web_url)
         {
-            UrlValidator::validate($web_url, "WebUrl");
+            UrlValidator::validate($web_url, 'WebUrl');
             $this->web_url = $web_url;
 
             return $this;
@@ -146,7 +145,7 @@
         }
 
         /**
-         * 3 letter currency code
+         * 3 letter currency code.
          * @return string
          */
         public function getFromCurrency()
@@ -155,7 +154,7 @@
         }
 
         /**
-         * Amount participating in currency conversion, set to 1 as default
+         * Amount participating in currency conversion, set to 1 as default.
          * @return string
          */
         public function getFromAmount()
@@ -164,7 +163,7 @@
         }
 
         /**
-         * 3 letter currency code
+         * 3 letter currency code.
          * @return string
          */
         public function getToCurrency()
@@ -200,7 +199,7 @@
         }
 
         /**
-         * Base URL to web applications endpoint
+         * Base URL to web applications endpoint.
          * @deprecated Not publicly available
          * @return string
          */
@@ -226,7 +225,7 @@
         }
 
         /**
-         * Gets Links
+         * Gets Links.
          * @return \PayPal\Api\Links[]
          */
         public function getLinks()
@@ -235,7 +234,7 @@
         }
 
         /**
-         * Sets Links
+         * Sets Links.
          *
          * @param \PayPal\Api\Links[] $links
          *
@@ -259,5 +258,4 @@
         {
             return $this->setLinks(array_diff($this->getLinks(), [$links]));
         }
-
     }

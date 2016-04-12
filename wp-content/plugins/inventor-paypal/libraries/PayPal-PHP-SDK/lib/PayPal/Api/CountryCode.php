@@ -6,7 +6,6 @@
     /**
      * Class CountryCode
      * Representation of a country code.
-     * @package PayPal\Api
      * @property string country_code
      */
     class CountryCode extends PayPalModel
@@ -33,5 +32,4 @@
         {
             return $this->country_code;
         }
-
     }

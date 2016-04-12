@@ -149,7 +149,7 @@
                 $favorites = get_user_meta(get_current_user_id(), 'favorites', true);
                 if ( ! empty($favorites) && is_array($favorites)) {
                     foreach ($favorites as $listing_id) {
-                        $post = get_post($listing_id);
+                        $post   = get_post($listing_id);
                         $data[] = [
                             'id'        => $post->ID,
                             'title'     => get_the_title($post->ID),
@@ -261,7 +261,7 @@
                 $post_id = get_the_ID();
             }
             $sql
-                = 'SELECT COUNT(*) as num_users FROM ' . $wpdb->prefix . 'usermeta WHERE meta_key = "favorites" AND meta_value LIKE "%i:' . $post_id . ';%";';
+                     = 'SELECT COUNT(*) as num_users FROM ' . $wpdb->prefix . 'usermeta WHERE meta_key = "favorites" AND meta_value LIKE "%i:' . $post_id . ';%";';
             $results = $wpdb->get_results($sql);
             if ( ! empty($results[0])) {
                 return $results[0]->num_users;

@@ -2,9 +2,8 @@
     namespace PayPal\Api;
 
     /**
-     * Class CreateProfileResponse
+     * Class CreateProfileResponse.
      * Response schema for create profile api
-     * @package PayPal\Api
      * @property string id
      */
     class CreateProfileResponse extends WebProfile
@@ -31,5 +30,4 @@
 
             return $this;
         }
-
     }

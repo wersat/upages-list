@@ -3,8 +3,7 @@
 
     /**
      * Class ArrayUtil
-     * Util Class for Arrays
-     * @package PayPal\Common
+     * Util Class for Arrays.
      */
     class ArrayUtil
     {

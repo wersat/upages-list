@@ -6,7 +6,6 @@
     /**
      * Class OpenIdAddress
      * End-User's preferred address.
-     * @package PayPal\Api
      * @property string street_address
      * @property string locality
      * @property string region
@@ -129,5 +128,4 @@
         {
             return $this->country;
         }
-
     }

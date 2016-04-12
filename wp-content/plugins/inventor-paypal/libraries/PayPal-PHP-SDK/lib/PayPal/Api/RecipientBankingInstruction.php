@@ -6,7 +6,6 @@
     /**
      * Class RecipientBankingInstruction
      * Recipient bank Details.
-     * @package PayPal\Api
      * @property string bank_name
      * @property string account_holder_name
      * @property string account_number
@@ -31,7 +30,7 @@
         }
 
         /**
-         * Name of the account holder
+         * Name of the account holder.
          *
          * @param string $account_holder_name
          *
@@ -45,7 +44,7 @@
         }
 
         /**
-         * bank account number
+         * bank account number.
          *
          * @param string $account_number
          *
@@ -59,7 +58,7 @@
         }
 
         /**
-         * bank routing number
+         * bank routing number.
          *
          * @param string $routing_number
          *
@@ -73,7 +72,7 @@
         }
 
         /**
-         * IBAN equivalent of the bank
+         * IBAN equivalent of the bank.
          *
          * @param string $international_bank_account_number
          *
@@ -87,7 +86,7 @@
         }
 
         /**
-         * BIC identifier of the financial institution
+         * BIC identifier of the financial institution.
          *
          * @param string $bank_identifier_code
          *
@@ -110,7 +109,7 @@
         }
 
         /**
-         * Name of the account holder
+         * Name of the account holder.
          * @return string
          */
         public function getAccountHolderName()
@@ -119,7 +118,7 @@
         }
 
         /**
-         * bank account number
+         * bank account number.
          * @return string
          */
         public function getAccountNumber()
@@ -128,7 +127,7 @@
         }
 
         /**
-         * bank routing number
+         * bank routing number.
          * @return string
          */
         public function getRoutingNumber()
@@ -137,7 +136,7 @@
         }
 
         /**
-         * IBAN equivalent of the bank
+         * IBAN equivalent of the bank.
          * @return string
          */
         public function getInternationalBankAccountNumber()
@@ -146,12 +145,11 @@
         }
 
         /**
-         * BIC identifier of the financial institution
+         * BIC identifier of the financial institution.
          * @return string
          */
         public function getBankIdentifierCode()
         {
             return $this->bank_identifier_code;
         }
-
     }

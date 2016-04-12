@@ -70,7 +70,7 @@
                 'faq',
                 'flags',
                 'location',
-                'listing_category'
+                'listing_category',
             ]);
         }
     }

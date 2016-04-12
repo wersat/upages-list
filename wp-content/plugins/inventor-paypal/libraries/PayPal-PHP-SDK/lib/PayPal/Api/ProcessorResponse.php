@@ -5,8 +5,7 @@
 
     /**
      * Class ProcessorResponse
-     * Collection of payment response related fields returned from a payment request
-     * @package PayPal\Api
+     * Collection of payment response related fields returned from a payment request.
      * @property string response_code
      * @property string avs_code
      * @property string cvv_code
@@ -17,7 +16,7 @@
     class ProcessorResponse extends PayPalModel
     {
         /**
-         * Paypal normalized response code, generated from the processor's specific response code
+         * Paypal normalized response code, generated from the processor's specific response code.
          *
          * @param string $response_code
          *
@@ -31,7 +30,7 @@
         }
 
         /**
-         * Address Verification System response code. https://developer.paypal.com/webapps/developer/docs/classic/api/AVSResponseCodes/
+         * Address Verification System response code. https://developer.paypal.com/webapps/developer/docs/classic/api/AVSResponseCodes/.
          *
          * @param string $avs_code
          *
@@ -45,7 +44,7 @@
         }
 
         /**
-         * CVV System response code. https://developer.paypal.com/webapps/developer/docs/classic/api/AVSResponseCodes/
+         * CVV System response code. https://developer.paypal.com/webapps/developer/docs/classic/api/AVSResponseCodes/.
          *
          * @param string $cvv_code
          *
@@ -60,7 +59,7 @@
 
         /**
          * Provides merchant advice on how to handle declines related to recurring payments
-         * Valid Values: ["01_NEW_ACCOUNT_INFORMATION", "02_TRY_AGAIN_LATER", "02_STOP_SPECIFIC_PAYMENT", "03_DO_NOT_TRY_AGAIN", "03_REVOKE_AUTHORIZATION_FOR_FUTURE_PAYMENT", "21_DO_NOT_TRY_AGAIN_CARD_HOLDER_CANCELLED_RECURRRING_CHARGE", "21_CANCEL_ALL_RECURRING_PAYMENTS"]
+         * Valid Values: ["01_NEW_ACCOUNT_INFORMATION", "02_TRY_AGAIN_LATER", "02_STOP_SPECIFIC_PAYMENT", "03_DO_NOT_TRY_AGAIN", "03_REVOKE_AUTHORIZATION_FOR_FUTURE_PAYMENT", "21_DO_NOT_TRY_AGAIN_CARD_HOLDER_CANCELLED_RECURRRING_CHARGE", "21_CANCEL_ALL_RECURRING_PAYMENTS"].
          *
          * @param string $advice_code
          *
@@ -74,7 +73,7 @@
         }
 
         /**
-         * Response back from the authorization. Provided by the processor
+         * Response back from the authorization. Provided by the processor.
          *
          * @param string $eci_submitted
          *
@@ -88,7 +87,7 @@
         }
 
         /**
-         * Visa Payer Authentication Service status. Will be return from processor
+         * Visa Payer Authentication Service status. Will be return from processor.
          *
          * @param string $vpas
          *
@@ -102,7 +101,7 @@
         }
 
         /**
-         * Paypal normalized response code, generated from the processor's specific response code
+         * Paypal normalized response code, generated from the processor's specific response code.
          * @return string
          */
         public function getResponseCode()
@@ -111,7 +110,7 @@
         }
 
         /**
-         * Address Verification System response code. https://developer.paypal.com/webapps/developer/docs/classic/api/AVSResponseCodes/
+         * Address Verification System response code. https://developer.paypal.com/webapps/developer/docs/classic/api/AVSResponseCodes/.
          * @return string
          */
         public function getAvsCode()
@@ -120,7 +119,7 @@
         }
 
         /**
-         * CVV System response code. https://developer.paypal.com/webapps/developer/docs/classic/api/AVSResponseCodes/
+         * CVV System response code. https://developer.paypal.com/webapps/developer/docs/classic/api/AVSResponseCodes/.
          * @return string
          */
         public function getCvvCode()
@@ -129,7 +128,7 @@
         }
 
         /**
-         * Provides merchant advice on how to handle declines related to recurring payments
+         * Provides merchant advice on how to handle declines related to recurring payments.
          * @return string
          */
         public function getAdviceCode()
@@ -138,7 +137,7 @@
         }
 
         /**
-         * Response back from the authorization. Provided by the processor
+         * Response back from the authorization. Provided by the processor.
          * @return string
          */
         public function getEciSubmitted()
@@ -147,12 +146,11 @@
         }
 
         /**
-         * Visa Payer Authentication Service status. Will be return from processor
+         * Visa Payer Authentication Service status. Will be return from processor.
          * @return string
          */
         public function getVpas()
         {
             return $this->vpas;
         }
-
     }

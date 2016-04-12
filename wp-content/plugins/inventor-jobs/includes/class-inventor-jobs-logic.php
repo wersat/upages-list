@@ -160,7 +160,7 @@
                 $config      = self::get_config();
                 $apply_page  = $config['apply_page'];
                 $is_assigned = self::job_is_assigned($listing_id);
-                $attrs       = [
+                $attrs = [
                     'job_id'      => $listing_id,
                     'apply_page'  => $apply_page,
                     'is_assigned' => $is_assigned,
@@ -176,7 +176,7 @@
         public static function get_config()
         {
             $apply_page = get_theme_mod('inventor_jobs_apply_page', false);
-            $config     = [
+            $config = [
                 'apply_page' => $apply_page,
             ];
 
@@ -243,7 +243,7 @@
             $name      = $user_data->display_name;
             $email     = $user_data->user_email; // get_the_author_meta( 'user_email', $job->post_author );
             $message   = esc_html($_POST['message']);
-            $headers   = sprintf("From: %s <%s>\r\n Content-type: text/html", $name, $email);
+            $headers = sprintf("From: %s <%s>\r\n Content-type: text/html", $name, $email);
             # template args
             $template_args = [
                 'job'     => get_the_title($job),
@@ -271,7 +271,7 @@
             $emails = [];
             # author
             $emails[] = get_the_author_meta('user_email', $job->post_author);
-            $emails   = array_unique($emails);
+            $emails = array_unique($emails);
             foreach ($emails as $email) {
                 $status = wp_mail($email, $subject, $body, $headers);
             }
@@ -296,10 +296,10 @@
          */
         public static function save_application($job_id, $resume_id, $message)
         {
-            $resume         = get_post($resume_id);
-            $user_id        = $resume->post_author;
-            $user_data      = get_userdata($user_id);
-            $name           = $user_data->display_name;
+            $resume    = get_post($resume_id);
+            $user_id   = $resume->post_author;
+            $user_data = get_userdata($user_id);
+            $name      = $user_data->display_name;
             $application_id = wp_insert_post([
                 'post_type'    => 'application',
                 'post_status'  => 'publish',

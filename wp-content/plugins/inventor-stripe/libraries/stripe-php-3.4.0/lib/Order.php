@@ -1,10 +1,11 @@
 <?php
-    namespace Stripe;
 
-    class Order extends ApiResource
-    {
-        /**
-         * @param string            $id The ID of the Order to retrieve.
+namespace Stripe;
+
+class Order extends ApiResource
+{
+    /**
+         * @param string            $id   The ID of the Order to retrieve.
          * @param array|string|null $opts
          *
          * @return Order
@@ -51,10 +52,10 @@
          */
         public function pay($params = null, $opts = null)
         {
-            $url = $this->instanceUrl() . '/pay';
+            $url = $this->instanceUrl().'/pay';
             list($response, $opts) = $this->_request('post', $url, $params, $opts);
             $this->refreshFrom($response, $opts);
 
             return $this;
         }
-    }
+}

@@ -4,7 +4,6 @@
     /**
      * Class Address
      * Base Address object used as billing address in a payment or extended for Shipping Address.
-     * @package PayPal\Api
      * @property string phone
      */
     class Address extends BaseAddress
@@ -31,5 +30,4 @@
         {
             return $this->phone;
         }
-
     }

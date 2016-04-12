@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class Payer
+     * Class Payer.
      * A resource representing a Payer that funds a payment.
-     * @package PayPal\Api
      * @property string                          payment_method
      * @property string                          status
      * @property \PayPal\Api\FundingInstrument[] funding_instruments
@@ -17,7 +16,7 @@
     {
         /**
          * Payment method being used - PayPal Wallet payment, Bank Direct Debit  or Direct Credit card.
-         * Valid Values: ["credit_card", "bank", "paypal", "pay_upon_invoice", "carrier", "alternate_payment"]
+         * Valid Values: ["credit_card", "bank", "paypal", "pay_upon_invoice", "carrier", "alternate_payment"].
          *
          * @param string $payment_method
          *
@@ -32,7 +31,7 @@
 
         /**
          * Status of payer's PayPal Account.
-         * Valid Values: ["VERIFIED", "UNVERIFIED"]
+         * Valid Values: ["VERIFIED", "UNVERIFIED"].
          *
          * @param string $status
          *
@@ -47,7 +46,7 @@
 
         /**
          * Type of account relationship payer has with PayPal.
-         * Valid Values: ["BUSINESS", "PERSONAL", "PREMIER"]
+         * Valid Values: ["BUSINESS", "PERSONAL", "PREMIER"].
          * @deprecated Not publicly available
          *
          * @param string $account_type
@@ -91,7 +90,7 @@
         }
 
         /**
-         * Default funding option available for the payment
+         * Default funding option available for the payment.
          * @deprecated Not publicly available
          *
          * @param \PayPal\Api\FundingOption $funding_option
@@ -233,7 +232,7 @@
         }
 
         /**
-         * Default funding option available for the payment
+         * Default funding option available for the payment.
          * @deprecated Not publicly available
          * @return \PayPal\Api\FundingOption
          */
@@ -260,5 +259,4 @@
         {
             return $this->payer_info;
         }
-
     }

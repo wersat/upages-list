@@ -8,9 +8,8 @@
     use PayPal\Validation\ArgumentValidator;
 
     /**
-     * Class Agreement
+     * Class Agreement.
      * A resource representing an agreement.
-     * @package PayPal\Api
      * @property string                            id
      * @property string                            state
      * @property string                            name
@@ -333,7 +332,7 @@
         }
 
         /**
-         * Agreement Details
+         * Agreement Details.
          *
          * @param \PayPal\Api\AgreementDetails $agreement_details
          *
@@ -347,7 +346,7 @@
         }
 
         /**
-         * Agreement Details
+         * Agreement Details.
          * @return \PayPal\Api\AgreementDetails
          */
         public function getAgreementDetails()
@@ -356,7 +355,7 @@
         }
 
         /**
-         * Get Approval Link
+         * Get Approval Link.
          * @return null|string
          */
         public function getApprovalLink()
@@ -375,7 +374,7 @@
         public function create($apiContext = null, $restCall = null)
         {
             $payLoad = $this->toJSON();
-            $json    = self::executeCall("/v1/payments/billing-agreements/", "POST", $payLoad, null, $apiContext,
+            $json    = self::executeCall('/v1/payments/billing-agreements/', 'POST', $payLoad, null, $apiContext,
                 $restCall);
             $this->fromJson($json);
 
@@ -394,8 +393,8 @@
         public function execute($paymentToken, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($paymentToken, 'paymentToken');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/billing-agreements/$paymentToken/agreement-execute", "POST",
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/billing-agreements/$paymentToken/agreement-execute", 'POST',
                 $payLoad, null, $apiContext, $restCall);
             $this->fromJson($json);
 
@@ -414,10 +413,10 @@
         public static function get($agreementId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($agreementId, 'agreementId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/billing-agreements/$agreementId", "GET", $payLoad, null,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/billing-agreements/$agreementId", 'GET', $payLoad, null,
                 $apiContext, $restCall);
-            $ret     = new Agreement();
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
@@ -434,10 +433,10 @@
          */
         public function update($patchRequest, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($patchRequest, 'patchRequest');
             $payLoad = $patchRequest->toJSON();
-            self::executeCall("/v1/payments/billing-agreements/{$this->getId()}", "PATCH", $payLoad, null, $apiContext,
+            self::executeCall("/v1/payments/billing-agreements/{$this->getId()}", 'PATCH', $payLoad, null, $apiContext,
                 $restCall);
 
             return true;
@@ -454,10 +453,10 @@
          */
         public function suspend($agreementStateDescriptor, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($agreementStateDescriptor, 'agreementStateDescriptor');
             $payLoad = $agreementStateDescriptor->toJSON();
-            self::executeCall("/v1/payments/billing-agreements/{$this->getId()}/suspend", "POST", $payLoad, null,
+            self::executeCall("/v1/payments/billing-agreements/{$this->getId()}/suspend", 'POST', $payLoad, null,
                 $apiContext, $restCall);
 
             return true;
@@ -474,10 +473,10 @@
          */
         public function reActivate($agreementStateDescriptor, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($agreementStateDescriptor, 'agreementStateDescriptor');
             $payLoad = $agreementStateDescriptor->toJSON();
-            self::executeCall("/v1/payments/billing-agreements/{$this->getId()}/re-activate", "POST", $payLoad, null,
+            self::executeCall("/v1/payments/billing-agreements/{$this->getId()}/re-activate", 'POST', $payLoad, null,
                 $apiContext, $restCall);
 
             return true;
@@ -494,10 +493,10 @@
          */
         public function cancel($agreementStateDescriptor, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($agreementStateDescriptor, 'agreementStateDescriptor');
             $payLoad = $agreementStateDescriptor->toJSON();
-            self::executeCall("/v1/payments/billing-agreements/{$this->getId()}/cancel", "POST", $payLoad, null,
+            self::executeCall("/v1/payments/billing-agreements/{$this->getId()}/cancel", 'POST', $payLoad, null,
                 $apiContext, $restCall);
 
             return true;
@@ -514,10 +513,10 @@
          */
         public function billBalance($agreementStateDescriptor, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($agreementStateDescriptor, 'agreementStateDescriptor');
             $payLoad = $agreementStateDescriptor->toJSON();
-            self::executeCall("/v1/payments/billing-agreements/{$this->getId()}/bill-balance", "POST", $payLoad, null,
+            self::executeCall("/v1/payments/billing-agreements/{$this->getId()}/bill-balance", 'POST', $payLoad, null,
                 $apiContext, $restCall);
 
             return true;
@@ -534,10 +533,10 @@
          */
         public function setBalance($currency, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($currency, 'currency');
             $payLoad = $currency->toJSON();
-            self::executeCall("/v1/payments/billing-agreements/{$this->getId()}/set-balance", "POST", $payLoad, null,
+            self::executeCall("/v1/payments/billing-agreements/{$this->getId()}/set-balance", 'POST', $payLoad, null,
                 $apiContext, $restCall);
 
             return true;
@@ -556,8 +555,8 @@
         public static function transactions($agreementId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($agreementId, 'agreementId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/billing-agreements/$agreementId/transactions", "GET", $payLoad,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/billing-agreements/$agreementId/transactions", 'GET', $payLoad,
                 null, $apiContext, $restCall);
             $ret     = new AgreementTransactions();
             $ret->fromJson($json);
@@ -583,14 +582,13 @@
                 'start_date' => 1,
                 'end_date'   => 1,
             ];
-            $payLoad = "";
+            $payLoad = '';
             $json
                      = self::executeCall("/v1/payments/billing-agreements/$agreementId/transactions?" . http_build_query(array_intersect_key($params,
-                    $allowedParams)), "GET", $payLoad, null, $apiContext, $restCall);
+                    $allowedParams)), 'GET', $payLoad, null, $apiContext, $restCall);
             $ret     = new AgreementTransactions();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

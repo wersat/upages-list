@@ -1,7 +1,8 @@
 <?php
-    namespace Stripe;
 
-    use ArrayAccess;
+namespace Stripe;
+
+use ArrayAccess;
     use InvalidArgumentException;
 
     class StripeObject implements ArrayAccess, JsonSerializable
@@ -24,9 +25,9 @@
 
         public function __construct($id = null, $opts = null)
         {
-            $this->_opts            = $opts ? $opts : new Util\RequestOptions();
-            $this->_values          = [];
-            $this->_unsavedValues   = new Util\Set();
+            $this->_opts = $opts ? $opts : new Util\RequestOptions();
+            $this->_values = [];
+            $this->_unsavedValues = new Util\Set();
             $this->_transientValues = new Util\Set();
             $this->_retrieveOptions = [];
             if (is_array($id)) {
@@ -44,7 +45,7 @@
 
         public static function init()
         {
-            self::$permanentAttributes       = new Util\Set(['_opts', 'id']);
+            self::$permanentAttributes = new Util\Set(['_opts', 'id']);
             self::$nestedUpdatableAttributes = new Util\Set([
                 'metadata',
                 'legal_entity',
@@ -88,7 +89,7 @@
                 $class = get_class($this);
                 $attrs = implode(', ', array_keys($this->_values));
                 $message
-                       = "Stripe Notice: Undefined property of $class instance: $k. " . "HINT: The $k attribute was set in the past, however. " . 'It was then wiped when refreshing the object ' . "with the result returned by Stripe's API, " . 'probably as a result of a save(). The attributes currently ' . "available on this object are: $attrs";
+                       = "Stripe Notice: Undefined property of $class instance: $k. "."HINT: The $k attribute was set in the past, however. ".'It was then wiped when refreshing the object '."with the result returned by Stripe's API, ".'probably as a result of a save(). The attributes currently '."available on this object are: $attrs";
                 error_log($message);
 
                 return $nullval;
@@ -103,7 +104,7 @@
         public function __set($k, $v)
         {
             if ($v === '') {
-                throw new InvalidArgumentException('You cannot set \'' . $k . '\'to an empty string. ' . 'We interpret empty strings as NULL in requests. ' . 'You may set obj->' . $k . ' = NULL to delete the property');
+                throw new InvalidArgumentException('You cannot set \''.$k.'\'to an empty string. '.'We interpret empty strings as NULL in requests. '.'You may set obj->'.$k.' = NULL to delete the property');
             }
             if (self::$nestedUpdatableAttributes->includes($k)
                 && isset($this->$k)
@@ -114,7 +115,7 @@
                 // TODO: may want to clear from $_transientValues (Won't be user-visible).
                 $this->_values[$k] = $v;
             }
-            if ( ! self::$permanentAttributes->includes($k)) {
+            if (!self::$permanentAttributes->includes($k)) {
                 $this->_unsavedValues->add($k);
             }
         }
@@ -249,7 +250,7 @@
         {
             $class = get_class($this);
 
-            return $class . ' JSON: ' . $this->__toJSON();
+            return $class.' JSON: '.$this->__toJSON();
         }
 
         public function __toJSON()

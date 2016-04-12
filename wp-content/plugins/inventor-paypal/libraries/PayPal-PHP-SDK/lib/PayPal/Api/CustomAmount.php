@@ -6,7 +6,6 @@
     /**
      * Class CustomAmount
      * Custom amount applied on an invoice. If a label is included then the amount cannot be empty.
-     * @package PayPal\Api
      * @property string               label
      * @property \PayPal\Api\Currency amount
      */
@@ -57,5 +56,4 @@
         {
             return $this->amount;
         }
-
     }

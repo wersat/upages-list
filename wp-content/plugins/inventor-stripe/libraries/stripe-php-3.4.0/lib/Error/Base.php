@@ -1,7 +1,8 @@
 <?php
-    namespace Stripe\Error;
 
-    use Exception;
+namespace Stripe\Error;
+
+use Exception;
 
     abstract class Base extends Exception
     {
@@ -13,11 +14,11 @@
             $httpHeaders = null
         ) {
             parent::__construct($message);
-            $this->httpStatus  = $httpStatus;
-            $this->httpBody    = $httpBody;
-            $this->jsonBody    = $jsonBody;
+            $this->httpStatus = $httpStatus;
+            $this->httpBody = $httpBody;
+            $this->jsonBody = $jsonBody;
             $this->httpHeaders = $httpHeaders;
-            $this->requestId   = null;
+            $this->requestId = null;
             if ($httpHeaders && isset($httpHeaders['Request-Id'])) {
                 $this->requestId = $httpHeaders['Request-Id'];
             }
@@ -50,7 +51,7 @@
 
         public function __toString()
         {
-            $id      = $this->requestId ? " from API request '{$this->requestId}'" : '';
+            $id = $this->requestId ? " from API request '{$this->requestId}'" : '';
             $message = explode("\n", parent::__toString());
             $message[0] .= $id;
 

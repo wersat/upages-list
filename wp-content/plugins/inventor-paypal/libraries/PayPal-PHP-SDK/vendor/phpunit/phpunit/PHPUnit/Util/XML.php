@@ -112,7 +112,7 @@
             if ($actual instanceof DOMDocument) {
                 return $actual;
             }
-            $document = new DOMDocument;
+            $document  = new DOMDocument;
             $internal  = libxml_use_internal_errors(true);
             $message   = '';
             $reporting = error_reporting(0);
@@ -136,7 +136,7 @@
             if ($loaded === false) {
                 if ($filename != '') {
                     throw new PHPUnit_Framework_Exception(sprintf('Could not load "%s".%s', $filename,
-                            $message != '' ? "\n" . $message : ''));
+                        $message != '' ? "\n" . $message : ''));
                 } else {
                     throw new PHPUnit_Framework_Exception($message);
                 }
@@ -378,7 +378,7 @@
          */
         public static function findNodes(DOMDocument $dom, array $options, $isHtml = true)
         {
-            $valid = [
+            $valid    = [
                 'id',
                 'class',
                 'tag',
@@ -525,7 +525,7 @@
                         else if ($name == 'class') {
                             // split to individual classes
                             $findClasses = explode(' ', preg_replace("/\s+/", " ", $value));
-                            $allClasses = explode(' ', preg_replace("/\s+/", " ", $node->getAttribute($name)));
+                            $allClasses  = explode(' ', preg_replace("/\s+/", " ", $node->getAttribute($name)));
                             // make sure each class given is in the actual node
                             foreach ($findClasses as $findClass) {
                                 if ( ! in_array($findClass, $allClasses)) {

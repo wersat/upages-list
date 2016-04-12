@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class PayerInfo
+     * Class PayerInfo.
      * A resource representing a information about Payer.
-     * @package PayPal\Api
      * @property string                      email
      * @property string                      external_remember_me_id
      * @property string                      salutation
@@ -41,7 +40,7 @@
         }
 
         /**
-         * External Remember Me id representing the payer
+         * External Remember Me id representing the payer.
          *
          * @param string $external_remember_me_id
          *
@@ -55,7 +54,7 @@
         }
 
         /**
-         * Account Number representing the Payer
+         * Account Number representing the Payer.
          * @deprecated Not publicly available
          *
          * @param string $account_number
@@ -169,7 +168,7 @@
 
         /**
          * Phone type
-         * Valid Values: ["HOME", "WORK", "MOBILE", "OTHER"]
+         * Valid Values: ["HOME", "WORK", "MOBILE", "OTHER"].
          *
          * @param string $phone_type
          *
@@ -212,7 +211,7 @@
 
         /**
          * Payer’s tax ID type. Allowed values: `BR_CPF` or `BR_CNPJ`. Only supported when the `payment_method` is set to `paypal`.
-         * Valid Values: ["BR_CPF", "BR_CNPJ"]
+         * Valid Values: ["BR_CPF", "BR_CNPJ"].
          *
          * @param string $tax_id_type
          *
@@ -277,7 +276,7 @@
         }
 
         /**
-         * External Remember Me id representing the payer
+         * External Remember Me id representing the payer.
          * @return string
          */
         public function getExternalRememberMeId()
@@ -286,7 +285,7 @@
         }
 
         /**
-         * Account Number representing the Payer
+         * Account Number representing the Payer.
          * @deprecated Not publicly available
          * @return string
          */
@@ -359,7 +358,7 @@
         }
 
         /**
-         * Phone type
+         * Phone type.
          * @return string
          */
         public function getPhoneType()
@@ -420,5 +419,4 @@
         {
             return $this->shipping_address;
         }
-
     }

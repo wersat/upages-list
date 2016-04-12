@@ -6,7 +6,6 @@
     /**
      * Class PatchRequest
      * Request object used for a JSON Patch.
-     * @package PayPal\Api
      * @property \PayPal\Api\Patch[] patches
      */
     class PatchRequest extends PayPalModel
@@ -28,7 +27,7 @@
         }
 
         /**
-         * Placeholder for holding array of patch objects
+         * Placeholder for holding array of patch objects.
          * @return \PayPal\Api\Patch[]
          */
         public function getPatches()
@@ -37,7 +36,7 @@
         }
 
         /**
-         * Placeholder for holding array of patch objects
+         * Placeholder for holding array of patch objects.
          *
          * @param \PayPal\Api\Patch[] $patches
          *

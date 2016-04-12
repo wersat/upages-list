@@ -4,17 +4,14 @@
     }
 
     /**
-     * Class Inventor_Watchdogs_Post_Types
+     * Class Inventor_Watchdogs_Post_Types.
      * @class   Inventor_Watchdogs_Post_Types
-     * @package Inventor/Classes/Post_Types
      * @author  Pragmatic Mates
      */
     class Inventor_Watchdogs_Post_Types
     {
         /**
-         * Initialize listing types
-         * @access public
-         * @return void
+         * Initialize listing types.
          */
         public static function init()
         {
@@ -22,9 +19,7 @@
         }
 
         /**
-         * Loads listing types
-         * @access public
-         * @return void
+         * Loads listing types.
          */
         public static function includes()
         {

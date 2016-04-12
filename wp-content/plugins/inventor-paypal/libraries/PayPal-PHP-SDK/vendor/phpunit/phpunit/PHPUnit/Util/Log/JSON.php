@@ -92,15 +92,15 @@
                 $output = $test->getActualOutput();
             }
             $this->write([
-                    'event'   => 'test',
-                    'suite'   => $this->currentTestSuiteName,
-                    'test'    => $this->currentTestName,
-                    'status'  => $status,
-                    'time'    => $time,
-                    'trace'   => $trace,
-                    'message' => PHPUnit_Util_String::convertToUtf8($message),
-                    'output'  => $output,
-                ]);
+                'event'   => 'test',
+                'suite'   => $this->currentTestSuiteName,
+                'test'    => $this->currentTestName,
+                'status'  => $status,
+                'time'    => $time,
+                'trace'   => $trace,
+                'message' => PHPUnit_Util_String::convertToUtf8($message),
+                'output'  => $output,
+            ]);
         }
 
         /**
@@ -196,10 +196,10 @@
             $this->currentTestName = PHPUnit_Util_Test::describe($test);
             $this->currentTestPass = true;
             $this->write([
-                    'event' => 'testStart',
-                    'suite' => $this->currentTestSuiteName,
-                    'test'  => $this->currentTestName
-                ]);
+                'event' => 'testStart',
+                'suite' => $this->currentTestSuiteName,
+                'test'  => $this->currentTestName
+            ]);
         }
 
         /**
@@ -212,9 +212,9 @@
             $this->currentTestSuiteName = $suite->getName();
             $this->currentTestName      = '';
             $this->write([
-                    'event' => 'suiteStart',
-                    'suite' => $this->currentTestSuiteName,
-                    'tests' => count($suite)
-                ]);
+                'event' => 'suiteStart',
+                'suite' => $this->currentTestSuiteName,
+                'tests' => count($suite)
+            ]);
         }
     }

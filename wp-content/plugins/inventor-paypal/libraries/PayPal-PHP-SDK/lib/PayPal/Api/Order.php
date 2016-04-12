@@ -8,7 +8,6 @@
     /**
      * Class Order
      * An order transaction.
-     * @package PayPal\Api
      * @property string                 id
      * @property string                 purchase_unit_reference_id
      * @property \PayPal\Api\Amount     amount
@@ -97,7 +96,7 @@
 
         /**
          * specifies payment mode of the transaction
-         * Valid Values: ["INSTANT_TRANSFER", "MANUAL_BANK_TRANSFER", "DELAYED_TRANSFER", "ECHECK"]
+         * Valid Values: ["INSTANT_TRANSFER", "MANUAL_BANK_TRANSFER", "DELAYED_TRANSFER", "ECHECK"].
          *
          * @param string $payment_mode
          *
@@ -111,7 +110,7 @@
         }
 
         /**
-         * specifies payment mode of the transaction
+         * specifies payment mode of the transaction.
          * @return string
          */
         public function getPaymentMode()
@@ -121,7 +120,7 @@
 
         /**
          * State of the order transaction.
-         * Valid Values: ["pending", "completed", "refunded", "partially_refunded", "voided"]
+         * Valid Values: ["pending", "completed", "refunded", "partially_refunded", "voided"].
          *
          * @param string $state
          *
@@ -145,7 +144,7 @@
 
         /**
          * Reason code for the transaction state being Pending or Reversed. Only supported when the `payment_method` is set to `paypal`.
-         * Valid Values: ["PAYER_SHIPPING_UNCONFIRMED", "MULTI_CURRENCY", "RISK_REVIEW", "REGULATORY_REVIEW", "VERIFICATION_REQUIRED", "ORDER", "OTHER"]
+         * Valid Values: ["PAYER_SHIPPING_UNCONFIRMED", "MULTI_CURRENCY", "RISK_REVIEW", "REGULATORY_REVIEW", "VERIFICATION_REQUIRED", "ORDER", "OTHER"].
          *
          * @param string $reason_code
          *
@@ -169,7 +168,7 @@
 
         /**
          * [DEPRECATED] Reason the transaction is in pending state. Use reason_code field above instead.
-         * Valid Values: ["payer_shipping_unconfirmed", "multi_currency", "risk_review", "regulatory_review", "verification_required", "order", "other"]
+         * Valid Values: ["payer_shipping_unconfirmed", "multi_currency", "risk_review", "regulatory_review", "verification_required", "order", "other"].
          *
          * @param string $pending_reason
          *
@@ -193,7 +192,7 @@
 
         /**
          * The level of seller protection in force for the transaction.
-         * Valid Values: ["ELIGIBLE", "PARTIALLY_ELIGIBLE", "INELIGIBLE"]
+         * Valid Values: ["ELIGIBLE", "PARTIALLY_ELIGIBLE", "INELIGIBLE"].
          *
          * @param string $protection_eligibility
          *
@@ -217,7 +216,7 @@
 
         /**
          * The kind of seller protection in force for the transaction. This property is returned only when the `protection_eligibility` property is set to `ELIGIBLE`or `PARTIALLY_ELIGIBLE`. Only supported when the `payment_method` is set to `paypal`. Allowed values:<br> `ITEM_NOT_RECEIVED_ELIGIBLE`- Sellers are protected against claims for items not received.<br> `UNAUTHORIZED_PAYMENT_ELIGIBLE`- Sellers are protected against claims for unauthorized payments.<br> One or both of the allowed values can be returned.
-         * Valid Values: ["ITEM_NOT_RECEIVED_ELIGIBLE", "UNAUTHORIZED_PAYMENT_ELIGIBLE", "ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE"]
+         * Valid Values: ["ITEM_NOT_RECEIVED_ELIGIBLE", "UNAUTHORIZED_PAYMENT_ELIGIBLE", "ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE"].
          *
          * @param string $protection_eligibility_type
          *
@@ -343,9 +342,9 @@
         public static function get($orderId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($orderId, 'orderId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/orders/$orderId", "GET", $payLoad, null, $apiContext, $restCall);
-            $ret     = new Order();
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/orders/$orderId", 'GET', $payLoad, null, $apiContext, $restCall);
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
@@ -362,10 +361,10 @@
          */
         public function capture($capture, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($capture, 'capture');
             $payLoad = $capture->toJSON();
-            $json    = self::executeCall("/v1/payments/orders/{$this->getId()}/capture", "POST", $payLoad, null,
+            $json    = self::executeCall("/v1/payments/orders/{$this->getId()}/capture", 'POST', $payLoad, null,
                 $apiContext, $restCall);
             $ret     = new Capture();
             $ret->fromJson($json);
@@ -383,9 +382,9 @@
          */
         public function void($apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/orders/{$this->getId()}/do-void", "POST", $payLoad, null,
+            ArgumentValidator::validate($this->getId(), 'Id');
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/orders/{$this->getId()}/do-void", 'POST', $payLoad, null,
                 $apiContext, $restCall);
             $this->fromJson($json);
 
@@ -403,15 +402,14 @@
          */
         public function authorize($authorization, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($authorization, 'Authorization');
             $payLoad = $authorization->toJSON();
-            $json    = self::executeCall("/v1/payments/orders/{$this->getId()}/authorize", "POST", $payLoad, null,
+            $json    = self::executeCall("/v1/payments/orders/{$this->getId()}/authorize", 'POST', $payLoad, null,
                 $apiContext, $restCall);
             $ret     = new Authorization();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

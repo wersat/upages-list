@@ -2,12 +2,10 @@
     namespace PayPal\Validation;
 
     /**
-     * Class ArgumentValidator
-     * @package PayPal\Validation
+     * Class ArgumentValidator.
      */
     class ArgumentValidator
     {
-
         /**
          * Helper method for validating an argument that will be used by this API in any requests.
          *
@@ -22,7 +20,7 @@
             if ($argument === null) {
                 // Error if Object Null
                 throw new \InvalidArgumentException("$argumentName cannot be null");
-            } else if (gettype($argument) == 'string' && trim($argument) == '') {
+            } elseif (gettype($argument) == 'string' && trim($argument) == '') {
                 // Error if String Empty
                 throw new \InvalidArgumentException("$argumentName string cannot be empty");
             }

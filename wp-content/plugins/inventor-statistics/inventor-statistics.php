@@ -113,7 +113,7 @@
                 $table_name = $wpdb->prefix . 'query_stats';
                 if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
                     $charset_collate = $wpdb->get_charset_collate();
-                    $sql = 'CREATE TABLE `' . $table_name . '` (
+                    $sql             = 'CREATE TABLE `' . $table_name . '` (
                     `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
                     `key` varchar(200) NOT NULL DEFAULT \'\',
                     `value` text NOT NULL,
@@ -135,7 +135,7 @@
                 $table_name = $wpdb->prefix . 'listing_stats';
                 if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
                     $charset_collate = $wpdb->get_charset_collate();
-                    $sql = 'CREATE TABLE `' . $table_name . '` (
+                    $sql             = 'CREATE TABLE `' . $table_name . '` (
                     `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
                     `key` varchar(200) NOT NULL DEFAULT \'\',
                     `value` text NOT NULL,

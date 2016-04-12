@@ -4,18 +4,15 @@
     }
 
     /**
-     * Class Inventor_Shop_Logic
+     * Class Inventor_Shop_Logic.
      * @class   Inventor_Shop_Logic
-     * @package Inventor/Classes
      * @property $allowed_post_types
      * @author  Pragmatic Mates
      */
     class Inventor_Shop_Logic
     {
         /**
-         * Initialize property system
-         * @access public
-         * @return void
+         * Initialize property system.
          */
         public static function init()
         {
@@ -29,8 +26,7 @@
         }
 
         /**
-         * Adds package payment type
-         * @access public
+         * Adds package payment type.
          *
          * @param array $payment_types
          *
@@ -44,8 +40,7 @@
         }
 
         /**
-         * Gets price value for payment object
-         * @access public
+         * Gets price value for payment object.
          *
          * @param float  $price
          * @param string $payment_type
@@ -63,8 +58,7 @@
         }
 
         /**
-         * Prepares payment data
-         * @access public
+         * Prepares payment data.
          *
          * @param array  $payment_data
          * @param string $payment_type
@@ -85,7 +79,7 @@
         }
 
         /**
-         * Handles payment and decrements listing quantity
+         * Handles payment and decrements listing quantity.
          *
          * @param bool   $success
          * @param string $payment_type
@@ -93,8 +87,6 @@
          * @param float  $price
          * @param string $currency_code
          * @param int    $user_id
-         *
-         * @return void
          */
         public static function catch_payment(
             $success,
@@ -118,8 +110,7 @@
         }
 
         /**
-         * Adds shop metabox to allowed listing post types
-         * @access public
+         * Adds shop metabox to allowed listing post types.
          * @return array
          */
         public static function fields()
@@ -149,13 +140,12 @@
                     'type'    => 'number',
                     'min'     => '0',
                     'pattern' => '\d*',
-                ]
+                ],
             ]);
         }
 
         /**
-         * List of allowed post types for shop
-         * @access public
+         * List of allowed post types for shop.
          * @return array
          */
         public static function get_allowed_post_types()
@@ -164,12 +154,9 @@
         }
 
         /**
-         * Renders buy button
-         * @access public
+         * Renders buy button.
          *
          * @param int $listing_id
-         *
-         * @return void
          */
         public static function render_listing_buy_button($listing_id)
         {
@@ -184,24 +171,21 @@
             $quantity        = get_post_meta($listing_id, INVENTOR_SHOP_PREFIX . 'quantity', true);
             $is_available    = $quantity > 0;
             $payment_page_id = get_theme_mod('inventor_general_payment_page', false);
-            $attrs = [
+            $attrs           = [
                 'is_enabled'      => $is_enabled,
                 'listing_id'      => $listing_id,
                 'payment_page_id' => $payment_page_id,
-                'is_available'    => $is_available
+                'is_available'    => $is_available,
             ];
             echo Inventor_Template_Loader::load('buy-button', $attrs, $plugin_dir = INVENTOR_SHOP_DIR);
         }
 
         /**
-         * Renders data before payment form
-         * @access public
+         * Renders data before payment form.
          *
          * @param string $payment_type
          * @param int    $object_id
          * @param string $payment_gateway
-         *
-         * @return void
          */
         public static function payment_form_before($payment_type, $object_id, $payment_gateway)
         {

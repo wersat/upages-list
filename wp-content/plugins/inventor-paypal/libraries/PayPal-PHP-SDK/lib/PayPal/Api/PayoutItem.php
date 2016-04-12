@@ -9,7 +9,6 @@
     /**
      * Class PayoutItem
      * Sender-created description of a payout to a single recipient.
-     * @package PayPal\Api
      * @property string               recipient_type
      * @property \PayPal\Api\Currency amount
      * @property string               note
@@ -145,8 +144,8 @@
         public static function get($payoutItemId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($payoutItemId, 'payoutItemId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/payouts-item/$payoutItemId", "GET", $payLoad, null, $apiContext,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/payouts-item/$payoutItemId", 'GET', $payLoad, null, $apiContext,
                 $restCall);
             $ret     = new PayoutItemDetails();
             $ret->fromJson($json);
@@ -166,13 +165,12 @@
         public static function cancel($payoutItemId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($payoutItemId, 'payoutItemId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/payouts-item/$payoutItemId/cancel", "POST", $payLoad, null,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/payouts-item/$payoutItemId/cancel", 'POST', $payLoad, null,
                 $apiContext, $restCall);
             $ret     = new PayoutItemDetails();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

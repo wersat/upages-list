@@ -8,7 +8,6 @@
     /**
      * Class Tax
      * Tax information.
-     * @package PayPal\Api
      * @property string               id
      * @property string               name
      * @property \PayPal\Api\number   percent
@@ -65,13 +64,13 @@
         /**
          * Rate of the specified tax. Range of 0.001 to 99.999.
          *
-         * @param string|double $percent
+         * @param string|float $percent
          *
          * @return $this
          */
         public function setPercent($percent)
         {
-            NumericValidator::validate($percent, "Percent");
+            NumericValidator::validate($percent, 'Percent');
             $percent       = FormatConverter::formatToPrice($percent);
             $this->percent = $percent;
 
@@ -109,5 +108,4 @@
         {
             return $this->amount;
         }
-
     }

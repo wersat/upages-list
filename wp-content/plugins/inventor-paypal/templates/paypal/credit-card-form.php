@@ -26,7 +26,7 @@
   <label for="expires-month"><?php echo __('Expires', 'inventor-paypal'); ?></label>
   <select name="expires_month" id="expires-month" class="form-control gateway-paypal-credit-card-expires-month">
     <option value=""><?php echo __('Month', 'inventor-paypal'); ?></option>
-    <?php for ($i = 1; $i <= 12; $i++) : ?>
+    <?php for ($i = 1; $i <= 12; ++$i) : ?>
       <?php $number = sprintf('%02s', $i); ?>
       <option value="<?php echo esc_attr($number); ?>" <?php echo ($expires_month == $number) ? 'selected="selected"'
         : ''; ?>><?php echo esc_attr($number); ?></option>
@@ -34,7 +34,7 @@
   </select>
   <select name="expires_year" class="form-control gateway-paypal-credit-card-expires-year">
     <option value=""><?php echo __('Year', 'inventor-paypal'); ?></option>
-    <?php for ($i = 0; $i < 10; $i++) : ?>
+    <?php for ($i = 0; $i < 10; ++$i) : ?>
       <?php $number = date('Y') + $i; ?>
       <option value="<?php echo esc_attr($number); ?>" <?php echo ($expires_year == $number) ? 'selected="selected"'
         : ''; ?>><?php echo esc_attr($number); ?></option>

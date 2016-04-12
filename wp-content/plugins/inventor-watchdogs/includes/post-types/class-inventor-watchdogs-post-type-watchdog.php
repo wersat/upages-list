@@ -4,17 +4,14 @@
     }
 
     /**
-     * Class Inventor_Post_Type_Watchdog
+     * Class Inventor_Post_Type_Watchdog.
      * @class   Inventor_Post_Type_Watchdog
-     * @package Inventor/Classes/Post_Types
      * @author  Pragmatic Mates
      */
     class Inventor_Post_Type_Watchdog
     {
         /**
-         * Initialize custom post type
-         * @access public
-         * @return void
+         * Initialize custom post type.
          */
         public static function init()
         {
@@ -25,9 +22,7 @@
         }
 
         /**
-         * Custom post type definition
-         * @access public
-         * @return void
+         * Custom post type definition.
          */
         public static function definition()
         {
@@ -47,22 +42,21 @@
                 'menu_name'          => __('Watchdogs', 'inventor-watchdogs'),
             ];
             register_post_type('watchdog', [
-                    'labels'              => $labels,
-                    'show_in_menu'        => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
-                    'supports'            => ['author'],
-                    'public'              => false,
-                    'exclude_from_search' => true,
-                    'publicly_queryable'  => false,
-                    'show_in_nav_menus'   => false,
-                    'has_archive'         => false,
-                    'show_ui'             => true,
-                    'categories'          => [],
-                ]);
+                'labels'              => $labels,
+                'show_in_menu'        => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
+                'supports'            => ['author'],
+                'public'              => false,
+                'exclude_from_search' => true,
+                'publicly_queryable'  => false,
+                'show_in_nav_menus'   => false,
+                'has_archive'         => false,
+                'show_ui'             => true,
+                'categories'          => [],
+            ]);
         }
 
         /**
-         * Defines custom fields
-         * @access public
+         * Defines custom fields.
          * @return array
          */
         public static function fields()
@@ -91,8 +85,7 @@
         }
 
         /**
-         * Custom admin columns
-         * @access public
+         * Custom admin columns.
          * @return array
          */
         public static function custom_columns()
@@ -110,8 +103,7 @@
         }
 
         /**
-         * Custom admin columns implementation
-         * @access public
+         * Custom admin columns implementation.
          *
          * @param string $column
          *
@@ -131,15 +123,14 @@
         }
 
         /**
-         * Unserialize watchdog lookup
-         * @access public
+         * Unserialize watchdog lookup.
          * @return object
          */
         public static function get_lookup($watchdog_id)
         {
             $lookup = get_post_meta($watchdog_id, INVENTOR_WATCHDOG_PREFIX . 'lookup', true);
             if (empty($lookup)) {
-                return null;
+                return;
             }
 
             return unserialize($lookup);

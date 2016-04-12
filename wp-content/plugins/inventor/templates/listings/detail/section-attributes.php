@@ -7,7 +7,13 @@
         <?php foreach ($attributes as $key => $attribute) : ?>
           <li class="<?php echo esc_attr($key); ?>">
             <strong class="key"><?php echo wp_kses($attribute['name'], wp_kses_allowed_html('post')); ?></strong>
-            <span class="value"><?php echo wp_kses($attribute['value'], wp_kses_allowed_html('post')); ?></span>
+
+            <span class="value"><?php
+
+                echo wp_kses($attribute['value'], wp_kses_allowed_html('post'));
+                //var_dump($attribute['value']);
+              ?>
+            </span>
           </li>
         <?php endforeach; ?>
       </ul>

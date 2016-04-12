@@ -61,7 +61,7 @@
         /**
          * Returns the lines of a source file that should be ignored.
          *
-         * @param  string $filename
+         * @param  string  $filename
          * @param  boolean $cacheTokens
          *
          * @return array

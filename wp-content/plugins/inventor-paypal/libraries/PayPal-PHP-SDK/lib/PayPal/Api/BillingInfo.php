@@ -6,7 +6,6 @@
     /**
      * Class BillingInfo
      * Billing information for the invoice recipient.
-     * @package PayPal\Api
      * @property string                     email
      * @property string                     first_name
      * @property string                     last_name
@@ -91,7 +90,7 @@
 
         /**
          * Language of the email sent to the payer. Will only be used if payer doesn't have a PayPal account.
-         * Valid Values: ["da_DK", "de_DE", "en_AU", "en_GB", "en_US", "es_ES", "es_XC", "fr_CA", "fr_FR", "fr_XC", "he_IL", "id_ID", "it_IT", "ja_JP", "nl_NL", "no_NO", "pl_PL", "pt_BR", "pt_PT", "ru_RU", "sv_SE", "th_TH", "tr_TR", "zh_CN", "zh_HK", "zh_TW", "zh_XC"]
+         * Valid Values: ["da_DK", "de_DE", "en_AU", "en_GB", "en_US", "es_ES", "es_XC", "fr_CA", "fr_FR", "fr_XC", "he_IL", "id_ID", "it_IT", "ja_JP", "nl_NL", "no_NO", "pl_PL", "pt_BR", "pt_PT", "ru_RU", "sv_SE", "th_TH", "tr_TR", "zh_CN", "zh_HK", "zh_TW", "zh_XC"].
          *
          * @param string $language
          *
@@ -120,7 +119,7 @@
 
         /**
          * Preferred notification channel of the payer. Email by default.
-         * Valid Values: ["SMS", "EMAIL"]
+         * Valid Values: ["SMS", "EMAIL"].
          *
          * @param string $notification_channel
          *
@@ -227,5 +226,4 @@
         {
             return $this->phone;
         }
-
     }

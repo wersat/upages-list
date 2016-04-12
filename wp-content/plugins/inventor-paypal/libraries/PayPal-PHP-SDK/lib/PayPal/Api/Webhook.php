@@ -10,7 +10,6 @@
     /**
      * Class Webhook
      * Represents Webhook resource.
-     * @package PayPal\Api
      * @property string                         id
      * @property string                         url
      * @property \PayPal\Api\WebhookEventType[] event_types
@@ -50,7 +49,7 @@
          */
         public function setUrl($url)
         {
-            UrlValidator::validate($url, "Url");
+            UrlValidator::validate($url, 'Url');
             $this->url = $url;
 
             return $this;
@@ -127,7 +126,7 @@
         public function create($apiContext = null, $restCall = null)
         {
             $payLoad = $this->toJSON();
-            $json    = self::executeCall("/v1/notifications/webhooks", "POST", $payLoad, null, $apiContext, $restCall);
+            $json    = self::executeCall('/v1/notifications/webhooks', 'POST', $payLoad, null, $apiContext, $restCall);
             $this->fromJson($json);
 
             return $this;
@@ -145,10 +144,10 @@
         public static function get($webhookId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($webhookId, 'webhookId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/notifications/webhooks/$webhookId", "GET", $payLoad, null, $apiContext,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/notifications/webhooks/$webhookId", 'GET', $payLoad, null, $apiContext,
                 $restCall);
-            $ret     = new Webhook();
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
@@ -164,8 +163,8 @@
          */
         public static function getAll($apiContext = null, $restCall = null)
         {
-            $payLoad = "";
-            $json    = self::executeCall("/v1/notifications/webhooks", "GET", $payLoad, null, $apiContext, $restCall);
+            $payLoad = '';
+            $json    = self::executeCall('/v1/notifications/webhooks', 'GET', $payLoad, null, $apiContext, $restCall);
             $ret     = new WebhookList();
             $ret->fromJson($json);
 
@@ -183,10 +182,10 @@
          */
         public function update($patchRequest, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($patchRequest, 'patchRequest');
             $payLoad = $patchRequest->toJSON();
-            $json    = self::executeCall("/v1/notifications/webhooks/{$this->getId()}", "PATCH", $payLoad, null,
+            $json    = self::executeCall("/v1/notifications/webhooks/{$this->getId()}", 'PATCH', $payLoad, null,
                 $apiContext, $restCall);
             $this->fromJson($json);
 
@@ -203,12 +202,11 @@
          */
         public function delete($apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
-            $payLoad = "";
-            self::executeCall("/v1/notifications/webhooks/{$this->getId()}", "DELETE", $payLoad, null, $apiContext,
+            ArgumentValidator::validate($this->getId(), 'Id');
+            $payLoad = '';
+            self::executeCall("/v1/notifications/webhooks/{$this->getId()}", 'DELETE', $payLoad, null, $apiContext,
                 $restCall);
 
             return true;
         }
-
     }

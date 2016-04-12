@@ -6,7 +6,6 @@
     /**
      * Class PrivateLabelCard
      * A resource representing a type of merchant branded payment card. To promote customer value (convenience and earning rewards) and retailer value (merchants drive business using the store cards), PayPal will support as payment method.
-     * @package PayPal\Api
      * @property string id
      * @property string card_number
      * @property string issuer_id
@@ -72,7 +71,7 @@
         }
 
         /**
-         * This value indicates URL to access PLCC program logo image
+         * This value indicates URL to access PLCC program logo image.
          *
          * @param string $image_key
          *
@@ -122,12 +121,11 @@
         }
 
         /**
-         * This value indicates URL to access PLCC program logo image
+         * This value indicates URL to access PLCC program logo image.
          * @return string
          */
         public function getImageKey()
         {
             return $this->image_key;
         }
-
     }

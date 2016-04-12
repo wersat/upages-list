@@ -7,29 +7,28 @@
     /**
      * A wrapper class based on the curl extension.
      * Requires the PHP curl module to be enabled.
-     * See for full requirements the PHP manual: http://php.net/curl
+     * See for full requirements the PHP manual: http://php.net/curl.
      */
     class PayPalHttpConnection
     {
-
         /**
          * HTTP status codes for which a retry must be attempted
          * retry is currently attempted for Request timeout, Bad Gateway,
          * Service Unavailable and Gateway timeout errors.
          */
-        private static $retryCodes = ['408', '502', '503', '504',];
+        private static $retryCodes = ['408', '502', '503', '504'];
         /**
          * @var PayPalHttpConfig
          */
         private $httpConfig;
         /**
-         * LoggingManager
+         * LoggingManager.
          * @var PayPalLoggingManager
          */
         private $logger;
 
         /**
-         * Default Constructor
+         * Default Constructor.
          *
          * @param PayPalHttpConfig $httpConfig
          * @param array            $config
@@ -38,15 +37,15 @@
          */
         public function __construct(PayPalHttpConfig $httpConfig, array $config)
         {
-            if ( ! function_exists("curl_init")) {
-                throw new PayPalConfigurationException("Curl module is not available on this system");
+            if ( ! function_exists('curl_init')) {
+                throw new PayPalConfigurationException('Curl module is not available on this system');
             }
             $this->httpConfig = $httpConfig;
             $this->logger     = PayPalLoggingManager::getInstance(__CLASS__);
         }
 
         /**
-         * Executes an HTTP request
+         * Executes an HTTP request.
          *
          * @param string $data query string OR POST content as a string
          *
@@ -91,7 +90,7 @@
             $httpStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             //Retry if Certificate Exception
             if (curl_errno($ch) == 60) {
-                $this->logger->info("Invalid or no certificate authority found - Retrying using bundled CA certs file");
+                $this->logger->info('Invalid or no certificate authority found - Retrying using bundled CA certs file');
                 curl_setopt($ch, CURLOPT_CAINFO, dirname(__FILE__) . '/cacert.pem');
                 $result = curl_exec($ch);
                 //Retrieve Response Status
@@ -120,11 +119,11 @@
             $responseHeaderSize = strlen($result) - curl_getinfo($ch, CURLINFO_SIZE_DOWNLOAD);
             $responseHeaders    = substr($result, 0, $responseHeaderSize);
             $result             = substr($result, $responseHeaderSize);
-            $this->logger->debug("Request Headers \t: " . str_replace("\r\n", ", ", $requestHeaders));
+            $this->logger->debug("Request Headers \t: " . str_replace("\r\n", ', ', $requestHeaders));
             $this->logger->debug(($data && $data != '' ? "Request Data\t\t: " . $data
-                    : "No Request Payload") . "\n" . str_repeat('-', 128) . "\n");
+                    : 'No Request Payload') . "\n" . str_repeat('-', 128) . "\n");
             $this->logger->info("Response Status \t: " . $httpStatus);
-            $this->logger->debug("Response Headers\t: " . str_replace("\r\n", ", ", $responseHeaders));
+            $this->logger->debug("Response Headers\t: " . str_replace("\r\n", ', ', $responseHeaders));
             //Close the curl request
             curl_close($ch);
             //More Exceptions based on HttpStatus Code
@@ -135,7 +134,7 @@
                 $this->logger->error("Got Http response code $httpStatus when accessing {$this->httpConfig->getUrl()}. " . "Retried $retries times." . $result);
                 $this->logger->debug("\n\n" . str_repeat('=', 128) . "\n");
                 throw $ex;
-            } else if ($httpStatus < 200 || $httpStatus >= 300) {
+            } elseif ($httpStatus < 200 || $httpStatus >= 300) {
                 $ex = new PayPalConnectionException($this->httpConfig->getUrl(),
                     "Got Http response code $httpStatus when accessing {$this->httpConfig->getUrl()}.", $httpStatus);
                 $ex->setData($result);
@@ -144,14 +143,14 @@
                 throw $ex;
             }
             $this->logger->debug(($result && $result != '' ? "Response Data \t: " . $result
-                    : "No Response Body") . "\n\n" . str_repeat('=', 128) . "\n");
+                    : 'No Response Body') . "\n\n" . str_repeat('=', 128) . "\n");
 
             //Return result object
             return $result;
         }
 
         /**
-         * Gets all Http Headers
+         * Gets all Http Headers.
          * @return array
          */
         private function getHttpHeaders()
@@ -163,5 +162,4 @@
 
             return $ret;
         }
-
     }

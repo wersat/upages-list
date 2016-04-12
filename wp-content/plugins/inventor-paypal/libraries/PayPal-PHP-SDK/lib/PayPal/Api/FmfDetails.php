@@ -6,7 +6,6 @@
     /**
      * Class FmfDetails
      * Details of Fraud Management Filter (FMF).
-     * @package PayPal\Api
      * @property string filter_type
      * @property string filter_id
      * @property string name
@@ -16,7 +15,7 @@
     {
         /**
          * Type of filter.
-         * Valid Values: ["ACCEPT", "PENDING", "DENY", "REPORT"]
+         * Valid Values: ["ACCEPT", "PENDING", "DENY", "REPORT"].
          *
          * @param string $filter_type
          *
@@ -31,7 +30,7 @@
 
         /**
          * Filter Identifier.
-         * Valid Values: ["AVS_NO_MATCH", "AVS_PARTIAL_MATCH", "AVS_UNAVAILABLE_OR_UNSUPPORTED", "CARD_SECURITY_CODE_MISMATCH", "MAXIMUM_TRANSACTION_AMOUNT", "UNCONFIRMED_ADDRESS", "COUNTRY_MONITOR", "LARGE_ORDER_NUMBER", "BILLING_OR_SHIPPING_ADDRESS_MISMATCH", "RISKY_ZIP_CODE", "SUSPECTED_FREIGHT_FORWARDER_CHECK", "TOTAL_PURCHASE_PRICE_MINIMUM", "IP_ADDRESS_VELOCITY", "RISKY_EMAIL_ADDRESS_DOMAIN_CHECK", "RISKY_BANK_IDENTIFICATION_NUMBER_CHECK", "RISKY_IP_ADDRESS_RANGE", "PAYPAL_FRAUD_MODEL"]
+         * Valid Values: ["AVS_NO_MATCH", "AVS_PARTIAL_MATCH", "AVS_UNAVAILABLE_OR_UNSUPPORTED", "CARD_SECURITY_CODE_MISMATCH", "MAXIMUM_TRANSACTION_AMOUNT", "UNCONFIRMED_ADDRESS", "COUNTRY_MONITOR", "LARGE_ORDER_NUMBER", "BILLING_OR_SHIPPING_ADDRESS_MISMATCH", "RISKY_ZIP_CODE", "SUSPECTED_FREIGHT_FORWARDER_CHECK", "TOTAL_PURCHASE_PRICE_MINIMUM", "IP_ADDRESS_VELOCITY", "RISKY_EMAIL_ADDRESS_DOMAIN_CHECK", "RISKY_BANK_IDENTIFICATION_NUMBER_CHECK", "RISKY_IP_ADDRESS_RANGE", "PAYPAL_FRAUD_MODEL"].
          *
          * @param string $filter_id
          *
@@ -45,7 +44,7 @@
         }
 
         /**
-         * Name of the filter
+         * Name of the filter.
          *
          * @param string $name
          *
@@ -91,7 +90,7 @@
         }
 
         /**
-         * Name of the filter
+         * Name of the filter.
          * @return string
          */
         public function getName()
@@ -107,5 +106,4 @@
         {
             return $this->description;
         }
-
     }

@@ -16,8 +16,8 @@
         public function __construct()
         {
             parent::__construct('favorites_widget', __('Favorite listings', 'inventor-favorites'), [
-                    'description' => __('Favorite listings.', 'inventor-favorites'),
-                ]);
+                'description' => __('Favorite listings.', 'inventor-favorites'),
+            ]);
         }
 
         /**

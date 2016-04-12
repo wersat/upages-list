@@ -1,6 +1,6 @@
 <?php
     /**
-     * API handler for all REST API calls
+     * API handler for all REST API calls.
      */
     namespace PayPal\Handler;
 
@@ -14,18 +14,18 @@
     use PayPal\Exception\PayPalMissingCredentialException;
 
     /**
-     * Class RestHandler
+     * Class RestHandler.
      */
     class RestHandler implements IPayPalHandler
     {
         /**
-         * Private Variable
-         * @var \Paypal\Rest\ApiContext $apiContext
+         * Private Variable.
+         * @var \Paypal\Rest\ApiContext
          */
         private $apiContext;
 
         /**
-         * Construct
+         * Construct.
          *
          * @param \Paypal\Rest\ApiContext $apiContext
          */
@@ -53,23 +53,23 @@
                 $credMgr    = PayPalCredentialManager::getInstance($config);
                 $credValues = $credMgr->getCredentialObject();
                 if ( ! is_array($credValues)) {
-                    throw new PayPalMissingCredentialException("Empty or invalid credentials passed");
+                    throw new PayPalMissingCredentialException('Empty or invalid credentials passed');
                 }
                 $credential = new OAuthTokenCredential($credValues['clientId'], $credValues['clientSecret']);
             }
             if ($credential == null || ! ($credential instanceof OAuthTokenCredential)) {
-                throw new PayPalInvalidCredentialException("Invalid credentials passed");
+                throw new PayPalInvalidCredentialException('Invalid credentials passed');
             }
             $httpConfig->setUrl(rtrim(trim($this->_getEndpoint($config)), '/') . (isset($options['path'])
                     ? $options['path'] : ''));
             // Overwrite Expect Header to disable 100 Continue Issue
-            $httpConfig->addHeader("Expect", null);
-            if ( ! array_key_exists("User-Agent", $httpConfig->getHeaders())) {
-                $httpConfig->addHeader("User-Agent",
+            $httpConfig->addHeader('Expect', null);
+            if ( ! array_key_exists('User-Agent', $httpConfig->getHeaders())) {
+                $httpConfig->addHeader('User-Agent',
                     PayPalUserAgent::getValue(PayPalConstants::SDK_NAME, PayPalConstants::SDK_VERSION));
             }
             if ( ! is_null($credential) && $credential instanceof OAuthTokenCredential && is_null($httpConfig->getHeader('Authorization'))) {
-                $httpConfig->addHeader('Authorization', "Bearer " . $credential->getAccessToken($config), false);
+                $httpConfig->addHeader('Authorization', 'Bearer ' . $credential->getAccessToken($config), false);
             }
             if ($httpConfig->getMethod() == 'POST' || $httpConfig->getMethod() == 'PUT') {
                 $httpConfig->addHeader('PayPal-Request-Id', $this->apiContext->getRequestId());
@@ -82,7 +82,7 @@
         }
 
         /**
-         * End Point
+         * End Point.
          *
          * @param array $config
          *
@@ -93,7 +93,7 @@
         {
             if (isset($config['service.EndPoint'])) {
                 return $config['service.EndPoint'];
-            } else if (isset($config['mode'])) {
+            } elseif (isset($config['mode'])) {
                 switch (strtoupper($config['mode'])) {
                     case 'SANDBOX':
                         return PayPalConstants::REST_SANDBOX_ENDPOINT;

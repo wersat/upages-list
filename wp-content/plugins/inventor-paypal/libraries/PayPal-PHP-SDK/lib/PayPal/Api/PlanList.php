@@ -6,7 +6,6 @@
     /**
      * Class PlanList
      * Resource representing a list of billing plans with basic information and get link.
-     * @package PayPal\Api
      * @property \PayPal\Api\Plan[]  plans
      * @property string              total_items
      * @property string              total_pages
@@ -128,7 +127,7 @@
         }
 
         /**
-         * Gets Links
+         * Gets Links.
          * @return \PayPal\Api\Links[]
          */
         public function getLinks()
@@ -137,7 +136,7 @@
         }
 
         /**
-         * Sets Links
+         * Sets Links.
          *
          * @param \PayPal\Api\Links[] $links
          *
@@ -161,5 +160,4 @@
         {
             return $this->setLinks(array_diff($this->getLinks(), [$links]));
         }
-
     }

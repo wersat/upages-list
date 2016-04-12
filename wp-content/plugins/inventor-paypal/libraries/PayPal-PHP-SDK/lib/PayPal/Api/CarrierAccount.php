@@ -5,8 +5,7 @@
 
     /**
      * Class CarrierAccount
-     * Payment Instrument that facilitates carrier billing
-     * @package PayPal\Api
+     * Payment Instrument that facilitates carrier billing.
      * @property string                  id
      * @property string                  phone_number
      * @property string                  external_customer_id
@@ -59,7 +58,7 @@
 
         /**
          * The method of obtaining the phone number (USER_PROVIDED or READ_FROM_DEVICE).
-         * Valid Values: ["READ_FROM_DEVICE", "USER_PROVIDED"]
+         * Valid Values: ["READ_FROM_DEVICE", "USER_PROVIDED"].
          *
          * @param string $phone_source
          *
@@ -130,5 +129,4 @@
         {
             return $this->country_code;
         }
-
     }

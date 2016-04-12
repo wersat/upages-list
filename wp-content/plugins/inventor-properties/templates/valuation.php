@@ -1,3 +1,4 @@
+<!-- VALUATION -->
 <?php do_action('inventor_before_listing_detail_property_valuation'); ?>
 
 <?php $valuation = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX . INVENTOR_PROPERTY_PREFIX . 'valuation',
@@ -19,10 +20,10 @@
             </div>
           </dd>
           <span class="percentage-valuation"><?php echo $value; ?> %</span>
-        </div>
+        </div><!-- /.property-valuation-item -->
       <?php endforeach; ?>
-    </div>
-  </div>
+    </div><!-- /.listing-detail-property-valuation-->
+  </div><!-- /.listing-detail-section -->
 <?php endif; ?>
 
 <?php do_action('inventor_after_listing_detail_property_valuation'); ?>

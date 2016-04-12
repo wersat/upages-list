@@ -4,60 +4,58 @@
     /**
      * Simple Logging Manager.
      * This does an error_log for now
-     * Potential frameworks to use are PEAR logger, log4php from Apache
+     * Potential frameworks to use are PEAR logger, log4php from Apache.
      */
     class PayPalLoggingManager
     {
-
         /**
-         * Default Logging Level
+         * Default Logging Level.
          */
         const DEFAULT_LOGGING_LEVEL = 0;
 
         /**
-         * Logger Name
+         * Logger Name.
          * @var string
          */
         private $loggerName;
 
         /**
-         * Log Enabled
+         * Log Enabled.
          * @var bool
          */
         private $isLoggingEnabled;
 
         /**
-         * Configured Logging Level
+         * Configured Logging Level.
          * @var int|mixed
          */
         private $loggingLevel;
 
         /**
-         * Configured Logging File
+         * Configured Logging File.
          * @var string
          */
         private $loggerFile;
 
         /**
-         * Default Constructor
+         * Default Constructor.
          */
         public function __construct()
         {
-            $config = PayPalConfigManager::getInstance()
-                                         ->getConfigHashmap();
+            $config                 = PayPalConfigManager::getInstance()
+                                                         ->getConfigHashmap();
             $this->isLoggingEnabled = (array_key_exists('log.LogEnabled', $config) && $config['log.LogEnabled'] == '1');
             if ($this->isLoggingEnabled) {
                 $this->loggerFile = ($config['log.FileName']) ? $config['log.FileName'] : ini_get('error_log');
                 $loggingLevel     = strtoupper($config['log.LogLevel']);
                 $this->loggingLevel
                                   = (isset($loggingLevel) && defined(__NAMESPACE__ . "\\PayPalLoggingLevel::$loggingLevel"))
-                    ? constant(__NAMESPACE__ . "\\PayPalLoggingLevel::$loggingLevel")
-                    : PayPalLoggingManager::DEFAULT_LOGGING_LEVEL;
+                    ? constant(__NAMESPACE__ . "\\PayPalLoggingLevel::$loggingLevel") : self::DEFAULT_LOGGING_LEVEL;
             }
         }
 
         /**
-         * Returns the singleton object
+         * Returns the singleton object.
          *
          * @param string $loggerName
          *
@@ -72,7 +70,7 @@
         }
 
         /**
-         * Sets Logger Name. Generally defaulted to Logging Class
+         * Sets Logger Name. Generally defaulted to Logging Class.
          *
          * @param string $loggerName
          */
@@ -82,7 +80,7 @@
         }
 
         /**
-         * Log Error
+         * Log Error.
          *
          * @param string $message
          */
@@ -92,7 +90,7 @@
         }
 
         /**
-         * Default Logger
+         * Default Logger.
          *
          * @param string $message
          * @param int    $level
@@ -108,7 +106,7 @@
                     if ($this->loggingLevel >= PayPalLoggingLevel::INFO) {
                         // If it is at Debug Level, throw an warning in the log.
                         if ($this->loggingLevel == PayPalLoggingLevel::DEBUG) {
-                            error_log("[" . date('d-m-Y h:i:s') . "] " . $this->loggerName . ": ERROR\t: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'\n",
+                            error_log('[' . date('d-m-Y h:i:s') . '] ' . $this->loggerName . ": ERROR\t: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'\n",
                                 3, $this->loggerFile);
                         }
                         // Reducing it to info level
@@ -116,14 +114,14 @@
                     }
                 }
                 if ($level <= $this->loggingLevel) {
-                    error_log("[" . date('d-m-Y h:i:s') . "] " . $this->loggerName . ": $message\n", 3,
+                    error_log('[' . date('d-m-Y h:i:s') . '] ' . $this->loggerName . ": $message\n", 3,
                         $this->loggerFile);
                 }
             }
         }
 
         /**
-         * Log Warning
+         * Log Warning.
          *
          * @param string $message
          */
@@ -133,7 +131,7 @@
         }
 
         /**
-         * Log Info
+         * Log Info.
          *
          * @param string $message
          */
@@ -143,7 +141,7 @@
         }
 
         /**
-         * Log Fine
+         * Log Fine.
          *
          * @param string $message
          */
@@ -153,7 +151,7 @@
         }
 
         /**
-         * Log Fine
+         * Log Fine.
          *
          * @param string $message
          */
@@ -161,5 +159,4 @@
         {
             $this->log("DEBUG\t: " . $message, PayPalLoggingLevel::DEBUG);
         }
-
     }

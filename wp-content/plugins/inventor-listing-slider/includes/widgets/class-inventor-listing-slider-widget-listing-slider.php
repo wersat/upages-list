@@ -16,8 +16,8 @@
         public function __construct()
         {
             parent::__construct('listing_slider', __('Listing Slider', 'inventor-listing-slider'), [
-                    'description' => __('Displays listings in slider.', 'inventor-listing-slider'),
-                ]);
+                'description' => __('Displays listings in slider.', 'inventor-listing-slider'),
+            ]);
             add_action('body_class', [__CLASS__, 'add_body_class']);
         }
 

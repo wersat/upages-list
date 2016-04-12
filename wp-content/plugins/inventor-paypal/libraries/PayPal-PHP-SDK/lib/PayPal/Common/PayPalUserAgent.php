@@ -3,15 +3,13 @@
 
     /**
      * Class PayPalUserAgent
-     * PayPalUserAgent generates User Agent for curl requests
-     * @package PayPal\Common
+     * PayPalUserAgent generates User Agent for curl requests.
      */
     class PayPalUserAgent
     {
-
         /**
          * Returns the value of the User-Agent header
-         * Add environment values and php version numbers
+         * Add environment values and php version numbers.
          *
          * @param string $sdkName
          * @param string $sdkVersion
@@ -24,7 +22,7 @@
                 'platform-ver=' . PHP_VERSION,
                 'bit=' . self::_getPHPBit(),
                 'os=' . str_replace(' ', '_', php_uname('s') . ' ' . php_uname('r')),
-                'machine=' . php_uname('m')
+                'machine=' . php_uname('m'),
             ];
             if (defined('OPENSSL_VERSION_TEXT')) {
                 $opensslVersion = explode(' ', OPENSSL_VERSION_TEXT);
@@ -35,11 +33,11 @@
                 $featureList[] = 'curl=' . $curlVersion['version'];
             }
 
-            return sprintf("PayPalSDK/%s %s (%s)", $sdkName, $sdkVersion, implode('; ', $featureList));
+            return sprintf('PayPalSDK/%s %s (%s)', $sdkName, $sdkVersion, implode('; ', $featureList));
         }
 
         /**
-         * Gets PHP Bit version
+         * Gets PHP Bit version.
          * @return int|string
          */
         private static function _getPHPBit()

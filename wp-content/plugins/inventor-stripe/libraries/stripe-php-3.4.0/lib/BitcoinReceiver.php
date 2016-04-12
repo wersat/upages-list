@@ -1,10 +1,11 @@
 <?php
-    namespace Stripe;
 
-    class BitcoinReceiver extends ExternalAccount
-    {
-        /**
-         * @param string            $id The ID of the Bitcoin Receiver to retrieve.
+namespace Stripe;
+
+class BitcoinReceiver extends ExternalAccount
+{
+    /**
+         * @param string            $id   The ID of the Bitcoin Receiver to retrieve.
          * @param array|string|null $opts
          *
          * @return BitcoinReceiver
@@ -44,7 +45,7 @@
          */
         public function refund($params = null, $options = null)
         {
-            $url = $this->instanceUrl() . '/refund';
+            $url = $this->instanceUrl().'/refund';
             list($response, $opts) = $this->_request('post', $url, $params, $options);
             $this->refreshFrom($response, $opts);
 
@@ -61,8 +62,8 @@
             if ($result) {
                 return $result;
             } else {
-                $id   = $this['id'];
-                $id   = Util\Util::utf8($id);
+                $id = $this['id'];
+                $id = Util\Util::utf8($id);
                 $extn = urlencode($id);
                 $base = self::classUrl();
 
@@ -78,4 +79,4 @@
         {
             return '/v1/bitcoin/receivers';
         }
-    }
+}

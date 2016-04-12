@@ -7,7 +7,6 @@
     /**
      * Class Incentive
      * A resource representing a incentive.
-     * @package PayPal\Api
      * @property string               id
      * @property string               code
      * @property string               name
@@ -21,7 +20,7 @@
     class Incentive extends PayPalModel
     {
         /**
-         * Identifier of the instrument in PayPal Wallet
+         * Identifier of the instrument in PayPal Wallet.
          *
          * @param string $id
          *
@@ -100,7 +99,7 @@
          */
         public function setLogoImageUrl($logo_image_url)
         {
-            UrlValidator::validate($logo_image_url, "LogoImageUrl");
+            UrlValidator::validate($logo_image_url, 'LogoImageUrl');
             $this->logo_image_url = $logo_image_url;
 
             return $this;
@@ -122,7 +121,7 @@
 
         /**
          * Specifies type of incentive
-         * Valid Values: ["COUPON", "GIFT_CARD", "MERCHANT_SPECIFIC_BALANCE", "VOUCHER"]
+         * Valid Values: ["COUPON", "GIFT_CARD", "MERCHANT_SPECIFIC_BALANCE", "VOUCHER"].
          *
          * @param string $type
          *
@@ -136,7 +135,7 @@
         }
 
         /**
-         * URI to the associated terms
+         * URI to the associated terms.
          *
          * @param string $terms
          *
@@ -150,7 +149,7 @@
         }
 
         /**
-         * Identifier of the instrument in PayPal Wallet
+         * Identifier of the instrument in PayPal Wallet.
          * @return string
          */
         public function getId()
@@ -213,7 +212,7 @@
         }
 
         /**
-         * Specifies type of incentive
+         * Specifies type of incentive.
          * @return string
          */
         public function getType()
@@ -222,12 +221,11 @@
         }
 
         /**
-         * URI to the associated terms
+         * URI to the associated terms.
          * @return string
          */
         public function getTerms()
         {
             return $this->terms;
         }
-
     }

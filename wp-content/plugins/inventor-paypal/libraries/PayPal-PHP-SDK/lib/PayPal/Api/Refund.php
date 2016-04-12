@@ -8,7 +8,6 @@
     /**
      * Class Refund
      * A refund transaction.
-     * @package PayPal\Api
      * @property string              id
      * @property \PayPal\Api\Amount  amount
      * @property string              state
@@ -71,7 +70,7 @@
 
         /**
          * State of the refund.
-         * Valid Values: ["pending", "completed", "failed"]
+         * Valid Values: ["pending", "completed", "failed"].
          *
          * @param string $state
          *
@@ -266,13 +265,12 @@
         public static function get($refundId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($refundId, 'refundId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/refund/$refundId", "GET", $payLoad, null, $apiContext,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/refund/$refundId", 'GET', $payLoad, null, $apiContext,
                 $restCall);
-            $ret     = new Refund();
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

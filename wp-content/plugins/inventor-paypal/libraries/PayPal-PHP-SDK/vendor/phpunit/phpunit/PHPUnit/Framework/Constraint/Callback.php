@@ -58,7 +58,7 @@
         {
             if ( ! is_callable($callback)) {
                 throw new InvalidArgumentException(sprintf('Specified callback <%s> is not callable.',
-                        $this->callbackToString($callback)));
+                    $this->callbackToString($callback)));
             }
             $this->callback = $callback;
         }

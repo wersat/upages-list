@@ -6,29 +6,27 @@
 
     /**
      * Class ApiContext
-     * Call level parameters such as request id, credentials etc
-     * @package PayPal\Rest
+     * Call level parameters such as request id, credentials etc.
      */
     class ApiContext
     {
-
         /**
          * Unique request id to be used for this call
          * The user can either generate one as per application
-         * needs or let the SDK generate one
-         * @var null|string $requestId
+         * needs or let the SDK generate one.
+         * @var null|string
          */
         private $requestId;
 
         /**
          * This is a placeholder for holding credential for the request
-         * If the value is not set, it would get the value from @\PayPal\Core\PayPalCredentialManager
+         * If the value is not set, it would get the value from @\PayPal\Core\PayPalCredentialManager.
          * @var \Paypal\Auth\OAuthTokenCredential
          */
         private $credential;
 
         /**
-         * Construct
+         * Construct.
          *
          * @param \PayPal\Auth\OAuthTokenCredential $credential
          * @param string|null                       $requestId
@@ -40,7 +38,7 @@
         }
 
         /**
-         * Sets Config
+         * Sets Config.
          *
          * @param array $config SDK configuration parameters
          */
@@ -51,7 +49,7 @@
         }
 
         /**
-         * Get Credential
+         * Get Credential.
          * @return \PayPal\Auth\OAuthTokenCredential
          */
         public function getCredential()
@@ -103,7 +101,7 @@
         /**
          * Generates a unique per request id that
          * can be used to set the PayPal-Request-Id header
-         * that is used for idempotency
+         * that is used for idempotency.
          * @return string
          */
         private function generateRequestId()
@@ -125,7 +123,7 @@
         }
 
         /**
-         * Get Request ID
+         * Get Request ID.
          * @return string
          */
         public function getRequestId()
@@ -138,7 +136,7 @@
         }
 
         /**
-         * Gets Configurations
+         * Gets Configurations.
          * @return array
          */
         public function getConfig()
@@ -148,7 +146,7 @@
         }
 
         /**
-         * Gets a specific configuration from key
+         * Gets a specific configuration from key.
          *
          * @param $searchKey
          *

@@ -5,9 +5,8 @@
     use PayPal\Validation\UrlValidator;
 
     /**
-     * Class MerchantPreferences
+     * Class MerchantPreferences.
      * Resource representing merchant preferences like max failed attempts, set up fee  and others for a plan.
-     * @package PayPal\Api
      * @property string               id
      * @property \PayPal\Api\Currency setup_fee
      * @property string               cancel_url
@@ -59,7 +58,7 @@
          */
         public function setCancelUrl($cancel_url)
         {
-            UrlValidator::validate($cancel_url, "CancelUrl");
+            UrlValidator::validate($cancel_url, 'CancelUrl');
             $this->cancel_url = $cancel_url;
 
             return $this;
@@ -75,7 +74,7 @@
          */
         public function setReturnUrl($return_url)
         {
-            UrlValidator::validate($return_url, "ReturnUrl");
+            UrlValidator::validate($return_url, 'ReturnUrl');
             $this->return_url = $return_url;
 
             return $this;
@@ -91,7 +90,7 @@
          */
         public function setNotifyUrl($notify_url)
         {
-            UrlValidator::validate($notify_url, "NotifyUrl");
+            UrlValidator::validate($notify_url, 'NotifyUrl');
             $this->notify_url = $notify_url;
 
             return $this;
@@ -256,5 +255,4 @@
         {
             return $this->char_set;
         }
-
     }

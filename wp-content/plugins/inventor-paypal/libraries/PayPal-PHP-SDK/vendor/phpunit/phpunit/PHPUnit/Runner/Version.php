@@ -76,7 +76,7 @@
                         if (count(explode('.', self::VERSION)) == 3) {
                             self::$version = $version;
                         } else {
-                            $version = explode('-', $version);
+                            $version       = explode('-', $version);
                             self::$version = self::VERSION . '-' . $version[2];
                         }
                     } else {

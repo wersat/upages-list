@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class RefundDetail
+     * Class RefundDetail.
      * Invoicing refund information.
-     * @package PayPal\Api
      * @property string type
      * @property string date
      * @property string note
@@ -15,7 +14,7 @@
     {
         /**
          * PayPal refund type indicating whether refund was done in invoicing flow via PayPal or externally. In the case of the mark-as-refunded API, refund type is EXTERNAL and this is what is now supported. The PAYPAL value is provided for backward compatibility.
-         * Valid Values: ["PAYPAL", "EXTERNAL"]
+         * Valid Values: ["PAYPAL", "EXTERNAL"].
          *
          * @param string $type
          *
@@ -82,5 +81,4 @@
         {
             return $this->note;
         }
-
     }

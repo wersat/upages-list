@@ -4,14 +4,17 @@
     }
 
     /**
-     * Class Inventor_Google_Map_Widgets.
-     * @class  Inventor_Google_Map_Widgets
-     * @author Pragmatic Mates
+     * Class Inventor_Google_Map_Widgets
+     * @class   Inventor_Google_Map_Widgets
+     * @package Inventor_Google_Map/Classes
+     * @author  Pragmatic Mates
      */
     class Inventor_Google_Map_Widgets
     {
         /**
-         * Initialize widgets.
+         * Initialize widgets
+         * @access public
+         * @return void
          */
         public static function init()
         {
@@ -20,7 +23,9 @@
         }
 
         /**
-         * Include widget classes.
+         * Include widget classes
+         * @access public
+         * @return void
          */
         public static function includes()
         {
@@ -28,7 +33,9 @@
         }
 
         /**
-         * Register widgets.
+         * Register widgets
+         * @access public
+         * @return void
          */
         public static function register()
         {
@@ -36,7 +43,8 @@
         }
 
         /**
-         * Checks if the map widget is open or closed.
+         * Checks if the map widget is open or closed
+         * @access public
          *
          * @param $widget_id
          * @param $instance

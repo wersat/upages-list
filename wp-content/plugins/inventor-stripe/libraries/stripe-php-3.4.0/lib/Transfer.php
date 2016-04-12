@@ -1,10 +1,11 @@
 <?php
-    namespace Stripe;
 
-    class Transfer extends ApiResource
-    {
-        /**
-         * @param string            $id The ID of the transfer to retrieve.
+namespace Stripe;
+
+class Transfer extends ApiResource
+{
+    /**
+         * @param string            $id   The ID of the transfer to retrieve.
          * @param array|string|null $opts
          *
          * @return Transfer
@@ -41,7 +42,7 @@
          */
         public function reverse($params = null, $opts = null)
         {
-            $url = $this->instanceUrl() . '/reversals';
+            $url = $this->instanceUrl().'/reversals';
             list($response, $opts) = $this->_request('post', $url, $params, $options);
             $this->refreshFrom($response, $opts);
 
@@ -53,7 +54,7 @@
          */
         public function cancel()
         {
-            $url = $this->instanceUrl() . '/cancel';
+            $url = $this->instanceUrl().'/cancel';
             list($response, $opts) = $this->_request('post', $url);
             $this->refreshFrom($response, $opts);
 
@@ -69,4 +70,4 @@
         {
             return $this->_save($opts);
         }
-    }
+}

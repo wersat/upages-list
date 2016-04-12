@@ -556,7 +556,7 @@
                     new PHPUnit_Framework_IncompleteTestError('This test did not perform any assertions'), $time);
             } else if ($this->strictMode && $test->hasOutput()) {
                 $this->addFailure($test, new PHPUnit_Framework_OutputError(sprintf('This test printed output: %s',
-                            $test->getActualOutput())), $time);
+                    $test->getActualOutput())), $time);
             }
             $this->endTest($test, $time);
         }
@@ -586,7 +586,7 @@
         {
             if ($e instanceof PHPUnit_Framework_IncompleteTest) {
                 $this->notImplemented[] = new PHPUnit_Framework_TestFailure($test, $e);
-                $notifyMethod = 'addIncompleteTest';
+                $notifyMethod           = 'addIncompleteTest';
                 if ($this->stopOnIncomplete) {
                     $this->stop();
                 }
@@ -612,7 +612,6 @@
 
         /**
          * Marks that the test run should stop.
-
          */
         public function stop()
         {
@@ -631,7 +630,7 @@
         {
             if ($e instanceof PHPUnit_Framework_IncompleteTest) {
                 $this->notImplemented[] = new PHPUnit_Framework_TestFailure($test, $e);
-                $notifyMethod = 'addIncompleteTest';
+                $notifyMethod           = 'addIncompleteTest';
                 if ($this->stopOnIncomplete) {
                     $this->stop();
                 }
@@ -667,8 +666,8 @@
                 $listener->endTest($test, $time);
             }
             if ( ! $this->lastTestFailed && $test instanceof PHPUnit_Framework_TestCase) {
-                $class = get_class($test);
-                $key   = $class . '::' . $test->getName();
+                $class              = get_class($test);
+                $key                = $class . '::' . $test->getName();
                 $this->passed[$key] = [
                     'result' => $test->getResult(),
                     'size'   => PHPUnit_Util_Test::getSize($class, $test->getName(false))

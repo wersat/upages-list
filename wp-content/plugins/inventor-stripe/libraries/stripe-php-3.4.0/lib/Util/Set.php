@@ -1,7 +1,8 @@
 <?php
-    namespace Stripe\Util;
 
-    use ArrayIterator;
+namespace Stripe\Util;
+
+use ArrayIterator;
     use IteratorAggregate;
 
     class Set implements IteratorAggregate

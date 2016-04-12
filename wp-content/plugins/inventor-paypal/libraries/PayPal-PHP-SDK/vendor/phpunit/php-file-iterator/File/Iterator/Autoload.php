@@ -42,7 +42,7 @@
                 'file_iterator_facade'  => '/Iterator/Facade.php',
                 'file_iterator_factory' => '/Iterator/Factory.php'
             ];
-            $path = dirname(dirname(__FILE__));
+            $path    = dirname(dirname(__FILE__));
         }
         $cn = strtolower($class);
         if (isset($classes[$cn])) {

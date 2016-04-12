@@ -124,7 +124,7 @@
         {
             $this->document               = new DOMDocument('1.0', 'UTF-8');
             $this->document->formatOutput = true;
-            $this->root = $this->document->createElement('testsuites');
+            $this->root                   = $this->document->createElement('testsuites');
             $this->document->appendChild($this->root);
             parent::__construct($out);
             $this->logIncompleteSkipped = $logIncompleteSkipped;
@@ -147,7 +147,6 @@
 
         /**
          * Flush buffer and close output.
-
          */
         public function flush()
         {

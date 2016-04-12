@@ -8,7 +8,6 @@
     /**
      * Class InvoiceItem
      * Information about a single line item.
-     * @package PayPal\Api
      * @property string               name
      * @property string               description
      * @property \PayPal\Api\number   quantity
@@ -68,13 +67,13 @@
         /**
          * Quantity of the item. Range of 0 to 9999.999.
          *
-         * @param string|double $quantity
+         * @param string|float $quantity
          *
          * @return $this
          */
         public function setQuantity($quantity)
         {
-            NumericValidator::validate($quantity, "Percent");
+            NumericValidator::validate($quantity, 'Percent');
             $quantity       = FormatConverter::formatToPrice($quantity);
             $this->quantity = $quantity;
 
@@ -181,5 +180,4 @@
         {
             return $this->discount;
         }
-
     }

@@ -62,9 +62,9 @@
         {
             $buffer = "--- Expected\n+++ Actual\n";
             $diff   = self::diffToArray($from, $to);
-            $inOld = false;
-            $i     = 0;
-            $old   = [];
+            $inOld  = false;
+            $i      = 0;
+            $old    = [];
             foreach ($diff as $line) {
                 if ($line[1] === 0 /* OLD */) {
                     if ($inOld === false) {
@@ -154,8 +154,8 @@
                 }
             }
             $common = self::longestCommonSubsequence(array_values($from), array_values($to));
-            $diff = [];
-            $line = 0;
+            $diff   = [];
+            $line   = 0;
             if (isset($fromMatches[0]) && $toMatches[0]
                 && count($fromMatches[0]) === count($toMatches[0])
                 && $fromMatches[0] !== $toMatches[0]

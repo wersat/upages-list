@@ -119,6 +119,14 @@
         }
 
         /**
+         * @return PHP_CodeCoverage_Report_Node
+         */
+        public function getParent()
+        {
+            return $this->parent;
+        }
+
+        /**
          * @return string
          */
         public function getPath()
@@ -152,14 +160,6 @@
         }
 
         /**
-         * @return PHP_CodeCoverage_Report_Node
-         */
-        public function getParent()
-        {
-            return $this->parent;
-        }
-
-        /**
          * Returns the percentage of classes that has been tested.
          *
          * @param  boolean $asString
@@ -172,6 +172,18 @@
         }
 
         /**
+         * Returns the number of tested classes.
+         * @return integer
+         */
+        abstract public function getNumTestedClasses();
+
+        /**
+         * Returns the number of classes.
+         * @return integer
+         */
+        abstract public function getNumClasses();
+
+        /**
          * Returns the percentage of traits that has been tested.
          *
          * @param  boolean $asString
@@ -182,6 +194,18 @@
         {
             return PHP_CodeCoverage_Util::percent($this->getNumTestedTraits(), $this->getNumTraits(), $asString);
         }
+
+        /**
+         * Returns the number of tested traits.
+         * @return integer
+         */
+        abstract public function getNumTestedTraits();
+
+        /**
+         * Returns the number of traits.
+         * @return integer
+         */
+        abstract public function getNumTraits();
 
         /**
          * Returns the percentage of traits that has been tested.
@@ -198,6 +222,26 @@
         }
 
         /**
+         * Returns the number of tested classes and traits.
+         * @return integer
+         * @since  Method available since Release 1.2.0
+         */
+        public function getNumTestedClassesAndTraits()
+        {
+            return $this->getNumTestedClasses() + $this->getNumTestedTraits();
+        }
+
+        /**
+         * Returns the number of classes and traits.
+         * @return integer
+         * @since  Method available since Release 1.2.0
+         */
+        public function getNumClassesAndTraits()
+        {
+            return $this->getNumClasses() + $this->getNumTraits();
+        }
+
+        /**
          * Returns the percentage of methods that has been tested.
          *
          * @param  boolean $asString
@@ -208,6 +252,18 @@
         {
             return PHP_CodeCoverage_Util::percent($this->getNumTestedMethods(), $this->getNumMethods(), $asString);
         }
+
+        /**
+         * Returns the number of tested methods.
+         * @return integer
+         */
+        abstract public function getNumTestedMethods();
+
+        /**
+         * Returns the number of methods.
+         * @return integer
+         */
+        abstract public function getNumMethods();
 
         /**
          * Returns the percentage of executed lines.
@@ -223,24 +279,16 @@
         }
 
         /**
-         * Returns the number of classes and traits.
+         * Returns the number of executed lines.
          * @return integer
-         * @since  Method available since Release 1.2.0
          */
-        public function getNumClassesAndTraits()
-        {
-            return $this->getNumClasses() + $this->getNumTraits();
-        }
+        abstract public function getNumExecutedLines();
 
         /**
-         * Returns the number of tested classes and traits.
+         * Returns the number of executable lines.
          * @return integer
-         * @since  Method available since Release 1.2.0
          */
-        public function getNumTestedClassesAndTraits()
-        {
-            return $this->getNumTestedClasses() + $this->getNumTestedTraits();
-        }
+        abstract public function getNumExecutableLines();
 
         /**
          * Returns the classes and traits of this node.
@@ -275,54 +323,6 @@
          * @return array
          */
         abstract public function getLinesOfCode();
-
-        /**
-         * Returns the number of executable lines.
-         * @return integer
-         */
-        abstract public function getNumExecutableLines();
-
-        /**
-         * Returns the number of executed lines.
-         * @return integer
-         */
-        abstract public function getNumExecutedLines();
-
-        /**
-         * Returns the number of classes.
-         * @return integer
-         */
-        abstract public function getNumClasses();
-
-        /**
-         * Returns the number of tested classes.
-         * @return integer
-         */
-        abstract public function getNumTestedClasses();
-
-        /**
-         * Returns the number of traits.
-         * @return integer
-         */
-        abstract public function getNumTraits();
-
-        /**
-         * Returns the number of tested traits.
-         * @return integer
-         */
-        abstract public function getNumTestedTraits();
-
-        /**
-         * Returns the number of methods.
-         * @return integer
-         */
-        abstract public function getNumMethods();
-
-        /**
-         * Returns the number of tested methods.
-         * @return integer
-         */
-        abstract public function getNumTestedMethods();
 
         /**
          * Returns the number of functions.

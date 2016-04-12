@@ -30,9 +30,9 @@
   $orderby             = ! empty($instance['orderby']) ? $instance['orderby'] : '';
   $button_text         = ! empty($instance['button_text']) ? $instance['button_text'] : '';
   $sort                = ! empty($instance['sort']) ? $instance['sort'] : '';
-  $map_types       = ! empty($instance['map_types']) ? $instance['map_types'] : '';
-  $map_zoom        = ! empty($instance['map_zoom']) ? $instance['map_zoom'] : '';
-  $map_geolocation = ! empty($instance['map_geolocation']) ? $instance['map_geolocation'] : '';
+  $map_types           = ! empty($instance['map_types']) ? $instance['map_types'] : '';
+  $map_zoom            = ! empty($instance['map_zoom']) ? $instance['map_zoom'] : '';
+  $map_geolocation     = ! empty($instance['map_geolocation']) ? $instance['map_geolocation'] : '';
 ?>
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">

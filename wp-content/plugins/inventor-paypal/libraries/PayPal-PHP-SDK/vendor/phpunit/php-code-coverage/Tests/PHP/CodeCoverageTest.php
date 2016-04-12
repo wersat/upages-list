@@ -61,7 +61,7 @@
 
         protected function setUp()
         {
-            $this->coverage = new PHP_CodeCoverage;
+            $this->coverage            = new PHP_CodeCoverage;
             $this->getLinesToBeCovered = new ReflectionMethod('PHP_CodeCoverage', 'getLinesToBeCovered');
             $this->getLinesToBeCovered->setAccessible(true);
         }

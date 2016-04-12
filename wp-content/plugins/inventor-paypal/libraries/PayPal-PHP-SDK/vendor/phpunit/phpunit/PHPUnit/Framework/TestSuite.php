@@ -232,7 +232,7 @@
                 $this->addTest($test, PHPUnit_Util_Test::getGroups($class->getName(), $name));
             } else if ($this->isTestMethod($method)) {
                 $this->addTest(self::warning(sprintf('Test method "%s" in test class "%s" is not public.', $name,
-                        $class->getName())));
+                    $class->getName())));
             }
         }
 
@@ -278,7 +278,7 @@
             $backupSettings           = PHPUnit_Util_Test::getBackupSettings($className, $name);
             $preserveGlobalState      = PHPUnit_Util_Test::getPreserveGlobalStateSettings($className, $name);
             $runTestInSeparateProcess = PHPUnit_Util_Test::getProcessIsolationSettings($className, $name);
-            $constructor = $theClass->getConstructor();
+            $constructor              = $theClass->getConstructor();
             if ($constructor !== null) {
                 $parameters = $constructor->getParameters();
                 // TestCase() or TestCase($name)
@@ -289,7 +289,7 @@
                     try {
                         $data = PHPUnit_Util_Test::getProvidedData($className, $name);
                     } catch (Exception $e) {
-                        $message = sprintf('The data provider specified for %s::%s is invalid.', $className, $name);
+                        $message  = sprintf('The data provider specified for %s::%s is invalid.', $className, $name);
                         $_message = $e->getMessage();
                         if ( ! empty($_message)) {
                             $message .= "\n" . $_message;

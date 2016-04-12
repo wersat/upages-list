@@ -6,7 +6,6 @@
     /**
      * Class PaymentCardToken
      * A resource representing a payment card that can be used to fund a payment.
-     * @package PayPal\Api
      * @property string payment_card_id
      * @property string external_customer_id
      * @property string last4
@@ -60,7 +59,7 @@
 
         /**
          * Type of the Card.
-         * Valid Values: ["VISA", "AMEX", "SOLO", "JCB", "STAR", "DELTA", "DISCOVER", "SWITCH", "MAESTRO", "CB_NATIONALE", "CONFINOGA", "COFIDIS", "ELECTRON", "CETELEM", "CHINA_UNION_PAY", "MASTERCARD"]
+         * Valid Values: ["VISA", "AMEX", "SOLO", "JCB", "STAR", "DELTA", "DISCOVER", "SWITCH", "MAESTRO", "CB_NATIONALE", "CONFINOGA", "COFIDIS", "ELECTRON", "CETELEM", "CHINA_UNION_PAY", "MASTERCARD"].
          *
          * @param string $type
          *
@@ -154,5 +153,4 @@
         {
             return $this->expire_year;
         }
-
     }

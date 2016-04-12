@@ -16,8 +16,8 @@
         public function __construct()
         {
             parent::__construct('testimonials', __('Testimonials', 'inventor-testimonials'), [
-                'description' => __('Displays Testimonials.', 'inventor-testimonials'),
-            ]);
+                    'description' => __('Displays Testimonials.', 'inventor-testimonials'),
+                ]);
         }
 
         /**

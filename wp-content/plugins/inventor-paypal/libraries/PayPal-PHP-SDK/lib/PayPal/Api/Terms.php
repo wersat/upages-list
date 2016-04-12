@@ -6,7 +6,6 @@
     /**
      * Class Terms
      * Resource representing terms used by the plan.
-     * @package PayPal\Api
      * @property string               id
      * @property string               type
      * @property \PayPal\Api\Currency max_billing_amount
@@ -153,5 +152,4 @@
         {
             return $this->buyer_editable;
         }
-
     }

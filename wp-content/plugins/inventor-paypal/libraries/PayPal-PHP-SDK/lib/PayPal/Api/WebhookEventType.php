@@ -8,8 +8,7 @@
 
     /**
      * Class WebhookEventType
-     * Contains the information for a Webhooks event-type
-     * @package PayPal\Api
+     * Contains the information for a Webhooks event-type.
      * @property string name
      * @property string description
      */
@@ -39,7 +38,7 @@
         }
 
         /**
-         * Human readable description of the event-type
+         * Human readable description of the event-type.
          *
          * @param string $description
          *
@@ -53,7 +52,7 @@
         }
 
         /**
-         * Human readable description of the event-type
+         * Human readable description of the event-type.
          * @return string
          */
         public function getDescription()
@@ -73,8 +72,8 @@
         public static function subscribedEventTypes($webhookId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($webhookId, 'webhookId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/notifications/webhooks/$webhookId/event-types", "GET", $payLoad, null,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/notifications/webhooks/$webhookId/event-types", 'GET', $payLoad, null,
                 $apiContext, $restCall);
             $ret     = new WebhookEventTypeList();
             $ret->fromJson($json);
@@ -92,13 +91,12 @@
          */
         public static function availableEventTypes($apiContext = null, $restCall = null)
         {
-            $payLoad = "";
-            $json    = self::executeCall("/v1/notifications/webhooks-event-types", "GET", $payLoad, null, $apiContext,
+            $payLoad = '';
+            $json    = self::executeCall('/v1/notifications/webhooks-event-types', 'GET', $payLoad, null, $apiContext,
                 $restCall);
             $ret     = new WebhookEventTypeList();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

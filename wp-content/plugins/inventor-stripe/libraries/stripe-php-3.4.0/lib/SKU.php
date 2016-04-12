@@ -1,10 +1,11 @@
 <?php
-    namespace Stripe;
 
-    class SKU extends ApiResource
-    {
-        /**
-         * @param string            $id The ID of the SKU to retrieve.
+namespace Stripe;
+
+class SKU extends ApiResource
+{
+    /**
+         * @param string            $id   The ID of the SKU to retrieve.
          * @param array|string|null $opts
          *
          * @return SKU
@@ -45,4 +46,4 @@
         {
             return self::_all($params, $opts);
         }
-    }
+}

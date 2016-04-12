@@ -52,7 +52,7 @@
             if ($update && is_array($currencies) && count($currencies) > 0) {
                 $currency_default           = $currencies[0];
                 $not_default_currency_codes = [];
-                $index = 0;
+                $index                      = 0;
                 foreach ($currencies as $currency) {
                     if ($index != 0) {
                         array_push($not_default_currency_codes, $currency['code']);
@@ -66,11 +66,11 @@
                     $json = json_decode($contents);
                     if ( ! empty($json) && $json->success) {
                         $quotes = (array)$json->quotes;
-                        $index = 0;
+                        $index  = 0;
                         foreach ($currencies as $currency) {
                             if ($index != 0) {
                                 $code_key = $currency_default['code'] . $currency['code'];
-                                $rate = round($quotes[$code_key], 6);
+                                $rate     = round($quotes[$code_key], 6);
                                 if ( ! empty($rate)) {
                                     $currencies[$index]['rate'] = $rate;
                                 }
@@ -91,7 +91,7 @@
         public static function get_config()
         {
             $currencylayer_api_key = get_theme_mod('inventor_currencies_currencylayer_api_key', null);
-            $currencies_config = [
+            $currencies_config     = [
                 'currencylayer_api_key' => $currencylayer_api_key,
             ];
 

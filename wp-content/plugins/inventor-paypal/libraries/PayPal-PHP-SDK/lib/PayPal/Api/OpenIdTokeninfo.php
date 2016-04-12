@@ -7,7 +7,7 @@
 
     /**
      * Class OpenIdTokeninfo
-     * Token grant resource
+     * Token grant resource.
      * @property string scope
      * @property string access_token
      * @property string refresh_token
@@ -17,7 +17,6 @@
      */
     class OpenIdTokeninfo extends PayPalResourceModel
     {
-
         /**
          * OPTIONAL, if identical to the scope requested by the client; otherwise, REQUIRED.
          *
@@ -111,7 +110,7 @@
         }
 
         /**
-         * The id_token is a session token assertion that denotes the user's authentication status
+         * The id_token is a session token assertion that denotes the user's authentication status.
          *
          * @param string $id_token
          *
@@ -125,7 +124,7 @@
         }
 
         /**
-         * The id_token is a session token assertion that denotes the user's authentication status
+         * The id_token is a session token assertion that denotes the user's authentication status.
          * @return string
          */
         public function getIdToken()
@@ -136,7 +135,7 @@
         /**
          * The lifetime in seconds of the access token.
          *
-         * @param integer $expires_in
+         * @param int $expires_in
          *
          * @return self
          */
@@ -149,7 +148,7 @@
 
         /**
          * The lifetime in seconds of the access token.
-         * @return integer
+         * @return int
          */
         public function getExpiresIn()
         {
@@ -161,16 +160,16 @@
          * @path /v1/identity/openidconnect/tokenservice
          * @method POST
          *
-         * @param array          $params     (allowed values are client_id, client_secret, grant_type, code and redirect_uri)
-         *                                   (required) client_id from developer portal
-         *                                   (required) client_secret from developer portal
-         *                                   (required) code is Authorization code previously received from the authorization server
-         *                                   (required) redirect_uri Redirection endpoint that must match the one provided during the
-         *                                   authorization request that ended in receiving the authorization code.
-         *                                   (optional) grant_type is the Token grant type. Defaults to authorization_code
+         * @param array          $params       (allowed values are client_id, client_secret, grant_type, code and redirect_uri)
+         *                                     (required) client_id from developer portal
+         *                                     (required) client_secret from developer portal
+         *                                     (required) code is Authorization code previously received from the authorization server
+         *                                     (required) redirect_uri Redirection endpoint that must match the one provided during the
+         *                                     authorization request that ended in receiving the authorization code.
+         *                                     (optional) grant_type is the Token grant type. Defaults to authorization_code
          * @param string         $clientId
          * @param string         $clientSecret
-         * @param ApiContext     $apiContext Optional API Context
+         * @param ApiContext     $apiContext   Optional API Context
          * @param PayPalRestCall $restCall
          *
          * @return OpenIdTokeninfo
@@ -201,12 +200,12 @@
                 ? $clientSecret
                 : $apiContext->getCredential()
                              ->getClientSecret();
-            $json  = self::executeCall("/v1/identity/openidconnect/tokenservice", "POST",
+            $json         = self::executeCall('/v1/identity/openidconnect/tokenservice', 'POST',
                 http_build_query(array_intersect_key($params, $allowedParams)), [
                     'Content-Type'  => 'application/x-www-form-urlencoded',
-                    'Authorization' => 'Basic ' . base64_encode($clientId . ":" . $clientSecret)
+                    'Authorization' => 'Basic ' . base64_encode($clientId . ':' . $clientSecret),
                 ], $apiContext, $restCall);
-            $token = new OpenIdTokeninfo();
+            $token        = new self();
             $token->fromJson($json);
 
             return $token;
@@ -245,10 +244,10 @@
                 ? $params['client_secret']
                 : $apiContext->getCredential()
                              ->getClientSecret();
-            $json = self::executeCall("/v1/identity/openidconnect/tokenservice", "POST",
+            $json         = self::executeCall('/v1/identity/openidconnect/tokenservice', 'POST',
                 http_build_query(array_intersect_key($params, $allowedParams)), [
                     'Content-Type'  => 'application/x-www-form-urlencoded',
-                    'Authorization' => 'Basic ' . base64_encode($clientId . ":" . $clientSecret)
+                    'Authorization' => 'Basic ' . base64_encode($clientId . ':' . $clientSecret),
                 ], $apiContext);
             $this->fromJson($json);
 

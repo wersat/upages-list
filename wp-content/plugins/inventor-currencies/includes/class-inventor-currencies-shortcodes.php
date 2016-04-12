@@ -24,7 +24,7 @@
          */
         public static function currencies($atts)
         {
-            $atts = shortcode_atts([], $atts, 'inventor_currencies');
+            $atts       = shortcode_atts([], $atts, 'inventor_currencies');
             $currencies = get_theme_mod('inventor_currencies');
             if ($currencies == false) {
                 $currencies = [
@@ -45,7 +45,7 @@
             if ( ! empty($currencies) && is_array($currencies)) {
                 ksort($currencies);
                 $currency_code = Inventor_Currencies_Logic::get_current_currency_code();
-                $result = '';
+                $result        = '';
                 ob_start();
                 include Inventor_Template_Loader::locate('currencies', $plugin_dir = INVENTOR_CURRENCIES_DIR);
                 $result = ob_get_contents();

@@ -52,7 +52,6 @@
 
         /**
          * Starts the collection of loaded classes.
-
          */
         public static function collectStart()
         {

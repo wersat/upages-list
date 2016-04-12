@@ -4,8 +4,7 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class Transactions
-     * @package PayPal\Api
+     * Class Transactions.
      * @property \PayPal\Api\Amount amount
      */
     class Transactions extends PayPalModel
@@ -32,5 +31,4 @@
         {
             return $this->amount;
         }
-
     }

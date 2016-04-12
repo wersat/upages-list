@@ -6,7 +6,6 @@
     /**
      * Class ErrorDetails
      * Details about a specific error.
-     * @package PayPal\Api
      * @property string field
      * @property string issue
      */
@@ -41,7 +40,7 @@
         }
 
         /**
-         * Reference ID of the purchase_unit associated with this error
+         * Reference ID of the purchase_unit associated with this error.
          * @deprecated Not publicly available
          *
          * @param string $purchase_unit_reference_id
@@ -89,7 +88,7 @@
         }
 
         /**
-         * Reference ID of the purchase_unit associated with this error
+         * Reference ID of the purchase_unit associated with this error.
          * @deprecated Not publicly available
          * @return string
          */
@@ -107,5 +106,4 @@
         {
             return $this->code;
         }
-
     }

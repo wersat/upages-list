@@ -2,12 +2,10 @@
     namespace PayPal\Validation;
 
     /**
-     * Class JsonValidator
-     * @package PayPal\Validation
+     * Class JsonValidator.
      */
     class JsonValidator
     {
-
         /**
          * Helper method for validating if string provided is a valid json.
          *
@@ -25,7 +23,7 @@
                 }
                 if ($silent == false) {
                     //Throw an Exception for string or array
-                    throw new \InvalidArgumentException("Invalid JSON String");
+                    throw new \InvalidArgumentException('Invalid JSON String');
                 }
 
                 return false;

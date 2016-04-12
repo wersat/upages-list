@@ -4,16 +4,15 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class NameValuePair
+     * Class NameValuePair.
      * Used to define a type for name-value pairs.  The use of name value pairs in an API should be limited and approved by architecture.
-     * @package PayPal\Api
      * @property string name
      * @property string value
      */
     class NameValuePair extends PayPalModel
     {
         /**
-         * Key for the name value pair.  The value name types should be correlated
+         * Key for the name value pair.  The value name types should be correlated.
          *
          * @param string $name
          *
@@ -41,7 +40,7 @@
         }
 
         /**
-         * Key for the name value pair.  The value name types should be correlated
+         * Key for the name value pair.  The value name types should be correlated.
          * @return string
          */
         public function getName()
@@ -57,5 +56,4 @@
         {
             return $this->value;
         }
-
     }

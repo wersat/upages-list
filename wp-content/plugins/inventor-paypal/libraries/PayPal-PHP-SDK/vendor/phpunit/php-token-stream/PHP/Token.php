@@ -783,7 +783,7 @@
         {
             $className  = $this->getName();
             $docComment = $this->getDocblock();
-            $result = [
+            $result     = [
                 'namespace'   => '',
                 'fullPackage' => '',
                 'category'    => '',

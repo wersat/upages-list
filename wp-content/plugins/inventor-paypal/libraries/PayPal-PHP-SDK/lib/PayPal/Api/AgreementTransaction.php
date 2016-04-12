@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class AgreementTransaction
+     * Class AgreementTransaction.
      * A resource representing an agreement_transaction that is returned during a transaction search.
-     * @package PayPal\Api
      * @property string               transaction_id
      * @property string               status
      * @property string               transaction_type
@@ -249,5 +248,4 @@
         {
             return $this->time_zone;
         }
-
     }

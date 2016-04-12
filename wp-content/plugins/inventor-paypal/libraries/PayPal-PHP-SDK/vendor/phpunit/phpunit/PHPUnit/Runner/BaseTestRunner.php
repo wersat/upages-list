@@ -74,7 +74,7 @@
             ) {
                 $facade = new File_Iterator_Facade;
                 $files  = $facade->getFilesAsArray($suiteClassName, $suffixes);
-                $suite = new PHPUnit_Framework_TestSuite($suiteClassName);
+                $suite  = new PHPUnit_Framework_TestSuite($suiteClassName);
                 $suite->addTestFiles($files);
 
                 return $suite;
@@ -150,7 +150,6 @@
 
         /**
          * Clears the status message.
-
          */
         protected function clearStatus()
         {

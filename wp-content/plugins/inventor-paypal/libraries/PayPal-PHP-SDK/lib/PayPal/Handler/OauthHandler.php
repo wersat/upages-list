@@ -1,6 +1,6 @@
 <?php
     /**
-     * API handler for OAuth Token Request REST API calls
+     * API handler for OAuth Token Request REST API calls.
      */
     namespace PayPal\Handler;
 
@@ -12,18 +12,18 @@
     use PayPal\Exception\PayPalMissingCredentialException;
 
     /**
-     * Class OauthHandler
+     * Class OauthHandler.
      */
     class OauthHandler implements IPayPalHandler
     {
         /**
-         * Private Variable
-         * @var \Paypal\Rest\ApiContext $apiContext
+         * Private Variable.
+         * @var \Paypal\Rest\ApiContext
          */
         private $apiContext;
 
         /**
-         * Construct
+         * Construct.
          *
          * @param \Paypal\Rest\ApiContext $apiContext
          */
@@ -48,9 +48,9 @@
             $httpConfig->setUrl(rtrim(trim($this->_getEndpoint($config)), '/') . (isset($options['path'])
                     ? $options['path'] : ''));
             $headers = [
-                "User-Agent"    => PayPalUserAgent::getValue(PayPalConstants::SDK_NAME, PayPalConstants::SDK_VERSION),
-                "Authorization" => "Basic " . base64_encode($options['clientId'] . ":" . $options['clientSecret']),
-                "Accept"        => "*/*"
+                'User-Agent'    => PayPalUserAgent::getValue(PayPalConstants::SDK_NAME, PayPalConstants::SDK_VERSION),
+                'Authorization' => 'Basic ' . base64_encode($options['clientId'] . ':' . $options['clientSecret']),
+                'Accept'        => '*/*',
             ];
             $httpConfig->setHeaders($headers);
             // Add any additional Headers that they may have provided
@@ -61,7 +61,7 @@
         }
 
         /**
-         * Get HttpConfiguration object for OAuth API
+         * Get HttpConfiguration object for OAuth API.
          *
          * @param array $config
          *
@@ -72,9 +72,9 @@
         {
             if (isset($config['oauth.EndPoint'])) {
                 $baseEndpoint = $config['oauth.EndPoint'];
-            } else if (isset($config['service.EndPoint'])) {
+            } elseif (isset($config['service.EndPoint'])) {
                 $baseEndpoint = $config['service.EndPoint'];
-            } else if (isset($config['mode'])) {
+            } elseif (isset($config['mode'])) {
                 switch (strtoupper($config['mode'])) {
                     case 'SANDBOX':
                         $baseEndpoint = PayPalConstants::REST_SANDBOX_ENDPOINT;
@@ -89,7 +89,7 @@
                 // Defaulting to Sandbox
                 $baseEndpoint = PayPalConstants::REST_SANDBOX_ENDPOINT;
             }
-            $baseEndpoint = rtrim(trim($baseEndpoint), '/') . "/v1/oauth2/token";
+            $baseEndpoint = rtrim(trim($baseEndpoint), '/') . '/v1/oauth2/token';
 
             return $baseEndpoint;
         }

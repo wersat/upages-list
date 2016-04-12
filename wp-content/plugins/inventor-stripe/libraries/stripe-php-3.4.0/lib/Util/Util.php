@@ -1,7 +1,8 @@
 <?php
-    namespace Stripe\Util;
 
-    use Stripe\StripeObject;
+namespace Stripe\Util;
+
+use Stripe\StripeObject;
 
     abstract class Util
     {
@@ -43,31 +44,31 @@
         public static function convertToStripeObject($resp, $opts)
         {
             $types = [
-                'account'             => 'Stripe\\Account',
-                'alipay_account'      => 'Stripe\\AlipayAccount',
-                'bank_account'        => 'Stripe\\BankAccount',
+                'account' => 'Stripe\\Account',
+                'alipay_account' => 'Stripe\\AlipayAccount',
+                'bank_account' => 'Stripe\\BankAccount',
                 'balance_transaction' => 'Stripe\\BalanceTransaction',
-                'card'                => 'Stripe\\Card',
-                'charge'              => 'Stripe\\Charge',
-                'coupon'              => 'Stripe\\Coupon',
-                'customer'            => 'Stripe\\Customer',
-                'dispute'             => 'Stripe\\Dispute',
-                'list'                => 'Stripe\\Collection',
-                'invoice'             => 'Stripe\\Invoice',
-                'invoiceitem'         => 'Stripe\\InvoiceItem',
-                'event'               => 'Stripe\\Event',
-                'file'                => 'Stripe\\FileUpload',
-                'token'               => 'Stripe\\Token',
-                'transfer'            => 'Stripe\\Transfer',
-                'order'               => 'Stripe\\Order',
-                'plan'                => 'Stripe\\Plan',
-                'product'             => 'Stripe\\Product',
-                'recipient'           => 'Stripe\\Recipient',
-                'refund'              => 'Stripe\\Refund',
-                'sku'                 => 'Stripe\\SKU',
-                'subscription'        => 'Stripe\\Subscription',
-                'fee_refund'          => 'Stripe\\ApplicationFeeRefund',
-                'bitcoin_receiver'    => 'Stripe\\BitcoinReceiver',
+                'card' => 'Stripe\\Card',
+                'charge' => 'Stripe\\Charge',
+                'coupon' => 'Stripe\\Coupon',
+                'customer' => 'Stripe\\Customer',
+                'dispute' => 'Stripe\\Dispute',
+                'list' => 'Stripe\\Collection',
+                'invoice' => 'Stripe\\Invoice',
+                'invoiceitem' => 'Stripe\\InvoiceItem',
+                'event' => 'Stripe\\Event',
+                'file' => 'Stripe\\FileUpload',
+                'token' => 'Stripe\\Token',
+                'transfer' => 'Stripe\\Transfer',
+                'order' => 'Stripe\\Order',
+                'plan' => 'Stripe\\Plan',
+                'product' => 'Stripe\\Product',
+                'recipient' => 'Stripe\\Recipient',
+                'refund' => 'Stripe\\Refund',
+                'sku' => 'Stripe\\SKU',
+                'subscription' => 'Stripe\\Subscription',
+                'fee_refund' => 'Stripe\\ApplicationFeeRefund',
+                'bitcoin_receiver' => 'Stripe\\BitcoinReceiver',
                 'bitcoin_transaction' => 'Stripe\\BitcoinTransaction',
             ];
             if (self::isList($resp)) {
@@ -99,12 +100,12 @@
          */
         public static function isList($array)
         {
-            if ( ! is_array($array)) {
+            if (!is_array($array)) {
                 return false;
             }
             // TODO: generally incorrect, but it's correct given Stripe's response
             foreach (array_keys($array) as $k) {
-                if ( ! is_numeric($k)) {
+                if (!is_numeric($k)) {
                     return false;
                 }
             }

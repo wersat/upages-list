@@ -4,18 +4,15 @@
     }
 
     /**
-     * Class Inventor_Properties_Logic
+     * Class Inventor_Properties_Logic.
      * @class   Inventor_Properties_Logic
-     * @package Inventor/Classes
      * @property $allowed_post_types
      * @author  Pragmatic Mates
      */
     class Inventor_Properties_Logic
     {
         /**
-         * Initialize property system
-         * @access public
-         * @return void
+         * Initialize property system.
          */
         public static function init()
         {
@@ -26,9 +23,7 @@
         }
 
         /**
-         * Renders property amenities
-         * @access public
-         * @return void
+         * Renders property amenities.
          */
         public static function amenities()
         {
@@ -36,9 +31,7 @@
         }
 
         /**
-         * Renders property valuation
-         * @access public
-         * @return void
+         * Renders property valuation.
          */
         public static function valuation()
         {
@@ -46,9 +39,7 @@
         }
 
         /**
-         * Renders property public facilities
-         * @access public
-         * @return void
+         * Renders property public facilities.
          */
         public static function public_facilities()
         {
@@ -56,8 +47,7 @@
         }
 
         /**
-         * Modifies home and lot area attributes
-         * @access public
+         * Modifies home and lot area attributes.
          *
          * @param string $value
          * @param array  $field
@@ -69,7 +59,7 @@
             // Home and lot area
             $field_ids = [
                 INVENTOR_LISTING_PREFIX . INVENTOR_PROPERTY_PREFIX . 'home_area',
-                INVENTOR_LISTING_PREFIX . INVENTOR_PROPERTY_PREFIX . 'lot_area'
+                INVENTOR_LISTING_PREFIX . INVENTOR_PROPERTY_PREFIX . 'lot_area',
             ];
             if (in_array($field['id'], $field_ids)) {
                 $area_unit = get_theme_mod('inventor_measurement_area_unit', 'sqft');

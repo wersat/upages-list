@@ -1,3 +1,4 @@
+<!-- Property amenities -->
 <?php do_action('inventor_before_listing_detail_property_amenities'); ?>
 
 <?php $amenities = get_post_meta(get_the_ID(), INVENTOR_LISTING_PREFIX . INVENTOR_PROPERTY_PREFIX . 'amenities',
@@ -11,15 +12,15 @@
     <div class="listing-detail-property-amenities">
       <ul>
         <?php foreach ($all_amenities as $amenity) : ?>
-          <li class="<?php echo(in_array($amenity->slug, $amenities) ? 'yes' : 'no'); ?>">
+          <li class="<?php echo in_array($amenity->slug, $amenities) ? 'yes' : 'no'; ?>">
             <a href="<?php echo get_term_link($amenity); ?>">
               <?php echo esc_attr($amenity->name); ?>
             </a>
           </li>
         <?php endforeach; ?>
       </ul>
-    </div>
-  </div>
+    </div><!-- /.listing-detail-amenities -->
+  </div><!-- /.listing-detail-section -->
 <?php endif; ?>
 
 <?php do_action('inventor_after_listing_detail_property_amenities'); ?>

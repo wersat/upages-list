@@ -8,7 +8,6 @@
     /**
      * Class Capture
      * A capture transaction.
-     * @package PayPal\Api
      * @property string               id
      * @property \PayPal\Api\Amount   amount
      * @property bool                 is_final_capture
@@ -92,7 +91,7 @@
 
         /**
          * State of the capture.
-         * Valid Values: ["pending", "completed", "refunded", "partially_refunded"]
+         * Valid Values: ["pending", "completed", "refunded", "partially_refunded"].
          *
          * @param string $state
          *
@@ -218,10 +217,10 @@
         public static function get($captureId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($captureId, 'captureId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/capture/$captureId", "GET", $payLoad, null, $apiContext,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/capture/$captureId", 'GET', $payLoad, null, $apiContext,
                 $restCall);
-            $ret     = new Capture();
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
@@ -238,15 +237,14 @@
          */
         public function refund($refund, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($refund, 'refund');
             $payLoad = $refund->toJSON();
-            $json    = self::executeCall("/v1/payments/capture/{$this->getId()}/refund", "POST", $payLoad, null,
+            $json    = self::executeCall("/v1/payments/capture/{$this->getId()}/refund", 'POST', $payLoad, null,
                 $apiContext, $restCall);
             $ret     = new Refund();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

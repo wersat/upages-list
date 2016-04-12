@@ -4,17 +4,13 @@
     }
 
     /**
-     * Class Inventor_Watchdogs_Customizations
-     * @access  public
-     * @package Inventor_Watchdogs/Classes/Customizations
+     * Class Inventor_Watchdogs_Customizations.
      * @author  Pragmatic Mates
      */
     class Inventor_Watchdogs_Customizations
     {
         /**
-         * Initialize customizations
-         * @access public
-         * @return void
+         * Initialize customizations.
          */
         public static function init()
         {
@@ -22,9 +18,7 @@
         }
 
         /**
-         * Include all customizations
-         * @access public
-         * @return void
+         * Include all customizations.
          */
         public static function includes()
         {

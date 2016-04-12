@@ -4,8 +4,7 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class InvoiceSearchResponse
-     * @package PayPal\Api
+     * Class InvoiceSearchResponse.
      * @property int                   total_count
      * @property \PayPal\Api\Invoice[] invoices
      */
@@ -84,5 +83,4 @@
         {
             return $this->setInvoices(array_diff($this->getInvoices(), [$invoice]));
         }
-
     }

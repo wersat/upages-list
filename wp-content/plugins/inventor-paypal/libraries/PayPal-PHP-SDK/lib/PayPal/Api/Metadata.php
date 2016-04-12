@@ -7,7 +7,6 @@
     /**
      * Class Metadata
      * Audit information of the resource.
-     * @package PayPal\Api
      * @property string created_date
      * @property string created_by
      * @property string cancelled_date
@@ -157,7 +156,7 @@
          */
         public function setPayerViewUrl($payer_view_url)
         {
-            UrlValidator::validate($payer_view_url, "PayerViewUrl");
+            UrlValidator::validate($payer_view_url, 'PayerViewUrl');
             $this->payer_view_url = $payer_view_url;
 
             return $this;
@@ -252,5 +251,4 @@
         {
             return $this->payer_view_url;
         }
-
     }

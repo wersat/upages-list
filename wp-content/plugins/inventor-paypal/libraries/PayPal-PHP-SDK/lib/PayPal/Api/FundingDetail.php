@@ -6,7 +6,6 @@
     /**
      * Class FundingDetail
      * Additional detail of the funding.
-     * @package PayPal\Api
      * @property string clearing_time
      * @property string payment_hold_date
      * @property string payment_debit_date
@@ -15,7 +14,7 @@
     class FundingDetail extends PayPalModel
     {
         /**
-         * Expected clearing time
+         * Expected clearing time.
          *
          * @param string $clearing_time
          *
@@ -43,7 +42,7 @@
         }
 
         /**
-         * Date when funds will be debited from the payer's account
+         * Date when funds will be debited from the payer's account.
          *
          * @param string $payment_debit_date
          *
@@ -58,7 +57,7 @@
 
         /**
          * Processing type of the payment card
-         * Valid Values: ["PINLESS_DEBIT"]
+         * Valid Values: ["PINLESS_DEBIT"].
          *
          * @param string $processing_type
          *
@@ -72,7 +71,7 @@
         }
 
         /**
-         * Expected clearing time
+         * Expected clearing time.
          * @return string
          */
         public function getClearingTime()
@@ -90,7 +89,7 @@
         }
 
         /**
-         * Date when funds will be debited from the payer's account
+         * Date when funds will be debited from the payer's account.
          * @return string
          */
         public function getPaymentDebitDate()
@@ -99,12 +98,11 @@
         }
 
         /**
-         * Processing type of the payment card
+         * Processing type of the payment card.
          * @return string
          */
         public function getProcessingType()
         {
             return $this->processing_type;
         }
-
     }

@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class ChargeModel
+     * Class ChargeModel.
      * A resource representing a charge model for a payment definition.
-     * @package PayPal\Api
      * @property string               id
      * @property string               type
      * @property \PayPal\Api\Currency amount
@@ -81,5 +80,4 @@
         {
             return $this->amount;
         }
-
     }

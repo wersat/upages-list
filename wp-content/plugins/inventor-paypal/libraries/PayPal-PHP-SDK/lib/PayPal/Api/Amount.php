@@ -8,7 +8,6 @@
     /**
      * Class Amount
      * payment amount with break-ups.
-     * @package PayPal\Api
      * @property string              currency
      * @property string              total
      * @property \PayPal\Api\Details details
@@ -41,13 +40,13 @@
         /**
          * Total amount charged from the payer to the payee. In case of a refund, this is the refunded amount to the original payer from the payee. 10 characters max with support for 2 decimal places.
          *
-         * @param string|double $total
+         * @param string|float $total
          *
          * @return $this
          */
         public function setTotal($total)
         {
-            NumericValidator::validate($total, "Total");
+            NumericValidator::validate($total, 'Total');
             $total       = FormatConverter::formatToPrice($total, $this->getCurrency());
             $this->total = $total;
 
@@ -85,5 +84,4 @@
         {
             return $this->details;
         }
-
     }

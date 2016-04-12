@@ -10,8 +10,7 @@
 
     /**
      * Class WebhookEvent
-     * Represents a Webhooks event
-     * @package PayPal\Api
+     * Represents a Webhooks event.
      * @property string id
      * @property string create_time
      * @property string resource_type
@@ -114,7 +113,7 @@
         }
 
         /**
-         * A summary description of the event. E.g. A successful payment authorization was created for $$
+         * A summary description of the event. E.g. A successful payment authorization was created for $$.
          *
          * @param string $summary
          *
@@ -128,7 +127,7 @@
         }
 
         /**
-         * A summary description of the event. E.g. A successful payment authorization was created for $$
+         * A summary description of the event. E.g. A successful payment authorization was created for $$.
          * @return string
          */
         public function getSummary()
@@ -177,21 +176,21 @@
         public static function validateAndGetReceivedEvent($body, $apiContext = null, $restCall = null)
         {
             if ($body == null | empty($body)) {
-                throw new \InvalidArgumentException("Body cannot be null or empty");
+                throw new \InvalidArgumentException('Body cannot be null or empty');
             }
             if ( ! JsonValidator::validate($body, true)) {
-                throw new \InvalidArgumentException("Request Body is not a valid JSON.");
+                throw new \InvalidArgumentException('Request Body is not a valid JSON.');
             }
-            $object = new WebhookEvent($body);
+            $object = new self($body);
             if ($object->getId() == null) {
-                throw new \InvalidArgumentException("Id attribute not found in JSON. Possible reason could be invalid JSON Object");
+                throw new \InvalidArgumentException('Id attribute not found in JSON. Possible reason could be invalid JSON Object');
             }
             try {
                 return self::get($object->getId(), $apiContext, $restCall);
             } catch (PayPalConnectionException $ex) {
                 if ($ex->getCode() == 404) {
                     // It means that the given webhook event Id is not found for this merchant.
-                    throw new \InvalidArgumentException("Webhook Event Id provided in the data is incorrect. This could happen if anyone other than PayPal is faking the incoming webhook data.");
+                    throw new \InvalidArgumentException('Webhook Event Id provided in the data is incorrect. This could happen if anyone other than PayPal is faking the incoming webhook data.');
                 }
                 throw $ex;
             }
@@ -209,10 +208,10 @@
         public static function get($eventId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($eventId, 'eventId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/notifications/webhooks-events/$eventId", "GET", $payLoad, null,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/notifications/webhooks-events/$eventId", 'GET', $payLoad, null,
                 $apiContext, $restCall);
-            $ret     = new WebhookEvent();
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
@@ -228,9 +227,9 @@
          */
         public function resend($apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
-            $payLoad = "";
-            $json    = self::executeCall("/v1/notifications/webhooks-events/{$this->getId()}/resend", "POST", $payLoad,
+            ArgumentValidator::validate($this->getId(), 'Id');
+            $payLoad = '';
+            $json    = self::executeCall("/v1/notifications/webhooks-events/{$this->getId()}/resend", 'POST', $payLoad,
                 null, $apiContext, $restCall);
             $this->fromJson($json);
 
@@ -249,19 +248,18 @@
         public static function all($params, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($params, 'params');
-            $payLoad       = "";
+            $payLoad       = '';
             $allowedParams = [
                 'page_size'  => 1,
                 'start_time' => 1,
                 'end_time'   => 1,
             ];
             $json
-                           = self::executeCall("/v1/notifications/webhooks-events" . "?" . http_build_query(array_intersect_key($params,
-                    $allowedParams)), "GET", $payLoad, null, $apiContext, $restCall);
+                           = self::executeCall('/v1/notifications/webhooks-events' . '?' . http_build_query(array_intersect_key($params,
+                    $allowedParams)), 'GET', $payLoad, null, $apiContext, $restCall);
             $ret           = new WebhookEventList();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

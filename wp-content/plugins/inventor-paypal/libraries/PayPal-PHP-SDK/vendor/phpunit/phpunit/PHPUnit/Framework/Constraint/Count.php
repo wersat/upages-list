@@ -77,19 +77,6 @@
         }
 
         /**
-         * Evaluates the constraint for parameter $other. Returns TRUE if the
-         * constraint is met, FALSE otherwise.
-         *
-         * @param mixed $other
-         *
-         * @return boolean
-         */
-        protected function matches($other)
-        {
-            return $this->expectedCount === $this->getCountOf($other);
-        }
-
-        /**
          * @param mixed $other
          *
          * @return boolean
@@ -112,6 +99,19 @@
                 return $count;
             }
 
+        }
+
+        /**
+         * Evaluates the constraint for parameter $other. Returns TRUE if the
+         * constraint is met, FALSE otherwise.
+         *
+         * @param mixed $other
+         *
+         * @return boolean
+         */
+        protected function matches($other)
+        {
+            return $this->expectedCount === $this->getCountOf($other);
         }
 
         /**

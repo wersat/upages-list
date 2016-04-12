@@ -6,7 +6,6 @@
     /**
      * Class AgreementTransactions
      * A resource representing agreement_transactions that is returned during a transaction search.
-     * @package PayPal\Api
      * @property \PayPal\Api\AgreementTransaction[] agreement_transaction_list
      */
     class AgreementTransactions extends PayPalModel
@@ -24,7 +23,7 @@
                 return $this->setAgreementTransactionList([$agreementTransaction]);
             } else {
                 return $this->setAgreementTransactionList(array_merge($this->getAgreementTransactionList(),
-                        [$agreementTransaction]));
+                    [$agreementTransaction]));
             }
         }
 
@@ -61,7 +60,6 @@
         public function removeAgreementTransactionList($agreementTransaction)
         {
             return $this->setAgreementTransactionList(array_diff($this->getAgreementTransactionList(),
-                    [$agreementTransaction]));
+                [$agreementTransaction]));
         }
-
     }

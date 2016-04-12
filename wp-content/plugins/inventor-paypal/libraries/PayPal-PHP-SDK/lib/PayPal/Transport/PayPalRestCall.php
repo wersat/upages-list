@@ -7,26 +7,24 @@
     use PayPal\Rest\ApiContext;
 
     /**
-     * Class PayPalRestCall
-     * @package PayPal\Transport
+     * Class PayPalRestCall.
      */
     class PayPalRestCall
     {
-
         /**
-         * Paypal Logger
+         * Paypal Logger.
          * @var PayPalLoggingManager logger interface
          */
         private $logger;
 
         /**
-         * API Context
+         * API Context.
          * @var ApiContext
          */
         private $apiContext;
 
         /**
-         * Default Constructor
+         * Default Constructor.
          *
          * @param ApiContext $apiContext
          */
@@ -52,12 +50,12 @@
             $httpConfig = new PayPalHttpConfig(null, $method, $config);
             $headers    = $headers ? $headers : [];
             $httpConfig->setHeaders($headers + [
-                    'Content-Type' => 'application/json'
+                    'Content-Type' => 'application/json',
                 ]);
             /** @var \Paypal\Handler\IPayPalHandler $handler */
             foreach ($handlers as $handler) {
                 if ( ! is_object($handler)) {
-                    $fullHandler = "\\" . (string)$handler;
+                    $fullHandler = '\\' . (string)$handler;
                     $handler     = new $fullHandler($this->apiContext);
                 }
                 $handler->handle($httpConfig, $data, ['path' => $path, 'apiContext' => $this->apiContext]);
@@ -67,5 +65,4 @@
 
             return $response;
         }
-
     }

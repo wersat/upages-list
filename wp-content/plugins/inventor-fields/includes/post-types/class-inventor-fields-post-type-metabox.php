@@ -41,15 +41,15 @@
                 'menu_name'          => __('Metaboxes', 'inventor-fields'),
             ];
             register_post_type('metabox', [
-                    'labels'              => $labels,
-                    'supports'            => ['title'],
-                    'public'              => false,
-                    'exclude_from_search' => true,
-                    'publicly_queryable'  => false,
-                    'show_in_nav_menus'   => false,
-                    'show_ui'             => true,
-                    'show_in_menu'        => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
-                ]);
+                'labels'              => $labels,
+                'supports'            => ['title'],
+                'public'              => false,
+                'exclude_from_search' => true,
+                'publicly_queryable'  => false,
+                'show_in_nav_menus'   => false,
+                'show_ui'             => true,
+                'show_in_menu'        => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
+            ]);
         }
 
         /**

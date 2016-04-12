@@ -5,14 +5,12 @@
     use PayPal\Transport\PayPalRestCall;
 
     /**
-     * Class FuturePayment
-     * @package PayPal\Api
+     * Class FuturePayment.
      */
     class FuturePayment extends Payment
     {
-
         /**
-         * Extends the Payment object to create future payments
+         * Extends the Payment object to create future payments.
          *
          * @param null        $apiContext
          * @param string|null $clientMetadataId
@@ -27,21 +25,20 @@
             $headers = [];
             if ($clientMetadataId != null) {
                 $headers = [
-                    'PAYPAL-CLIENT-METADATA-ID' => $clientMetadataId
+                    'PAYPAL-CLIENT-METADATA-ID' => $clientMetadataId,
                 ];
             }
             $payLoad = $this->toJSON();
             $call    = new PayPalRestCall($apiContext);
-            $json    = $call->execute(['PayPal\Handler\RestHandler'], "/v1/payments/payment", "POST", $payLoad,
+            $json    = $call->execute(['PayPal\Handler\RestHandler'], '/v1/payments/payment', 'POST', $payLoad,
                 $headers);
             $this->fromJson($json);
 
             return $this;
-
         }
 
         /**
-         * Get a Refresh Token from Authorization Code
+         * Get a Refresh Token from Authorization Code.
          *
          * @param            $authorizationCode
          * @param ApiContext $apiContext
@@ -57,12 +54,10 @@
         }
 
         /**
-         * Updates Access Token using long lived refresh token
+         * Updates Access Token using long lived refresh token.
          *
          * @param string|null $refreshToken
          * @param ApiContext  $apiContext
-         *
-         * @return void
          */
         public function updateAccessToken($refreshToken, $apiContext)
         {

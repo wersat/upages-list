@@ -6,13 +6,12 @@
     /**
      * Class Billing
      * Billing instrument used to charge the payer.
-     * @package PayPal\Api
      * @property string billing_agreement_id
      */
     class Billing extends PayPalModel
     {
         /**
-         * Identifier of the instrument in PayPal Wallet
+         * Identifier of the instrument in PayPal Wallet.
          *
          * @param string $billing_agreement_id
          *
@@ -26,12 +25,11 @@
         }
 
         /**
-         * Identifier of the instrument in PayPal Wallet
+         * Identifier of the instrument in PayPal Wallet.
          * @return string
          */
         public function getBillingAgreementId()
         {
             return $this->billing_agreement_id;
         }
-
     }

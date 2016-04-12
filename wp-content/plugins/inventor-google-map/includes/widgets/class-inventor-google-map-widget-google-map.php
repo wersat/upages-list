@@ -16,8 +16,8 @@
         public function __construct()
         {
             parent::__construct('google-map', __('Google Map', 'inventor-google-map'), [
-                    'description' => __('Displays listings in the google map.', 'inventor-google-map'),
-                ]);
+                'description' => __('Displays listings in the google map.', 'inventor-google-map'),
+            ]);
             add_action('body_class', [__CLASS__, 'add_body_class']);
             add_action('inventor_google_map_infobox_image', [__CLASS__, 'render_favorite_button'], 0, 1);
         }

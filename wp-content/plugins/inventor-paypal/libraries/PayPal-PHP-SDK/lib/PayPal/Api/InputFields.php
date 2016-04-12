@@ -6,7 +6,6 @@
     /**
      * Class InputFields
      * Parameters for input fields customization.
-     * @package PayPal\Api
      * @property bool allow_note
      * @property int  no_shipping
      * @property int  address_override
@@ -81,5 +80,4 @@
         {
             return $this->address_override;
         }
-
     }

@@ -237,11 +237,11 @@
             if (is_array($haystack) || is_object($haystack) && $haystack instanceof Traversable) {
                 $constraint
                     = new PHPUnit_Framework_Constraint_Not(new PHPUnit_Framework_Constraint_TraversableContains($needle,
-                        $checkForObjectIdentity));
+                    $checkForObjectIdentity));
             } else if (is_string($haystack)) {
                 $constraint
                     = new PHPUnit_Framework_Constraint_Not(new PHPUnit_Framework_Constraint_StringContains($needle,
-                        $ignoreCase));
+                    $ignoreCase));
             } else {
                 throw PHPUnit_Util_InvalidArgumentHelper::factory(2, 'array, iterator or string');
             }
@@ -353,7 +353,7 @@
             }
             self::assertThat($haystack,
                 new PHPUnit_Framework_Constraint_Not(new PHPUnit_Framework_Constraint_TraversableContainsOnly($type,
-                        $isNativeType)), $message);
+                    $isNativeType)), $message);
         }
 
         /**
@@ -535,7 +535,7 @@
             $ignoreCase = false
         ) {
             $constraint = new PHPUnit_Framework_Constraint_Not(new PHPUnit_Framework_Constraint_IsEqual($expected,
-                    $delta, $maxDepth, $canonicalize, $ignoreCase));
+                $delta, $maxDepth, $canonicalize, $ignoreCase));
             self::assertThat($actual, $constraint, $message);
         }
 
@@ -723,7 +723,7 @@
         public static function logicalOr()
         {
             $constraints = func_get_args();
-            $constraint = new PHPUnit_Framework_Constraint_Or;
+            $constraint  = new PHPUnit_Framework_Constraint_Or;
             $constraint->setConstraints($constraints);
 
             return $constraint;
@@ -1735,7 +1735,7 @@
                     $actualAttribute   = $actualElement->attributes->getNamedItem($expectedAttribute->name);
                     if ( ! $actualAttribute) {
                         self::fail(sprintf('%s%sCould not find attribute "%s" on node "%s"', $message,
-                                ! empty($message) ? "\n" : '', $expectedAttribute->name, $expectedElement->tagName));
+                            ! empty($message) ? "\n" : '', $expectedAttribute->name, $expectedElement->tagName));
                     }
                 }
             }
@@ -2168,7 +2168,7 @@
             self::assertJson($actualJson, $message);
             // call constraint
             $constraintExpected = new PHPUnit_Framework_Constraint_JsonMatches($expectedJson);
-            $constraintActual = new PHPUnit_Framework_Constraint_JsonMatches($actualJson);
+            $constraintActual   = new PHPUnit_Framework_Constraint_JsonMatches($actualJson);
             self::assertThat($expectedJson, new PHPUnit_Framework_Constraint_Not($constraintActual), $message);
             self::assertThat($actualJson, new PHPUnit_Framework_Constraint_Not($constraintExpected), $message);
         }
@@ -2190,7 +2190,7 @@
             self::assertJson($actualJson, $message);
             // call constraint
             $constraintExpected = new PHPUnit_Framework_Constraint_JsonMatches($expectedJson);
-            $constraintActual = new PHPUnit_Framework_Constraint_JsonMatches($actualJson);
+            $constraintActual   = new PHPUnit_Framework_Constraint_JsonMatches($actualJson);
             self::assertThat($expectedJson, $constraintActual, $message);
             self::assertThat($actualJson, $constraintExpected, $message);
         }
@@ -2203,7 +2203,7 @@
         public static function logicalAnd()
         {
             $constraints = func_get_args();
-            $constraint = new PHPUnit_Framework_Constraint_And;
+            $constraint  = new PHPUnit_Framework_Constraint_And;
             $constraint->setConstraints($constraints);
 
             return $constraint;
@@ -2217,7 +2217,7 @@
         public static function logicalXor()
         {
             $constraints = func_get_args();
-            $constraint = new PHPUnit_Framework_Constraint_Xor;
+            $constraint  = new PHPUnit_Framework_Constraint_Xor;
             $constraint->setConstraints($constraints);
 
             return $constraint;

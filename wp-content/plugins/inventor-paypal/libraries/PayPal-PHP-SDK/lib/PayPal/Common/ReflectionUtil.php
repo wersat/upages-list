@@ -4,20 +4,18 @@
     use PayPal\Exception\PayPalConfigurationException;
 
     /**
-     * Class ReflectionUtil
-     * @package PayPal\Common
+     * Class ReflectionUtil.
      */
     class ReflectionUtil
     {
-
         /**
-         * Reflection Methods
+         * Reflection Methods.
          * @var \ReflectionMethod[]
          */
         private static $propertiesRefl = [];
 
         /**
-         * Properties Type
+         * Properties Type.
          * @var string[]
          */
         private static $propertiesType = [];
@@ -41,7 +39,7 @@
             }
             // If the class doesn't exist, or the method doesn't exist, return null.
             if ( ! class_exists($class) || ! method_exists($class, self::getter($class, $propertyName))) {
-                return null;
+                return;
             }
             if (($annotations = self::propertyAnnotations($class, $propertyName)) && isset($annotations['return'])) {
                 $param = $annotations['return'];
@@ -57,7 +55,7 @@
 
         /**
          * Returns the properly formatted getter function name based on class name and property
-         * Formats the property name to a standard getter function
+         * Formats the property name to a standard getter function.
          *
          * @param string $class
          * @param string $propertyName
@@ -66,12 +64,12 @@
          */
         public static function getter($class, $propertyName)
         {
-            return method_exists($class, "get" . ucfirst($propertyName)) ? "get" . ucfirst($propertyName)
-                : "get" . preg_replace_callback("/([_\-\s]?([a-z0-9]+))/", "self::replace_callback", $propertyName);
+            return method_exists($class, 'get' . ucfirst($propertyName)) ? 'get' . ucfirst($propertyName)
+                : 'get' . preg_replace_callback("/([_\-\s]?([a-z0-9]+))/", 'self::replace_callback', $propertyName);
         }
 
         /**
-         * Retrieves Annotations of each property
+         * Retrieves Annotations of each property.
          *
          * @param $class
          * @param $propertyName
@@ -83,21 +81,21 @@
         {
             $class = is_object($class) ? get_class($class) : $class;
             if ( ! class_exists('ReflectionProperty')) {
-                throw new \RuntimeException("Property type of " . $class . "::{$propertyName} cannot be resolved");
+                throw new \RuntimeException('Property type of ' . $class . "::{$propertyName} cannot be resolved");
             }
-            if ($annotations =& self::$propertiesType[$class][$propertyName]) {
+            if ($annotations = &self::$propertiesType[$class][$propertyName]) {
                 return $annotations;
             }
-            if ( ! ($refl =& self::$propertiesRefl[$class][$propertyName])) {
-                $getter = self::getter($class, $propertyName);
-                $refl = new \ReflectionMethod($class, $getter);
+            if ( ! ($refl = &self::$propertiesRefl[$class][$propertyName])) {
+                $getter                                      = self::getter($class, $propertyName);
+                $refl                                        = new \ReflectionMethod($class, $getter);
                 self::$propertiesRefl[$class][$propertyName] = $refl;
             }
             // todo: smarter regexp
             if ( ! preg_match_all('~\@([^\s@\(]+)[\t ]*(?:\(?([^\n@]+)\)?)?~i', $refl->getDocComment(), $annots,
                 PREG_PATTERN_ORDER)
             ) {
-                return null;
+                return;
             }
             foreach ($annots[1] as $i => $annot) {
                 $annotations[strtolower($annot)] = empty($annots[2][$i]) ? true : rtrim($annots[2][$i], " \t\n\r)");
@@ -107,19 +105,19 @@
         }
 
         /**
-         * Checks if the Property is of type array or an object
+         * Checks if the Property is of type array or an object.
          *
          * @param $class
          * @param $propertyName
          *
-         * @return null|boolean
+         * @return null|bool
          * @throws PayPalConfigurationException
          */
         public static function isPropertyClassArray($class, $propertyName)
         {
             // If the class doesn't exist, or the method doesn't exist, return null.
             if ( ! class_exists($class) || ! method_exists($class, self::getter($class, $propertyName))) {
-                return null;
+                return;
             }
             if (($annotations = self::propertyAnnotations($class, $propertyName)) && isset($annotations['return'])) {
                 $param = $annotations['return'];
@@ -132,7 +130,7 @@
         }
 
         /**
-         * preg_replace_callback callback function
+         * preg_replace_callback callback function.
          *
          * @param $match
          *

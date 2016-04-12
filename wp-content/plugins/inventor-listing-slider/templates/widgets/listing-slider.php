@@ -66,19 +66,12 @@
           }, 768: {
             dots: <?php if (! empty($instance['disable_dots'])) : ?>false<?php else : ?>true<?php endif; ?>
           }
-        },
-        responsiveClass: true,
-        loop: (
-        $('> div', el).length > 1),
-        items: 1,
-        mouseDrag: false,
-        onInitialized: function () {
+        }, responsiveClass: true, loop: (
+        $('> div', el).length > 1), items: 1, mouseDrag: false, onInitialized: function () {
           var length = el.find('.owl-item:not(.cloned)').length;
           el.find('.owl-prev').prepend('<span>' + length + ' / ' + length + '</span>');
           el.find('.owl-next').prepend('<span>2 / ' + length + '</span>');
-        },
-        dots: false,
-        onTranslated: function () {
+        }, dots: false, onTranslated: function () {
           var items = el.find('.owl-item:not(.cloned)');
           var length = items.length;
           var index = items.index($('.owl-item.active')) + 1;

@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class RelatedResources
+     * Class RelatedResources.
      * Each one representing a financial transaction (Sale, Authorization, Capture, Refund) related to the payment.
-     * @package PayPal\Api
      * @property \PayPal\Api\Sale          sale
      * @property \PayPal\Api\Authorization authorization
      * @property \PayPal\Api\Order         order
@@ -16,7 +15,7 @@
     class RelatedResources extends PayPalModel
     {
         /**
-         * Sale transaction
+         * Sale transaction.
          *
          * @param \PayPal\Api\Sale $sale
          *
@@ -30,7 +29,7 @@
         }
 
         /**
-         * Authorization transaction
+         * Authorization transaction.
          *
          * @param \PayPal\Api\Authorization $authorization
          *
@@ -44,7 +43,7 @@
         }
 
         /**
-         * Order transaction
+         * Order transaction.
          *
          * @param \PayPal\Api\Order $order
          *
@@ -58,7 +57,7 @@
         }
 
         /**
-         * Capture transaction
+         * Capture transaction.
          *
          * @param \PayPal\Api\Capture $capture
          *
@@ -72,7 +71,7 @@
         }
 
         /**
-         * Refund transaction
+         * Refund transaction.
          *
          * @param \PayPal\Api\Refund $refund
          *
@@ -86,7 +85,7 @@
         }
 
         /**
-         * Sale transaction
+         * Sale transaction.
          * @return \PayPal\Api\Sale
          */
         public function getSale()
@@ -95,7 +94,7 @@
         }
 
         /**
-         * Authorization transaction
+         * Authorization transaction.
          * @return \PayPal\Api\Authorization
          */
         public function getAuthorization()
@@ -104,7 +103,7 @@
         }
 
         /**
-         * Order transaction
+         * Order transaction.
          * @return \PayPal\Api\Order
          */
         public function getOrder()
@@ -113,7 +112,7 @@
         }
 
         /**
-         * Capture transaction
+         * Capture transaction.
          * @return \PayPal\Api\Capture
          */
         public function getCapture()
@@ -122,12 +121,11 @@
         }
 
         /**
-         * Refund transaction
+         * Refund transaction.
          * @return \PayPal\Api\Refund
          */
         public function getRefund()
         {
             return $this->refund;
         }
-
     }

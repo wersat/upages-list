@@ -6,7 +6,6 @@
     /**
      * Class ShippingInfo
      * Shipping information for the invoice recipient.
-     * @package PayPal\Api
      * @property string                     first_name
      * @property string                     last_name
      * @property string                     business_name
@@ -146,5 +145,4 @@
         {
             return $this->address;
         }
-
     }

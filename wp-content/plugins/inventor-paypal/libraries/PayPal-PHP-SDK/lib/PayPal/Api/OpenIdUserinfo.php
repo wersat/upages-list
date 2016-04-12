@@ -6,7 +6,7 @@
 
     /**
      * Class OpenIdUserinfo
-     * OpenIdConnect UserInfo Resource
+     * OpenIdConnect UserInfo Resource.
      * @property string        user_id
      * @property string        sub
      * @property mixed         name
@@ -31,7 +31,6 @@
      */
     class OpenIdUserinfo extends PayPalResourceModel
     {
-
         /**
          * Subject - Identifier for the End-User at the Issuer.
          *
@@ -75,7 +74,7 @@
         }
 
         /**
-         * Given name(s) or first name(s) of the End-User
+         * Given name(s) or first name(s) of the End-User.
          *
          * @param string $given_name
          *
@@ -147,7 +146,7 @@
         /**
          * True if the End-User's e-mail address has been verified; otherwise false.
          *
-         * @param boolean $email_verified
+         * @param bool $email_verified
          *
          * @return self
          */
@@ -187,7 +186,7 @@
         }
 
         /**
-         * Time zone database representing the End-User's time zone
+         * Time zone database representing the End-User's time zone.
          *
          * @param string $zoneinfo
          *
@@ -231,7 +230,7 @@
         /**
          * End-User's verified status.
          *
-         * @param boolean $verified
+         * @param bool $verified
          *
          * @return self
          */
@@ -273,7 +272,7 @@
         /**
          * Verified account status.
          *
-         * @param boolean $verified_account
+         * @param bool $verified_account
          *
          * @return self
          */
@@ -354,7 +353,7 @@
         }
 
         /**
-         * Given name(s) or first name(s) of the End-User
+         * Given name(s) or first name(s) of the End-User.
          * @return string
          */
         public function getGivenName()
@@ -400,7 +399,7 @@
 
         /**
          * True if the End-User's e-mail address has been verified; otherwise false.
-         * @return boolean
+         * @return bool
          */
         public function getEmailVerified()
         {
@@ -426,7 +425,7 @@
         }
 
         /**
-         * Time zone database representing the End-User's time zone
+         * Time zone database representing the End-User's time zone.
          * @return string
          */
         public function getZoneinfo()
@@ -454,7 +453,7 @@
 
         /**
          * End-User's verified status.
-         * @return boolean
+         * @return bool
          */
         public function getVerified()
         {
@@ -481,7 +480,7 @@
 
         /**
          * Verified account status.
-         * @return boolean
+         * @return bool
          */
         public function getVerifiedAccount()
         {
@@ -516,13 +515,13 @@
         }
 
         /**
-         * returns user details
+         * returns user details.
          * @path /v1/identity/openidconnect/userinfo
          * @method GET
          *
-         * @param array      $params       (allowed values are access_token)
-         *                                 access_token - access token from the createFromAuthorizationCode / createFromRefreshToken calls
-         * @param ApiContext $apiContext   Optional API Context
+         * @param array      $params     (allowed values are access_token)
+         *                               access_token - access token from the createFromAuthorizationCode / createFromRefreshToken calls
+         * @param ApiContext $apiContext Optional API Context
          *
          * @return OpenIdUserinfo
          */
@@ -533,13 +532,13 @@
             if ( ! array_key_exists('schema', $params)) {
                 $params['schema'] = 'openid';
             }
-            $requestUrl = "/v1/identity/openidconnect/userinfo?" . http_build_query(array_intersect_key($params,
+            $requestUrl = '/v1/identity/openidconnect/userinfo?' . http_build_query(array_intersect_key($params,
                     $allowedParams));
-            $json = self::executeCall($requestUrl, "GET", "", [
-                    'Authorization' => "Bearer " . $params['access_token'],
-                    'Content-Type'  => 'x-www-form-urlencoded'
-                ], $apiContext);
-            $ret = new OpenIdUserinfo();
+            $json       = self::executeCall($requestUrl, 'GET', '', [
+                'Authorization' => 'Bearer ' . $params['access_token'],
+                'Content-Type'  => 'x-www-form-urlencoded',
+            ], $apiContext);
+            $ret        = new self();
             $ret->fromJson($json);
 
             return $ret;

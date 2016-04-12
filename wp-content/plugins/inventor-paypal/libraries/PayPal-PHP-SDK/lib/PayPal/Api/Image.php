@@ -4,8 +4,7 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class Image
-     * @package PayPal\Api
+     * Class Image.
      * @property string image
      */
     class Image extends PayPalModel
@@ -25,7 +24,7 @@
         }
 
         /**
-         * Stores the Image to file
+         * Stores the Image to file.
          *
          * @param string $name File Name
          *
@@ -44,12 +43,11 @@
         }
 
         /**
-         * Get Image as Base-64 encoded String
+         * Get Image as Base-64 encoded String.
          * @return string
          */
         public function getImage()
         {
             return $this->image;
         }
-
     }

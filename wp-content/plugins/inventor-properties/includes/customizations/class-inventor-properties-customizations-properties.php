@@ -4,17 +4,14 @@
     }
 
     /**
-     * Class Inventor_Customizations_Properties
+     * Class Inventor_Customizations_Properties.
      * @class   Inventor_Properties_Customizations_Properties
-     * @package Inventor_Properties/Classes/Customizations
      * @author  Pragmatic Mates
      */
     class Inventor_Properties_Customizations_Properties
     {
         /**
-         * Initialize customization type
-         * @access public
-         * @return void
+         * Initialize customization type.
          */
         public static function init()
         {
@@ -22,12 +19,9 @@
         }
 
         /**
-         * Customizations
-         * @access public
+         * Customizations.
          *
          * @param object $wp_customize
-         *
-         * @return void
          */
         public static function customizations($wp_customize)
         {

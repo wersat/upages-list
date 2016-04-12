@@ -51,7 +51,7 @@
         {
             $obj2      = new stdClass;
             $obj2->foo = 'bar';
-            $obj = new stdClass;
+            $obj       = new stdClass;
             //@codingStandardsIgnoreStart
             $obj->null = null;
             //@codingStandardsIgnoreEnd
@@ -64,7 +64,7 @@
             $obj->objectagain = $obj2;
             $obj->array       = ['foo' => 'bar'];
             $obj->self        = $obj;
-            $array = [
+            $array            = [
                 0             => 0,
                 'null'        => null,
                 'boolean'     => true,
@@ -76,7 +76,7 @@
                 'objectagain' => $obj2,
                 'array'       => ['foo' => 'bar'],
             ];
-            $array['self'] = &$array;
+            $array['self']    = &$array;
 
             return [
                 [null, 'null'],
@@ -210,7 +210,7 @@ EOF
         {
             $obj      = new stdClass;
             $obj->foo = 'bar';
-            $array = [
+            $array    = [
                 'foo' => 'bar',
             ];
 

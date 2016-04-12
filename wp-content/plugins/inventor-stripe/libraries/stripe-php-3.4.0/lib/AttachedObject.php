@@ -1,7 +1,8 @@
 <?php
-    namespace Stripe;
 
-    // e.g. metadata on Stripe objects.
+namespace Stripe;
+
+// e.g. metadata on Stripe objects.
     class AttachedObject extends StripeObject
     {
         /**

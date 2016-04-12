@@ -8,8 +8,7 @@
 
     /**
      * Class WebProfile
-     * Payment Web experience profile resource
-     * @package PayPal\Api
+     * Payment Web experience profile resource.
      * @property string                   id
      * @property string                   name
      * @property \PayPal\Api\FlowConfig   flow_config
@@ -144,7 +143,7 @@
         public function create($apiContext = null, $restCall = null)
         {
             $payLoad = $this->toJSON();
-            $json    = self::executeCall("/v1/payment-experience/web-profiles/", "POST", $payLoad, null, $apiContext,
+            $json    = self::executeCall('/v1/payment-experience/web-profiles/', 'POST', $payLoad, null, $apiContext,
                 $restCall);
             $ret     = new CreateProfileResponse();
             $ret->fromJson($json);
@@ -162,9 +161,9 @@
          */
         public function update($apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             $payLoad = $this->toJSON();
-            self::executeCall("/v1/payment-experience/web-profiles/{$this->getId()}", "PUT", $payLoad, null,
+            self::executeCall("/v1/payment-experience/web-profiles/{$this->getId()}", 'PUT', $payLoad, null,
                 $apiContext, $restCall);
 
             return true;
@@ -181,14 +180,14 @@
          */
         public function partial_update($patch, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($patch, 'patch');
             $payload = [];
             foreach ($patch as $patchObject) {
                 $payload[] = $patchObject->toArray();
             }
             $payLoad = json_encode($payload);
-            self::executeCall("/v1/payment-experience/web-profiles/{$this->getId()}", "PATCH", $payLoad, null,
+            self::executeCall("/v1/payment-experience/web-profiles/{$this->getId()}", 'PATCH', $payLoad, null,
                 $apiContext, $restCall);
 
             return true;
@@ -206,10 +205,10 @@
         public static function get($profileId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($profileId, 'profileId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payment-experience/web-profiles/$profileId", "GET", $payLoad, null,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payment-experience/web-profiles/$profileId", 'GET', $payLoad, null,
                 $apiContext, $restCall);
-            $ret     = new WebProfile();
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
@@ -225,11 +224,11 @@
          */
         public static function get_list($apiContext = null, $restCall = null)
         {
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payment-experience/web-profiles/", "GET", $payLoad, null, $apiContext,
+            $payLoad = '';
+            $json    = self::executeCall('/v1/payment-experience/web-profiles/', 'GET', $payLoad, null, $apiContext,
                 $restCall);
 
-            return WebProfile::getList($json);
+            return self::getList($json);
         }
 
         /**
@@ -242,12 +241,11 @@
          */
         public function delete($apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
-            $payLoad = "";
-            self::executeCall("/v1/payment-experience/web-profiles/{$this->getId()}", "DELETE", $payLoad, null,
+            ArgumentValidator::validate($this->getId(), 'Id');
+            $payLoad = '';
+            self::executeCall("/v1/payment-experience/web-profiles/{$this->getId()}", 'DELETE', $payLoad, null,
                 $apiContext, $restCall);
 
             return true;
         }
-
     }

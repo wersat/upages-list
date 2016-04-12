@@ -9,7 +9,6 @@
     /**
      * Class Payout
      * This object represents a set of payouts that includes status data for the payouts. This object enables you to create a payout using a POST request.
-     * @package PayPal\Api
      * @property \PayPal\Api\PayoutSenderBatchHeader sender_batch_header
      * @property \PayPal\Api\PayoutItem[]            items
      * @property \PayPal\Api\Links[]                 links
@@ -108,8 +107,8 @@
                 'sync_mode' => 1,
             ];
             $json
-                           = self::executeCall("/v1/payments/payouts" . "?" . http_build_query(array_intersect_key($params,
-                    $allowedParams)), "POST", $payLoad, null, $apiContext, $restCall);
+                           = self::executeCall('/v1/payments/payouts' . '?' . http_build_query(array_intersect_key($params,
+                    $allowedParams)), 'POST', $payLoad, null, $apiContext, $restCall);
             $ret           = new PayoutBatch();
             $ret->fromJson($json);
 
@@ -143,13 +142,12 @@
         public static function get($payoutBatchId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($payoutBatchId, 'payoutBatchId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/payouts/$payoutBatchId", "GET", $payLoad, null, $apiContext,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/payouts/$payoutBatchId", 'GET', $payLoad, null, $apiContext,
                 $restCall);
             $ret     = new PayoutBatch();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

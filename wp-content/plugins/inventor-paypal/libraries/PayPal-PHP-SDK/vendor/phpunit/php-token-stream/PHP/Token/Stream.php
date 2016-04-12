@@ -152,9 +152,9 @@
          */
         protected function scan($sourceCode)
         {
-            $line      = 1;
-            $tokens    = token_get_all($sourceCode);
-            $numTokens = count($tokens);
+            $line                                 = 1;
+            $tokens                               = token_get_all($sourceCode);
+            $numTokens                            = count($tokens);
             $lastNonWhitespaceTokenWasDoubleColon = false;
             for ($i = 0; $i < $numTokens; ++$i) {
                 $token = $tokens[$i];
@@ -268,8 +268,8 @@
                     }
                         break;
                     case 'PHP_Token_INTERFACE': {
-                        $interface        = $token->getName();
-                        $interfaceEndLine = $token->getEndLine();
+                        $interface                    = $token->getName();
+                        $interfaceEndLine             = $token->getEndLine();
                         $this->interfaces[$interface] = [
                             'methods'   => [],
                             'parent'    => $token->getParent(),

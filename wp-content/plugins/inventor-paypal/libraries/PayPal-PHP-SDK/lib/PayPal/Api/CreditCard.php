@@ -7,8 +7,7 @@
     use PayPal\Validation\ArgumentValidator;
 
     /**
-     * Class CreditCard
-     * @package    PayPal\Api
+     * Class CreditCard.
      * @property string              number
      * @property string              type
      * @property int                 expire_month
@@ -25,7 +24,7 @@
     class CreditCard extends PayPalResourceModel
     {
         /**
-         * ID of the credit card. This ID is provided in the response when storing credit cards. **Required if using a stored credit card.**
+         * ID of the credit card. This ID is provided in the response when storing credit cards. **Required if using a stored credit card.**.
          * @deprecated Not publicly available
          *
          * @param string $id
@@ -40,7 +39,7 @@
         }
 
         /**
-         * ID of the credit card. This ID is provided in the response when storing credit cards. **Required if using a stored credit card.**
+         * ID of the credit card. This ID is provided in the response when storing credit cards. **Required if using a stored credit card.**.
          * @deprecated Not publicly available
          * @return string
          */
@@ -50,7 +49,7 @@
         }
 
         /**
-         * Credit card number. Numeric characters only with no spaces or punctuation. The string must conform with modulo and length required by each credit card type. *Redacted in responses.*
+         * Credit card number. Numeric characters only with no spaces or punctuation. The string must conform with modulo and length required by each credit card type. *Redacted in responses.*.
          *
          * @param string $number
          *
@@ -64,7 +63,7 @@
         }
 
         /**
-         * Credit card number. Numeric characters only with no spaces or punctuation. The string must conform with modulo and length required by each credit card type. *Redacted in responses.*
+         * Credit card number. Numeric characters only with no spaces or punctuation. The string must conform with modulo and length required by each credit card type. *Redacted in responses.*.
          * @return string
          */
         public function getNumber()
@@ -73,7 +72,7 @@
         }
 
         /**
-         * Credit card type. Valid types are: `visa`, `mastercard`, `discover`, `amex`
+         * Credit card type. Valid types are: `visa`, `mastercard`, `discover`, `amex`.
          *
          * @param string $type
          *
@@ -87,7 +86,7 @@
         }
 
         /**
-         * Credit card type. Valid types are: `visa`, `mastercard`, `discover`, `amex`
+         * Credit card type. Valid types are: `visa`, `mastercard`, `discover`, `amex`.
          * @return string
          */
         public function getType()
@@ -234,7 +233,7 @@
         }
 
         /**
-         * A unique identifier of the customer to whom this bank account belongs. Generated and provided by the facilitator. **This is now used in favor of `payer_id` when creating or using a stored funding instrument in the vault.**
+         * A unique identifier of the customer to whom this bank account belongs. Generated and provided by the facilitator. **This is now used in favor of `payer_id` when creating or using a stored funding instrument in the vault.**.
          *
          * @param string $external_customer_id
          *
@@ -248,7 +247,7 @@
         }
 
         /**
-         * A unique identifier of the customer to whom this bank account belongs. Generated and provided by the facilitator. **This is now used in favor of `payer_id` when creating or using a stored funding instrument in the vault.**
+         * A unique identifier of the customer to whom this bank account belongs. Generated and provided by the facilitator. **This is now used in favor of `payer_id` when creating or using a stored funding instrument in the vault.**.
          * @return string
          */
         public function getExternalCustomerId()
@@ -257,7 +256,7 @@
         }
 
         /**
-         * A user provided, optional convenvience field that functions as a unique identifier for the merchant on behalf of whom this credit card is being stored for. Note that this has no relation to PayPal merchant id
+         * A user provided, optional convenvience field that functions as a unique identifier for the merchant on behalf of whom this credit card is being stored for. Note that this has no relation to PayPal merchant id.
          *
          * @param string $merchant_id
          *
@@ -271,7 +270,7 @@
         }
 
         /**
-         * A user provided, optional convenvience field that functions as a unique identifier for the merchant on behalf of whom this credit card is being stored for. Note that this has no relation to PayPal merchant id
+         * A user provided, optional convenvience field that functions as a unique identifier for the merchant on behalf of whom this credit card is being stored for. Note that this has no relation to PayPal merchant id.
          * @return string
          */
         public function getMerchantId()
@@ -329,7 +328,7 @@
 
         /**
          * State of the funding instrument.
-         * Valid Values: ["expired", "ok"]
+         * Valid Values: ["expired", "ok"].
          *
          * @param string $state
          *
@@ -431,7 +430,7 @@
         public function create($apiContext = null, $restCall = null)
         {
             $payLoad = $this->toJSON();
-            $json    = self::executeCall("/v1/vault/credit-cards", "POST", $payLoad, null, $apiContext, $restCall);
+            $json    = self::executeCall('/v1/vault/credit-cards', 'POST', $payLoad, null, $apiContext, $restCall);
             $this->fromJson($json);
 
             return $this;
@@ -449,10 +448,10 @@
         public static function get($creditCardId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($creditCardId, 'creditCardId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/vault/credit-cards/$creditCardId", "GET", $payLoad, null, $apiContext,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/vault/credit-cards/$creditCardId", 'GET', $payLoad, null, $apiContext,
                 $restCall);
-            $ret     = new CreditCard();
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
@@ -468,9 +467,9 @@
          */
         public function delete($apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
-            $payLoad = "";
-            self::executeCall("/v1/vault/credit-cards/{$this->getId()}", "DELETE", $payLoad, null, $apiContext,
+            ArgumentValidator::validate($this->getId(), 'Id');
+            $payLoad = '';
+            self::executeCall("/v1/vault/credit-cards/{$this->getId()}", 'DELETE', $payLoad, null, $apiContext,
                 $restCall);
 
             return true;
@@ -487,10 +486,10 @@
          */
         public function update($patchRequest, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($patchRequest, 'patch');
             $payload = $patchRequest->toJSON();
-            $json    = self::executeCall("/v1/vault/credit-cards/{$this->getId()}", "PATCH", $payload, null,
+            $json    = self::executeCall("/v1/vault/credit-cards/{$this->getId()}", 'PATCH', $payload, null,
                 $apiContext, $restCall);
             $this->fromJson($json);
 
@@ -512,7 +511,7 @@
                 $params = [];
             }
             ArgumentValidator::validate($params, 'params');
-            $payLoad       = "";
+            $payLoad       = '';
             $allowedParams = [
                 'page_size'            => 1,
                 'page'                 => 1,
@@ -525,12 +524,11 @@
                 'external_customer_id' => 1,
             ];
             $json
-                           = self::executeCall("/v1/vault/credit-cards" . "?" . http_build_query(array_intersect_key($params,
-                    $allowedParams)), "GET", $payLoad, null, $apiContext, $restCall);
+                           = self::executeCall('/v1/vault/credit-cards' . '?' . http_build_query(array_intersect_key($params,
+                    $allowedParams)), 'GET', $payLoad, null, $apiContext, $restCall);
             $ret           = new CreditCardList();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

@@ -6,7 +6,6 @@
     /**
      * Class Search
      * Invoice search parameters.
-     * @package PayPal\Api
      * @property string               email
      * @property string               recipient_first_name
      * @property string               recipient_last_name
@@ -101,7 +100,7 @@
 
         /**
          * Status of the invoice.
-         * Valid Values: ["DRAFT", "SENT", "PAID", "MARKED_AS_PAID", "CANCELLED", "REFUNDED", "PARTIALLY_REFUNDED", "MARKED_AS_REFUNDED"]
+         * Valid Values: ["DRAFT", "SENT", "PAID", "MARKED_AS_PAID", "CANCELLED", "REFUNDED", "PARTIALLY_REFUNDED", "MARKED_AS_REFUNDED"].
          *
          * @param string $status
          *
@@ -466,5 +465,4 @@
         {
             return $this->total_count_required;
         }
-
     }

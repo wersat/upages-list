@@ -145,17 +145,17 @@
                 'reference ',
                 'not not '
             ], [
-                    'does not contain ',
-                    'does not exist',
-                    'does not have ',
-                    'is not ',
-                    'are not ',
-                    'does not match ',
-                    'starts not with ',
-                    'ends not with ',
-                    'don\'t reference ',
-                    'not '
-                ], $string);
+                'does not contain ',
+                'does not exist',
+                'does not have ',
+                'is not ',
+                'are not ',
+                'does not match ',
+                'starts not with ',
+                'ends not with ',
+                'don\'t reference ',
+                'not '
+            ], $string);
         }
 
         /**

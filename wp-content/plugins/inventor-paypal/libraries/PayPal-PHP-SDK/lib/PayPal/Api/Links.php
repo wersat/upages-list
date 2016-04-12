@@ -4,8 +4,7 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class Links
-     * @package PayPal\Api
+     * Class Links.
      * @property string                  href
      * @property string                  rel
      * @property \PayPal\Api\HyperSchema targetSchema
@@ -16,7 +15,7 @@
     class Links extends PayPalModel
     {
         /**
-         * Sets Href
+         * Sets Href.
          *
          * @param string $href
          *
@@ -30,7 +29,7 @@
         }
 
         /**
-         * Sets Rel
+         * Sets Rel.
          *
          * @param string $rel
          *
@@ -44,7 +43,7 @@
         }
 
         /**
-         * Sets TargetSchema
+         * Sets TargetSchema.
          *
          * @param \PayPal\Api\HyperSchema $targetSchema
          *
@@ -58,7 +57,7 @@
         }
 
         /**
-         * Sets Method
+         * Sets Method.
          *
          * @param string $method
          *
@@ -72,7 +71,7 @@
         }
 
         /**
-         * Sets Enctype
+         * Sets Enctype.
          *
          * @param string $enctype
          *
@@ -86,7 +85,7 @@
         }
 
         /**
-         * Sets Schema
+         * Sets Schema.
          *
          * @param \PayPal\Api\HyperSchema $schema
          *
@@ -100,7 +99,7 @@
         }
 
         /**
-         * Gets Href
+         * Gets Href.
          * @return string
          */
         public function getHref()
@@ -109,7 +108,7 @@
         }
 
         /**
-         * Gets Rel
+         * Gets Rel.
          * @return string
          */
         public function getRel()
@@ -118,7 +117,7 @@
         }
 
         /**
-         * Gets TargetSchema
+         * Gets TargetSchema.
          * @return \PayPal\Api\HyperSchema
          */
         public function getTargetSchema()
@@ -127,7 +126,7 @@
         }
 
         /**
-         * Gets Method
+         * Gets Method.
          * @return string
          */
         public function getMethod()
@@ -136,7 +135,7 @@
         }
 
         /**
-         * Gets Enctype
+         * Gets Enctype.
          * @return string
          */
         public function getEnctype()
@@ -145,12 +144,11 @@
         }
 
         /**
-         * Gets Schema
+         * Gets Schema.
          * @return \PayPal\Api\HyperSchema
          */
         public function getSchema()
         {
             return $this->schema;
         }
-
     }

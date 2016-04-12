@@ -6,9 +6,8 @@
     use PayPal\Validation\NumericValidator;
 
     /**
-     * Class Currency
+     * Class Currency.
      * Base object for all financial value related fields (balance, payment due, etc.)
-     * @package PayPal\Api
      * @property string currency
      * @property string value
      */
@@ -40,13 +39,13 @@
         /**
          * amount up to N digit after the decimals separator as defined in ISO 4217 for the appropriate currency code.
          *
-         * @param string|double $value
+         * @param string|float $value
          *
          * @return $this
          */
         public function setValue($value)
         {
-            NumericValidator::validate($value, "Value");
+            NumericValidator::validate($value, 'Value');
             $value       = FormatConverter::formatToPrice($value, $this->getCurrency());
             $this->value = $value;
 
@@ -61,5 +60,4 @@
         {
             return $this->value;
         }
-
     }

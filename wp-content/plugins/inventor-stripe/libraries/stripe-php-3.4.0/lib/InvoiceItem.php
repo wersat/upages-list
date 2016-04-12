@@ -1,10 +1,11 @@
 <?php
-    namespace Stripe;
 
-    class InvoiceItem extends ApiResource
-    {
-        /**
-         * @param string            $id The ID of the invoice item to retrieve.
+namespace Stripe;
+
+class InvoiceItem extends ApiResource
+{
+    /**
+         * @param string            $id   The ID of the invoice item to retrieve.
          * @param array|string|null $opts
          *
          * @return InvoiceItem
@@ -56,4 +57,4 @@
         {
             return $this->_delete($params, $opts);
         }
-    }
+}

@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class PaymentCard
+     * Class PaymentCard.
      * A resource representing a payment card that can be used to fund a payment.
-     * @package PayPal\Api
      * @property string              id
      * @property string              number
      * @property string              type
@@ -57,7 +56,7 @@
 
         /**
          * Type of the Card.
-         * Valid Values: ["VISA", "AMEX", "SOLO", "JCB", "STAR", "DELTA", "DISCOVER", "SWITCH", "MAESTRO", "CB_NATIONALE", "CONFINOGA", "COFIDIS", "ELECTRON", "CETELEM", "CHINA_UNION_PAY", "MASTERCARD"]
+         * Valid Values: ["VISA", "AMEX", "SOLO", "JCB", "STAR", "DELTA", "DISCOVER", "SWITCH", "MAESTRO", "CB_NATIONALE", "CONFINOGA", "COFIDIS", "ELECTRON", "CETELEM", "CHINA_UNION_PAY", "MASTERCARD"].
          *
          * @param string $type
          *
@@ -85,7 +84,7 @@
         }
 
         /**
-         * 4 digit card expiry year
+         * 4 digit card expiry year.
          *
          * @param string $expire_year
          *
@@ -169,7 +168,7 @@
         }
 
         /**
-         * 2 letter country code
+         * 2 letter country code.
          *
          * @param string $billing_country
          *
@@ -212,7 +211,7 @@
 
         /**
          * State of the funding instrument.
-         * Valid Values: ["EXPIRED", "ACTIVE"]
+         * Valid Values: ["EXPIRED", "ACTIVE"].
          *
          * @param string $status
          *
@@ -290,7 +289,7 @@
         }
 
         /**
-         * 4 digit card expiry year
+         * 4 digit card expiry year.
          * @return string
          */
         public function getExpireYear()
@@ -344,7 +343,7 @@
         }
 
         /**
-         * 2 letter country code
+         * 2 letter country code.
          * @return string
          */
         public function getBillingCountry()
@@ -414,7 +413,7 @@
         }
 
         /**
-         * Gets Links
+         * Gets Links.
          * @return \PayPal\Api\Links[]
          */
         public function getLinks()
@@ -423,7 +422,7 @@
         }
 
         /**
-         * Sets Links
+         * Sets Links.
          *
          * @param \PayPal\Api\Links[] $links
          *
@@ -447,5 +446,4 @@
         {
             return $this->setLinks(array_diff($this->getLinks(), [$links]));
         }
-
     }

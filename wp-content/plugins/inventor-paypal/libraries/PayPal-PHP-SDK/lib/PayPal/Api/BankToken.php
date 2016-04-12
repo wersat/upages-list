@@ -6,7 +6,6 @@
     /**
      * Class BankToken
      * A resource representing a bank that can be used to fund a payment.
-     * @package PayPal\Api
      * @property string bank_id
      * @property string external_customer_id
      * @property string mandate_reference_number
@@ -81,5 +80,4 @@
         {
             return $this->mandate_reference_number;
         }
-
     }

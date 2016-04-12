@@ -8,9 +8,8 @@
     use PayPal\Validation\ArgumentValidator;
 
     /**
-     * Class Payment
+     * Class Payment.
      * Lets you create, process and manage payments.
-     * @package PayPal\Api
      * @property string                         id
      * @property string                         intent
      * @property \PayPal\Api\Payer              payer
@@ -31,7 +30,7 @@
     class Payment extends PayPalResourceModel
     {
         /**
-         * ID of the created payment, the 'transaction ID'
+         * ID of the created payment, the 'transaction ID'.
          *
          * @param string $id
          *
@@ -45,7 +44,7 @@
         }
 
         /**
-         * ID of the created payment, the 'transaction ID'
+         * ID of the created payment, the 'transaction ID'.
          * @return string
          */
         public function getId()
@@ -55,7 +54,7 @@
 
         /**
          * Payment intent.
-         * Valid Values: ["sale", "authorize", "order"]
+         * Valid Values: ["sale", "authorize", "order"].
          *
          * @param string $intent
          *
@@ -124,7 +123,7 @@
         }
 
         /**
-         * Receiver of funds for this payment. **Readonly for PayPal external REST payments.**
+         * Receiver of funds for this payment. **Readonly for PayPal external REST payments.**.
          *
          * @param \PayPal\Api\Payee $payee
          *
@@ -138,7 +137,7 @@
         }
 
         /**
-         * Receiver of funds for this payment. **Readonly for PayPal external REST payments.**
+         * Receiver of funds for this payment. **Readonly for PayPal external REST payments.**.
          * @return \PayPal\Api\Payee
          */
         public function getPayee()
@@ -223,7 +222,7 @@
         }
 
         /**
-         * Applicable for advanced payments like multi seller payment (MSP) to support partial failures
+         * Applicable for advanced payments like multi seller payment (MSP) to support partial failures.
          * @deprecated Not publicly available
          *
          * @param \PayPal\Api\Error[] $failed_transactions
@@ -238,7 +237,7 @@
         }
 
         /**
-         * Applicable for advanced payments like multi seller payment (MSP) to support partial failures
+         * Applicable for advanced payments like multi seller payment (MSP) to support partial failures.
          * @deprecated Not publicly available
          * @return \PayPal\Api\Error[]
          */
@@ -331,7 +330,7 @@
         }
 
         /**
-         * Credit financing offered to payer on PayPal side. Returned in payment after payer opts-in
+         * Credit financing offered to payer on PayPal side. Returned in payment after payer opts-in.
          * @deprecated Not publicly available
          *
          * @param \PayPal\Api\CreditFinancingOffered $credit_financing_offered
@@ -346,7 +345,7 @@
         }
 
         /**
-         * Credit financing offered to payer on PayPal side. Returned in payment after payer opts-in
+         * Credit financing offered to payer on PayPal side. Returned in payment after payer opts-in.
          * @deprecated Not publicly available
          * @return \PayPal\Api\CreditFinancingOffered
          */
@@ -380,7 +379,7 @@
 
         /**
          * Payment state.
-         * Valid Values: ["created", "approved", "failed", "partially_completed", "in_progress"]
+         * Valid Values: ["created", "approved", "failed", "partially_completed", "in_progress"].
          *
          * @param string $state
          *
@@ -426,7 +425,7 @@
         }
 
         /**
-         * free-form field for the use of clients to pass in a message to the payer
+         * free-form field for the use of clients to pass in a message to the payer.
          *
          * @param string $note_to_payer
          *
@@ -440,7 +439,7 @@
         }
 
         /**
-         * free-form field for the use of clients to pass in a message to the payer
+         * free-form field for the use of clients to pass in a message to the payer.
          * @return string
          */
         public function getNoteToPayer()
@@ -473,7 +472,7 @@
 
         /**
          * Failure reason code returned when the payment failed for some valid reasons.
-         * Valid Values: ["UNABLE_TO_COMPLETE_TRANSACTION", "INVALID_PAYMENT_METHOD", "PAYER_CANNOT_PAY", "CANNOT_PAY_THIS_PAYEE", "REDIRECT_REQUIRED", "PAYEE_FILTER_RESTRICTIONS"]
+         * Valid Values: ["UNABLE_TO_COMPLETE_TRANSACTION", "INVALID_PAYMENT_METHOD", "PAYER_CANNOT_PAY", "CANNOT_PAY_THIS_PAYEE", "REDIRECT_REQUIRED", "PAYEE_FILTER_RESTRICTIONS"].
          *
          * @param string $failure_reason
          *
@@ -542,7 +541,7 @@
         }
 
         /**
-         * Get Approval Link
+         * Get Approval Link.
          * @return null|string
          */
         public function getApprovalLink()
@@ -561,7 +560,7 @@
         public function create($apiContext = null, $restCall = null)
         {
             $payLoad = $this->toJSON();
-            $json    = self::executeCall("/v1/payments/payment", "POST", $payLoad, null, $apiContext, $restCall);
+            $json    = self::executeCall('/v1/payments/payment', 'POST', $payLoad, null, $apiContext, $restCall);
             $this->fromJson($json);
 
             return $this;
@@ -579,10 +578,10 @@
         public static function get($paymentId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($paymentId, 'paymentId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/payment/$paymentId", "GET", $payLoad, null, $apiContext,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/payment/$paymentId", 'GET', $payLoad, null, $apiContext,
                 $restCall);
-            $ret     = new Payment();
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
@@ -595,14 +594,14 @@
          * @param ApiContext     $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
          * @param PayPalRestCall $restCall   is the Rest Call Service that is used to make rest calls
          *
-         * @return boolean
+         * @return bool
          */
         public function update($patchRequest, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($patchRequest, 'patchRequest');
             $payLoad = $patchRequest->toJSON();
-            self::executeCall("/v1/payments/payment/{$this->getId()}", "PATCH", $payLoad, null, $apiContext, $restCall);
+            self::executeCall("/v1/payments/payment/{$this->getId()}", 'PATCH', $payLoad, null, $apiContext, $restCall);
 
             return true;
         }
@@ -618,10 +617,10 @@
          */
         public function execute($paymentExecution, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($paymentExecution, 'paymentExecution');
             $payLoad = $paymentExecution->toJSON();
-            $json    = self::executeCall("/v1/payments/payment/{$this->getId()}/execute", "POST", $payLoad, null,
+            $json    = self::executeCall("/v1/payments/payment/{$this->getId()}/execute", 'POST', $payLoad, null,
                 $apiContext, $restCall);
             $this->fromJson($json);
 
@@ -640,7 +639,7 @@
         public static function all($params, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($params, 'params');
-            $payLoad       = "";
+            $payLoad       = '';
             $allowedParams = [
                 'count'       => 1,
                 'start_id'    => 1,
@@ -651,12 +650,11 @@
                 'sort_by'     => 1,
                 'sort_order'  => 1,
             ];
-            $json          = self::executeCall("/v1/payments/payment?" . http_build_query(array_intersect_key($params,
-                    $allowedParams)), "GET", $payLoad, null, $apiContext, $restCall);
+            $json          = self::executeCall('/v1/payments/payment?' . http_build_query(array_intersect_key($params,
+                    $allowedParams)), 'GET', $payLoad, null, $apiContext, $restCall);
             $ret           = new PaymentHistory();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

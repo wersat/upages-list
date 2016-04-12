@@ -6,7 +6,6 @@
     /**
      * Class PotentialPayerInfo
      * A resource representing a information about a potential Payer.
-     * @package PayPal\Api
      * @property string              email
      * @property string              external_remember_me_id
      * @property \PayPal\Api\Address billing_address
@@ -28,7 +27,7 @@
         }
 
         /**
-         * ExternalRememberMe id representing the potential payer
+         * ExternalRememberMe id representing the potential payer.
          *
          * @param string $external_remember_me_id
          *
@@ -42,7 +41,7 @@
         }
 
         /**
-         * Account Number representing the potential payer
+         * Account Number representing the potential payer.
          * @deprecated Not publicly available
          *
          * @param string $account_number
@@ -80,7 +79,7 @@
         }
 
         /**
-         * ExternalRememberMe id representing the potential payer
+         * ExternalRememberMe id representing the potential payer.
          * @return string
          */
         public function getExternalRememberMeId()
@@ -89,7 +88,7 @@
         }
 
         /**
-         * Account Number representing the potential payer
+         * Account Number representing the potential payer.
          * @deprecated Not publicly available
          * @return string
          */
@@ -106,5 +105,4 @@
         {
             return $this->billing_address;
         }
-
     }

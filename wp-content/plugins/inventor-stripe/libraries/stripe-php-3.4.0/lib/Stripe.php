@@ -1,9 +1,10 @@
 <?php
-    namespace Stripe;
 
-    class Stripe
-    {
-        // @var string The Stripe API key to be used for requests.
+namespace Stripe;
+
+class Stripe
+{
+    // @var string The Stripe API key to be used for requests.
         const VERSION = '3.4.0';
 
         // @var string The base URL for the Stripe API.
@@ -17,7 +18,7 @@
 
         // @var boolean Defaults to true.
         public static $apiVersion = null;
-        public static $verifySslCerts = true;
+    public static $verifySslCerts = true;
 
         /**
          * @return string The API key used for requests.
@@ -69,4 +70,4 @@
         {
             self::$verifySslCerts = $verify;
         }
-    }
+}

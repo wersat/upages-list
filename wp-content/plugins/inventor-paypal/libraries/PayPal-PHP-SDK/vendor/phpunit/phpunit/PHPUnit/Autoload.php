@@ -181,7 +181,7 @@
                 'phpunit_util_type'                                             => '/Util/Type.php',
                 'phpunit_util_xml'                                              => '/Util/XML.php'
             ];
-            $path = dirname(__FILE__);
+            $path    = dirname(__FILE__);
         }
         $cn = strtolower($class);
         if (isset($classes[$cn])) {

@@ -1,10 +1,11 @@
 <?php
-    namespace Stripe;
 
-    class Refund extends ApiResource
-    {
-        /**
-         * @param string            $id The ID of the refund to retrieve.
+namespace Stripe;
+
+class Refund extends ApiResource
+{
+    /**
+         * @param string            $id      The ID of the refund to retrieve.
          * @param array|string|null $options
          *
          * @return Refund
@@ -45,4 +46,4 @@
         {
             return $this->_save($opts);
         }
-    }
+}

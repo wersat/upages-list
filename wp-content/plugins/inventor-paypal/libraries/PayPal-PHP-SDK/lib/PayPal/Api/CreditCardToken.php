@@ -6,7 +6,6 @@
     /**
      * Class CreditCardToken
      * A resource representing a credit card that can be used to fund a payment.
-     * @package PayPal\Api
      * @property string credit_card_id
      * @property string payer_id
      * @property string last4
@@ -31,7 +30,7 @@
         }
 
         /**
-         * A unique identifier that you can assign and track when storing a credit card or using a stored credit card. This ID can help to avoid unintentional use or misuse of credit cards. This ID can be any value you would like to associate with the saved card, such as a UUID, username, or email address.  **Required when using a stored credit card if a payer_id was originally provided when storing the credit card in vault.**
+         * A unique identifier that you can assign and track when storing a credit card or using a stored credit card. This ID can help to avoid unintentional use or misuse of credit cards. This ID can be any value you would like to associate with the saved card, such as a UUID, username, or email address.  **Required when using a stored credit card if a payer_id was originally provided when storing the credit card in vault.**.
          *
          * @param string $payer_id
          *
@@ -110,7 +109,7 @@
         }
 
         /**
-         * A unique identifier that you can assign and track when storing a credit card or using a stored credit card. This ID can help to avoid unintentional use or misuse of credit cards. This ID can be any value you would like to associate with the saved card, such as a UUID, username, or email address.  **Required when using a stored credit card if a payer_id was originally provided when storing the credit card in vault.**
+         * A unique identifier that you can assign and track when storing a credit card or using a stored credit card. This ID can help to avoid unintentional use or misuse of credit cards. This ID can be any value you would like to associate with the saved card, such as a UUID, username, or email address.  **Required when using a stored credit card if a payer_id was originally provided when storing the credit card in vault.**.
          * @return string
          */
         public function getPayerId()
@@ -153,5 +152,4 @@
         {
             return $this->expire_year;
         }
-
     }

@@ -6,7 +6,6 @@
     /**
      * Class BaseAddress
      * Base Address object used as billing address in a payment or extended for Shipping Address.
-     * @package PayPal\Api
      * @property string line1
      * @property string line2
      * @property string city
@@ -104,7 +103,7 @@
 
         /**
          * Address normalization status
-         * Valid Values: ["UNKNOWN", "UNNORMALIZED_USER_PREFERRED", "NORMALIZED", "UNNORMALIZED"]
+         * Valid Values: ["UNKNOWN", "UNNORMALIZED_USER_PREFERRED", "NORMALIZED", "UNNORMALIZED"].
          *
          * @param string $normalization_status
          *
@@ -119,7 +118,7 @@
 
         /**
          * Address status
-         * Valid Values: ["CONFIRMED", "UNCONFIRMED"]
+         * Valid Values: ["CONFIRMED", "UNCONFIRMED"].
          *
          * @param string $status
          *
@@ -187,7 +186,7 @@
         }
 
         /**
-         * Address normalization status
+         * Address normalization status.
          * @return string
          */
         public function getNormalizationStatus()
@@ -196,12 +195,11 @@
         }
 
         /**
-         * Address status
+         * Address status.
          * @return string
          */
         public function getStatus()
         {
             return $this->status;
         }
-
     }

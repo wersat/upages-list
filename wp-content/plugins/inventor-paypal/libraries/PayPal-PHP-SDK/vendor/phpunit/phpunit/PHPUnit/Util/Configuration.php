@@ -224,7 +224,7 @@
         {
             $addUncoveredFilesFromWhitelist     = true;
             $processUncoveredFilesFromWhitelist = false;
-            $tmp = $this->xpath->query('filter/whitelist');
+            $tmp                                = $this->xpath->query('filter/whitelist');
             if ($tmp->length == 1) {
                 if ($tmp->item(0)
                         ->hasAttribute('addUncoveredFilesFromWhitelist')
@@ -435,7 +435,7 @@
         {
             $result = [];
             foreach ($this->xpath->query('logging/log') as $log) {
-                $type = (string)$log->getAttribute('type');
+                $type   = (string)$log->getAttribute('type');
                 $target = $this->toAbsolutePath((string)$log->getAttribute('target'));
                 if ($type == 'coverage-html') {
                     if ($log->hasAttribute('title')) {
@@ -538,23 +538,23 @@
                 'request'      => []
             ];
             foreach ($this->xpath->query('php/includePath') as $includePath) {
-                $path = (string)$includePath->nodeValue;
+                $path                     = (string)$includePath->nodeValue;
                 $result['include_path'][] = $this->toAbsolutePath($path);
             }
             foreach ($this->xpath->query('php/ini') as $ini) {
-                $name  = (string)$ini->getAttribute('name');
-                $value = (string)$ini->getAttribute('value');
+                $name                 = (string)$ini->getAttribute('name');
+                $value                = (string)$ini->getAttribute('value');
                 $result['ini'][$name] = $value;
             }
             foreach ($this->xpath->query('php/const') as $const) {
-                $name  = (string)$const->getAttribute('name');
-                $value = (string)$const->getAttribute('value');
+                $name                   = (string)$const->getAttribute('name');
+                $value                  = (string)$const->getAttribute('value');
                 $result['const'][$name] = $this->getBoolean($value, $value);
             }
             foreach (['var', 'env', 'post', 'get', 'cookie', 'server', 'files', 'request'] as $array) {
                 foreach ($this->xpath->query('php/' . $array) as $var) {
-                    $name  = (string)$var->getAttribute('name');
-                    $value = (string)$var->getAttribute('value');
+                    $name                  = (string)$var->getAttribute('name');
+                    $value                 = (string)$var->getAttribute('value');
                     $result[$array][$name] = $this->getBoolean($value, $value);
                 }
             }

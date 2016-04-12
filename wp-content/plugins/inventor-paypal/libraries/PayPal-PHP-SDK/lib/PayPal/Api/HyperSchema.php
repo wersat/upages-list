@@ -4,8 +4,7 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class HyperSchema
-     * @package PayPal\Api
+     * Class HyperSchema.
      * @property \PayPal\Api\Links[] links
      * @property string              fragmentResolution
      * @property bool                readonly
@@ -16,7 +15,7 @@
     class HyperSchema extends PayPalModel
     {
         /**
-         * Sets FragmentResolution
+         * Sets FragmentResolution.
          *
          * @param string $fragmentResolution
          *
@@ -30,7 +29,7 @@
         }
 
         /**
-         * Sets Readonly
+         * Sets Readonly.
          *
          * @param bool $readonly
          *
@@ -44,7 +43,7 @@
         }
 
         /**
-         * Sets ContentEncoding
+         * Sets ContentEncoding.
          *
          * @param string $contentEncoding
          *
@@ -58,7 +57,7 @@
         }
 
         /**
-         * Sets PathStart
+         * Sets PathStart.
          *
          * @param string $pathStart
          *
@@ -72,7 +71,7 @@
         }
 
         /**
-         * Sets MediaType
+         * Sets MediaType.
          *
          * @param string $mediaType
          *
@@ -102,7 +101,7 @@
         }
 
         /**
-         * Gets Links
+         * Gets Links.
          * @return \PayPal\Api\Links[]
          */
         public function getLinks()
@@ -111,7 +110,7 @@
         }
 
         /**
-         * Sets Links
+         * Sets Links.
          *
          * @param \PayPal\Api\Links[] $links
          *
@@ -137,7 +136,7 @@
         }
 
         /**
-         * Gets FragmentResolution
+         * Gets FragmentResolution.
          * @return string
          */
         public function getFragmentResolution()
@@ -146,7 +145,7 @@
         }
 
         /**
-         * Gets Readonly
+         * Gets Readonly.
          * @return bool
          */
         public function getReadonly()
@@ -155,7 +154,7 @@
         }
 
         /**
-         * Gets ContentEncoding
+         * Gets ContentEncoding.
          * @return string
          */
         public function getContentEncoding()
@@ -164,7 +163,7 @@
         }
 
         /**
-         * Gets PathStart
+         * Gets PathStart.
          * @return string
          */
         public function getPathStart()
@@ -173,12 +172,11 @@
         }
 
         /**
-         * Gets MediaType
+         * Gets MediaType.
          * @return string
          */
         public function getMediaType()
         {
             return $this->mediaType;
         }
-
     }

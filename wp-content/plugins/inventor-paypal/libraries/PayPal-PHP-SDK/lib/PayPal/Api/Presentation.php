@@ -6,7 +6,6 @@
     /**
      * Class Presentation
      * Parameters for style and presentation.
-     * @package PayPal\Api
      * @property string brand_name
      * @property string logo_image
      * @property string locale_code
@@ -81,5 +80,4 @@
         {
             return $this->locale_code;
         }
-
     }

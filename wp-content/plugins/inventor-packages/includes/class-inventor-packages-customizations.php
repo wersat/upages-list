@@ -1,29 +1,28 @@
 <?php
-
-if (!defined('ABSPATH')) {
-    exit;
-}
-
-/**
- * Class Inventor_Packages_Customizations.
- */
-class Inventor_Packages_Customizations
-{
-    /**
-     * Initialize customizations.
-     */
-    public static function init()
-    {
-        self::includes();
+    if ( ! defined('ABSPATH')) {
+        exit;
     }
 
     /**
-     * Include all customizations.
+     * Class Inventor_Packages_Customizations.
      */
-    public static function includes()
+    class Inventor_Packages_Customizations
     {
-        require_once INVENTOR_PACKAGES_DIR.'includes/customizations/class-inventor-packages-customizations-packages.php';
-    }
-}
+        /**
+         * Initialize customizations.
+         */
+        public static function init()
+        {
+            self::includes();
+        }
 
-Inventor_Packages_Customizations::init();
+        /**
+         * Include all customizations.
+         */
+        public static function includes()
+        {
+            require_once INVENTOR_PACKAGES_DIR . 'includes/customizations/class-inventor-packages-customizations-packages.php';
+        }
+    }
+
+    Inventor_Packages_Customizations::init();

@@ -6,9 +6,8 @@
     use PayPal\Validation\ArgumentValidator;
 
     /**
-     * Class Sale
+     * Class Sale.
      * A sale transaction.
-     * @package PayPal\Api
      * @property string                        id
      * @property string                        purchase_unit_reference_id
      * @property \PayPal\Api\Amount            amount
@@ -105,7 +104,7 @@
 
         /**
          * Specifies payment mode of the transaction. Only supported when the `payment_method` is set to `paypal`.
-         * Valid Values: ["INSTANT_TRANSFER", "MANUAL_BANK_TRANSFER", "DELAYED_TRANSFER", "ECHECK"]
+         * Valid Values: ["INSTANT_TRANSFER", "MANUAL_BANK_TRANSFER", "DELAYED_TRANSFER", "ECHECK"].
          *
          * @param string $payment_mode
          *
@@ -129,7 +128,7 @@
 
         /**
          * State of the sale.
-         * Valid Values: ["completed", "partially_refunded", "pending", "refunded"]
+         * Valid Values: ["completed", "partially_refunded", "pending", "refunded"].
          *
          * @param string $state
          *
@@ -153,7 +152,7 @@
 
         /**
          * Reason code for the transaction state being Pending or Reversed. Only supported when the `payment_method` is set to `paypal`.
-         * Valid Values: ["CHARGEBACK", "GUARANTEE", "BUYER_COMPLAINT", "REFUND", "UNCONFIRMED_SHIPPING_ADDRESS", "ECHECK", "INTERNATIONAL_WITHDRAWAL", "RECEIVING_PREFERENCE_MANDATES_MANUAL_ACTION", "PAYMENT_REVIEW", "REGULATORY_REVIEW", "UNILATERAL", "VERIFICATION_REQUIRED"]
+         * Valid Values: ["CHARGEBACK", "GUARANTEE", "BUYER_COMPLAINT", "REFUND", "UNCONFIRMED_SHIPPING_ADDRESS", "ECHECK", "INTERNATIONAL_WITHDRAWAL", "RECEIVING_PREFERENCE_MANDATES_MANUAL_ACTION", "PAYMENT_REVIEW", "REGULATORY_REVIEW", "UNILATERAL", "VERIFICATION_REQUIRED"].
          *
          * @param string $reason_code
          *
@@ -177,7 +176,7 @@
 
         /**
          * The level of seller protection in force for the transaction. Only supported when the `payment_method` is set to `paypal`.
-         * Valid Values: ["ELIGIBLE", "PARTIALLY_ELIGIBLE", "INELIGIBLE"]
+         * Valid Values: ["ELIGIBLE", "PARTIALLY_ELIGIBLE", "INELIGIBLE"].
          *
          * @param string $protection_eligibility
          *
@@ -201,7 +200,7 @@
 
         /**
          * The kind of seller protection in force for the transaction. It is returned only when protection_eligibility is ELIGIBLE or PARTIALLY_ELIGIBLE. Only supported when the `payment_method` is set to `paypal`.
-         * Valid Values: ["ITEM_NOT_RECEIVED_ELIGIBLE", "UNAUTHORIZED_PAYMENT_ELIGIBLE", "ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE"]
+         * Valid Values: ["ITEM_NOT_RECEIVED_ELIGIBLE", "UNAUTHORIZED_PAYMENT_ELIGIBLE", "ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE"].
          *
          * @param string $protection_eligibility_type
          *
@@ -248,7 +247,7 @@
 
         /**
          * Status of the Recipient Fund. For now, it will be returned only when fund status is held
-         * Valid Values: ["HELD"]
+         * Valid Values: ["HELD"].
          *
          * @param string $payment_hold_status
          *
@@ -262,7 +261,7 @@
         }
 
         /**
-         * Status of the Recipient Fund. For now, it will be returned only when fund status is held
+         * Status of the Recipient Fund. For now, it will be returned only when fund status is held.
          * @return string
          */
         public function getPaymentHoldStatus()
@@ -271,7 +270,7 @@
         }
 
         /**
-         * Reasons for PayPal holding recipient fund. It is set only if payment hold status is held
+         * Reasons for PayPal holding recipient fund. It is set only if payment hold status is held.
          *
          * @param string[] $payment_hold_reasons
          *
@@ -285,7 +284,7 @@
         }
 
         /**
-         * Reasons for PayPal holding recipient fund. It is set only if payment hold status is held
+         * Reasons for PayPal holding recipient fund. It is set only if payment hold status is held.
          * @return string[]
          */
         public function getPaymentHoldReasons()
@@ -506,7 +505,7 @@
         }
 
         /**
-         * Time of sale as defined in [RFC 3339 Section 5.6](http://tools.ietf.org/html/rfc3339#section-5.6)
+         * Time of sale as defined in [RFC 3339 Section 5.6](http://tools.ietf.org/html/rfc3339#section-5.6).
          *
          * @param string $create_time
          *
@@ -520,7 +519,7 @@
         }
 
         /**
-         * Time of sale as defined in [RFC 3339 Section 5.6](http://tools.ietf.org/html/rfc3339#section-5.6)
+         * Time of sale as defined in [RFC 3339 Section 5.6](http://tools.ietf.org/html/rfc3339#section-5.6).
          * @return string
          */
         public function getCreateTime()
@@ -563,9 +562,9 @@
         public static function get($saleId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($saleId, 'saleId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/sale/$saleId", "GET", $payLoad, null, $apiContext, $restCall);
-            $ret     = new Sale();
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/sale/$saleId", 'GET', $payLoad, null, $apiContext, $restCall);
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
@@ -582,15 +581,14 @@
          */
         public function refund($refund, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($refund, 'refund');
             $payLoad = $refund->toJSON();
-            $json    = self::executeCall("/v1/payments/sale/{$this->getId()}/refund", "POST", $payLoad, null,
+            $json    = self::executeCall("/v1/payments/sale/{$this->getId()}/refund", 'POST', $payLoad, null,
                 $apiContext, $restCall);
             $ret     = new Refund();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

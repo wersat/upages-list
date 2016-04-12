@@ -1,7 +1,8 @@
 <?php
-    namespace Stripe\Util;
 
-    use Stripe\Error;
+namespace Stripe\Util;
+
+use Stripe\Error;
 
     class RequestOptions
     {
@@ -53,7 +54,7 @@
             }
             if (is_array($options)) {
                 $headers = [];
-                $key     = null;
+                $key = null;
                 if (array_key_exists('api_key', $options)) {
                     $key = $options['api_key'];
                 }
@@ -70,7 +71,7 @@
                 return new self($key, $headers);
             }
             $message
-                = 'The second argument to Stripe API method calls is an ' . 'optional per-request apiKey, which must be a string, or ' . 'per-request options, which must be an array. (HINT: you can set ' . 'a global apiKey by "Stripe::setApiKey(<apiKey>)")';
+                = 'The second argument to Stripe API method calls is an '.'optional per-request apiKey, which must be a string, or '.'per-request options, which must be an array. (HINT: you can set '.'a global apiKey by "Stripe::setApiKey(<apiKey>)")';
             throw new Error\Api($message);
         }
     }

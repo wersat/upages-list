@@ -4,17 +4,14 @@
     }
 
     /**
-     * Class Inventor_Customizations_PayPal
+     * Class Inventor_Customizations_PayPal.
      * @class   Inventor_PayPal_Customizations_PayPal
-     * @package Inventor_PayPal/Classes/Customizations
      * @author  Pragmatic Mates
      */
     class Inventor_PayPal_Customizations_Paypal
     {
         /**
-         * Initialize customization type
-         * @access public
-         * @return void
+         * Initialize customization type.
          */
         public static function init()
         {
@@ -22,12 +19,9 @@
         }
 
         /**
-         * Customizations
-         * @access public
+         * Customizations.
          *
          * @param object $wp_customize
-         *
-         * @return void
          */
         public static function customizations($wp_customize)
         {

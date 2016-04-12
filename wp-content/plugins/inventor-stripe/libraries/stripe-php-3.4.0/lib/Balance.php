@@ -1,9 +1,10 @@
 <?php
-    namespace Stripe;
 
-    class Balance extends SingletonApiResource
-    {
-        /**
+namespace Stripe;
+
+class Balance extends SingletonApiResource
+{
+    /**
          * @param array|string|null $opts
          *
          * @return Balance
@@ -12,4 +13,4 @@
         {
             return self::_singletonRetrieve($opts);
         }
-    }
+}

@@ -6,7 +6,6 @@
     /**
      * Class PaymentExecution
      * Let's you execute a PayPal Account based Payment resource with the payer_id obtained from web approval url.
-     * @package PayPal\Api
      * @property string                    payer_id
      * @property string                    carrier_account_id
      * @property \PayPal\Api\Transaction[] transactions
@@ -109,5 +108,4 @@
         {
             return $this->setTransactions(array_diff($this->getTransactions(), [$transaction]));
         }
-
     }

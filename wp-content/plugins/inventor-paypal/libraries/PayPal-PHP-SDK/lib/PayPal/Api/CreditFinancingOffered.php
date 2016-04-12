@@ -5,8 +5,7 @@
 
     /**
      * Class CreditFinancingOffered
-     * Credit financing offered to customer on PayPal side with opt-in/opt-out status
-     * @package PayPal\Api
+     * Credit financing offered to customer on PayPal side with opt-in/opt-out status.
      * @property \PayPal\Api\Currency total_cost
      * @property \PayPal\Api\number   term
      * @property \PayPal\Api\Currency monthly_payment
@@ -31,7 +30,7 @@
         }
 
         /**
-         * Length of financing terms in month
+         * Length of financing terms in month.
          *
          * @param \PayPal\Api\number $term
          *
@@ -87,7 +86,7 @@
         }
 
         /**
-         * Indicates whether the cart amount is editable after payer's acceptance on PayPal side
+         * Indicates whether the cart amount is editable after payer's acceptance on PayPal side.
          *
          * @param bool $cart_amount_immutable
          *
@@ -110,7 +109,7 @@
         }
 
         /**
-         * Length of financing terms in month
+         * Length of financing terms in month.
          * @return \PayPal\Api\number
          */
         public function getTerm()
@@ -146,12 +145,11 @@
         }
 
         /**
-         * Indicates whether the cart amount is editable after payer's acceptance on PayPal side
+         * Indicates whether the cart amount is editable after payer's acceptance on PayPal side.
          * @return bool
          */
         public function getCartAmountImmutable()
         {
             return $this->cart_amount_immutable;
         }
-
     }

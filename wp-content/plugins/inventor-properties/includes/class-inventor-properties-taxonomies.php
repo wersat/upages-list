@@ -4,17 +4,14 @@
     }
 
     /**
-     * Class Inventor_Properties_Taxonomies
+     * Class Inventor_Properties_Taxonomies.
      * @class   Inventor_Properties_Taxonomies
-     * @package Inventor/Classes/Taxonomies
      * @author  Pragmatic Mates
      */
     class Inventor_Properties_Taxonomies
     {
         /**
-         * Initialize taxonomies
-         * @access public
-         * @return void
+         * Initialize taxonomies.
          */
         public static function init()
         {
@@ -22,9 +19,7 @@
         }
 
         /**
-         * Includes all taxonomies
-         * @access public
-         * @return void
+         * Includes all taxonomies.
          */
         public static function includes()
         {

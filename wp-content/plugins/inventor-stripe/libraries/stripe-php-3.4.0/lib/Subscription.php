@@ -1,9 +1,10 @@
 <?php
-    namespace Stripe;
 
-    class Subscription extends ApiResource
-    {
-        /**
+namespace Stripe;
+
+class Subscription extends ApiResource
+{
+    /**
          * @param array|null $params
          *
          * @return Subscription The deleted subscription.
@@ -28,7 +29,7 @@
          */
         public function deleteDiscount()
         {
-            $url = $this->instanceUrl() . '/discount';
+            $url = $this->instanceUrl().'/discount';
             list($response, $opts) = $this->_request('delete', $url);
             $this->refreshFrom(['discount' => null], $opts, true);
         }
@@ -38,18 +39,18 @@
          */
         public function instanceUrl()
         {
-            $id       = $this['id'];
+            $id = $this['id'];
             $customer = $this['customer'];
-            if ( ! $id) {
-                throw new Error\InvalidRequest('Could not determine which URL to request: ' . "class instance has invalid ID: $id",
+            if (!$id) {
+                throw new Error\InvalidRequest('Could not determine which URL to request: '."class instance has invalid ID: $id",
                     null);
             }
-            $id       = Util\Util::utf8($id);
+            $id = Util\Util::utf8($id);
             $customer = Util\Util::utf8($customer);
-            $base         = Customer::classUrl();
+            $base = Customer::classUrl();
             $customerExtn = urlencode($customer);
-            $extn         = urlencode($id);
+            $extn = urlencode($id);
 
             return "$base/$customerExtn/subscriptions/$extn";
         }
-    }
+}

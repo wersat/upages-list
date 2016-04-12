@@ -5,14 +5,13 @@
 
     /**
      * Class OpenIdError
-     * Error resource
+     * Error resource.
      * @property string error
      * @property string error_description
      * @property string error_uri
      */
     class OpenIdError extends PayPalModel
     {
-
         /**
          * A single ASCII error code from the following enum.
          *
@@ -81,5 +80,4 @@
         {
             return $this->error_uri;
         }
-
     }

@@ -6,7 +6,6 @@
     /**
      * Class PaymentDetail
      * Invoicing payment information.
-     * @package PayPal\Api
      * @property string type
      * @property string transaction_id
      * @property string transaction_type
@@ -18,7 +17,7 @@
     {
         /**
          * PayPal payment detail indicating whether payment was made in an invoicing flow via PayPal or externally. In the case of the mark-as-paid API, payment type is EXTERNAL and this is what is now supported. The PAYPAL value is provided for backward compatibility.
-         * Valid Values: ["PAYPAL", "EXTERNAL"]
+         * Valid Values: ["PAYPAL", "EXTERNAL"].
          *
          * @param string $type
          *
@@ -47,7 +46,7 @@
 
         /**
          * Type of the transaction.
-         * Valid Values: ["SALE", "AUTHORIZATION", "CAPTURE"]
+         * Valid Values: ["SALE", "AUTHORIZATION", "CAPTURE"].
          *
          * @param string $transaction_type
          *
@@ -76,7 +75,7 @@
 
         /**
          * Payment mode or method. This field is mandatory if the value of the type field is EXTERNAL.
-         * Valid Values: ["BANK_TRANSFER", "CASH", "CHECK", "CREDIT_CARD", "DEBIT_CARD", "PAYPAL", "WIRE_TRANSFER", "OTHER"]
+         * Valid Values: ["BANK_TRANSFER", "CASH", "CHECK", "CREDIT_CARD", "DEBIT_CARD", "PAYPAL", "WIRE_TRANSFER", "OTHER"].
          *
          * @param string $method
          *
@@ -156,5 +155,4 @@
         {
             return $this->note;
         }
-
     }

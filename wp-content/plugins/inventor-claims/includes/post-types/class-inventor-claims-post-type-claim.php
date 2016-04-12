@@ -42,14 +42,14 @@
                 'menu_name'          => __('Claims', 'inventor-claims'),
             ];
             register_post_type('claim', [
-                    'labels'       => $labels,
-                    'show_in_menu' => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
-                    'supports'     => ['author'],
-                    'public'       => false,
-                    'has_archive'  => false,
-                    'show_ui'      => true,
-                    'categories'   => [],
-                ]);
+                'labels'       => $labels,
+                'show_in_menu' => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
+                'supports'     => ['author'],
+                'public'       => false,
+                'has_archive'  => false,
+                'show_ui'      => true,
+                'categories'   => [],
+            ]);
         }
 
         /**

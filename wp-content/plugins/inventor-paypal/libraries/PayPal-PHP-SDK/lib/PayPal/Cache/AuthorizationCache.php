@@ -9,7 +9,7 @@
         public static $CACHE_PATH = '/../../../var/auth.cache';
 
         /**
-         * Persists the data into a cache file provided in $CACHE_PATH
+         * Persists the data into a cache file provided in $CACHE_PATH.
          *
          * @param array|null $config
          * @param            $clientId
@@ -39,16 +39,16 @@
                     'clientId'             => $clientId,
                     'accessTokenEncrypted' => $accessToken,
                     'tokenCreateTime'      => $tokenCreateTime,
-                    'tokenExpiresIn'       => $tokenExpiresIn
+                    'tokenExpiresIn'       => $tokenExpiresIn,
                 ];
             }
             if ( ! file_put_contents($cachePath, json_encode($tokens))) {
-                throw new \Exception("Failed to write cache");
+                throw new \Exception('Failed to write cache');
             };
         }
 
         /**
-         * Determines from the Configuration if caching is currently enabled/disabled
+         * Determines from the Configuration if caching is currently enabled/disabled.
          *
          * @param $config
          *
@@ -63,7 +63,7 @@
 
         /**
          * Returns the Value of the key if found in given config, or from PayPal Config Manager
-         * Returns null if not found
+         * Returns null if not found.
          *
          * @param $key
          * @param $config
@@ -81,7 +81,7 @@
         }
 
         /**
-         * Returns the cache file path
+         * Returns the cache file path.
          *
          * @param $config
          *
@@ -107,7 +107,7 @@
         {
             // Return if not enabled
             if ( ! self::isEnabled($config)) {
-                return null;
+                return;
             }
             $tokens    = null;
             $cachePath = self::cachePath($config);
@@ -119,14 +119,13 @@
                     if ($clientId && is_array($tokens) && array_key_exists($clientId, $tokens)) {
                         // If client Id is found, just send in that data only
                         return $tokens[$clientId];
-                    } else if ($clientId) {
+                    } elseif ($clientId) {
                         // If client Id is provided, but no key in persisted data found matching it.
-                        return null;
+                        return;
                     }
                 }
             }
 
             return $tokens;
         }
-
     }

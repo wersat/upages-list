@@ -5,8 +5,7 @@
 
     /**
      * Class PayPalHttpConfig
-     * Http Configuration Class
-     * @package PayPal\Core
+     * Http Configuration Class.
      */
     class PayPalHttpConfig
     {
@@ -15,7 +14,7 @@
         const HTTP_POST        = 'POST';
         /**
          * Some default options for curl
-         * These are typically overridden by PayPalConnectionManager
+         * These are typically overridden by PayPalConnectionManager.
          * @var array
          */
         public static $defaultCurlOptions
@@ -28,7 +27,7 @@
                 CURLOPT_HTTPHEADER      => [],
                 CURLOPT_SSL_VERIFYHOST  => 2,
                 CURLOPT_SSL_VERIFYPEER  => 1,
-                CURLOPT_SSL_CIPHER_LIST => 'TLSv1'
+                CURLOPT_SSL_CIPHER_LIST => 'TLSv1',
                 //Allowing TLSv1 cipher list.
                 //Adding it like this for backward compatibility with older versions of curl
             ];
@@ -46,7 +45,7 @@
         private $retryCount = 0;
 
         /**
-         * Default Constructor
+         * Default Constructor.
          *
          * @param string $url
          * @param string $method  HTTP method (GET, POST etc) defaults to POST
@@ -60,14 +59,14 @@
             // Update the Cipher List based on OpenSSL or NSS settings
             $curl       = curl_version();
             $sslVersion = isset($curl['ssl_version']) ? $curl['ssl_version'] : '';
-            if (substr_compare($sslVersion, "NSS/", 0, strlen("NSS/")) === 0) {
+            if (substr_compare($sslVersion, 'NSS/', 0, strlen('NSS/')) === 0) {
                 //Remove the Cipher List for NSS
                 $this->removeCurlOption(CURLOPT_SSL_CIPHER_LIST);
             }
         }
 
         /**
-         * Retrieves an array of constant key, and value based on Prefix
+         * Retrieves an array of constant key, and value based on Prefix.
          *
          * @param array $configs
          * @param       $prefix
@@ -93,7 +92,7 @@
         }
 
         /**
-         * Removes a curl option from the list
+         * Removes a curl option from the list.
          *
          * @param $name
          */
@@ -103,7 +102,7 @@
         }
 
         /**
-         * Set ssl parameters for certificate based client authentication
+         * Set ssl parameters for certificate based client authentication.
          *
          * @param      $certPath
          * @param null $passPhrase
@@ -111,15 +110,15 @@
         public function setSSLCert($certPath, $passPhrase = null)
         {
             $this->curlOptions[CURLOPT_SSLCERT] = realpath($certPath);
-            if (isset($passPhrase) && trim($passPhrase) != "") {
+            if (isset($passPhrase) && trim($passPhrase) != '') {
                 $this->curlOptions[CURLOPT_SSLCERTPASSWD] = $passPhrase;
             }
         }
 
         /**
-         * Set connection timeout in seconds
+         * Set connection timeout in seconds.
          *
-         * @param integer $timeout
+         * @param int $timeout
          */
         public function setHttpTimeout($timeout)
         {
@@ -127,7 +126,7 @@
         }
 
         /**
-         * Set HTTP proxy information
+         * Set HTTP proxy information.
          *
          * @param string $proxy
          *
@@ -136,20 +135,20 @@
         public function setHttpProxy($proxy)
         {
             $urlParts = parse_url($proxy);
-            if ($urlParts == false || ! array_key_exists("host", $urlParts)) {
-                throw new PayPalConfigurationException("Invalid proxy configuration " . $proxy);
+            if ($urlParts == false || ! array_key_exists('host', $urlParts)) {
+                throw new PayPalConfigurationException('Invalid proxy configuration ' . $proxy);
             }
-            $this->curlOptions[CURLOPT_PROXY] = $urlParts["host"];
-            if (isset($urlParts["port"])) {
-                $this->curlOptions[CURLOPT_PROXY] .= ":" . $urlParts["port"];
+            $this->curlOptions[CURLOPT_PROXY] = $urlParts['host'];
+            if (isset($urlParts['port'])) {
+                $this->curlOptions[CURLOPT_PROXY] .= ':' . $urlParts['port'];
             }
-            if (isset($urlParts["user"])) {
-                $this->curlOptions[CURLOPT_PROXYUSERPWD] = $urlParts["user"] . ":" . $urlParts["pass"];
+            if (isset($urlParts['user'])) {
+                $this->curlOptions[CURLOPT_PROXYUSERPWD] = $urlParts['user'] . ':' . $urlParts['pass'];
             }
         }
 
         /**
-         * Set Http Retry Counts
+         * Set Http Retry Counts.
          *
          * @param int $retryCount
          */
@@ -159,7 +158,7 @@
         }
 
         /**
-         * Sets the User-Agent string on the HTTP request
+         * Sets the User-Agent string on the HTTP request.
          *
          * @param string $userAgentString
          */
@@ -169,7 +168,7 @@
         }
 
         /**
-         * Gets Url
+         * Gets Url.
          * @return null|string
          */
         public function getUrl()
@@ -178,7 +177,7 @@
         }
 
         /**
-         * Sets Url
+         * Sets Url.
          *
          * @param $url
          */
@@ -188,7 +187,7 @@
         }
 
         /**
-         * Gets Method
+         * Gets Method.
          * @return string
          */
         public function getMethod()
@@ -197,7 +196,7 @@
         }
 
         /**
-         * Gets all Headers
+         * Gets all Headers.
          * @return array
          */
         public function getHeaders()
@@ -206,7 +205,7 @@
         }
 
         /**
-         * Set Headers
+         * Set Headers.
          *
          * @param array $headers
          */
@@ -216,7 +215,7 @@
         }
 
         /**
-         * Get Header by Name
+         * Get Header by Name.
          *
          * @param $name
          *
@@ -228,11 +227,11 @@
                 return $this->headers[$name];
             }
 
-            return null;
+            return;
         }
 
         /**
-         * Adds a Header
+         * Adds a Header.
          *
          * @param      $name
          * @param      $value
@@ -248,7 +247,7 @@
         }
 
         /**
-         * Removes a Header
+         * Removes a Header.
          *
          * @param $name
          */
@@ -258,7 +257,7 @@
         }
 
         /**
-         * Gets all curl options
+         * Gets all curl options.
          * @return array
          */
         public function getCurlOptions()
@@ -267,7 +266,7 @@
         }
 
         /**
-         * Set Curl Options. Overrides all curl options
+         * Set Curl Options. Overrides all curl options.
          *
          * @param $options
          */
@@ -277,7 +276,7 @@
         }
 
         /**
-         * Add Curl Option
+         * Add Curl Option.
          *
          * @param string $name
          * @param mixed  $value
@@ -288,7 +287,7 @@
         }
 
         /**
-         * Get Http Retry Counts
+         * Get Http Retry Counts.
          * @return int
          */
         public function getHttpRetryCount()

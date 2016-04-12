@@ -6,7 +6,6 @@
     /**
      * Class Payee
      * A resource representing a Payee who receives the funds and fulfills the order.
-     * @package PayPal\Api
      * @property string email
      * @property string merchant_id
      */
@@ -71,7 +70,7 @@
         }
 
         /**
-         * Unencrypted PayPal account Number of the Payee
+         * Unencrypted PayPal account Number of the Payee.
          * @deprecated Not publicly available
          *
          * @param string $account_number
@@ -139,7 +138,7 @@
         }
 
         /**
-         * Unencrypted PayPal account Number of the Payee
+         * Unencrypted PayPal account Number of the Payee.
          * @deprecated Not publicly available
          * @return string
          */
@@ -157,5 +156,4 @@
         {
             return $this->phone;
         }
-
     }

@@ -4,7 +4,7 @@
     <?php $price = Inventor_Price::get_listing_price($object_id) ?>
     <?php if (empty($price) || $price == 0) : ?>
       <div class="alert alert-danger">
-        <?php echo __("Listing price is not set.", 'inventor-shop'); ?>
+        <?php echo __('Listing price is not set.', 'inventor-shop'); ?>
       </div>
     <?php else : ?>
       <div class="payment-info">

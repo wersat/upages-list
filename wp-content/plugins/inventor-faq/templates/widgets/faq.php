@@ -3,6 +3,7 @@
     exit;
   }
 ?>
+
 <?php echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
 <div class="widget-inner
  <?php echo esc_attr($instance['classes']); ?>
@@ -26,7 +27,7 @@
   <?php if ( ! empty($instance['description'])) : ?>
     <div class="description">
       <?php echo wp_kses($instance['description'], wp_kses_allowed_html('post')); ?>
-    </div>
+    </div><!-- /.description -->
   <?php endif; ?>
 
   <?php if (have_posts()) : ?>
@@ -39,13 +40,13 @@
           <div class="faq-item-answer">
             <p><?php the_content(); ?></p>
           </div>
-        </div>
+        </div><!-- /.faq-item -->
       <?php endwhile; ?>
-    </div>
+    </div><!-- /.faq -->
   <?php else : ?>
     <div class="alert alert-warning">
       <?php echo __('No FAQ found.', 'inventor-faq'); ?>
-    </div>
+    </div><!-- /.alert -->
   <?php endif; ?>
-</div>
+</div><!-- /.widget-inner -->
 <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post')); ?>

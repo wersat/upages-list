@@ -4,17 +4,12 @@
     }
 
     /**
-     * Class Inventor_Paypal_Customizations
-     * @access  public
-     * @package Inventor_Paypal/Classes/Customizations
-     * @return void
+     * Class Inventor_Paypal_Customizations.
      */
     class Inventor_Paypal_Customizations
     {
         /**
-         * Initialize customizations
-         * @access public
-         * @return void
+         * Initialize customizations.
          */
         public static function init()
         {
@@ -22,9 +17,7 @@
         }
 
         /**
-         * Include all customizations
-         * @access public
-         * @return void
+         * Include all customizations.
          */
         public static function includes()
         {

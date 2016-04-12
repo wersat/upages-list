@@ -1,74 +1,70 @@
 <?php
-
-/**
- * Plugin Name: Inventor Partners
- * Version: 0.1.2
- * Description: Provides custom post type for partners which logos could be displayed by widget.
- * Author: Pragmatic Mates
- * Author URI: http://inventorwp.com
- * Plugin URI: http://inventorwp.com/plugins/inventor-partners/
- * Text Domain: inventor-partners
- * Domain Path: /languages/
- * License: GNU General Public License v3.0
- * License URI: http://www.gnu.org/licenses/gpl-3.0.html.
- */
-if (!class_exists('Inventor_Partners') && class_exists('Inventor')) {
     /**
-     * Class Inventor_Partners.
-     *
-     * @class Inventor_Partners
-     *
-     * @author Pragmatic Mates
+     * Plugin Name: Inventor Partners
+     * Version: 0.1.2
+     * Description: Provides custom post type for partners which logos could be displayed by widget.
+     * Author: Pragmatic Mates
+     * Author URI: http://inventorwp.com
+     * Plugin URI: http://inventorwp.com/plugins/inventor-partners/
+     * Text Domain: inventor-partners
+     * Domain Path: /languages/
+     * License: GNU General Public License v3.0
+     * License URI: http://www.gnu.org/licenses/gpl-3.0.html.
      */
-    final class Inventor_Partners
-    {
+    if ( ! class_exists('Inventor_Partners') && class_exists('Inventor')) {
         /**
-         * Initialize Inventor_Partners plugin.
+         * Class Inventor_Partners.
+         * @class  Inventor_Partners
+         * @author Pragmatic Mates
          */
-        public function __construct()
+        final class Inventor_Partners
         {
-            $this->constants();
-            $this->includes();
-            $this->load_plugin_textdomain();
+            /**
+             * Initialize Inventor_Partners plugin.
+             */
+            public function __construct()
+            {
+                $this->constants();
+                $this->includes();
+                $this->load_plugin_textdomain();
+                add_action('wp_enqueue_scripts', [__CLASS__, 'enqueue_frontend']);
+            }
 
-            add_action('wp_enqueue_scripts', array(__CLASS__, 'enqueue_frontend'));
+            /**
+             * Defines constants.
+             */
+            public function constants()
+            {
+                define('INVENTOR_PARTNERS_DIR', plugin_dir_path(__FILE__));
+                define('INVENTOR_PARTNERS_PREFIX', 'partner_');
+            }
+
+            /**
+             * Include classes.
+             */
+            public function includes()
+            {
+                require_once INVENTOR_PARTNERS_DIR . 'includes/class-inventor-partners-post-types.php';
+                require_once INVENTOR_PARTNERS_DIR . 'includes/class-inventor-partners-widgets.php';
+            }
+
+            /**
+             * Loads frontend files.
+             */
+            public static function enqueue_frontend()
+            {
+                wp_register_style('inventor-partners', plugins_url('/inventor-partners/assets/style.css'));
+                wp_enqueue_style('inventor-partners');
+            }
+
+            /**
+             * Loads localization files.
+             */
+            public function load_plugin_textdomain()
+            {
+                load_plugin_textdomain('inventor-partners', false, plugin_basename(dirname(__FILE__)) . '/languages');
+            }
         }
 
-        /**
-         * Defines constants.
-         */
-        public function constants()
-        {
-            define('INVENTOR_PARTNERS_DIR', plugin_dir_path(__FILE__));
-            define('INVENTOR_PARTNERS_PREFIX', 'partner_');
-        }
-
-        /**
-         * Include classes.
-         */
-        public function includes()
-        {
-            require_once INVENTOR_PARTNERS_DIR.'includes/class-inventor-partners-post-types.php';
-            require_once INVENTOR_PARTNERS_DIR.'includes/class-inventor-partners-widgets.php';
-        }
-
-        /**
-         * Loads frontend files.
-         */
-        public static function enqueue_frontend()
-        {
-            wp_register_style('inventor-partners', plugins_url('/inventor-partners/assets/style.css'));
-            wp_enqueue_style('inventor-partners');
-        }
-
-        /**
-         * Loads localization files.
-         */
-        public function load_plugin_textdomain()
-        {
-            load_plugin_textdomain('inventor-partners', false, plugin_basename(__FILE__).'/languages');
-        }
+        new Inventor_Partners();
     }
-
-    new Inventor_Partners();
-}

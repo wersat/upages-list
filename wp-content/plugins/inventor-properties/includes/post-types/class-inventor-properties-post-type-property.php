@@ -4,16 +4,14 @@
     }
 
     /**
-     * Class Inventor_Properties_Post_Type_Property
-     * @class   Inventor_Properties_Post_Type_Property
-     * @package Inventor/Classes/Post_Types
-     * @author  Pragmatic Mates
+     * Class Inventor_Properties_Post_Type_Property.
+     * @class  Inventor_Properties_Post_Type_Property
+     * @author Pragmatic Mates
      */
     class Inventor_Properties_Post_Type_Property
     {
         /**
-         * Set default data for field
-         * @access public
+         * Set default data for field.
          *
          * @param $data
          * @param $object_id
@@ -32,9 +30,7 @@
         }
 
         /**
-         * Initialize custom post type
-         * @access public
-         * @return void
+         * Initialize custom post type.
          */
         public static function init()
         {
@@ -45,8 +41,7 @@
         }
 
         /**
-         * Defines if post type can be purchased
-         * @access public
+         * Defines if post type can be purchased.
          *
          * @param array $post_types
          *
@@ -60,8 +55,7 @@
         }
 
         /**
-         * Defines if post type can be claimed
-         * @access public
+         * Defines if post type can be claimed.
          *
          * @param array $post_types
          *
@@ -75,9 +69,7 @@
         }
 
         /**
-         * Custom post type definition
-         * @access public
-         * @return void
+         * Custom post type definition.
          */
         public static function definition()
         {
@@ -97,20 +89,19 @@
                 'menu_name'          => __('Properties', 'inventor-properties'),
             ];
             register_post_type('property', [
-                    'labels'       => $labels,
-                    'show_in_menu' => 'listings',
-                    'supports'     => ['title', 'editor', 'thumbnail', 'comments', 'author'],
-                    'has_archive'  => true,
-                    'rewrite'      => ['slug' => _x('properties', 'URL slug', 'inventor-properties')],
-                    'public'       => true,
-                    'show_ui'      => true,
-                    'categories'   => [],
-                ]);
+                'labels'       => $labels,
+                'show_in_menu' => 'listings',
+                'supports'     => ['title', 'editor', 'thumbnail', 'comments', 'author'],
+                'has_archive'  => true,
+                'rewrite'      => ['slug' => _x('properties', 'URL slug', 'inventor-properties')],
+                'public'       => true,
+                'show_ui'      => true,
+                'categories'   => [],
+            ]);
         }
 
         /**
-         * Defines custom fields
-         * @access public
+         * Defines custom fields.
          * @return array
          */
         public static function fields()
@@ -144,7 +135,7 @@
                 'attributes' => [
                     'type'    => 'number',
                     'pattern' => '\d*',
-                    'min'     => 0
+                    'min'     => 0,
                 ],
             ]);
             $details->add_field([
@@ -172,7 +163,7 @@
                 'attributes' => [
                     'type'    => 'number',
                     'pattern' => '\d*',
-                    'min'     => 0
+                    'min'     => 0,
                 ],
             ]);
             $attributes->add_field([
@@ -182,7 +173,7 @@
                 'attributes' => [
                     'type'    => 'number',
                     'pattern' => '\d*',
-                    'min'     => 0
+                    'min'     => 0,
                 ],
             ]);
             $attributes->add_field([
@@ -192,7 +183,7 @@
                 'attributes' => [
                     'type'    => 'number',
                     'pattern' => '\d*',
-                    'min'     => 0
+                    'min'     => 0,
                 ],
             ]);
             $attributes->add_field([
@@ -202,7 +193,7 @@
                 'attributes' => [
                     'type'    => 'number',
                     'pattern' => '\d*',
-                    'min'     => 0
+                    'min'     => 0,
                 ],
             ]);
             $attributes->add_field([
@@ -212,7 +203,7 @@
                 'attributes' => [
                     'type'    => 'number',
                     'pattern' => '\d*',
-                    'min'     => 0
+                    'min'     => 0,
                 ],
             ]);
             $attributes->add_field([
@@ -265,7 +256,7 @@
             }
             $valuation_default = Inventor_Submission::get_submission_field_value($valuation_box_id,
                 $valuation_group_id);
-            $valuation_box = new_cmb2_box([
+            $valuation_box     = new_cmb2_box([
                 'id'           => $valuation_box_id,
                 'title'        => __('Valuation', 'inventor-properties'),
                 'object_types' => ['property'],
@@ -312,7 +303,7 @@
             }
             $facilities_default = Inventor_Submission::get_submission_field_value($public_facilities_box_id,
                 $public_facilities_group_id);
-            $cmb = new_cmb2_box([
+            $cmb                = new_cmb2_box([
                 'id'           => $public_facilities_box_id,
                 'title'        => __('Public facilities', 'inventor-properties'),
                 'object_types' => ['property'],

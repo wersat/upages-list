@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class PaymentHistory
+     * Class PaymentHistory.
      * List of Payments made by the seller.
-     * @package PayPal\Api
      * @property \PayPal\Api\Payment[] payments
      * @property int                   count
      * @property string                next_id
@@ -58,7 +57,7 @@
         }
 
         /**
-         * A list of Payment resources
+         * A list of Payment resources.
          * @return \PayPal\Api\Payment[]
          */
         public function getPayments()
@@ -67,7 +66,7 @@
         }
 
         /**
-         * A list of Payment resources
+         * A list of Payment resources.
          *
          * @param \PayPal\Api\Payment[] $payments
          *
@@ -109,5 +108,4 @@
         {
             return $this->next_id;
         }
-
     }

@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class ExternalFunding
+     * Class ExternalFunding.
      * A resource representing an external funding object.
-     * @package PayPal\Api
      * @property string             reference_id
      * @property string             code
      * @property string             funding_account_id
@@ -16,7 +15,7 @@
     class ExternalFunding extends PayPalModel
     {
         /**
-         * Unique identifier for the external funding
+         * Unique identifier for the external funding.
          *
          * @param string $reference_id
          *
@@ -30,7 +29,7 @@
         }
 
         /**
-         * Generic identifier for the external funding
+         * Generic identifier for the external funding.
          *
          * @param string $code
          *
@@ -44,7 +43,7 @@
         }
 
         /**
-         * Encrypted PayPal Account identifier for the funding account
+         * Encrypted PayPal Account identifier for the funding account.
          *
          * @param string $funding_account_id
          *
@@ -58,7 +57,7 @@
         }
 
         /**
-         * Description of the external funding being applied
+         * Description of the external funding being applied.
          *
          * @param string $display_text
          *
@@ -72,7 +71,7 @@
         }
 
         /**
-         * Amount being funded by the external funding account
+         * Amount being funded by the external funding account.
          *
          * @param \PayPal\Api\Amount $amount
          *
@@ -86,7 +85,7 @@
         }
 
         /**
-         * Unique identifier for the external funding
+         * Unique identifier for the external funding.
          * @return string
          */
         public function getReferenceId()
@@ -95,7 +94,7 @@
         }
 
         /**
-         * Generic identifier for the external funding
+         * Generic identifier for the external funding.
          * @return string
          */
         public function getCode()
@@ -104,7 +103,7 @@
         }
 
         /**
-         * Encrypted PayPal Account identifier for the funding account
+         * Encrypted PayPal Account identifier for the funding account.
          * @return string
          */
         public function getFundingAccountId()
@@ -113,7 +112,7 @@
         }
 
         /**
-         * Description of the external funding being applied
+         * Description of the external funding being applied.
          * @return string
          */
         public function getDisplayText()
@@ -122,12 +121,11 @@
         }
 
         /**
-         * Amount being funded by the external funding account
+         * Amount being funded by the external funding account.
          * @return \PayPal\Api\Amount
          */
         public function getAmount()
         {
             return $this->amount;
         }
-
     }

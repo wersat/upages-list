@@ -4,7 +4,6 @@
     /**
      * Class TransactionBase
      * A transaction defines the contract of a payment - what is the payment for and who is fulfilling it.
-     * @package PayPal\Api
      * @property \PayPal\Api\RelatedResources related_resources
      */
     class TransactionBase extends CartBase
@@ -31,5 +30,4 @@
         {
             return $this->related_resources;
         }
-
     }

@@ -6,8 +6,7 @@
 
     /**
      * Class CartBase
-     * Base properties of a cart resource
-     * @package PayPal\Api
+     * Base properties of a cart resource.
      * @property string                     reference_id
      * @property \PayPal\Api\Amount         amount
      * @property string                     description
@@ -23,7 +22,7 @@
     class CartBase extends PayPalModel
     {
         /**
-         * Merchant identifier to the purchase unit. Optional parameter
+         * Merchant identifier to the purchase unit. Optional parameter.
          *
          * @param string $reference_id
          *
@@ -122,7 +121,7 @@
         }
 
         /**
-         * Soft descriptor used when charging this funding source. If length exceeds max length, the value will be truncated
+         * Soft descriptor used when charging this funding source. If length exceeds max length, the value will be truncated.
          *
          * @param string $soft_descriptor
          *
@@ -136,7 +135,7 @@
         }
 
         /**
-         * Soft descriptor city used when charging this funding source. If length exceeds max length, the value will be truncated. Only supported when the `payment_method` is set to `credit_card`
+         * Soft descriptor city used when charging this funding source. If length exceeds max length, the value will be truncated. Only supported when the `payment_method` is set to `credit_card`.
          * @deprecated Not publicly available
          *
          * @param string $soft_descriptor_city
@@ -151,7 +150,7 @@
         }
 
         /**
-         * Payment options requested for this purchase unit
+         * Payment options requested for this purchase unit.
          *
          * @param \PayPal\Api\PaymentOptions $payment_options
          *
@@ -179,7 +178,7 @@
         }
 
         /**
-         * URL to send payment notifications
+         * URL to send payment notifications.
          *
          * @param string $notify_url
          *
@@ -188,7 +187,7 @@
          */
         public function setNotifyUrl($notify_url)
         {
-            UrlValidator::validate($notify_url, "NotifyUrl");
+            UrlValidator::validate($notify_url, 'NotifyUrl');
             $this->notify_url = $notify_url;
 
             return $this;
@@ -204,14 +203,14 @@
          */
         public function setOrderUrl($order_url)
         {
-            UrlValidator::validate($order_url, "OrderUrl");
+            UrlValidator::validate($order_url, 'OrderUrl');
             $this->order_url = $order_url;
 
             return $this;
         }
 
         /**
-         * Merchant identifier to the purchase unit. Optional parameter
+         * Merchant identifier to the purchase unit. Optional parameter.
          * @return string
          */
         public function getReferenceId()
@@ -275,7 +274,7 @@
         }
 
         /**
-         * Soft descriptor used when charging this funding source. If length exceeds max length, the value will be truncated
+         * Soft descriptor used when charging this funding source. If length exceeds max length, the value will be truncated.
          * @return string
          */
         public function getSoftDescriptor()
@@ -284,7 +283,7 @@
         }
 
         /**
-         * Soft descriptor city used when charging this funding source. If length exceeds max length, the value will be truncated. Only supported when the `payment_method` is set to `credit_card`
+         * Soft descriptor city used when charging this funding source. If length exceeds max length, the value will be truncated. Only supported when the `payment_method` is set to `credit_card`.
          * @deprecated Not publicly available
          * @return string
          */
@@ -294,7 +293,7 @@
         }
 
         /**
-         * Payment options requested for this purchase unit
+         * Payment options requested for this purchase unit.
          * @return \PayPal\Api\PaymentOptions
          */
         public function getPaymentOptions()
@@ -312,7 +311,7 @@
         }
 
         /**
-         * URL to send payment notifications
+         * URL to send payment notifications.
          * @return string
          */
         public function getNotifyUrl()
@@ -347,7 +346,7 @@
         }
 
         /**
-         * List of external funding being applied to the purchase unit. Each external_funding unit should have a unique reference_id
+         * List of external funding being applied to the purchase unit. Each external_funding unit should have a unique reference_id.
          * @deprecated Not publicly available
          * @return \PayPal\Api\ExternalFunding[]
          */
@@ -357,7 +356,7 @@
         }
 
         /**
-         * List of external funding being applied to the purchase unit. Each external_funding unit should have a unique reference_id
+         * List of external funding being applied to the purchase unit. Each external_funding unit should have a unique reference_id.
          * @deprecated Not publicly available
          *
          * @param \PayPal\Api\ExternalFunding[] $external_funding
@@ -383,5 +382,4 @@
         {
             return $this->setExternalFunding(array_diff($this->getExternalFunding(), [$externalFunding]));
         }
-
     }

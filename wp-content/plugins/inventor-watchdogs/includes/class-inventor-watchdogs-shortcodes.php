@@ -4,17 +4,14 @@
     }
 
     /**
-     * Class Inventor_Watchdogs_Shortcodes
+     * Class Inventor_Watchdogs_Shortcodes.
      * @class   Inventor_Watchdogs_Shortcodes
-     * @package Inventor/Classes
      * @author  Pragmatic Mates
      */
     class Inventor_Watchdogs_Shortcodes
     {
         /**
-         * Initialize shortcodes
-         * @access public
-         * @return void
+         * Initialize shortcodes.
          */
         public static function init()
         {
@@ -22,12 +19,9 @@
         }
 
         /**
-         * Watchdogs
-         * @access public
+         * Watchdogs.
          *
          * @param $atts
-         *
-         * @return void
          */
         public static function watchdogs($atts)
         {

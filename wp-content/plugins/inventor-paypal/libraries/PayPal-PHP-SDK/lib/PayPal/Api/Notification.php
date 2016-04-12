@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class Notification
+     * Class Notification.
      * Email/SMS notification.
-     * @package PayPal\Api
      * @property string subject
      * @property string note
      * @property bool   send_to_merchant
@@ -81,5 +80,4 @@
         {
             return $this->send_to_merchant;
         }
-
     }

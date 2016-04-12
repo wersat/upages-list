@@ -5,8 +5,7 @@
 
     /**
      * Class InstallmentOption
-     *  A resource describing an installment
-     * @package PayPal\Api
+     *  A resource describing an installment.
      * @property int                  term
      * @property \PayPal\Api\Currency monthly_payment
      * @property \PayPal\Api\Currency discount_amount
@@ -15,7 +14,7 @@
     class InstallmentOption extends PayPalModel
     {
         /**
-         * Number of installments
+         * Number of installments.
          *
          * @param int $term
          *
@@ -29,7 +28,7 @@
         }
 
         /**
-         * Monthly payment
+         * Monthly payment.
          *
          * @param \PayPal\Api\Currency $monthly_payment
          *
@@ -43,7 +42,7 @@
         }
 
         /**
-         * Discount amount applied to the payment, if any
+         * Discount amount applied to the payment, if any.
          *
          * @param \PayPal\Api\Currency $discount_amount
          *
@@ -57,7 +56,7 @@
         }
 
         /**
-         * Discount percentage applied to the payment, if any
+         * Discount percentage applied to the payment, if any.
          *
          * @param string $discount_percentage
          *
@@ -71,7 +70,7 @@
         }
 
         /**
-         * Number of installments
+         * Number of installments.
          * @return int
          */
         public function getTerm()
@@ -80,7 +79,7 @@
         }
 
         /**
-         * Monthly payment
+         * Monthly payment.
          * @return \PayPal\Api\Currency
          */
         public function getMonthlyPayment()
@@ -89,7 +88,7 @@
         }
 
         /**
-         * Discount amount applied to the payment, if any
+         * Discount amount applied to the payment, if any.
          * @return \PayPal\Api\Currency
          */
         public function getDiscountAmount()
@@ -98,12 +97,11 @@
         }
 
         /**
-         * Discount percentage applied to the payment, if any
+         * Discount percentage applied to the payment, if any.
          * @return string
          */
         public function getDiscountPercentage()
         {
             return $this->discount_percentage;
         }
-
     }

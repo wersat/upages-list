@@ -4,17 +4,14 @@
     }
 
     /**
-     * Class Inventor_Watchdogs_Customizations_Watchdogs
-     * @class   Inventor_Watchdogs_Customizations_Watchdogs
-     * @package Inventor_Watchdogs/Classes/Customizations
-     * @author  Pragmatic Mates
+     * Class Inventor_Watchdogs_Customizations_Watchdogs.
+     * @class  Inventor_Watchdogs_Customizations_Watchdogs
+     * @author Pragmatic Mates
      */
     class Inventor_Watchdogs_Customizations_Watchdogs
     {
         /**
-         * Initialize customization type
-         * @access public
-         * @return void
+         * Initialize customization type.
          */
         public static function init()
         {
@@ -22,12 +19,9 @@
         }
 
         /**
-         * Customizations
-         * @access public
+         * Customizations.
          *
          * @param object $wp_customize
-         *
-         * @return void
          */
         public static function customizations($wp_customize)
         {

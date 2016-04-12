@@ -59,7 +59,7 @@
         {
             $xmlDocument               = new DOMDocument('1.0', 'UTF-8');
             $xmlDocument->formatOutput = true;
-            $xmlCoverage = $xmlDocument->createElement('coverage');
+            $xmlCoverage               = $xmlDocument->createElement('coverage');
             $xmlCoverage->setAttribute('generated', (int)$_SERVER['REQUEST_TIME']);
             $xmlDocument->appendChild($xmlCoverage);
             $xmlProject = $xmlDocument->createElement('project');
@@ -193,7 +193,7 @@
                     $xmlFile->appendChild($xmlLine);
                 }
                 $linesOfCode = $item->getLinesOfCode();
-                $xmlMetrics = $xmlDocument->createElement('metrics');
+                $xmlMetrics  = $xmlDocument->createElement('metrics');
                 $xmlMetrics->setAttribute('loc', $linesOfCode['loc']);
                 $xmlMetrics->setAttribute('ncloc', $linesOfCode['ncloc']);
                 $xmlMetrics->setAttribute('classes', $item->getNumClassesAndTraits());
@@ -220,7 +220,7 @@
                 }
             }
             $linesOfCode = $report->getLinesOfCode();
-            $xmlMetrics = $xmlDocument->createElement('metrics');
+            $xmlMetrics  = $xmlDocument->createElement('metrics');
             $xmlMetrics->setAttribute('files', count($report));
             $xmlMetrics->setAttribute('loc', $linesOfCode['loc']);
             $xmlMetrics->setAttribute('ncloc', $linesOfCode['ncloc']);

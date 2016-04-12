@@ -6,7 +6,6 @@
     /**
      * Class FundingSource
      * specifies the funding source details.
-     * @package PayPal\Api
      * @property string                        funding_mode
      * @property string                        funding_instrument_type
      * @property string                        soft_descriptor
@@ -22,7 +21,7 @@
     {
         /**
          * specifies funding mode of the instrument
-         * Valid Values: ["INSTANT_TRANSFER", "MANUAL_BANK_TRANSFER", "DELAYED_TRANSFER", "ECHECK"]
+         * Valid Values: ["INSTANT_TRANSFER", "MANUAL_BANK_TRANSFER", "DELAYED_TRANSFER", "ECHECK"].
          *
          * @param string $funding_mode
          *
@@ -37,7 +36,7 @@
 
         /**
          * Instrument type for this funding source
-         * Valid Values: ["BALANCE", "PAYMENT_CARD", "BANK_ACCOUNT", "CREDIT", "INCENTIVE"]
+         * Valid Values: ["BALANCE", "PAYMENT_CARD", "BANK_ACCOUNT", "CREDIT", "INCENTIVE"].
          *
          * @param string $funding_instrument_type
          *
@@ -79,7 +78,7 @@
         }
 
         /**
-         * Additional amount to be pulled from the instrument to recover a negative balance on the buyer
+         * Additional amount to be pulled from the instrument to recover a negative balance on the buyer.
          *
          * @param \PayPal\Api\Currency $amount
          *
@@ -135,7 +134,7 @@
         }
 
         /**
-         * Sets Extends
+         * Sets Extends.
          *
          * @param \PayPal\Api\FundingInstrument $extends
          *
@@ -149,7 +148,7 @@
         }
 
         /**
-         * specifies funding mode of the instrument
+         * specifies funding mode of the instrument.
          * @return string
          */
         public function getFundingMode()
@@ -158,7 +157,7 @@
         }
 
         /**
-         * Instrument type for this funding source
+         * Instrument type for this funding source.
          * @return string
          */
         public function getFundingInstrumentType()
@@ -185,7 +184,7 @@
         }
 
         /**
-         * Additional amount to be pulled from the instrument to recover a negative balance on the buyer
+         * Additional amount to be pulled from the instrument to recover a negative balance on the buyer.
          * @return \PayPal\Api\Currency
          */
         public function getNegativeBalanceAmount()
@@ -221,7 +220,7 @@
         }
 
         /**
-         * Gets Extends
+         * Gets Extends.
          * @return \PayPal\Api\FundingInstrument
          */
         public function getExtends()
@@ -246,7 +245,7 @@
         }
 
         /**
-         * Gets Links
+         * Gets Links.
          * @return \PayPal\Api\Links[]
          */
         public function getLinks()
@@ -255,7 +254,7 @@
         }
 
         /**
-         * Sets Links
+         * Sets Links.
          *
          * @param \PayPal\Api\Links[] $links
          *
@@ -279,5 +278,4 @@
         {
             return $this->setLinks(array_diff($this->getLinks(), [$links]));
         }
-
     }

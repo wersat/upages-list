@@ -6,7 +6,6 @@
     /**
      * Class Patch
      * A JSON patch object used for applying partial updates to resources.
-     * @package PayPal\Api
      * @property string op
      * @property string path
      * @property mixed  value
@@ -16,7 +15,7 @@
     {
         /**
          * The operation to perform.
-         * Valid Values: ["add", "remove", "replace", "move", "copy", "test"]
+         * Valid Values: ["add", "remove", "replace", "move", "copy", "test"].
          *
          * @param string $op
          *
@@ -106,5 +105,4 @@
         {
             return $this->from;
         }
-
     }

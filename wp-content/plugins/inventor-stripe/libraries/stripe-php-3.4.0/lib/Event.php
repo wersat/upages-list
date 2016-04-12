@@ -1,10 +1,11 @@
 <?php
-    namespace Stripe;
 
-    class Event extends ApiResource
-    {
-        /**
-         * @param string            $id The ID of the event to retrieve.
+namespace Stripe;
+
+class Event extends ApiResource
+{
+    /**
+         * @param string            $id   The ID of the event to retrieve.
          * @param array|string|null $opts
          *
          * @return Event
@@ -24,4 +25,4 @@
         {
             return self::_all($params, $opts);
         }
-    }
+}

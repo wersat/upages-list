@@ -2,25 +2,24 @@
     namespace PayPal\Exception;
 
     /**
-     * Class PayPalConnectionException
-     * @package PayPal\Exception
+     * Class PayPalConnectionException.
      */
     class PayPalConnectionException extends \Exception
     {
         /**
-         * The url that was being connected to when the exception occured
+         * The url that was being connected to when the exception occured.
          * @var string
          */
         private $url;
 
         /**
-         * Any response data that was returned by the server
+         * Any response data that was returned by the server.
          * @var string
          */
         private $data;
 
         /**
-         * Default Constructor
+         * Default Constructor.
          *
          * @param string $url
          * @param string $message
@@ -33,7 +32,7 @@
         }
 
         /**
-         * Gets Data
+         * Gets Data.
          * @return string
          */
         public function getData()
@@ -42,7 +41,7 @@
         }
 
         /**
-         * Sets Data
+         * Sets Data.
          *
          * @param $data
          */
@@ -52,7 +51,7 @@
         }
 
         /**
-         * Gets Url
+         * Gets Url.
          * @return string
          */
         public function getUrl()

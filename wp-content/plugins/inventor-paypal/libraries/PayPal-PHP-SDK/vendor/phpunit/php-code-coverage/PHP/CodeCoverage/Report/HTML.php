@@ -95,7 +95,7 @@
             $this->highLowerBound = $highLowerBound;
             $this->highlight      = $highlight;
             $this->lowUpperBound  = $lowUpperBound;
-            $this->templatePath = sprintf('%s%sHTML%sRenderer%sTemplate%s', dirname(__FILE__), DIRECTORY_SEPARATOR,
+            $this->templatePath   = sprintf('%s%sHTML%sRenderer%sTemplate%s', dirname(__FILE__), DIRECTORY_SEPARATOR,
                 DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR);
         }
 
@@ -111,12 +111,12 @@
             if ( ! isset($_SERVER['REQUEST_TIME'])) {
                 $_SERVER['REQUEST_TIME'] = time();
             }
-            $date = date('D M j G:i:s T Y', $_SERVER['REQUEST_TIME']);
+            $date      = date('D M j G:i:s T Y', $_SERVER['REQUEST_TIME']);
             $dashboard = new PHP_CodeCoverage_Report_HTML_Renderer_Dashboard($this->templatePath, $this->charset,
                 $this->generator, $date, $this->lowUpperBound, $this->highLowerBound);
             $directory = new PHP_CodeCoverage_Report_HTML_Renderer_Directory($this->templatePath, $this->charset,
                 $this->generator, $date, $this->lowUpperBound, $this->highLowerBound);
-            $file = new PHP_CodeCoverage_Report_HTML_Renderer_File($this->templatePath, $this->charset,
+            $file      = new PHP_CodeCoverage_Report_HTML_Renderer_File($this->templatePath, $this->charset,
                 $this->generator, $date, $this->lowUpperBound, $this->highLowerBound, $this->highlight);
             $dashboard->render($report, $target . 'index.dashboard.html');
             $directory->render($report, $target . 'index.html');
@@ -130,27 +130,6 @@
                 }
             }
             $this->copyFiles($target);
-        }
-
-        /**
-         * @param string $target
-         */
-        protected function copyFiles($target)
-        {
-            $dir = $this->getDirectory($target . 'css');
-            copy($this->templatePath . 'css/bootstrap.min.css', $dir . 'bootstrap.min.css');
-            copy($this->templatePath . 'css/bootstrap-responsive.min.css', $dir . 'bootstrap-responsive.min.css');
-            copy($this->templatePath . 'css/nv.d3.css', $dir . 'nv.d3.css');
-            copy($this->templatePath . 'css/style.css', $dir . 'style.css');
-            $dir = $this->getDirectory($target . 'js');
-            copy($this->templatePath . 'js/bootstrap.min.js', $dir . 'bootstrap.min.js');
-            copy($this->templatePath . 'js/d3.min.js', $dir . 'd3.min.js');
-            copy($this->templatePath . 'js/nv.d3.min.js', $dir . 'nv.d3.min.js');
-            copy($this->templatePath . 'js/jquery.min.js', $dir . 'jquery.min.js');
-            copy($this->templatePath . 'js/html5shiv.js', $dir . 'html5shiv.js');
-            $dir = $this->getDirectory($target . 'img');
-            copy($this->templatePath . 'img/glyphicons-halflings.png', $dir . 'glyphicons-halflings.png');
-            copy($this->templatePath . 'img/glyphicons-halflings-white.png', $dir . 'glyphicons-halflings-white.png');
         }
 
         /**
@@ -172,5 +151,26 @@
                 return $directory;
             }
             throw new PHP_CodeCoverage_Exception(sprintf('Directory "%s" does not exist.', $directory));
+        }
+
+        /**
+         * @param string $target
+         */
+        protected function copyFiles($target)
+        {
+            $dir = $this->getDirectory($target . 'css');
+            copy($this->templatePath . 'css/bootstrap.min.css', $dir . 'bootstrap.min.css');
+            copy($this->templatePath . 'css/bootstrap-responsive.min.css', $dir . 'bootstrap-responsive.min.css');
+            copy($this->templatePath . 'css/nv.d3.css', $dir . 'nv.d3.css');
+            copy($this->templatePath . 'css/style.css', $dir . 'style.css');
+            $dir = $this->getDirectory($target . 'js');
+            copy($this->templatePath . 'js/bootstrap.min.js', $dir . 'bootstrap.min.js');
+            copy($this->templatePath . 'js/d3.min.js', $dir . 'd3.min.js');
+            copy($this->templatePath . 'js/nv.d3.min.js', $dir . 'nv.d3.min.js');
+            copy($this->templatePath . 'js/jquery.min.js', $dir . 'jquery.min.js');
+            copy($this->templatePath . 'js/html5shiv.js', $dir . 'html5shiv.js');
+            $dir = $this->getDirectory($target . 'img');
+            copy($this->templatePath . 'img/glyphicons-halflings.png', $dir . 'glyphicons-halflings.png');
+            copy($this->templatePath . 'img/glyphicons-halflings-white.png', $dir . 'glyphicons-halflings-white.png');
         }
     }

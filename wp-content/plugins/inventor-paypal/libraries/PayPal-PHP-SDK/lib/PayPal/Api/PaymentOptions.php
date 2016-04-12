@@ -5,15 +5,14 @@
 
     /**
      * Class PaymentOptions
-     * Payment options requested for this purchase unit
-     * @package PayPal\Api
+     * Payment options requested for this purchase unit.
      * @property string allowed_payment_method
      */
     class PaymentOptions extends PayPalModel
     {
         /**
          * Optional payment method type. If specified, the transaction will go through for only instant payment. Only for use with the paypal payment_method, not relevant for the credit_card payment_method.
-         * Valid Values: ["UNRESTRICTED", "INSTANT_FUNDING_SOURCE", "IMMEDIATE_PAY"]
+         * Valid Values: ["UNRESTRICTED", "INSTANT_FUNDING_SOURCE", "IMMEDIATE_PAY"].
          *
          * @param string $allowed_payment_method
          *
@@ -27,7 +26,7 @@
         }
 
         /**
-         * Indicator if this payment request is a recurring payment. Only supported when the `payment_method` is set to `credit_card`
+         * Indicator if this payment request is a recurring payment. Only supported when the `payment_method` is set to `credit_card`.
          * @deprecated Not publicly available
          *
          * @param bool $recurring_flag
@@ -42,7 +41,7 @@
         }
 
         /**
-         * Indicator if fraud management filters (fmf) should be skipped for this transaction. Only supported when the `payment_method` is set to `credit_card`
+         * Indicator if fraud management filters (fmf) should be skipped for this transaction. Only supported when the `payment_method` is set to `credit_card`.
          * @deprecated Not publicly available
          *
          * @param bool $skip_fmf
@@ -66,7 +65,7 @@
         }
 
         /**
-         * Indicator if this payment request is a recurring payment. Only supported when the `payment_method` is set to `credit_card`
+         * Indicator if this payment request is a recurring payment. Only supported when the `payment_method` is set to `credit_card`.
          * @deprecated Not publicly available
          * @return bool
          */
@@ -76,7 +75,7 @@
         }
 
         /**
-         * Indicator if fraud management filters (fmf) should be skipped for this transaction. Only supported when the `payment_method` is set to `credit_card`
+         * Indicator if fraud management filters (fmf) should be skipped for this transaction. Only supported when the `payment_method` is set to `credit_card`.
          * @deprecated Not publicly available
          * @return bool
          */
@@ -84,5 +83,4 @@
         {
             return $this->skip_fmf;
         }
-
     }

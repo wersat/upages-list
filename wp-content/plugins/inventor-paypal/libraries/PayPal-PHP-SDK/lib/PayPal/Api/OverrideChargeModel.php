@@ -6,7 +6,6 @@
     /**
      * Class OverrideChargeModel
      * A resource representing an override_charge_model to be used during creation of the agreement.
-     * @package PayPal\Api
      * @property string               charge_id
      * @property \PayPal\Api\Currency amount
      */
@@ -57,5 +56,4 @@
         {
             return $this->amount;
         }
-
     }

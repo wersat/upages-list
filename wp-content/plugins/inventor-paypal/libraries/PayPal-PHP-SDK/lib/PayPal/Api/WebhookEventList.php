@@ -5,8 +5,7 @@
 
     /**
      * Class WebhookEventList
-     * List of Webhooks event resources
-     * @package PayPal\Api
+     * List of Webhooks event resources.
      * @property \PayPal\Api\WebhookEvent[] events
      * @property int                        count
      * @property \PayPal\Api\Links[]        links
@@ -44,7 +43,7 @@
         }
 
         /**
-         * A list of Webhooks event resources
+         * A list of Webhooks event resources.
          * @return \PayPal\Api\WebhookEvent[]
          */
         public function getEvents()
@@ -53,7 +52,7 @@
         }
 
         /**
-         * A list of Webhooks event resources
+         * A list of Webhooks event resources.
          *
          * @param \PayPal\Api\WebhookEvent[] $events
          *
@@ -104,7 +103,7 @@
         }
 
         /**
-         * Gets Links
+         * Gets Links.
          * @return \PayPal\Api\Links[]
          */
         public function getLinks()
@@ -113,7 +112,7 @@
         }
 
         /**
-         * Sets Links
+         * Sets Links.
          *
          * @param \PayPal\Api\Links[] $links
          *
@@ -137,5 +136,4 @@
         {
             return $this->setLinks(array_diff($this->getLinks(), [$links]));
         }
-
     }

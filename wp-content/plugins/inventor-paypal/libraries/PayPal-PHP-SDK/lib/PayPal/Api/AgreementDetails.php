@@ -6,7 +6,6 @@
     /**
      * Class AgreementDetails
      * A resource representing the agreement details.
-     * @package PayPal\Api
      * @property \PayPal\Api\Currency outstanding_balance
      * @property string               cycles_remaining
      * @property string               cycles_completed
@@ -201,5 +200,4 @@
         {
             return $this->failed_payment_count;
         }
-
     }

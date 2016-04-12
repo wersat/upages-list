@@ -4,17 +4,14 @@
     }
 
     /**
-     * Class Inventor_Properties_Taxonomy_Property_Types
+     * Class Inventor_Properties_Taxonomy_Property_Types.
      * @class   Inventor_Properties_Taxonomy_Property_Types
-     * @package Inventor/Classes/Taxonomies
      * @author  Pragmatic Mates
      */
     class Inventor_Properties_Taxonomy_Property_Types
     {
         /**
-         * Initialize taxonomy
-         * @access public
-         * @return void
+         * Initialize taxonomy.
          */
         public static function init()
         {
@@ -23,9 +20,7 @@
         }
 
         /**
-         * Widget definition
-         * @access public
-         * @return void
+         * Widget definition.
          */
         public static function definition()
         {
@@ -49,7 +44,7 @@
                 'query_var'         => 'property-type',
                 'rewrite'           => [
                     'slug'         => _x('property-type', 'URL slug', 'inventor-properties'),
-                    'hierarchical' => true
+                    'hierarchical' => true,
                 ],
                 'public'            => true,
                 'show_ui'           => true,
@@ -61,8 +56,7 @@
         }
 
         /**
-         * Set active menu for taxonomy property type
-         * @access public
+         * Set active menu for taxonomy property type.
          * @return string
          */
         public static function menu($parent_file)

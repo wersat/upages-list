@@ -63,7 +63,7 @@
             $attributeName          = '_variable';
             $object                 = new stdClass();
             $object->$attributeName = 'Test';
-            $actual = PHPUnit_Util_Class::getObjectAttribute($object, $attributeName);
+            $actual                 = PHPUnit_Util_Class::getObjectAttribute($object, $attributeName);
             $this->assertEquals('Test', $actual);
         }
     }

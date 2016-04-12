@@ -9,19 +9,18 @@
      * Text Domain: inventor-watchdogs
      * Domain Path: /languages/
      * License: GNU General Public License v3.0
-     * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+     * License URI: http://www.gnu.org/licenses/gpl-3.0.html.
      */
     if ( ! class_exists('Inventor_Watchdogs') && class_exists('Inventor')) {
         /**
-         * Class Inventor_Watchdogs
-         * @class   Inventor_Watchdogs
-         * @package Inventor_Watchdogs
-         * @author  Pragmatic Mates
+         * Class Inventor_Watchdogs.
+         * @class  Inventor_Watchdogs
+         * @author Pragmatic Mates
          */
         final class Inventor_Watchdogs
         {
             /**
-             * Initialize Inventor_Watchdogs plugin
+             * Initialize Inventor_Watchdogs plugin.
              */
             public function __construct()
             {
@@ -32,18 +31,14 @@
             }
 
             /**
-             * Initialize watchdogs functionality
-             * @access public
-             * @return void
+             * Initialize watchdogs functionality.
              */
             public static function init()
             {
             }
 
             /**
-             * Defines constants
-             * @access public
-             * @return void
+             * Defines constants.
              */
             public function constants()
             {
@@ -53,9 +48,7 @@
             }
 
             /**
-             * Include classes
-             * @access public
-             * @return void
+             * Include classes.
              */
             public function includes()
             {
@@ -66,9 +59,7 @@
             }
 
             /**
-             * Loads localization files
-             * @access public
-             * @return void
+             * Loads localization files.
              */
             public function load_plugin_textdomain()
             {

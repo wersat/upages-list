@@ -8,7 +8,6 @@
     /**
      * Class PaymentInstruction
      * Contain details of how and when the payment should be made to PayPal in cases of manual bank transfer.
-     * @package PayPal\Api
      * @property string                                  reference_number
      * @property string                                  instruction_type
      * @property \PayPal\Api\RecipientBankingInstruction recipient_banking_instruction
@@ -20,7 +19,7 @@
     class PaymentInstruction extends PayPalResourceModel
     {
         /**
-         * ID of payment instruction
+         * ID of payment instruction.
          *
          * @param string $reference_number
          *
@@ -34,7 +33,7 @@
         }
 
         /**
-         * ID of payment instruction
+         * ID of payment instruction.
          * @return string
          */
         public function getReferenceNumber()
@@ -44,7 +43,7 @@
 
         /**
          * Type of payment instruction
-         * Valid Values: ["MANUAL_BANK_TRANSFER", "PAY_UPON_INVOICE"]
+         * Valid Values: ["MANUAL_BANK_TRANSFER", "PAY_UPON_INVOICE"].
          *
          * @param string $instruction_type
          *
@@ -58,7 +57,7 @@
         }
 
         /**
-         * Type of payment instruction
+         * Type of payment instruction.
          * @return string
          */
         public function getInstructionType()
@@ -90,7 +89,7 @@
         }
 
         /**
-         * Amount to be transferred
+         * Amount to be transferred.
          *
          * @param \PayPal\Api\Currency $amount
          *
@@ -104,7 +103,7 @@
         }
 
         /**
-         * Amount to be transferred
+         * Amount to be transferred.
          * @return \PayPal\Api\Currency
          */
         public function getAmount()
@@ -113,7 +112,7 @@
         }
 
         /**
-         * Date by which payment should be received
+         * Date by which payment should be received.
          *
          * @param string $payment_due_date
          *
@@ -127,7 +126,7 @@
         }
 
         /**
-         * Date by which payment should be received
+         * Date by which payment should be received.
          * @return string
          */
         public function getPaymentDueDate()
@@ -136,7 +135,7 @@
         }
 
         /**
-         * Additional text regarding payment handling
+         * Additional text regarding payment handling.
          *
          * @param string $note
          *
@@ -150,7 +149,7 @@
         }
 
         /**
-         * Additional text regarding payment handling
+         * Additional text regarding payment handling.
          * @return string
          */
         public function getNote()
@@ -170,13 +169,12 @@
         public static function get($paymentId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($paymentId, 'paymentId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/payment/$paymentId/payment-instruction", "GET", $payLoad, null,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/payment/$paymentId/payment-instruction", 'GET', $payLoad, null,
                 $apiContext, $restCall);
-            $ret     = new PaymentInstruction();
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

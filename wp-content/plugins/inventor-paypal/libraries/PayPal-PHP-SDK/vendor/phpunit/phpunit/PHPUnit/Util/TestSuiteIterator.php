@@ -115,7 +115,6 @@
 
         /**
          * Moves forward to next element.
-
          */
         public function next()
         {
@@ -124,7 +123,6 @@
 
         /**
          * Rewinds the Iterator to the first element.
-
          */
         public function rewind()
         {

@@ -5,8 +5,7 @@
 
     /**
      * Class CreditCardHistory
-     * A list of Credit Card Resources
-     * @package PayPal\Api
+     * A list of Credit Card Resources.
      * @property \PayPal\Api\CreditCard[] credit_cards
      * @property int                      count
      * @property string                   next_id
@@ -14,7 +13,7 @@
     class CreditCardHistory extends PayPalModel
     {
         /**
-         * A list of credit card resources
+         * A list of credit card resources.
          *
          * @param \PayPal\Api\CreditCard[] $credit_cards
          *
@@ -22,7 +21,7 @@
          */
         public function setCreditCards($credit_cards)
         {
-            $this->{"credit-cards"} = $credit_cards;
+            $this->{'credit-cards'} = $credit_cards;
 
             return $this;
         }
@@ -56,12 +55,12 @@
         }
 
         /**
-         * A list of credit card resources
+         * A list of credit card resources.
          * @return \PayPal\Api\CreditCard
          */
         public function getCreditCards()
         {
-            return $this->{"credit-cards"};
+            return $this->{'credit-cards'};
         }
 
         /**
@@ -81,5 +80,4 @@
         {
             return $this->next_id;
         }
-
     }

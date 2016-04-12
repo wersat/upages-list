@@ -29,7 +29,7 @@
                 null,
                 false
             ];
-            $invocation = new PHPUnit_Framework_MockObject_Invocation_Static('FooClass', 'FooMethod',
+            $invocation         = new PHPUnit_Framework_MockObject_Invocation_Static('FooClass', 'FooMethod',
                 $expectedParameters);
             $this->assertSame($expectedParameters, $invocation->parameters);
         }
@@ -38,7 +38,7 @@
         {
             $parameters   = [new StdClass];
             $cloneObjects = true;
-            $invocation = new PHPUnit_Framework_MockObject_Invocation_Static('FooClass', 'FooMethod', $parameters,
+            $invocation   = new PHPUnit_Framework_MockObject_Invocation_Static('FooClass', 'FooMethod', $parameters,
                 $cloneObjects);
             $this->assertEquals($parameters, $invocation->parameters);
             $this->assertNotSame($parameters, $invocation->parameters);

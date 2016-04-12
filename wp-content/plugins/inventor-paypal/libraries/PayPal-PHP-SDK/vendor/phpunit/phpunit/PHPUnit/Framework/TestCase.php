@@ -397,7 +397,7 @@
          */
         public function toString()
         {
-            $class = new ReflectionClass($this);
+            $class  = new ReflectionClass($this);
             $buffer = sprintf('%s::%s', $class->name, $this->getName(false));
 
             return $buffer . $this->getDataSetAsString();
@@ -533,9 +533,9 @@
                 return;
             }
             if ($this->runTestInSeparateProcess === true && $this->inIsolation !== true && ! $this instanceof PHPUnit_Extensions_SeleniumTestCase && ! $this instanceof PHPUnit_Extensions_PhptTestCase) {
-                $class = new ReflectionClass($this);
+                $class    = new ReflectionClass($this);
                 $template = new Text_Template(sprintf('%s%sProcess%sTestCaseMethod.tpl', __DIR__, DIRECTORY_SEPARATOR,
-                        DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR));
+                    DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR));
                 if ($this->preserveGlobalState) {
                     $constants     = PHPUnit_Util_GlobalState::getConstantsAsString();
                     $globals       = PHPUnit_Util_GlobalState::getGlobalsAsString();
@@ -574,21 +574,21 @@
                 $dependencyInput = "'." . $dependencyInput . ".'";
                 $includePath     = "'." . $includePath . ".'";
                 $template->setVar([
-                        'composerAutoload'               => $composerAutoload,
-                        'phar'                           => $phar,
-                        'filename'                       => $class->getFileName(),
-                        'className'                      => $class->getName(),
-                        'methodName'                     => $this->name,
-                        'collectCodeCoverageInformation' => $coverage,
-                        'data'                           => $data,
-                        'dataName'                       => $this->dataName,
-                        'dependencyInput'                => $dependencyInput,
-                        'constants'                      => $constants,
-                        'globals'                        => $globals,
-                        'include_path'                   => $includePath,
-                        'included_files'                 => $includedFiles,
-                        'strict'                         => $strict
-                    ]);
+                    'composerAutoload'               => $composerAutoload,
+                    'phar'                           => $phar,
+                    'filename'                       => $class->getFileName(),
+                    'className'                      => $class->getName(),
+                    'methodName'                     => $this->name,
+                    'collectCodeCoverageInformation' => $coverage,
+                    'data'                           => $data,
+                    'dataName'                       => $this->dataName,
+                    'dependencyInput'                => $dependencyInput,
+                    'constants'                      => $constants,
+                    'globals'                        => $globals,
+                    'include_path'                   => $includePath,
+                    'included_files'                 => $includedFiles,
+                    'strict'                         => $strict
+                ]);
                 $this->prepareTemplate($template);
                 $php = PHPUnit_Util_PHP::factory();
                 $php->runJob($template->render(), $this, $result);
@@ -694,7 +694,7 @@
                     if ( ! isset($passedKeys[$dependency])) {
                         $this->result->addError($this,
                             new PHPUnit_Framework_SkippedTestError(sprintf('This test depends on "%s" to pass.',
-                                    $dependency)), 0);
+                                $dependency)), 0);
 
                         return false;
                     }
@@ -1015,7 +1015,6 @@
         /**
          * Sets up the fixture, for example, open a network connection.
          * This method is called before a test is executed.
-
          */
         protected function setUp()
         {
@@ -1238,7 +1237,7 @@
                 $this->iniSettings[$varName] = $currentValue;
             } else {
                 throw new PHPUnit_Framework_Exception(sprintf('INI setting "%s" could not be set to "%s".', $varName,
-                        $newValue));
+                    $newValue));
             }
         }
 
@@ -1258,8 +1257,8 @@
             if (count($args) < 2) {
                 throw new PHPUnit_Framework_Exception;
             }
-            $category = $args[0];
-            $locale   = $args[1];
+            $category   = $args[0];
+            $locale     = $args[1];
             $categories = [
                 LC_ALL,
                 LC_COLLATE,
@@ -1278,7 +1277,7 @@
                 throw new PHPUnit_Framework_Exception;
             }
             $this->locale[$category] = setlocale($category, null);
-            $result = call_user_func_array('setlocale', $args);
+            $result                  = call_user_func_array('setlocale', $args);
             if ($result === false) {
                 throw new PHPUnit_Framework_Exception('The locale functionality is not implemented on your platform, ' . 'the specified locale does not exist or the category name is ' . 'invalid.');
             }
@@ -1358,8 +1357,9 @@
             $callAutoload = true,
             $cloneArguments = false
         ) {
-            $mockObject = PHPUnit_Framework_MockObject_Generator::getMock($originalClassName, $methods, $arguments,
-                $mockClassName, $callOriginalConstructor, $callOriginalClone, $callAutoload, $cloneArguments);
+            $mockObject          = PHPUnit_Framework_MockObject_Generator::getMock($originalClassName, $methods,
+                $arguments, $mockClassName, $callOriginalConstructor, $callOriginalClone, $callAutoload,
+                $cloneArguments);
             $this->mockObjects[] = $mockObject;
 
             return $mockObject;
@@ -1393,7 +1393,7 @@
             $mockedMethods = [],
             $cloneArguments = false
         ) {
-            $mockObject = PHPUnit_Framework_MockObject_Generator::getMockForAbstractClass($originalClassName,
+            $mockObject          = PHPUnit_Framework_MockObject_Generator::getMockForAbstractClass($originalClassName,
                 $arguments, $mockClassName, $callOriginalConstructor, $callOriginalClone, $callAutoload, $mockedMethods,
                 $cloneArguments);
             $this->mockObjects[] = $mockObject;

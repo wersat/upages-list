@@ -2,14 +2,12 @@
     namespace PayPal\Exception;
 
     /**
-     * Class PayPalMissingCredentialException
-     * @package PayPal\Exception
+     * Class PayPalMissingCredentialException.
      */
     class PayPalMissingCredentialException extends \Exception
     {
-
         /**
-         * Default Constructor
+         * Default Constructor.
          *
          * @param string $message
          * @param int    $code
@@ -20,7 +18,7 @@
         }
 
         /**
-         * prints error message
+         * prints error message.
          * @return string
          */
         public function errorMessage()
@@ -30,5 +28,4 @@
 
             return $errorMsg;
         }
-
     }

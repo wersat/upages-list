@@ -4,19 +4,17 @@
     /**
      * Class PayPalConfigManager
      * PayPalConfigManager loads the SDK configuration file and
-     * hands out appropriate config params to other classes
-     * @package PayPal\Core
+     * hands out appropriate config params to other classes.
      */
     class PayPalConfigManager
     {
-
         /**
-         * Singleton Object
-         * @var $this
+         * Singleton Object.
+         * @var
          */
         private static $instance;
         /**
-         * Configuration Options
+         * Configuration Options.
          * @var array
          */
         private $configs
@@ -24,14 +22,14 @@
             ];
 
         /**
-         * Private Constructor
+         * Private Constructor.
          */
         private function __construct()
         {
             if (defined('PP_CONFIG_PATH')) {
                 $configFile = constant('PP_CONFIG_PATH') . '/sdk_config.ini';
             } else {
-                $configFile = implode(DIRECTORY_SEPARATOR, [__FILE__, "..", "config", "sdk_config.ini"]);
+                $configFile = implode(DIRECTORY_SEPARATOR, [__FILE__, '..', 'config', 'sdk_config.ini']);
             }
             if (file_exists($configFile)) {
                 $this->addConfigFromIni($configFile);
@@ -39,7 +37,7 @@
         }
 
         /**
-         * Add Configuration from configuration.ini files
+         * Add Configuration from configuration.ini files.
          *
          * @param string $fileName
          *
@@ -71,7 +69,7 @@
         }
 
         /**
-         * Returns the singleton object
+         * Returns the singleton object.
          * @return $this
          */
         public static function getInstance()
@@ -86,7 +84,7 @@
         /**
          * Simple getter for configuration params
          * If an exact match for key is not found,
-         * does a "contains" search on the key
+         * does a "contains" search on the key.
          *
          * @param string $searchKey
          *
@@ -106,14 +104,13 @@
 
                 return $arr;
             }
-
         }
 
         /**
          * Utility method for handling account configuration
          * return config key corresponding to the API userId passed in
          * If $userId is null, returns config keys corresponding to
-         * all configured accounts
+         * all configured accounts.
          *
          * @param string|null $userId
          *
@@ -125,7 +122,7 @@
                 $arr = [];
                 foreach ($this->configs as $key => $value) {
                     $pos = strpos($key, '.');
-                    if (strstr($key, "acct")) {
+                    if (strstr($key, 'acct')) {
                         $arr[] = substr($key, 0, $pos);
                     }
                 }
@@ -141,7 +138,7 @@
         }
 
         /**
-         * returns the config file hashmap
+         * returns the config file hashmap.
          */
         public function getConfigHashmap()
         {
@@ -149,13 +146,10 @@
         }
 
         /**
-         * Disabling __clone call
+         * Disabling __clone call.
          */
         public function __clone()
         {
             trigger_error('Clone is not allowed.', E_USER_ERROR);
         }
-
     }
-
-    

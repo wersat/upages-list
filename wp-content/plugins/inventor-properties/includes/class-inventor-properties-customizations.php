@@ -4,17 +4,12 @@
     }
 
     /**
-     * Class Inventor_Properties_Customizations
-     * @access  public
-     * @package Inventor_Properties/Classes/Customizations
-     * @return void
+     * Class Inventor_Properties_Customizations.
      */
     class Inventor_Properties_Customizations
     {
         /**
-         * Initialize customizations
-         * @access public
-         * @return void
+         * Initialize customizations.
          */
         public static function init()
         {
@@ -22,9 +17,7 @@
         }
 
         /**
-         * Include all customizations
-         * @access public
-         * @return void
+         * Include all customizations.
          */
         public static function includes()
         {

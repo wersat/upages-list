@@ -76,7 +76,7 @@
                 'phpunit_framework_mockobject_stub_returnvaluemap'         => '/Framework/MockObject/Stub/ReturnValueMap.php',
                 'phpunit_framework_mockobject_verifiable'                  => '/Framework/MockObject/Verifiable.php'
             ];
-            $path = dirname(dirname(dirname(__FILE__)));
+            $path    = dirname(dirname(dirname(__FILE__)));
         }
         $cn = strtolower($class);
         if (isset($classes[$cn])) {

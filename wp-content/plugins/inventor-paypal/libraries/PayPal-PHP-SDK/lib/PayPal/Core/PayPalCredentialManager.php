@@ -7,12 +7,11 @@
     /**
      * Class PayPalCredentialManager
      * PayPalCredentialManager holds all the credential information in one place.
-     * @package PayPal\Core
      */
     class PayPalCredentialManager
     {
         /**
-         * Singleton Object
+         * Singleton Object.
          * @var PayPalCredentialManager
          */
         private static $instance;
@@ -25,13 +24,13 @@
 
         /**
          * Contains the API username of the default account to use
-         * when authenticating API calls
+         * when authenticating API calls.
          * @var string
          */
         private $defaultAccountName;
 
         /**
-         * Constructor initialize credential for multiple accounts specified in property file
+         * Constructor initialize credential for multiple accounts specified in property file.
          *
          * @param $config
          *
@@ -55,29 +54,29 @@
         private function initCredential($config)
         {
             $suffix = 1;
-            $prefix = "acct";
-            $arr = [];
+            $prefix = 'acct';
+            $arr    = [];
             foreach ($config as $k => $v) {
                 if (strstr($k, $prefix)) {
                     $arr[$k] = $v;
                 }
             }
             $credArr = $arr;
-            $arr = [];
+            $arr     = [];
             foreach ($config as $key => $value) {
                 $pos = strpos($key, '.');
-                if (strstr($key, "acct")) {
+                if (strstr($key, 'acct')) {
                     $arr[] = substr($key, 0, $pos);
                 }
             }
             $arrayPartKeys = array_unique($arr);
-            $key      = $prefix . $suffix;
-            $userName = null;
+            $key           = $prefix . $suffix;
+            $userName      = null;
             while (in_array($key, $arrayPartKeys)) {
-                if (isset($credArr[$key . ".ClientId"]) && isset($credArr[$key . ".ClientId"])) {
+                if (isset($credArr[$key . '.ClientId']) && isset($credArr[$key . '.ClientId'])) {
                     $userName                           = $key;
-                    $this->credentialHashmap[$userName] = new OAuthTokenCredential($credArr[$key . ".ClientId"],
-                        $credArr[$key . ".ClientSecret"]);
+                    $this->credentialHashmap[$userName] = new OAuthTokenCredential($credArr[$key . '.ClientId'],
+                        $credArr[$key . '.ClientSecret']);
                 }
                 if ($userName && $this->defaultAccountName == null) {
                     if (array_key_exists($key . '.UserName', $credArr)) {
@@ -86,14 +85,13 @@
                         $this->defaultAccountName = $key;
                     }
                 }
-                $suffix++;
+                ++$suffix;
                 $key = $prefix . $suffix;
             }
-
         }
 
         /**
-         * Sets credential object for users
+         * Sets credential object for users.
          *
          * @param \PayPal\Auth\OAuthTokenCredential $credential
          * @param string|null                       $userId  User Id associated with the account
@@ -141,23 +139,22 @@
         {
             if ($userId == null && array_key_exists($this->defaultAccountName, $this->credentialHashmap)) {
                 $credObj = $this->credentialHashmap[$this->defaultAccountName];
-            } else if (array_key_exists($userId, $this->credentialHashmap)) {
+            } elseif (array_key_exists($userId, $this->credentialHashmap)) {
                 $credObj = $this->credentialHashmap[$userId];
             }
             if (empty($credObj)) {
-                throw new PayPalInvalidCredentialException("Credential not found for " . ($userId ? $userId
-                        : " default user") . ". Please make sure your configuration/APIContext has credential information");
+                throw new PayPalInvalidCredentialException('Credential not found for ' . ($userId ? $userId
+                        : ' default user') . '. Please make sure your configuration/APIContext has credential information');
             }
 
             return $credObj;
         }
 
         /**
-         * Disabling __clone call
+         * Disabling __clone call.
          */
         public function __clone()
         {
             trigger_error('Clone is not allowed.', E_USER_ERROR);
         }
-
     }

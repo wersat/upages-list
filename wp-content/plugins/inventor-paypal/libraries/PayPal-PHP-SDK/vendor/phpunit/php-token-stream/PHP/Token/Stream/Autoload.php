@@ -202,7 +202,7 @@
                 'php_tokenwithscope'                 => '/Token.php',
                 'php_tokenwithscopeandvisibility'    => '/Token.php'
             ];
-            $path = dirname(dirname(dirname(__FILE__)));
+            $path    = dirname(dirname(dirname(__FILE__)));
         }
         $cn = strtolower($class);
         if (isset($classes[$cn])) {

@@ -11,6 +11,6 @@
           </li>
         <?php endforeach; ?>
       </ul>
-    </div>
-  </div>
+    </div><!-- /.listing-detail-job-skills -->
+  </div><!-- /.listing-detail-section -->
 <?php endif; ?>

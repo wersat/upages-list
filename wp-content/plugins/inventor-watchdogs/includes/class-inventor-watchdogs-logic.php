@@ -4,17 +4,14 @@
     }
 
     /**
-     * Class Inventor_Watchdogs_Logic
+     * Class Inventor_Watchdogs_Logic.
      * @class   Inventor_Watchdogs_Logic
-     * @package Inventor_Watchdogs/Classes
      * @author  Pragmatic Mates
      */
     class Inventor_Watchdogs_Logic
     {
         /**
-         * Initialize Watchdogs functionality
-         * @access public
-         * @return void
+         * Initialize Watchdogs functionality.
          */
         public static function init()
         {
@@ -25,8 +22,7 @@
         }
 
         /**
-         * Returns name of lookup key
-         * @access public
+         * Returns name of lookup key.
          *
          * @param $key string
          *
@@ -41,8 +37,7 @@
         }
 
         /**
-         * Returns display lookup value
-         * @access public
+         * Returns display lookup value.
          *
          * @param $key   string
          * @param $value string
@@ -56,7 +51,7 @@
                 if ($term) {
                     return $term->name;
                 }
-            } else if ($key == 'filter-listing_categories') {
+            } elseif ($key == 'filter-listing_categories') {
                 $term = get_term($value, 'listing_categories');
                 if ($term) {
                     return $term->name;
@@ -67,9 +62,7 @@
         }
 
         /**
-         * Adds new watchdog
-         * @access public
-         * @return void
+         * Adds new watchdog.
          */
         public static function add_watchdog()
         {
@@ -77,7 +70,7 @@
                 return;
             }
             unset($_GET['watchdog-add']);
-            $result = self::save_search_query_watchdog($_GET);
+            $result                 = self::save_search_query_watchdog($_GET);
             $message_level          = $result['success'] ? 'success' : 'danger';
             $_SESSION['messages'][] = [$message_level, $result['message']];
             wp_redirect($result['redirect_url']);
@@ -85,8 +78,7 @@
         }
 
         /**
-         * Saves search query watchdog
-         * @access public
+         * Saves search query watchdog.
          *
          * @param $params array
          *
@@ -98,7 +90,7 @@
             $config       = self::get_config();
             $redirect_url = '?' . http_build_query($params);
             $result       = [
-                'redirect_url' => $redirect_url
+                'redirect_url' => $redirect_url,
             ];
             if ( ! $config['search_queries_enabled']) {
                 $result['success'] = false;
@@ -116,7 +108,7 @@
             }
             if (self::is_my_watchdog($type, $lookup)) {
                 $result['success'] = false;
-                $result['message'] = __("You already watch this search query.", 'inventor-watchdogs');
+                $result['message'] = __('You already watch this search query.', 'inventor-watchdogs');
 
                 return $result;
             }
@@ -124,29 +116,27 @@
             // save watchdog
             self::save_watchdog($type, $lookup, $value, get_current_user_id());
             $result['success'] = true;
-            $result['message'] = __("Watchdog saved.", 'inventor-watchdogs');
+            $result['message'] = __('Watchdog saved.', 'inventor-watchdogs');
 
             return $result;
         }
 
         /**
-         * Gets config
-         * @access public
+         * Gets config.
          * @return array|bool
          */
         public static function get_config()
         {
             $search_queries_enabled = get_theme_mod('inventor_watchdogs_enable_search_queries', false);
-            $config = [
-                "search_queries_enabled" => $search_queries_enabled,
+            $config                 = [
+                'search_queries_enabled' => $search_queries_enabled,
             ];
 
             return $config;
         }
 
         /**
-         * Returns search/filter query array built from $_GET params
-         * @access public
+         * Returns search/filter query array built from $_GET params.
          *
          * @param $params array
          *
@@ -170,8 +160,7 @@
         }
 
         /**
-         * Checks if user already has watchdog
-         * @access public
+         * Checks if user already has watchdog.
          *
          * @param $type   string
          * @param $lookup array
@@ -185,12 +174,11 @@
             }
             $watchdog = self::get_watchdog($type, $lookup, get_current_user_id());
 
-            return ( ! empty($watchdog));
+            return ! empty($watchdog);
         }
 
         /**
-         * Returns watchdog by type, lookup and user
-         * @access public
+         * Returns watchdog by type, lookup and user.
          *
          * @param $type    string
          * @param $lookup  array
@@ -215,19 +203,18 @@
                     [
                         'key'   => INVENTOR_WATCHDOG_PREFIX . 'lookup',
                         'value' => serialize($lookup),
-                    ]
-                ]
+                    ],
+                ],
             ]);
             if ($wp_query->post_count <= 0) {
-                return null;
+                return;
             }
 
             return $wp_query->posts[0];
         }
 
         /**
-         * Cleans array of empty values
-         * @access public
+         * Cleans array of empty values.
          *
          * @param $input array
          *
@@ -246,8 +233,7 @@
         }
 
         /**
-         * Returns value for watchdog by its type and lookup
-         * @access public
+         * Returns value for watchdog by its type and lookup.
          *
          * @param $type   string
          * @param $lookup array
@@ -264,7 +250,7 @@
                     $post_type = $lookup['post-type'];
                 }
                 unset($lookup['post-type']);
-                $args = [
+                $args  = [
                     'post_type'      => $post_type,
                     'post_status'    => 'publish',
                     'posts_per_page' => -1,
@@ -279,8 +265,7 @@
         }
 
         /**
-         * Saves watchdog
-         * @access public
+         * Saves watchdog.
          *
          * @param $type    string
          * @param $lookup  array
@@ -294,7 +279,7 @@
             $watchdog_id = wp_insert_post([
                 'post_type'   => 'watchdog',
                 'post_status' => 'publish',
-                'post_author' => $user_id
+                'post_author' => $user_id,
             ]);
             update_post_meta($watchdog_id, INVENTOR_WATCHDOG_PREFIX . 'type', $type);
             update_post_meta($watchdog_id, INVENTOR_WATCHDOG_PREFIX . 'lookup', $lookup);
@@ -304,9 +289,7 @@
         }
 
         /**
-         * Removes existing watchdog
-         * @access public
-         * @return void
+         * Removes existing watchdog.
          */
         public static function remove_watchdog()
         {
@@ -318,14 +301,14 @@
                 $watchdog = get_post($_GET['id']);
                 if (empty($watchdog)) {
                     $_SESSION['messages'][] = ['danger', __('Watchdog does not exist!', 'inventor-watchdogs')];
-                } else if ($watchdog->post_author != get_current_user_id()) {
+                } elseif ($watchdog->post_author != get_current_user_id()) {
                     $_SESSION['messages'][] = ['danger', __('It is not your watchdog!', 'inventor-watchdogs')];
                 } else {
                     wp_delete_post($_GET['id']);
-                    $_SESSION['messages'][] = ['success', __("Watchdog deleted.", 'inventor-watchdogs')];
+                    $_SESSION['messages'][] = ['success', __('Watchdog deleted.', 'inventor-watchdogs')];
                 }
             } else {
-                $result = self::remove_search_query_watchdog($_GET);
+                $result                 = self::remove_search_query_watchdog($_GET);
                 $message_level          = $result['success'] ? 'success' : 'danger';
                 $_SESSION['messages'][] = [$message_level, $result['message']];
                 wp_redirect($result['redirect_url']);
@@ -334,8 +317,7 @@
         }
 
         /**
-         * Removes search query watchdog
-         * @access public
+         * Removes search query watchdog.
          *
          * @param $params array
          *
@@ -345,10 +327,11 @@
         {
             $redirect_url = '?' . http_build_query($params);
             $result       = [
-                'redirect_url' => $redirect_url
+                'redirect_url' => $redirect_url,
             ];
             $search_query = self::get_search_query($params);
-            $watchdog = self::get_watchdog(INVENTOR_WATCHDOG_TYPE_SEARCH_QUERY, $search_query, get_current_user_id());
+            $watchdog     = self::get_watchdog(INVENTOR_WATCHDOG_TYPE_SEARCH_QUERY, $search_query,
+                get_current_user_id());
             if (empty($watchdog)) {
                 $result['success'] = false;
                 $result['message'] = __("You don't watch this search query.", 'inventor-watchdogs');
@@ -358,14 +341,13 @@
             // delete watchdog
             wp_delete_post($watchdog->ID);
             $result['success'] = true;
-            $result['message'] = __("Watchdog deleted.", 'inventor-watchdogs');
+            $result['message'] = __('Watchdog deleted.', 'inventor-watchdogs');
 
             return $result;
         }
 
         /**
-         * Gets user watchdogs
-         * @access public
+         * Gets user watchdogs.
          *
          * @param int $user_id
          *
@@ -381,9 +363,7 @@
         }
 
         /**
-         * Sets all user watchdogs into query
-         * @access public
-         * @return void
+         * Sets all user watchdogs into query.
          */
         public static function loop_my_watchdogs()
         {
@@ -397,9 +377,7 @@
         }
 
         /**
-         * Renders watchdog toggle button
-         * @access public
-         * @return void
+         * Renders watchdog toggle button.
          */
         public static function render_watchdog_button($type, $hide_if_anonymous = false)
         {
@@ -416,9 +394,7 @@
         }
 
         /**
-         * Renders watchdog lookup
-         * @access public
-         * @return void
+         * Renders watchdog lookup.
          */
         public static function render_watchdog_lookup($watchdog_id)
         {
@@ -428,9 +404,7 @@
         }
 
         /**
-         * Redirects to watchdog lookup
-         * @access public
-         * @return void
+         * Redirects to watchdog lookup.
          */
         public static function redirect_to_lookup()
         {
@@ -443,8 +417,7 @@
         }
 
         /**
-         * Returns URL of watchdog lookup
-         * @access public
+         * Returns URL of watchdog lookup.
          *
          * @param $watchdog_id int
          *
@@ -462,7 +435,7 @@
                 $redirect_url = $base . '?' . $params;
             } else {
                 // TODO: get lookup post link
-                $redirect_url = get_post_permalink($watchdog_id);;
+                $redirect_url = get_post_permalink($watchdog_id);
             }
 
             return $redirect_url;

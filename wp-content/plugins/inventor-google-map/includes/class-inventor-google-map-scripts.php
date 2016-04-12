@@ -4,14 +4,17 @@
     }
 
     /**
-     * Class Inventor_Google_Map_Scripts.
-     * @class  Inventor_Google_Map_Scripts
-     * @author Pragmatic Mates
+     * Class Inventor_Google_Map_Scripts
+     * @class   Inventor_Google_Map_Scripts
+     * @package Inventor_Google_Map/Classes
+     * @author  Pragmatic Mates
      */
     class Inventor_Google_Map_Scripts
     {
         /**
-         * Initialize scripts.
+         * Initialize scripts
+         * @access public
+         * @return void
          */
         public static function init()
         {
@@ -19,7 +22,9 @@
         }
 
         /**
-         * Loads frontend files.
+         * Loads frontend files
+         * @access public
+         * @return void
          */
         public static function enqueue_frontend()
         {

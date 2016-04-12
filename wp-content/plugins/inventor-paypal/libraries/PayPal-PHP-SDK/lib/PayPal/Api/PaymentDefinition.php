@@ -6,7 +6,6 @@
     /**
      * Class PaymentDefinition
      * Resource representing payment definition scheduling information.
-     * @package PayPal\Api
      * @property string                    id
      * @property string                    name
      * @property string                    type
@@ -229,5 +228,4 @@
         {
             return $this->setChargeModels(array_diff($this->getChargeModels(), [$chargeModel]));
         }
-
     }

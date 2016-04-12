@@ -7,7 +7,6 @@
      */
     class PayPalLoggingLevel
     {
-
         // DEBUG Logging Level
         const DEBUG = 4;
 

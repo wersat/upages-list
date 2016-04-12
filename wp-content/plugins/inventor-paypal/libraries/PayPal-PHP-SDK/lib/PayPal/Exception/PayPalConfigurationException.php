@@ -2,14 +2,12 @@
     namespace PayPal\Exception;
 
     /**
-     * Class PayPalConfigurationException
-     * @package PayPal\Exception
+     * Class PayPalConfigurationException.
      */
     class PayPalConfigurationException extends \Exception
     {
-
         /**
-         * Default Constructor
+         * Default Constructor.
          *
          * @param string|null $message
          * @param int         $code

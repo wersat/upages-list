@@ -6,7 +6,6 @@
     /**
      * Class PayoutSenderBatchHeader
      * This object represents sender-provided data about a batch header. The data is provided in a POST request. All batch submissions must have a batch header.
-     * @package PayPal\Api
      * @property string sender_batch_id
      * @property string email_subject
      * @property string recipient_type
@@ -81,5 +80,4 @@
         {
             return $this->recipient_type;
         }
-
     }

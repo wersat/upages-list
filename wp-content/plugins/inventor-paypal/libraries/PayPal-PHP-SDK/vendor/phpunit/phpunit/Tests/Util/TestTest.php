@@ -67,24 +67,28 @@
                 PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testSeven'));
             $this->assertSame(['class' => 'Class', 'code' => 0, 'message' => 'Message'],
                 PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testEight'));
-            $this->assertSame(['class'   => 'Class',
-                               'code'    => ExceptionTest::ERROR_CODE,
-                               'message' => ExceptionTest::ERROR_MESSAGE
+            $this->assertSame([
+                'class'   => 'Class',
+                'code'    => ExceptionTest::ERROR_CODE,
+                'message' => ExceptionTest::ERROR_MESSAGE
             ], PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testNine'));
             $this->assertSame(['class' => 'Class', 'code' => null, 'message' => ''],
                 PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testSingleLine'));
-            $this->assertSame(['class'   => 'Class',
-                               'code'    => My\Space\ExceptionNamespaceTest::ERROR_CODE,
-                               'message' => My\Space\ExceptionNamespaceTest::ERROR_MESSAGE
+            $this->assertSame([
+                'class'   => 'Class',
+                'code'    => My\Space\ExceptionNamespaceTest::ERROR_CODE,
+                'message' => My\Space\ExceptionNamespaceTest::ERROR_MESSAGE
             ], PHPUnit_Util_Test::getExpectedException('My\Space\ExceptionNamespaceTest', 'testConstants'));
             // Ensure the Class::CONST expression is only evaluated when the constant really exists
-            $this->assertSame(['class'   => 'Class',
-                               'code'    => 'ExceptionTest::UNKNOWN_CODE_CONSTANT',
-                               'message' => 'ExceptionTest::UNKNOWN_MESSAGE_CONSTANT'
+            $this->assertSame([
+                'class'   => 'Class',
+                'code'    => 'ExceptionTest::UNKNOWN_CODE_CONSTANT',
+                'message' => 'ExceptionTest::UNKNOWN_MESSAGE_CONSTANT'
             ], PHPUnit_Util_Test::getExpectedException('ExceptionTest', 'testUnknownConstants'));
-            $this->assertSame(['class'   => 'Class',
-                               'code'    => 'My\Space\ExceptionNamespaceTest::UNKNOWN_CODE_CONSTANT',
-                               'message' => 'My\Space\ExceptionNamespaceTest::UNKNOWN_MESSAGE_CONSTANT'
+            $this->assertSame([
+                'class'   => 'Class',
+                'code'    => 'My\Space\ExceptionNamespaceTest::UNKNOWN_CODE_CONSTANT',
+                'message' => 'My\Space\ExceptionNamespaceTest::UNKNOWN_MESSAGE_CONSTANT'
             ], PHPUnit_Util_Test::getExpectedException('My\Space\ExceptionNamespaceTest', 'testUnknownConstants'));
         }
 

@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class AlternatePayment
+     * Class AlternatePayment.
      * A resource representing a alternate payment account that can be used to fund a payment.
-     * @package PayPal\Api
      * @property string alternate_payment_account_id
      * @property string external_customer_id
      * @property string alternate_payment_provider_id
@@ -28,7 +27,7 @@
         }
 
         /**
-         * The unique identifier of the payer
+         * The unique identifier of the payer.
          *
          * @param string $external_customer_id
          *
@@ -42,7 +41,7 @@
         }
 
         /**
-         * Alternate Payment provider id. This is an optional attribute needed only for certain alternate providers e.g Ideal
+         * Alternate Payment provider id. This is an optional attribute needed only for certain alternate providers e.g Ideal.
          *
          * @param string $alternate_payment_provider_id
          *
@@ -65,7 +64,7 @@
         }
 
         /**
-         * The unique identifier of the payer
+         * The unique identifier of the payer.
          * @return string
          */
         public function getExternalCustomerId()
@@ -74,12 +73,11 @@
         }
 
         /**
-         * Alternate Payment provider id. This is an optional attribute needed only for certain alternate providers e.g Ideal
+         * Alternate Payment provider id. This is an optional attribute needed only for certain alternate providers e.g Ideal.
          * @return string
          */
         public function getAlternatePaymentProviderId()
         {
             return $this->alternate_payment_provider_id;
         }
-
     }

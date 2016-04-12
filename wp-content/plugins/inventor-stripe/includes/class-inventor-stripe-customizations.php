@@ -1,5 +1,5 @@
 <?php
-    if ( ! defined('ABSPATH')) {
+    if (!defined('ABSPATH')) {
         exit;
     }
 
@@ -21,7 +21,7 @@
          */
         public static function includes()
         {
-            require_once INVENTOR_STRIPE_DIR . 'includes/customizations/class-inventor-stripe-customizations-stripe.php';
+            require_once INVENTOR_STRIPE_DIR.'includes/customizations/class-inventor-stripe-customizations-stripe.php';
         }
     }
 

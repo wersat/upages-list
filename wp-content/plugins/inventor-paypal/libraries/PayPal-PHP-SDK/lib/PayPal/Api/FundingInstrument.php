@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class FundingInstrument
+     * Class FundingInstrument.
      * A resource representing a Payer's funding instrument. An instance of this schema is valid if and only if it is valid against exactly one of these supported properties
-     * @package PayPal\Api
      * @property \PayPal\Api\CreditCard      credit_card
      * @property \PayPal\Api\CreditCardToken credit_card_token
      * @property \PayPal\Api\Billing         billing
@@ -147,7 +146,7 @@
         }
 
         /**
-         * Carrier account instrument
+         * Carrier account instrument.
          * @deprecated Not publicly available
          *
          * @param \PayPal\Api\CarrierAccount $carrier_account
@@ -177,7 +176,7 @@
         }
 
         /**
-         * Billing instrument that references pre-approval information for the payment
+         * Billing instrument that references pre-approval information for the payment.
          *
          * @param \PayPal\Api\Billing $billing
          *
@@ -191,7 +190,7 @@
         }
 
         /**
-         * Alternate Payment  information - Mostly regional payment providers. For e.g iDEAL in Netherlands
+         * Alternate Payment  information - Mostly regional payment providers. For e.g iDEAL in Netherlands.
          * @deprecated Not publicly available
          *
          * @param \PayPal\Api\AlternatePayment $alternate_payment
@@ -294,7 +293,7 @@
         }
 
         /**
-         * Carrier account instrument
+         * Carrier account instrument.
          * @deprecated Not publicly available
          * @return \PayPal\Api\CarrierAccount
          */
@@ -314,7 +313,7 @@
         }
 
         /**
-         * Billing instrument that references pre-approval information for the payment
+         * Billing instrument that references pre-approval information for the payment.
          * @return \PayPal\Api\Billing
          */
         public function getBilling()
@@ -323,7 +322,7 @@
         }
 
         /**
-         * Alternate Payment  information - Mostly regional payment providers. For e.g iDEAL in Netherlands
+         * Alternate Payment  information - Mostly regional payment providers. For e.g iDEAL in Netherlands.
          * @deprecated Not publicly available
          * @return \PayPal\Api\AlternatePayment
          */
@@ -331,5 +330,4 @@
         {
             return $this->alternate_payment;
         }
-
     }

@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class Credit
+     * Class Credit.
      * A resource representing a credit instrument.
-     * @package PayPal\Api
      * @property string id
      * @property string type
      */
@@ -28,7 +27,7 @@
 
         /**
          * specifies type of credit
-         * Valid Values: ["BILL_ME_LATER", "PAYPAL_EXTRAS_MASTERCARD", "EBAY_MASTERCARD", "PAYPAL_SMART_CONNECT"]
+         * Valid Values: ["BILL_ME_LATER", "PAYPAL_EXTRAS_MASTERCARD", "EBAY_MASTERCARD", "PAYPAL_SMART_CONNECT"].
          *
          * @param string $type
          *
@@ -51,12 +50,11 @@
         }
 
         /**
-         * specifies type of credit
+         * specifies type of credit.
          * @return string
          */
         public function getType()
         {
             return $this->type;
         }
-
     }

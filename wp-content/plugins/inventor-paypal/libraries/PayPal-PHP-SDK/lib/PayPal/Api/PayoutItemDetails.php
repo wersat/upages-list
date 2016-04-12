@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class PayoutItemDetails
+     * Class PayoutItemDetails.
      * This object contains status and other data for an individual payout of a batch.
-     * @package PayPal\Api
      * @property string                 payout_item_id
      * @property string                 transaction_id
      * @property string                 transaction_status
@@ -133,7 +132,7 @@
         }
 
         /**
-         * Sets Error
+         * Sets Error.
          *
          * @param \PayPal\Api\Error $errors
          *
@@ -219,7 +218,7 @@
         }
 
         /**
-         * Gets Error
+         * Gets Error.
          * @return \PayPal\Api\Error
          */
         public function getErrors()
@@ -244,7 +243,7 @@
         }
 
         /**
-         * Gets Links
+         * Gets Links.
          * @return \PayPal\Api\Links[]
          */
         public function getLinks()
@@ -253,7 +252,7 @@
         }
 
         /**
-         * Sets Links
+         * Sets Links.
          *
          * @param \PayPal\Api\Links[] $links
          *
@@ -277,5 +276,4 @@
         {
             return $this->setLinks(array_diff($this->getLinks(), [$links]));
         }
-
     }

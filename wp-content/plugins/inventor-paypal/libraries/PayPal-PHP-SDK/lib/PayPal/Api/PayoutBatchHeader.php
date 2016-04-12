@@ -6,7 +6,6 @@
     /**
      * Class PayoutBatchHeader
      * This object enables you to get payout header information for an entire batch request. This object represents payout header data, and can be the response to a batch header request.
-     * @package PayPal\Api
      * @property string                              payout_batch_id
      * @property string                              batch_status
      * @property string                              time_created
@@ -118,7 +117,7 @@
         }
 
         /**
-         * Sets Errors
+         * Sets Errors.
          *
          * @param \PayPal\Api\Error $errors
          *
@@ -195,7 +194,7 @@
         }
 
         /**
-         * Gets Errors
+         * Gets Errors.
          * @return \PayPal\Api\Error
          */
         public function getErrors()
@@ -220,7 +219,7 @@
         }
 
         /**
-         * Gets Links
+         * Gets Links.
          * @return \PayPal\Api\Links[]
          */
         public function getLinks()
@@ -229,7 +228,7 @@
         }
 
         /**
-         * Sets Links
+         * Sets Links.
          *
          * @param \PayPal\Api\Links[] $links
          *
@@ -253,5 +252,4 @@
         {
             return $this->setLinks(array_diff($this->getLinks(), [$links]));
         }
-
     }

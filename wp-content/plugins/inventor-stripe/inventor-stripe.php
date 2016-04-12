@@ -11,10 +11,12 @@
      * License: GNU General Public License v3.0
      * License URI: http://www.gnu.org/licenses/gpl-3.0.html.
      */
-    if ( ! class_exists('Inventor_Stripe') && class_exists('Inventor')) {
+    if (!class_exists('Inventor_Stripe') && class_exists('Inventor')) {
         /**
          * Class Inventor_Stripe.
+         *
          * @class  Inventor_Stripe
+         *
          * @author Pragmatic Mates
          */
         final class Inventor_Stripe
@@ -42,8 +44,8 @@
              */
             public function includes()
             {
-                require_once INVENTOR_STRIPE_DIR . 'includes/class-inventor-stripe-customizations.php';
-                require_once INVENTOR_STRIPE_DIR . 'includes/class-inventor-stripe-logic.php';
+                require_once INVENTOR_STRIPE_DIR.'includes/class-inventor-stripe-customizations.php';
+                require_once INVENTOR_STRIPE_DIR.'includes/class-inventor-stripe-logic.php';
             }
 
             /**
@@ -51,7 +53,7 @@
              */
             public function load_plugin_textdomain()
             {
-                load_plugin_textdomain('inventor-stripe', false, plugin_basename(dirname(__FILE__)) . '/languages');
+                load_plugin_textdomain('inventor-stripe', false, plugin_basename(dirname(__FILE__)).'/languages');
             }
         }
 

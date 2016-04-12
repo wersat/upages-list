@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class CarrierAccountToken
+     * Class CarrierAccountToken.
      * A resource representing a carrier account that can be used to fund a payment.
-     * @package PayPal\Api
      * @property string carrier_account_id
      * @property string external_customer_id
      */
@@ -57,5 +56,4 @@
         {
             return $this->external_customer_id;
         }
-
     }

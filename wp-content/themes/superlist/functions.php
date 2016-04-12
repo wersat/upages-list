@@ -10,14 +10,18 @@
      */
     define('POST_EXCERPT_LENGTH', 40);
     define('EXCERPT_LENGTH', 20);
-    define('THEME_LIB_DIR', __DIR__ . '/library');
+    define('LIB_DIR', __DIR__ . '/library');
+
+    define('CLASS_DIR', LIB_DIR . '/class');
+
     define('THEME_TPL_DIR', __DIR__ . '/templates');
+
     define('THEME_WIDGETS_DIR', __DIR__ . '/widgets');
     define('THEME_WIDGETS_TPL_DIR', THEME_WIDGETS_DIR . '/templates');
     /**
      * Libraries
      */
-    require_once get_template_directory() . '/assets/libraries/class-tgm-plugin-activation.php';
+    require_once LIB_DIR . '/class-tgm-plugin-activation.php';
     /**
      * Widgets
      */
@@ -595,7 +599,7 @@
     {
         $GLOBALS['comment'] = $comment;
         extract($args, EXTR_SKIP);
-        include 'templates/misc/comment.php';
+        include THEME_TPL_DIR.'/misc/comment.php';
     }
 
     /**

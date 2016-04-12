@@ -7,9 +7,8 @@
     use PayPal\Validation\UrlValidator;
 
     /**
-     * Class Item
+     * Class Item.
      * Item details.
-     * @package PayPal\Api
      * @property string sku
      * @property string name
      * @property string description
@@ -117,13 +116,13 @@
         /**
          * Item cost. 10 characters max.
          *
-         * @param string|double $price
+         * @param string|float $price
          *
          * @return $this
          */
         public function setPrice($price)
         {
-            NumericValidator::validate($price, "Price");
+            NumericValidator::validate($price, 'Price');
             $price       = FormatConverter::formatToPrice($price, $this->getCurrency());
             $this->price = $price;
 
@@ -165,13 +164,13 @@
         /**
          * Tax of the item. Only supported when the `payment_method` is set to `paypal`.
          *
-         * @param string|double $tax
+         * @param string|float $tax
          *
          * @return $this
          */
         public function setTax($tax)
         {
-            NumericValidator::validate($tax, "Tax");
+            NumericValidator::validate($tax, 'Tax');
             $tax       = FormatConverter::formatToPrice($tax, $this->getCurrency());
             $this->tax = $tax;
 
@@ -197,7 +196,7 @@
          */
         public function setUrl($url)
         {
-            UrlValidator::validate($url, "Url");
+            UrlValidator::validate($url, 'Url');
             $this->url = $url;
 
             return $this;
@@ -214,7 +213,7 @@
 
         /**
          * Category type of the item.
-         * Valid Values: ["DIGITAL", "PHYSICAL"]
+         * Valid Values: ["DIGITAL", "PHYSICAL"].
          *
          * @param string $category
          *
@@ -445,5 +444,4 @@
         {
             return $this->setPostbackData(array_diff($this->getPostbackData(), [$nameValuePair]));
         }
-
     }

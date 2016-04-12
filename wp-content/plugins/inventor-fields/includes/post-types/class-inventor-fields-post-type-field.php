@@ -42,15 +42,15 @@
                 'menu_name'          => __('Fields', 'inventor-fields'),
             ];
             register_post_type('field', [
-                    'labels'              => $labels,
-                    'supports'            => ['title'],
-                    'public'              => false,
-                    'exclude_from_search' => true,
-                    'publicly_queryable'  => false,
-                    'show_in_nav_menus'   => false,
-                    'show_ui'             => true,
-                    'show_in_menu'        => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
-                ]);
+                'labels'              => $labels,
+                'supports'            => ['title'],
+                'public'              => false,
+                'exclude_from_search' => true,
+                'publicly_queryable'  => false,
+                'show_in_nav_menus'   => false,
+                'show_ui'             => true,
+                'show_in_menu'        => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
+            ]);
         }
 
         /**
@@ -187,16 +187,16 @@
                 if ( ! is_array($metaboxes)) {
                     continue;
                 }
-                $identifier  = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'identifier', true);
-                $type        = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'type', true);
-                $value_type  = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'value_type', true);
-                $description = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'description', true);
-                $required    = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'required', true);
-                $skip        = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'skip', true);
-                $options     = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'options', true);
-                $options     = explode(',', $options);
-                $options     = array_combine($options, $options);
-                $title       = get_the_title($field->ID);
+                $identifier     = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'identifier', true);
+                $type           = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'type', true);
+                $value_type     = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'value_type', true);
+                $description    = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'description', true);
+                $required       = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'required', true);
+                $skip           = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'skip', true);
+                $options        = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'options', true);
+                $options        = explode(',', $options);
+                $options        = array_combine($options, $options);
+                $title          = get_the_title($field->ID);
                 $field_settings = [
                     'name'        => $title,
                     'type'        => $type,
@@ -204,8 +204,8 @@
                     'options'     => $options,
                     'skip'        => $skip,
                 ];
-                $attributes   = [];
-                $before_field = null;
+                $attributes     = [];
+                $before_field   = null;
                 if ( ! empty($required)) {
                     $attributes['required'] = 'required';
                 }
@@ -248,9 +248,9 @@
                     if (empty($metabox)) {
                         continue;
                     }
-                    $object_types        = $metabox->meta_box['object_types'];
-                    $listing_type_prefix = count($object_types) == 1 ? $object_types[0] . '_' : '';
-                    $field_id = INVENTOR_LISTING_PREFIX . $listing_type_prefix . $identifier;
+                    $object_types              = $metabox->meta_box['object_types'];
+                    $listing_type_prefix       = count($object_types) == 1 ? $object_types[0] . '_' : '';
+                    $field_id                  = INVENTOR_LISTING_PREFIX . $listing_type_prefix . $identifier;
                     $field_settings['id']      = $field_id;
                     $field_settings['default'] = Inventor_Submission::get_submission_field_value($metabox_id,
                         $field_id);

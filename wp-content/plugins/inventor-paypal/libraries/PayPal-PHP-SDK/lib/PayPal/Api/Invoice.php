@@ -8,9 +8,8 @@
     use PayPal\Validation\UrlValidator;
 
     /**
-     * Class Invoice
+     * Class Invoice.
      * Detailed invoice information.
-     * @package PayPal\Api
      * @property string                      id
      * @property string                      number
      * @property string                      uri
@@ -109,7 +108,7 @@
 
         /**
          * Status of the invoice.
-         * Valid Values: ["DRAFT", "SENT", "PAID", "MARKED_AS_PAID", "CANCELLED", "REFUNDED", "PARTIALLY_REFUNDED", "MARKED_AS_REFUNDED"]
+         * Valid Values: ["DRAFT", "SENT", "PAID", "MARKED_AS_PAID", "CANCELLED", "REFUNDED", "PARTIALLY_REFUNDED", "MARKED_AS_REFUNDED"].
          *
          * @param string $status
          *
@@ -418,7 +417,7 @@
         }
 
         /**
-         * A flag indicating whether the unit price includes tax. Default is false
+         * A flag indicating whether the unit price includes tax. Default is false.
          *
          * @param bool $tax_inclusive
          *
@@ -432,7 +431,7 @@
         }
 
         /**
-         * A flag indicating whether the unit price includes tax. Default is false
+         * A flag indicating whether the unit price includes tax. Default is false.
          * @return bool
          */
         public function getTaxInclusive()
@@ -519,7 +518,7 @@
          */
         public function setLogoUrl($logo_url)
         {
-            UrlValidator::validate($logo_url, "LogoUrl");
+            UrlValidator::validate($logo_url, 'LogoUrl');
             $this->logo_url = $logo_url;
 
             return $this;
@@ -716,7 +715,7 @@
         public function create($apiContext = null, $restCall = null)
         {
             $payLoad = $this->toJSON();
-            $json    = self::executeCall("/v1/invoicing/invoices", "POST", $payLoad, null, $apiContext, $restCall);
+            $json    = self::executeCall('/v1/invoicing/invoices', 'POST', $payLoad, null, $apiContext, $restCall);
             $this->fromJson($json);
 
             return $this;
@@ -735,7 +734,7 @@
         {
             ArgumentValidator::validate($search, 'search');
             $payLoad = $search->toJSON();
-            $json    = self::executeCall("/v1/invoicing/search", "POST", $payLoad, null, $apiContext, $restCall);
+            $json    = self::executeCall('/v1/invoicing/search', 'POST', $payLoad, null, $apiContext, $restCall);
             $ret     = new InvoiceSearchResponse();
             $ret->fromJson($json);
 
@@ -752,9 +751,9 @@
          */
         public function send($apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
-            $payLoad = "";
-            self::executeCall("/v1/invoicing/invoices/{$this->getId()}/send", "POST", $payLoad, null, $apiContext,
+            ArgumentValidator::validate($this->getId(), 'Id');
+            $payLoad = '';
+            self::executeCall("/v1/invoicing/invoices/{$this->getId()}/send", 'POST', $payLoad, null, $apiContext,
                 $restCall);
 
             return true;
@@ -771,10 +770,10 @@
          */
         public function remind($notification, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($notification, 'notification');
             $payLoad = $notification->toJSON();
-            self::executeCall("/v1/invoicing/invoices/{$this->getId()}/remind", "POST", $payLoad, null, $apiContext,
+            self::executeCall("/v1/invoicing/invoices/{$this->getId()}/remind", 'POST', $payLoad, null, $apiContext,
                 $restCall);
 
             return true;
@@ -791,10 +790,10 @@
          */
         public function cancel($cancelNotification, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($cancelNotification, 'cancelNotification');
             $payLoad = $cancelNotification->toJSON();
-            self::executeCall("/v1/invoicing/invoices/{$this->getId()}/cancel", "POST", $payLoad, null, $apiContext,
+            self::executeCall("/v1/invoicing/invoices/{$this->getId()}/cancel", 'POST', $payLoad, null, $apiContext,
                 $restCall);
 
             return true;
@@ -811,10 +810,10 @@
          */
         public function recordPayment($paymentDetail, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($paymentDetail, 'paymentDetail');
             $payLoad = $paymentDetail->toJSON();
-            self::executeCall("/v1/invoicing/invoices/{$this->getId()}/record-payment", "POST", $payLoad, null,
+            self::executeCall("/v1/invoicing/invoices/{$this->getId()}/record-payment", 'POST', $payLoad, null,
                 $apiContext, $restCall);
 
             return true;
@@ -831,10 +830,10 @@
          */
         public function recordRefund($refundDetail, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($refundDetail, 'refundDetail');
             $payLoad = $refundDetail->toJSON();
-            self::executeCall("/v1/invoicing/invoices/{$this->getId()}/record-refund", "POST", $payLoad, null,
+            self::executeCall("/v1/invoicing/invoices/{$this->getId()}/record-refund", 'POST', $payLoad, null,
                 $apiContext, $restCall);
 
             return true;
@@ -852,10 +851,10 @@
         public static function get($invoiceId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($invoiceId, 'invoiceId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/invoicing/invoices/$invoiceId", "GET", $payLoad, null, $apiContext,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/invoicing/invoices/$invoiceId", 'GET', $payLoad, null, $apiContext,
                 $restCall);
-            $ret     = new Invoice();
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
@@ -876,11 +875,11 @@
             $allowedParams = [
                 'page'                 => 1,
                 'page_size'            => 1,
-                'total_count_required' => 1
+                'total_count_required' => 1,
             ];
-            $payLoad = "";
-            $json    = self::executeCall("/v1/invoicing/invoices/?" . http_build_query(array_intersect_key($params,
-                    $allowedParams)), "GET", $payLoad, null, $apiContext, $restCall);
+            $payLoad = '';
+            $json    = self::executeCall('/v1/invoicing/invoices/?' . http_build_query(array_intersect_key($params,
+                    $allowedParams)), 'GET', $payLoad, null, $apiContext, $restCall);
             $ret     = new InvoiceSearchResponse();
             $ret->fromJson($json);
 
@@ -897,9 +896,9 @@
          */
         public function update($apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             $payLoad = $this->toJSON();
-            $json    = self::executeCall("/v1/invoicing/invoices/{$this->getId()}", "PUT", $payLoad, null, $apiContext,
+            $json    = self::executeCall("/v1/invoicing/invoices/{$this->getId()}", 'PUT', $payLoad, null, $apiContext,
                 $restCall);
             $this->fromJson($json);
 
@@ -916,9 +915,9 @@
          */
         public function delete($apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
-            $payLoad = "";
-            self::executeCall("/v1/invoicing/invoices/{$this->getId()}", "DELETE", $payLoad, null, $apiContext,
+            ArgumentValidator::validate($this->getId(), 'Id');
+            $payLoad = '';
+            self::executeCall("/v1/invoicing/invoices/{$this->getId()}", 'DELETE', $payLoad, null, $apiContext,
                 $restCall);
 
             return true;
@@ -941,16 +940,15 @@
             $allowedParams = [
                 'width'  => 1,
                 'height' => 1,
-                'action' => 1
+                'action' => 1,
             ];
-            $payLoad = "";
+            $payLoad = '';
             $json
                      = self::executeCall("/v1/invoicing/invoices/$invoiceId/qr-code?" . http_build_query(array_intersect_key($params,
-                    $allowedParams)), "GET", $payLoad, null, $apiContext, $restCall);
+                    $allowedParams)), 'GET', $payLoad, null, $apiContext, $restCall);
             $ret     = new Image();
             $ret->fromJson($json);
 
             return $ret;
         }
-
     }

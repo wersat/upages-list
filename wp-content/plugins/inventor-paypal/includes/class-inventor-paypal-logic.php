@@ -18,17 +18,14 @@
     use PayPal\Rest\ApiContext;
 
     /**
-     * Class Inventor_PayPal_Logic
+     * Class Inventor_PayPal_Logic.
      * @class   Inventor_PayPal_Logic
-     * @package Inventor_PayPal/Classes
      * @author  Pragmatic Mates
      */
     class Inventor_PayPal_Logic
     {
         /**
-         * Initialize PayPal functionality
-         * @access public
-         * @return void
+         * Initialize PayPal functionality.
          */
         public static function init()
         {
@@ -38,8 +35,7 @@
         }
 
         /**
-         * Adds payments gateways
-         * @access public
+         * Adds payments gateways.
          *
          * @param array $gateways
          *
@@ -59,7 +55,7 @@
                 $gateways[] = [
                     'id'      => 'paypal-account',
                     'title'   => __('PayPal Acccount', 'inventor-paypal'),
-                    'proceed' => true
+                    'proceed' => true,
                 ];
             }
 
@@ -67,16 +63,14 @@
         }
 
         /**
-         * Process payment form
-         * @access public
-         * @return void
+         * Process payment form.
          */
         public static function process_payment()
         {
             if ( ! isset($_POST['process-payment'])) {
                 return;
             }
-            $gateway = ! empty($_POST['payment_gateway']) ? $_POST['payment_gateway'] : null;
+            $gateway  = ! empty($_POST['payment_gateway']) ? $_POST['payment_gateway'] : null;
             $settings = [
                 'payment_type'  => ! empty($_POST['payment_type']) ? $_POST['payment_type'] : '',
                 'object_id'     => ! empty($_POST['object_id']) ? $_POST['object_id'] : '',
@@ -89,7 +83,7 @@
             ];
             // billing details
             $settings['billing_details'] = Inventor_Billing::get_billing_details_from_context($_POST);
-            $terms = get_theme_mod('inventor_general_terms_and_conditions_page', false);
+            $terms                       = get_theme_mod('inventor_general_terms_and_conditions_page', false);
             switch ($gateway) {
                 case 'paypal-credit-card':
                     if (empty($_POST['first_name'])) {
@@ -127,7 +121,7 @@
                     if ($terms && empty($_POST['agree_terms'])) {
                         $_SESSION['messages'][] = [
                             'danger',
-                            __('You must agree terms &amp; conditions.', 'inventor-paypal')
+                            __('You must agree terms &amp; conditions.', 'inventor-paypal'),
                         ];
                         break;
                     }
@@ -159,7 +153,7 @@
                     if ($terms && empty($_POST['agree_terms'])) {
                         $_SESSION['messages'][] = [
                             'danger',
-                            __('You must agree terms &amp; conditions.', 'inventor-paypal')
+                            __('You must agree terms &amp; conditions.', 'inventor-paypal'),
                         ];
                         break;
                     }
@@ -173,9 +167,7 @@
         }
 
         /**
-         * Process payment result
-         * @access public
-         * @return void
+         * Process payment result.
          */
         public static function process_result()
         {
@@ -188,7 +180,7 @@
                 'paymentId',
                 'object_id',
                 'price',
-                'currency_code'
+                'currency_code',
             ];
             foreach ($transaction_params as $required_param) {
                 if (empty($_GET[$required_param])) {
@@ -213,7 +205,7 @@
                 if ($is_valid) {
                     $is_valid = ! Inventor_Post_Type_Transaction::does_transaction_exist([
                         'paypal-account',
-                        'paypal-credit-card'
+                        'paypal-credit-card',
                     ], $_GET['paymentId']);
                 }
                 // if params are present, validate them
@@ -254,7 +246,7 @@
             if ($success) {
                 if ( ! $is_valid) {
                     $_SESSION['messages'][] = ['danger', __('Payment is invalid.', 'inventor-paypal')];
-                } else if ( ! in_array($_GET['payment_type'], apply_filters('inventor_payment_types', []))) {
+                } elseif ( ! in_array($_GET['payment_type'], apply_filters('inventor_payment_types', []))) {
                     $_SESSION['messages'][] = ['danger', __('Undefined payment type.', 'inventor-paypal')];
                 } else {
                     $_SESSION['messages'][] = ['success', __('Payment has been successful.', 'inventor-paypal')];
@@ -270,8 +262,7 @@
         }
 
         /**
-         * Executes PayPal payment
-         * @access public
+         * Executes PayPal payment.
          *
          * @param string $payment_id
          * @param string $payer_id
@@ -298,8 +289,7 @@
         }
 
         /**
-         * Checks if PayPal payment is valid
-         * @access public
+         * Checks if PayPal payment is valid.
          *
          * @param string $payment_id
          * @param string $token
@@ -334,9 +324,8 @@
         }
 
         /**
-         * Gets PayPal context
-         * @access public
-         * @return Object|bool
+         * Gets PayPal context.
+         * @return object|bool
          */
         public static function get_paypal_context()
         {
@@ -346,8 +335,8 @@
                 return false;
             }
             $apiContext = new ApiContext(new OAuthTokenCredential($client_id, $client_secret));
-            $live = get_theme_mod('inventor_paypal_live', false);
-            if ($live == "1") {
+            $live       = get_theme_mod('inventor_paypal_live', false);
+            if ($live == '1') {
                 $apiContext->setConfig(['mode' => 'live']);
             } else {
                 $apiContext->setConfig(['mode' => 'sandbox']);
@@ -357,8 +346,7 @@
         }
 
         /**
-         * Gets return/success URL
-         * @access public
+         * Gets return/success URL.
          *
          * @param bool   $success
          * @param int    $user_id
@@ -378,10 +366,10 @@
             $billing_details,
             $payment_id = null
         ) {
-            $data = self::get_data($payment_type, $object_id);
+            $data    = self::get_data($payment_type, $object_id);
             $success = $success ? 'true' : 'false';
             $url     = sprintf('%s?success=%s', site_url(), $success);
-            $params = [
+            $params  = [
                 'gateway'         => $gateway,
                 'payment_type'    => $payment_type,
                 'object_id'       => $object_id,
@@ -391,7 +379,7 @@
                 'currency_symbol' => $data['currency_symbol'],
                 'price_formatted' => $data['price_formatted'],
             ];
-            $params = array_merge($params, $billing_details);
+            $params  = array_merge($params, $billing_details);
             foreach ($params as $param => $value) {
                 $url = sprintf('%s&%s=%s', $url, $param, urlencode($value));
             }
@@ -403,8 +391,7 @@
         }
 
         /**
-         * Process credit card payment
-         * @access public
+         * Process credit card payment.
          *
          * @param array $settings
          *
@@ -433,7 +420,7 @@
                  ->setQuantity(1)
                  ->setPrice($data['price']);
             $item_list = new ItemList();
-            $item_list->setItems([$item,]);
+            $item_list->setItems([$item]);
             $details = new Details();
             $details->setSubtotal($data['price']);
             $amount = new Amount();
@@ -463,8 +450,7 @@
         }
 
         /**
-         * Gets link for account payment
-         * @access public
+         * Gets link for account payment.
          *
          * @param array $settings
          *
@@ -482,7 +468,7 @@
                  ->setQuantity(1)
                  ->setPrice($data['price']);
             $item_list = new ItemList();
-            $item_list->setItems([$item,]);
+            $item_list->setItems([$item]);
             $details = new Details();
             $details->setSubtotal($data['price']);
             $amount = new Amount();
@@ -512,15 +498,14 @@
             } catch (Exception $ex) {
                 die;
 
-                return null;
+                return;
             }
 
             return $payment->getApprovalLink();
         }
 
         /**
-         * Prepares payment data
-         * @access public
+         * Prepares payment data.
          *
          * @param $payment_type
          * @param $object_id
@@ -536,7 +521,7 @@
                 return false;
             }
             $payment_data = apply_filters('inventor_prepare_payment', [], $payment_type, $object_id);
-            $data = [
+            $data         = [
                 'title'           => $payment_data['action_title'],
                 'description'     => $payment_data['description'],
                 'price'           => $payment_data['price'],
@@ -549,8 +534,7 @@
         }
 
         /**
-         * Checks if PayPal is active
-         * @access public
+         * Checks if PayPal is active.
          * @return bool
          */
         public static function is_active()
@@ -558,12 +542,11 @@
             $paypal_client_id     = get_theme_mod('inventor_paypal_client_id', null);
             $paypal_client_secret = get_theme_mod('inventor_paypal_client_secret', null);
 
-            return ( ! empty($paypal_client_id) && ! empty($paypal_client_secret));
+            return ! empty($paypal_client_id) && ! empty($paypal_client_secret);
         }
 
         /**
-         * Validates card number
-         * @access public
+         * Validates card number.
          *
          * @param $number
          *
@@ -578,7 +561,7 @@
             $parity        = $number_length % 2;
             // Loop through each digit and do the maths
             $total = 0;
-            for ($i = 0; $i < $number_length; $i++) {
+            for ($i = 0; $i < $number_length; ++$i) {
                 $digit = $number[$i];
                 // Multiply alternate digits by two
                 if ($i % 2 == $parity) {
@@ -596,8 +579,7 @@
         }
 
         /**
-         * Validates CVV
-         * @access public
+         * Validates CVV.
          *
          * @param $cvv
          *
@@ -605,12 +587,11 @@
          */
         public static function validate_cvv($cvv)
         {
-            return (strlen($cvv) == 3 || strlen($cvv) == 4);
+            return strlen($cvv) == 3 || strlen($cvv) == 4;
         }
 
         /**
-         * Gets credit card type
-         * @access public
+         * Gets credit card type.
          *
          * @param $number
          *
@@ -639,8 +620,7 @@
         }
 
         /**
-         * Returns supported currencies by PayPal listed here:
-         * @access public
+         * Returns supported currencies by PayPal listed here:.
          *
          * @param string $payment
          *
@@ -651,34 +631,34 @@
         {
             if ($payment == 'account') {
                 return [
-                    "AUD",
-                    "BRL",
-                    "CAD",
-                    "CZK",
-                    "DKK",
-                    "EUR",
-                    "HKD",
-                    "HUF",
-                    "ILS",
-                    "JPY",
-                    "MYR",
-                    "MXN",
-                    "TWD",
-                    "NZD",
-                    "NOK",
-                    "PHP",
-                    "PLN",
-                    "GBP",
-                    "SGD",
-                    "SEK",
-                    "CHF",
-                    "THB",
-                    "TRY",
-                    "USD"
+                    'AUD',
+                    'BRL',
+                    'CAD',
+                    'CZK',
+                    'DKK',
+                    'EUR',
+                    'HKD',
+                    'HUF',
+                    'ILS',
+                    'JPY',
+                    'MYR',
+                    'MXN',
+                    'TWD',
+                    'NZD',
+                    'NOK',
+                    'PHP',
+                    'PLN',
+                    'GBP',
+                    'SGD',
+                    'SEK',
+                    'CHF',
+                    'THB',
+                    'TRY',
+                    'USD',
                 ];
             }
             if ($payment == 'card') {
-                return ["USD", "GBP", "CAD", "EUR", "JPY"];
+                return ['USD', 'GBP', 'CAD', 'EUR', 'JPY'];
             }
 
             return [];

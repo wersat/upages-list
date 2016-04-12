@@ -340,8 +340,7 @@
           background-color : $color-white;
           border           : 1px solid $color-gray-medium;
           display          : block;
-          //left             : 0;
-          right            : 0;
+          left             : 0;
           list-style       : none;
           margin           : 0;
           opacity          : 0;
@@ -443,7 +442,7 @@
 
               > .sub-menu {
                 display    : block;
-                left       : -220px;
+                left       : 220px;
                 margin     : 0;
                 opacity    : 1;
                 top        : 0;

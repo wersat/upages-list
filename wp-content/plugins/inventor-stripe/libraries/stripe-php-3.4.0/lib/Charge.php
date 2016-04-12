@@ -1,10 +1,11 @@
 <?php
-    namespace Stripe;
 
-    class Charge extends ApiResource
-    {
-        /**
-         * @param string            $id The ID of the charge to retrieve.
+namespace Stripe;
+
+class Charge extends ApiResource
+{
+    /**
+         * @param string            $id      The ID of the charge to retrieve.
          * @param array|string|null $options
          *
          * @return Charge
@@ -54,7 +55,7 @@
          */
         public function refund($params = null, $options = null)
         {
-            $url = $this->instanceUrl() . '/refund';
+            $url = $this->instanceUrl().'/refund';
             list($response, $opts) = $this->_request('post', $url, $params, $options);
             $this->refreshFrom($response, $opts);
 
@@ -69,7 +70,7 @@
          */
         public function capture($params = null, $options = null)
         {
-            $url = $this->instanceUrl() . '/capture';
+            $url = $this->instanceUrl().'/capture';
             list($response, $opts) = $this->_request('post', $url, $params, $options);
             $this->refreshFrom($response, $opts);
 
@@ -81,11 +82,12 @@
          * @param array|string|null $options
          *
          * @deprecated Use the `save` method on the Dispute object
+         *
          * @return array The updated dispute.
          */
         public function updateDispute($params = null, $options = null)
         {
-            $url = $this->instanceUrl() . '/dispute';
+            $url = $this->instanceUrl().'/dispute';
             list($response, $opts) = $this->_request('post', $url, $params, $options);
             $this->refreshFrom(['dispute' => $response], $opts, true);
 
@@ -96,11 +98,12 @@
          * @param array|string|null $options
          *
          * @deprecated Use the `close` method on the Dispute object
+         *
          * @return Charge The updated charge.
          */
         public function closeDispute($options = null)
         {
-            $url = $this->instanceUrl() . '/dispute/close';
+            $url = $this->instanceUrl().'/dispute/close';
             list($response, $opts) = $this->_request('post', $url, null, $options);
             $this->refreshFrom($response, $opts);
 
@@ -115,7 +118,7 @@
         public function markAsFraudulent($opts = null)
         {
             $params = ['fraud_details' => ['user_report' => 'fraudulent']];
-            $url    = $this->instanceUrl();
+            $url = $this->instanceUrl();
             list($response, $opts) = $this->_request('post', $url, $params, $opts);
             $this->refreshFrom($response, $opts);
 
@@ -130,10 +133,10 @@
         public function markAsSafe($opts = null)
         {
             $params = ['fraud_details' => ['user_report' => 'safe']];
-            $url    = $this->instanceUrl();
+            $url = $this->instanceUrl();
             list($response, $opts) = $this->_request('post', $url, $params, $opts);
             $this->refreshFrom($response, $opts);
 
             return $this;
         }
-    }
+}

@@ -57,13 +57,13 @@
         const MEDIUM = 1;
         const LARGE  = 2;
         protected static $templateMethods
-            = [
+                                          = [
                 'setUp',
                 'assertPreConditions',
                 'assertPostConditions',
                 'tearDown'
             ];
-        private static $annotationCache = [];
+        private static   $annotationCache = [];
 
         /**
          * @param  PHPUnit_Framework_Test $test
@@ -145,9 +145,9 @@
             $docComment = substr($docComment, 3, -2);
             if (preg_match(self::REGEX_EXPECTED_EXCEPTION, $docComment, $matches)) {
                 $annotations = self::parseTestMethodAnnotations($className, $methodName);
-                $class   = $matches[1];
-                $code    = null;
-                $message = '';
+                $class       = $matches[1];
+                $code        = null;
+                $message     = '';
                 if (isset($matches[2])) {
                     $message = trim($matches[2]);
                 } else if (isset($annotations['method']['expectedExceptionMessage'])) {
@@ -296,7 +296,7 @@
                 foreach ($data as $key => $value) {
                     if ( ! is_array($value)) {
                         throw new PHPUnit_Framework_Exception(sprintf('Data set %s is invalid.',
-                                is_int($key) ? '#' . $key : '"' . $key . '"'));
+                            is_int($key) ? '#' . $key : '"' . $key . '"'));
                     }
                 }
             }
@@ -333,7 +333,7 @@
         private static function getBooleanAnnotationSetting($className, $methodName, $settingName)
         {
             $annotations = self::parseTestMethodAnnotations($className, $methodName);
-            $result = null;
+            $result      = null;
             if (isset($annotations['class'][$settingName])) {
                 if ($annotations['class'][$settingName][0] == 'enabled') {
                     $result = true;
@@ -363,7 +363,7 @@
          */
         public static function getDependencies($className, $methodName)
         {
-            $annotations = self::parseTestMethodAnnotations($className, $methodName);
+            $annotations  = self::parseTestMethodAnnotations($className, $methodName);
             $dependencies = [];
             if (isset($annotations['class']['depends'])) {
                 $dependencies = $annotations['class']['depends'];
@@ -430,7 +430,7 @@
         public static function getGroups($className, $methodName = '')
         {
             $annotations = self::parseTestMethodAnnotations($className, $methodName);
-            $groups = [];
+            $groups      = [];
             if (isset($annotations['method']['author'])) {
                 $groups = $annotations['method']['author'];
             } else if (isset($annotations['class']['author'])) {
@@ -471,7 +471,7 @@
         public static function getTickets($className, $methodName)
         {
             $annotations = self::parseTestMethodAnnotations($className, $methodName);
-            $tickets = [];
+            $tickets     = [];
             if (isset($annotations['class']['ticket'])) {
                 $tickets = $annotations['class']['ticket'];
             }

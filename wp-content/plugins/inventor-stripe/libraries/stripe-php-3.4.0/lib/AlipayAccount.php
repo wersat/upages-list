@@ -1,6 +1,7 @@
 <?php
-    namespace Stripe;
 
-    class AlipayAccount extends ExternalAccount
-    {
-    }
+namespace Stripe;
+
+class AlipayAccount extends ExternalAccount
+{
+}

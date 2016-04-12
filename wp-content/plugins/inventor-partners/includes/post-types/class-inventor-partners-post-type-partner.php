@@ -40,14 +40,14 @@
                 'menu_name'          => __('Partners', 'inventor-partners'),
             ];
             register_post_type('partner', [
-                    'labels'        => $labels,
-                    'supports'      => ['title', 'thumbnail'],
-                    'public'        => false,
-                    'show_ui'       => true,
-                    'show_in_menu'  => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
-                    'menu_icon'     => 'dashicons-businessman',
-                    'menu_position' => 55,
-                ]);
+                'labels'        => $labels,
+                'supports'      => ['title', 'thumbnail'],
+                'public'        => false,
+                'show_ui'       => true,
+                'show_in_menu'  => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
+                'menu_icon'     => 'dashicons-businessman',
+                'menu_position' => 55,
+            ]);
         }
 
         /**

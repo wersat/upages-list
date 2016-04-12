@@ -4,9 +4,8 @@
     use PayPal\Common\PayPalModel;
 
     /**
-     * Class MerchantInfo
+     * Class MerchantInfo.
      * Business information of the merchant that will appear on the invoice.
-     * @package PayPal\Api
      * @property string                     email
      * @property string                     first_name
      * @property string                     last_name
@@ -249,5 +248,4 @@
         {
             return $this->additional_info;
         }
-
     }

@@ -44,7 +44,7 @@
                 'query_var'         => 'job-position',
                 'rewrite'           => [
                     'slug'         => _x('job-position', 'URL slug', 'inventor-jobs'),
-                    'hierarchical' => true
+                    'hierarchical' => true,
                 ],
                 'public'            => true,
                 'show_ui'           => true,

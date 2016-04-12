@@ -8,7 +8,6 @@
     /**
      * Class Authorization
      * An authorization transaction.
-     * @package PayPal\Api
      * @property string                        id
      * @property \PayPal\Api\Amount            amount
      * @property string                        payment_mode
@@ -75,7 +74,7 @@
 
         /**
          * Specifies the payment mode of the transaction.
-         * Valid Values: ["INSTANT_TRANSFER"]
+         * Valid Values: ["INSTANT_TRANSFER"].
          *
          * @param string $payment_mode
          *
@@ -99,7 +98,7 @@
 
         /**
          * State of the authorization.
-         * Valid Values: ["pending", "authorized", "partially_captured", "captured", "expired", "voided"]
+         * Valid Values: ["pending", "authorized", "partially_captured", "captured", "expired", "voided"].
          *
          * @param string $state
          *
@@ -123,7 +122,7 @@
 
         /**
          * Reason code, `AUTHORIZATION`, for a transaction state of `pending`.
-         * Valid Values: ["AUTHORIZATION"]
+         * Valid Values: ["AUTHORIZATION"].
          *
          * @param string $reason_code
          *
@@ -147,7 +146,7 @@
 
         /**
          * [DEPRECATED] Reason code for the transaction state being Pending.Obsolete. use reason_code field instead.
-         * Valid Values: ["AUTHORIZATION"]
+         * Valid Values: ["AUTHORIZATION"].
          *
          * @param string $pending_reason
          *
@@ -171,7 +170,7 @@
 
         /**
          * The level of seller protection in force for the transaction. Only supported when the `payment_method` is set to `paypal`. Allowed values:<br>  `ELIGIBLE`- Merchant is protected by PayPal's Seller Protection Policy for Unauthorized Payments and Item Not Received.<br> `PARTIALLY_ELIGIBLE`- Merchant is protected by PayPal's Seller Protection Policy for Item Not Received or Unauthorized Payments. Refer to `protection_eligibility_type` for specifics. <br> `INELIGIBLE`- Merchant is not protected under the Seller Protection Policy.
-         * Valid Values: ["ELIGIBLE", "PARTIALLY_ELIGIBLE", "INELIGIBLE"]
+         * Valid Values: ["ELIGIBLE", "PARTIALLY_ELIGIBLE", "INELIGIBLE"].
          *
          * @param string $protection_eligibility
          *
@@ -195,7 +194,7 @@
 
         /**
          * The kind of seller protection in force for the transaction. This property is returned only when the `protection_eligibility` property is set to `ELIGIBLE`or `PARTIALLY_ELIGIBLE`. Only supported when the `payment_method` is set to `paypal`. Allowed values:<br> `ITEM_NOT_RECEIVED_ELIGIBLE`- Sellers are protected against claims for items not received.<br> `UNAUTHORIZED_PAYMENT_ELIGIBLE`- Sellers are protected against claims for unauthorized payments.<br> One or both of the allowed values can be returned.
-         * Valid Values: ["ITEM_NOT_RECEIVED_ELIGIBLE", "UNAUTHORIZED_PAYMENT_ELIGIBLE", "ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE"]
+         * Valid Values: ["ITEM_NOT_RECEIVED_ELIGIBLE", "UNAUTHORIZED_PAYMENT_ELIGIBLE", "ITEM_NOT_RECEIVED_ELIGIBLE,UNAUTHORIZED_PAYMENT_ELIGIBLE"].
          *
          * @param string $protection_eligibility_type
          *
@@ -367,10 +366,10 @@
         public static function get($authorizationId, $apiContext = null, $restCall = null)
         {
             ArgumentValidator::validate($authorizationId, 'authorizationId');
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/authorization/$authorizationId", "GET", $payLoad, null,
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/authorization/$authorizationId", 'GET', $payLoad, null,
                 $apiContext, $restCall);
-            $ret     = new Authorization();
+            $ret     = new self();
             $ret->fromJson($json);
 
             return $ret;
@@ -387,10 +386,10 @@
          */
         public function capture($capture, $apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             ArgumentValidator::validate($capture, 'capture');
             $payLoad = $capture->toJSON();
-            $json    = self::executeCall("/v1/payments/authorization/{$this->getId()}/capture", "POST", $payLoad, null,
+            $json    = self::executeCall("/v1/payments/authorization/{$this->getId()}/capture", 'POST', $payLoad, null,
                 $apiContext, $restCall);
             $ret     = new Capture();
             $ret->fromJson($json);
@@ -408,9 +407,9 @@
          */
         public function void($apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
-            $payLoad = "";
-            $json    = self::executeCall("/v1/payments/authorization/{$this->getId()}/void", "POST", $payLoad, null,
+            ArgumentValidator::validate($this->getId(), 'Id');
+            $payLoad = '';
+            $json    = self::executeCall("/v1/payments/authorization/{$this->getId()}/void", 'POST', $payLoad, null,
                 $apiContext, $restCall);
             $this->fromJson($json);
 
@@ -418,7 +417,7 @@
         }
 
         /**
-         * Reauthorize a PayPal account payment by passing the authorization_id in the request URI. You should reauthorize a payment after the initial 3-day honor period to ensure that funds are still available. Request supports only amount field
+         * Reauthorize a PayPal account payment by passing the authorization_id in the request URI. You should reauthorize a payment after the initial 3-day honor period to ensure that funds are still available. Request supports only amount field.
          *
          * @param ApiContext     $apiContext is the APIContext for this call. It can be used to pass dynamic configuration and credentials.
          * @param PayPalRestCall $restCall   is the Rest Call Service that is used to make rest calls
@@ -427,13 +426,12 @@
          */
         public function reauthorize($apiContext = null, $restCall = null)
         {
-            ArgumentValidator::validate($this->getId(), "Id");
+            ArgumentValidator::validate($this->getId(), 'Id');
             $payLoad = $this->toJSON();
-            $json    = self::executeCall("/v1/payments/authorization/{$this->getId()}/reauthorize", "POST", $payLoad,
+            $json    = self::executeCall("/v1/payments/authorization/{$this->getId()}/reauthorize", 'POST', $payLoad,
                 null, $apiContext, $restCall);
             $this->fromJson($json);
 
             return $this;
         }
-
     }

@@ -140,7 +140,7 @@
 
         public function testStubbedReturnValueMap()
         {
-            $map = [
+            $map  = [
                 ['a', 'b', 'c', 'd'],
                 ['e', 'f', 'g', 'h']
             ];
@@ -300,8 +300,8 @@
 
         public function testClonedMockObjectCanBeUsedInPlaceOfOriginalOne()
         {
-            $x = $this->getMock('stdClass');
-            $y = clone $x;
+            $x    = $this->getMock('stdClass');
+            $y    = clone $x;
             $mock = $this->getMock('stdClass', ['foo']);
             $mock->expects($this->once())
                  ->method('foo')
@@ -311,8 +311,8 @@
 
         public function testClonedMockObjectIsNotIdenticalToOriginalOne()
         {
-            $x = $this->getMock('stdClass');
-            $y = clone $x;
+            $x    = $this->getMock('stdClass');
+            $y    = clone $x;
             $mock = $this->getMock('stdClass', ['foo']);
             $mock->expects($this->once())
                  ->method('foo')
@@ -355,11 +355,11 @@
 
         public function testObjectMethodCallWithArgumentCloningEnabled()
         {
-            $expectedObject = new StdClass;
-            $mock = $this->getMockBuilder('SomeClass')
-                         ->setMethods(['doSomethingElse'])
-                         ->enableArgumentCloning()
-                         ->getMock();
+            $expectedObject  = new StdClass;
+            $mock            = $this->getMockBuilder('SomeClass')
+                                    ->setMethods(['doSomethingElse'])
+                                    ->enableArgumentCloning()
+                                    ->getMock();
             $actualArguments = [];
             $mock->expects($this->any())
                  ->method('doSomethingElse')
@@ -374,11 +374,11 @@
 
         public function testObjectMethodCallWithArgumentCloningDisabled()
         {
-            $expectedObject = new StdClass;
-            $mock = $this->getMockBuilder('SomeClass')
-                         ->setMethods(['doSomethingElse'])
-                         ->disableArgumentCloning()
-                         ->getMock();
+            $expectedObject  = new StdClass;
+            $mock            = $this->getMockBuilder('SomeClass')
+                                    ->setMethods(['doSomethingElse'])
+                                    ->disableArgumentCloning()
+                                    ->getMock();
             $actualArguments = [];
             $mock->expects($this->any())
                  ->method('doSomethingElse')
@@ -392,10 +392,10 @@
 
         public function testArgumentCloningOptionGeneratesUniqueMock()
         {
-            $mockWithCloning = $this->getMockBuilder('SomeClass')
-                                    ->setMethods(['doSomethingElse'])
-                                    ->enableArgumentCloning()
-                                    ->getMock();
+            $mockWithCloning    = $this->getMockBuilder('SomeClass')
+                                       ->setMethods(['doSomethingElse'])
+                                       ->enableArgumentCloning()
+                                       ->getMock();
             $mockWithoutCloning = $this->getMockBuilder('SomeClass')
                                        ->setMethods(['doSomethingElse'])
                                        ->disableArgumentCloning()

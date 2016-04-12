@@ -1,9 +1,10 @@
 <?php
-    namespace Stripe;
 
-    class Invoice extends ApiResource
-    {
-        /**
+namespace Stripe;
+
+class Invoice extends ApiResource
+{
+    /**
          * @param array|null        $params
          * @param array|string|null $opts
          *
@@ -15,7 +16,7 @@
         }
 
         /**
-         * @param string            $id The ID of the invoice to retrieve.
+         * @param string            $id   The ID of the invoice to retrieve.
          * @param array|string|null $opts
          *
          * @return Invoice
@@ -44,7 +45,7 @@
          */
         public static function upcoming($params = null, $opts = null)
         {
-            $url = static::classUrl() . '/upcoming';
+            $url = static::classUrl().'/upcoming';
             list($response, $opts) = static::_staticRequest('get', $url, $params, $opts);
 
             return Util\Util::convertToStripeObject($response, $opts);
@@ -65,10 +66,10 @@
          */
         public function pay($opts = null)
         {
-            $url = $this->instanceUrl() . '/pay';
+            $url = $this->instanceUrl().'/pay';
             list($response, $opts) = $this->_request('post', $url, null, $opts);
             $this->refreshFrom($response, $opts);
 
             return $this;
         }
-    }
+}

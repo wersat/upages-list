@@ -40,15 +40,15 @@
                 'menu_name'          => __('Testimonials', 'inventor-testimonials'),
             ];
             register_post_type('testimonial', [
-                    'labels'        => $labels,
-                    'supports'      => ['title', 'editor', 'thumbnail'],
-                    'public'        => false,
-                    'show_ui'       => true,
-                    'rewrite'       => ['slug' => _x('testimonials', 'URL slug', 'inventor-testimonials')],
-                    'show_in_menu'  => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
-                    'menu_icon'     => 'dashicons-testimonial',
-                    'menu_position' => 55,
-                ]);
+                'labels'        => $labels,
+                'supports'      => ['title', 'editor', 'thumbnail'],
+                'public'        => false,
+                'show_ui'       => true,
+                'rewrite'       => ['slug' => _x('testimonials', 'URL slug', 'inventor-testimonials')],
+                'show_in_menu'  => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
+                'menu_icon'     => 'dashicons-testimonial',
+                'menu_position' => 55,
+            ]);
         }
 
         /**

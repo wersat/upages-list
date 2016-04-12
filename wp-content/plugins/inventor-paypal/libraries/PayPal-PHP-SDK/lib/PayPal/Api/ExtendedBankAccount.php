@@ -4,7 +4,6 @@
     /**
      * Class ExtendedBankAccount
      * A resource representing a bank account that can be used to fund a payment including support for SEPA.
-     * @package PayPal\Api
      */
     class ExtendedBankAccount extends BankAccount
     {
@@ -32,5 +31,4 @@
         {
             return $this->mandate_reference_number;
         }
-
     }

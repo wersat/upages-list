@@ -6,7 +6,6 @@
     /**
      * Class FundingOption
      * specifies the funding option details.
-     * @package PayPal\Api
      * @property string                         id
      * @property \PayPal\Api\FundingSource[]    funding_sources
      * @property \PayPal\Api\FundingInstrument  backup_funding_instrument
@@ -176,7 +175,7 @@
         }
 
         /**
-         * Gets Links
+         * Gets Links.
          * @return \PayPal\Api\Links[]
          */
         public function getLinks()
@@ -185,7 +184,7 @@
         }
 
         /**
-         * Sets Links
+         * Sets Links.
          *
          * @param \PayPal\Api\Links[] $links
          *
@@ -209,5 +208,4 @@
         {
             return $this->setLinks(array_diff($this->getLinks(), [$links]));
         }
-
     }

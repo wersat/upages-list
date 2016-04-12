@@ -60,7 +60,7 @@
         protected function setUp()
         {
             $this->filesDirectory = dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR;
-            $this->html = file_get_contents($this->filesDirectory . 'SelectorAssertionsFixture.html');
+            $this->html           = file_get_contents($this->filesDirectory . 'SelectorAssertionsFixture.html');
         }
 
         /**
@@ -495,9 +495,9 @@
             $book2                  = new Book;
             $book2->author          = new Author('Terry Pratchett');
             $book2->author->books[] = $book2;
-            $object1  = new SampleClass(4, 8, 15);
-            $object2  = new SampleClass(4, 8, 15);
-            $storage1 = new SplObjectStorage;
+            $object1                = new SampleClass(4, 8, 15);
+            $object2                = new SampleClass(4, 8, 15);
+            $storage1               = new SplObjectStorage;
             $storage1->attach($object1);
             $storage2 = new SplObjectStorage;
             $storage2->attach($object1);
@@ -607,14 +607,14 @@
             $book2                  = new Book;
             $book2->author          = new Author('Terry Pratch');
             $book2->author->books[] = $book2;
-            $book3         = new Book;
-            $book3->author = 'Terry Pratchett';
-            $book4         = new stdClass;
-            $book4->author = 'Terry Pratchett';
-            $object1  = new SampleClass(4, 8, 15);
-            $object2  = new SampleClass(16, 23, 42);
-            $object3  = new SampleClass(4, 8, 15);
-            $storage1 = new SplObjectStorage;
+            $book3                  = new Book;
+            $book3->author          = 'Terry Pratchett';
+            $book4                  = new stdClass;
+            $book4->author          = 'Terry Pratchett';
+            $object1                = new SampleClass(4, 8, 15);
+            $object2                = new SampleClass(16, 23, 42);
+            $object3                = new SampleClass(4, 8, 15);
+            $storage1               = new SplObjectStorage;
             $storage1->attach($object1);
             $storage2 = new SplObjectStorage;
             $storage2->attach($object3); // same content, different object
@@ -2894,7 +2894,7 @@
                 'id'         => 'test_children',
                 'content'    => 'My Children',
                 'attributes' => ['class' => 'children'],
-                'children' => [
+                'children'   => [
                     'less_than'    => '25',
                     'greater_than' => '2',
                     'only'         => [
