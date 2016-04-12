@@ -40,7 +40,7 @@
          * @param       $post_type_names
          * @param array $options
          */
-        public function __construct($post_type_names, $options = [])
+        public function __construct($post_type_names, array $options = [])
         {
             if (is_array($post_type_names)) {
                 $names                = [
@@ -236,7 +236,7 @@
          * @param       $taxonomy_names
          * @param array $options
          */
-        public function register_taxonomy($taxonomy_names, $options = [])
+        public function register_taxonomy($taxonomy_names, array $options = [])
         {
             $post_type = $this->post_type_name;
             $names     = [
@@ -294,7 +294,7 @@
         public function register_taxonomies()
         {
             if (is_array($this->taxonomy_settings)) {
-                foreach ($this->taxonomy_settings as $taxonomy_name => $options) {
+                foreach ((array)$this->taxonomy_settings as $taxonomy_name => $options) {
                     if ( ! taxonomy_exists($taxonomy_name)) {
                         register_taxonomy($taxonomy_name, $this->post_type_name, $options);
                     } else {
@@ -307,7 +307,7 @@
         public function register_exisiting_taxonomies()
         {
             if (is_array($this->exisiting_taxonomies)) {
-                foreach ($this->exisiting_taxonomies as $taxonomy_name) {
+                foreach ((array)$this->exisiting_taxonomies as $taxonomy_name) {
                     register_taxonomy_for_object_type($taxonomy_name, $this->post_type_name);
                 }
             }
@@ -322,13 +322,13 @@
         {
             if ( ! isset($this->columns)) {
                 $new_columns = [];
-                if (is_array($this->taxonomies)
-                    && in_array('post_tag', $this->taxonomies)
+                if ((is_array($this->taxonomies)
+                    && in_array('post_tag', $this->taxonomies))
                     || $this->post_type_name === 'post'
                 ) {
                     $after = 'tags';
-                } elseif (is_array($this->taxonomies)
-                          && in_array('category', $this->taxonomies)
+                } elseif ((is_array($this->taxonomies)
+                          && in_array('category', $this->taxonomies))
                           || $this->post_type_name === 'post'
                 ) {
                     $after = 'categories';
@@ -341,7 +341,7 @@
                     $new_columns[$key] = $title;
                     if ($key === $after) {
                         if (is_array($this->taxonomies)) {
-                            foreach ($this->taxonomies as $tax) {
+                            foreach ((array)$this->taxonomies as $tax) {
                                 if ($tax !== 'category' && $tax !== 'post_tag') {
                                     $taxonomy_object   = get_taxonomy($tax);
                                     $new_columns[$tax] = sprintf(__('%s', $this->textdomain),
@@ -371,7 +371,7 @@
                     $terms = get_the_terms($post_id, $column);
                     if ( ! empty($terms)) {
                         $output = [];
-                        foreach ($terms as $term) {
+                        foreach ((array)$terms as $term) {
                             $output[] = sprintf('<a href="%s">%s</a>',
                                 esc_url(add_query_arg(['post_type' => $post->post_type, $column => $term->slug],
                                     'edit.php')),
@@ -414,7 +414,7 @@
         /**
          * @param array $filters
          */
-        public function filters($filters = [])
+        public function filters(array $filters = [])
         {
             $this->filters = $filters;
         }
@@ -479,7 +479,7 @@
         /**
          * @param array $columns
          */
-        public function sortable($columns = [])
+        public function sortable(array $columns = [])
         {
             $this->sortable = $columns;
             $this->add_filter('manage_edit-' . $this->post_type_name . '_sortable_columns',
@@ -519,7 +519,7 @@
          */
         public function sort_columns($vars)
         {
-            foreach ($this->sortable as $column => $values) {
+            foreach ((array)$this->sortable as $column => $values) {
                 $meta_key = $values[0];
                 if (taxonomy_exists($meta_key)) {
                     $key = 'taxonomy';
