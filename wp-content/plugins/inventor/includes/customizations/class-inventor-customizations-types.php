@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Multiple checkbox customize control class.
-     *
      * @class  Customize_Control_Checkbox_Multiple
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Customize_Control_Checkbox_Multiple extends WP_Customize_Control
@@ -23,9 +21,9 @@
          */
         public static function sanitize($values)
         {
-            $multi_values = !is_array($values) ? explode(',', $values) : $values;
+            $multi_values = ! is_array($values) ? explode(',', $values) : $values;
 
-            return !empty($multi_values) ? array_map('sanitize_text_field', $multi_values) : [];
+            return ! empty($multi_values) ? array_map('sanitize_text_field', $multi_values) : [];
         }
 
         /**

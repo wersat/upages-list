@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Scripts.
-     *
      * @class  Inventor_Scripts
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Scripts
@@ -48,9 +46,9 @@
                 false, true);
             wp_enqueue_script('inventor-admin');
             $browser_key = get_theme_mod('inventor_general_google_browser_key');
-            $key = empty($browser_key) ? '' : 'key='.$browser_key.'&';
+            $key         = empty($browser_key) ? '' : 'key=' . $browser_key . '&';
             wp_enqueue_script('google-maps',
-                '//maps.googleapis.com/maps/api/js?'.$key.'libraries=weather,geometry,visualization,places,drawing');
+                '//maps.googleapis.com/maps/api/js?' . $key . 'libraries=weather,geometry,visualization,places,drawing');
             if ('widgets.php' === $hook) {
                 wp_enqueue_style('wp-color-picker');
                 wp_enqueue_script('wp-color-picker');

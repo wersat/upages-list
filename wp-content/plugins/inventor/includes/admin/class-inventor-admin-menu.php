@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Admin_Menu.
-     *
      * @class  Inventor_Admin_Menu
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Admin_Menu
@@ -35,9 +33,9 @@
         {
             global $submenu;
             $menu_slugs = ['inventor', 'lexicon', 'listings'];
-            if (!empty($submenu) && !empty($menu_slugs) && is_array($menu_slugs)) {
+            if ( ! empty($submenu) && ! empty($menu_slugs) && is_array($menu_slugs)) {
                 foreach ($menu_slugs as $slug) {
-                    if (!empty($submenu[$slug])) {
+                    if ( ! empty($submenu[$slug])) {
                         usort($submenu[$slug], [__CLASS__, 'sort_alphabet']);
                     }
                 }
@@ -67,11 +65,11 @@
             global $wp_post_types;
             foreach ($wp_post_types as $post_type) {
                 if ('listings' === $post_type->show_in_menu) {
-                    $name = $post_type->name;
-                    $published = wp_count_posts($name)->publish;
-                    $draft = wp_count_posts($name)->draft;
-                    $pending = wp_count_posts($name)->pending;
-                    $count = $published + $draft + $pending;
+                    $name                                    = $post_type->name;
+                    $published                               = wp_count_posts($name)->publish;
+                    $draft                                   = wp_count_posts($name)->draft;
+                    $pending                                 = wp_count_posts($name)->pending;
+                    $count                                   = $published + $draft + $pending;
                     $name_with_count
                                                              = sprintf('%s <span class="inventor-menu-count">(%s)</span>',
                         $wp_post_types[$name]->labels->all_items, $count);
@@ -107,14 +105,14 @@
                 '51');
             add_menu_page(__('Lexicon', 'inventor'), __('Lexicon', 'inventor'), 'edit_posts', 'lexicon', null, null,
                 '52');
-            $taxonomies = get_taxonomies([], 'objects');
+            $taxonomies         = get_taxonomies([], 'objects');
             $enabled_post_types = Inventor_Post_Types::get_listing_post_types();
             foreach ($taxonomies as $taxonomy) {
                 if ($taxonomy->show_in_menu !== 'lexicon') {
                     continue;
                 }
-                $name = $taxonomy->name;
-                $label = $taxonomy->label;
+                $name        = $taxonomy->name;
+                $label       = $taxonomy->label;
                 $object_type = $taxonomy->object_type;
                 $add_submenu = true;
                 if (is_array($object_type) && count($object_type) === 1) {
@@ -122,7 +120,7 @@
                     $add_submenu = in_array($object_type, $enabled_post_types);
                 }
                 if ($add_submenu) {
-                    add_submenu_page('lexicon', $label, $label, 'edit_posts', 'edit-tags.php?taxonomy='.$name, false);
+                    add_submenu_page('lexicon', $label, $label, 'edit_posts', 'edit-tags.php?taxonomy=' . $name, false);
                 }
             }
             remove_submenu_page('lexicon', 'lexicon');

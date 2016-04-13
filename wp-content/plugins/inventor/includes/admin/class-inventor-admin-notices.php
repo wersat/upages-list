@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Admin_Notices.
-     *
      * @class  Inventor_Admin_Notices
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Admin_Notices
@@ -37,7 +35,7 @@
         {
             $hidden_notices = get_option('inventor_admin_hidden_notices', []);
             foreach (self::$notices as $id => $template) {
-                if (!in_array($id, $hidden_notices)) {
+                if ( ! in_array($id, $hidden_notices)) {
                     echo Inventor_Template_Loader::load($template);
                 }
             }
@@ -48,13 +46,13 @@
          */
         public static function hide()
         {
-            if (!empty($_GET['inventor-hide-notice'])) {
-                if (!wp_verify_nonce($_GET['_inventor_notice_nonce'], 'inventor_hide_notices_nonce')) {
+            if ( ! empty($_GET['inventor-hide-notice'])) {
+                if ( ! wp_verify_nonce($_GET['_inventor_notice_nonce'], 'inventor_hide_notices_nonce')) {
                     wp_die(__('Please refresh the page and retry action.', 'inventor'));
                 }
-                $notices = get_option('inventor_admin_hidden_notices', []);
+                $notices   = get_option('inventor_admin_hidden_notices', []);
                 $notices[] = $_GET['inventor-hide-notice'];
-                $notices = Inventor_Utilities::array_unique_multidimensional($notices);
+                $notices   = Inventor_Utilities::array_unique_multidimensional($notices);
                 update_option('inventor_admin_hidden_notices', $notices);
             }
         }
@@ -71,7 +69,7 @@
                     if (substr($key, 0, strlen('inventor')) !== 'inventor') {
                         continue;
                     }
-                    add_action('after_plugin_row_'.$key, [__CLASS__, 'render_purchase_code'], 10, 3);
+                    add_action('after_plugin_row_' . $key, [__CLASS__, 'render_purchase_code'], 10, 3);
                 }
             }
         }
@@ -88,7 +86,6 @@
 
         /**
          * Count number of columns in plugins table.
-         *
          * @return int
          */
         public static function plugins_table_cols_count()

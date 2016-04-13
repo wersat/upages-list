@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Widget_Listing_Author.
-     *
      * @class  Inventor_Widget_Listing_Author
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Widget_Listing_Author extends WP_Widget
@@ -18,9 +16,9 @@
         public function __construct()
         {
             parent::__construct('listing_author', __('Listing Author', 'inventor'), [
-                    'description' => __('Listing author widget for displaying information about listing author.',
-                        'inventor'),
-                ]);
+                'description' => __('Listing author widget for displaying information about listing author.',
+                    'inventor'),
+            ]);
         }
 
         /**

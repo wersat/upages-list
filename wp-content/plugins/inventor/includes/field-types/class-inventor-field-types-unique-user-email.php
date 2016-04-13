@@ -1,5 +1,5 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
@@ -43,13 +43,13 @@
          */
         public static function sanitize($override_value, $value, $object_id, $field_args, $sanitizer_object)
         {
-            $old_value = $sanitizer_object->field->value;
+            $old_value   = $sanitizer_object->field->value;
             $object_type = $sanitizer_object->field->object_type;
             if ($object_type !== 'user') {
                 return $value;
             }
             // not an email?
-            if (!is_email($value)) {
+            if ( ! is_email($value)) {
                 $_SESSION['messages'][] = ['danger', __('Invalid E-mail value.', 'inventor')];
 
                 return $old_value;

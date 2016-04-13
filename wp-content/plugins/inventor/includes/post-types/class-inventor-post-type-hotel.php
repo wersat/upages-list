@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Post_Type_Hotel.
-     *
      * @class  Inventor_Post_Type_Hotel
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Post_Type_Hotel
@@ -42,59 +40,58 @@
         public static function definition()
         {
             $labels = [
-                'name' => __('Hotels', 'inventor'),
-                'singular_name' => __('Hotel', 'inventor'),
-                'add_new' => __('Add New Hotel', 'inventor'),
-                'add_new_item' => __('Add New Hotel', 'inventor'),
-                'edit_item' => __('Edit Hotel', 'inventor'),
-                'new_item' => __('New Hotel', 'inventor'),
-                'all_items' => __('Hotels', 'inventor'),
-                'view_item' => __('View Hotel', 'inventor'),
-                'search_items' => __('Search Hotel', 'inventor'),
-                'not_found' => __('No Hotels found', 'inventor'),
+                'name'               => __('Hotels', 'inventor'),
+                'singular_name'      => __('Hotel', 'inventor'),
+                'add_new'            => __('Add New Hotel', 'inventor'),
+                'add_new_item'       => __('Add New Hotel', 'inventor'),
+                'edit_item'          => __('Edit Hotel', 'inventor'),
+                'new_item'           => __('New Hotel', 'inventor'),
+                'all_items'          => __('Hotels', 'inventor'),
+                'view_item'          => __('View Hotel', 'inventor'),
+                'search_items'       => __('Search Hotel', 'inventor'),
+                'not_found'          => __('No Hotels found', 'inventor'),
                 'not_found_in_trash' => __('No Hotels Found in Trash', 'inventor'),
-                'parent_item_colon' => '',
-                'menu_name' => __('Hotels', 'inventor'),
+                'parent_item_colon'  => '',
+                'menu_name'          => __('Hotels', 'inventor'),
             ];
             register_post_type('hotel', [
-                    'labels' => $labels,
-                    'show_in_menu' => 'listings',
-                    'supports' => ['title', 'editor', 'thumbnail', 'comments', 'author'],
-                    'has_archive' => true,
-                    'rewrite' => ['slug' => _x('hotels', 'URL slug', 'inventor')],
-                    'public' => true,
-                    'show_ui' => true,
-                    'categories' => [],
-                ]);
+                'labels'       => $labels,
+                'show_in_menu' => 'listings',
+                'supports'     => ['title', 'editor', 'thumbnail', 'comments', 'author'],
+                'has_archive'  => true,
+                'rewrite'      => ['slug' => _x('hotels', 'URL slug', 'inventor')],
+                'public'       => true,
+                'show_ui'      => true,
+                'categories'   => [],
+            ]);
         }
 
         /**
          * Defines custom fields.
-         *
          * @return array
          */
         public static function fields()
         {
             Inventor_Post_Types::add_metabox('hotel', ['general']);
             $cmb = new_cmb2_box([
-                'id' => INVENTOR_LISTING_PREFIX.'hotel_details',
-                'title' => __('Details', 'inventor'),
+                'id'           => INVENTOR_LISTING_PREFIX . 'hotel_details',
+                'title'        => __('Details', 'inventor'),
                 'object_types' => ['hotel'],
-                'context' => 'normal',
-                'priority' => 'high',
+                'context'      => 'normal',
+                'priority'     => 'high',
             ]);
             $cmb->add_field([
-                'name' => __('Hotel class', 'inventor'),
-                'id' => INVENTOR_LISTING_PREFIX.'hotel_class',
-                'type' => 'taxonomy_radio',
+                'name'     => __('Hotel class', 'inventor'),
+                'id'       => INVENTOR_LISTING_PREFIX . 'hotel_class',
+                'type'     => 'taxonomy_radio',
                 'taxonomy' => 'hotel_classes',
             ]);
             $cmb->add_field([
-                'name' => __('Rooms', 'inventor'),
-                'id' => INVENTOR_LISTING_PREFIX.'hotel_rooms',
-                'type' => 'text_small',
+                'name'       => __('Rooms', 'inventor'),
+                'id'         => INVENTOR_LISTING_PREFIX . 'hotel_rooms',
+                'type'       => 'text_small',
                 'attributes' => [
-                    'type' => 'number',
+                    'type'    => 'number',
                     'pattern' => '\d*',
                 ],
             ]);

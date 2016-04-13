@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Template_Loader.
-     *
      * @class  Inventor_Template_Loader
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Template_Loader
@@ -26,19 +24,18 @@
          * @param $template
          *
          * @return string
-         *
          * @throws Exception
          */
         public static function templates($template)
         {
-            $post_type = get_post_type();
+            $post_type         = get_post_type();
             $custom_post_types = Inventor_Post_Types::get_listing_post_types(true);
             if (is_post_type_archive($custom_post_types)) {
                 if (is_post_type_archive('listing')) {
                     return self::locate('archive-listing');
                 }
                 try {
-                    return self::locate('archive-'.$post_type);
+                    return self::locate('archive-' . $post_type);
                 } catch (Exception $e) {
                     try {
                         return self::locate('archive-listing');
@@ -50,7 +47,7 @@
             if (is_tax(Inventor_Taxonomies::get_listing_taxonomies())) {
                 $taxonomy = get_query_var('taxonomy');
                 try {
-                    return self::locate('taxonomy-'.$taxonomy);
+                    return self::locate('taxonomy-' . $taxonomy);
                 } catch (Exception $e) {
                     try {
                         return self::locate('taxonomy-listing');
@@ -61,7 +58,7 @@
             }
             if (is_single() && in_array($post_type, Inventor_Post_Types::get_listing_post_types())) {
                 try {
-                    return self::locate('single-'.$post_type);
+                    return self::locate('single-' . $post_type);
                 } catch (Exception $e) {
                     try {
                         return self::locate('single-listing');
@@ -81,27 +78,26 @@
          * @param $plugin_dir
          *
          * @return string
-         *
          * @throws Exception
          */
         public static function locate($name, $plugin_dir = INVENTOR_DIR)
         {
             $template = '';
             // Current theme base dir
-            if (!empty($name)) {
+            if ( ! empty($name)) {
                 $template = locate_template("{$name}.php");
             }
             // Child theme
-            if (!$template && !empty($name) && file_exists(get_stylesheet_directory()."/templates/{$name}.php")) {
-                $template = get_stylesheet_directory()."/templates/{$name}.php";
+            if ( ! $template && ! empty($name) && file_exists(get_stylesheet_directory() . "/templates/{$name}.php")) {
+                $template = get_stylesheet_directory() . "/templates/{$name}.php";
             }
             // Original theme
-            if (!$template && !empty($name) && file_exists(get_template_directory()."/templates/{$name}.php")) {
-                $template = get_template_directory()."/templates/{$name}.php";
+            if ( ! $template && ! empty($name) && file_exists(get_template_directory() . "/templates/{$name}.php")) {
+                $template = get_template_directory() . "/templates/{$name}.php";
             }
             // Plugin
-            if (!$template && !empty($name) && file_exists($plugin_dir."/templates/{$name}.php")) {
-                $template = $plugin_dir."/templates/{$name}.php";
+            if ( ! $template && ! empty($name) && file_exists($plugin_dir . "/templates/{$name}.php")) {
+                $template = $plugin_dir . "/templates/{$name}.php";
             }
             // Nothing found
             if (empty($template)) {
@@ -119,7 +115,6 @@
          * @param string $plugin_dir
          *
          * @return string
-         *
          * @throws Exception
          */
         public static function load($name, $args = [], $plugin_dir = INVENTOR_DIR)

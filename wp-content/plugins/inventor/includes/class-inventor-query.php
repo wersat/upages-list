@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Query.
-     *
      * @class  Inventor_Query
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Query
@@ -22,10 +20,10 @@
         public static function get_listings_by_user($id)
         {
             return new WP_Query([
-                'author' => $id,
-                'post_type' => Inventor_Post_Types::get_listing_post_types(),
+                'author'         => $id,
+                'post_type'      => Inventor_Post_Types::get_listing_post_types(),
                 'posts_per_page' => -1,
-                'post_status' => 'any',
+                'post_status'    => 'any',
             ]);
         }
 
@@ -38,20 +36,19 @@
          */
         public static function get_listings_by_post_type($post_type)
         {
-            if (!in_array($post_type, Inventor_Post_Types::get_listing_post_types())) {
+            if ( ! in_array($post_type, Inventor_Post_Types::get_listing_post_types())) {
                 return;
             }
 
             return new WP_Query([
-                'post_type' => [$post_type],
+                'post_type'      => [$post_type],
                 'posts_per_page' => -1,
-                'post_status' => 'any',
+                'post_status'    => 'any',
             ]);
         }
 
         /**
          * Returns all listings.
-         *
          * @return WP_Query
          */
         public static function get_all_listings()
@@ -61,15 +58,14 @@
 
         /**
          * Returns listings.
-         *
          * @return WP_Query
          */
         public static function get_listings($count = -1)
         {
             return new WP_Query([
-                'post_type' => Inventor_Post_Types::get_listing_post_types(),
+                'post_type'      => Inventor_Post_Types::get_listing_post_types(),
                 'posts_per_page' => $count,
-                'post_status' => 'any',
+                'post_status'    => 'any',
             ]);
         }
 
@@ -83,25 +79,25 @@
             if (null === $post_id) {
                 $post_id = get_the_ID();
             }
-            $categories = wp_get_post_terms($post_id, 'listing_categories');
+            $categories     = wp_get_post_terms($post_id, 'listing_categories');
             $categories_ids = [];
-            if (!empty($categories) && is_array($categories)) {
+            if ( ! empty($categories) && is_array($categories)) {
                 foreach ($categories as $category) {
                     $categories_ids[] = $category->term_id;
                 }
             }
             $args = [
-                'post_type' => Inventor_Post_Types::get_listing_post_types(),
+                'post_type'      => Inventor_Post_Types::get_listing_post_types(),
                 'posts_per_page' => $count,
-                'orderby' => 'rand',
-                'post__not_in' => [$post_id],
+                'orderby'        => 'rand',
+                'post__not_in'   => [$post_id],
             ];
-            if (!empty($categories_ids) && is_array($categories_ids) && count($categories_ids) > 0) {
+            if ( ! empty($categories_ids) && is_array($categories_ids) && count($categories_ids) > 0) {
                 $args['tax_query'] = [
                     [
                         'taxonomy' => 'listing_categories',
-                        'field' => 'id',
-                        'terms' => $categories_ids,
+                        'field'    => 'id',
+                        'terms'    => $categories_ids,
                     ],
                 ];
             }
@@ -116,9 +112,9 @@
         public static function loop_listings_filter($params = null)
         {
             global $wp_query;
-            $query = Inventor_Filter::filter_query($wp_query, $params);
+            $query        = Inventor_Filter::filter_query($wp_query, $params);
             $query->posts = $query->get_posts();
-            $wp_query = $query;
+            $wp_query     = $query;
         }
 
         /**
@@ -134,26 +130,26 @@
             if (null === $post_id) {
                 $post_id = get_the_ID();
             }
-            if (!empty($listing_locations[$post_id])) {
+            if ( ! empty($listing_locations[$post_id])) {
                 return $listing_locations[$post_id];
             }
             $locations = wp_get_post_terms($post_id, 'locations', [
                 'orderby' => 'parent',
-                'order' => 'ASC',
+                'order'   => 'ASC',
             ]);
             if (is_array($locations) && count($locations) > 0) {
                 $output = '';
                 if (true === $hierarchical) {
                     foreach ($locations as $key => $location) {
-                        $output .= '<a href="'.get_term_link($location,
-                                'locations').'">'.$location->name.'</a>';
+                        $output .= '<a href="' . get_term_link($location,
+                                'locations') . '">' . $location->name . '</a>';
                         if (array_key_exists($key + 1, $locations)) {
-                            $output .= ' <span class="separator">'.$separator.'</span> ';
+                            $output .= ' <span class="separator">' . $separator . '</span> ';
                         }
                     }
                 } else {
-                    $output = '<a href="'.get_term_link(end($locations),
-                            'locations').'">'.end($locations)->name.'</a>';
+                    $output = '<a href="' . get_term_link(end($locations),
+                            'locations') . '">' . end($locations)->name . '</a>';
                 }
                 $listing_locations[$post_id] = $output;
 
@@ -179,11 +175,11 @@
                     $current_depth = count(get_ancestors($type->term_id, 'listing_categories'));
                     if ($current_depth > $depth) {
                         $listing_type = $type;
-                        $depth = $current_depth;
+                        $depth        = $current_depth;
                     }
                 }
 
-                return '<a href="'.get_term_link($listing_type).'">'.$listing_type->name.'</a>';
+                return '<a href="' . get_term_link($listing_type) . '">' . $listing_type->name . '</a>';
             }
 
             return false;
@@ -191,7 +187,6 @@
 
         /**
          * Checks if there is another post in query.
-         *
          * @return bool
          */
         public static function loop_has_next()

@@ -27,17 +27,17 @@
          */
         public function render($field, $field_escaped_value, $field_object_id, $field_object_type, $field_type_object)
         {
-            $names = $field_type_object->get_object_terms();
+            $names       = $field_type_object->get_object_terms();
             $saved_terms = is_wp_error($names) || empty($names) ? $field_type_object->field->args('default')
                 : wp_list_pluck($names, 'slug');
-            $terms = get_terms($field_type_object->field->args('taxonomy'), [
+            $terms       = get_terms($field_type_object->field->args('taxonomy'), [
                 'hide_empty' => false,
-                'parent' => 0,
+                'parent'     => 0,
             ]);
-            $name = $field_type_object->_name().'[]';
-            $options = '';
-            $i = 1;
-            if (!$terms) {
+            $name        = $field_type_object->_name() . '[]';
+            $options     = '';
+            $i           = 1;
+            if ( ! $terms) {
                 $options .= sprintf('<li><label>%s</label></li>',
                     esc_html($field_type_object->_text('no_terms_text', __('No terms', 'cmb2'))));
             } else {
@@ -45,15 +45,15 @@
                     $args = [
                         'value' => $term->slug,
                         'label' => $term->name,
-                        'type' => 'checkbox',
-                        'name' => $name,
+                        'type'  => 'checkbox',
+                        'name'  => $name,
                     ];
                     if (is_array($saved_terms) && in_array($term->slug, $saved_terms)) {
                         $args['checked'] = 'checked';
                     }
                     $options .= $field_type_object->list_input($args, $i);
                     $children = $this->build_children($field_type_object, $term, $saved_terms);
-                    if (!empty($children)) {
+                    if ( ! empty($children)) {
                         $options .= $children;
                     }
                     ++$i;
@@ -76,25 +76,25 @@
         public function build_children($object, $parent_term, $saved_terms)
         {
             $output = null;
-            $terms = get_terms($object->field->args('taxonomy'), [
+            $terms  = get_terms($object->field->args('taxonomy'), [
                 'hide_empty' => false,
-                'parent' => $parent_term->term_id,
+                'parent'     => $parent_term->term_id,
             ]);
-            if (!empty($terms) && is_array($terms)) {
+            if ( ! empty($terms) && is_array($terms)) {
                 $output = '<li style="padding-left: 24px;"><ul>';
                 foreach ($terms as $term) {
                     $args = [
                         'value' => $term->slug,
                         'label' => $term->name,
-                        'type' => 'checkbox',
-                        'name' => $object->_name().'[]',
+                        'type'  => 'checkbox',
+                        'name'  => $object->_name() . '[]',
                     ];
                     if (is_array($saved_terms) && in_array($term->slug, $saved_terms)) {
                         $args['checked'] = 'checked';
                     }
                     $output .= $object->list_input($args, $term->term_id);
                     $children = $this->build_children($object, $term, $saved_terms);
-                    if (!empty($children)) {
+                    if ( ! empty($children)) {
                         $output .= $children;
                     }
                 }

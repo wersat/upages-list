@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Widget_Listing_Details.
-     *
      * @class  Inventor_Widget_Listing_Details
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Widget_Listing_Details extends WP_Widget
@@ -18,8 +16,8 @@
         public function __construct()
         {
             parent::__construct('listing_details', __('Listing details', 'inventor'), [
-                    'description' => __('Displays listing details.', 'inventor'),
-                ]);
+                'description' => __('Displays listing details.', 'inventor'),
+            ]);
         }
 
         /**

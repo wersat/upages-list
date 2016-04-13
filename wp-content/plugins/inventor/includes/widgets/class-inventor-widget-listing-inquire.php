@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Widget_Listing_Inquire.
-     *
      * @class  Inventor_Widget_Listing_Inquire
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Widget_Listing_Inquire extends WP_Widget
@@ -18,8 +16,8 @@
         public function __construct()
         {
             parent::__construct('listing_inquire', __('Listing Inquire', 'inventor'), [
-                    'description' => __('Listing inquire widget for sending inquire messages.', 'inventor'),
-                ]);
+                'description' => __('Listing inquire widget for sending inquire messages.', 'inventor'),
+            ]);
         }
 
         /**

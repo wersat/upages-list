@@ -1,10 +1,8 @@
 <?php
     /**
      * @category     WordPress_Plugin
-     *
      * @author       Jtsternberg
      * @license      GPL-2.0+
-     *
      * @link         https://github.com/jtsternberg/Taxonomy_MetaData
      * Plugin Name:  Taxonomy_MetaData_CMB2
      * Plugin URI:   https://github.com/jtsternberg/Taxonomy_MetaData
@@ -28,26 +26,22 @@
      * **********************************************************************
      */
     require_once 'Taxonomy_MetaData.php';
-    if (!class_exists('Taxonomy_MetaData_CMB2')) :
+    if ( ! class_exists('Taxonomy_MetaData_CMB2')) :
         /**
          * Adds pseudo term meta functionality.
-         *
          * @version 1.0.0
-         *
          * @author  Justin Sternberg
          */
         class Taxonomy_MetaData_CMB2 extends Taxonomy_MetaData
         {
             /**
              * CMB2 Object.
-             *
              * @var CMB2
              */
             protected $cmb = null;
 
             /**
              * Initiate CMB2 Taxonomy Meta.
-             *
              * @since 1.0.0
              *
              * @param string $taxonomy         Taxonomy Slug
@@ -59,7 +53,7 @@
             {
                 $this->cmb = cmb2_get_metabox($metabox);
                 // if passing a metabox ID, and that ID was not found
-                if (!$this->cmb) {
+                if ( ! $this->cmb) {
                     return;
                 }
                 // If a title was passed in
@@ -67,7 +61,7 @@
                     // Then add a title field to the list of fields for CMB
                     $this->cmb->add_field([
                         'name' => $title,
-                        'id' => sanitize_title($title),
+                        'id'   => sanitize_title($title),
                         'type' => 'title',
                     ], 1);
                 }
@@ -76,14 +70,13 @@
 
             /**
              * Displays form markup.
-             *
              * @since  0.1.3
              *
              * @param int $term_id Term ID
              */
             public function display_form($term_id)
             {
-                if (!class_exists('CMB2')) {
+                if ( ! class_exists('CMB2')) {
                     return;
                 }
                 $this->do_override_filters($term_id);
@@ -108,14 +101,13 @@
 
             /**
              * Handles saving of the $_POST data.
-             *
              * @since  0.1.3
              *
              * @param int $term_id Term's ID
              */
             public function do_save($term_id)
             {
-                if (!class_exists('CMB2')) {
+                if ( ! class_exists('CMB2')) {
                     return;
                 }
                 $object_id = $this->id($term_id);
@@ -130,21 +122,19 @@
 
             /**
              * Filters CMB setting/getting.
-             *
              * @since  0.1.3
              */
             public function do_override_filters($term_id)
             {
                 // Override CMB's getter
-                add_filter('cmb2_override_option_get_'.$this->id($term_id), [$this, 'use_get_override'], 10, 2);
+                add_filter('cmb2_override_option_get_' . $this->id($term_id), [$this, 'use_get_override'], 10, 2);
                 // Override CMB's setter
-                add_filter('cmb2_override_option_save_'.$this->id($term_id), [$this, 'use_update_override'], 10, 2);
+                add_filter('cmb2_override_option_save_' . $this->id($term_id), [$this, 'use_update_override'], 10, 2);
                 $this->filters_added = true;
             }
 
             /**
              * Replaces get_option with our override.
-             *
              * @since  0.1.3
              */
             public function use_get_override($test, $default = false)
@@ -154,7 +144,6 @@
 
             /**
              * Replaces update_option with our override.
-             *
              * @since  0.1.3
              */
             public function use_update_override($test, $option_value)
@@ -164,7 +153,6 @@
 
             /**
              * Returns term meta with options to return a subset.
-             *
              * @since  0.1.3
              *
              * @param string $term_id The term id for the options we're getting
@@ -174,7 +162,7 @@
              */
             public function get_meta($term_id, $key = '')
             {
-                if (!class_exists('CMB2')) {
+                if ( ! class_exists('CMB2')) {
                     return;
                 }
                 $this->do_override_filters($term_id);
@@ -185,4 +173,3 @@
             }
         }
     endif; // end class_exists check
-

@@ -1,5 +1,5 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
@@ -30,10 +30,10 @@
         {
             CMB2_JS::add_dependencies(['jquery-ui-core', 'jquery-ui-datepicker', 'jquery-ui-datetimepicker']);
             echo Inventor_Template_Loader::load('controls/opening-hours', [
-                'field' => $field,
-                'value' => $value,
-                'object_id' => $object_id,
-                'object_type' => $object_type,
+                'field'             => $field,
+                'value'             => $value,
+                'object_id'         => $object_id,
+                'object_type'       => $object_type,
                 'field_type_object' => $field_type_object,
             ]);
         }

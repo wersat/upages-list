@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Shortcodes.
-     *
      * @class  Inventor_Shortcodes
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Shortcodes
@@ -118,14 +116,14 @@
          */
         public static function submission_steps($atts = [])
         {
-            $post_type = !empty($_GET['type']) ? $_GET['type'] : null;
-            $steps = Inventor_Submission::get_submission_steps($post_type);
-            $first_step = (is_array($steps) && count($steps) > 0) ? $steps[0]['id'] : null;
-            $current_step = !empty($_GET['step']) ? $_GET['step'] : $first_step;
+            $post_type    = ! empty($_GET['type']) ? $_GET['type'] : null;
+            $steps        = Inventor_Submission::get_submission_steps($post_type);
+            $first_step   = (is_array($steps) && count($steps) > 0) ? $steps[0]['id'] : null;
+            $current_step = ! empty($_GET['step']) ? $_GET['step'] : $first_step;
 
             return Inventor_Template_Loader::load('submissions/steps', [
-                'steps' => $steps,
-                'post_type' => $post_type,
+                'steps'        => $steps,
+                'post_type'    => $post_type,
                 'current_step' => $current_step,
             ]);
         }
@@ -139,16 +137,16 @@
          */
         public static function submission($atts = [])
         {
-            if (!is_user_logged_in()) {
+            if ( ! is_user_logged_in()) {
                 echo Inventor_Template_Loader::load('misc/not-allowed');
 
                 return;
             }
-            $object_id = !empty($_GET['id']) ? $_GET['id'] : false;
-            if (empty($post_id) && !empty($_POST['object_id'])) {
+            $object_id = ! empty($_GET['id']) ? $_GET['id'] : false;
+            if (empty($post_id) && ! empty($_POST['object_id'])) {
                 $object_id = $_POST['object_id'];
             }
-            if (empty($object_id) && !Inventor_Submission::is_allowed_to_add_submission(get_current_user_id())) {
+            if (empty($object_id) && ! Inventor_Submission::is_allowed_to_add_submission(get_current_user_id())) {
                 echo Inventor_Template_Loader::load('misc/not-allowed', [
                     'message' => __('Check your package.', 'inventor'),
                     // TODO: move to inventor-packages or use filter
@@ -156,7 +154,7 @@
 
                 return;
             }
-            $post_type = !empty($_GET['type']) ? $_GET['type'] : null;
+            $post_type = ! empty($_GET['type']) ? $_GET['type'] : null;
             // Post type reference in URL not found
             if (empty($post_type)) {
                 return Inventor_Template_Loader::load('submissions/type-not-found');
@@ -170,19 +168,19 @@
             if (is_array($steps) && count($steps) === 0) {
                 return Inventor_Template_Loader::load('submissions/steps-not-found');
             }
-            $current_step = !empty($_GET['step']) ? $_GET['step'] : $steps[0]['id'];
-            $meta_box = cmb2_get_metabox($current_step, $object_id);
+            $current_step     = ! empty($_GET['step']) ? $_GET['step'] : $steps[0]['id'];
+            $meta_box         = cmb2_get_metabox($current_step, $object_id);
             $post_type_object = get_post_type_object($post_type);
-            $title = Inventor_Template_Loader::load('submissions/step-title', [
-                'steps' => $steps,
-                'current_step' => $current_step,
+            $title            = Inventor_Template_Loader::load('submissions/step-title', [
+                'steps'              => $steps,
+                'current_step'       => $current_step,
                 'listing_type_title' => $post_type_object->labels->singular_name,
             ]);
-            $save_button = empty($_GET['id']) ? __('Proceed to next step', 'inventor') : __('Save', 'inventor');
-            $action = empty($_GET['id']) ? '' : '&action=save';
+            $save_button      = empty($_GET['id']) ? __('Proceed to next step', 'inventor') : __('Save', 'inventor');
+            $action           = empty($_GET['id']) ? '' : '&action=save';
 
             return cmb2_get_metabox_form($meta_box, $object_id, [
-                'form_format' => '<form action="//'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].$action.'" class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data"> '.$title.'<input type="hidden" name="object_id" value="%2$s">%3$s<input type="submit" name="submit-submission" value="%4$s" class="button"></form>',
+                'form_format' => '<form action="//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . $action . '" class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data"> ' . $title . '<input type="hidden" name="object_id" value="%2$s">%3$s<input type="submit" name="submit-submission" value="%4$s" class="button"></form>',
                 'save_button' => $save_button,
             ]);
         }
@@ -194,7 +192,7 @@
          */
         public static function submission_remove($atts = [])
         {
-            if (!is_user_logged_in() || empty($_GET['id'])) {
+            if ( ! is_user_logged_in() || empty($_GET['id'])) {
                 echo Inventor_Template_Loader::load('misc/not-allowed');
 
                 return;
@@ -206,7 +204,7 @@
                 return;
             }
             $is_allowed = Inventor_Utilities::is_allowed_to_remove(get_current_user_id(), $_GET['id']);
-            if (!$is_allowed) {
+            if ( ! $is_allowed) {
                 echo Inventor_Template_Loader::load('misc/not-allowed');
 
                 return;
@@ -226,7 +224,7 @@
          */
         public static function submission_list($atts = [])
         {
-            if (!is_user_logged_in()) {
+            if ( ! is_user_logged_in()) {
                 return Inventor_Template_Loader::load('misc/not-allowed');
             }
 
@@ -242,7 +240,7 @@
          */
         public static function payment($atts = [])
         {
-            if (!is_user_logged_in()) {
+            if ( ! is_user_logged_in()) {
                 return Inventor_Template_Loader::load('misc/not-allowed');
             }
 
@@ -258,7 +256,7 @@
          */
         public static function transactions($atts = [])
         {
-            if (!is_user_logged_in()) {
+            if ( ! is_user_logged_in()) {
                 return Inventor_Template_Loader::load('misc/not-allowed');
             }
 
@@ -287,7 +285,7 @@
          */
         public static function password($atts = [])
         {
-            if (!is_user_logged_in()) {
+            if ( ! is_user_logged_in()) {
                 return Inventor_Template_Loader::load('misc/not-allowed');
             }
 
@@ -303,11 +301,11 @@
          */
         public static function profile($atts = [])
         {
-            if (!is_user_logged_in()) {
+            if ( ! is_user_logged_in()) {
                 return Inventor_Template_Loader::load('misc/not-allowed');
             }
-            $form = cmb2_get_metabox_form(INVENTOR_USER_PREFIX.'profile', get_current_user_id(), [
-                'form_format' => '<form action="//'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'" class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data"><input type="hidden" name="object_id" value="%2$s">%3$s<input type="submit" name="submit-profile" value="%4$s" class="button"></form>',
+            $form = cmb2_get_metabox_form(INVENTOR_USER_PREFIX . 'profile', get_current_user_id(), [
+                'form_format' => '<form action="//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . '" class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data"><input type="hidden" name="object_id" value="%2$s">%3$s<input type="submit" name="submit-profile" value="%4$s" class="button"></form>',
                 'save_button' => __('Save profile', 'inventor'),
             ]);
 

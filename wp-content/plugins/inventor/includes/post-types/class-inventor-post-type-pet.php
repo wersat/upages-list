@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Post_Type_Pet.
-     *
      * @class  Inventor_Post_Type_Pet
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Post_Type_Pet
@@ -57,51 +55,50 @@
         public static function definition()
         {
             $labels = [
-                'name' => __('Pets', 'inventor'),
-                'singular_name' => __('Pet', 'inventor'),
-                'add_new' => __('Add New Pet', 'inventor'),
-                'add_new_item' => __('Add New Pet', 'inventor'),
-                'edit_item' => __('Edit Pet', 'inventor'),
-                'new_item' => __('New Pet', 'inventor'),
-                'all_items' => __('Pets', 'inventor'),
-                'view_item' => __('View Pet', 'inventor'),
-                'search_items' => __('Search Pet', 'inventor'),
-                'not_found' => __('No Pets found', 'inventor'),
+                'name'               => __('Pets', 'inventor'),
+                'singular_name'      => __('Pet', 'inventor'),
+                'add_new'            => __('Add New Pet', 'inventor'),
+                'add_new_item'       => __('Add New Pet', 'inventor'),
+                'edit_item'          => __('Edit Pet', 'inventor'),
+                'new_item'           => __('New Pet', 'inventor'),
+                'all_items'          => __('Pets', 'inventor'),
+                'view_item'          => __('View Pet', 'inventor'),
+                'search_items'       => __('Search Pet', 'inventor'),
+                'not_found'          => __('No Pets found', 'inventor'),
                 'not_found_in_trash' => __('No Pets Found in Trash', 'inventor'),
-                'parent_item_colon' => '',
-                'menu_name' => __('Pets', 'inventor'),
+                'parent_item_colon'  => '',
+                'menu_name'          => __('Pets', 'inventor'),
             ];
             register_post_type('pet', [
-                    'labels' => $labels,
-                    'show_in_menu' => 'listings',
-                    'supports' => ['title', 'editor', 'thumbnail', 'comments', 'author'],
-                    'has_archive' => true,
-                    'rewrite' => ['slug' => _x('pets', 'URL slug', 'inventor')],
-                    'public' => true,
-                    'show_ui' => true,
-                    'categories' => [],
-                ]);
+                'labels'       => $labels,
+                'show_in_menu' => 'listings',
+                'supports'     => ['title', 'editor', 'thumbnail', 'comments', 'author'],
+                'has_archive'  => true,
+                'rewrite'      => ['slug' => _x('pets', 'URL slug', 'inventor')],
+                'public'       => true,
+                'show_ui'      => true,
+                'categories'   => [],
+            ]);
         }
 
         /**
          * Defines custom fields.
-         *
          * @return array
          */
         public static function fields()
         {
             Inventor_Post_Types::add_metabox('pet', ['general']);
             $cmb = new_cmb2_box([
-                'id' => INVENTOR_LISTING_PREFIX.'pet_details',
-                'title' => __('Details', 'inventor'),
+                'id'           => INVENTOR_LISTING_PREFIX . 'pet_details',
+                'title'        => __('Details', 'inventor'),
                 'object_types' => ['pet'],
-                'context' => 'normal',
-                'priority' => 'high',
+                'context'      => 'normal',
+                'priority'     => 'high',
             ]);
             $cmb->add_field([
-                'name' => __('Animal', 'inventor'),
-                'id' => INVENTOR_LISTING_PREFIX.'pet_animal',
-                'type' => 'taxonomy_select',
+                'name'     => __('Animal', 'inventor'),
+                'id'       => INVENTOR_LISTING_PREFIX . 'pet_animal',
+                'type'     => 'taxonomy_select',
                 'taxonomy' => 'pet_animals',
             ]);
             Inventor_Post_Types::add_metabox('pet',

@@ -7,18 +7,18 @@
         // Term option key
         'sidebar' => [
             // Option label
-            'label' => __('Enable sidebar for this issue', 'taxonomy-metadata'),
+            'label'    => __('Enable sidebar for this issue', 'taxonomy-metadata'),
             // Sanitization callback
             'sanitize' => 'parse_boolean',
             // Field type
-            'type' => 'checkbox',
+            'type'     => 'checkbox',
         ],
     ], __('Category Settings', 'taxonomy-metadata') /* Settings heading */);
     new Taxonomy_MetaData('post_tag', [
         'arbitrary_text' => [
-            'label' => __('Arbitrary text for tags', 'taxonomy-metadata'),
+            'label'       => __('Arbitrary text for tags', 'taxonomy-metadata'),
             // Optional input description
-            'desc' => __('A description for this field', 'taxonomy-metadata'),
+            'desc'        => __('A description for this field', 'taxonomy-metadata'),
             // Optional placeholder text if no value is saved
             'placeholder' => __('Placeholder text', 'taxonomy-metadata'),
         ],

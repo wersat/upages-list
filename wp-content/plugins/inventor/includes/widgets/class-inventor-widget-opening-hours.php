@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Widget_Opening_Hours.
-     *
      * @class  Inventor_Widget_Opening_Hours
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Widget_Opening_Hours extends WP_Widget
@@ -18,8 +16,8 @@
         public function __construct()
         {
             parent::__construct('opening_hours', __('Opening hours', 'inventor'), [
-                    'description' => __('Displays opening hours for current listing.', 'inventor'),
-                ]);
+                'description' => __('Displays opening hours for current listing.', 'inventor'),
+            ]);
         }
 
         /**

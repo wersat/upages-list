@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Post_Type_Shopping.
-     *
      * @class  Inventor_Post_Type_Shopping
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Post_Type_Shopping
@@ -57,71 +55,70 @@
         public static function definition()
         {
             $labels = [
-                'name' => __('Shoppings', 'inventor'),
-                'singular_name' => __('Shopping', 'inventor'),
-                'add_new' => __('Add New Shopping', 'inventor'),
-                'add_new_item' => __('Add New Shopping', 'inventor'),
-                'edit_item' => __('Edit Shopping', 'inventor'),
-                'new_item' => __('New Shopping', 'inventor'),
-                'all_items' => __('Shoppings', 'inventor'),
-                'view_item' => __('View Shopping', 'inventor'),
-                'search_items' => __('Search Shopping', 'inventor'),
-                'not_found' => __('No Shoppings found', 'inventor'),
+                'name'               => __('Shoppings', 'inventor'),
+                'singular_name'      => __('Shopping', 'inventor'),
+                'add_new'            => __('Add New Shopping', 'inventor'),
+                'add_new_item'       => __('Add New Shopping', 'inventor'),
+                'edit_item'          => __('Edit Shopping', 'inventor'),
+                'new_item'           => __('New Shopping', 'inventor'),
+                'all_items'          => __('Shoppings', 'inventor'),
+                'view_item'          => __('View Shopping', 'inventor'),
+                'search_items'       => __('Search Shopping', 'inventor'),
+                'not_found'          => __('No Shoppings found', 'inventor'),
                 'not_found_in_trash' => __('No Shoppings Found in Trash', 'inventor'),
-                'parent_item_colon' => '',
-                'menu_name' => __('Shoppings', 'inventor'),
+                'parent_item_colon'  => '',
+                'menu_name'          => __('Shoppings', 'inventor'),
             ];
             register_post_type('shopping', [
-                    'labels' => $labels,
-                    'show_in_menu' => 'listings',
-                    'supports' => ['title', 'editor', 'thumbnail', 'comments', 'author'],
-                    'has_archive' => true,
-                    'rewrite' => ['slug' => _x('shoppings', 'URL slug', 'inventor')],
-                    'public' => true,
-                    'show_ui' => true,
-                    'categories' => [],
-                ]);
+                'labels'       => $labels,
+                'show_in_menu' => 'listings',
+                'supports'     => ['title', 'editor', 'thumbnail', 'comments', 'author'],
+                'has_archive'  => true,
+                'rewrite'      => ['slug' => _x('shoppings', 'URL slug', 'inventor')],
+                'public'       => true,
+                'show_ui'      => true,
+                'categories'   => [],
+            ]);
         }
 
         /**
          * Defines custom fields.
-         *
          * @return array
          */
         public static function fields()
         {
             Inventor_Post_Types::add_metabox('shopping', ['general']);
             $cmb = new_cmb2_box([
-                'id' => INVENTOR_LISTING_PREFIX.'shopping_details',
-                'title' => __('Details', 'inventor'),
+                'id'           => INVENTOR_LISTING_PREFIX . 'shopping_details',
+                'title'        => __('Details', 'inventor'),
                 'object_types' => ['shopping'],
-                'context' => 'normal',
-                'priority' => 'high',
+                'context'      => 'normal',
+                'priority'     => 'high',
             ]);
             $cmb->add_field([
-                'name' => __('Shopping category', 'inventor'),
-                'id' => INVENTOR_LISTING_PREFIX.'shopping_category',
-                'type' => 'taxonomy_select',
+                'name'     => __('Shopping category', 'inventor'),
+                'id'       => INVENTOR_LISTING_PREFIX . 'shopping_category',
+                'type'     => 'taxonomy_select',
                 'taxonomy' => 'shopping_categories',
             ]);
             $cmb->add_field([
-                'name' => __('Color', 'inventor'),
-                'id' => INVENTOR_LISTING_PREFIX.'color',
-                'type' => 'taxonomy_multicheck_hierarchy',
+                'name'     => __('Color', 'inventor'),
+                'id'       => INVENTOR_LISTING_PREFIX . 'color',
+                'type'     => 'taxonomy_multicheck_hierarchy',
                 'taxonomy' => 'colors',
             ]);
             $cmb->add_field([
-                'name' => __('Size', 'inventor'),
-                'id' => INVENTOR_LISTING_PREFIX.'size',
-                'type' => 'text_small',
+                'name'        => __('Size', 'inventor'),
+                'id'          => INVENTOR_LISTING_PREFIX . 'size',
+                'type'        => 'text_small',
                 'description' => __('For example M, 10cm, 47 ...'),
             ]);
             $cmb->add_field([
-                'name' => __('Weight', 'inventor'),
-                'id' => INVENTOR_LISTING_PREFIX.'weight',
-                'type' => 'text_small',
+                'name'       => __('Weight', 'inventor'),
+                'id'         => INVENTOR_LISTING_PREFIX . 'weight',
+                'type'       => 'text_small',
                 'attributes' => [
-                    'type' => 'number',
+                    'type'    => 'number',
                     'pattern' => '\d*',
                 ],
             ]);

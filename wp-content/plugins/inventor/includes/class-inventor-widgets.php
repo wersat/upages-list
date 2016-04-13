@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Widgets.
-     *
      * @class  Inventor_Widgets
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Widgets
@@ -26,14 +24,14 @@
          */
         public static function includes()
         {
-            require_once INVENTOR_WIDGETS_DIR.'/class-inventor-widget-filter.php';
-            require_once INVENTOR_WIDGETS_DIR.'/class-inventor-widget-listings.php';
-            require_once INVENTOR_WIDGETS_DIR.'/class-inventor-widget-listing-author.php';
-            require_once INVENTOR_WIDGETS_DIR.'/class-inventor-widget-listing-categories.php';
-            require_once INVENTOR_WIDGETS_DIR.'/class-inventor-widget-listing-categories-boxes.php';
-            require_once INVENTOR_WIDGETS_DIR.'/class-inventor-widget-listing-details.php';
-            require_once INVENTOR_WIDGETS_DIR.'/class-inventor-widget-listing-inquire.php';
-            require_once INVENTOR_WIDGETS_DIR.'/class-inventor-widget-opening-hours.php';
+            require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-filter.php';
+            require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-listings.php';
+            require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-listing-author.php';
+            require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-listing-categories.php';
+            require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-listing-categories-boxes.php';
+            require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-listing-details.php';
+            require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-listing-inquire.php';
+            require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-opening-hours.php';
         }
 
         /**

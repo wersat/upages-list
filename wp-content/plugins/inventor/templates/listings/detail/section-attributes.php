@@ -4,18 +4,23 @@
     <h2 class="page-header"><?php echo $section_title; ?></h2>
     <div class="listing-detail-attributes">
       <ul>
-        <?php foreach ($attributes as $key => $attribute) : ?>
-          <li class="<?php echo esc_attr($key); ?>">
-            <strong class="key"><?php echo wp_kses($attribute['name'], wp_kses_allowed_html('post')); ?></strong>
+        <?php foreach ($attributes as $key => $attribute) {
+          if ( ! is_array($attribute['value'])) {
+            ?>
+            <li class="<?php echo esc_attr($key);
+            ?>">
+              <strong class="key"><?php echo wp_kses($attribute['name'], wp_kses_allowed_html('post'));
+                ?></strong>
 
             <span class="value"><?php
-
                 echo wp_kses($attribute['value'], wp_kses_allowed_html('post'));
-                //var_dump($attribute['value']);
               ?>
             </span>
-          </li>
-        <?php endforeach; ?>
+            </li>
+            <?php
+
+          }
+        } ?>
       </ul>
     </div>
   </div>

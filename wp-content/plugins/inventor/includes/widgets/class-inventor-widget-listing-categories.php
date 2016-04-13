@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Widget_Listing_Categories.
-     *
      * @class  Inventor_Widget_Listing_Categories
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Widget_Listing_Categories extends WP_Widget
@@ -18,8 +16,8 @@
         public function __construct()
         {
             parent::__construct('listing_categories', __('Listing Categories', 'inventor'), [
-                    'description' => __('Displays listing categories.', 'inventor'),
-                ]);
+                'description' => __('Displays listing categories.', 'inventor'),
+            ]);
         }
 
         /**
@@ -56,9 +54,9 @@
         {
             $data = [
                 'hide_empty' => false,
-                'parent' => 0,
+                'parent'     => 0,
             ];
-            if (!empty($instance['listing_categories']) && is_array($instance['listing_categories']) && count($instance['listing_categories']) > 0) {
+            if ( ! empty($instance['listing_categories']) && is_array($instance['listing_categories']) && count($instance['listing_categories']) > 0) {
                 $data['include'] = implode(',', $instance['listing_categories']);
             }
             $terms = get_terms('listing_categories', $data);

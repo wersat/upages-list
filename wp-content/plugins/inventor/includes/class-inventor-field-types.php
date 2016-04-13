@@ -1,13 +1,11 @@
 <?php
-    if (!defined('ABSPATH')) {
+    if ( ! defined('ABSPATH')) {
         exit;
     }
 
     /**
      * Class Inventor_Field_Types.
-     *
      * @class  Inventor_Field_Types
-     *
      * @author Pragmatic Mates
      */
     class Inventor_Field_Types
@@ -25,9 +23,9 @@
          */
         public static function includes()
         {
-            require_once INVENTOR_FIELD_DIR.'/class-inventor-field-types-unique-user-email.php';
-            require_once INVENTOR_FIELD_DIR.'/class-inventor-field-types-opening-hours.php';
-            require_once INVENTOR_FIELD_DIR.'/class-inventor-field-types-taxonomy-select-hierarchy.php';
+            require_once INVENTOR_FIELD_DIR . '/class-inventor-field-types-unique-user-email.php';
+            require_once INVENTOR_FIELD_DIR . '/class-inventor-field-types-opening-hours.php';
+            require_once INVENTOR_FIELD_DIR . '/class-inventor-field-types-taxonomy-select-hierarchy.php';
         }
     }
 
