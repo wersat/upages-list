@@ -12,6 +12,7 @@
     define('EXCERPT_LENGTH', 20);
     define('THEME_ASSETS_DIR', get_template_directory_uri() . '/assets');
     define('THEME_ASSETS_LIB_DIR', THEME_ASSETS_DIR . '/libraries');
+    define('THEME_BOOTSTRAP_DIR', THEME_ASSETS_LIB_DIR . '/bootstrap-sass');
     define('THEME_CSS_DIR', THEME_ASSETS_DIR . '/css');
     define('THEME_JS_DIR', THEME_ASSETS_DIR . '/js');
     define('THEME_IMG_DIR', THEME_ASSETS_DIR . '/img');
@@ -76,60 +77,6 @@
      */
     function superlist_enqueue_files()
     {
-
-        wp_register_script('bootstrap-select',
-            get_template_directory_uri() . '/assets/libraries/bootstrap-select/bootstrap-select.min.js', ['jquery'],
-            false, true);
-        wp_enqueue_script('bootstrap-select');
-
-        wp_register_script('bootstrap-dropdown',
-            get_template_directory_uri() . '/assets/libraries/bootstrap-sass/javascripts/bootstrap/dropdown.js',
-            ['jquery'], false, true);
-        wp_enqueue_script('bootstrap-dropdown');
-
-        wp_register_script('bootstrap-collapse',
-            get_template_directory_uri() . '/assets/libraries/bootstrap-sass/javascripts/bootstrap/collapse.js',
-            ['jquery'], false, true);
-        wp_enqueue_script('bootstrap-collapse');
-        wp_register_script('bootstrap-tooltip',
-            get_template_directory_uri() . '/assets/libraries/bootstrap-sass/javascripts/bootstrap/tooltip.js',
-            ['jquery'], false, true);
-        wp_enqueue_script('bootstrap-tooltip');
-        wp_register_script('bootstrap-alert',
-            get_template_directory_uri() . '/assets/libraries/bootstrap-sass/javascripts/bootstrap/alert.js',
-            ['jquery'], false, true);
-        wp_enqueue_script('bootstrap-alert');
-        wp_register_script('bootstrap-affix',
-            get_template_directory_uri() . '/assets/libraries/bootstrap-sass/javascripts/bootstrap/affix.js',
-            ['jquery'], false, true);
-        wp_enqueue_script('bootstrap-affix');
-        wp_register_script('bootstrap-tab',
-            get_template_directory_uri() . '/assets/libraries/bootstrap-sass/javascripts/bootstrap/tab.js', ['jquery'],
-            false, true);
-        wp_enqueue_script('bootstrap-tab');
-        wp_register_script('bootstrap-transition',
-            get_template_directory_uri() . '/assets/libraries/bootstrap-sass/javascripts/bootstrap/transition.js',
-            ['jquery'], false, true);
-        wp_enqueue_script('bootstrap-transition');
-        wp_register_script('bootstrap-scrollspy',
-            get_template_directory_uri() . '/assets/libraries/bootstrap-sass/javascripts/bootstrap/scrollspy.js',
-            ['jquery'], false, true);
-        wp_enqueue_script('bootstrap-scrollspy');
-        wp_register_script('colorbox',
-            get_template_directory_uri() . '/assets/libraries/colorbox/jquery.colorbox-min.js', ['jquery'], false,
-            true);
-        wp_enqueue_script('colorbox');
-        wp_register_script('owl-carousel',
-            get_template_directory_uri() . '/assets/libraries/owl.carousel/owl.carousel.min.js', ['jquery'], false,
-            true);
-        wp_enqueue_script('owl-carousel');
-        wp_register_script('scrollto',
-            get_template_directory_uri() . '/assets/libraries/scrollto/jquery.scrollTo.min.js', ['jquery'], false,
-            true);
-        wp_enqueue_script('scrollto');
-        wp_register_script('superlist', get_template_directory_uri() . '/assets/js/superlist.js', ['jquery'], false,
-            true);
-        wp_enqueue_script('superlist');
         $google_lib_url   = '//ajax.googleapis.com/ajax/libs';
         $bootstrapcdn     = 'https://maxcdn.bootstrapcdn.com/';
         $jsdelivr_lib_url = 'https://cdn.jsdelivr.net/';
@@ -140,6 +87,97 @@
                 'handle'   => 'jquery',
                 'src'      => $google_lib_url . '/jquery/2.2.0/jquery.min.js',
                 'deps'     => '',
+                'in_foter' => true,
+                'enqueue'  => true
+            ],
+            [
+                'handle'   => 'bootstrap-select',
+                'src'      => THEME_ASSETS_LIB_DIR . '/bootstrap-select/bootstrap-select.min.js',
+                'deps'     => 'jquery',
+                'in_foter' => true,
+                'enqueue'  => true
+            ],
+            [
+                'handle'   => 'bootstrap-dropdown',
+                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/dropdown.min.js',
+                'deps'     => 'jquery',
+                'in_foter' => true,
+                'enqueue'  => true
+            ],
+            [
+                'handle'   => 'bootstrap-collapse',
+                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/collapse.min.js',
+                'deps'     => 'jquery',
+                'in_foter' => true,
+                'enqueue'  => true
+            ],
+            [
+                'handle'   => 'bootstrap-tooltip',
+                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/tooltip.min.js',
+                'deps'     => 'jquery',
+                'in_foter' => true,
+                'enqueue'  => true
+            ],
+            [
+                'handle'   => 'bootstrap-alert',
+                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/alert.min.js',
+                'deps'     => 'jquery',
+                'in_foter' => true,
+                'enqueue'  => true
+            ],
+            [
+                'handle'   => 'bootstrap-affix',
+                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/affix.min.js',
+                'deps'     => 'jquery',
+                'in_foter' => true,
+                'enqueue'  => true
+            ],
+            [
+                'handle'   => 'bootstrap-tab',
+                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/tab.min.js',
+                'deps'     => 'jquery',
+                'in_foter' => true,
+                'enqueue'  => true
+            ],
+            [
+                'handle'   => 'bootstrap-transition',
+                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/transition.min.js',
+                'deps'     => 'jquery',
+                'in_foter' => true,
+                'enqueue'  => true
+            ],
+            [
+                'handle'   => 'bootstrap-scrollspy',
+                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/scrollspy.min.js',
+                'deps'     => 'jquery',
+                'in_foter' => true,
+                'enqueue'  => true
+            ],
+            [
+                'handle'   => 'colorbox',
+                'src'      => THEME_ASSETS_LIB_DIR . '/colorbox/jquery.colorbox-min.js',
+                'deps'     => 'jquery',
+                'in_foter' => true,
+                'enqueue'  => true
+            ],
+            [
+                'handle'   => 'owl-carousel',
+                'src'      => THEME_ASSETS_LIB_DIR . '/owl.carousel/owl.carousel.min.js',
+                'deps'     => 'jquery',
+                'in_foter' => true,
+                'enqueue'  => true
+            ],
+            [
+                'handle'   => 'scrollto',
+                'src'      => THEME_ASSETS_LIB_DIR . '/scrollto/jquery.scrollTo.min.js',
+                'deps'     => 'jquery',
+                'in_foter' => true,
+                'enqueue'  => true
+            ],
+            [
+                'handle'   => 'upages',
+                'src'      => THEME_JS_DIR. '/upages.min.js',
+                'deps'     => 'jquery',
                 'in_foter' => true,
                 'enqueue'  => true
             ]
