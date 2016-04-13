@@ -27,9 +27,9 @@
                 plugins_url('/inventor-listing-slider/libraries/owl.carousel/owl.carousel.min.js'), ['jquery'], false,
                 true);
             wp_enqueue_script('owl-carousel');
-            wp_register_style('owl-carousel',
-                plugins_url('/inventor-listing-slider/libraries/owl.carousel/owl.carousel.css'));
-            wp_enqueue_style('owl-carousel');
+//            wp_register_style('owl-carousel',
+//                plugins_url('/inventor-listing-slider/libraries/owl.carousel/owl.carousel.css'));
+//            wp_enqueue_style('owl-carousel');
         }
     }
 
