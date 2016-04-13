@@ -1,7 +1,7 @@
 <?php do_action('inventor_before_filter_form', $args); ?>
 <form method="get"
       action="<?php echo esc_attr(Inventor_Filter::get_filter_action()); ?>"
-      class="<?php if ( ! empty($instance['live_filtering'])) : ?>live <?php endif; ?><?php if ( ! empty($instance['auto_submit_filter'])) : ?>auto-submit-filter <?php endif; ?><?php if ( ! empty($input_titles) && 'labels' === $input_titles) : ?>has-labels<?php endif; ?>">
+      class="form-inline <?php if ( ! empty($instance['live_filtering'])) : ?>live <?php endif; ?><?php if ( ! empty($instance['auto_submit_filter'])) : ?>auto-submit-filter <?php endif; ?><?php if ( ! empty($input_titles) && 'labels' === $input_titles) : ?>has-labels<?php endif; ?>">
   <?php do_action('') ?>
   <?php $fields = Inventor_Filter::get_fields(); ?>
   <?php if ( ! empty($instance['sort'])) : ?>

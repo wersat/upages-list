@@ -10,18 +10,21 @@
      */
     define('POST_EXCERPT_LENGTH', 40);
     define('EXCERPT_LENGTH', 20);
+    define('THEME_ASSETS_DIR', get_template_directory_uri() . '/assets');
+    define('THEME_ASSETS_LIB_DIR', THEME_ASSETS_DIR . '/libraries');
+    define('THEME_CSS_DIR', THEME_ASSETS_DIR . '/css');
+    define('THEME_JS_DIR', THEME_ASSETS_DIR . '/js');
+    define('THEME_IMG_DIR', THEME_ASSETS_DIR . '/img');
     define('LIB_DIR', __DIR__ . '/library');
-
     define('CLASS_DIR', LIB_DIR . '/class');
-
     define('THEME_TPL_DIR', __DIR__ . '/templates');
-
     define('THEME_WIDGETS_DIR', __DIR__ . '/widgets');
     define('THEME_WIDGETS_TPL_DIR', THEME_WIDGETS_DIR . '/templates');
     /**
      * Libraries
      */
     require_once LIB_DIR . '/class-tgm-plugin-activation.php';
+    //require_once CLASS_DIR . '/class-customize-register.php';
     /**
      * Widgets
      */
@@ -45,7 +48,9 @@
         if ( ! is_active_sidebar('header-topbar-left') && ! is_active_sidebar('header-topbar-right')) {
             $body_class[] = 'header-empty-topbar';
         }
-
+        //        if( is_front_page()){
+        //            $body_class[] = 'header-transparent listing-slider-append-top header-disable-topbar';
+        //        }
         return $body_class;
     }
 
@@ -71,36 +76,17 @@
      */
     function superlist_enqueue_files()
     {
-        wp_register_style('roboto', '//fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=latin,latin-ext');
-        wp_enqueue_style('roboto');
-        wp_register_style('font-awesome',
-            get_template_directory_uri() . '/assets/libraries/font-awesome/css/font-awesome.min.css');
-        wp_enqueue_style('font-awesome');
-        wp_register_style('superlist-font',
-            get_template_directory_uri() . '/assets/libraries/superlist-font/style.css');
-        wp_enqueue_style('superlist-font');
-        wp_register_style('colorbox',
-            get_template_directory_uri() . '/assets/libraries/colorbox/example1/colorbox.css');
-        wp_enqueue_style('colorbox');
-        wp_register_style('owl-carousel',
-            get_template_directory_uri() . '/assets/libraries/owl.carousel/owl.carousel.css');
-        wp_enqueue_style('owl-carousel');
-        wp_register_style('bootstrap-select',
-            get_template_directory_uri() . '/assets/libraries/bootstrap-select/bootstrap-select.min.css');
-        wp_enqueue_style('bootstrap-select');
-        $style = get_theme_mod('superlist_general_style', 'superlist-mint.css');
-        wp_register_style('superlist', get_template_directory_uri() . '/assets/css/' . $style);
-        wp_enqueue_style('superlist');
-        wp_register_style('style', get_stylesheet_directory_uri() . '/style.css');
-        wp_enqueue_style('style');
+
         wp_register_script('bootstrap-select',
             get_template_directory_uri() . '/assets/libraries/bootstrap-select/bootstrap-select.min.js', ['jquery'],
             false, true);
         wp_enqueue_script('bootstrap-select');
+
         wp_register_script('bootstrap-dropdown',
             get_template_directory_uri() . '/assets/libraries/bootstrap-sass/javascripts/bootstrap/dropdown.js',
             ['jquery'], false, true);
         wp_enqueue_script('bootstrap-dropdown');
+
         wp_register_script('bootstrap-collapse',
             get_template_directory_uri() . '/assets/libraries/bootstrap-sass/javascripts/bootstrap/collapse.js',
             ['jquery'], false, true);
@@ -144,6 +130,54 @@
         wp_register_script('superlist', get_template_directory_uri() . '/assets/js/superlist.js', ['jquery'], false,
             true);
         wp_enqueue_script('superlist');
+        $google_lib_url   = '//ajax.googleapis.com/ajax/libs';
+        $bootstrapcdn     = 'https://maxcdn.bootstrapcdn.com/';
+        $jsdelivr_lib_url = 'https://cdn.jsdelivr.net/';
+        $cdnjs_lib_url    = 'https://cdnjs.cloudflare.com/ajax/libs/';
+        wp_deregister_script('jquery');
+        $register_js  = [
+            [
+                'handle'   => 'jquery',
+                'src'      => $google_lib_url . '/jquery/2.2.0/jquery.min.js',
+                'deps'     => '',
+                'in_foter' => true,
+                'enqueue'  => true
+            ]
+        ];
+        $register_css = [
+            [
+                'handle' => 'roboto',
+                'src'    => '//fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=latin,latin-ext',
+                'deps'   => ''
+            ],
+            [
+                'handle' => 'font-awesome',
+                'src'    => $bootstrapcdn . 'font-awesome/4.6.1/css/font-awesome.min.css',
+                'deps'   => ''
+            ],
+            [
+                'handle' => 'superlist-font',
+                'src'    => THEME_ASSETS_LIB_DIR . '/superlist-font/style.css',
+                'deps'   => ''
+            ],
+            [
+                'handle' => 'main_style',
+                'src'    => THEME_CSS_DIR . '/upages.css',
+                'deps'   => ''
+            ]
+        ];
+        foreach ($register_js as $file_js) {
+            wp_register_script($file_js['handle'], $file_js['src'], $file_js['deps'], null, $file_js['in_foter']);
+            if ($file_js['enqueue'] == true) {
+                wp_enqueue_script($file_js['handle']);
+            }
+        }
+        foreach ($register_css as $file_css) {
+            wp_enqueue_style($file_css['handle'], $file_css['src'], $file_css['deps'], null);
+        }
+        if (is_singular()) {
+            wp_enqueue_script('comment-reply');
+        }
     }
 
     add_action('wp_enqueue_scripts', 'superlist_enqueue_files', 9);
@@ -470,38 +504,6 @@
             'description' => __('Logo displayed in header.', 'superlist'),
             'priority'    => 40,
         ]));
-        // Style.
-        $wp_customize->add_setting('superlist_general_style', [
-            'default'           => 'superlist-mint.css',
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'sanitize_text_field',
-        ]);
-        $wp_customize->add_control('superlist_general_style', [
-            'label'       => __('Style', 'superlist'),
-            'section'     => 'superlist_general',
-            'settings'    => 'superlist_general_style',
-            'type'        => 'select',
-            'choices'     => [
-                'superlist-blue-light.css'  => __('Blue Light', 'superlist'),
-                'superlist-blue.css'        => __('Blue', 'superlist'),
-                'superlist-blue-dark.css'   => __('Blue dark', 'superlist'),
-                'superlist-blue-gray.css'   => __('Blue gray', 'superlist'),
-                'superlist-brown.css'       => __('Brown', 'superlist'),
-                'superlist-green.css'       => __('Green', 'superlist'),
-                'superlist-green-dark.css'  => __('Green dark', 'superlist'),
-                'superlist-lime.css'        => __('Lime', 'superlist'),
-                'superlist-magenta.css'     => __('Magenta', 'superlist'),
-                'superlist-orange.css'      => __('Orange', 'superlist'),
-                'superlist-pink.css'        => __('Pink', 'superlist'),
-                'superlist-purple.css'      => __('Purple', 'superlist'),
-                'superlist-purple-dark.css' => __('Purple Dark', 'superlist'),
-                'superlist-mint.css'        => __('Mint', 'superlist'),
-                'superlist-red.css'         => __('Red', 'superlist'),
-                'superlist-turquoise.css'   => __('Turquoise', 'superlist'),
-                'upages.css'                => __('uPages', 'superlist'),
-            ],
-            'description' => __('Check the documentation to learn how to compile custom color.', 'superlist'),
-        ]);
         // Layout.
         $wp_customize->add_setting('superlist_general_layout', [
             'default'           => 'layout-wide',
@@ -599,7 +601,7 @@
     {
         $GLOBALS['comment'] = $comment;
         extract($args, EXTR_SKIP);
-        include THEME_TPL_DIR.'/misc/comment.php';
+        include THEME_TPL_DIR . '/misc/comment.php';
     }
 
     /**

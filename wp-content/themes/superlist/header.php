@@ -12,10 +12,6 @@
     <meta name="viewport" content="width=device-width">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <?php if (is_singular()) {
-      wp_enqueue_script('comment-reply');
-    } ?>
-
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
@@ -31,7 +27,7 @@
                 <?php if (is_active_sidebar('header-topbar-left')) : ?>
                   <div class="header-bar-left">
                     <?php dynamic_sidebar('header-topbar-left'); ?>
-                  </div><!-- /.header-bar-left -->
+                  </div>
                 <?php endif; ?>
 
                 <?php if (is_active_sidebar('header-topbar-right')) : ?>
