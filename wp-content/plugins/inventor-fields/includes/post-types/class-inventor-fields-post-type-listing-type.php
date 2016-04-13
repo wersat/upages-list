@@ -309,7 +309,7 @@
                         'rewrite'      => ['slug' => $slug],
                         'public'       => true,
                         'show_ui'      => true,
-                        'show_in_rest'       => true,
+//                        'show_in_rest'       => true,
                         'categories'   => [],
                     ]);
             }

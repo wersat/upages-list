@@ -742,3 +742,18 @@
     }
 
     add_action('inventor_review_rating_total_attrs', 'superlist_review_rating_toral_attrs', 10, 1);
+
+    add_action( 'registered_post_type', 'add_post_type_to_rest_api', 10, 2 );
+
+    function add_post_type_to_rest_api( $post_type, $args ) {
+        global $wp_post_types;
+        $args->show_in_rest = true;
+        $wp_post_types[ $post_type ] = $args;
+    }
+    add_action( 'registered_post_type', 'add_taxonomy_to_rest_api', 10, 2 );
+
+    function add_taxonomy_to_rest_api( $taxonomy, $args ) {
+        global $wp_taxonomies;
+        $args->show_in_rest = true;
+        $wp_taxonomies[ $taxonomy ] = $args;
+    }
