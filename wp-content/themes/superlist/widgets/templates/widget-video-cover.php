@@ -4,8 +4,8 @@
    * @package    Superlist
    * @subpackage Widgets/Templates
    */
-  $title           = ! empty($instance['title']) ? $instance['title'] : '';
-  $subtitle        = ! empty($instance['subtitle']) ? $instance['subtitle'] : '';
+  $title           = get_bloginfo('name');
+  $subtitle        = get_bloginfo('description');
   $height          = ! empty($instance['height']) ? $instance['height'] : '';
   $poster          = ! empty($instance['poster']) ? $instance['poster'] : '';
   $overlay_opacity = ! empty($instance['overlay_opacity']) ? $instance['overlay_opacity'] : '0.4';
@@ -37,22 +37,20 @@
   </div>
   <div class="video-wrapper-overlay" <?php if ( ! empty($overlay_opacity)) : ?>style="opacity: <?php echo esc_attr($overlay_opacity); ?>"<?php endif; ?>></div>
 </div>
-<?php if ( ! empty($title) || ! empty($subtitle)) : ?>
-  <div class="video-cover-title">
-    <?php if ( ! empty($title)) : ?>
-      <h1><?php echo esc_attr($title); ?></h1>
-    <?php endif; ?>
+<div class="video-cover-title">
+  <?php if ( ! empty($title)) : ?>
+    <h1><?= esc_attr($title); ?></h1>
+  <?php endif; ?>
 
-    <?php if ( ! empty($subtitle)) : ?>
-      <h2><?php echo esc_attr($subtitle); ?></h2>
-    <?php endif; ?>
+  <?php if ( ! empty($subtitle)) : ?>
+    <h2><?= esc_attr($subtitle); ?></h2>
+  <?php endif; ?>
 
-    <?php if ( ! empty($instance['filter'])) : ?>
-      <div class="video-cover-filter">
-        <?php include INVENTOR_TPL_WIDGETS_DIR . '/filter-form.php'; ?>
-      </div>
-    <?php endif; ?>
-  </div>
-<?php endif; ?>
+  <?php if ( ! empty($instance['filter'])) : ?>
+    <div class="video-cover-filter">
+      <?php include INVENTOR_TPL_WIDGETS_DIR . '/filter-form.php'; ?>
+    </div>
+  <?php endif; ?>
+</div>
 
 <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post')); ?>
