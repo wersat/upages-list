@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Inventor\n"
 "POT-Creation-Date: 2016-04-07 11:43+0300\n"
-"PO-Revision-Date: 2016-04-13 15:34+0300\n"
+"PO-Revision-Date: 2016-04-13 17:51+0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -187,7 +187,7 @@ msgstr ""
 
 #: includes/class-inventor-filter.php:68 templates/submissions/list.php:44
 msgid "Published"
-msgstr ""
+msgstr "Час додавання"
 
 #: includes/class-inventor-metaboxes.php:50
 #: includes/post-types/class-inventor-post-type-report.php:74
@@ -1330,7 +1330,7 @@ msgstr ""
 #: includes/post-types/class-inventor-post-type-food.php:114
 #: templates/submissions/list.php:93
 msgid "Remove"
-msgstr ""
+msgstr "Вилучити"
 
 #: includes/post-types/class-inventor-post-type-food.php:142
 msgid "Serving day"
@@ -3126,7 +3126,7 @@ msgstr ""
 #: templates/payment/gateways/wire-transfer.php:10
 #, php-format
 msgid "for package \"%s\""
-msgstr ""
+msgstr "за тарифний план \"%s\""
 
 #: templates/payment/gateways/wire-transfer.php:16
 msgid "Beneficiary's account number"
@@ -3150,7 +3150,7 @@ msgstr ""
 
 #: templates/payment/gateways/wire-transfer.php:48
 msgid "Postcode (ZIP)"
-msgstr ""
+msgstr "Поштовий індекс (ZIP)."
 
 #: templates/payment/gateways/wire-transfer.php:65
 msgid "Your payment will be manually reviewed when transfer will be completed."
@@ -3198,15 +3198,15 @@ msgstr "Тариф"
 
 #: templates/payment/transactions.php:72 templates/submissions/list.php:105
 msgid "Previous page"
-msgstr ""
+msgstr "Попередня сторінка"
 
 #: templates/payment/transactions.php:73 templates/submissions/list.php:106
 msgid "Next page"
-msgstr ""
+msgstr "Наступна сторінка"
 
 #: templates/payment/transactions.php:74 templates/submissions/list.php:107
 msgid "Page"
-msgstr ""
+msgstr "Сторінка"
 
 #: templates/payment/transactions.php:77
 msgid "No transactions found."
@@ -3214,19 +3214,19 @@ msgstr ""
 
 #: templates/submissions/list.php:11
 msgid "Create listing"
-msgstr ""
+msgstr "Додати підприємство"
 
 #: templates/submissions/list.php:26
 msgid "Listing published"
-msgstr ""
+msgstr "Підприємство опубліковано"
 
 #: templates/submissions/list.php:27
 msgid "Waiting for review"
-msgstr ""
+msgstr "В очікуванні розгляду"
 
 #: templates/submissions/list.php:28
 msgid "Listing disabled"
-msgstr ""
+msgstr "Підприємство відмінено"
 
 #: templates/submissions/list.php:40
 msgid "Pending"
@@ -3238,7 +3238,7 @@ msgstr ""
 
 #: templates/submissions/list.php:87
 msgid "Edit"
-msgstr ""
+msgstr "Редагувати"
 
 #: templates/submissions/list.php:113
 msgid "You don't have any listings, yet. Start by creating new one."
@@ -3344,27 +3344,27 @@ msgstr "Вартість до"
 
 #: templates/widgets/filter-form.php:39
 msgid "Sort"
-msgstr ""
+msgstr "Сортувати"
 
 #: templates/widgets/filter-form.php:55 templates/widgets/listings-admin.php:91
 msgid "Order"
-msgstr ""
+msgstr "Впорядкувати за"
 
 #: templates/widgets/filter-form.php:61
 msgid "Asc"
-msgstr ""
+msgstr "Зрост"
 
 #: templates/widgets/filter-form.php:67
 msgid "Desc"
-msgstr ""
+msgstr "Спад"
 
 #: templates/widgets/filter-form.php:77
 msgid "Rows"
-msgstr ""
+msgstr "Список"
 
 #: templates/widgets/filter-form.php:84
 msgid "Grid"
-msgstr ""
+msgstr "Сітка"
 
 #: templates/widgets/filter.php:43
 #, php-format
@@ -3439,7 +3439,7 @@ msgstr ""
 
 #: templates/widgets/listing-inquire.php:80
 msgid "Send Message"
-msgstr ""
+msgstr "Відправити повідомлення"
 
 #: templates/widgets/listings-admin.php:47
 msgid "Count"
