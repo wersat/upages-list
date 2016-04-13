@@ -4,8 +4,6 @@
    * @package    Superlist
    * @subpackage Widgets/Templates
    */
-  $title           = ! empty($instance['title']) ? $instance['title'] : '';
-  $subtitle        = ! empty($instance['subtitle']) ? $instance['subtitle'] : '';
   $height          = ! empty($instance['height']) ? $instance['height'] : '';
   $poster          = ! empty($instance['poster']) ? $instance['poster'] : '';
   $overlay_opacity = ! empty($instance['overlay_opacity']) ? $instance['overlay_opacity'] : '0.4';
@@ -16,26 +14,6 @@
   $input_titles    = ! empty($instance['input_titles']) ? $instance['input_titles'] : 'labels';
   $button_text     = ! empty($instance['button_text']) ? $instance['button_text'] : '';
 ?>
-<p>
-  <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">
-    <?php echo esc_attr__('Title', 'superlist'); ?>
-  </label>
-  <input class="widefat"
-         id="<?php echo esc_attr($this->get_field_id('title')); ?>"
-         name="<?php echo esc_attr($this->get_field_name('title')); ?>"
-         type="text"
-         value="<?php echo esc_attr($title); ?>">
-</p>
-<p>
-  <label for="<?php echo esc_attr($this->get_field_id('subtitle')); ?>">
-    <?php echo esc_attr__('Subtitle', 'superlist'); ?>
-  </label>
-  <input class="widefat"
-         id="<?php echo esc_attr($this->get_field_id('subtitle')); ?>"
-         name="<?php echo esc_attr($this->get_field_name('subtitle')); ?>"
-         type="text"
-         value="<?php echo esc_attr($subtitle); ?>">
-</p>
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('height')); ?>">
     <?php echo esc_attr__('Height', 'superlist'); ?>
