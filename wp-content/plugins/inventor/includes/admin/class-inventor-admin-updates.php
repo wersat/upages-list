@@ -14,7 +14,7 @@
          */
         public static function init()
         {
-            add_filter('pre_set_site_transient_update_plugins', [__CLASS__, 'check_update']);
+            //add_filter('pre_set_site_transient_update_plugins', [__CLASS__, 'check_update']);
             $is_inventor = ! empty($_GET['action']) && strpos($_GET['action'], 'inventor', 0);
             if (defined('DOING_AJAX') && false === $is_inventor) {
                 add_action('site_transient_update_plugins', [__CLASS__, 'check_update']);

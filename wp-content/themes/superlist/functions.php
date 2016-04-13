@@ -692,107 +692,12 @@
                 'name'     => 'WordPress Social Login',
                 'slug'     => 'wordpress-social-login',
                 'required' => false,
-            ],
-            [
-                'name'               => 'One Click',
-                'slug'               => 'one-click',
-                'source'             => superlist_get_plugin_package('one-click'),
-                'required'           => false,
-                'force_deactivation' => true,
-                'is_automatic'       => true,
-                'version'            => superlist_get_plugin_version('one-click'),
             ]
         ];
-        $inventor_plugins = [
-            'inventor'                => 'Inventor',
-            'inventor-claims'         => 'Inventor Claims',
-            'inventor-coupons'        => 'Inventor Coupons',
-            'inventor-currencies'     => 'Inventor Currencies',
-            'inventor-faq'            => 'Inventor FAQ',
-            'inventor-favorites'      => 'Inventor Favorites',
-            'inventor-fields'         => 'Inventor Fields',
-            'inventor-google-map'     => 'Inventor Google Map',
-            'inventor-google-places'  => 'Inventor Google Places',
-            'inventor-invoices'       => 'Inventor Invoices',
-            'inventor-jobs'           => 'Inventor Jobs',
-            'inventor-listing-slider' => 'Inventor Listing Slider',
-            'inventor-mail-templates' => 'Inventor Mail Templates',
-            'inventor-notifications'  => 'Inventor Notifications',
-            'inventor-packages'       => 'Inventor Packages',
-            'inventor-partners'       => 'Inventor Partners',
-            'inventor-paypal'         => 'Inventor PayPal',
-            'inventor-pricing'        => 'Inventor Pricing',
-            'inventor-properties'     => 'Inventor Properties',
-            'inventor-reviews'        => 'Inventor Reviews',
-            'inventor-shop'           => 'Inventor Shop',
-            'inventor-statistics'     => 'Inventor Statistics',
-            'inventor-stripe'         => 'Inventor Stripe',
-            'inventor-testimonials'   => 'Inventor Testimonials',
-            'inventor-watchdogs'      => 'Inventor Watchdogs',
-        ];
-        foreach ($inventor_plugins as $slug => $name) {
-            $inventor_plugin = [
-                'name'               => $name,
-                'slug'               => $slug,
-                'source'             => superlist_get_plugin_package($slug),
-                'required'           => false,
-                'force_deactivation' => true,
-                'is_automatic'       => true,
-                'version'            => superlist_get_plugin_version($slug),
-            ];
-            array_push($plugins, $inventor_plugin);
-        }
         tgmpa($plugins);
     }
 
     add_action('tgmpa_register', 'superlist_register_required_plugins');
-    /**
-     * Gets plugins version
-     *
-     * @param string $plugin_slug
-     *
-     * @return string
-     */
-    function superlist_get_plugin_version($plugin_slug)
-    {
-        $filename = superlist_get_plugin_package($plugin_slug);
-        $parts    = explode('/', $filename);
-        $filename = $parts[count($parts) - 1];
-        // Remove ZIP
-        $name = substr($filename, 0, -4);
-        // Get last string path after "-"
-        $parts   = explode('-', $name);
-        $version = $parts[count($parts) - 1];
-        // If the last part can be exploded by dot and have 3 items in array
-        if (3 === count(explode('.', $version))) {
-            return $version;
-        }
-
-        return '0.1.0';
-    }
-
-    /**
-     * Gets plugins package filepath
-     *
-     * @param string $plugin_slug
-     *
-     * @return string
-     */
-    function superlist_get_plugin_package($plugin_slug)
-    {
-        $prefix = get_template_directory() . '/plugins/';
-        $files  = glob($prefix . '*.zip');
-        foreach ($files as $file) {
-            $parts    = explode('/', $file);
-            $filename = $parts[count($parts) - 1];
-            if (substr($filename, 0, strlen($plugin_slug)) === $plugin_slug) {
-                return $prefix . $filename;
-            }
-        }
-
-        return $prefix . $plugin_slug . '.zip';
-    }
-
     /**
      * Posts pagination
      * @return void

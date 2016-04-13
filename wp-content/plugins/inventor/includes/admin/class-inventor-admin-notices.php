@@ -23,7 +23,6 @@
          */
         public static function init()
         {
-            add_action('admin_notices', [__CLASS__, 'check_plugins']);
             add_action('admin_notices', [__CLASS__, 'show']);
             add_action('wp_loaded', [__CLASS__, 'hide']);
         }
@@ -55,33 +54,6 @@
                 $notices   = Inventor_Utilities::array_unique_multidimensional($notices);
                 update_option('inventor_admin_hidden_notices', $notices);
             }
-        }
-
-        /**
-         * Checks if it needed to render plugin purchase code information.
-         */
-        public static function check_plugins()
-        {
-            $purchase_code = get_theme_mod('inventor_purchase_code', null);
-            if (empty($purchase_code)) {
-                $plugins = get_plugins();
-                foreach ($plugins as $key => $value) {
-                    if (substr($key, 0, strlen('inventor')) !== 'inventor') {
-                        continue;
-                    }
-                    add_action('after_plugin_row_' . $key, [__CLASS__, 'render_purchase_code'], 10, 3);
-                }
-            }
-        }
-
-        /**
-         * Renders purchase code information.
-         */
-        public static function render_purchase_code()
-        {
-            echo Inventor_Template_Loader::load('admin/purchase-code', [
-                'count' => self::plugins_table_cols_count(),
-            ]);
         }
 
         /**
