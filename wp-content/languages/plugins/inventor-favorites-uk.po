@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Inventor Favorites\n"
 "POT-Creation-Date: 2016-04-10 19:37+0300\n"
-"PO-Revision-Date: 2016-04-10 20:30+0300\n"
+"PO-Revision-Date: 2016-04-13 13:12+0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +42,7 @@ msgstr "Підприємство вже було у списку. "
 #: includes/customizations/class-inventor-favorites-customizations-favorites.php:44
 #: includes/widgets/class-inventor-favorites-widget-favorites.php:24
 msgid "Favorite listings"
-msgstr "Обрані підприємства"
+msgstr ""
 
 #: includes/widgets/class-inventor-favorites-widget-favorites.php:26
 msgid "Favorite listings."
