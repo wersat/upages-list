@@ -17,7 +17,11 @@
 ?>
 
 <?php echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
-<div id="video-outer-wrap" class="video-cover" style="<?php if ( ! empty($poster)) : ?>background-image: url('<?php echo esc_attr( $poster )?>');<?php endif; ?><?php if ( ! empty($height)) : ?>height: <?php echo esc_attr($height); ?>"<?php endif; ?>>
+<div id="video-outer-wrap"
+     class="video-cover"
+     style="
+     <?php if ( ! empty($poster)) : ?>background-image: url('<?php echo esc_attr( $poster )?>');<?php endif; ?>
+     <?php if ( ! empty($height)) : ?>height: <?php echo esc_attr($height); ?>"<?php endif; ?>>
   <div id="video-wrap">
     <?php if ( ! empty($video_mp4) || ! empty($video_ogg)) : ?>
       <video id="video-cover" preload="metadata" autoplay muted loop>
