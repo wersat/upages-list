@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Inventor Watchdogs\n"
 "POT-Creation-Date: 2016-04-12 14:03+0300\n"
-"PO-Revision-Date: 2016-04-12 14:09+0300\n"
+"PO-Revision-Date: 2016-04-14 11:47+0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,126 +17,126 @@ msgstr ""
 
 #: includes/class-inventor-watchdogs-logic.php:187
 msgid "Watchdog does not exist!"
-msgstr ""
+msgstr "Пошуковий запит не існує."
 
 #: includes/class-inventor-watchdogs-logic.php:189
 msgid "It is not your watchdog!"
-msgstr ""
+msgstr "Це не Ваш пошуковий запит."
 
 #: includes/class-inventor-watchdogs-logic.php:192
 #: includes/class-inventor-watchdogs-logic.php:279
 msgid "Watchdog deleted."
-msgstr ""
+msgstr "Пошуковий запит видалено."
 
 #: includes/class-inventor-watchdogs-logic.php:223
 msgid "Search query watchdogs are disabled."
-msgstr ""
+msgstr "Збереження пошукових запитів вимкнено"
 
 #: includes/class-inventor-watchdogs-logic.php:232
 msgid "You can't watch empty search query."
-msgstr ""
+msgstr "Ви не можете переглянути порожній пошуковий запит."
 
 #: includes/class-inventor-watchdogs-logic.php:238
 msgid "You already watch this search query."
-msgstr ""
+msgstr "Ви вже переглядаєте цей пошуковий запит."
 
 #: includes/class-inventor-watchdogs-logic.php:248
 msgid "Watchdog saved."
-msgstr ""
+msgstr "Пошуковий запит збережено."
 
 #: includes/class-inventor-watchdogs-logic.php:271
 msgid "You don't watch this search query."
-msgstr ""
+msgstr "Ви не переглядаєте цей пошуковий запит."
 
 #: includes/customizations/class-inventor-watchdogs-customizations-watchdogs.php:36
 msgid "Inventor Watchdogs"
-msgstr ""
+msgstr "Inventor Пошукові запити"
 
 #: includes/customizations/class-inventor-watchdogs-customizations-watchdogs.php:49
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:37
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:43
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:49
 msgid "Watchdogs"
-msgstr ""
+msgstr "Пошукові запити"
 
 #: includes/customizations/class-inventor-watchdogs-customizations-watchdogs.php:64
 msgid "Enable Search Queries Watchdogs"
-msgstr ""
+msgstr "Увімкнути збереження пошукових запитів"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:38
 msgid "Watchdog"
-msgstr ""
+msgstr "Пошуковий запит"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:39
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:40
 msgid "Add New Watchdog"
-msgstr ""
+msgstr "Додати новий пошуковий запит"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:41
 msgid "Edit Watchdog"
-msgstr ""
+msgstr "Редагувати пошуковий запит"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:42
 msgid "New Watchdog"
-msgstr ""
+msgstr "Новий пошуковий запит"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:44
 msgid "View Watchdog"
-msgstr ""
+msgstr "Переглянути пошуковий запит"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:45
 msgid "Search Watchdog"
-msgstr ""
+msgstr "Знайти пошуковий запит"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:46
 msgid "No Watchdogs found"
-msgstr ""
+msgstr "Пошукові запити не знайдено"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:47
 msgid "No Watchdogs Found in Trash"
-msgstr ""
+msgstr "У кошику пошукові запити не знайдено"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:77
 msgid "General"
-msgstr ""
+msgstr "Загальні"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:86
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:109
 #: templates/watchdogs-lookup.php:5
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:89
 msgid "Search query"
-msgstr ""
+msgstr "Пошуковий запит"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:95
 msgid "Data"
-msgstr ""
+msgstr "Дані"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:110
 msgid "Lookup"
-msgstr ""
+msgstr "Пошук"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:111
 msgid "Value"
-msgstr ""
+msgstr "Значення"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:112
 msgid "Author"
-msgstr ""
+msgstr "Автор"
 
 #: includes/post-types/class-inventor-watchdogs-post-type-watchdog.php:113
 msgid "Date"
-msgstr ""
+msgstr "Дата"
 
 #: templates/watchdogs-row.php:11
 #, php-format
 msgid "<span class=\"match\">%d</span> listing matches your search query"
 msgid_plural "<span class=\"match\">%d</span> listings match your search query"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<span class=\"match\">%d</span> підприємство відповідає Вашому пошуковому запиту"
+msgstr[1] "<span class=\"match\">%d</span> підприємства відповідають Вашому пошуковому запиту"
+msgstr[2] "<span class=\"match\">%d</span> підприємств відповідають Вашому пошуковому запиту"
 
 #: templates/watchdogs-row.php:19
 msgid "Watched value"
@@ -144,16 +144,16 @@ msgstr ""
 
 #: templates/watchdogs.php:11
 msgid "Previous"
-msgstr ""
+msgstr "Попередні"
 
 #: templates/watchdogs.php:12
 msgid "Next"
-msgstr ""
+msgstr "Наступні"
 
 #: templates/watchdogs.php:18
 msgid "You don't have any watchdogs, yet. Start by adding some."
-msgstr ""
+msgstr "Ви не зберегли жодний пошуковий запит."
 
 #: templates/watchdogs.php:20
 msgid "You need to log in at first."
-msgstr ""
+msgstr "Спочатку увійдіть в систему."
