@@ -20,11 +20,14 @@
      */
     public $boxes_fields = [];
 
+    /**
+     * Widgets_Boxes constructor.
+       */
     public function __construct()
     {
       $this->setBoxesFields();
       $args             = [
-        'label'       => __('Boxes New', 'superlist'),
+        'label'       => __('Boxes', 'superlist'),
         'description' => __('Text boxes with icons.', 'superlist'),
       ];
       $args['fields']   = [
@@ -126,23 +129,6 @@
       }
 
       return $this->boxes_fields;
-    }
-
-    /**
-     * @return array
-     */
-    public function getPageList()
-    {
-      $pages_list = [];
-      $pages      = get_pages();
-      foreach ((array)$pages as $page) {
-        $pages_list[] = [
-          'name'  => $page->post_title,
-          'value' => get_page_link($page->ID)
-        ];
-      }
-
-      return $pages_list;
     }
 
     /**

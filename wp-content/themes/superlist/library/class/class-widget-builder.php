@@ -105,7 +105,7 @@
          */
         public function create_field($key, $out = '')
         {
-            $field_id = ! isset($key['id']) ? sanitize_title($key['name']) : $key['id'];
+            $field_id   = ! isset($key['id']) ? sanitize_title($key['name']) : $key['id'];
             $key['std'] = $key['std'] ?? '';
             if (isset($this->instance[$field_id])) {
                 $key['value'] = empty($this->instance[$field_id]) ? '' : strip_tags($this->instance[$field_id]);
@@ -529,5 +529,19 @@
             ];
 
             return $advanced_options;
+        }
+
+        public function getPageList()
+        {
+            $pages_list = [];
+            $pages      = get_pages();
+            foreach ((array)$pages as $page) {
+                $pages_list[] = [
+                    'name'  => $page->post_title,
+                    'value' => get_page_link($page->ID)
+                ];
+            }
+
+            return $pages_list;
         }
     }

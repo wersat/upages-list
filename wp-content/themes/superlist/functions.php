@@ -44,7 +44,7 @@
     /**
      * Widgets
      */
-    require_once THEME_WIDGETS_DIR . '/widget-call-to-action.php';
+    //require_once THEME_WIDGETS_DIR . '/widget-call-to-action.php';
     require_once THEME_WIDGETS_DIR . '/widget-simple-map.php';
     require_once THEME_WIDGETS_DIR . '/widget-video-cover.php';
     require_once LIB_DIR . '/widget_loader.php';
@@ -76,7 +76,6 @@
      */
     function superlist_widgets_init()
     {
-        register_widget('Superlist_Widget_Call_To_Action');
         register_widget('Superlist_Widget_Video_Cover');
         register_widget('Superlist_Widget_Simple_Map');
     }

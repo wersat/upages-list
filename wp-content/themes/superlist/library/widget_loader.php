@@ -1,4 +1,5 @@
 <?php
+    use Upages_Widgets\Widget_Call_To_Action;
     use Upages_Widgets\Widgets_Boxes;
 
     spl_autoload_register(function ($widgets) {
@@ -17,3 +18,4 @@
         }
     });
     new Widgets_Boxes();
+    new Widget_Call_To_Action();
