@@ -341,14 +341,22 @@
             return '<label for="' . esc_attr($id) . '">' . esc_html($name) . '</label>';
         }
 
-        public function create_field_class($class)
+        /**
+         * @param $class
+         *
+         * @return string
+         */public function create_field_class($class)
         {
             $field_class = ! isset($class['class']) ? 'class="widefat"' : 'class="' . $class['class'] . '"';
 
             return $field_class;
         }
 
-        public function create_field_id_name($id_name)
+        /**
+         * @param $id_name
+         *
+         * @return string
+         */public function create_field_id_name($id_name)
         {
             $field_id_name = 'id="' . esc_attr($id_name['_id']) . '" name="' . esc_attr($id_name['_name']) . '"';
 
@@ -486,7 +494,17 @@
             $out .= '<input type="number" ';
             $out .= $this->create_field_class($key);
             $value = isset($key['value']) ? $key['value'] : $key['std'];
-            $out .= 'id="' . esc_attr($key['_id']) . '" name="' . esc_attr($key['_name']) . '" value="' . esc_attr__($value) . '" ';
+            $out .= $this->create_field_id_name($key);
+            $out .= 'value="' . esc_attr__($value) . '" ';
+            if(isset($key['max'])){
+                $out .= 'max="' . esc_attr($key['max']) . '" ';
+            }
+            if(isset($key['min'])){
+                $out .= 'min="' . esc_attr($key['min']) . '" ';
+            }
+            if(isset($key['step'])){
+                $out .= 'step="' . esc_attr($key['step']) . '" ';
+            }
             if (isset($key['size'])) {
                 $out .= 'size="' . esc_attr($key['size']) . '" ';
             }
@@ -496,6 +514,9 @@
             return $out;
         }
 
+        /**
+         * @return array
+         */
         public function add_advanced_options()
         {
             $advanced_options = [
@@ -531,6 +552,9 @@
             return $advanced_options;
         }
 
+        /**
+         * @return array
+         */
         public function getPageList()
         {
             $pages_list = [];
