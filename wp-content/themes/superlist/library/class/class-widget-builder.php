@@ -345,7 +345,8 @@
          * @param $class
          *
          * @return string
-         */public function create_field_class($class)
+         */
+        public function create_field_class($class)
         {
             $field_class = ! isset($class['class']) ? 'class="widefat"' : 'class="' . $class['class'] . '"';
 
@@ -356,7 +357,8 @@
          * @param $id_name
          *
          * @return string
-         */public function create_field_id_name($id_name)
+         */
+        public function create_field_id_name($id_name)
         {
             $field_id_name = 'id="' . esc_attr($id_name['_id']) . '" name="' . esc_attr($id_name['_name']) . '"';
 
@@ -376,6 +378,27 @@
                 : '<br/><small class="description">' . esc_html($desc['desc']) . '</small>';
 
             return $field_description;
+        }
+
+        public function create_field_image($key, $out = '')
+        {
+            $out .= $this->create_field_label($key['name'], $key['_id']) . '<br/>';
+            $out .= '<input type="text" ';
+            $out .= $this->create_field_class($key);
+            $value = isset($key['value']) ? $key['value'] : $key['std'];
+            $out .= $this->create_field_id_name($key);
+            $out .= 'value="' . esc_url($value) . '"';
+            $out .= ' />';
+            $out .= $this->upload_image_button();
+            $out .= $this->create_field_description($key);
+
+            return $out;
+        }
+
+        public function upload_image_button()
+        {
+            $button = '<button class="upload_image_button button button-primary">Upload Image</button>';
+            return $button;
         }
 
         /**
@@ -434,6 +457,10 @@
         {
             $out .= $this->create_field_label($key['name'], $key['_id']) . '<br/>';
             $out .= '<select ';
+            if (isset($key['multiple']) && $key['multiple'] === true) {
+                $out .= "multiple ";
+                $out .= 'size="' . count($key['fields']) . '"';
+            }
             $out .= $this->create_field_id_name($key);
             $out .= $this->create_field_class($key);
             $out .= '> ';
@@ -496,13 +523,13 @@
             $value = isset($key['value']) ? $key['value'] : $key['std'];
             $out .= $this->create_field_id_name($key);
             $out .= 'value="' . esc_attr__($value) . '" ';
-            if(isset($key['max'])){
+            if (isset($key['max'])) {
                 $out .= 'max="' . esc_attr($key['max']) . '" ';
             }
-            if(isset($key['min'])){
+            if (isset($key['min'])) {
                 $out .= 'min="' . esc_attr($key['min']) . '" ';
             }
-            if(isset($key['step'])){
+            if (isset($key['step'])) {
                 $out .= 'step="' . esc_attr($key['step']) . '" ';
             }
             if (isset($key['size'])) {
@@ -567,5 +594,19 @@
             }
 
             return $pages_list;
+        }
+
+        public function getFieldsFilter()
+        {
+            $fields_filter = [];
+            $fields        = \Inventor_Filter::get_fields();
+            foreach ((array)$fields as $key => $val) {
+                $fields_filter[] = [
+                    'name'  => __($val, 'superlist'),
+                    'value' => $key
+                ];
+            }
+
+            return $fields_filter;
         }
     }

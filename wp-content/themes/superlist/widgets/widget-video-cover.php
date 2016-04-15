@@ -54,6 +54,7 @@
          */
         public function widget($args, $instance)
         {
+            //var_dump($instance);
             include THEME_WIDGETS_TPL_DIR . '/widget-video-cover.php';
         }
     }

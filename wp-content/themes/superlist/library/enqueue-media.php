@@ -149,3 +149,12 @@
     }
 
     add_action('wp_enqueue_scripts', 'superlist_enqueue_files', 9);
+
+
+    function admin_custom_js() {
+        wp_enqueue_script( 'media-upload' );
+        wp_enqueue_media();
+
+        wp_enqueue_script( 'my_custom_script', THEME_JS_DIR . '/admin_custom.js' ,['jquery']);
+    }
+    add_action( 'admin_enqueue_scripts', 'admin_custom_js' );

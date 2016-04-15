@@ -1,6 +1,7 @@
 <?php
     use Upages_Widgets\Widget_Call_To_Action;
     use Upages_Widgets\Widget_Simple_Map;
+    use Upages_Widgets\Widget_Video_Home_Cover;
     use Upages_Widgets\Widgets_Boxes;
 
     spl_autoload_register(function ($widgets) {
@@ -21,3 +22,4 @@
     new Widgets_Boxes();
     new Widget_Call_To_Action();
     new Widget_Simple_Map();
+    new Widget_Video_Home_Cover();

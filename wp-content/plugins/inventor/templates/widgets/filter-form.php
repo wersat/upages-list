@@ -19,13 +19,13 @@
         include Inventor_Template_Loader::locate('widgets/filter-fields/' . $template, $plugin_dir);
       }
     }
-    if(!is_front_page()){
+    /*if(!is_front_page()){*/
       if ( ! empty($instance['button_text']) && empty($instance['auto_submit_filter'])) { ?>
         <div class="form-group form-group-button">
           <button class="button" type="submit"><?php echo esc_attr($instance['button_text']); ?></button>
         </div>
       <?php }
-    }
+    /*}*/
     if ( ! empty($instance['sorting_options'])) { ?>
       <div class="filter-sorting-options clearfix">
         <div class="filter-sorting-inner">
