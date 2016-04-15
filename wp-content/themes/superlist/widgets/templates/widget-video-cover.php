@@ -8,7 +8,6 @@
   $subtitle        = get_bloginfo('description');
   $height          = ! empty($instance['height']) ? $instance['height'] : '';
   $poster          = ! empty($instance['poster']) ? $instance['poster'] : '';
-  $overlay_opacity = ! empty($instance['overlay_opacity']) ? $instance['overlay_opacity'] : '0.4';
   $video_mp4       = ! empty($instance['video_mp4']) ? $instance['video_mp4'] : '';
   $video_ogg       = ! empty($instance['video_ogg']) ? $instance['video_ogg'] : '';
   $input_titles    = ! empty($instance['input_titles']) ? $instance['input_titles'] : 'labels';
@@ -35,7 +34,7 @@
       </video>
     <?php endif; ?>
   </div>
-  <div class="video-wrapper-overlay" <?php if ( ! empty($overlay_opacity)) : ?>style="opacity: <?php echo esc_attr($overlay_opacity); ?>"<?php endif; ?>></div>
+  <div class="video-wrapper-overlay"></div>
 </div>
 <div class="video-cover-title">
   <?php if ( ! empty($title)) : ?>

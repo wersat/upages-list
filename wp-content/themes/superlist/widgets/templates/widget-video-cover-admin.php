@@ -6,7 +6,6 @@
    */
   $height          = ! empty($instance['height']) ? $instance['height'] : '';
   $poster          = ! empty($instance['poster']) ? $instance['poster'] : '';
-  $overlay_opacity = ! empty($instance['overlay_opacity']) ? $instance['overlay_opacity'] : '0.4';
   $video_mp4       = ! empty($instance['video_mp4']) ? $instance['video_mp4'] : '';
   $video_ogg       = ! empty($instance['video_ogg']) ? $instance['video_ogg'] : '';
   $filter          = ! empty($instance['filter']) ? $instance['filter'] : '';
@@ -33,16 +32,6 @@
          name="<?php echo esc_attr($this->get_field_name('poster')); ?>"
          type="text"
          value="<?php echo esc_attr($poster); ?>">
-</p>
-<p>
-  <label for="<?php echo esc_attr($this->get_field_id('overlay_opacity')); ?>">
-    <?php echo esc_attr__('Overlay opacity', 'superlist'); ?>
-  </label>
-  <input class="widefat"
-         id="<?php echo esc_attr($this->get_field_id('overlay_opacity')); ?>"
-         name="<?php echo esc_attr($this->get_field_name('overlay_opacity')); ?>"
-         type="text"
-         value="<?php echo esc_attr($overlay_opacity); ?>">
 </p>
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('video_mp4')); ?>">

@@ -1,5 +1,6 @@
 <?php
     namespace Upages_Objects;
+
     /**
      * WordPress Widgets Helper Class.
      * https://github.com/Jazz-Man/wp-widgets-helper
@@ -15,6 +16,7 @@
          * @type string
          */
         public $slug;
+
         /**
          * @type array
          */
@@ -31,10 +33,10 @@
         /**
          * @param $args
          */
-        public function __construct($args, $widget)
+        public function __construct($args)
         {
             $this->label   = $args['label'] ?? '';
-            $this->slug    = isset($this->label) ? sanitize_title($this->label) : '';
+            $this->slug    = sanitize_title($this->label);
             $this->fields  = $args['fields'] ?? [];
             $this->options = [
                 'classname'   => $this->slug,
@@ -44,9 +46,8 @@
                 $this->options = array_merge($this->options, $options);
             }
             parent::__construct($this->slug, $this->label, $this->options);
-
-            add_action('widgets_init', function () use($widget) {
-                register_widget($widget);
+            add_action('widgets_init', function () {
+                register_widget(get_called_class());
             });
         }
 
@@ -104,14 +105,15 @@
          */
         public function create_field($key, $out = '')
         {
+            $field_id = ! isset($key['id']) ? sanitize_title($key['name']) : $key['id'];
             $key['std'] = $key['std'] ?? '';
-            if (isset($this->instance[$key['id']])) {
-                $key['value'] = empty($this->instance[$key['id']]) ? '' : strip_tags($this->instance[$key['id']]);
+            if (isset($this->instance[$field_id])) {
+                $key['value'] = empty($this->instance[$field_id]) ? '' : strip_tags($this->instance[$field_id]);
             } else {
                 unset($key['value']);
             }
-            $key['_id']   = $this->get_field_id($key['id']);
-            $key['_name'] = $this->get_field_name($key['id']);
+            $key['_id']   = $this->get_field_id($field_id);
+            $key['_name'] = $this->get_field_name($field_id);
             if ( ! isset($key['type'])) {
                 $key['type'] = 'text';
             }
@@ -143,7 +145,7 @@
             $this->instance = $old_instance;
             $this->before_update_fields();
             foreach ($this->fields as $key) {
-                $slug = $key['id'];
+                $slug = ! isset($key['id']) ? sanitize_title($key['name']) : $key['id'];
                 if (isset($key['validate']) && false === $this->validate($key['validate'], $new_instance[$slug])) {
                     return $this->instance;
                 }
@@ -315,16 +317,15 @@
         {
             $out .= $this->create_field_label($key['name'], $key['_id']) . '<br/>';
             $out .= '<input type="text" ';
-            $out .= !isset($key['class'])? 'class="widefat"' : 'class="'.esc_attr($key['class']).'"';
+            $out .= $this->create_field_class($key);
             $value = isset($key['value']) ? $key['value'] : $key['std'];
-            $out .= 'id="' . esc_attr($key['_id']) . '" name="' . esc_attr($key['_name']) . '" value="' . esc_attr__($value) . '" ';
+            $out .= $this->create_field_id_name($key);
+            $out .= 'value="' . esc_attr__($value) . '"';
             if (isset($key['size'])) {
                 $out .= 'size="' . esc_attr($key['size']) . '" ';
             }
             $out .= ' />';
-            if (isset($key['desc'])) {
-                $out .= '<br/><small class="description">' . esc_html($key['desc']) . '</small>';
-            }
+            $out .= $this->create_field_description($key);
 
             return $out;
         }
@@ -337,7 +338,36 @@
          */
         public function create_field_label($name = '', $id = '')
         {
-            return '<label for="' . esc_attr($id) . '">' . esc_html($name) . ':</label>';
+            return '<label for="' . esc_attr($id) . '">' . esc_html($name) . '</label>';
+        }
+
+        public function create_field_class($class)
+        {
+            $field_class = ! isset($class['class']) ? 'class="widefat"' : 'class="' . $class['class'] . '"';
+
+            return $field_class;
+        }
+
+        public function create_field_id_name($id_name)
+        {
+            $field_id_name = 'id="' . esc_attr($id_name['_id']) . '" name="' . esc_attr($id_name['_name']) . '"';
+
+            return $field_id_name;
+
+        }
+
+        /**
+         * @param $desc
+         *
+         * @return string
+         */
+        public function create_field_description($desc)
+        {
+            $field_description = ! isset($desc['desc'])
+                ? '<br/><small class="description">' . esc_html($desc['name']) . '</small>'
+                : '<br/><small class="description">' . esc_html($desc['desc']) . '</small>';
+
+            return $field_description;
         }
 
         /**
@@ -350,21 +380,16 @@
         {
             $out .= $this->create_field_label($key['name'], $key['_id']) . '<br/>';
             $out .= '<textarea ';
-            if (isset($key['class'])) {
-                $out .= 'class="' . esc_attr($key['class']) . '" ';
-            }
-            if (isset($key['rows'])) {
-                $out .= 'rows="' . esc_attr($key['rows']) . '" ';
-            }
+            $out .= $this->create_field_class($key);
+            $out .= ! isset($key['rows']) ? 'rows="3"' : 'rows="' . $key['rows'] . '"';
             if (isset($key['cols'])) {
                 $out .= 'cols="' . esc_attr($key['cols']) . '" ';
             }
             $value = isset($key['value']) ? $key['value'] : $key['std'];
-            $out .= 'id="' . esc_attr($key['_id']) . '" name="' . esc_attr($key['_name']) . '">' . esc_html($value);
+            $out .= $this->create_field_id_name($key);
+            $out .= '>' . esc_html($value);
             $out .= '</textarea>';
-            if (isset($key['desc'])) {
-                $out .= '<br/><small class="description">' . esc_html($key['desc']) . '</small>';
-            }
+            $out .= $this->create_field_description($key);
 
             return $out;
         }
@@ -379,17 +404,14 @@
         {
             $out .= $this->create_field_label($key['name'], $key['_id']);
             $out .= ' <input type="checkbox" ';
-            if (isset($key['class'])) {
-                $out .= 'class="' . esc_attr($key['class']) . '" ';
-            }
-            $out .= 'id="' . esc_attr($key['_id']) . '" name="' . esc_attr($key['_name']) . '" value="1" ';
+            $out .= $this->create_field_class($key);
+            $out .= $this->create_field_id_name($key);
+            $out .= '" value="1" ';
             if ((isset($key['value']) && $key['value'] == 1) or ( ! isset($key['value']) && $key['std'] == 1)) {
                 $out .= ' checked="checked" ';
             }
             $out .= ' /> ';
-            if (isset($key['desc'])) {
-                $out .= '<br/><small class="description">' . esc_html($key['desc']) . '</small>';
-            }
+            $out .= $this->create_field_description($key);
 
             return $out;
         }
@@ -403,10 +425,9 @@
         public function create_field_select($key, $out = '')
         {
             $out .= $this->create_field_label($key['name'], $key['_id']) . '<br/>';
-            $out .= '<select id="' . esc_attr($key['_id']) . '" name="' . esc_attr($key['_name']) . '" ';
-            if (isset($key['class'])) {
-                $out .= 'class="' . esc_attr($key['class']) . '" ';
-            }
+            $out .= '<select ';
+            $out .= $this->create_field_id_name($key);
+            $out .= $this->create_field_class($key);
             $out .= '> ';
             $selected = isset($key['value']) ? $key['value'] : $key['std'];
             foreach ($key['fields'] as $field => $option) {
@@ -417,9 +438,7 @@
                 $out .= '> ' . esc_html($option['name']) . '</option>';
             }
             $out .= ' </select> ';
-            if (isset($key['desc'])) {
-                $out .= '<br/><small class="description">' . esc_html($key['desc']) . '</small>';
-            }
+            $out .= $this->create_field_description($key);
 
             return $out;
         }
@@ -433,10 +452,9 @@
         public function create_field_select_group($key, $out = '')
         {
             $out .= $this->create_field_label($key['name'], $key['_id']) . '<br/>';
-            $out .= '<select id="' . esc_attr($key['_id']) . '" name="' . esc_attr($key['_name']) . '" ';
-            if (isset($key['class'])) {
-                $out .= 'class="' . esc_attr($key['class']) . '" ';
-            }
+            $out .= '<select ';
+            $out .= $this->create_field_id_name($key);
+            $out .= $this->create_field_class($key);
             $out .= '> ';
             $selected = isset($key['value']) ? $key['value'] : $key['std'];
             foreach ($key['fields'] as $group => $fields) {
@@ -451,9 +469,7 @@
                 $out .= '</optgroup>';
             }
             $out .= '</select>';
-            if (isset($key['desc'])) {
-                $out .= '<br/><small class="description">' . esc_html($key['desc']) . '</small>';
-            }
+            $out .= $this->create_field_description($key);
 
             return $out;
         }
@@ -468,19 +484,50 @@
         {
             $out .= $this->create_field_label($key['name'], $key['_id']) . '<br/>';
             $out .= '<input type="number" ';
-            if (isset($key['class'])) {
-                $out .= 'class="' . esc_attr($key['class']) . '" ';
-            }
+            $out .= $this->create_field_class($key);
             $value = isset($key['value']) ? $key['value'] : $key['std'];
             $out .= 'id="' . esc_attr($key['_id']) . '" name="' . esc_attr($key['_name']) . '" value="' . esc_attr__($value) . '" ';
             if (isset($key['size'])) {
                 $out .= 'size="' . esc_attr($key['size']) . '" ';
             }
             $out .= ' />';
-            if (isset($key['desc'])) {
-                $out .= '<br/><small class="description">' . esc_html($key['desc']) . '</small>';
-            }
+            $out .= $this->create_field_description($key);
 
             return $out;
+        }
+
+        public function add_advanced_options()
+        {
+            $advanced_options = [
+                [
+                    'name' => __('Background Color', 'superlist'),
+                    'id'   => 'background_color',
+                    'type' => 'text',
+                ],
+                [
+                    'name' => __('Background Image', 'superlist'),
+                    'id'   => 'background_image',
+                    'type' => 'text',
+                ],
+                [
+                    'name' => __('Padding Top', 'superlist'),
+                    'id'   => 'padding_top',
+                    'type' => 'checkbox',
+                    'std'  => 1
+                ],
+                [
+                    'name' => __('Padding Bottom', 'superlist'),
+                    'id'   => 'padding_bottom',
+                    'type' => 'checkbox',
+                    'std'  => 1
+                ],
+                [
+                    'name' => __('Classes', 'superlist'),
+                    'id'   => 'classes',
+                    'type' => 'text'
+                ]
+            ];
+
+            return $advanced_options;
         }
     }

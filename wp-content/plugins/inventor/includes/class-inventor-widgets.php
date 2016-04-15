@@ -26,6 +26,7 @@
         {
             require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-filter.php';
             require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-listings.php';
+            require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-news-listings.php';
             require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-listing-author.php';
             require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-listing-categories.php';
             require_once INVENTOR_WIDGETS_DIR . '/class-inventor-widget-listing-categories-boxes.php';
@@ -41,6 +42,7 @@
         {
             register_widget('Inventor_Widget_Filter');
             register_widget('Inventor_Widget_Listings');
+            register_widget('Inventor_News_Widget_Listings');
             register_widget('Inventor_Widget_Listing_Author');
             register_widget('Inventor_Widget_Listing_Categories');
             register_widget('Inventor_Widget_Listing_Categories_Boxes');

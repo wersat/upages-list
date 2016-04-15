@@ -4,6 +4,9 @@ body.layout-boxed {
     }
   }
 
+.home .widget_video_cover{
+  //position: absolute;
+  }
 .widget_video_cover {
   position : relative;
   }
@@ -30,7 +33,8 @@ body.layout-boxed {
   left             : 0;
   z-index          : 10;
   display          : block;
-  background-color : #000000;
+  //background-color : #000000;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpiZmBgKATi30AsxQxl2AHxQ0YgYcwAAXYAAQYAWdIEGQ9+f9YAAAAASUVORK5CYII=");
   content          : '';
   opacity          : 0.4;
   }

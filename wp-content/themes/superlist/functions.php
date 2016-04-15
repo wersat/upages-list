@@ -4,7 +4,6 @@
      * @package Superlist
      * @since   Superlist 1.0.0
      */
-    //$theme_root = __DIR__;
     /**
      * Constants
      */
@@ -18,6 +17,7 @@
     define('THEME_IMG_DIR', THEME_ASSETS_DIR . '/img');
     define('LIB_DIR', __DIR__ . '/library');
     define('CLASS_DIR', LIB_DIR . '/class');
+    define('WIDGETS_DIR', LIB_DIR . '/widgets');
     define('THEME_TPL_DIR', __DIR__ . '/templates');
     define('THEME_WIDGETS_DIR', __DIR__ . '/widgets');
     define('THEME_WIDGETS_TPL_DIR', THEME_WIDGETS_DIR . '/templates');
@@ -25,14 +25,29 @@
      * Libraries
      */
     require_once LIB_DIR . '/class-tgm-plugin-activation.php';
-    //require_once CLASS_DIR . '/class-customize-register.php';
+    //require_once CLASS_DIR . '/class-widget-builder.php';
+    spl_autoload_register(function ($class) {
+        $class = ltrim($class, '\\');
+        if (0 !== stripos($class, 'Upages_Objects\\')) {
+            return;
+        }
+        $parts = explode('\\', $class);
+        array_shift($parts);
+        $last    = array_pop($parts);
+        $last    = 'class-' . $last . '.php';
+        $parts[] = $last;
+        $objects = CLASS_DIR . '/' . str_replace('_', '-', strtolower(implode($parts, '/')));
+        if (file_exists($objects)) {
+            require_once $objects;
+        }
+    });
     /**
      * Widgets
      */
-    require_once THEME_WIDGETS_DIR . '/widget-boxes.php';
     require_once THEME_WIDGETS_DIR . '/widget-call-to-action.php';
     require_once THEME_WIDGETS_DIR . '/widget-simple-map.php';
     require_once THEME_WIDGETS_DIR . '/widget-video-cover.php';
+    require_once LIB_DIR . '/widget_loader.php';
     /**
      * Body classes
      * @filter body_class
@@ -49,9 +64,7 @@
         if ( ! is_active_sidebar('header-topbar-left') && ! is_active_sidebar('header-topbar-right')) {
             $body_class[] = 'header-empty-topbar';
         }
-        //        if( is_front_page()){
-        //            $body_class[] = 'header-transparent listing-slider-append-top header-disable-topbar';
-        //        }
+
         return $body_class;
     }
 
@@ -63,162 +76,14 @@
      */
     function superlist_widgets_init()
     {
-        register_widget('Superlist_Widget_Boxes');
         register_widget('Superlist_Widget_Call_To_Action');
         register_widget('Superlist_Widget_Video_Cover');
         register_widget('Superlist_Widget_Simple_Map');
     }
 
     add_action('widgets_init', 'superlist_widgets_init');
-    /**
-     * Enqueue scripts & styles
-     * @action wp_enqueue_scripts
-     * @return void
-     */
-    function superlist_enqueue_files()
-    {
-        $google_lib_url   = '//ajax.googleapis.com/ajax/libs';
-        $bootstrapcdn     = 'https://maxcdn.bootstrapcdn.com/';
-        $jsdelivr_lib_url = 'https://cdn.jsdelivr.net/';
-        $cdnjs_lib_url    = 'https://cdnjs.cloudflare.com/ajax/libs/';
-        wp_deregister_script('jquery');
-        $register_js  = [
-            [
-                'handle'   => 'jquery',
-                'src'      => $google_lib_url . '/jquery/2.2.0/jquery.min.js',
-                'deps'     => '',
-                'in_foter' => true,
-                'enqueue'  => true
-            ],
-            [
-                'handle'   => 'bootstrap-select',
-                'src'      => THEME_ASSETS_LIB_DIR . '/bootstrap-select/bootstrap-select.min.js',
-                'deps'     => 'jquery',
-                'in_foter' => true,
-                'enqueue'  => true
-            ],
-            [
-                'handle'   => 'bootstrap-dropdown',
-                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/dropdown.min.js',
-                'deps'     => 'jquery',
-                'in_foter' => true,
-                'enqueue'  => true
-            ],
-            [
-                'handle'   => 'bootstrap-collapse',
-                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/collapse.min.js',
-                'deps'     => 'jquery',
-                'in_foter' => true,
-                'enqueue'  => true
-            ],
-            [
-                'handle'   => 'bootstrap-tooltip',
-                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/tooltip.min.js',
-                'deps'     => 'jquery',
-                'in_foter' => true,
-                'enqueue'  => true
-            ],
-            [
-                'handle'   => 'bootstrap-alert',
-                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/alert.min.js',
-                'deps'     => 'jquery',
-                'in_foter' => true,
-                'enqueue'  => true
-            ],
-            [
-                'handle'   => 'bootstrap-affix',
-                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/affix.min.js',
-                'deps'     => 'jquery',
-                'in_foter' => true,
-                'enqueue'  => true
-            ],
-            [
-                'handle'   => 'bootstrap-tab',
-                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/tab.min.js',
-                'deps'     => 'jquery',
-                'in_foter' => true,
-                'enqueue'  => true
-            ],
-            [
-                'handle'   => 'bootstrap-transition',
-                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/transition.min.js',
-                'deps'     => 'jquery',
-                'in_foter' => true,
-                'enqueue'  => true
-            ],
-            [
-                'handle'   => 'bootstrap-scrollspy',
-                'src'      => THEME_BOOTSTRAP_DIR . '/javascripts/bootstrap/scrollspy.min.js',
-                'deps'     => 'jquery',
-                'in_foter' => true,
-                'enqueue'  => true
-            ],
-            [
-                'handle'   => 'colorbox',
-                'src'      => THEME_ASSETS_LIB_DIR . '/colorbox/jquery.colorbox-min.js',
-                'deps'     => 'jquery',
-                'in_foter' => true,
-                'enqueue'  => true
-            ],
-            [
-                'handle'   => 'owl-carousel',
-                'src'      => THEME_ASSETS_LIB_DIR . '/owl.carousel/owl.carousel.min.js',
-                'deps'     => 'jquery',
-                'in_foter' => true,
-                'enqueue'  => true
-            ],
-            [
-                'handle'   => 'scrollto',
-                'src'      => THEME_ASSETS_LIB_DIR . '/scrollto/jquery.scrollTo.min.js',
-                'deps'     => 'jquery',
-                'in_foter' => true,
-                'enqueue'  => true
-            ],
-            [
-                'handle'   => 'upages',
-                'src'      => THEME_JS_DIR. '/upages.min.js',
-                'deps'     => 'jquery',
-                'in_foter' => true,
-                'enqueue'  => true
-            ]
-        ];
-        $register_css = [
-            [
-                'handle' => 'roboto',
-                'src'    => '//fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=latin,latin-ext',
-                'deps'   => ''
-            ],
-            [
-                'handle' => 'font-awesome',
-                'src'    => $bootstrapcdn . 'font-awesome/4.6.1/css/font-awesome.min.css',
-                'deps'   => ''
-            ],
-            [
-                'handle' => 'superlist-font',
-                'src'    => THEME_ASSETS_LIB_DIR . '/superlist-font/style.css',
-                'deps'   => ''
-            ],
-            [
-                'handle' => 'main_style',
-                'src'    => THEME_CSS_DIR . '/upages.css',
-                'deps'   => ''
-            ]
-        ];
-        foreach ($register_js as $file_js) {
-            wp_register_script($file_js['handle'], $file_js['src'], $file_js['deps'], null, $file_js['in_foter']);
-            if ($file_js['enqueue'] == true) {
-                wp_enqueue_script($file_js['handle']);
-            }
-        }
-        foreach ($register_css as $file_css) {
-            wp_enqueue_style($file_css['handle'], $file_css['src'], $file_css['deps'], null);
-        }
-        if (is_singular()) {
-            wp_enqueue_script('comment-reply');
-        }
-    }
 
-    add_action('wp_enqueue_scripts', 'superlist_enqueue_files', 9);
+    require_once LIB_DIR . '/enqueue-media.php';
     /**
      * Register navigations
      * @action init
@@ -664,7 +529,7 @@
      */
     function superlist_register_required_plugins()
     {
-        $plugins          = [
+        $plugins = [
             [
                 'name'         => 'CMB2',
                 'slug'         => 'cmb2',
@@ -742,18 +607,77 @@
     }
 
     add_action('inventor_review_rating_total_attrs', 'superlist_review_rating_toral_attrs', 10, 1);
-
-    add_action( 'registered_post_type', 'add_post_type_to_rest_api', 10, 2 );
-
-    function add_post_type_to_rest_api( $post_type, $args ) {
+    add_action('registered_post_type', 'add_post_type_to_rest_api', 10, 2);
+    function add_post_type_to_rest_api($post_type, $args)
+    {
         global $wp_post_types;
-        $args->show_in_rest = true;
-        $wp_post_types[ $post_type ] = $args;
+        $args->show_in_rest        = true;
+        $wp_post_types[$post_type] = $args;
     }
-    add_action( 'registered_post_type', 'add_taxonomy_to_rest_api', 10, 2 );
 
-    function add_taxonomy_to_rest_api( $taxonomy, $args ) {
-        global $wp_taxonomies;
-        $args->show_in_rest = true;
-        $wp_taxonomies[ $taxonomy ] = $args;
+    // Register Custom Post Type
+    function test_post_type()
+    {
+        $labels = [
+            'name'                  => _x('Новини', 'Post Type General Name', 'text_domain'),
+            'singular_name'         => _x('Post Type Test', 'Post Type Singular Name', 'text_domain'),
+            'menu_name'             => __('Post Type Test', 'text_domain'),
+            'name_admin_bar'        => __('Post Type Test', 'text_domain'),
+            'archives'              => __('Item Archives', 'text_domain'),
+            'parent_item_colon'     => __('Parent Item:', 'text_domain'),
+            'all_items'             => __('All Items', 'text_domain'),
+            'add_new_item'          => __('Add New Item', 'text_domain'),
+            'add_new'               => __('Add New', 'text_domain'),
+            'new_item'              => __('New Item', 'text_domain'),
+            'edit_item'             => __('Edit Item', 'text_domain'),
+            'update_item'           => __('Update Item', 'text_domain'),
+            'view_item'             => __('View Item', 'text_domain'),
+            'search_items'          => __('Search Item', 'text_domain'),
+            'not_found'             => __('Not found', 'text_domain'),
+            'not_found_in_trash'    => __('Not found in Trash', 'text_domain'),
+            'featured_image'        => __('Featured Image', 'text_domain'),
+            'set_featured_image'    => __('Set featured image', 'text_domain'),
+            'remove_featured_image' => __('Remove featured image', 'text_domain'),
+            'use_featured_image'    => __('Use as featured image', 'text_domain'),
+            'insert_into_item'      => __('Insert into item', 'text_domain'),
+            'uploaded_to_this_item' => __('Uploaded to this item', 'text_domain'),
+            'items_list'            => __('Items list', 'text_domain'),
+            'items_list_navigation' => __('Items list navigation', 'text_domain'),
+            'filter_items_list'     => __('Filter items list', 'text_domain'),
+        ];
+        $args   = [
+            'label'               => __('Post Type Test', 'text_domain'),
+            'description'         => __('Post Type Description', 'text_domain'),
+            'labels'              => $labels,
+            'supports'            => [
+                'title',
+                'editor',
+                'excerpt',
+                'author',
+                'thumbnail',
+                'comments',
+                'trackbacks',
+                'revisions',
+                'custom-fields',
+                'page-attributes',
+                'post-formats',
+            ],
+            'taxonomies'          => ['category', 'post_tag'],
+            'hierarchical'        => false,
+            'public'              => true,
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'menu_position'       => 5,
+            'show_in_admin_bar'   => true,
+            'show_in_nav_menus'   => true,
+            'can_export'          => true,
+            'has_archive'         => true,
+            'exclude_from_search' => false,
+            'publicly_queryable'  => true,
+            'capability_type'     => 'page',
+        ];
+        register_post_type('test_post_type', $args);
+
     }
+
+    add_action('init', 'test_post_type', 0);

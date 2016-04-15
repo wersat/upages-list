@@ -56,7 +56,7 @@
   function widget_logic_ajax_update_callback($instance, $new_instance, $this_widget)
   {
     global $wl_options;
-    $widget_id = $this_widget->id;
+    $widget_id = isset($this_widget)? '':$this_widget->id;
     if (isset($_POST[$widget_id . '-widget_logic'])) {
       $wl_options[$widget_id] = trim($_POST[$widget_id . '-widget_logic']);
       update_option('widget_logic', $wl_options);

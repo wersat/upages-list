@@ -7,8 +7,7 @@
   <h2>
     <a href="<?php echo esc_attr($url); ?>">
       <?php if ($type == INVENTOR_WATCHDOG_TYPE_SEARCH_QUERY) : ?>
-        <?php printf(_n('<span class="match">%d</span> listing matches your search query',
-          '<span class="match">%d</span> listings match your search query', $current_value, 'inventor-watchdog'),
+        <?php printf(_n('<span class="match">%d</span> listing matches your search query', '<span class="match">%d</span> listings match your search query', $current_value, 'inventor-watchdog'),
           $current_value); ?>
       <?php endif; ?>
     </a>
