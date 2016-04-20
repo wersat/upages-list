@@ -17,15 +17,15 @@
     define('THEME_IMG_DIR', THEME_ASSETS_DIR . '/img');
     define('LIB_DIR', __DIR__ . '/library');
     define('CLASS_DIR', LIB_DIR . '/class');
+    define('OPTION_DIR', LIB_DIR . '/options');
     define('WIDGETS_DIR', LIB_DIR . '/widgets');
     define('THEME_TPL_DIR', __DIR__ . '/templates');
     define('THEME_WIDGETS_DIR', __DIR__ . '/widgets');
     define('THEME_WIDGETS_TPL_DIR', THEME_WIDGETS_DIR . '/templates');
-    /**
-     * Libraries
-     */
     require_once LIB_DIR . '/class-tgm-plugin-activation.php';
-    //require_once CLASS_DIR . '/class-widget-builder.php';
+    /**
+     * Autoload all class from "LIB_DIR.'/class'" dir
+     */
     spl_autoload_register(function ($class) {
         $class = ltrim($class, '\\');
         if (0 !== stripos($class, 'Upages_Objects\\')) {
@@ -46,6 +46,14 @@
      */
     require_once THEME_WIDGETS_DIR . '/widget-video-cover.php';
     require_once LIB_DIR . '/widget_loader.php';
+
+    /**
+     * Load option framework
+     */
+    require_once LIB_DIR . '/vafpress/bootstrap.php';
+    require_once OPTION_DIR.'/option_metabox.php';
+
+
     /**
      * Body classes
      * @filter body_class
@@ -78,7 +86,6 @@
     }
 
     add_action('widgets_init', 'superlist_widgets_init');
-
     require_once LIB_DIR . '/enqueue-media.php';
     /**
      * Register navigations
@@ -610,70 +617,3 @@
         $args->show_in_rest        = true;
         $wp_post_types[$post_type] = $args;
     }
-
-    // Register Custom Post Type
-    function test_post_type()
-    {
-        $labels = [
-            'name'                  => _x('Новини', 'Post Type General Name', 'text_domain'),
-            'singular_name'         => _x('Post Type Test', 'Post Type Singular Name', 'text_domain'),
-            'menu_name'             => __('Post Type Test', 'text_domain'),
-            'name_admin_bar'        => __('Post Type Test', 'text_domain'),
-            'archives'              => __('Item Archives', 'text_domain'),
-            'parent_item_colon'     => __('Parent Item:', 'text_domain'),
-            'all_items'             => __('All Items', 'text_domain'),
-            'add_new_item'          => __('Add New Item', 'text_domain'),
-            'add_new'               => __('Add New', 'text_domain'),
-            'new_item'              => __('New Item', 'text_domain'),
-            'edit_item'             => __('Edit Item', 'text_domain'),
-            'update_item'           => __('Update Item', 'text_domain'),
-            'view_item'             => __('View Item', 'text_domain'),
-            'search_items'          => __('Search Item', 'text_domain'),
-            'not_found'             => __('Not found', 'text_domain'),
-            'not_found_in_trash'    => __('Not found in Trash', 'text_domain'),
-            'featured_image'        => __('Featured Image', 'text_domain'),
-            'set_featured_image'    => __('Set featured image', 'text_domain'),
-            'remove_featured_image' => __('Remove featured image', 'text_domain'),
-            'use_featured_image'    => __('Use as featured image', 'text_domain'),
-            'insert_into_item'      => __('Insert into item', 'text_domain'),
-            'uploaded_to_this_item' => __('Uploaded to this item', 'text_domain'),
-            'items_list'            => __('Items list', 'text_domain'),
-            'items_list_navigation' => __('Items list navigation', 'text_domain'),
-            'filter_items_list'     => __('Filter items list', 'text_domain'),
-        ];
-        $args   = [
-            'label'               => __('Post Type Test', 'text_domain'),
-            'description'         => __('Post Type Description', 'text_domain'),
-            'labels'              => $labels,
-            'supports'            => [
-                'title',
-                'editor',
-                'excerpt',
-                'author',
-                'thumbnail',
-                'comments',
-                'trackbacks',
-                'revisions',
-                'custom-fields',
-                'page-attributes',
-                'post-formats',
-            ],
-            'taxonomies'          => ['category', 'post_tag'],
-            'hierarchical'        => false,
-            'public'              => true,
-            'show_ui'             => true,
-            'show_in_menu'        => true,
-            'menu_position'       => 5,
-            'show_in_admin_bar'   => true,
-            'show_in_nav_menus'   => true,
-            'can_export'          => true,
-            'has_archive'         => true,
-            'exclude_from_search' => false,
-            'publicly_queryable'  => true,
-            'capability_type'     => 'page',
-        ];
-        register_post_type('test_post_type', $args);
-
-    }
-
-    add_action('init', 'test_post_type', 0);

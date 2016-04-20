@@ -13,7 +13,7 @@
    * Class Widgets_Boxes
    * @package Upages_Widgets
    */
-  class Widgets_Boxes extends Widget_Builder
+  class Widget_Boxes extends Widget_Builder
   {
     /**
      * @param $args

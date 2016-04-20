@@ -1,13 +1,5 @@
 <?php
-    /*
-    |--------------------------------------------------------------------------
-    | Register AutoLoader
-    |--------------------------------------------------------------------------
-    | Vafpress Framework has separated app and core directories, developers can
-    | put their extension code and configuration at app folder, as everything
-    | inside app will be loaded first and will override class with the same
-    | name with core classes.
-    */
+
     VP_AutoLoader::add_namespaces(VP_NAMESPACE);
     VP_AutoLoader::add_directories(VP_CLASSES_DIR, VP_NAMESPACE);
     VP_AutoLoader::register();
@@ -16,21 +8,18 @@
     {
         /**
          * Indicates if VP_AutoLoader has been registered.
-         *
          * @var bool
          */
         protected static $registered = false;
 
         /**
          * The registered directories.
-         *
          * @var array
          */
         protected static $directories = [];
 
         /**
          * THe registered namespaces.
-         *
          * @var array
          */
         protected static $namespaces = [];
@@ -52,7 +41,7 @@
             }
             $class = self::normalize_class($class, $namespace);
             foreach (self::$directories[$namespace] as $dir) {
-                $file = $dir.DIRECTORY_SEPARATOR.$class;
+                $file = $dir . DIRECTORY_SEPARATOR . $class;
                 // if( $dir === end(self::$directories) )
                 // {
                 // 	require $file;
@@ -105,7 +94,7 @@
             $class = ltrim($class, '_');
             $class = strtolower($class);
 
-            return str_replace('_', DIRECTORY_SEPARATOR, $class).'.php';
+            return str_replace('_', DIRECTORY_SEPARATOR, $class) . '.php';
         }
 
         /**
@@ -124,7 +113,7 @@
          */
         public static function add_namespaces($namespaces)
         {
-            self::$namespaces = array_merge(self::$namespaces, (array) $namespaces);
+            self::$namespaces = array_merge(self::$namespaces, (array)$namespaces);
             self::$namespaces = array_unique(self::$namespaces);
             usort(self::$namespaces, ['self', 'sort']);
         }
@@ -139,10 +128,10 @@
         public static function add_directories($directories, $namespace)
         {
             if (in_array($namespace, self::$namespaces)) {
-                if (!isset(self::$directories[$namespace])) {
+                if ( ! isset(self::$directories[$namespace])) {
                     self::$directories[$namespace] = [];
                 }
-                self::$directories[$namespace] = array_merge(self::$directories[$namespace], (array) $directories);
+                self::$directories[$namespace] = array_merge(self::$directories[$namespace], (array)$directories);
                 self::$directories[$namespace] = array_unique(self::$directories[$namespace]);
             }
         }
@@ -155,7 +144,7 @@
         public static function remove_directories($directories = null, $namespace)
         {
             // check if namespace existed
-            if (!in_array($namespace, self::$namespaces)) {
+            if ( ! in_array($namespace, self::$namespaces)) {
                 return;
             }
             // annihilate everything if none / null passed
@@ -163,7 +152,7 @@
                 self::$directories[$namespace] = [];
             } else {
                 // prepare directories to be filtered
-                $directories = (array) $directories;
+                $directories = (array)$directories;
                 // do the filtering
                 foreach (self::$directories[$namespace] as $key => $dir) {
                     if (in_array($dir, $directories)) {
@@ -175,7 +164,6 @@
 
         /**
          * Get all directories.
-         *
          * @return array
          */
         public static function get_directories()

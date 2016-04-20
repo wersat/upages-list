@@ -168,7 +168,7 @@
   <select id="<?php echo esc_attr($this->get_field_id('listing_categories')); ?>" style="width: 100%;"
           multiple="multiple"
           name="<?php echo esc_attr($this->get_field_name('listing_categories')); ?>[]">
-    <?php $terms = get_terms('listing_categories', ['hide_empty' => false]); ?>
+    <?php $terms = get_terms('listing_categories', ['hide_empty' => false]);?>
 
     <?php if (is_array($terms)) : ?>
       <?php foreach ($terms as $term) : ?>

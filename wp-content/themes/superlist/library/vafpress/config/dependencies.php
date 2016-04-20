@@ -11,7 +11,7 @@
          * Scripts.
          */
         'scripts' => [
-            'always' => ['jquery', 'scrollspy', 'tipsy', 'jquery-typing'],
+            'always' => ['jquery', 'scrollspy', 'tipsy', 'jquery-typing','datetimepicker'],
             'paths' => [
                 'jquery' => [
                     'path' => '',
@@ -139,6 +139,11 @@
                         ],
                     ],
                 ],
+                'datetimepicker' => [
+                    'path' => VP_PUBLIC_URL.'/js/vendor/jquery.datetimepicker.full.min.js',
+                    'deps' => ['jquery'],
+                    'ver' => '2.0',
+                ],
                 'vp-shortcode-qt' => [
                     'path' => VP_PUBLIC_URL.'/js/shortcode-quicktags.js',
                     'deps' => ['reveal'],
@@ -163,7 +168,7 @@
          * Styles.
          */
         'styles' => [
-            'always' => ['tipsy', 'font-awesome'],
+            'always' => ['tipsy', 'font-awesome','vp-datetimepicker'],
             'paths' => [
                 'bootstrap-colorpicker' => [
                     'path' => VP_PUBLIC_URL.'/css/vendor/bootstrap-colorpicker.css',
@@ -201,6 +206,10 @@
                     'path' => VP_PUBLIC_URL.'/css/shortcode.min.css',
                     'deps' => ['reveal'],
                 ],
+                'vp-datetimepicker' => [
+                    'path' => VP_PUBLIC_URL.'/css/vendor/jquery.datetimepicker.css',
+                    'deps' => [],
+                ],
             ],
         ],
         /*
@@ -211,7 +220,7 @@
             'select' => ['js' => ['select2'], 'css' => ['select2']],
             'multiselect' => ['js' => ['select2'], 'css' => ['select2']],
             'slider' => ['js' => ['jquery-ui-slider'], 'css' => ['jqui']],
-            'date' => ['js' => ['jquery-ui-datepicker'], 'css' => ['jqui']],
+            'date' => ['js' => ['datetimepicker'], 'css' => ['jqui']],
             'codeeditor' => ['js' => ['ace-editor'], 'css' => []],
             'sorter' => ['js' => ['select2-sortable'], 'css' => ['select2', 'jqui']],
             'fontawesome' => ['js' => ['select2'], 'css' => ['select2']],

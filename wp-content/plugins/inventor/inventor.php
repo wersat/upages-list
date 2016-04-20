@@ -99,7 +99,6 @@
                 if (is_admin()) {
                     require_once INVENTOR_ADM_DIR . '/class-inventor-admin-menu.php';
                     require_once INVENTOR_ADM_DIR . '/class-inventor-admin-notices.php';
-                    //require_once INVENTOR_ADM_DIR . '/class-inventor-admin-updates.php';
                 }
             }
 

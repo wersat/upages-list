@@ -1055,22 +1055,36 @@ vp.init_colorpicker = function($elements)
 
 vp.init_datepicker = function($elements)
 {
-	if (jQuery.fn.datepicker)
-	{
-		if($elements.length <= 0)
-			return;
-		$elements.each(function() {
-			var options = jQuery(this).getDatas();
-			options     = vp.parseOpt(options.opt);
-			options.onSelect = function(){
-				jQuery(this).trigger('keypress');
-				jQuery(this).trigger('keyup');
-				jQuery(this).trigger('blur');
-			};
-			jQuery(this).datepicker(options);
-			jQuery(this).datepicker('setDate', options.value);
-		});
-	}
+	//if (jQuery.fn.datepicker)
+	//{
+	//	if($elements.length <= 0)
+	//		return;
+	//	$elements.each(function() {
+	//		var options = jQuery(this).getDatas();
+	//		options     = vp.parseOpt(options.opt);
+	//		options.onSelect = function(){
+	//			jQuery(this).trigger('keypress');
+	//			jQuery(this).trigger('keyup');
+	//			jQuery(this).trigger('blur');
+	//		};
+	//		jQuery(this).datepicker(options);
+	//		jQuery(this).datepicker('setDate', options.value);
+	//	});
+	//}
+  if($elements.length <= 0)
+    return;
+  $elements.each(function() {
+    var options = jQuery(this).getDatas();
+    options     = vp.parseOpt(options.opt);
+
+    //options.onSelect = function(){
+    //  jQuery(this).trigger('keypress');
+    //  jQuery(this).trigger('keyup');
+    //  jQuery(this).trigger('blur');
+    //};
+    jQuery(this).datetimepicker(options);
+    //jQuery(this).datepicker('setDate', options.value);
+  });
 };
 
 vp.init_controls = function($parent)

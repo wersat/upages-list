@@ -31,9 +31,10 @@
         public $instance;
 
         /**
-         * @param $args
+         * @param string $args
+         * @param array  $options
          */
-        public function __construct($args)
+        public function __construct($args, array $options = null)
         {
             $this->label   = $args['label'] ?? '';
             $this->slug    = sanitize_title($this->label);
@@ -53,6 +54,8 @@
 
         /**
          * @param $instance
+         *
+         * @return string|void
          */
         public function form($instance)
         {
@@ -77,7 +80,7 @@
         public function create_fields($out = '')
         {
             $out = $this->before_create_fields($out);
-            if ( ! empty($this->fields)) {
+            if ($this->fields !== null) {
                 foreach ($this->fields as $key) {
                     $out .= $this->create_field($key);
                 }
@@ -103,7 +106,7 @@
          *
          * @return string
          */
-        public function create_field($key, $out = '')
+        public function create_field($key)
         {
             $field_id   = ! isset($key['id']) ? sanitize_title($key['name']) : $key['id'];
             $key['std'] = $key['std'] ?? '';
@@ -175,8 +178,9 @@
          */
         public function validate($rules, $value)
         {
-            $rules = explode('|', $rules);
-            if (empty($rules) || count($rules) < 1) {
+            $rules       = explode('|', $rules);
+            $rules_count = count($rules);
+            if (empty($rules) || $rules_count < 1) {
                 return true;
             }
             foreach ((array)$rules as $rule) {
@@ -225,10 +229,7 @@
                 case 'natural':
                     return (bool)preg_match('/^[0-9]+$/', $value);
                 case 'natural_not_zero':
-                    if ( ! preg_match('/^[0-9]+$/', $value)) {
-                        return false;
-                    }
-                    if ($value == 0) {
+                    if ( ! preg_match('/^[0-9]+$/', $value) && $value == 0) {
                         return false;
                     }
 
@@ -252,8 +253,9 @@
          */
         public function filter($filters, $value)
         {
-            $filters = explode('|', $filters);
-            if (empty($filters) || count($filters) < 1) {
+            $filters       = explode('|', $filters);
+            $filters_count = count($filters);
+            if (empty($filters) || $filters_count < 1) {
                 return $value;
             }
             foreach ((array)$filters as $filter) {
@@ -318,7 +320,7 @@
             $out .= $this->create_field_label($key['name'], $key['_id']) . '<br/>';
             $out .= '<input type="text" ';
             $out .= $this->create_field_class($key);
-            $value = isset($key['value']) ? $key['value'] : $key['std'];
+            $value = $key['value'] ?? $key['std'];
             $out .= $this->create_field_id_name($key);
             $out .= 'value="' . esc_attr__($value) . '"';
             if (isset($key['size'])) {
@@ -380,12 +382,18 @@
             return $field_description;
         }
 
+        /**
+         * @param        $key
+         * @param string $out
+         *
+         * @return string
+         */
         public function create_field_image($key, $out = '')
         {
             $out .= $this->create_field_label($key['name'], $key['_id']) . '<br/>';
             $out .= '<input type="text" ';
             $out .= $this->create_field_class($key);
-            $value = isset($key['value']) ? $key['value'] : $key['std'];
+            $value = $key['value'] ?? $key['std'];
             $out .= $this->create_field_id_name($key);
             $out .= 'value="' . esc_url($value) . '"';
             $out .= ' />';
@@ -395,9 +403,13 @@
             return $out;
         }
 
+        /**
+         * @return string
+         */
         public function upload_image_button()
         {
             $button = '<button class="upload_image_button button button-primary">Upload Image</button>';
+
             return $button;
         }
 
@@ -416,7 +428,7 @@
             if (isset($key['cols'])) {
                 $out .= 'cols="' . esc_attr($key['cols']) . '" ';
             }
-            $value = isset($key['value']) ? $key['value'] : $key['std'];
+            $value = $key['value'] ?? $key['std'];
             $out .= $this->create_field_id_name($key);
             $out .= '>' . esc_html($value);
             $out .= '</textarea>';
@@ -458,13 +470,13 @@
             $out .= $this->create_field_label($key['name'], $key['_id']) . '<br/>';
             $out .= '<select ';
             if (isset($key['multiple']) && $key['multiple'] === true) {
-                $out .= "multiple ";
+                $out .= 'multiple ';
                 $out .= 'size="' . count($key['fields']) . '"';
             }
             $out .= $this->create_field_id_name($key);
             $out .= $this->create_field_class($key);
             $out .= '> ';
-            $selected = isset($key['value']) ? $key['value'] : $key['std'];
+            $selected = $key['value'] ?? $key['std'];
             foreach ($key['fields'] as $field => $option) {
                 $out .= '<option value="' . esc_attr__($option['value']) . '" ';
                 if (esc_attr($selected) == $option['value']) {
@@ -491,7 +503,7 @@
             $out .= $this->create_field_id_name($key);
             $out .= $this->create_field_class($key);
             $out .= '> ';
-            $selected = isset($key['value']) ? $key['value'] : $key['std'];
+            $selected = $key['value'] ?? $key['std'];
             foreach ($key['fields'] as $group => $fields) {
                 $out .= '<optgroup label="' . $group . '">';
                 foreach ($this->fields as $field => $option) {
@@ -520,7 +532,7 @@
             $out .= $this->create_field_label($key['name'], $key['_id']) . '<br/>';
             $out .= '<input type="number" ';
             $out .= $this->create_field_class($key);
-            $value = isset($key['value']) ? $key['value'] : $key['std'];
+            $value = $key['value'] ?? $key['std'];
             $out .= $this->create_field_id_name($key);
             $out .= 'value="' . esc_attr__($value) . '" ';
             if (isset($key['max'])) {
@@ -550,12 +562,12 @@
                 [
                     'name' => __('Background Color', 'superlist'),
                     'id'   => 'background_color',
-                    'type' => 'text',
+                    'type' => 'text'
                 ],
                 [
                     'name' => __('Background Image', 'superlist'),
                     'id'   => 'background_image',
-                    'type' => 'text',
+                    'type' => 'text'
                 ],
                 [
                     'name' => __('Padding Top', 'superlist'),
@@ -596,6 +608,9 @@
             return $pages_list;
         }
 
+        /**
+         * @return array
+         */
         public function getFieldsFilter()
         {
             $fields_filter = [];

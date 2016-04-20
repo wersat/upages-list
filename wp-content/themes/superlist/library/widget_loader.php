@@ -1,8 +1,9 @@
 <?php
+    use Upages_Widgets\Widget_Boxes;
     use Upages_Widgets\Widget_Call_To_Action;
+    use Upages_Widgets\Widget_Last_News;
     use Upages_Widgets\Widget_Simple_Map;
     use Upages_Widgets\Widget_Video_Home_Cover;
-    use Upages_Widgets\Widgets_Boxes;
 
     spl_autoload_register(function ($widgets) {
         $widgets = ltrim($widgets, '\\');
@@ -19,7 +20,8 @@
             require_once $class;
         }
     });
-    new Widgets_Boxes();
+    new Widget_Boxes();
     new Widget_Call_To_Action();
     new Widget_Simple_Map();
     new Widget_Video_Home_Cover();
+    new Widget_Last_News();

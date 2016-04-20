@@ -33,7 +33,8 @@
          * @param null  $class_name
          *
          * @return \VP_Control_Field_Date
-         */public static function withArray($arr = [], $class_name = null)
+         */
+        public static function withArray($arr = [], $class_name = null)
         {
             if (is_null($class_name)) {
                 $instance = new self();
@@ -54,10 +55,10 @@
         protected function _setup_data()
         {
             $opt = [
-                'minDate' => $this->get_min_date(),
-                'maxDate' => $this->get_max_date(),
+                'minDate'    => $this->get_min_date(),
+                'maxDate'    => $this->get_max_date(),
                 'dateFormat' => $this->get_format(),
-                'value' => $this->get_value(),
+                'value'      => $this->get_value(),
             ];
             $this->add_data('opt', VP_Util_Text::make_opt($opt));
             parent::_setup_data();
@@ -68,7 +69,8 @@
          *
          * @return string
          * @throws \Exception
-         */public function render($is_compact = false)
+         */
+        public function render($is_compact = false)
         {
             // Setup Data
             $this->_setup_data();
@@ -80,7 +82,6 @@
 
         /**
          * Get Minimum Date.
-         *
          * @return string Minimum Date
          */
         public function get_min_date()
@@ -102,7 +103,6 @@
 
         /**
          * Get Maximum Date.
-         *
          * @return string Maximum Date
          */
         public function get_max_date()
@@ -124,7 +124,6 @@
 
         /**
          * Get Date Format.
-         *
          * @return string Date format
          */
         public function get_format()
