@@ -187,7 +187,7 @@
          */
         public static function add_metabox($post_type, array $metaboxes)
         {
-            if (sizeof($metaboxes) > 0) {
+            if (count($metaboxes) > 0) {
                 foreach ($metaboxes as $metabox) {
                     if (2 === count(explode('::', $metabox))) {
                         $parts = explode('::', $metabox);
@@ -365,7 +365,7 @@
                 $fields = $meta_box->meta_box['fields'];
                 foreach ($fields as $field) {
                     $value = get_post_meta($post_id, $field['id'], true);
-                    if ( ! empty($field['skip']) && true === $field['skip']) {
+                    if ( ! empty($field['skip']) && true == $field['skip']) {
                         continue;
                     }
                     // Select

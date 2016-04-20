@@ -5,21 +5,17 @@
     <div class="listing-detail-attributes">
       <ul>
         <?php foreach ($attributes as $key => $attribute) {
-          if ( ! is_array($attribute['value'])) {
-            ?>
-            <li class="<?php echo esc_attr($key);
-            ?>">
-              <strong class="key"><?php echo wp_kses($attribute['name'], wp_kses_allowed_html('post'));
-                ?></strong>
+          ?>
+          <li class="<?=esc_attr($key); ?>">
+            <strong class="key">
+              <?=wp_kses($attribute['name'], wp_kses_allowed_html('post')); ?>
+            </strong>
 
-            <span class="value"><?php
-                echo wp_kses($attribute['value'], wp_kses_allowed_html('post'));
-              ?>
+            <span class="value">
+              <?=wp_kses($attribute['value'], wp_kses_allowed_html('post')); ?>
             </span>
-            </li>
-            <?php
-
-          }
+          </li>
+          <?php
         } ?>
       </ul>
     </div>
