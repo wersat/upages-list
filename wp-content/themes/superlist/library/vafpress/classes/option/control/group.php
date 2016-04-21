@@ -1,8 +1,5 @@
 <?php
 
-    /**
-     * Class VP_Option_Control_Group.
-     */
     abstract class VP_Option_Control_Group
     {
         protected $_name;
@@ -25,7 +22,7 @@
             $this->_container_extra_classes = [];
         }
 
-        abstract public function render(array $extra = []);
+        abstract public function render($extra = []);
 
         /**
          * Getter of $_name.
@@ -41,8 +38,6 @@
          * Setter of $_name.
          *
          * @param string $_name Group unique name
-         *
-         * @return $this
          */
         public function set_name($_name)
         {
@@ -65,8 +60,6 @@
          * Setter of title.
          *
          * @param string $_title Group title
-         *
-         * @return $this
          */
         public function set_title($_title)
         {
@@ -89,8 +82,6 @@
          * Setter of $_description.
          *
          * @param string $_description Group description
-         *
-         * @return $this
          */
         public function set_description($_description)
         {
@@ -123,8 +114,6 @@
          * Set render data.
          *
          * @param array $_data Render data array
-         *
-         * @return $this
          */
         public function set_data($_data)
         {
@@ -147,8 +136,6 @@
          * Setter of $_container_extra_classes.
          *
          * @param array $_container_extra_classes Extra Classes for the container
-         *
-         * @return $this
          */
         public function set_container_extra_classes($_container_extra_classes)
         {

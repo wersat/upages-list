@@ -102,8 +102,8 @@
                 'span',
                 'time',
             ];
-        private $breaksEnabled = false;
-        private $referenceMap = [];
+        private        $breaksEnabled = false;
+        private        $referenceMap  = [];
 
         #
         # Static
@@ -116,7 +116,6 @@
 
         /**
          * For backwards compatibility before PSR-2 naming.
-         *
          * @deprecated Use setBreaksEnabled instead.
          */
         public function set_breaks_enabled($breaks_enabled)
@@ -152,12 +151,12 @@
         # Read-only
         private function findBlocks(array $lines, $blockContext = null)
         {
-            $block = null;
-            $context = null;
+            $block       = null;
+            $context     = null;
             $contextData = null;
             foreach ($lines as $line) {
                 $indentedLine = $line;
-                $indentation = 0;
+                $indentation  = 0;
                 while (isset($line[$indentation]) and $line[$indentation] === ' ') {
                     ++$indentation;
                 }
@@ -180,7 +179,7 @@
                             $block['content'][0]['content'] .= "\n";
                             continue 2;
                         }
-                        if (preg_match('/^[ ]*'.$contextData['marker'].'{3,}[ ]*$/', $line)) {
+                        if (preg_match('/^[ ]*' . $contextData['marker'] . '{3,}[ ]*$/', $line)) {
                             $context = null;
                         } else {
                             if ($block['content'][0]['content']) {
@@ -203,14 +202,14 @@
                                 $context = null;
                             }
                         }
-                        $block['content'] .= "\n".$indentedLine;
+                        $block['content'] .= "\n" . $indentedLine;
                         continue 2;
                     case 'li':
                         if ($line === '') {
                             $contextData['interrupted'] = true;
                             continue 2;
                         }
-                        if ($contextData['indentation'] === $indentation and preg_match('/^'.$contextData['marker'].'[ ]+(.*)/',
+                        if ($contextData['indentation'] === $indentation and preg_match('/^' . $contextData['marker'] . '[ ]+(.*)/',
                                 $line, $matches)
                         ) {
                             if (isset($contextData['interrupted'])) {
@@ -218,10 +217,10 @@
                                 unset($contextData['interrupted']);
                             }
                             unset($nestedBlock);
-                            $nestedBlock = [
-                                'name' => 'li',
+                            $nestedBlock         = [
+                                'name'         => 'li',
                                 'content type' => 'lines',
-                                'content' => [
+                                'content'      => [
                                     $matches[1],
                                 ],
                             ];
@@ -231,16 +230,16 @@
                         if (empty($contextData['interrupted'])) {
                             $value = $line;
                             if ($indentation > $contextData['baseline']) {
-                                $value = str_repeat(' ', $indentation - $contextData['baseline']).$value;
+                                $value = str_repeat(' ', $indentation - $contextData['baseline']) . $value;
                             }
                             $nestedBlock['content'] [] = $value;
                             continue 2;
                         }
                         if ($indentation > 0) {
                             $nestedBlock['content'] [] = '';
-                            $value = $line;
+                            $value                     = $line;
                             if ($indentation > $contextData['baseline']) {
-                                $value = str_repeat(' ', $indentation - $contextData['baseline']).$value;
+                                $value = str_repeat(' ', $indentation - $contextData['baseline']) . $value;
                             }
                             $nestedBlock['content'] [] = $value;
                             unset($contextData['interrupted']);
@@ -275,7 +274,7 @@
                             }
                             $block['content'][0]['content'] .= "\n";
                             $string = htmlspecialchars($line, ENT_NOQUOTES, 'UTF-8');
-                            $string = str_repeat(' ', $indentation - 4).$string;
+                            $string = str_repeat(' ', $indentation - 4) . $string;
                             $block['content'][0]['content'] .= $string;
                             continue 2;
                         }
@@ -288,15 +287,15 @@
                         }
                         if (strpos($line, '|') !== false) {
                             $nestedBlocks = [];
-                            $substring = preg_replace('/^[|][ ]*/', '', $line);
-                            $substring = preg_replace('/[|]?[ ]*$/', '', $substring);
-                            $parts = explode('|', $substring);
+                            $substring    = preg_replace('/^[|][ ]*/', '', $line);
+                            $substring    = preg_replace('/[|]?[ ]*$/', '', $substring);
+                            $parts        = explode('|', $substring);
                             foreach ($parts as $index => $part) {
-                                $substring = trim($part);
+                                $substring   = trim($part);
                                 $nestedBlock = [
-                                    'name' => 'td',
+                                    'name'         => 'td',
                                     'content type' => 'line',
-                                    'content' => $substring,
+                                    'content'      => $substring,
                                 ];
                                 if (isset($contextData['alignments'][$index])) {
                                     $nestedBlock['attributes'] = [
@@ -305,10 +304,10 @@
                                 }
                                 $nestedBlocks [] = $nestedBlock;
                             }
-                            $nestedBlock = [
-                                'name' => 'tr',
+                            $nestedBlock                       = [
+                                'name'         => 'tr',
                                 'content type' => 'blocks',
-                                'content' => $nestedBlocks,
+                                'content'      => $nestedBlocks,
                             ];
                             $block['content'][1]['content'] [] = $nestedBlock;
                             continue 2;
@@ -318,28 +317,28 @@
                     case 'paragraph':
                         if ($line === '') {
                             $block['name'] = 'p'; # dense li
-                            $context = null;
+                            $context       = null;
                             continue 2;
                         }
                         if ($line[0] === '=' and chop($line, '=') === '') {
                             $block['name'] = 'h1';
-                            $context = null;
+                            $context       = null;
                             continue 2;
                         }
                         if ($line[0] === '-' and chop($line, '-') === '') {
                             $block['name'] = 'h2';
-                            $context = null;
+                            $context       = null;
                             continue 2;
                         }
                         if (strpos($line, '|') !== false and strpos($block['content'], '|') !== false and chop($line,
                                 ' -:|') === ''
                         ) {
-                            $values = [];
+                            $values    = [];
                             $substring = trim($line, ' |');
-                            $parts = explode('|', $substring);
+                            $parts     = explode('|', $substring);
                             foreach ($parts as $part) {
                                 $substring = trim($part);
-                                $value = null;
+                                $value     = null;
                                 if ($substring[0] === ':') {
                                     $value = 'left';
                                 }
@@ -350,18 +349,18 @@
                             }
                             # ~
                             $nestedBlocks = [];
-                            $substring = preg_replace('/^[|][ ]*/', '', $block['content']);
-                            $substring = preg_replace('/[|]?[ ]*$/', '', $substring);
-                            $parts = explode('|', $substring);
+                            $substring    = preg_replace('/^[|][ ]*/', '', $block['content']);
+                            $substring    = preg_replace('/[|]?[ ]*$/', '', $substring);
+                            $parts        = explode('|', $substring);
                             foreach ($parts as $index => $part) {
-                                $substring = trim($part);
+                                $substring   = trim($part);
                                 $nestedBlock = [
-                                    'name' => 'th',
+                                    'name'         => 'th',
                                     'content type' => 'line',
-                                    'content' => $substring,
+                                    'content'      => $substring,
                                 ];
                                 if (isset($values[$index])) {
-                                    $value = $values[$index];
+                                    $value                     = $values[$index];
                                     $nestedBlock['attributes'] = [
                                         'align' => $value,
                                     ];
@@ -369,29 +368,29 @@
                                 $nestedBlocks [] = $nestedBlock;
                             }
                             # ~
-                            $block = [
-                                'name' => 'table',
+                            $block                                        = [
+                                'name'         => 'table',
                                 'content type' => 'blocks',
-                                'content' => [],
+                                'content'      => [],
                             ];
-                            $block['content'] [] = [
-                                'name' => 'thead',
+                            $block['content'] []                          = [
+                                'name'         => 'thead',
                                 'content type' => 'blocks',
-                                'content' => [],
+                                'content'      => [],
                             ];
-                            $block['content'] [] = [
-                                'name' => 'tbody',
+                            $block['content'] []                          = [
+                                'name'         => 'tbody',
                                 'content type' => 'blocks',
-                                'content' => [],
+                                'content'      => [],
                             ];
-                            $block['content'][0]['content'] [] = [
-                                'name' => 'tr',
+                            $block['content'][0]['content'] []            = [
+                                'name'         => 'tr',
                                 'content type' => 'blocks',
-                                'content' => [],
+                                'content'      => [],
                             ];
                             $block['content'][0]['content'][0]['content'] = $nestedBlocks;
                             # ~
-                            $context = 'table';
+                            $context     = 'table';
                             $contextData = [
                                 'alignments' => $values,
                             ];
@@ -400,40 +399,40 @@
                         }
                         break;
                     default:
-                        throw new Exception('Unrecognized context - '.$context);
+                        throw new Exception('Unrecognized context - ' . $context);
                 }
                 if ($indentation >= 4) {
                     $blocks [] = $block;
-                    $string = htmlspecialchars($line, ENT_NOQUOTES, 'UTF-8');
-                    $string = str_repeat(' ', $indentation - 4).$string;
-                    $block = [
-                        'name' => 'pre',
+                    $string    = htmlspecialchars($line, ENT_NOQUOTES, 'UTF-8');
+                    $string    = str_repeat(' ', $indentation - 4) . $string;
+                    $block     = [
+                        'name'         => 'pre',
                         'content type' => 'blocks',
-                        'content' => [
+                        'content'      => [
                             [
-                                'name' => 'code',
+                                'name'         => 'code',
                                 'content type' => null,
-                                'content' => $string,
+                                'content'      => $string,
                             ],
                         ],
                     ];
-                    $context = 'code';
+                    $context   = 'code';
                     continue;
                 }
                 switch ($line[0]) {
                     case '#':
                         if (isset($line[1])) {
                             $blocks [] = $block;
-                            $level = 1;
+                            $level     = 1;
                             while (isset($line[$level]) and $line[$level] === '#') {
                                 ++$level;
                             }
-                            $string = trim($line, '# ');
-                            $string = $this->parseLine($string);
-                            $block = [
-                                'name' => 'h'.$level,
+                            $string  = trim($line, '# ');
+                            $string  = $this->parseLine($string);
+                            $block   = [
+                                'name'         => 'h' . $level,
                                 'content type' => 'line',
-                                'content' => $string,
+                                'content'      => $string,
                             ];
                             $context = null;
                             continue 2;
@@ -460,26 +459,26 @@
                                 if ($name == 'hr') {
                                     $isClosing = true;
                                 }
-                            } elseif (!ctype_alpha($name)) {
+                            } elseif ( ! ctype_alpha($name)) {
                                 break;
                             }
                             if (in_array($name, self::$textLevelElements)) {
                                 break;
                             }
                             $blocks [] = $block;
-                            $block = [
-                                'name' => null,
+                            $block     = [
+                                'name'         => null,
                                 'content type' => null,
-                                'content' => $indentedLine,
+                                'content'      => $indentedLine,
                             ];
                             if (isset($isClosing)) {
                                 unset($isClosing);
                                 continue 2;
                             }
-                            $context = 'markup';
+                            $context     = 'markup';
                             $contextData = [
-                                'start' => '<'.$name.'>',
-                                'end' => '</'.$name.'>',
+                                'start' => '<' . $name . '>',
+                                'end'   => '</' . $name . '>',
                                 'depth' => 0,
                             ];
                             if (stripos($line, $contextData['end']) !== false) {
@@ -490,15 +489,15 @@
                         break;
                     case '>':
                         if (preg_match('/^>[ ]?(.*)/', $line, $matches)) {
-                            $blocks [] = $block;
-                            $block = [
-                                'name' => 'blockquote',
+                            $blocks []   = $block;
+                            $block       = [
+                                'name'         => 'blockquote',
                                 'content type' => 'lines',
-                                'content' => [
+                                'content'      => [
                                     $matches[1],
                                 ],
                             ];
-                            $context = 'quote';
+                            $context     = 'quote';
                             $contextData = [];
                             continue 2;
                         }
@@ -507,8 +506,8 @@
                         $position = strpos($line, ']:');
                         if ($position) {
                             $reference = [];
-                            $label = substr($line, 1, $position - 1);
-                            $label = strtolower($label);
+                            $label     = substr($line, 1, $position - 1);
+                            $label     = strtolower($label);
                             $substring = substr($line, $position + 2);
                             $substring = trim($substring);
                             if ($substring === '') {
@@ -520,15 +519,15 @@
                                     break;
                                 }
                                 $reference['link'] = substr($substring, 1, $position - 1);
-                                $substring = substr($substring, $position + 1);
+                                $substring         = substr($substring, $position + 1);
                             } else {
                                 $position = strpos($substring, ' ');
                                 if ($position === false) {
                                     $reference['link'] = $substring;
-                                    $substring = false;
+                                    $substring         = false;
                                 } else {
                                     $reference['link'] = substr($substring, 0, $position);
-                                    $substring = substr($substring, $position + 1);
+                                    $substring         = substr($substring, $position + 1);
                                 }
                             }
                             if ($substring !== false) {
@@ -549,23 +548,23 @@
                     case '~':
                         if (preg_match('/^([`]{3,}|[~]{3,})[ ]*(\w+)?[ ]*$/', $line, $matches)) {
                             $blocks [] = $block;
-                            $block = [
-                                'name' => 'pre',
+                            $block     = [
+                                'name'         => 'pre',
                                 'content type' => 'blocks',
-                                'content' => [
+                                'content'      => [
                                     [
-                                        'name' => 'code',
+                                        'name'         => 'code',
                                         'content type' => null,
-                                        'content' => '',
+                                        'content'      => '',
                                     ],
                                 ],
                             ];
                             if (isset($matches[2])) {
                                 $block['content'][0]['attributes'] = [
-                                    'class' => 'language-'.$matches[2],
+                                    'class' => 'language-' . $matches[2],
                                 ];
                             }
-                            $context = 'fenced code';
+                            $context     = 'fenced code';
                             $contextData = [
                                 'marker' => $matches[1][0],
                             ];
@@ -577,8 +576,8 @@
                     case '_':
                         if (preg_match('/^([-*_])([ ]{0,2}\1){2,}[ ]*$/', $line)) {
                             $blocks [] = $block;
-                            $block = [
-                                'name' => 'hr',
+                            $block     = [
+                                'name'    => 'hr',
                                 'content' => null,
                             ];
                             continue 2;
@@ -588,43 +587,43 @@
                     case $line[0] <= '-' and preg_match('/^([*+-][ ]+)(.*)/', $line, $matches):
                     case $line[0] <= '9' and preg_match('/^([0-9]+[.][ ]+)(.*)/', $line, $matches):
                         $blocks [] = $block;
-                        $name = $line[0] >= '0' ? 'ol' : 'ul';
-                        $block = [
-                            'name' => $name,
+                        $name      = $line[0] >= '0' ? 'ol' : 'ul';
+                        $block     = [
+                            'name'         => $name,
                             'content type' => 'blocks',
-                            'content' => [],
+                            'content'      => [],
                         ];
                         unset($nestedBlock);
-                        $nestedBlock = [
-                            'name' => 'li',
+                        $nestedBlock         = [
+                            'name'         => 'li',
                             'content type' => 'lines',
-                            'content' => [
+                            'content'      => [
                                 $matches[2],
                             ],
                         ];
                         $block['content'] [] = &$nestedBlock;
-                        $baseline = $indentation + strlen($matches[1]);
-                        $marker = $line[0] >= '0' ? '[0-9]+[.]' : '[*+-]';
-                        $context = 'li';
-                        $contextData = [
+                        $baseline            = $indentation + strlen($matches[1]);
+                        $marker              = $line[0] >= '0' ? '[0-9]+[.]' : '[*+-]';
+                        $context             = 'li';
+                        $contextData         = [
                             'indentation' => $indentation,
-                            'baseline' => $baseline,
-                            'marker' => $marker,
-                            'lines' => [
+                            'baseline'    => $baseline,
+                            'marker'      => $marker,
+                            'lines'       => [
                                 $matches[2],
                             ],
                         ];
                         continue 2;
                 }
                 if ($context === 'paragraph') {
-                    $block['content'] .= "\n".$line;
+                    $block['content'] .= "\n" . $line;
                     continue;
                 } else {
                     $blocks [] = $block;
-                    $block = [
-                        'name' => 'p',
+                    $block     = [
+                        'name'         => 'p',
                         'content type' => 'line',
-                        'content' => $line,
+                        'content'      => $line,
                     ];
                     if ($blockContext === 'li' and empty($blocks[1])) {
                         $block['name'] = null;
@@ -649,8 +648,8 @@
             # ~
             $markup = '';
             while ($markers) {
-                $closestMarker = null;
-                $closestMarkerIndex = 0;
+                $closestMarker         = null;
+                $closestMarkerIndex    = 0;
                 $closestMarkerPosition = null;
                 foreach ($markers as $index => $marker) {
                     $markerPosition = strpos($text, $marker);
@@ -659,8 +658,8 @@
                         continue;
                     }
                     if ($closestMarker === null or $markerPosition < $closestMarkerPosition) {
-                        $closestMarker = $marker;
-                        $closestMarkerIndex = $index;
+                        $closestMarker         = $marker;
+                        $closestMarkerIndex    = $index;
                         $closestMarkerPosition = $markerPosition;
                     }
                 }
@@ -677,17 +676,17 @@
                 # ~
                 switch ($closestMarker) {
                     case "  \n":
-                        $markup .= '<br />'."\n";
+                        $markup .= '<br />' . "\n";
                         $offset = 3;
                         break;
                     case '![':
                     case '[':
                         if (strpos($text, ']') and preg_match('/\[((?:[^][]|(?R))*)\]/', $text, $matches)) {
                             $element = [
-                                '!' => $text[0] === '!',
+                                '!'    => $text[0] === '!',
                                 'text' => $matches[1],
                             ];
-                            $offset = strlen($matches[0]);
+                            $offset  = strlen($matches[0]);
                             if ($element['!']) {
                                 ++$offset;
                             }
@@ -723,18 +722,18 @@
                             $element['link'] = str_replace('&', '&amp;', $element['link']);
                             $element['link'] = str_replace('<', '&lt;', $element['link']);
                             if ($element['!']) {
-                                $markup .= '<img alt="'.$element['text'].'" src="'.$element['link'].'"';
+                                $markup .= '<img alt="' . $element['text'] . '" src="' . $element['link'] . '"';
                                 if (isset($element['title'])) {
-                                    $markup .= ' title="'.$element['title'].'"';
+                                    $markup .= ' title="' . $element['title'] . '"';
                                 }
                                 $markup .= ' />';
                             } else {
                                 $element['text'] = $this->parseLine($element['text'], $markers);
-                                $markup .= '<a href="'.$element['link'].'"';
+                                $markup .= '<a href="' . $element['link'] . '"';
                                 if (isset($element['title'])) {
-                                    $markup .= ' title="'.$element['title'].'"';
+                                    $markup .= ' title="' . $element['title'] . '"';
                                 }
-                                $markup .= '>'.$element['text'].'</a>';
+                                $markup .= '>' . $element['text'] . '</a>';
                             }
                             unset($element);
                         } else {
@@ -757,12 +756,12 @@
                                 $matches)
                         ) {
                             $markers[$closestMarkerIndex] = $closestMarker;
-                            $matches[1] = $this->parseLine($matches[1], $markers);
-                            $markup .= '<strong>'.$matches[1].'</strong>';
+                            $matches[1]                   = $this->parseLine($matches[1], $markers);
+                            $markup .= '<strong>' . $matches[1] . '</strong>';
                         } elseif (preg_match(self::$emRegex[$closestMarker], $text, $matches)) {
                             $markers[$closestMarkerIndex] = $closestMarker;
-                            $matches[1] = $this->parseLine($matches[1], $markers);
-                            $markup .= '<em>'.$matches[1].'</em>';
+                            $matches[1]                   = $this->parseLine($matches[1], $markers);
+                            $markup .= '<em>' . $matches[1] . '</em>';
                         }
                         if (isset($matches) and $matches) {
                             $offset = strlen($matches[0]);
@@ -777,10 +776,10 @@
                                 $elementUrl = $matches[1];
                                 $elementUrl = str_replace('&', '&amp;', $elementUrl);
                                 $elementUrl = str_replace('<', '&lt;', $elementUrl);
-                                $markup .= '<a href="'.$elementUrl.'">'.$elementUrl.'</a>';
+                                $markup .= '<a href="' . $elementUrl . '">' . $elementUrl . '</a>';
                                 $offset = strlen($matches[0]);
                             } elseif (strpos($text, '@') > 1 and preg_match('/<(\S+?@\S+?)>/', $text, $matches)) {
-                                $markup .= '<a href="mailto:'.$matches[1].'">'.$matches[1].'</a>';
+                                $markup .= '<a href="mailto:' . $matches[1] . '">' . $matches[1] . '</a>';
                                 $offset = strlen($matches[0]);
                             } elseif (preg_match('/^<\/?\w.*?>/', $text, $matches)) {
                                 $markup .= $matches[0];
@@ -807,7 +806,7 @@
                         if (preg_match('/^(`+)[ ]*(.+?)[ ]*(?<!`)\1(?!`)/', $text, $matches)) {
                             $elementText = $matches[2];
                             $elementText = htmlspecialchars($elementText, ENT_NOQUOTES, 'UTF-8');
-                            $markup .= '<code>'.$elementText.'</code>';
+                            $markup .= '<code>' . $elementText . '</code>';
                             $offset = strlen($matches[0]);
                         } else {
                             $markup .= '`';
@@ -819,7 +818,7 @@
                             $elementUrl = $matches[0];
                             $elementUrl = str_replace('&', '&amp;', $elementUrl);
                             $elementUrl = str_replace('<', '&lt;', $elementUrl);
-                            $markup .= '<a href="'.$elementUrl.'">'.$elementUrl.'</a>';
+                            $markup .= '<a href="' . $elementUrl . '">' . $elementUrl . '</a>';
                             $offset = strlen($matches[0]);
                         } else {
                             $markup .= 'http';
@@ -829,7 +828,7 @@
                     case '~~':
                         if (preg_match('/^~~(?=\S)(.+?)(?<=\S)~~/', $text, $matches)) {
                             $matches[1] = $this->parseLine($matches[1], $markers);
-                            $markup .= '<del>'.$matches[1].'</del>';
+                            $markup .= '<del>' . $matches[1] . '</del>';
                             $offset = strlen($matches[0]);
                         } else {
                             $markup .= '~~';
@@ -852,10 +851,10 @@
             foreach ($blocks as $block) {
                 $markup .= "\n";
                 if (isset($block['name'])) {
-                    $markup .= '<'.$block['name'];
+                    $markup .= '<' . $block['name'];
                     if (isset($block['attributes'])) {
                         foreach ($block['attributes'] as $name => $value) {
-                            $markup .= ' '.$name.'="'.$value.'"';
+                            $markup .= ' ' . $name . '="' . $value . '"';
                         }
                     }
                     if ($block['content'] === null) {
@@ -886,7 +885,7 @@
                         break;
                 }
                 if (isset($block['name'])) {
-                    $markup .= '</'.$block['name'].'>';
+                    $markup .= '</' . $block['name'] . '>';
                 }
             }
             $markup .= "\n";
@@ -899,7 +898,7 @@
             if (isset(self::$instances[$name])) {
                 return self::$instances[$name];
             }
-            $instance = new self();
+            $instance               = new self();
             self::$instances[$name] = $instance;
 
             return $instance;

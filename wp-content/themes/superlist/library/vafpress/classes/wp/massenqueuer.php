@@ -5,14 +5,8 @@
      */
     class VP_WP_MassEnqueuer
     {
-        /**
-         * @type null
-         */
         private static $_instance = null;
 
-        /**
-         * @return null|\VP_WP_Enqueuer
-         */
         public static function instance()
         {
             if (self::$_instance == null) {

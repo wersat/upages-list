@@ -1,8 +1,5 @@
 <?php
 
-    /**
-     * Class VP_WP_User.
-     */
     class VP_WP_User
     {
         public static function get_users()
@@ -19,7 +16,7 @@
                 }
             } else {
                 $wp_user_search = $wpdb->get_results("SELECT ID, display_name FROM $wpdb->users ORDER BY ID");
-                foreach ((array) $wp_user_search as $userid) {
+                foreach ($wp_user_search as $userid) {
                     $user_id = (int) $userid->ID;
                     $display_name = stripslashes($userid->display_name);
                     $result[] = ['id' => $user_id, 'display_name' => $display_name];
@@ -36,7 +33,8 @@
                 $wp_roles = new WP_Roles();
             }
             $all_roles = $wp_roles->roles;
+            $editable_roles = apply_filters('editable_roles', $all_roles);
 
-            return apply_filters('editable_roles', $all_roles);
+            return $editable_roles;
         }
     }

@@ -1,8 +1,5 @@
 <?php
 
-    /**
-     * Class VP_Option_Control_Group_Section.
-     */
     class VP_Option_Control_Group_Section extends VP_Option_Control_Group
     {
         /**
@@ -52,7 +49,7 @@
          */
         public function is_hidden($_is_hidden = null)
         {
-            if (!null === $_is_hidden) {
+            if (!is_null($_is_hidden)) {
                 $this->_is_hidden = (bool) $_is_hidden;
             }
 
@@ -78,8 +75,6 @@
          * Setter of fields.
          *
          * @param array $_fields Collection of fields object
-         *
-         * @return $this
          */
         public function set_fields($_fields)
         {
@@ -102,8 +97,6 @@
          * Setter for $_dependency.
          *
          * @param string $_dependency dependency pattern in string
-         *
-         * @return $this
          */
         public function set_dependency($_dependency)
         {

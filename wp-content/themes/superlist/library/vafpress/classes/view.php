@@ -6,29 +6,21 @@
     class VP_View
     {
         /**
-         * @var
+         * Singleton instance of the class.
+         * @var Option_View
          */
         private static $_instance;
 
-        /**
-         * @var array
-         */
         private $_views;
 
-        /**
-         * VP_View constructor.
-         */
         private function __construct()
         {
             $this->_views = [];
         }
 
-        /**
-         * @return \VP_View
-         */
         public static function instance()
         {
-            if (null === self::$_instance) {
+            if (is_null(self::$_instance)) {
                 self::$_instance = new self();
             }
 
@@ -42,10 +34,8 @@
          * @param array  $data            Array of data to be binded on the view
          *
          * @return string The result view
-         *
-         * @throws \Exception
          */
-        public function load($field_view_file, array $data = [])
+        public function load($field_view_file, $data = [])
         {
             if (array_key_exists('field_view_file', $data)) {
                 throw new Exception("Sorry 'field_view_file' variable name can't be used.");

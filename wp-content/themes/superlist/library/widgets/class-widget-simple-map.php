@@ -92,19 +92,7 @@
     public function widget($args, $instance)
     {
       echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
-      <div class="widget-inner
-	<?php echo esc_attr($instance['classes']); ?>
-	<?php echo empty($instance['padding_top']) ? '' : 'widget-pt'; ?>
-	<?php echo empty($instance['padding_bottom']) ? '' : 'widget-pb'; ?>"
-        <?php if ( ! empty($instance['background_color']) || ! empty($instance['background_image'])) : ?>
-          style="
-          <?php if ( ! empty($instance['background_color'])) : ?>
-            background-color: <?php echo esc_attr($instance['background_color']); ?>;
-    <?php endif; ?>
-          <?php if ( ! empty($instance['background_image'])) : ?>
-            background-image: url('<?php echo esc_attr( $instance['background_image'] ); ?>');
-          <?php endif; ?>"
-        <?php endif; ?>>
+      <div <?php echo $this->advanced_style($instance) ?>>
         <?php $style = ! empty($instance['style']) ? $instance['style'] : ''; ?>
         <?php $style_slug = ( ! empty($_GET['map-style'])) ? esc_attr($_GET['map-style'])
           : $style; // Input var okay; sanitization okay.

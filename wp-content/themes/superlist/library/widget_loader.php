@@ -4,6 +4,7 @@
     use Upages_Widgets\Widget_Last_News;
     use Upages_Widgets\Widget_Simple_Map;
     use Upages_Widgets\Widget_Video_Home_Cover;
+    use Upages_Widgets\Widgets_Faq;
 
     spl_autoload_register(function ($widgets) {
         $widgets = ltrim($widgets, '\\');
@@ -25,3 +26,4 @@
     new Widget_Simple_Map();
     new Widget_Video_Home_Cover();
     new Widget_Last_News();
+    new Widgets_Faq();

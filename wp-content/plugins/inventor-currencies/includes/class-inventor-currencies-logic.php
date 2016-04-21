@@ -145,9 +145,8 @@
                 return $_COOKIE['currency_code'];
             }
             $currencies = get_theme_mod('inventor_currencies');
-            $code       = ! empty($currencies['0']['code']) ? $currencies[0]['code'] : 'USD';
 
-            return $code;
+            return ! empty($currencies['0']['code']) ? $currencies[0]['code'] : 'USD';
         }
     }
 

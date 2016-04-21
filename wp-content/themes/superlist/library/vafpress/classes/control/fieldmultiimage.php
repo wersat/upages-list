@@ -5,14 +5,8 @@
      */
     abstract class VP_Control_FieldMultiImage extends VP_Control_FieldMulti
     {
-        /**
-         * @type
-         */
         protected $_item_max_height;
 
-        /**
-         * @type
-         */
         protected $_item_max_width;
 
         /**
@@ -25,15 +19,12 @@
         protected function _basic_make($arr)
         {
             parent::_basic_make($arr);
-            $this->set_item_max_height($arr['item_max_height'] ?? '')
-                 ->set_item_max_width($arr['item_max_width'] ?? '');
+            $this->set_item_max_height(isset($arr['item_max_height']) ? $arr['item_max_height'] : '')
+                 ->set_item_max_width(isset($arr['item_max_width']) ? $arr['item_max_width'] : '');
 
             return $this;
         }
 
-        /**
-         *
-         */
         protected function _setup_data()
         {
             parent::_setup_data();
@@ -43,6 +34,7 @@
 
         /**
          * Get item max height.
+         *
          * @return int Item Max Height
          */
         public function get_item_max_height()
@@ -54,8 +46,6 @@
          * Set item max height.
          *
          * @param int $_item_max_height Item Max Height
-         *
-         * @return $this
          */
         public function set_item_max_height($_item_max_height)
         {
@@ -66,6 +56,7 @@
 
         /**
          * Get item max width.
+         *
          * @return int Item Max Width
          */
         public function get_item_max_width()
@@ -73,12 +64,9 @@
             return $this->_item_max_width;
         }
 
-        /**
-         * @param $_items
-         */
         public function add_items_from_array($_items)
         {
-            foreach ((array)$_items as $item) {
+            foreach ($_items as $item) {
                 $the_item = new VP_Control_Field_Item_Generic();
                 $the_item->value($item['value'])
                          ->label($item['label'])
@@ -91,8 +79,6 @@
          * Set item max width.
          *
          * @param int $_item_max_width Item Max Width
-         *
-         * @return $this
          */
         public function set_item_max_width($_item_max_width)
         {

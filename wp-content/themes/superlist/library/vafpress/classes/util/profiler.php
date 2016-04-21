@@ -1,8 +1,5 @@
 <?php
 
-    /**
-     * Class VP_Util_Profiler.
-     */
     class VP_Util_Profiler
     {
         public static function show_memtime()

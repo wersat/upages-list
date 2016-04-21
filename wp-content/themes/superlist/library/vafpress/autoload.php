@@ -1,5 +1,13 @@
 <?php
-
+    /*
+    |--------------------------------------------------------------------------
+    | Register AutoLoader
+    |--------------------------------------------------------------------------
+    | Vafpress Framework has separated app and core directories, developers can
+    | put their extension code and configuration at app folder, as everything
+    | inside app will be loaded first and will override class with the same
+    | name with core classes.
+    */
     VP_AutoLoader::add_namespaces(VP_NAMESPACE);
     VP_AutoLoader::add_directories(VP_CLASSES_DIR, VP_NAMESPACE);
     VP_AutoLoader::register();

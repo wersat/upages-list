@@ -1,43 +1,26 @@
 <?php
 
-    /**
-     * Class VP_Control_Field_WPEditor
-     */
     class VP_Control_Field_WPEditor extends VP_Control_Field
     {
-        /**
-         * @type bool
-         */
         private $_use_external_plugins = true;
 
-        /**
-         * @type array
-         */
         private $_disabled_externals_plugins = [];
 
-        /**
-         * @type array
-         */
         private $_disabled_internals_plugins = [];
 
-        /**
-         * VP_Control_Field_WPEditor constructor.
-         */
         public function __construct()
         {
             parent::__construct();
         }
 
-        /**
-         * @param array $arr
-         * @param null  $class_name
-         *
-         * @return \VP_Control_Field_WPEditor
-         */
         public static function withArray($arr = [], $class_name = null)
         {
-            $instance                   = null === $class_name ? new self() : new $class_name();
-            $use_external_plugins       = $arr['use_external_plugins'] ?? 1;
+            if (is_null($class_name)) {
+                $instance = new self();
+            } else {
+                $instance = new $class_name();
+            }
+            $use_external_plugins = isset($arr['use_external_plugins']) ? $arr['use_external_plugins'] : 1;
             $disabled_externals_plugins = [];
             $disabled_internals_plugins = [];
             if (isset($arr['disabled_externals_plugins'])) {
@@ -54,27 +37,18 @@
             return $instance;
         }
 
-        /**
-         *
-         */
         protected function _setup_data()
         {
             $opt = [
-                'use_external_plugins'       => $this->use_external_plugins(),
+                'use_external_plugins' => $this->use_external_plugins(),
                 'disabled_externals_plugins' => implode(',', $this->get_disabled_externals_plugins()),
-                'disabled_internals_plugins' => implode(',', $this->get_disabled_internals_plugins())
+                'disabled_internals_plugins' => implode(',', $this->get_disabled_internals_plugins()),
             ];
             $this->add_data('opt', VP_Util_Text::make_opt($opt));
             $this->add_data('opt_raw', $opt);
             parent::_setup_data();
         }
 
-        /**
-         * @param bool $is_compact
-         *
-         * @return string
-         * @throws \Exception
-         */
         public function render($is_compact = false)
         {
             $this->_setup_data();
@@ -84,11 +58,6 @@
                           ->load('control/wpeditor', $this->get_data());
         }
 
-        /**
-         * @param array|string $_value
-         *
-         * @return $this
-         */
         public function set_value($_value)
         {
             $this->_value = $_value;
@@ -96,14 +65,9 @@
             return $this;
         }
 
-        /**
-         * @param null $use
-         *
-         * @return bool|null
-         */
         public function use_external_plugins($use = null)
         {
-            if ( ! null === $use) {
+            if (!is_null($use)) {
                 $this->_use_external_plugins = $use;
             }
 
@@ -112,6 +76,7 @@
 
         /**
          * Get disable external plugins.
+         *
          * @return array
          */
         public function get_disabled_externals_plugins()
@@ -123,8 +88,6 @@
          * Set disabled external plugins.
          *
          * @param array $_disabled_externals_plugins
-         *
-         * @return $this
          */
         public function set_disabled_externals_plugins($_disabled_externals_plugins)
         {
@@ -135,6 +98,7 @@
 
         /**
          * Get disabled internal plugins.
+         *
          * @return array
          */
         public function get_disabled_internals_plugins()
@@ -146,8 +110,6 @@
          * Set disabled internal plugins.
          *
          * @param array $_disabled_internals_plugins
-         *
-         * @return $this
          */
         public function set_disabled_internals_plugins($_disabled_internals_plugins)
         {

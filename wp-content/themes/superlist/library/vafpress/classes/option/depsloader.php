@@ -1,8 +1,5 @@
 <?php
 
-    /**
-     * Class VP_Option_Depsloader.
-     */
     class VP_Option_Depsloader
     {
         /**
@@ -10,19 +7,11 @@
          */
         private $things;
 
-        /**
-         * VP_Option_Depsloader constructor.
-         *
-         * @param $things
-         */public function __construct($things)
+        public function __construct($things)
         {
             $this->things = $things;
         }
 
-        /**
-         * @return array
-         * @throws \Exception
-         */
         public function build()
         {
             $set = $this->things;
@@ -76,12 +65,7 @@
             return $result;
         }
 
-        /**
-         * @param string $hook_suffix
-         *
-         * @return bool
-         * @throws \Exception
-         */public function can_output($hook_suffix = '')
+        public function can_output($hook_suffix = '')
         {
             // if not in option page, don't load
             $menu_page_slug = VP_Util_Config::instance()

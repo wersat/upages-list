@@ -18,6 +18,7 @@
     define('LIB_DIR', __DIR__ . '/library');
     define('CLASS_DIR', LIB_DIR . '/class');
     define('OPTION_DIR', LIB_DIR . '/options');
+    define('POST_TYPE_DIR', LIB_DIR . '/post_type');
     define('WIDGETS_DIR', LIB_DIR . '/widgets');
     define('THEME_TPL_DIR', __DIR__ . '/templates');
     define('THEME_WIDGETS_DIR', __DIR__ . '/widgets');
@@ -41,19 +42,18 @@
             require_once $objects;
         }
     });
-    /**
-     * Widgets
-     */
-    require_once THEME_WIDGETS_DIR . '/widget-video-cover.php';
-    require_once LIB_DIR . '/widget_loader.php';
 
     /**
      * Load option framework
      */
     require_once LIB_DIR . '/vafpress/bootstrap.php';
-    require_once OPTION_DIR.'/option_metabox.php';
-
-
+    require_once OPTION_DIR . '/option_metabox.php';
+    /**
+     * Widgets
+     */
+    require_once THEME_WIDGETS_DIR . '/widget-video-cover.php';
+    require_once LIB_DIR . '/widget_loader.php';
+    require_once LIB_DIR . '/post_type_loader.php';
     /**
      * Body classes
      * @filter body_class

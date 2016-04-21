@@ -1,43 +1,40 @@
 <?php
 
-    /**
-     * Class VP_Option.
-     */
     class VP_Option
     {
         public static $pool;
-        private $_option_key;
-        private $_page_slug;
-        private $_template;
-        private $_is_dev_mode;
-        private $_use_util_menu;
-        private $_use_auto_group_naming;
-        private $_role;
-        private $_menu_page;
-        private $_page_title;
-        private $_menu_label;
-        private $_layout;
-        private $_options_set = null;
-        private $_options = null;
-        private $_hook_suffix;
+        private       $_option_key;
+        private       $_page_slug;
+        private       $_template;
+        private       $_is_dev_mode;
+        private       $_use_util_menu;
+        private       $_use_auto_group_naming;
+        private       $_role;
+        private       $_menu_page;
+        private       $_page_title;
+        private       $_menu_label;
+        private       $_layout;
+        private       $_options_set = null;
+        private       $_options     = null;
+        private       $_hook_suffix;
 
         public function __construct(array $configs)
         {
             // merge configs with default value
             $configs = array_merge([
-                'is_dev_mode' => false,
+                'is_dev_mode'           => false,
                 'use_auto_group_naming' => true,
-                'use_util_menu' => true,
-                'minimum_role' => 'edit_theme_options',
-                'menu_page' => 'themes.php',
-                'layout' => 'fixed',
-                'page_title' => __('Vafpress Options', 'upages'),
-                'menu_label' => __('Vafpress Options', 'upages'),
-                'priority' => 10,
+                'use_util_menu'         => true,
+                'minimum_role'          => 'edit_theme_options',
+                'menu_page'             => 'themes.php',
+                'layout'                => 'fixed',
+                'page_title'            => __('Vafpress Options', 'upages'),
+                'menu_label'            => __('Vafpress Options', 'upages'),
+                'priority'              => 10,
             ], $configs);
             // options config filter
             $configs = apply_filters('vp_option_configuration_array', $configs, $configs['option_key']);
-            $configs = apply_filters('vp_option_configuration_array-'.$configs['option_key'], $configs);
+            $configs = apply_filters('vp_option_configuration_array-' . $configs['option_key'], $configs);
             // extract the configs
             extract($configs);
             // check and set required configs
@@ -93,17 +90,16 @@
             // init options from db and expose to the api
             $this->init_options_from_db();
             // setup ajax
-            add_action('wp_ajax_vp_ajax_'.$this->get_option_key().'_export_option', [$this, 'ajax_export_option']);
-            add_action('wp_ajax_vp_ajax_'.$this->get_option_key().'_import_option', [$this, 'ajax_import_option']);
-            add_action('wp_ajax_vp_ajax_'.$this->get_option_key().'_save', [$this, 'ajax_save']);
-            add_action('wp_ajax_vp_ajax_'.$this->get_option_key().'_restore', [$this, 'ajax_restore']);
+            add_action('wp_ajax_vp_ajax_' . $this->get_option_key() . '_export_option', [$this, 'ajax_export_option']);
+            add_action('wp_ajax_vp_ajax_' . $this->get_option_key() . '_import_option', [$this, 'ajax_import_option']);
+            add_action('wp_ajax_vp_ajax_' . $this->get_option_key() . '_save', [$this, 'ajax_save']);
+            add_action('wp_ajax_vp_ajax_' . $this->get_option_key() . '_restore', [$this, 'ajax_restore']);
             // register menu page
             add_action('admin_menu', [$this, 'register_menu_page'], $priority);
         }
 
         /**
          * Get _option_key value.
-         *
          * @return string $_option_key
          */
         public function get_option_key()
@@ -115,8 +111,6 @@
          * Set _option_key value.
          *
          * @param string $_option_key $_option_key
-         *
-         * @return $this
          */
         public function set_option_key($_option_key)
         {
@@ -128,12 +122,11 @@
         // register menu page as configured
         /**
          * Get/Set whether it's development mode or not.
-         *
          * @return bool $_dev_mode
          */
         public function is_dev_mode($_dev_mode = null)
         {
-            if (null === $_dev_mode) {
+            if (is_null($_dev_mode)) {
                 return $this->_dev_mode;
             }
             $this->_dev_mode = $_dev_mode;
@@ -141,12 +134,11 @@
 
         /**
          * Get/Set whether to use export import menu or not.
-         *
          * @return bool $_use_util_menu
          */
         public function use_util_menu($_use_util_menu = null)
         {
-            if (null === $_use_util_menu) {
+            if (is_null($_use_util_menu)) {
                 return $this->_use_util_menu;
             }
             $this->_use_util_menu = $_use_util_menu;
@@ -154,12 +146,11 @@
 
         /**
          * Get/Set whether to use auto group naming or not.
-         *
          * @return bool $_use_auto_group_naming
          */
         public function use_auto_group_naming($_use_auto_group_naming = null)
         {
-            if (null === $_use_auto_group_naming) {
+            if (is_null($_use_auto_group_naming)) {
                 return $this->_use_auto_group_naming;
             }
             $this->_use_auto_group_naming = $_use_auto_group_naming;
@@ -169,8 +160,6 @@
          * Set _minimum_role value.
          *
          * @param string $_minimum_role _minimum_role
-         *
-         * @return $this
          */
         public function set_minimum_role($_minimum_role)
         {
@@ -187,6 +176,153 @@
             }
         }
 
+        public static function get_pool()
+        {
+            return self::$pool;
+        }
+
+        public function register_menu_page()
+        {
+            if (is_array($this->get_menu_page())) {
+                $menu_page = $this->get_menu_page();
+                // check and set required configs
+                if ( ! isset($menu_page['icon_url'])) {
+                    $menu_page['icon_url'] = '';
+                }
+                if ( ! isset($menu_page['position'])) {
+                    $menu_page['position'] = null;
+                }
+                $hook_suffix = add_menu_page($this->get_page_title(), $this->get_menu_label(),
+                    $this->get_minimum_role(), $this->get_page_slug(), [$this, 'option_page_display'],
+                    $menu_page['icon_url'], $menu_page['position']);
+            } else {
+                $hook_suffix = add_submenu_page($this->get_menu_page(), $this->get_page_title(),
+                    $this->get_menu_label(), $this->get_minimum_role(), $this->get_page_slug(),
+                    [$this, 'option_page_display']);
+            }
+            $this->set_hook_suffix($hook_suffix);
+            // register option page load
+            add_action('load-' . $this->get_hook_suffix(), [$this, 'setup']);
+        }
+
+        /**
+         * Get _menu_page.
+         * @return string _menu_page
+         */
+        public function get_menu_page()
+        {
+            return $this->_menu_page;
+        }
+
+        /**
+         * Set _menu_page.
+         *
+         * @param string $_menu_page _menu_page
+         */
+        public function set_menu_page($_menu_page)
+        {
+            $this->_menu_page = $_menu_page;
+
+            return $this;
+        }
+
+        /**
+         * Get _page_title value.
+         * @return string _page_title
+         */
+        public function get_page_title()
+        {
+            return $this->_page_title;
+        }
+
+        /**
+         * Set _page_title.
+         *
+         * @param string $_page_title _page_title
+         */
+        public function set_page_title($_page_title)
+        {
+            $this->_page_title = $_page_title;
+
+            return $this;
+        }
+
+        /**
+         * Get _menu_label.
+         * @return string _menu_label
+         */
+        public function get_menu_label()
+        {
+            return $this->_menu_label;
+        }
+
+        /**
+         * Set _menu_label.
+         *
+         * @param string $_menu_label _menu_label
+         */
+        public function set_menu_label($_menu_label)
+        {
+            $this->_menu_label = $_menu_label;
+
+            return $this;
+        }
+
+        /**
+         * Get _minimum_role value.
+         * @return string $_minimum_role
+         */
+        public function get_minimum_role()
+        {
+            return $this->_minimum_role;
+        }
+
+        /**
+         * Get _menu_page_slug.
+         * @return string _menu_page_slug
+         */
+        public function get_page_slug()
+        {
+            return $this->_page_slug;
+        }
+
+        // @todo return `vp_option` like function
+        /**
+         * Set _page_slug.
+         *
+         * @param string $_page_slug _page_slug
+         */
+        public function set_page_slug($_page_slug)
+        {
+            $this->_page_slug = $_page_slug;
+
+            return $this;
+        }
+
+        //////////////////////////////
+        // GETTER AND SETTER CHUNKS //
+        //////////////////////////////
+        /**
+         * Get _hook_suffix.
+         * @return string _hook_suffix
+         */
+        public function get_hook_suffix()
+        {
+            return $this->_hook_suffix;
+        }
+
+        /**
+         * Set _hook_suffix.
+         *
+         * @param string $_hook_suffix _hook_suffix
+         */
+        public function set_hook_suffix($_hook_suffix)
+        {
+            $this->_hook_suffix = $_hook_suffix;
+
+            return $this;
+        }
+
         public function setup()
         {
             $this->init_options_set();
@@ -200,7 +336,7 @@
 
         public function init_options_set()
         {
-            if (!null === $this->get_options_set()) {
+            if ( ! is_null($this->get_options_set())) {
                 return;
             }
             if (is_string($this->get_template()) and is_file($this->get_template())) {
@@ -211,7 +347,7 @@
                 throw new Exception(__('Invalid template supplied', 'upages'), 1);
             }
             $parser = new VP_Option_Parser();
-            $set = $parser->parse_array_options($template, $this->use_auto_group_naming());
+            $set    = $parser->parse_array_options($template, $this->use_auto_group_naming());
             $set->set_layout($this->get_layout());
             // assign set object
             $this->set_options_set($set);
@@ -244,7 +380,6 @@
 
         /**
          * Get _options_set.
-         *
          * @return string _options_set
          */
         public function get_options_set()
@@ -256,8 +391,6 @@
          * Set _options_set.
          *
          * @param string $_options_set _options_set
-         *
-         * @return $this
          */
         public function set_options_set($_options_set)
         {
@@ -268,7 +401,6 @@
 
         /**
          * Get _template.
-         *
          * @return string _template
          */
         public function get_template()
@@ -280,8 +412,6 @@
          * Set _template.
          *
          * @param string $_template _template
-         *
-         * @return $this
          */
         public function set_template($_template)
         {
@@ -292,7 +422,6 @@
 
         /**
          * Set _layout.
-         *
          * @return string _layout
          */
         public function get_layout()
@@ -304,8 +433,6 @@
          * Get _layout.
          *
          * @param string $_layout _layout
-         *
-         * @return $this
          */
         public function set_layout($_layout)
         {
@@ -320,11 +447,11 @@
             $set = $this->get_options_set();
             // try load option from DB
             $db_options = get_option($this->get_option_key());
-            $default = $set->get_defaults();
-            if (!empty($db_options)) {
+            $default    = $set->get_defaults();
+            if ( ! empty($db_options)) {
                 // unify, preserve option from DB but appends anything new from default
                 $options = $db_options;
-                $options += $default;
+                $options = $options + $default;
             } else {
                 $options = $set->get_defaults();
             }
@@ -350,176 +477,11 @@
             $opt_loader->add_js_data('vp-option', 'custom_local.SAVE_FAILED', VP_Option_Control_Set::SAVE_FAILED);
         }
 
-        // @todo return `vp_option` like function
-
         public function get_field_types()
         {
             // $this->init_options_set();
             return $this->get_options_set()
                         ->get_field_types();
-        }
-
-        //////////////////////////////
-        // GETTER AND SETTER CHUNKS //
-        //////////////////////////////
-
-        public static function get_pool()
-        {
-            return self::$pool;
-        }
-
-        public function register_menu_page()
-        {
-            if (is_array($this->get_menu_page())) {
-                $menu_page = $this->get_menu_page();
-                // check and set required configs
-                if (!isset($menu_page['icon_url'])) {
-                    $menu_page['icon_url'] = '';
-                }
-                if (!isset($menu_page['position'])) {
-                    $menu_page['position'] = null;
-                }
-                $hook_suffix = add_menu_page($this->get_page_title(), $this->get_menu_label(),
-                    $this->get_minimum_role(), $this->get_page_slug(), [$this, 'option_page_display'],
-                    $menu_page['icon_url'], $menu_page['position']);
-            } else {
-                $hook_suffix = add_submenu_page($this->get_menu_page(), $this->get_page_title(),
-                    $this->get_menu_label(), $this->get_minimum_role(), $this->get_page_slug(),
-                    [$this, 'option_page_display']);
-            }
-            $this->set_hook_suffix($hook_suffix);
-            // register option page load
-            add_action('load-'.$this->get_hook_suffix(), [$this, 'setup']);
-        }
-
-        /**
-         * Get _menu_page.
-         *
-         * @return string _menu_page
-         */
-        public function get_menu_page()
-        {
-            return $this->_menu_page;
-        }
-
-        /**
-         * Set _menu_page.
-         *
-         * @param string $_menu_page _menu_page
-         *
-         * @return $this
-         */
-        public function set_menu_page($_menu_page)
-        {
-            $this->_menu_page = $_menu_page;
-
-            return $this;
-        }
-
-        /**
-         * Get _page_title value.
-         *
-         * @return string _page_title
-         */
-        public function get_page_title()
-        {
-            return $this->_page_title;
-        }
-
-        /**
-         * Set _page_title.
-         *
-         * @param string $_page_title _page_title
-         *
-         * @return $this
-         */
-        public function set_page_title($_page_title)
-        {
-            $this->_page_title = $_page_title;
-
-            return $this;
-        }
-
-        /**
-         * Get _menu_label.
-         *
-         * @return string _menu_label
-         */
-        public function get_menu_label()
-        {
-            return $this->_menu_label;
-        }
-
-        /**
-         * Set _menu_label.
-         *
-         * @param string $_menu_label _menu_label
-         *
-         * @return $this
-         */
-        public function set_menu_label($_menu_label)
-        {
-            $this->_menu_label = $_menu_label;
-
-            return $this;
-        }
-
-        /**
-         * Get _minimum_role value.
-         *
-         * @return string $_minimum_role
-         */
-        public function get_minimum_role()
-        {
-            return $this->_minimum_role;
-        }
-
-        /**
-         * Get _menu_page_slug.
-         *
-         * @return string _menu_page_slug
-         */
-        public function get_page_slug()
-        {
-            return $this->_page_slug;
-        }
-
-        /**
-         * Set _page_slug.
-         *
-         * @param string $_page_slug _page_slug
-         *
-         * @return $this
-         */
-        public function set_page_slug($_page_slug)
-        {
-            $this->_page_slug = $_page_slug;
-
-            return $this;
-        }
-
-        /**
-         * Get _hook_suffix.
-         *
-         * @return string _hook_suffix
-         */
-        public function get_hook_suffix()
-        {
-            return $this->_hook_suffix;
-        }
-
-        /**
-         * Set _hook_suffix.
-         *
-         * @param string $_hook_suffix _hook_suffix
-         *
-         * @return $this
-         */
-        public function set_hook_suffix($_hook_suffix)
-        {
-            $this->_hook_suffix = $_hook_suffix;
-
-            return $this;
         }
 
         public function dev_mode_notice()
@@ -535,7 +497,7 @@
                 $this->init_options_set();
                 $this->init_options();
                 $option = $_POST['option'];
-                $nonce = $_POST['nonce'];
+                $nonce  = $_POST['nonce'];
                 $option = VP_Util_Array::unite($option, 'name', 'value');
                 $option = $this->get_options_set()
                                ->normalize_values($option);
@@ -556,7 +518,7 @@
                 // after ajax save action hook
                 do_action('vp_option_after_ajax_save', $opt, $old_opt, $result['status'], $this->get_option_key());
                 // option key specific after ajax save action hook
-                do_action('vp_option_after_ajax_save-'.$this->get_option_key(), $opt, $old_opt, $result['status']);
+                do_action('vp_option_after_ajax_save-' . $this->get_option_key(), $opt, $old_opt, $result['status']);
             }
             if (ob_get_length()) {
                 ob_clean();
@@ -568,13 +530,13 @@
 
         public function vp_verify_nonce()
         {
-            $nonce = $_POST['nonce'];
+            $nonce  = $_POST['nonce'];
             $verify = check_ajax_referer('vafpress', 'nonce', false);
             if ($verify) {
-                $result['status'] = true;
+                $result['status']  = true;
                 $result['message'] = __('Successful', 'upages');
             } else {
-                $result['status'] = false;
+                $result['status']  = false;
                 $result['message'] = __('Unverified Access', 'upages');
             }
 
@@ -594,7 +556,7 @@
             // save and re-init action hook
             do_action('vp_option_save_and_reinit', $opt, $result['status'], $this->get_option_key());
             // option key specific save and re-init action hook
-            do_action('vp_option_save_and_reinit-'.$this->get_option_key(), $opt, $result['status']);
+            do_action('vp_option_save_and_reinit-' . $this->get_option_key(), $opt, $result['status']);
 
             return $result;
         }
@@ -604,7 +566,7 @@
             $result = $this->vp_verify_nonce();
             if ($result['status']) {
                 $this->init_options_set();
-                $set = $this->get_options_set();
+                $set     = $this->get_options_set();
                 $options = $set->get_defaults();
                 // get old options from set
                 $old_opt = $this->get_options_set()
@@ -616,14 +578,14 @@
                 // before ajax save action hook
                 do_action('vp_option_before_ajax_restore', $options);
                 // save and re-init options
-                $result = $this->save_and_reinit();
+                $result  = $this->save_and_reinit();
                 $options = $this->get_options_set()
                                 ->get_values();
                 // after ajax restore action hook
                 do_action('vp_option_after_ajax_restore', $options, $old_opt, $result['status'],
                     $this->get_option_key());
                 // after ajax restore action hook
-                do_action('vp_option_after_ajax_restore-'.$this->get_option_key(), $options, $old_opt,
+                do_action('vp_option_after_ajax_restore-' . $this->get_option_key(), $options, $old_opt,
                     $result['status']);
             }
             if (ob_get_length()) {
@@ -639,13 +601,13 @@
             global $vp_set, $vp_config;
             $options = null;
             $old_opt = null;
-            $result = $this->vp_verify_nonce();
+            $result  = $this->vp_verify_nonce();
             if ($result['status']) {
                 $this->init_options_set();
                 $this->init_options();
                 $option = $_POST['option'];
                 if (empty($option)) {
-                    $result['status'] = false;
+                    $result['status']  = false;
                     $result['message'] = __('Can not be empty', 'upages');
                 } else {
                     $option = json_decode(stripslashes($option), true);
@@ -662,7 +624,7 @@
                         $options = $this->get_options_set()
                                         ->get_values();
                     } else {
-                        $result['status'] = false;
+                        $result['status']  = false;
                         $result['message'] = __('Invalid data', 'upages');
                     }
                 }
@@ -670,7 +632,7 @@
             // after ajax import action hook
             do_action('vp_option_after_ajax_import', $options, $old_opt, $result['status'], $this->get_option_key());
             // after ajax import action hook
-            do_action('vp_option_after_ajax_import-'.$this->get_option_key(), $options, $old_opt, $result['status']);
+            do_action('vp_option_after_ajax_import-' . $this->get_option_key(), $options, $old_opt, $result['status']);
             if (ob_get_length()) {
                 ob_clean();
             }
@@ -684,21 +646,21 @@
             global $wpdb;
             $sr_options = null;
             $db_options = null;
-            $result = $this->vp_verify_nonce();
+            $result     = $this->vp_verify_nonce();
             if ($result['status']) {
                 $db_options = get_option($this->get_option_key());
                 $sr_options = json_encode($db_options);
-                $result = [
-                    'status' => true,
+                $result     = [
+                    'status'  => true,
                     'message' => __('Successful', 'upages'),
-                    'option' => $sr_options,
+                    'option'  => $sr_options,
                 ];
             }
             // after ajax export action hook
             do_action('vp_option_after_ajax_export', $db_options, $sr_options, $result['status'],
                 $this->get_option_key());
             // after ajax export action hook
-            do_action('vp_option_after_ajax_export-'.$this->get_option_key(), $db_options, $sr_options,
+            do_action('vp_option_after_ajax_export-' . $this->get_option_key(), $db_options, $sr_options,
                 $result['status']);
             if (ob_get_length()) {
                 ob_clean();
@@ -721,7 +683,7 @@
             $result = $this->save_and_reinit();
             // after db options db action hook
             do_action('vp_option_after_db_init', $opt, $result['status'], $this->get_option_key());
-            do_action('vp_option_after_db_init-'.$this->get_option_key(), $opt, $result['status']);
+            do_action('vp_option_after_db_init-' . $this->get_option_key(), $opt, $result['status']);
         }
 
         public function option_page_display()
@@ -736,7 +698,6 @@
 
         /**
          * Get _options.
-         *
          * @return string _options
          */
         public function get_options()
@@ -748,8 +709,6 @@
          * Set _options.
          *
          * @param string $_options _options
-         *
-         * @return $this
          */
         public function set_options($_options)
         {

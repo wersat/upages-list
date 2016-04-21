@@ -5,10 +5,10 @@
   <label>
     <?php $checked = ($item->value == $value); ?>
     <input <?php if ($checked) {
-    echo 'checked';
-} ?> class="vp-input<?php if ($checked) {
-    echo ' checked';
-} ?>"
+      echo 'checked';
+    } ?> class="vp-input<?php if ($checked) {
+      echo ' checked';
+    } ?>"
          type="radio"
          name="<?php echo $name; ?>"
          value="<?php echo $item->value; ?>"/>

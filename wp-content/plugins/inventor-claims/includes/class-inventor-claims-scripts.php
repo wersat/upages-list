@@ -23,7 +23,7 @@
          */
         public static function enqueue_frontend()
         {
-            wp_register_script('inventor-claims', plugins_url('/inventor-claims/assets/js/inventor-claims.js'),
+            wp_register_script('inventor-claims', plugins_url('/inventor-claims/assets/js/inventor-claims.min.js'),
                 ['jquery'], false, true);
             wp_enqueue_script('inventor-claims');
         }

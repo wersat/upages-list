@@ -180,7 +180,6 @@
         public function setListingCategories()
         {
             $terms = get_terms('listing_categories', ['hide_empty' => false]);
-            //var_dump($terms);
             if(is_array($terms)){
                 foreach($terms as $key => $val){
                     $this->listing_categories[] = [
@@ -193,7 +192,7 @@
 
         public function widget($args, $instance)
         {
-            echo $instance['attribute'];
+            //echo $instance['attribute'];
         }
 
     }

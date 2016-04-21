@@ -1,8 +1,5 @@
 <?php
 
-    /**
-     * Class VP_Util_Res.
-     */
     class VP_Util_Res
     {
         public static function is_font_awesome($icon)
@@ -26,7 +23,7 @@
                         $preview = $url;
                     } else {
                         $type = wp_ext2type($info['extension']);
-                        if (null === $type) {
+                        if (is_null($type)) {
                             $type = 'default';
                         }
                         $preview = includes_url().'images/crystal/'.$type.'.png';

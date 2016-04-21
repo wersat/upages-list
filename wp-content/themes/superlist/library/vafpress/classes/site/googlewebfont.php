@@ -6,18 +6,9 @@
      */
     class VP_Site_GoogleWebFont
     {
-        /**
-         * @type null
-         */
         private static $_instance = null;
-        /**
-         * @type array
-         */
         private $_fonts = [];
 
-        /**
-         * @return null|\VP_Site_GoogleWebFont
-         */
         public static function instance()
         {
             if (self::$_instance == null) {
@@ -27,12 +18,6 @@
             return self::$_instance;
         }
 
-        /**
-         * @param        $name
-         * @param string $weights
-         * @param string $styles
-         * @param null   $subsets
-         */
         public function add($name, $weights = 'normal', $styles = 'normal', $subsets = null)
         {
             if (empty($name)) {
@@ -47,14 +32,16 @@
                 $this->_fonts[$name]['atts'] = [];
                 $this->_fonts[$name]['subsets'] = ['latin'];
             }
-            foreach ((array) $weights as $weight) {
-                foreach ((array) $styles as $style) {
+            foreach ($weights as $weight) {
+                foreach ($styles as $style) {
                     // set it to empty if style is equal to normal
                     if ($style === 'normal') {
                         $style = '';
                     }
-                    if ($style != '' && $weight === 'normal') {
-                        $weight = '';
+                    if ($style != '') {
+                        if ($weight === 'normal') {
+                            $weight = '';
+                        }
                     }
                     // skip if both are empty
                     if ($style === '' and $weight === '') {
@@ -72,18 +59,12 @@
             }
         }
 
-        /**
-         *
-         */
         public function register_and_enqueue()
         {
             $this->register();
             $this->enqueue();
         }
 
-        /**
-         *
-         */
         public function register()
         {
             $links = $this->get_font_links();
@@ -92,9 +73,6 @@
             }
         }
 
-        /**
-         * @return array
-         */
         public function get_font_links()
         {
             $links = [];
@@ -112,9 +90,6 @@
             return $links;
         }
 
-        /**
-         *
-         */
         public function enqueue()
         {
             $names = $this->get_names();
@@ -123,17 +98,11 @@
             }
         }
 
-        /**
-         * @return array
-         */
         public function get_names()
         {
             return array_keys($this->_fonts);
         }
 
-        /**
-         * @return array
-         */
         public function get_fonts()
         {
             return $this->_fonts;

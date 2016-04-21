@@ -1,15 +1,7 @@
 <?php
 
-    /**
-     * Class VP_Util_Text.
-     */
     class VP_Util_Text
     {
-        /**
-         * @param $text
-         *
-         * @return string
-         */
         public static function parse_md($text)
         {
             if (!class_exists('Parsedown')) {
@@ -18,15 +10,10 @@
                 require $path;
             }
 
-            return parsedown::instance()
+            return Parsedown::instance()
                             ->parse($text);
         }
 
-        /**
-         * @param $optArray
-         *
-         * @return string
-         */
         public static function make_opt($optArray)
         {
             $optString = '';
@@ -37,10 +24,6 @@
             return $optString;
         }
 
-        /**
-         * @param $value
-         * @param $format
-         */
         public static function print_if_exists($value, $format)
         {
             if (!empty($value)) {
@@ -51,12 +34,6 @@
             }
         }
 
-        /**
-         * @param $value
-         * @param $format
-         *
-         * @return mixed|string
-         */
         public static function return_if_exists($value, $format)
         {
             $result = '';
@@ -70,10 +47,6 @@
             return $result;
         }
 
-        /**
-         * @param $string
-         * @param $default
-         */
         public static function out($string, $default)
         {
             if (empty($string)) {
@@ -83,22 +56,11 @@
             }
         }
 
-        /**
-         * @param $item
-         * @param $key
-         * @param $prefix
-         */
         public static function prefix(&$item, $key, $prefix)
         {
             $item = $prefix.$item;
         }
 
-        /**
-         * @param $array
-         * @param $prefix
-         *
-         * @return mixed
-         */
         public static function prefix_array($array, $prefix)
         {
             array_walk($array, 'VP_Util_Text::prefix', $prefix);
@@ -106,13 +68,6 @@
             return $array;
         }
 
-        /**
-         * @param        $haystack
-         * @param        $left
-         * @param string $right
-         *
-         * @return bool
-         */
         public static function flanked_by($haystack, $left, $right = '')
         {
             if ($right == '') {
@@ -122,23 +77,11 @@
             return self::starts_with($haystack, $left) and self::ends_with($haystack, $right);
         }
 
-        /**
-         * @param $haystack
-         * @param $needle
-         *
-         * @return bool
-         */
         public static function starts_with($haystack, $needle)
         {
             return !strncmp($haystack, $needle, strlen($needle));
         }
 
-        /**
-         * @param $haystack
-         * @param $needle
-         *
-         * @return bool
-         */
         public static function ends_with($haystack, $needle)
         {
             $length = strlen($needle);

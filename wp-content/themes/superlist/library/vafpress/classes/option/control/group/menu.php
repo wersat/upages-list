@@ -1,8 +1,5 @@
 <?php
 
-    /**
-     * Class VP_Option_Control_Group_Menu.
-     */
     class VP_Option_Control_Group_Menu extends VP_Option_Control_Group
     {
         /**
@@ -19,14 +16,8 @@
          */
         private $_controls;
 
-        /**
-         * @var
-         */
         private $_icon;
 
-        /**
-         * VP_Option_Control_Group_Menu constructor.
-         */
         public function __construct()
         {
             parent::__construct();
@@ -34,28 +25,19 @@
             $this->_controls = [];
         }
 
-/**
- * @param array $extra
- *
- * @return string
- *
- * @throws \Exception
- */public function render($extra = [])
-{
-    // Setup data
+        public function render($extra = [])
+        {
+            // Setup data
             $this->_setup_data();
-    $this->add_data('menu', $this);
-    foreach ($extra as $key => $value) {
-        $this->add_data($key, $value);
-    }
+            $this->add_data('menu', $this);
+            foreach ($extra as $key => $value) {
+                $this->add_data($key, $value);
+            }
 
-    return VP_View::instance()
+            return VP_View::instance()
                           ->load('option/menu', $this->get_data());
-}
+        }
 
-        /**
-         * @param $menu
-         */
         public function add_menu($menu)
         {
             $this->_menus[] = $menu;
@@ -75,8 +57,6 @@
          * Setter of $_menus.
          *
          * @param array $_menus Collection of menus object
-         *
-         * @return $this
          */
         public function set_menus($_menus)
         {
@@ -85,9 +65,6 @@
             return $this;
         }
 
-        /**
-         * @param $control
-         */
         public function add_control($control)
         {
             $this->_controls[] = $control;
@@ -107,8 +84,6 @@
          * Setter of controls.
          *
          * @param array $_controls Collection of controls object
-         *
-         * @return $this
          */
         public function set_controls($_controls)
         {
@@ -131,8 +106,6 @@
          * Set menu icon.
          *
          * @param string $_icon Icon URL
-         *
-         * @return $this
          */
         public function set_icon($_icon)
         {

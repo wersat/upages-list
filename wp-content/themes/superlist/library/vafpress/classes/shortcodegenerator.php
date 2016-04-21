@@ -1,60 +1,25 @@
 <?php
 
-  /**
-   * Class VP_ShortcodeGenerator
-   */
   class VP_ShortcodeGenerator
   {
-    /**
-     * @type array
-     */
     public static $pool = [];
 
-    /**
-     * @type
-     */
     public $name;
 
-    /**
-     * @type mixed
-     */
     public $template;
 
-    /**
-     * @type string
-     */
     public $modal_title = '';
 
-    /**
-     * @type string
-     */
     public $button_title = '';
 
-    /**
-     * @type string
-     */
     public $main_image;
 
-    /**
-     * @type string
-     */
     public $sprite_image;
 
-    /**
-     * @type array
-     */
     public $types;
 
-    /**
-     * @type
-     */
     public $include_pages;
 
-    /**
-     * VP_ShortcodeGenerator constructor.
-     *
-     * @param $arr
-     */
     public function __construct($arr)
     {
       $this->main_image     = VP_PUBLIC_URL . '/img/vp_shortcode_icon.png';
@@ -82,13 +47,10 @@
       self::$pool[$this->name] = $this;
     }
 
-    /**
-     *
-     */
     public function normalize()
     {
       if (is_array($this->template)) {
-        foreach ((array)$this->template as &$shortcode) {
+        foreach ($this->template as &$shortcode) {
           foreach ($shortcode['elements'] as &$elements) {
             if (isset($elements['attributes'])) {
               foreach ($elements['attributes'] as &$f) {
@@ -102,9 +64,6 @@
       }
     }
 
-    /**
-     *
-     */
     public function init_mce_plugin()
     {
       if ($this->can_output()) {
@@ -116,16 +75,13 @@
       }
     }
 
-    /**
-     * @return bool
-     */
     public function can_output()
     {
       $screen = '';
       $can    = true;
       if (function_exists('get_current_screen')) {
         $screen = get_current_screen();
-        if ( ! null === $screen) {
+        if ( ! is_null($screen)) {
           $screen = $screen->id;
         }
       }
@@ -152,14 +108,11 @@
       return $can;
     }
 
-    /**
-     * @return array
-     */
     public function get_field_types()
     {
       $field_types = [];
       if (is_array($this->template)) {
-        foreach ((array)$this->template as $shortcode) {
+        foreach ($this->template as $shortcode) {
           foreach ($shortcode['elements'] as $elements) {
             if (isset($elements['attributes'])) {
               foreach ($elements['attributes'] as $f) {
@@ -175,17 +128,11 @@
       return $field_types;
     }
 
-    /**
-     * @return array
-     */
     public static function get_pool()
     {
       return self::$pool;
     }
 
-    /**
-     * @return bool
-     */
     public static function pool_supports_editor()
     {
       foreach (self::$pool as $sg) {
@@ -197,19 +144,14 @@
       return false;
     }
 
-    /**
-     * @return bool
-     */
     public function supports_editor()
     {
-      $post_type = VP_Metabox::_get_current_post_type();
+      $post_type  = VP_Metabox::_get_current_post_type();
+      $has_editor = post_type_supports($post_type, 'editor');
 
-      return post_type_supports($post_type, 'editor');
+      return $has_editor;
     }
 
-    /**
-     * @return bool
-     */
     public static function pool_can_output()
     {
       foreach (self::$pool as $sg) {
@@ -221,39 +163,42 @@
       return false;
     }
 
-    /**
-     *
-     */
     public function print_modal()
     {
       $modal_id = $this->name . '_modal';
       ?>
-      <div id="<?= $modal_id; ?>"
+      <div id="<?php echo $modal_id;
+      ?>"
            class="vp-sc-dialog reveal-modal xlarge">
-        <h1><?= $this->modal_title; ?></h1>
+        <h1><?php echo $this->modal_title;
+          ?></h1>
         <div class="vp-sc-scroll-container">
           <div class="vp-sc-wrapper">
             <ul class="vp-sc-menu">
-              <?php foreach ((array)$this->template as $title => $menu): ?>
+              <?php foreach ($this->template as $title => $menu): ?>
                 <?php if (reset($this->template) == $menu): ?>
                   <li class="current">
-                    <a href="#<?= str_replace(' ', '_', $title); ?>"><?= $title ?></a>
-                  </li>
+                    <a href="#<?php echo str_replace(' ', '_', $title);
+                    ?>"><?php echo $title ?>
+                  </li></a>
                 <?php else: ?>
                   <li>
-                    <a href="#<?= str_replace(' ', '_', $title); ?>"><?= $title ?></a>
-                  </li>
+                    <a href="#<?php echo str_replace(' ', '_', $title);
+                    ?>"><?php echo $title ?>
+                  </li></a>
                 <?php endif;
                 ?>
               <?php endforeach;
               ?>
             </ul>
             <div class="vp-sc-main">
-              <?php foreach ((array)$this->template as $title => $menu): ?>
+              <?php foreach ($this->template as $title => $menu): ?>
               <?php if (reset($this->template) == $menu) : ?>
-              <ul class="current vp-sc-sub-menu-list vp-sc-sub-menu-<?= str_replace(' ', '_', $title); ?>">
+              <ul class="current vp-sc-sub-menu-list vp-sc-sub-menu-<?php echo str_replace(' ', '_', $title);
+              ?>">
                 <?php else : ?>
-                <ul class="vp-hide vp-sc-sub-menu-list vp-sc-sub-menu-<?= str_replace(' ', '_', $title); ?>">
+                <ul class="vp-hide vp-sc-sub-menu-list vp-sc-sub-menu-<?php echo str_replace(' ', '_', $title);
+                ?>">
                   <?php endif;
                   ?>
                   <?php foreach ($menu['elements'] as $name => $element): ?>
@@ -266,18 +211,21 @@
                     ?>">
                       <h3 class="hndle vp-sc-element-heading">
                         <a href="#">
-                          <?= $element['title']; ?>
+                          <?php echo $element['title'];
+                          ?>
                           <?php if (isset($element['attributes'])) {
                             echo '<i class="fa fa-arrow-down"></i>';
                           }
                           ?>
                         </a>
                       </h3>
-                      <div class="hidden vp-sc-code"><?= htmlentities($element['code']); ?></div>
+                      <div class="hidden vp-sc-code"><?php echo htmlentities($element['code']);
+                        ?></div>
                       <?php if (isset($element['attributes']) and ! empty($element['attributes'])): ?>
-                        <form class="vp-sc-element-form <?php if ( ! isset($element['active']) || (isset($element['active']) && $element['active'] == false)): ?>vp-hide<?php endif;
+                        <form class="vp-sc-element-form <?php if ( ! isset($element['active']) || isset($element['active']) && $element['active'] == false): ?>vp-hide<?php endif;
                         ?> inside">
-                          <?= $this->print_form($element['attributes']); ?>
+                          <?php echo $this->print_form($element['attributes']);
+                          ?>
                         </form>
                       <?php endif;
                       ?>
@@ -296,9 +244,6 @@
 
     }
 
-    /**
-     * @param $attributes
-     */
     public function print_form($attributes)
     {
       ?>
@@ -311,26 +256,34 @@
             $attr['name'] = '_' . $attr['name'];
             $field        = call_user_func("$make::withArray", $attr);
             $default      = $field->get_default();
-            if ( ! null === $default) {
+            if ( ! is_null($default)) {
               $field->set_value($default);
             }
             ?>
             <?php if ($attr['type'] !== 'notebox'): ?>
-              <div class="vp-sc-field vp-<?= $attr['type']; ?>"
-                   data-vp-type="vp-<?= $attr['type']; ?>">
+              <div class="vp-sc-field vp-<?php echo $attr['type'];
+              ?>"
+                   data-vp-type="vp-<?php echo $attr['type'];
+                   ?>">
                 <div class="label">
-                  <label><?= $attr['label']; ?></label>
+                  <label><?php echo $attr['label'];
+                    ?></label>
                 </div>
                 <div class="field">
-                  <div class="input"><?= $field->render(true); ?></div>
+                  <div class="input"><?php echo $field->render(true);
+                    ?></div>
                 </div>
               </div>
             <?php else: ?>
-              <?php $status = $attr['status'] ?? 'normal';
+              <?php $status = isset($attr['status']) ? $attr['status'] : 'normal';
               ?>
-              <div class="vp-sc-field vp-<?= $attr['type']; ?> note-<?= $status; ?>"
-                   data-vp-type="vp-<?= $attr['type']; ?>">
-                <?= $field->render(true); ?>
+              <div class="vp-sc-field vp-<?php echo $attr['type'];
+              ?> note-<?php echo $status;
+              ?>"
+                   data-vp-type="vp-<?php echo $attr['type'];
+                   ?>">
+                <?php echo $field->render(true);
+                ?>
               </div>
             <?php endif;
             ?>
@@ -348,9 +301,6 @@
 
     }
 
-    /**
-     * @return array
-     */
     public static function build_localize()
     {
       $localize = [];
@@ -360,16 +310,13 @@
           'modal_title'  => $sg->modal_title,
           'button_title' => $sg->button_title,
           'main_image'   => $sg->main_image,
-          'sprite_image' => $sg->sprite_image
+          'sprite_image' => $sg->sprite_image,
         ];
       }
 
       return $localize;
     }
 
-    /**
-     *
-     */
     public static function init_buttons()
     {
       if (VP_Metabox::_is_post_or_page() && ! current_user_can('edit_posts')
@@ -384,24 +331,21 @@
       add_filter('admin_print_styles', [__CLASS__, 'print_styles']);
     }
 
-    /**
-     * @param $buttons
-     */
     public static function print_styles($buttons)
     {
       ?>
       <style type="text/css">
         <?php foreach (self::$pool as $sg): ?>
-        #qt_content_<?= $sg->name;
+        #qt_content_<?php echo $sg->name;
             ?> {
-          background  : url('<?= $sg->sprite_image;
+          background  : url('<?php echo $sg->sprite_image;
             ?>') 2px -21px no-repeat !important;
           text-indent : -999px;
           }
 
-        span.mce_<?= $sg->name;
+        span.mce_<?php echo $sg->name;
             ?> {
-          background : url('<?= $sg->sprite_image;
+          background : url('<?php echo $sg->sprite_image;
             ?>') 0 0 no-repeat !important;
           }
 
@@ -412,11 +356,6 @@
 
     }
 
-    /**
-     * @param $buttons
-     *
-     * @return array
-     */
     public static function register_buttons($buttons)
     {
       foreach (self::$pool as $sg) {
@@ -424,15 +363,11 @@
           $vp_buttons[] = $sg->name;
         }
       }
+      $buttons = array_merge($buttons, $vp_buttons);
 
-      return array_merge($buttons, $vp_buttons);
+      return $buttons;
     }
 
-    /**
-     * @param $plugin_array
-     *
-     * @return mixed
-     */
     public static function add_buttons($plugin_array)
     {
       $plugin_array['vp_sc_button'] = VP_PUBLIC_URL . '/js/shortcodes.js';
@@ -445,11 +380,6 @@
       return $plugin_array;
     }
 
-    /**
-     * @param $buttons
-     *
-     * @return array
-     */
     public static function fullscreen_buttons($buttons)
     {
       foreach (self::$pool as $sg) {
@@ -463,7 +393,7 @@
             // Command to execute
             'onclick' => "tinyMCE.execCommand('{$sg->name}_cmd');",
             // Show on visual AND html mode
-            'both'    => true
+            'both'    => true,
           ];
         }
       }
@@ -471,14 +401,11 @@
       return $buttons;
     }
 
-    /**
-     * @return array
-     */
     public function get_shortcode_tags()
     {
       $shortcodes = $this->template;
       $tags       = [];
-      foreach ((array)$shortcodes as $menu) {
+      foreach ($shortcodes as $menu) {
         foreach ($menu['elements'] as $sc) {
           $code = $sc['code'];
           preg_match('/\[(\w+).*\]/', $code, $matches);

@@ -1,64 +1,53 @@
 <?php
 
-    /**
-     * Class VP_Control_Field_CodeEditor
-     */
     class VP_Control_Field_CodeEditor extends VP_Control_Field
     {
-
         /**
-         * @type
+         * Editor's language mode
+         * (javascript, css, html, php, json, xml, markdown).
+         *
+         * @var string
          */
         protected $_mode;
 
         /**
-         * @type
+         * Editor's theme
+         * (chaos, chrome, clouds, clouds_midnight, cobalt, crimson_editor, dawn, dreamweaver, eclipse,
+         *  github, mono_industrial, monokai, solarized_dark, solarized_light, textmate, twilight).
+         *
+         * @var string
          */
         protected $_theme;
 
-        /**
-         * VP_Control_Field_CodeEditor constructor.
-         */
         public function __construct()
         {
             parent::__construct();
         }
 
-        /**
-         * @param array|null $arr
-         * @param null       $class_name
-         *
-         * @return \VP_Control_Field_CodeEditor
-         */
-        public static function withArray(array $arr = null, $class_name = null)
+        public static function withArray($arr = [], $class_name = null)
         {
-            $instance = null === $class_name ? new self() : new $class_name();
+            if (is_null($class_name)) {
+                $instance = new self();
+            } else {
+                $instance = new $class_name();
+            }
             $instance->_basic_make($arr);
-            $instance->set_editor_mode($arr['mode'] ?? '');
-            $instance->set_editor_theme($arr['theme'] ?? 'textmate');
+            $instance->set_editor_mode(isset($arr['mode']) ? $arr['mode'] : '');
+            $instance->set_editor_theme(isset($arr['theme']) ? $arr['theme'] : 'textmate');
 
             return $instance;
         }
 
-        /**
-         *
-         */
         protected function _setup_data()
         {
             $opt = [
-                'mode'  => $this->get_editor_mode(),
-                'theme' => $this->get_editor_theme()
+                'mode' => $this->get_editor_mode(),
+                'theme' => $this->get_editor_theme(),
             ];
             $this->add_data('opt', VP_Util_Text::make_opt($opt));
             parent::_setup_data();
         }
 
-        /**
-         * @param bool $is_compact
-         *
-         * @return string
-         * @throws \Exception
-         */
         public function render($is_compact = false)
         {
             $this->_setup_data();
@@ -68,13 +57,9 @@
                           ->load('control/codeeditor', $this->get_data());
         }
 
-        /**
-         * @param array|string $_value
-         *
-         * @return $this
-         */
         public function set_value($_value)
         {
+            // normalize linebreak to \n for all saved data
             if (is_string($_value)) {
                 $_value = str_replace(["\r\n", "\r"], "\n", $_value);
             }
@@ -84,7 +69,9 @@
         }
 
         /**
-         * @return mixed
+         * Get editor's language mode.
+         *
+         * @return string Language mode
          */
         public function get_editor_mode()
         {
@@ -92,9 +79,9 @@
         }
 
         /**
-         * @param $_mode
+         * Set editor's language mode.
          *
-         * @return $this
+         * @param string $_mode Language mode
          */
         public function set_editor_mode($_mode)
         {
@@ -104,7 +91,9 @@
         }
 
         /**
-         * @return mixed
+         * Get editor's theme.
+         *
+         * @return string Editor's theme
          */
         public function get_editor_theme()
         {
@@ -112,9 +101,9 @@
         }
 
         /**
-         * @param $_theme
+         * Set editor's theme.
          *
-         * @return $this
+         * @param string $_theme Editor's theme
          */
         public function set_editor_theme($_theme)
         {
@@ -123,3 +112,7 @@
             return $this;
         }
     }
+
+    /*
+     * EOF
+     */

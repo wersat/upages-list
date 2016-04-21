@@ -1,15 +1,15 @@
-<?php if (!$is_compact) {
-    echo VP_View::instance()->load('control/template_control_head', $head_info);
+<?php if ( ! $is_compact) {
+  echo VP_View::instance()->load('control/template_control_head', $head_info);
 } ?>
 <?php foreach ($items as $item): ?>
   <label>
     <?php $checked = ($item->value == $value); ?>
     <input type="radio" <?php if ($checked) {
-    echo 'checked';
-} ?>
+      echo 'checked';
+    } ?>
            class="vp-input<?php if ($checked) {
-    echo ' checked';
-} ?>"
+             echo ' checked';
+           } ?>"
            name="<?php echo $name; ?>"
            value="<?php echo $item->value; ?>"/>
     <img src="<?php echo VP_Util_Res::img($item->img); ?>"
@@ -20,7 +20,7 @@
          original-title="<?php echo $item->label; ?>"/>
   </label>
 <?php endforeach; ?>
-<?php if (!$is_compact) {
-    echo VP_View::instance()
+<?php if ( ! $is_compact) {
+  echo VP_View::instance()
               ->load('control/template_control_foot');
 } ?>

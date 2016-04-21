@@ -592,6 +592,57 @@
         }
 
         /**
+         * @param $instance
+         *
+         * @return string
+         */
+        public function advanced_style($instance)
+        {
+            $widget_class = [
+                'widget-inner',
+                empty($instance['padding_top']) ? '' : 'widget-pt',
+                empty($instance['padding_bottom']) ? '' : 'widget-pb'
+            ];
+            if ( ! empty($instance['classes'])) {
+                $widget_class[] = esc_attr($instance['classes']);
+            }
+            $out = 'class="' . implode(' ', $widget_class) . '" ';
+            if ( ! empty($instance['background_color']) || ! empty($instance['background_image'])) {
+                $background = '';
+                if ( ! empty($instance['background_color'])) {
+                    $background = 'background-color:' . esc_attr($instance['background_color']);
+                } elseif ( ! empty($instance['background_image'])) {
+                    $background = 'background-image: url(' . esc_attr($instance['background_image']) . ')';
+                }
+                $out .= 'style="' . $background . '"';
+            }
+
+            return $out;
+        }
+
+        /**
+         * @param $instance
+         *
+         * @return string
+         */
+        public function advanced_widget_title_and_description($instance)
+        {
+            $out = '';
+            if ( ! empty($instance['title'])) {
+                $out .= '<h2 class="widgettitle">';
+                $out .= wp_kses($instance['title'], wp_kses_allowed_html('post'));
+                $out .= '</h2>';
+            }
+            if ( ! empty($instance['description'])) {
+                $out .= '<div class="description">';
+                $out .= wp_kses($instance['description'], wp_kses_allowed_html('post'));
+                $out .= '</div>';
+            }
+
+            return $out;
+        }
+
+        /**
          * @return array
          */
         public function getPageList()

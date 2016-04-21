@@ -1,8 +1,5 @@
 <?php
 
-    /**
-     * Class VP_Util_Reflection.
-     */
     class VP_Util_Reflection
     {
         public static function is_multiselectable($object)
@@ -43,8 +40,9 @@
                 $prefix = 'VP_Option_Control_Field_';
             }
             $prefix = apply_filters('vp_field_class_from_type_prefix', $prefix, $type);
+            $class = $prefix.$type;
 
-            return $prefix.$type;
+            return $class;
         }
 
         public static function field_type_from_class($class)

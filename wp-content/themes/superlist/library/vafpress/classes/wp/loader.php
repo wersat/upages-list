@@ -1,8 +1,5 @@
 <?php
 
-    /**
-     * Class VP_WP_Loader
-     */
     class VP_WP_Loader
     {
         private static $_instance;
@@ -32,13 +29,13 @@
             $this->_types        = [
                 'option'             => [],
                 'metabox'            => [],
-                'shortcodegenerator' => []
+                'shortcodegenerator' => [],
             ];
         }
 
         public static function instance()
         {
-            if (null === self::$_instance) {
+            if (is_null(self::$_instance)) {
                 self::$_instance = new self();
             }
 
@@ -73,13 +70,13 @@
             // build localize data
             $this->build_localize_data();
             // register all depended js
-            foreach ((array)$req_scripts as $script) {
+            foreach ($req_scripts as $script) {
                 $this->js_unit_register($script);
             }
             // register and add shared-js at the end of dependencies
             $this->js_unit_register('shared', $req_scripts);
             // register all styles
-            foreach ((array)$styles as $name => $style) {
+            foreach ($styles as $name => $style) {
                 if (in_array($name, $req_styles) and ! wp_style_is($name, 'registered')) {
                     wp_register_style($name, $style['path'], $style['deps']);
                 }
@@ -153,7 +150,7 @@
                 'maxlength_validatable'    => apply_filters('vp_maxlength_validatable',
                     ['vp-toggle', 'vp-radiobutton', 'vp-radioimage', 'vp-select']),
                 'minlength_validatable'    => apply_filters('vp_minlength_validatable',
-                    ['vp-toggle', 'vp-radiobutton', 'vp-radioimage', 'vp-select'])
+                    ['vp-toggle', 'vp-radiobutton', 'vp-radioimage', 'vp-select']),
             ];
             $this->_localize = array_merge($this->_localize, $localize);
         }
@@ -166,12 +163,12 @@
                 $registered = wp_script_is($name, 'registered');
                 $is_older   = false;
                 $script     = $scripts[$name];
-                $override   = $script['override'] ?? false;
+                $override   = isset($script['override']) ? $script['override'] : false;
                 if ($registered) {
                     $is_older = version_compare($script['ver'], $wp_scripts->registered[$name]->ver) == 1;
                 }
                 if ( ! $registered or ($is_older and $override)) {
-                    if ( ! null === $extra_deps) {
+                    if ( ! is_null($extra_deps)) {
                         $script['deps'] = array_unique(array_merge($script['deps'], $extra_deps));
                     }
                     if ( ! empty($script['deps'])) {
@@ -201,7 +198,7 @@
             $styles = $this->_dependencies['styles']['paths'];
             if (isset($styles[$name])) {
                 $style = $styles[$name];
-                if ( ! null === $extra_deps) {
+                if ( ! is_null($extra_deps)) {
                     $style['deps'] = array_unique(array_merge($style['deps'], $extra_deps));
                 }
                 if ( ! empty($style['deps'])) {
@@ -209,7 +206,7 @@
                         $this->css_unit_register($dep);
                     }
                 }
-                wp_register_style($name, $style['path'], $style['deps'], $style['ver'] ?? false);
+                wp_register_style($name, $style['path'], $style['deps'], isset($style['ver']) ? $style['ver'] : false);
             }
         }
 
@@ -304,7 +301,11 @@
 
         public function get_types($key = null)
         {
-            return null === $key ? $this->_types : $this->_types[$key];
+            if (is_null($key)) {
+                return $this->_types;
+            } else {
+                return $this->_types[$key];
+            }
         }
     }
 

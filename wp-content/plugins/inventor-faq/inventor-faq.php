@@ -43,7 +43,7 @@
              */
             public function includes()
             {
-                require_once INVENTOR_FAQ_DIR . 'includes/class-inventor-faq-post-types.php';
+                //require_once INVENTOR_FAQ_DIR . 'includes/class-inventor-faq-post-types.php';
                 require_once INVENTOR_FAQ_DIR . 'includes/class-inventor-faq-widgets.php';
             }
 

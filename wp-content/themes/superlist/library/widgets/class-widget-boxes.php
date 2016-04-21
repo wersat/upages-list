@@ -22,7 +22,7 @@
 
     /**
      * Widgets_Boxes constructor.
-       */
+     */
     public function __construct()
     {
       $this->setBoxesFields();
@@ -138,28 +138,8 @@
     public function widget($args, $instance)
     {
       echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
-      <div class="widget-inner <?php echo esc_attr($instance['classes']);
-        echo empty($instance['padding_top']) ? '' : ' widget-pt';
-        echo empty($instance['padding_bottom']) ? '' : ' widget-pb';
-      ?>" <?php if ( ! empty($instance['background_color']) || ! empty($instance['background-image'])) { ?>
-        style="<?php if ( ! empty($instance['background_color'])) { ?>
-          background-color: <?php echo esc_attr($instance['background_color']);
-        }
-          if ( ! empty($instance['background-image'])) { ?>
-            background-image: url('<?php echo esc_attr( $instance['background-image'] ); ?>');
-          <?php } ?>"
-      <?php } ?>>
-        <?php if ( ! empty($instance['title'])) : ?>
-          <h2 class="widgettitle">
-            <?php echo wp_kses($instance['title'], wp_kses_allowed_html('post')); ?>
-          </h2>
-        <?php endif; ?>
-
-        <?php if ( ! empty($instance['description'])) : ?>
-          <div class="description">
-            <?php echo wp_kses($instance['description'], wp_kses_allowed_html('post')); ?>
-          </div>
-        <?php endif; ?>
+      <div <?php echo $this->advanced_style($instance) ?>>
+        <?= $this->advanced_widget_title_and_description($instance) ?>
         <div class="row">
           <?php for ($i = 1; $i <= 3; $i++) : ?>
             <?php $title_id = $i . '-nazva'; ?>
