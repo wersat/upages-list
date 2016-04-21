@@ -29,7 +29,7 @@
                  class="vp-js-menu-goto vp-menu-goto">
             <?php endif; ?>
               <?php
-              $icon         = $menu->get_icon();
+              $icon = $menu->get_icon();
               $font_awesome = VP_Util_Res::is_font_awesome($icon);
               if ($font_awesome !== false):
                 VP_Util_Text::print_if_exists($font_awesome, '<i class="fa %s"></i>');
@@ -52,7 +52,7 @@
                     <a href="#<?php echo $submenu->get_name(); ?>"
                        class="vp-js-menu-goto vp-menu-goto">
                       <?php
-                        $sub_icon     = $submenu->get_icon();
+                        $sub_icon = $submenu->get_icon();
                         $font_awesome = VP_Util_Res::is_font_awesome($sub_icon);
                         if ($font_awesome !== false):
                           VP_Util_Text::print_if_exists($font_awesome, '<i class="fa %s"></i>');

@@ -1,7 +1,7 @@
 <?php
 
     /**
-     * Class VP_Metabox_Depsloader
+     * Class VP_Metabox_Depsloader.
      */
     class VP_Metabox_Depsloader
     {
@@ -14,6 +14,7 @@
 
         /**
          * VP_Metabox_Depsloader constructor.
+         *
          * @param $things
          */
         public function __construct($things)
@@ -23,6 +24,7 @@
 
         /**
          * @return array
+         *
          * @throws \Exception
          */
         public function build()
@@ -63,6 +65,7 @@
                             /**
                              * @param $fields
                              * @param $result
+                             *
                              * @throws \Exception
                              */
                             function inner_build($fields, &$result)
@@ -104,6 +107,7 @@
 
         /**
          * @param string $hook_suffix
+         *
          * @return bool
          */
         public function can_output($hook_suffix = '')

@@ -1,5 +1,8 @@
 <?php
 
+    /**
+     * Class VP_Control_Field_RadioButton.
+     */
     class VP_Control_Field_RadioButton extends VP_Control_FieldMulti
     {
         public function __construct()
@@ -19,11 +22,7 @@
 
         public static function withArray($arr = [], $class_name = null)
         {
-            if (is_null($class_name)) {
-                $instance = new self();
-            } else {
-                $instance = new $class_name();
-            }
+            $instance = null === $class_name ? new self() : new $class_name();
             $instance->_basic_make($arr);
 
             return $instance;

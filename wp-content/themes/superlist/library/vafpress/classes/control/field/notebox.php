@@ -1,5 +1,8 @@
 <?php
 
+    /**
+     * Class VP_Control_Field_NoteBox
+     */
     class VP_Control_Field_NoteBox extends VP_Control_Field
     {
         /**
@@ -21,11 +24,7 @@
 
         public static function withArray($arr = [], $class_name = null)
         {
-            if (is_null($class_name)) {
-                $instance = new self();
-            } else {
-                $instance = new $class_name();
-            }
+            $instance = null === $class_name ? new self() : new $class_name();
             $instance->_basic_make($arr);
 
             return $instance;
@@ -34,7 +33,7 @@
         protected function _basic_make($arr)
         {
             parent::_basic_make($arr);
-            $this->set_status(isset($arr['status']) ? $arr['status'] : 'normal');
+            $this->set_status($arr['status'] ?? 'normal');
         }
 
         protected function _setup_data()
@@ -87,6 +86,8 @@
          * Set the status of message.
          *
          * @param string $_status Status of message
+         *
+         * @return $this
          */
         public function set_status($_status)
         {

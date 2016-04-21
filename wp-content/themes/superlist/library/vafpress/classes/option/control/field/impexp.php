@@ -1,12 +1,15 @@
 <?php
 
+    /**
+     * Class VP_Option_Control_Field_ImpExp.
+     */
     class VP_Option_Control_Field_ImpExp extends VP_Control_Field
     {
-        public function __construct()
-        {
-            parent::__construct();
-        }
-
+        /**
+         * @return string
+         *
+         * @throws \Exception
+         */
         public function render()
         {
             $this->_setup_data();
@@ -15,17 +18,18 @@
                           ->load('option/impexp', $this->get_data());
         }
 
-        public static function withArray($arr = [], $class_name = null)
-        {
-            if (is_null($class_name)) {
-                $instance = new self();
-            } else {
-                $instance = new $class_name();
-            }
-            $instance->_basic_make($arr);
+/**
+ * @param array $arr
+ * @param null  $class_name
+ *
+ * @return \VP_Option_Control_Field_ImpExp
+ */public static function withArray($arr = [], $class_name = null)
+{
+    $instance = null === $class_name ? new self() : new $class_name();
+    $instance->_basic_make($arr);
 
-            return $instance;
-        }
+    return $instance;
+}
     }
 
     /*

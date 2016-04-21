@@ -1,5 +1,8 @@
 <?php
 
+    /**
+     * Class VP_Control_Field_HTML
+     */
     class VP_Control_Field_HTML extends VP_Control_Field
     {
         protected $_height;
@@ -11,13 +14,9 @@
 
         public static function withArray($arr = [], $class_name = null)
         {
-            if (is_null($class_name)) {
-                $instance = new self();
-            } else {
-                $instance = new $class_name();
-            }
+            $instance = null === $class_name ? new self() : new $class_name();
             $instance->_basic_make($arr);
-            $instance->set_height(isset($arr['height']) ? $arr['height'] : 'auto');
+            $instance->set_height($arr['height'] ?? 'auto');
 
             return $instance;
         }
@@ -38,6 +37,13 @@
                           ->load('control/html', $this->get_data());
         }
 
+        /**
+         * Set field value.
+         *
+         * @param string|array $_value Value of field
+         *
+         * @return $this
+         */
         public function set_value($_value)
         {
             // normalize linebreak to \n for all saved data
@@ -63,6 +69,8 @@
          * Set the Height of the Container.
          *
          * @param string $_status Height of the Container
+         *
+         * @return $this
          */
         public function set_height($_height)
         {

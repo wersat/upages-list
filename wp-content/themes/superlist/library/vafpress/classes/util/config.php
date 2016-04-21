@@ -16,7 +16,7 @@
 
         public static function instance()
         {
-            if (is_null(self::$_instance)) {
+            if (null === self::$_instance) {
                 self::$_instance = new self();
             }
 

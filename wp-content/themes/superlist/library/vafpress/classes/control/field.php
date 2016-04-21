@@ -6,7 +6,13 @@
      */
     interface iFactory
     {
-        public static function withArray($arr = [], $class_name = null);
+        /**
+         * @param array $arr
+         * @param null  $class_name
+         *
+         * @return mixed
+         */
+        public static function withArray(array $arr = [], $class_name = null);
     }
 
     /**
@@ -105,6 +111,9 @@
             $this->_container_extra_classes = [];
         }
 
+        /**
+         * @return mixed
+         */
         abstract public function render();
 
         /**
@@ -121,6 +130,8 @@
          * Set render data.
          *
          * @param array $_data Render data array
+         *
+         * @return $this
          */
         public function set_data($_data)
         {
@@ -133,6 +144,8 @@
          * Set single render data.
          *
          * @param array $_data Render data array
+         *
+         * @return $this
          */
         public function set_single_data($key, $_data)
         {
@@ -175,6 +188,8 @@
          * Setter of $_field_max_height.
          *
          * @param int $_field_max_height Max height of the field
+         *
+         * @return $this
          */
         public function set_field_max_height($_field_max_height)
         {
@@ -210,7 +225,7 @@
                 'dependency' => $this->get_dependency(),
                 'binding' => $this->get_binding(),
                 'label' => $this->get_label(),
-                'description' => VP_Util_Text::parse_md($this->get_description()),
+                'description' => VP_Util_Text::parse_md($this->get_description())
             ]);
         }
 
@@ -238,6 +253,8 @@
          * Setter for $_name.
          *
          * @param string $_name unique name of the field
+         *
+         * @return $this
          */
         public function set_name($_name)
         {
@@ -260,6 +277,8 @@
          * Setter for $_default.
          *
          * @param mixed $_default default value of the field
+         *
+         * @return $this
          */
         public function set_default($_default)
         {
@@ -282,6 +301,8 @@
          * Set field value.
          *
          * @param string|array $_value Value of field
+         *
+         * @return $this
          */
         public function set_value($_value)
         {
@@ -297,14 +318,18 @@
          */
         public function is_hidden($_is_hidden = null)
         {
-            if (!is_null($_is_hidden)) {
+            if (! null === $_is_hidden) {
                 $this->_is_hidden = (bool) $_is_hidden;
             }
 
             return $this->_is_hidden;
         }
 
-        public function add_container_extra_classes($class)
+        /**
+         * @param $class
+         *
+         * @return array
+         */public function add_container_extra_classes($class)
         {
             if (is_array($class)) {
                 $this->_container_extra_classes = array_merge($this->_container_extra_classes, $class);
@@ -329,6 +354,8 @@
          * Setter of $_container_extra_classes.
          *
          * @param array $_container_extra_classes Extra Classes for the container
+         *
+         * @return $this
          */
         public function set_container_extra_classes($_container_extra_classes)
         {
@@ -351,6 +378,8 @@
          * Setter for $_validation.
          *
          * @param string $_validation validation pattern in string
+         *
+         * @return $this
          */
         public function set_validation($_validation)
         {
@@ -373,6 +402,8 @@
          * Setter for $_dependency.
          *
          * @param string $_dependency dependency pattern in string
+         *
+         * @return $this
          */
         public function set_dependency($_dependency)
         {
@@ -395,6 +426,8 @@
          * Set $_binding.
          *
          * @param string $_binding bind rule string
+         *
+         * @return $this
          */
         public function set_binding($_binding)
         {
@@ -417,6 +450,8 @@
          * Setter for $_label.
          *
          * @param string $_label label of the field
+         *
+         * @return $this
          */
         public function set_label($_label)
         {
@@ -439,6 +474,8 @@
          * Setter for $_description.
          *
          * @param string $_description description of the field
+         *
+         * @return $this
          */
         public function set_description($_description)
         {
@@ -456,11 +493,11 @@
          */
         protected function _basic_make($arr)
         {
-            $this->set_name(isset($arr['name']) ? $arr['name'] : '')
-                 ->set_label(isset($arr['label']) ? $arr['label'] : '')
-                 ->set_default(isset($arr['default']) ? $arr['default'] : null)
-                 ->set_description(isset($arr['description']) ? $arr['description'] : '')
-                 ->set_validation(isset($arr['validation']) ? $arr['validation'] : '');
+            $this->set_name($arr['name'] ?? '')
+                 ->set_label($arr['label'] ?? '')
+                 ->set_default($arr['default'] ?? null)
+                 ->set_description($arr['description'] ?? '')
+                 ->set_validation($arr['validation'] ?? '');
             if (isset($arr['dependency'])) {
                 $func = $arr['dependency']['function'];
                 $field = $arr['dependency']['field'];

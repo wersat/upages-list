@@ -11,7 +11,7 @@
          * Scripts.
          */
         'scripts' => [
-            'always' => ['jquery', 'scrollspy', 'tipsy', 'jquery-typing','datetimepicker'],
+            'always' => ['jquery', 'scrollspy', 'tipsy', 'jquery-typing', 'datetimepicker'],
             'paths' => [
                 'jquery' => [
                     'path' => '',
@@ -168,7 +168,7 @@
          * Styles.
          */
         'styles' => [
-            'always' => ['tipsy', 'font-awesome','vp-datetimepicker'],
+            'always' => ['tipsy', 'font-awesome', 'vp-datetimepicker'],
             'paths' => [
                 'bootstrap-colorpicker' => [
                     'path' => VP_PUBLIC_URL.'/css/vendor/bootstrap-colorpicker.css',

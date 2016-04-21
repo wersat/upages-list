@@ -1,7 +1,7 @@
 <?php
 
     /**
-     * Class VP_Option_Control_Set
+     * Class VP_Option_Control_Set.
      */
     class VP_Option_Control_Set
     {
@@ -24,120 +24,38 @@
             $this->_menus = [];
         }
 
-        public function render()
+        public function setup($options)
         {
-            // Setup data
-            $data = ['set' => $this];
-
-            return VP_View::instance()
-                          ->load('option/set', $data);
+            // populate option to fields' values
+            $this->populate_values($options);
+            // process binding
+            $this->process_binding();
+            // process dependencies
+            $this->process_dependencies();
         }
 
-        /**
-         * Get Option Set Title.
-         *
-         * @return string Option set title
-         */
-        public function get_title()
-        {
-            return $this->_title;
-        }
-
-        /**
-         * Set Option Set title.
-         *
-         * @param string $_title Option set title
-         */
-        public function set_title($_title)
-        {
-            $this->_title = $_title;
-
-            return $this;
-        }
-
-        /**
-         * Set _layout.
-         *
-         * @return string _layout
-         */
-        public function get_layout()
-        {
-            return $this->_layout;
-        }
-
-        /**
-         * Get _layout.
-         *
-         * @param string $_layout _layout
-         */
-        public function set_layout($_layout)
-        {
-            $this->_layout = $_layout;
-
-            return $this;
-        }
-
-        /**
-         * Get logo.
-         *
-         * @return string Logo URL
-         */
-        public function get_logo()
-        {
-            return $this->_logo;
-        }
-
-        /**
-         * Set logo.
-         *
-         * @param string $_logo Logo URL
-         */
-        public function set_logo($_logo)
-        {
-            $this->_logo = $_logo;
-
-            return $this;
-        }
-
-        public function add_menu($menu)
-        {
-            $this->_menus[] = $menu;
-        }
-
-        /**
-         * Getter of $_menus.
-         *
-         * @return array Collection of menus object
-         */
-        public function get_menus()
-        {
-            return $this->_menus;
-        }
-
-        /**
-         * Setter of $_menus.
-         *
-         * @param array $_menus Collection of menus object
-         */
-        public function set_menus($_menus)
-        {
-            $this->_menus = $_menus;
-
-            return $this;
-        }
-
-        public function get_field_types()
+        public function populate_values($opt, $force_update = false)
         {
             $fields = $this->get_fields();
-            $types = [];
             foreach ($fields as $field) {
-                $type = VP_Util_Reflection::field_type_from_class(get_class($field));
-                if (!in_array($type, $types)) {
-                    $types[] = $type;
+                $is_multi = VP_Util_Reflection::is_multiselectable($field);
+                if (array_key_exists($field->get_name(), $opt)) {
+                    if ($is_multi and is_array($opt[$field->get_name()])) {
+                        $field->set_value($opt[$field->get_name()]);
+                    }
+                    if (!$is_multi and !is_array($opt[$field->get_name()])) {
+                        $field->set_value($opt[$field->get_name()]);
+                    }
+                } else {
+                    if ($force_update) {
+                        if ($is_multi) {
+                            $field->set_value([]);
+                        } else {
+                            $field->set_value('');
+                        }
+                    }
                 }
             }
-
-            return $types;
         }
 
         public function get_fields($include_section = false)
@@ -146,17 +64,18 @@
                 /**
                  * @param $menu
                  * @param $include_section
+                 *
                  * @return array
                  */
                 function loop_controls($menu, $include_section)
                 {
                     $fields = [];
-                    foreach ($menu->get_controls() as $control) {
+                    foreach ((array) $menu->get_controls() as $control) {
                         if (get_class($control) === 'VP_Option_Control_Group_Section') {
                             if ($include_section) {
                                 $fields[$control->get_name()] = $control;
                             }
-                            foreach ($control->get_fields() as $field) {
+                            foreach ((array) $control->get_fields() as $field) {
                                 if (VP_Util_Reflection::field_type_from_class(get_class($field)) != 'impexp') {
                                     $fields[$field->get_name()] = $field;
                                 }
@@ -184,6 +103,206 @@
             }
 
             return $fields;
+        }
+
+        public function process_binding()
+        {
+            $fields = $this->get_fields();
+            foreach ($fields as $field) {
+                $bind = $field->get_binding();
+                $val = $field->get_value();
+                if (!empty($bind) and null === $val) {
+                    $bind = explode('|', $bind);
+                    $func = $bind[0];
+                    $params = $bind[1];
+                    $params = preg_split('/[\s,]+/', $params);
+                    $values = [];
+                    foreach ((array) $params as $param) {
+                        if (array_key_exists($param, $fields)) {
+                            $values[] = $fields[$param]->get_value();
+                        }
+                    }
+                    $result = call_user_func_array($func, $values);
+                    if (VP_Util_Reflection::is_multiselectable($field)) {
+                        $result = (array) $result;
+                    } else {
+                        if (is_array($result)) {
+                            $result = reset($result);
+                        }
+                        $result = (String) $result;
+                    }
+                    $field->set_value($result);
+                }
+                if ($field instanceof VP_Control_FieldMulti) {
+                    $bind = $field->get_items_binding();
+                    if (!empty($bind)) {
+                        $bind = explode('|', $bind);
+                        $func = $bind[0];
+                        $params = $bind[1];
+                        $params = preg_split('/[\s,]+/', $params);
+                        $values = [];
+                        foreach ((array) $params as $param) {
+                            if (array_key_exists($param, $fields)) {
+                                $values[] = $fields[$param]->get_value();
+                            }
+                        }
+                        $items = call_user_func_array($func, $values);
+                        if (is_array($items) && !empty($items)) {
+                            $field->set_items([]);
+                            $field->add_items_from_array($items);
+                        }
+                    }
+                }
+            }
+        }
+
+        public function process_dependencies()
+        {
+            $fields = $this->get_fields(true);
+            foreach ($fields as $field) {
+                $dependency = $field->get_dependency();
+                if (!empty($dependency)) {
+                    $dependency = explode('|', $dependency);
+                    $func = $dependency[0];
+                    $params = $dependency[1];
+                    $params = preg_split('/[\s,]+/', $params);
+                    $values = [];
+                    foreach ((array) $params as $param) {
+                        if (array_key_exists($param, $fields)) {
+                            $values[] = $fields[$param]->get_value();
+                        }
+                    }
+                    $result = call_user_func_array($func, $values);
+                    if (!$result) {
+                        $field->add_container_extra_classes('vp-dep-inactive');
+                        $field->is_hidden(true);
+                    }
+                }
+            }
+        }
+
+        public function render()
+        {
+            // Setup data
+            $data = ['set' => $this];
+
+            return VP_View::instance()
+                          ->load('option/set', $data);
+        }
+
+        /**
+         * Get Option Set Title.
+         *
+         * @return string Option set title
+         */
+        public function get_title()
+        {
+            return $this->_title;
+        }
+
+        /**
+         * Set Option Set title.
+         *
+         * @param string $_title Option set title
+         *
+         * @return $this
+         */
+        public function set_title($_title)
+        {
+            $this->_title = $_title;
+
+            return $this;
+        }
+
+        /**
+         * Set _layout.
+         *
+         * @return string _layout
+         */
+        public function get_layout()
+        {
+            return $this->_layout;
+        }
+
+        /**
+         * Get _layout.
+         *
+         * @param string $_layout _layout
+         *
+         * @return $this
+         */
+        public function set_layout($_layout)
+        {
+            $this->_layout = $_layout;
+
+            return $this;
+        }
+
+        /**
+         * Get logo.
+         *
+         * @return string Logo URL
+         */
+        public function get_logo()
+        {
+            return $this->_logo;
+        }
+
+        /**
+         * Set logo.
+         *
+         * @param string $_logo Logo URL
+         *
+         * @return $this
+         */
+        public function set_logo($_logo)
+        {
+            $this->_logo = $_logo;
+
+            return $this;
+        }
+
+        public function add_menu($menu)
+        {
+            $this->_menus[] = $menu;
+        }
+
+        /**
+         * Getter of $_menus.
+         *
+         * @return array Collection of menus object
+         */
+        public function get_menus()
+        {
+            return $this->_menus;
+        }
+
+        /**
+         * Setter of $_menus.
+         *
+         * @param array $_menus Collection of menus object
+         *
+         * @return $this
+         */
+        public function set_menus($_menus)
+        {
+            $this->_menus = $_menus;
+
+            return $this;
+        }
+
+        public function get_field_types()
+        {
+            $fields = $this->get_fields();
+            $types = [];
+            foreach ($fields as $field) {
+                $type = VP_Util_Reflection::field_type_from_class(get_class($field));
+                if (!in_array($type, $types)) {
+                    $types[] = $type;
+                }
+            }
+
+            return $types;
         }
 
         public function get_field($name)
@@ -223,116 +342,6 @@
             }
 
             return $defaults;
-        }
-
-        public function setup($options)
-        {
-            // populate option to fields' values
-            $this->populate_values($options);
-            // process binding
-            $this->process_binding();
-            // process dependencies
-            $this->process_dependencies();
-        }
-
-        public function populate_values($opt, $force_update = false)
-        {
-            $fields = $this->get_fields();
-            foreach ($fields as $field) {
-                $is_multi = VP_Util_Reflection::is_multiselectable($field);
-                if (array_key_exists($field->get_name(), $opt)) {
-                    if ($is_multi and is_array($opt[$field->get_name()])) {
-                        $field->set_value($opt[$field->get_name()]);
-                    }
-                    if (!$is_multi and !is_array($opt[$field->get_name()])) {
-                        $field->set_value($opt[$field->get_name()]);
-                    }
-                } else {
-                    if ($force_update) {
-                        if ($is_multi) {
-                            $field->set_value([]);
-                        } else {
-                            $field->set_value('');
-                        }
-                    }
-                }
-            }
-        }
-
-        public function process_binding()
-        {
-            $fields = $this->get_fields();
-            foreach ($fields as $field) {
-                $bind = $field->get_binding();
-                $val = $field->get_value();
-                if (!empty($bind) and is_null($val)) {
-                    $bind = explode('|', $bind);
-                    $func = $bind[0];
-                    $params = $bind[1];
-                    $params = preg_split('/[\s,]+/', $params);
-                    $values = [];
-                    foreach ($params as $param) {
-                        if (array_key_exists($param, $fields)) {
-                            $values[] = $fields[$param]->get_value();
-                        }
-                    }
-                    $result = call_user_func_array($func, $values);
-                    if (VP_Util_Reflection::is_multiselectable($field)) {
-                        $result = (array) $result;
-                    } else {
-                        if (is_array($result)) {
-                            $result = reset($result);
-                        }
-                        $result = (String) $result;
-                    }
-                    $field->set_value($result);
-                }
-                if ($field instanceof VP_Control_FieldMulti) {
-                    $bind = $field->get_items_binding();
-                    if (!empty($bind)) {
-                        $bind = explode('|', $bind);
-                        $func = $bind[0];
-                        $params = $bind[1];
-                        $params = preg_split('/[\s,]+/', $params);
-                        $values = [];
-                        foreach ($params as $param) {
-                            if (array_key_exists($param, $fields)) {
-                                $values[] = $fields[$param]->get_value();
-                            }
-                        }
-                        $items = call_user_func_array($func, $values);
-                        if (is_array($items) && !empty($items)) {
-                            $field->set_items([]);
-                            $field->add_items_from_array($items);
-                        }
-                    }
-                }
-            }
-        }
-
-        public function process_dependencies()
-        {
-            $fields = $this->get_fields(true);
-            foreach ($fields as $field) {
-                $dependency = $field->get_dependency();
-                if (!empty($dependency)) {
-                    $dependency = explode('|', $dependency);
-                    $func = $dependency[0];
-                    $params = $dependency[1];
-                    $params = preg_split('/[\s,]+/', $params);
-                    $values = [];
-                    foreach ($params as $param) {
-                        if (array_key_exists($param, $fields)) {
-                            $values[] = $fields[$param]->get_value();
-                        }
-                    }
-                    $result = call_user_func_array($func, $values);
-                    if (!$result) {
-                        $field->add_container_extra_classes('vp-dep-inactive');
-                        $field->is_hidden(true);
-                    }
-                }
-            }
         }
 
         public function save($option_key)

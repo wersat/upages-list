@@ -1,16 +1,31 @@
 <?php
 
+    /**
+     * Class VP_Util_Array.
+     */
     class VP_Util_Array
     {
+        /**
+         * @param $array
+         *
+         * @return mixed|void
+         */
         public static function first($array)
         {
-            if (!empty($array) and !is_null($array)) {
-                return reset($array);
+            $first = '';
+            if (!empty($array) and !null === $array) {
+                $first = reset($array);
             }
 
-            return;
+            return $first;
         }
 
+        /**
+         * @param $array
+         * @param $the_key
+         *
+         * @return array
+         */
         public static function deep_values($array, $the_key)
         {
             $result = [];
@@ -63,6 +78,12 @@
             return $result;
         }
 
+        /**
+         * @param $paArray1
+         * @param $paArray2
+         *
+         * @return array
+         */
         public static function array_merge_recursive_all($paArray1, $paArray2)
         {
             if (!is_array($paArray1) or !is_array($paArray2)) {
@@ -75,6 +96,12 @@
             return $paArray1;
         }
 
+        /**
+         * @param $array
+         * @param $array1
+         *
+         * @return array
+         */
         public static function array_replace_recursive($array, $array1)
         {
             if (!function_exists('array_replace_recursive')) {
@@ -102,7 +129,8 @@
                 if (!is_array($array)) {
                     return $array;
                 }
-                for ($i = 1; $i < count($args); ++$i) {
+                $args_count = count($args);
+                for ($i = 1; $i < $args_count; ++$i) {
                     if (is_array($args[$i])) {
                         $array = recurse($array, $args[$i]);
                     }

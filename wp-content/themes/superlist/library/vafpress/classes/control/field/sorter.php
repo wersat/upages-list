@@ -1,5 +1,8 @@
 <?php
 
+    /**
+     * Class VP_Control_Field_Sorter
+     */
     class VP_Control_Field_Sorter extends VP_Control_FieldMulti implements VP_MultiSelectable
     {
         private $_max_selection;
@@ -12,12 +15,8 @@
 
         public static function withArray($arr = [], $class_name = null)
         {
-            if (is_null($class_name)) {
-                $instance = new self();
-            } else {
-                $instance = new $class_name();
-            }
-            $instance->set_max_selection(isset($arr['max_selection']) ? $arr['max_selection'] : false);
+            $instance = null === $class_name ? new self() : new $class_name();
+            $instance->set_max_selection($arr['max_selection'] ?? false);
             $instance->_basic_make($arr);
 
             return $instance;
@@ -26,7 +25,7 @@
         protected function _setup_data()
         {
             $opt = [
-                'maximumSelectionSize' => $this->get_max_selection(),
+                'maximumSelectionSize' => $this->get_max_selection()
             ];
             $this->add_data('opt', VP_Util_Text::make_opt($opt));
             $this->add_data('opt_raw', $opt);

@@ -1,5 +1,5 @@
-<?php if ( ! $is_compact) {
-  echo VP_View::instance()
+<?php if (!$is_compact) {
+    echo VP_View::instance()
               ->load('control/template_control_head', $head_info);
 } ?>
 <select multiple
@@ -9,7 +9,7 @@
   <?php
     $labels = [];
     foreach ($items as $item) {
-      $labels[$item->value] = $item->label;
+        $labels[$item->value] = $item->label;
     }
   ?>
 
@@ -22,7 +22,7 @@
     <option value="<?php echo $i; ?>"><?php echo $label; ?></option>
   <?php endforeach; ?>
 </select>
-<?php if ( ! $is_compact) {
-  echo VP_View::instance()
+<?php if (!$is_compact) {
+    echo VP_View::instance()
               ->load('control/template_control_foot');
 } ?>

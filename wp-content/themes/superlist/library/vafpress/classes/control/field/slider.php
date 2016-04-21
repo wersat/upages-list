@@ -1,5 +1,8 @@
 <?php
 
+    /**
+     * Class VP_Control_Field_Slider
+     */
     class VP_Control_Field_Slider extends VP_Control_Field
     {
         private $_min;
@@ -15,14 +18,10 @@
 
         public static function withArray($arr = [], $class_name = null)
         {
-            if (is_null($class_name)) {
-                $instance = new self();
-            } else {
-                $instance = new $class_name();
-            }
-            $instance->set_min(isset($arr['min']) ? $arr['min'] : 0);
-            $instance->set_max(isset($arr['max']) ? $arr['max'] : 100);
-            $instance->set_step(isset($arr['step']) ? $arr['step'] : 1);
+            $instance = null === $class_name ? new self() : new $class_name();
+            $instance->set_min($arr['min'] ?? 0);
+            $instance->set_max($arr['max'] ?? 100);
+            $instance->set_step($arr['step'] ?? 1);
             $instance->_basic_make($arr);
 
             return $instance;
@@ -31,10 +30,10 @@
         protected function _setup_data()
         {
             $opt = [
-                'min' => $this->get_min(),
-                'max' => $this->get_max(),
-                'step' => $this->get_step(),
-                'value' => $this->get_value(),
+                'min'   => $this->get_min(),
+                'max'   => $this->get_max(),
+                'step'  => $this->get_step(),
+                'value' => $this->get_value()
             ];
             $this->add_data('opt', VP_Util_Text::make_opt($opt));
             $this->add_data('opt_raw', $opt);
@@ -61,12 +60,9 @@
 
         protected function validate_value($_value)
         {
-            $out_range = (floatval($_value) < $this->get_min()) || (floatval($_value) > $this->get_max());
-            if (is_null($_value) || $out_range) {
-                return $this->get_min();
-            } else {
-                return $_value;
-            }
+            $out_range = ((float)$_value < $this->get_min()) || ((float)$_value > $this->get_max());
+
+            return null === $_value || $out_range ? $this->get_min() : $_value;
         }
 
         public function set_value($_value)
@@ -77,7 +73,6 @@
 
         /**
          * Get the min value.
-         *
          * @return int Minimum value of slider
          */
         public function get_min()
@@ -89,6 +84,8 @@
          * Set the min value.
          *
          * @param int $_min Minimum value of slider
+         *
+         * @return $this
          */
         public function set_min($_min)
         {
@@ -99,7 +96,6 @@
 
         /**
          * Get the max value.
-         *
          * @return int Maximum value of slider
          */
         public function get_max()
@@ -111,6 +107,8 @@
          * Set the max value.
          *
          * @param int $_max Maximum value of slider
+         *
+         * @return $this
          */
         public function set_max($_max)
         {
@@ -121,7 +119,6 @@
 
         /**
          * Get the step value.
-         *
          * @return int Step value of slider
          */
         public function get_step()
@@ -133,6 +130,8 @@
          * Set the step value.
          *
          * @param int $_step Step value of slider
+         *
+         * @return $this
          */
         public function set_step($_step)
         {

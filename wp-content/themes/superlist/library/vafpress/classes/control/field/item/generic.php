@@ -6,20 +6,20 @@
     class VP_Control_Field_Item_Generic
     {
         /**
-         * @type
+         * @var
          */
         public $img;
 
         /**
-         * @type
+         * @var
          */
         public $value;
 
         /**
-         * @type
+         * @var
          */
         public $label;
-        
+
         /**
          * VP_Control_Field_Item_Generic constructor.
          */

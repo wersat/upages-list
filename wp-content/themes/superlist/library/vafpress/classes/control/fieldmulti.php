@@ -5,21 +5,36 @@
      */
     abstract class VP_Control_FieldMulti extends VP_Control_Field
     {
+        /**
+         * @var array
+         */
         protected $_items = [];
 
+        /**
+         * @var
+         */
         protected $_items_binding;
 
+        /**
+         * @var
+         */
         protected $_raw_default;
 
+        /**
+         * @param $items
+         */
         public function add_items($items)
         {
             $this->_items = array_merge($this->_items, $items);
         }
 
+        /**
+         * @param $_items
+         */
         public function add_items_from_array($_items)
         {
             if (is_array($_items)) {
-                foreach ($_items as $item) {
+                foreach ((array) $_items as $item) {
                     $the_item = new VP_Control_Field_Item_Generic();
                     $the_item->value($item['value'])
                              ->label($item['label']);
@@ -29,9 +44,7 @@
         }
 
         /**
-         * Add single item.
-         *
-         * @param VP_Control_Field_Item_ $opt Single item item
+         * @param $opt
          */
         public function add_item($opt)
         {
@@ -88,11 +101,14 @@
             return $this;
         }
 
+        /**
+         *
+         */
         public function _process_default()
         {
             $defaults = [];
             $items = $this->get_items();
-            foreach ($this->_raw_default as $def) {
+            foreach ((array) $this->_raw_default as $def) {
                 switch ($def) {
                     case '{{all}}':
                         if (VP_Util_Reflection::is_multiselectable($this)) {
@@ -101,13 +117,13 @@
                         break;
                     case '{{first}}':
                         $first = VP_Util_Array::first($items);
-                        if (!is_null($first)) {
+                        if (!null === $first) {
                             $defaults[] = $first->value;
                         }
                         break;
                     case '{{last}}':
                         $last = end($items);
-                        if (!is_null($last)) {
+                        if (!null === $last) {
                             $defaults[] = $last->value;
                         }
                         break;
@@ -136,6 +152,8 @@
          * Setter for $_items.
          *
          * @param array $_items array of items
+         *
+         * @return $this
          */
         public function set_items($_items)
         {
@@ -148,6 +166,8 @@
          * Setter for $_default.
          *
          * @param mixed $_default default value of the field
+         *
+         * @return $this
          */
         public function set_default($_default)
         {
@@ -159,6 +179,9 @@
             return $this;
         }
 
+        /**
+         *
+         */
         protected function _setup_data()
         {
             parent::_setup_data();
@@ -180,6 +203,8 @@
          * Set $_items_binding.
          *
          * @param string $_items_binding bind rule string
+         *
+         * @return $this
          */
         public function set_items_binding($_items_binding)
         {

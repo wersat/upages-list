@@ -1,7 +1,16 @@
 <?php
 
+    /**
+     * Class VP_Option_Parser
+     */
     class VP_Option_Parser
     {
+        /**
+         * @param $arr
+         * @param $auto_group_naming
+         *
+         * @return \VP_Option_Control_Set
+         */
         public function parse_array_options($arr, $auto_group_naming)
         {
             $set = new VP_Option_Control_Set();
@@ -11,8 +20,8 @@
             if (empty($arr['logo'])) {
                 $arr['logo'] = 'vp-logo.png';
             }
-            $set->set_title(isset($arr['title']) ? $arr['title'] : '')
-                ->set_logo(isset($arr['logo']) ? $arr['logo'] : '');
+            $set->set_title($arr['title'] ?? '')
+                ->set_logo($arr['logo'] ?? '');
             $auto_menu_index = 0;
             $auto_menu = 'the_menu_';
             // Loops trough all the menus
@@ -28,8 +37,8 @@
                             ++$auto_menu_index;
                         }
                     }
-                    $vp_menu->set_title(isset($menu['title']) ? $menu['title'] : '')
-                            ->set_icon(isset($menu['icon']) ? $menu['icon'] : '');
+                    $vp_menu->set_title($menu['title'] ?? '')
+                            ->set_icon($menu['icon'] ?? '');
                     $set->add_menu($vp_menu);
                     // Loops through every submenu in each menu
                     if (!empty($menu['menus']) and is_array($menu['menus'])) {
@@ -43,8 +52,8 @@
                                     ++$auto_menu_index;
                                 }
                             }
-                            $vp_submenu->set_title(isset($submenu['title']) ? $submenu['title'] : '')
-                                       ->set_icon(isset($submenu['icon']) ? $submenu['icon'] : '');
+                            $vp_submenu->set_title($submenu['title'] ?? '')
+                                       ->set_icon($submenu['icon'] ?? '');
                             $vp_menu->add_menu($vp_submenu);
                             // Loops through every control in each submenu
                             if (!empty($submenu['controls'])) {
@@ -77,12 +86,16 @@
             return $set;
         }
 
-        private function parse_section($section)
+        /**
+         * @param $section
+         *
+         * @return \VP_Option_Control_Group_Section
+         */private function parse_section($section)
         {
             $vp_sec = new VP_Option_Control_Group_Section();
-            $vp_sec->set_name(isset($section['name']) ? $section['name'] : '')
-                   ->set_title(isset($section['title']) ? $section['title'] : '')
-                   ->set_description(isset($section['description']) ? $section['description'] : '');
+            $vp_sec->set_name($section['name'] ?? '')
+                   ->set_title($section['title'] ?? '')
+                   ->set_description($section['description'] ?? '');
             if (isset($section['dependency'])) {
                 $func = $section['dependency']['function'];
                 $field = $section['dependency']['field'];
@@ -99,12 +112,15 @@
             return $vp_sec;
         }
 
-        private function parse_field($field)
+        /**
+         * @param $field
+         *
+         * @return mixed
+         */private function parse_field($field)
         {
             $class = VP_Util_Reflection::field_class_from_type($field['type']);
-            $vp_field = call_user_func("$class::withArray", $field);
 
-            return $vp_field;
+            return call_user_func("$class::withArray", $field);
         }
     }
 

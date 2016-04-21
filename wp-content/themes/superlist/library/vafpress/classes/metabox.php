@@ -12,12 +12,26 @@
                                   ->resolve_path('includes', 'wpalchemy/MetaBox');
     }
 
+    /**
+     * Class VP_Metabox
+     */
     class VP_Metabox extends WPAlchemy_MetaBox
     {
+        /**
+         * @type array
+         */
         public static $pool = [];
 
+        /**
+         * @type bool
+         */
         public $is_dev_mode = false;
 
+        /**
+         * VP_Metabox constructor.
+         *
+         * @param $arr
+         */
         public function __construct($arr)
         {
             if ( ! is_array($arr) and file_exists($arr)) {
@@ -38,12 +52,18 @@
             self::$pool[$this->id] = $this;
         }
 
+        /**
+         *
+         */
         public function register_fields()
         {
             $loader = VP_WP_Loader::instance();
             $loader->add_types($this->get_field_types(), 'metabox');
         }
 
+        /**
+         * @return array
+         */
         public function get_field_types()
         {
             $types = [];
@@ -68,11 +88,17 @@
             return $types;
         }
 
+        /**
+         * @return array
+         */
         public static function get_pool()
         {
             return self::$pool;
         }
 
+        /**
+         * @return bool
+         */
         public static function pool_can_output()
         {
             foreach (self::$pool as $mb) {
@@ -84,6 +110,9 @@
             return false;
         }
 
+        /**
+         * @return bool
+         */
         public static function pool_supports_editor()
         {
             foreach (self::$pool as $mb) {
@@ -95,28 +124,33 @@
             return false;
         }
 
+        /**
+         * @return bool
+         */
         public function supports_editor()
         {
             $post_type  = self::_get_current_post_type();
-            $has_editor = post_type_supports($post_type, 'editor');
 
-            return $has_editor;
+            return post_type_supports($post_type, 'editor');
         }
 
         // return all field types
+        /**
+         * @param $post_id
+         */
         public function _save($post_id)
         {
             // skip saving if dev mode is on
             if ($this->is_dev_mode) {
                 return;
             }
-            $real_post_id = isset($_POST['post_ID']) ? $_POST['post_ID'] : null;
+            $real_post_id = $_POST['post_ID'] ?? null;
             // check autosave
             if (defined('DOING_AUTOSAVE') and DOING_AUTOSAVE and ! $this->autosave) {
                 return $post_id;
             }
             // make sure data came from our meta box, verify nonce
-            $nonce = isset($_POST[$this->id . '_nonce']) ? $_POST[$this->id . '_nonce'] : null;
+            $nonce = $_POST[$this->id . '_nonce'] ?? null;
             if ( ! wp_verify_nonce($nonce, $this->id)) {
                 return $post_id;
             }
@@ -131,7 +165,7 @@
                 }
             }
             // authentication passed, save data
-            $new_data = isset($_POST[$this->id]) ? $_POST[$this->id] : null;
+            $new_data = $_POST[$this->id] ?? null;
             // clean to copy and reset array indexes
             $this->_clean_tocopy($new_data);
             if (empty($new_data)) {
@@ -154,11 +188,11 @@
             if ($this->mode == WPALCHEMY_MODE_EXTRACT) {
                 $new_fields = [];
                 if (is_array($new_data)) {
-                    foreach ($new_data as $k => $v) {
-                        $field = $this->prefix . $k;
-                        array_push($new_fields, $field);
-                        $new_value = $new_data[$k];
-                        if (is_null($new_value)) {
+                    foreach ((array)$new_data as $k => $v) {
+                        $field        = $this->prefix . $k;
+                        $new_fields[] = $field;
+                        $new_value    = $new_data[$k];
+                        if (null === $new_value) {
                             delete_post_meta($post_id, $field);
                         } else {
                             update_post_meta($post_id, $field, $new_value);
@@ -178,14 +212,14 @@
                 // keep data tidy, delete values if previously using WPALCHEMY_MODE_ARRAY
                 delete_post_meta($post_id, $this->id);
             } else {
-                if (is_null($new_data)) {
+                if (null === $new_data) {
                     delete_post_meta($post_id, $this->id);
                 } else {
                     update_post_meta($post_id, $this->id, $new_data);
                 }
                 // keep data tidy, delete values if previously using WPALCHEMY_MODE_EXTRACT
                 if (is_array($current_fields)) {
-                    foreach ($current_fields as $field) {
+                    foreach ((array)$current_fields as $field) {
                         delete_post_meta($post_id, $field);
                     }
                     delete_post_meta($post_id, $this->id . '_fields');
@@ -199,10 +233,13 @@
             return $post_id;
         }
 
+        /**
+         * @param $arr
+         */
         private function _clean_tocopy(&$arr)
         {
             if (is_array($arr)) {
-                foreach ($arr as $key => $value) {
+                foreach ((array)$arr as $key => $value) {
                     if (is_array($value)) {
                         $this->_clean_tocopy($arr[$key]);
                         if (array_key_exists('tocopy', $value)) {
@@ -259,12 +296,17 @@
             $this->in_template = false;
         }
 
+        /**
+         * @param $arr
+         *
+         * @return array
+         */
         public function _enfactor($arr)
         {
             $mb            = &$this;
             $fields        = $arr;
             $field_objects = [];
-            foreach ($fields as $field) {
+            foreach ((array)$fields as $field) {
                 if ($field['type'] == 'group' and $field['repeating']) {
                     $field_objects[$field['name']] = $this->_enfactor_group($field, $mb, true);
                 } elseif ($field['type'] == 'group' and ! $field['repeating']) {
@@ -277,6 +319,13 @@
             return $field_objects;
         }
 
+        /**
+         * @param $field
+         * @param $mb
+         * @param $repeating
+         *
+         * @return mixed
+         */
         public function _enfactor_group($field, $mb, $repeating)
         {
             $ignore       = ['type', 'length', 'fields'];
@@ -288,7 +337,7 @@
                     if ($indexed_name === '') {
                         $indexed_name = $mb->get_the_loop_group_id();
                     }
-                    if (is_null($level)) {
+                    if (null === $level) {
                         $level = $mb->get_the_loop_level();
                     }
                     $fields = [];
@@ -301,16 +350,16 @@
                     }
                     $groups[] = [
                         'name'   => $mb->get_the_loop_group_name(true),
-                        'childs' => $fields,
+                        'childs' => $fields
                     ];
                 }
             } else {
-                $length = isset($field['length']) ? $field['length'] : 1;
+                $length = $field['length'] ?? 1;
                 while ($mb->have_fields($field['name'], $length)) {
                     if ($indexed_name === '') {
                         $indexed_name = $mb->get_the_loop_group_id();
                     }
-                    if (is_null($level)) {
+                    if (null === $level) {
                         $level = $mb->get_the_loop_level();
                     }
                     $fields = [];
@@ -323,7 +372,7 @@
                     }
                     $groups[] = [
                         'name'   => $mb->get_the_loop_group_name(true),
-                        'childs' => $fields,
+                        'childs' => $fields
                     ];
                 }
             }
@@ -346,6 +395,13 @@
             return $group;
         }
 
+        /**
+         * @param      $field
+         * @param      $mb
+         * @param bool $in_group
+         *
+         * @return mixed
+         */
         public function _enfactor_field($field, $mb, $in_group = false)
         {
             $is_multi = VP_Util_Reflection::is_multiselectable($field['type']);
@@ -367,14 +423,14 @@
                 $value = $default;
             } else {
                 // if value is null and default exist, use default
-                if (is_null($value) and ! is_null($default) and empty($this->meta)) {
+                if (null === $value and ! null === $default and empty($this->meta)) {
                     $value = $default;
                 } // if not then set up value from mb
                 else {
                     if (VP_Util_Reflection::is_multiselectable($field['type'])) {
-                        if ( ! is_array($value) and ! is_null($value)) {
+                        if ( ! is_array($value) and ! null === $value) {
                             $value = [$value];
-                        } elseif (is_null($value)) {
+                        } elseif (null === $value) {
                             $value = [];
                         }
                     }
@@ -388,9 +444,12 @@
             return $vp_field;
         }
 
+        /**
+         * @param $fields
+         */
         public function _enbind($fields)
         {
-            foreach ($fields as $name => $field) {
+            foreach ((array)$fields as $name => $field) {
                 if (is_array($field)) {
                     foreach ($field['groups'] as $group) {
                         $this->_enbind($group['childs']);
@@ -398,13 +457,13 @@
                 } else {
                     $bind = $field->get_binding();
                     $val  = $field->get_value();
-                    if ( ! empty($bind) and is_null($val)) {
+                    if ( ! empty($bind) and null === $val) {
                         $bind   = explode('|', $bind);
                         $func   = $bind[0];
                         $params = $bind[1];
                         $params = preg_split('/[\s,]+/', $params);
                         $values = [];
-                        foreach ($params as $param) {
+                        foreach ((array)$params as $param) {
                             if (array_key_exists($param, $fields)) {
                                 $values[] = $fields[$param]->get_value();
                             }
@@ -428,7 +487,7 @@
                             $params = $bind[1];
                             $params = preg_split('/[\s,]+/', $params);
                             $values = [];
-                            foreach ($params as $param) {
+                            foreach ((array)$params as $param) {
                                 if (array_key_exists($param, $fields)) {
                                     $values[] = $fields[$param]->get_value();
                                 }
@@ -441,6 +500,11 @@
             }
         }
 
+        /**
+         * @param $fields
+         *
+         * @return mixed
+         */
         public function _endep($fields)
         {
             if ( ! function_exists('loop_fields')) {
@@ -472,7 +536,7 @@
                         if ( ! empty($dependency)) {
                             $params = preg_split('/[\s,]+/', $params);
                             $values = [];
-                            foreach ($params as $param) {
+                            foreach ((array)$params as $param) {
                                 if (array_key_exists($param, $fields)) {
                                     $values[] = $fields[$param]->get_value();
                                 }
@@ -502,9 +566,12 @@
             return $fields;
         }
 
+        /**
+         * @param $fields
+         */
         public function _enview($fields)
         {
-            foreach ($fields as $name => $field) {
+            foreach ((array)$fields as $name => $field) {
                 if (is_array($field) and $field['repeating']) {
                     echo $this->_render_repeating_group($field);
                 } elseif (is_array($field) and ! $field['repeating']) {
@@ -515,6 +582,11 @@
             }
         }
 
+        /**
+         * @param $group
+         *
+         * @return string
+         */
         public function _render_repeating_group($group)
         {
             $name       = $group['name'];
@@ -525,7 +597,7 @@
             $html       = '';
             $html .= '<div id="wpa_loop-' . $uid . '" class="vp-wpa-loop level-' . $oddity . ' wpa_loop wpa_loop-' . $name . ' vp-repeating-loop vp-meta-group' . (isset($group['container_extra_classes'])
                     ? (' ' . implode(' ', $group['container_extra_classes']))
-                    : '') . '"' . VP_Util_Text::return_if_exists(isset($dependency) ? $dependency : '',
+                    : '') . '"' . VP_Util_Text::return_if_exists($dependency ?? '',
                     'data-vp-dependency="%s"') . '>';
             $icon = '';
             if (isset($group['sortable']) and $group['sortable']) {
@@ -572,6 +644,11 @@
             return $html;
         }
 
+        /**
+         * @param $group
+         *
+         * @return string
+         */
         public function _render_group($group)
         {
             $name       = $group['name'];
@@ -582,7 +659,7 @@
             $html       = '';
             $html .= '<div id="wpa_loop-' . $uid . '" class="vp-wpa-loop level-' . $oddity . ' wpa_loop wpa_loop-' . $name . ' vp-fixed-loop vp-meta-group' . (isset($group['container_extra_classes'])
                     ? (' ' . implode(' ', $group['container_extra_classes']))
-                    : '') . '"' . VP_Util_Text::return_if_exists(isset($dependency) ? $dependency : '',
+                    : '') . '"' . VP_Util_Text::return_if_exists($dependency ?? '',
                     'data-vp-dependency="%s"') . '>';
             $icon = '';
             if (isset($group['sortable']) and $group['sortable']) {
@@ -613,6 +690,11 @@
             return $html;
         }
 
+        /**
+         * @param $field
+         *
+         * @return mixed
+         */
         public function _render_field($field)
         {
             return $field->render();

@@ -36,15 +36,11 @@
          */
         public static function withArray($arr = [], $class_name = null)
         {
-            if (is_null($class_name)) {
-                $instance = new self();
-            } else {
-                $instance = new $class_name();
-            }
+            $instance = null === $class_name ? new self() : new $class_name();
             $instance->_basic_make($arr);
-            $instance->set_min_date(isset($arr['min_date']) ? $arr['min_date'] : '');
-            $instance->set_max_date(isset($arr['max_date']) ? $arr['max_date'] : '');
-            $instance->set_format(isset($arr['format']) ? $arr['format'] : 'yy-mm-dd');
+            $instance->set_min_date($arr['min_date'] ?? '');
+            $instance->set_max_date($arr['max_date'] ?? '');
+            $instance->set_format($arr['format'] ?? 'yy-mm-dd');
 
             return $instance;
         }
@@ -58,7 +54,7 @@
                 'minDate'    => $this->get_min_date(),
                 'maxDate'    => $this->get_max_date(),
                 'dateFormat' => $this->get_format(),
-                'value'      => $this->get_value(),
+                'value'      => $this->get_value()
             ];
             $this->add_data('opt', VP_Util_Text::make_opt($opt));
             parent::_setup_data();
@@ -93,6 +89,8 @@
          * Set Minimum Date.
          *
          * @param string $_min_date Minimum Date
+         *
+         * @return $this
          */
         public function set_min_date($_min_date)
         {
@@ -114,6 +112,8 @@
          * Set Maximum Date.
          *
          * @param string $_max_date Maximum Date
+         *
+         * @return $this
          */
         public function set_max_date($_max_date)
         {
@@ -135,6 +135,8 @@
          * Set Date Format.
          *
          * @param string $_format Date format
+         *
+         * @return $this
          */
         public function set_format($_format)
         {

@@ -1,5 +1,8 @@
 <?php
 
+    /**
+     * Class VP_Control_Field_Upload.
+     */
     class VP_Control_Field_Upload extends VP_Control_Field
     {
         public function __construct()
@@ -9,7 +12,7 @@
 
         public static function withArray($arr = [], $class_name = null)
         {
-            if (is_null($class_name)) {
+            if (null === $class_name) {
                 $instance = new self();
             } else {
                 $instance = new $class_name();

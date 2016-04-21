@@ -1,5 +1,8 @@
 <?php
 
+    /**
+     * Class VP_WP_Util.
+     */
     class VP_WP_Util
     {
         public static function kses_html($html)

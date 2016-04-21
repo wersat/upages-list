@@ -17,7 +17,7 @@
     function vp_get_users()
     {
         $wp_users = VP_WP_User::get_users();
-        $result   = [];
+        $result = [];
         foreach ($wp_users as $user) {
             $result[] = ['value' => $user['id'], 'label' => $user['display_name']];
         }
@@ -30,7 +30,7 @@
         $wp_posts = get_posts([
             'posts_per_page' => -1,
         ]);
-        $result   = [];
+        $result = [];
         foreach ($wp_posts as $post) {
             $result[] = ['value' => $post->ID, 'label' => $post->post_title];
         }
@@ -41,7 +41,7 @@
     function vp_get_pages()
     {
         $wp_pages = get_pages();
-        $result   = [];
+        $result = [];
         foreach ($wp_pages as $page) {
             $result[] = ['value' => $page->ID, 'label' => $page->post_title];
         }
@@ -52,7 +52,7 @@
     function vp_get_tags()
     {
         $wp_tags = get_tags(['hide_empty' => 0]);
-        $result  = [];
+        $result = [];
         foreach ($wp_tags as $tag) {
             $result[] = ['value' => $tag->term_id, 'label' => $tag->name];
         }
@@ -62,7 +62,7 @@
 
     function vp_get_roles()
     {
-        $result         = [];
+        $result = [];
         $editable_roles = VP_WP_User::get_editable_roles();
         foreach ($editable_roles as $key => $role) {
             $result[] = ['value' => $key, 'label' => $role['name']];
@@ -73,7 +73,7 @@
 
     function vp_get_gwf_family()
     {
-        $fonts = file_get_contents(dirname(__FILE__) . '/gwf.json');
+        $fonts = file_get_contents(dirname(__FILE__).'/gwf.json');
         $fonts = json_decode($fonts);
         $fonts = array_keys(get_object_vars($fonts));
         foreach ($fonts as $font) {
@@ -90,9 +90,9 @@
         if (empty($face)) {
             return [];
         }
-        $fonts = file_get_contents(dirname(__FILE__) . '/gwf.json');
+        $fonts = file_get_contents(dirname(__FILE__).'/gwf.json');
         $fonts = json_decode($fonts);
-        if ( ! property_exists($fonts, $face)) {
+        if (!property_exists($fonts, $face)) {
             return;
         }
         $weights = $fonts->{$face}->weights;
@@ -110,9 +110,9 @@
         if (empty($face)) {
             return [];
         }
-        $fonts = file_get_contents(dirname(__FILE__) . '/gwf.json');
+        $fonts = file_get_contents(dirname(__FILE__).'/gwf.json');
         $fonts = json_decode($fonts);
-        if ( ! property_exists($fonts, $face)) {
+        if (!property_exists($fonts, $face)) {
             return;
         }
         $styles = $fonts->{$face}->styles;
@@ -130,9 +130,9 @@
         if (empty($face)) {
             return [];
         }
-        $fonts = file_get_contents(dirname(__FILE__) . '/gwf.json');
+        $fonts = file_get_contents(dirname(__FILE__).'/gwf.json');
         $fonts = json_decode($fonts);
-        if ( ! property_exists($fonts, $face)) {
+        if (!property_exists($fonts, $face)) {
             return;
         }
         $subsets = $fonts->{$face}->subsets;
@@ -183,7 +183,7 @@
         // scrape list of icons from fontawesome css
         if (false === ($icons = get_transient('vp_fontawesome_icons'))) {
             $pattern = '/\.(fa-(?:\w+(?:-)?)+):before\s*{\s*content/';
-            $subject = file_get_contents(VP_DIR . '/public/css/vendor/font-awesome.min.css');
+            $subject = file_get_contents(VP_DIR.'/public/css/vendor/font-awesome.min.css');
             preg_match_all($pattern, $subject, $matches, PREG_SET_ORDER);
             $icons = [];
             foreach ($matches as $match) {
@@ -199,10 +199,10 @@
                ->whitelist_function('vp_dep_boolean');
     function vp_dep_boolean($value)
     {
-        $args   = func_get_args();
+        $args = func_get_args();
         $result = true;
         foreach ($args as $val) {
-            $result = ($result and ! empty($val));
+            $result = ($result and !empty($val));
         }
 
         return $result;

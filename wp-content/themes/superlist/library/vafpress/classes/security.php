@@ -1,9 +1,13 @@
 <?php
 
+    /**
+     * Class VP_Security.
+     */
     class VP_Security
     {
         /**
          * Singleton instance of the class.
+         *
          * @var VP_Security
          */
         private static $_instance;
@@ -12,7 +16,7 @@
 
         public static function instance()
         {
-            if (is_null(self::$_instance)) {
+            if (null === self::$_instance) {
                 self::$_instance = new self();
             }
 
@@ -21,7 +25,7 @@
 
         public function whitelist_function($name)
         {
-            if ( ! in_array($name, $this->_whitelist)) {
+            if (!in_array($name, $this->_whitelist)) {
                 $this->_whitelist[] = $name;
 
                 return $name;

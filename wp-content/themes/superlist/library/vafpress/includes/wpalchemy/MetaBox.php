@@ -1,17 +1,19 @@
 <?php
-    /**
-     * @author         Dimas Begunoff
-     * @copyright      Copyright (c) 2009, Dimas Begunoff, http://farinspace.com
-     * @license        http://en.wikipedia.org/wiki/MIT_License The MIT License
-     * @version        1.5.2
-     * @link           http://github.com/farinspace/wpalchemy
-     * @link           http://farinspace.com
-     */
-    /**
-     * This is modified version so that WPAlchemy supports nested repeatable group
-     * Vafpress (http://vafpress.com)
-     * 2013.
-     */
+/**
+ * @author         Dimas Begunoff
+ * @copyright      Copyright (c) 2009, Dimas Begunoff, http://farinspace.com
+ * @license        http://en.wikipedia.org/wiki/MIT_License The MIT License
+ *
+ * @version        1.5.2
+ *
+ * @link           http://github.com/farinspace/wpalchemy
+ * @link           http://farinspace.com
+ */
+/**
+ * This is modified version so that WPAlchemy supports nested repeatable group
+ * Vafpress (http://vafpress.com)
+ * 2013.
+ */
     // todo: perhaps move _global_head and _global_foot locally, when first run
     // define a constant to prevent other instances from running again ...
     add_action('admin_head', ['WPAlchemy_MetaBox', '_global_head']);
@@ -386,9 +388,9 @@
          */
         public $hint;
 
-        public $length      = 0;
-        public $current     = -1;
-        public $in_loop     = false;
+        public $length = 0;
+        public $current = -1;
+        public $in_loop = false;
         public $in_template = false;
         public $group_tag;
         public $current_post_id;
@@ -411,8 +413,8 @@
         public function __construct($arr)
         {
             $this->_loop_data = new stdClass();
-            $this->meta       = [];
-            $this->types      = ['post', 'page'];
+            $this->meta = [];
+            $this->types = ['post', 'page'];
             if (isset($arr) and is_array($arr)) {
                 foreach ($arr as $n => $v) {
                     $this->$n = $v;
@@ -465,6 +467,7 @@
          * Used to correct double serialized data during post/page export/import,
          * additionally will try to fix corrupted serialized data by recalculating
          * string length values.
+         *
          * @since     1.3.16
          */
         public function _import($post_id, $key, $value)
@@ -493,6 +496,7 @@
         /**
          * Used to initialize the meta box, runs on WordPress admin_init action,
          * properly calls internal WordPress methods.
+         *
          * @since     1.0
          */
         public function _init()
@@ -506,13 +510,13 @@
             }
             if ($this->can_output()) {
                 foreach ($this->types as $type) {
-                    add_meta_box($this->id . '_metabox', $this->title, [$this, '_setup'], $type, $this->context,
+                    add_meta_box($this->id.'_metabox', $this->title, [$this, '_setup'], $type, $this->context,
                         $this->priority);
                 }
                 add_action('save_post', [$this, '_save']);
                 $filters = ['save', 'head', 'foot'];
                 foreach ($filters as $filter) {
-                    $var = $filter . '_filter';
+                    $var = $filter.'_filter';
                     if (!empty($this->$var)) {
                         if ('save' == $filter) {
                             $this->add_filter($filter, $this->$var, 10, 2);
@@ -523,7 +527,7 @@
                 }
                 $actions = ['save', 'head', 'foot', 'init'];
                 foreach ($actions as $action) {
-                    $var = $action . '_action';
+                    $var = $action.'_action';
                     if (!empty($this->$var)) {
                         if ('save' == $action) {
                             $this->add_action($action, $this->$var, 10, 2);
@@ -543,9 +547,13 @@
 
         /**
          * Used to check if creating a new post or editing one.
+         *
          * @static
+         *
          * @since      1.3.7
+         *
          * @return bool
+         *
          * @see        _is_page()
          */
         public static function _is_post()
@@ -559,9 +567,13 @@
 
         /**
          * Used to check if creating or editing a post or page.
+         *
          * @static
+         *
          * @since      1.3.8
+         *
          * @return string "post" or "page"
+         *
          * @see        _is_post(), _is_page()
          */
         public static function _is_post_or_page()
@@ -581,8 +593,11 @@
         /**
          * Used to check for the current post type, works when creating or editing a
          * new post, page or custom post type.
+         *
          * @static
+         *
          * @since    1.4.6
+         *
          * @return string [custom_post_type], page or post
          */
         public static function _get_current_post_type()
@@ -590,9 +605,9 @@
             $uri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : null;
             if (isset($uri)) {
                 $uri_parts = parse_url($uri);
-                $file      = basename($uri_parts['path']);
+                $file = basename($uri_parts['path']);
                 if ($uri and in_array($file, ['post.php', 'post-new.php'])) {
-                    $post_id   = self::_get_post_id();
+                    $post_id = self::_get_post_id();
                     $post_type = isset($_GET['post_type']) ? $_GET['post_type'] : null;
                     $post_type = $post_id ? get_post_type($post_id) : $post_type;
                     if (isset($post_type)) {
@@ -609,8 +624,11 @@
 
         /**
          * Used to get the current post id.
+         *
          * @static
+         *
          * @since    1.4.8
+         *
          * @return int post ID
          */
         public static function _get_post_id()
@@ -618,10 +636,10 @@
             global $post;
             $p_post_id = isset($_POST['post_ID']) ? $_POST['post_ID'] : null;
             $g_post_id = isset($_GET['post']) ? $_GET['post'] : null;
-            $post_id   = $g_post_id ? $g_post_id : $p_post_id;
-            $post_id   = isset($post->ID) ? $post->ID : $post_id;
+            $post_id = $g_post_id ? $g_post_id : $p_post_id;
+            $post_id = isset($post->ID) ? $post->ID : $post_id;
             if (isset($post_id)) {
-                return (integer)$post_id;
+                return (integer) $post_id;
             }
 
             return;
@@ -629,9 +647,13 @@
 
         /**
          * Used to check if creating a new page or editing one.
+         *
          * @static
+         *
          * @since      1.3.7
+         *
          * @return bool
+         *
          * @see        _is_post()
          */
         public static function _is_page()
@@ -645,6 +667,7 @@
 
         /**
          * Uses WordPress add_filter() function, see WordPress add_filter().
+         *
          * @since     1.3
          * @link      http://core.trac.wordpress.org/browser/trunk/wp-includes/plugin.php#L65
          */
@@ -657,17 +680,20 @@
         /**
          * Used to properly prefix the filter tag, the tag is unique to the meta
          * box instance.
+         *
          * @since     1.3
+         *
          * @param string $tag name of the filter
+         *
          * @return string uniquely prefixed tag name
          */
         public function _get_filter_tag($tag)
         {
-            $prefix = 'wpalchemy_filter_' . $this->id . '_';
+            $prefix = 'wpalchemy_filter_'.$this->id.'_';
             $prefix = preg_replace('/_+/', '_', $prefix);
-            $tag    = preg_replace('/^' . $prefix . '/i', '', $tag);
+            $tag = preg_replace('/^'.$prefix.'/i', '', $tag);
 
-            return $prefix . $tag;
+            return $prefix.$tag;
         }
 
         /**
@@ -796,6 +822,7 @@
 
         /**
          * Uses WordPress has_filter() function, see WordPress has_filter().
+         *
          * @since     1.3
          * @link      http://core.trac.wordpress.org/browser/trunk/wp-includes/plugin.php#L86
          */
@@ -808,12 +835,13 @@
 
         /**
          * Uses WordPress apply_filters() function, see WordPress apply_filters().
+         *
          * @since     1.3
          * @link      http://core.trac.wordpress.org/browser/trunk/wp-includes/plugin.php#L134
          */
         public function apply_filters($tag, $value)
         {
-            $args    = func_get_args();
+            $args = func_get_args();
             $args[0] = $this->_get_filter_tag($tag);
 
             return call_user_func_array('apply_filters', $args);
@@ -821,6 +849,7 @@
 
         /**
          * Uses WordPress add_action() function, see WordPress add_action().
+         *
          * @since     1.3
          * @link      http://core.trac.wordpress.org/browser/trunk/wp-includes/plugin.php#L324
          */
@@ -833,21 +862,25 @@
         /**
          * Used to properly prefix the action tag, the tag is unique to the meta
          * box instance.
+         *
          * @since     1.3
+         *
          * @param string $tag name of the action
+         *
          * @return string uniquely prefixed tag name
          */
         public function _get_action_tag($tag)
         {
-            $prefix = 'wpalchemy_action_' . $this->id . '_';
+            $prefix = 'wpalchemy_action_'.$this->id.'_';
             $prefix = preg_replace('/_+/', '_', $prefix);
-            $tag    = preg_replace('/^' . $prefix . '/i', '', $tag);
+            $tag = preg_replace('/^'.$prefix.'/i', '', $tag);
 
-            return $prefix . $tag;
+            return $prefix.$tag;
         }
 
         /**
          * Uses WordPress has_action() function, see WordPress has_action().
+         *
          * @since     1.3
          * @link      http://core.trac.wordpress.org/browser/trunk/wp-includes/plugin.php#L492
          */
@@ -860,12 +893,13 @@
 
         /**
          * Uses WordPress do_action() function, see WordPress do_action().
+         *
          * @since     1.3
          * @link      http://core.trac.wordpress.org/browser/trunk/wp-includes/plugin.php#L352
          */
         public function do_action($tag, $arg = '')
         {
-            $args    = func_get_args();
+            $args = func_get_args();
             $args[0] = $this->_get_action_tag($tag);
 
             return call_user_func_array('do_action', $args);
@@ -874,6 +908,7 @@
         /**
          * Used to insert STYLE or SCRIPT tags into the head, called on WordPress
          * admin_head action.
+         *
          * @since      1.3
          * @see        _foot()
          */
@@ -915,6 +950,7 @@
         /**
          * Used to insert SCRIPT tags into the footer, called on WordPress
          * admin_footer action.
+         *
          * @since      1.3
          * @see        _head()
          */
@@ -930,7 +966,7 @@
                         function ($) { /* not using jQuery ondomready, code runs right away in footer */
 
                             var mb_id = '<?php echo $this->id;
-                                ?>';
+                ?>';
                             var mb = $('#' + mb_id + '_metabox');
 
                             <?php if (WPALCHEMY_LOCK_TOP == $this->lock): ?>
@@ -945,7 +981,7 @@
                                 $('<div></div>').attr('id', id).insertAfter('#postdiv, #postdivrich');
                             }
                             <?php endif;
-                            ?>
+                ?>
                             $('#' + id).append(mb);
                             <?php elseif (WPALCHEMY_LOCK_BOTTOM == $this->lock): ?>
                             <?php if ('side' == $this->context): ?>
@@ -963,7 +999,7 @@
                                 $('<div></div>').attr('id', id).insertAfter('#advanced-sortables');
                             }
                             <?php endif;
-                            ?>
+                ?>
                             $('#' + id).append(mb);
                             <?php elseif (WPALCHEMY_LOCK_BEFORE_POST_TITLE == $this->lock): ?>
                             <?php if ('side' != $this->context): ?>
@@ -973,7 +1009,7 @@
                             }
                             $('#' + id).append(mb);
                             <?php endif;
-                            ?>
+                ?>
                             <?php elseif (WPALCHEMY_LOCK_AFTER_POST_TITLE == $this->lock): ?>
                             <?php if ('side' != $this->context): ?>
                             var id = 'wpalchemy-content-apt';
@@ -982,15 +1018,15 @@
                             }
                             $('#' + id).append(mb);
                             <?php endif;
-                            ?>
+                ?>
                             <?php endif;
-                            ?>
+                ?>
 
                             <?php if (!empty($this->lock)): ?>
                             $('.hndle', mb).css('cursor', 'pointer');
                             $('.handlediv', mb).remove();
                             <?php endif;
-                            ?>
+                ?>
 
                             <?php if ($this->hide_title): ?>
                             $('.hndle', mb).remove();
@@ -998,7 +1034,7 @@
                             mb.removeClass('closed');
                             /* start opened */
                             <?php endif;
-                            ?>
+                ?>
 
                             <?php if (WPALCHEMY_VIEW_START_OPENED == $this->view): ?>
                             mb.removeClass('closed');
@@ -1013,12 +1049,12 @@
                             /* start opened */
                             $('.hndle', mb).css('cursor', 'auto');
                             <?php endif;
-                            ?>
+                ?>
 
                             <?php if ($this->hide_screen_option): ?>
                             $('.metabox-prefs label[for=' + mb_id + '_metabox-hide]').remove();
                             <?php endif;
-                            ?>
+                ?>
 
                             mb = null;
 
@@ -1042,6 +1078,7 @@
 
         /**
          * Used to setup the meta box content template.
+         *
          * @since      1.0
          * @see        _init()
          */
@@ -1051,14 +1088,14 @@
             // also make current post data available
             global $post;
             // shortcuts
-            $mb      = &$this;
+            $mb = &$this;
             $metabox = &$this;
-            $id      = $this->id;
-            $meta    = $this->_meta(null, true);
+            $id = $this->id;
+            $meta = $this->_meta(null, true);
             // use include because users may want to use one templete for multiple meta boxes
             include $this->template;
             // create a nonce for verification
-            echo '<input type="hidden" name="' . $this->id . '_nonce" value="' . wp_create_nonce($this->id) . '" />';
+            echo '<input type="hidden" name="'.$this->id.'_nonce" value="'.wp_create_nonce($this->id).'" />';
             $this->in_template = false;
         }
 
@@ -1066,10 +1103,14 @@
          * Gets the meta data for a meta box
          * Internal method calls will typically bypass the data retrieval and will
          * immediately return the current meta data.
+         *
          * @since      1.3
+         *
          * @param int  $post_id  optional post ID for which to retrieve the meta data
          * @param bool $internal optional boolean if internally calling
+         *
          * @return array
+         *
          * @see        the_meta()
          */
         public function _meta($post_id = null, $internal = false)
@@ -1090,11 +1131,11 @@
             // WPALCHEMY_MODE_ARRAY
             $meta = get_post_meta($post_id, $this->id, true);
             // WPALCHEMY_MODE_EXTRACT
-            $fields = get_post_meta($post_id, $this->id . '_fields', true);
+            $fields = get_post_meta($post_id, $this->id.'_fields', true);
             if (!empty($fields) and is_array($fields)) {
                 $meta = [];
                 foreach ($fields as $field) {
-                    $field_noprefix        = preg_replace('/^' . $this->prefix . '/i', '', $field);
+                    $field_noprefix = preg_replace('/^'.$this->prefix.'/i', '', $field);
                     $meta[$field_noprefix] = get_post_meta($post_id, $field, true);
                 }
             }
@@ -1105,6 +1146,7 @@
 
         /**
          * Uses WordPress remove_filter() function, see WordPress remove_filter().
+         *
          * @since     1.3
          * @link      http://core.trac.wordpress.org/browser/trunk/wp-includes/plugin.php#L250
          */
@@ -1117,6 +1159,7 @@
 
         /**
          * Uses WordPress remove_action() function, see WordPress remove_action().
+         *
          * @since     1.3
          * @link      http://core.trac.wordpress.org/browser/trunk/wp-includes/plugin.php#L513
          */
@@ -1130,7 +1173,9 @@
         /**
          * Used to insert global STYLE or SCRIPT tags into the head, called on
          * WordPress admin_footer action.
+         *
          * @static
+         *
          * @since      1.3
          * @see        _global_foot()
          */
@@ -1315,7 +1360,9 @@
         /**
          * Used to insert global SCRIPT tags into the footer, called on WordPress
          * admin_footer action.
+         *
          * @static
+         *
          * @since      1.3
          * @see        _global_head()
          */
@@ -1344,9 +1391,13 @@
         // user can also use the_ID(), php functions are case-insensitive
         /**
          * Gets the meta data for a meta box.
+         *
          * @since      1.0
+         *
          * @param int $post_id optional post ID for which to retrieve the meta data
+         *
          * @return array
+         *
          * @see        _meta
          */
         public function the_meta($post_id = null)
@@ -1401,7 +1452,7 @@
                     if ($collection) {
                         $keys = $this->get_the_loop_group_name_array();
                     } else {
-                        $keys   = $this->get_the_loop_group_name_array();
+                        $keys = $this->get_the_loop_group_name_array();
                         $keys[] = $n;
                     }
                 } else {
@@ -1449,7 +1500,7 @@
         public function get_the_loop_group_name_array($with_id = false)
         {
             $loop_name = [];
-            $curr      = $this->get_the_current_loop();
+            $curr = $this->get_the_current_loop();
             if ($with_id) {
                 $loop_name[] = $this->id;
             }
@@ -1477,9 +1528,9 @@
             if (is_null($name)) {
                 $curr = $this->get_the_current_loop();
                 if ($curr) {
-                    $name         = $curr->name;
-                    $loop_stack   = $this->_loop_stack;
-                    $loop         = $loop_stack[$name];
+                    $name = $curr->name;
+                    $loop_stack = $this->_loop_stack;
+                    $loop = $loop_stack[$name];
                     $collection[] = $loop;
                     while ($loop) {
                         $collection[] = $loop;
@@ -1535,18 +1586,18 @@
         public function get_the_name($n = null)
         {
             if (!$this->in_template and $this->mode == WPALCHEMY_MODE_EXTRACT) {
-                return $this->prefix . str_replace($this->prefix, '', is_null($n) ? $this->name : $n);
+                return $this->prefix.str_replace($this->prefix, '', is_null($n) ? $this->name : $n);
             }
             if ($this->is_in_loop()) {
                 $n = is_null($n) ? $this->name : $n;
                 if (!is_null($n)) {
-                    $the_field = $this->get_the_loop_group_name(true) . '[' . $n . ']';
+                    $the_field = $this->get_the_loop_group_name(true).'['.$n.']';
                 } else {
                     $the_field = $this->get_the_loop_group_name(true);
                 }
             } else {
-                $n         = is_null($n) ? $this->name : $n;
-                $the_field = $this->id . '[' . $n . ']';
+                $n = is_null($n) ? $this->name : $n;
+                $the_field = $this->id.'['.$n.']';
             }
             $hints = [
                 WPALCHEMY_FIELD_HINT_CHECKBOX_MULTI,
@@ -1563,12 +1614,12 @@
         public function get_the_loop_group_name($with_id = false)
         {
             $loop_name = $with_id ? $this->id : '';
-            $curr      = $this->get_the_current_loop();
+            $curr = $this->get_the_current_loop();
             // copy _loop_stack to prevent internal pointer ruined
             $loop_stack = $this->get_the_loop_collection();
             // print_r($loop_stack);
             foreach ($loop_stack as $loop) {
-                $loop_name .= '[' . $loop->name . '][' . $loop->current . ']';
+                $loop_name .= '['.$loop->name.']['.$loop->current.']';
                 if ($loop->name === $curr->name) {
                     break;
                 }
@@ -1624,17 +1675,21 @@
 
         /**
          * Used to check if a value is a match.
+         *
          * @since      1.1
+         *
          * @param string $n the field name to check or the value to check for (if the_field() is used prior)
          * @param string $v optional the value to check for
+         *
          * @return bool
+         *
          * @see        is_value()
          */
         public function is_value($n, $v = null)
         {
             if (is_null($v)) {
                 $the_value = $this->get_the_value();
-                $v         = $n;
+                $v = $n;
             } else {
                 $the_value = $this->get_the_value($n);
             }
@@ -1648,9 +1703,12 @@
         /**
          * Prints the current state of a checkbox field and should be used inline
          * within the INPUT tag.
+         *
          * @since      1.3
+         *
          * @param string $n the field name to check or the value to check for (if the_field() is used prior)
          * @param string $v optional the value to check for
+         *
          * @see        get_the_checkbox_state()
          */
         public function the_checkbox_state($n, $v = null)
@@ -1661,10 +1719,14 @@
         /**
          * Returns the current state of a checkbox field, the returned string is
          * suitable to be used inline within the INPUT tag.
+         *
          * @since      1.3
+         *
          * @param string $n the field name to check or the value to check for (if the_field() is used prior)
          * @param string $v optional the value to check for
+         *
          * @return string suitable to be used inline within the INPUT tag
+         *
          * @see        the_checkbox_state()
          */
         public function get_the_checkbox_state($n, $v = null)
@@ -1677,17 +1739,21 @@
         /**
          * Used to check if a value is selected, useful when working with checkbox,
          * radio and select values.
+         *
          * @since      1.3
+         *
          * @param string $n the field name to check or the value to check for (if the_field() is used prior)
          * @param string $v optional the value to check for
+         *
          * @return bool
+         *
          * @see        is_value()
          */
         public function is_selected($n, $v = null)
         {
             if (is_null($v)) {
                 $the_value = $this->get_the_value(null);
-                $v         = $n;
+                $v = $n;
             } else {
                 $the_value = $this->get_the_value($n);
             }
@@ -1705,9 +1771,12 @@
         /**
          * Prints the current state of a radio field and should be used inline
          * within the INPUT tag.
+         *
          * @since      1.3
+         *
          * @param string $n the field name to check or the value to check for (if the_field() is used prior)
          * @param string $v optional the value to check for
+         *
          * @see        get_the_radio_state()
          */
         public function the_radio_state($n, $v = null)
@@ -1718,10 +1787,14 @@
         /**
          * Returns the current state of a radio field, the returned string is
          * suitable to be used inline within the INPUT tag.
+         *
          * @since      1.3
+         *
          * @param string $n the field name to check or the value to check for (if the_field() is used prior)
          * @param string $v optional the value to check for
+         *
          * @return string suitable to be used inline within the INPUT tag
+         *
          * @see        the_radio_state()
          */
         public function get_the_radio_state($n, $v = null)
@@ -1732,9 +1805,12 @@
         /**
          * Prints the current state of a select field and should be used inline
          * within the SELECT tag.
+         *
          * @since      1.3
+         *
          * @param string $n the field name to check or the value to check for (if the_field() is used prior)
          * @param string $v optional the value to check for
+         *
          * @see        get_the_select_state()
          */
         public function the_select_state($n, $v = null)
@@ -1745,10 +1821,14 @@
         /**
          * Returns the current state of a select field, the returned string is
          * suitable to be used inline within the SELECT tag.
+         *
          * @since      1.3
+         *
          * @param string $n the field name to check or the value to check for (if the_field() is used prior)
          * @param string $v optional the value to check for
+         *
          * @return string suitable to be used inline within the SELECT tag
+         *
          * @see        the_select_state()
          */
         public function get_the_select_state($n, $v = null)
@@ -1771,19 +1851,19 @@
          */
         public function get_the_group_open($t = 'div')
         {
-            $this->group_tag   = $t;
-            $curr_loop         = $this->get_the_current_loop();
-            $the_name          = $curr_loop->name;
-            $loop_open         = null;
-            $loop_open_classes = ['wpa_loop', 'wpa_loop-' . $the_name];
-            $css_class         = ['wpa_group', 'wpa_group-' . $the_name];
+            $this->group_tag = $t;
+            $curr_loop = $this->get_the_current_loop();
+            $the_name = $curr_loop->name;
+            $loop_open = null;
+            $loop_open_classes = ['wpa_loop', 'wpa_loop-'.$the_name];
+            $css_class = ['wpa_group', 'wpa_group-'.$the_name];
             if ($curr_loop->is_first()) {
                 array_push($css_class, 'first');
                 $loop_open = '<div class="wpa_loop">';
                 if (isset($this->_loop_data->limit)) {
-                    array_push($loop_open_classes, 'wpa_loop_limit-' . $this->_loop_data->limit);
+                    array_push($loop_open_classes, 'wpa_loop_limit-'.$this->_loop_data->limit);
                 }
-                $loop_open = '<div id="wpa_loop-' . $the_name . '" class="' . implode(' ', $loop_open_classes) . '">';
+                $loop_open = '<div id="wpa_loop-'.$the_name.'" class="'.implode(' ', $loop_open_classes).'">';
             }
             if ($curr_loop->is_last()) {
                 array_push($css_class, 'last');
@@ -1792,7 +1872,7 @@
                 }
             }
 
-            return $loop_open . '<' . $t . ' class="' . implode(' ', $css_class) . '">';
+            return $loop_open.'<'.$t.' class="'.implode(' ', $css_class).'">';
         }
 
         /**
@@ -1809,12 +1889,12 @@
         public function get_the_group_close()
         {
             $loop_close = null;
-            $curr_loop  = $this->get_the_current_loop();
+            $curr_loop = $this->get_the_current_loop();
             if ($curr_loop->is_last()) {
                 $loop_close = '</div>';
             }
 
-            return '</' . $this->group_tag . '>' . $loop_close;
+            return '</'.$this->group_tag.'>'.$loop_close;
         }
 
         /**
@@ -1824,8 +1904,8 @@
         {
             if (is_array($options)) {
                 // use as stdClass object
-                $options                 = (object)$options;
-                $length                  = @$options->length;
+                $options = (object) $options;
+                $length = @$options->length;
                 $this->_loop_data->limit = @$options->limit;
             } else {
                 // backward compatibility (bc)
@@ -1849,7 +1929,7 @@
 
         public function push_loop($name, $length, $type)
         {
-            $loop   = new WPA_Loop($name, $length, $type);
+            $loop = new WPA_Loop($name, $length, $type);
             $parent = $this->get_the_current_loop();
             if ($parent) {
                 $loop->parent = $parent->name;
@@ -1880,7 +1960,7 @@
             if (!$this->in_loop) {
                 $this->in_loop = true;
             }
-            $cnt    = $this->get_the_current_group_count();
+            $cnt = $this->get_the_current_group_count();
             $length = is_null($length) ? $cnt : $length;
             if ($this->in_loop == 'multi' and $cnt > $length) {
                 $length = $cnt;
@@ -1897,7 +1977,7 @@
             $this->increment_current_loop();
             ++$this->current;
             if ($this->get_the_current_group_current() < $this->get_the_current_group_length()) {
-                $this->name      = null;
+                $this->name = null;
                 $this->fieldtype = null;
 
                 return true;
@@ -1906,7 +1986,7 @@
                 $this->set_the_current_group_current(-1);
                 $this->prev_loop();
             }
-            $this->in_loop    = false;
+            $this->in_loop = false;
             $this->_loop_data = new stdClass();
 
             return false;
@@ -2003,7 +2083,7 @@
                 return $post_id;
             }
             // make sure data came from our meta box, verify nonce
-            $nonce = isset($_POST[$this->id . '_nonce']) ? $_POST[$this->id . '_nonce'] : null;
+            $nonce = isset($_POST[$this->id.'_nonce']) ? $_POST[$this->id.'_nonce'] : null;
             if (!wp_verify_nonce($nonce, $this->id)) {
                 return $post_id;
             }
@@ -2036,12 +2116,12 @@
                 self::clean($new_data);
             }
             // get current fields, use $real_post_id (checked for in both modes)
-            $current_fields = get_post_meta($real_post_id, $this->id . '_fields', true);
+            $current_fields = get_post_meta($real_post_id, $this->id.'_fields', true);
             if ($this->mode == WPALCHEMY_MODE_EXTRACT) {
                 $new_fields = [];
                 if (is_array($new_data)) {
                     foreach ($new_data as $k => $v) {
-                        $field = $this->prefix . $k;
+                        $field = $this->prefix.$k;
                         array_push($new_fields, $field);
                         $new_value = $new_data[$k];
                         if (is_null($new_value)) {
@@ -2051,15 +2131,15 @@
                         }
                     }
                 }
-                $diff_fields = array_diff((array)$current_fields, $new_fields);
+                $diff_fields = array_diff((array) $current_fields, $new_fields);
                 if (is_array($diff_fields)) {
                     foreach ($diff_fields as $field) {
                         delete_post_meta($post_id, $field);
                     }
                 }
-                delete_post_meta($post_id, $this->id . '_fields');
+                delete_post_meta($post_id, $this->id.'_fields');
                 if (!empty($new_fields)) {
-                    add_post_meta($post_id, $this->id . '_fields', $new_fields, true);
+                    add_post_meta($post_id, $this->id.'_fields', $new_fields, true);
                 }
                 // keep data tidy, delete values if previously using WPALCHEMY_MODE_ARRAY
                 delete_post_meta($post_id, $this->id);
@@ -2074,7 +2154,7 @@
                     foreach ($current_fields as $field) {
                         delete_post_meta($post_id, $field);
                     }
-                    delete_post_meta($post_id, $this->id . '_fields');
+                    delete_post_meta($post_id, $this->id.'_fields');
                 }
             }
             // action: save
@@ -2087,8 +2167,11 @@
 
         /**
          * Cleans an array, removing blank ('') values.
+         *
          * @static
+         *
          * @since     1.0
+         *
          * @param    array the array to clean (passed by reference)
          */
         public static function clean(&$arr)
@@ -2109,7 +2192,7 @@
                 if (!count($arr)) {
                     $arr = [];
                 } else {
-                    $keys       = array_keys($arr);
+                    $keys = array_keys($arr);
                     $is_numeric = true;
                     foreach ($keys as $key) {
                         if (!is_numeric($key)) {
@@ -2131,7 +2214,7 @@
 
         public function get_the_loop_level()
         {
-            $curr  = $this->get_the_current_loop();
+            $curr = $this->get_the_current_loop();
             $depth = 0;
             // copy _loop_stack to prevent internal pointer ruined
             $loop_stack = $this->get_the_loop_collection();
@@ -2148,12 +2231,12 @@
         public function get_the_loop_group_id()
         {
             $loop_name = '';
-            $curr      = $this->get_the_current_loop();
+            $curr = $this->get_the_current_loop();
             // copy _loop_stack to prevent internal pointer ruined
             $loop_stack = $this->get_the_loop_collection();
             foreach ($loop_stack as $key => $loop) {
                 $is_first = false;
-                $is_last  = false;
+                $is_last = false;
                 reset($loop_stack);
                 if ($key === key($loop_stack)) {
                     $is_first = true;
@@ -2161,9 +2244,9 @@
                 if ($loop->name === $curr->name) {
                     $is_last = true;
                 }
-                $loop_name .= '[' . $loop->name . ']';
+                $loop_name .= '['.$loop->name.']';
                 if (!$is_last) {
-                    $loop_name .= '[' . $loop->current . ']';
+                    $loop_name .= '['.$loop->current.']';
                 }
                 if ($loop->name === $curr->name) {
                     break;
@@ -2176,11 +2259,11 @@
         public function get_the_dotted_loop_group_name($with_id = false)
         {
             $loop_name = $with_id ? $this->id : '';
-            $curr      = $this->get_the_current_loop();
+            $curr = $this->get_the_current_loop();
             // copy _loop_stack to prevent internal pointer ruined
             $loop_stack = $this->get_the_loop_collection();
             foreach ($loop_stack as $loop) {
-                $loop_name .= ($loop_name === '' ? '' : '.') . $loop->name . '.' . $loop->current;
+                $loop_name .= ($loop_name === '' ? '' : '.').$loop->name.'.'.$loop->current;
                 if ($loop->name === $curr->name) {
                     break;
                 }
@@ -2234,7 +2317,7 @@
         {
             $curr = $this->get_the_current_loop();
 
-            return 'docopy-' . $curr->get_the_indexed_name();
+            return 'docopy-'.$curr->get_the_indexed_name();
         }
     }
 
@@ -2252,9 +2335,9 @@
 
         public function __construct($name, $length, $type)
         {
-            $this->name   = $name;
+            $this->name = $name;
             $this->length = $length;
-            $this->type   = $type;
+            $this->type = $type;
         }
 
         public function the_indexed_name()
@@ -2264,7 +2347,7 @@
 
         public function get_the_indexed_name()
         {
-            return $this->name . '[' . $this->current . ']';
+            return $this->name.'['.$this->current.']';
         }
 
         public function is_first()
