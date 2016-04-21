@@ -23,7 +23,8 @@
          * @param null  $class_name
          *
          * @return \VP_Control_Field_Color
-         */public static function withArray($arr = [], $class_name = null)
+         */
+        public static function withArray(array $arr = null, $class_name = null)
         {
             $instance = null === $class_name ? new self() : new $class_name();
             $instance->set_format($arr['format'] ?? 'hex');
@@ -58,7 +59,8 @@
          *
          * @return string
          * @throws \Exception
-         */public function render($is_compact = false)
+         */
+        public function render($is_compact = false)
         {
             $this->_setup_data();
             $this->add_data('is_compact', $is_compact);
@@ -69,7 +71,6 @@
 
         /**
          * Get the format value.
-         *
          * @return string
          */
         public function get_format()
@@ -81,7 +82,8 @@
          * @param $_format
          *
          * @return $this
-         */public function set_format($_format)
+         */
+        public function set_format($_format)
         {
             $this->_format = $_format;
 

@@ -1,7 +1,7 @@
 <?php
 
     /**
-     * Class VP_Control_Field_RadioImage.
+     * Class VP_Control_Field_RadioImage
      */
     class VP_Control_Field_RadioImage extends VP_Control_FieldMultiImage
     {
@@ -18,7 +18,6 @@
          * @param bool $is_compact
          *
          * @return string
-         *
          * @throws \Exception
          */
         public function render($is_compact = false)
@@ -31,12 +30,12 @@
         }
 
         /**
-         * @param array $arr
-         * @param null  $class_name
+         * @param array|null $arr
+         * @param null       $class_name
          *
          * @return \VP_Control_Field_RadioImage
          */
-        public static function withArray($arr = [], $class_name = null)
+        public static function withArray(array $arr = null, $class_name = null)
         {
             $instance = null === $class_name ? new self() : new $class_name();
             $instance->_basic_make($arr);
@@ -44,7 +43,3 @@
             return $instance;
         }
     }
-
-    /*
-     * EOF
-     */

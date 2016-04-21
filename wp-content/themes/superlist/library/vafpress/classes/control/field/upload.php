@@ -5,23 +5,31 @@
      */
     class VP_Control_Field_Upload extends VP_Control_Field
     {
+        /**
+         * VP_Control_Field_Upload constructor.
+         */
         public function __construct()
         {
             parent::__construct();
         }
 
-        public static function withArray($arr = [], $class_name = null)
+        /**
+         * @param array|null $arr
+         * @param null       $class_name
+         *
+         * @return \VP_Control_Field_Upload
+         */
+        public static function withArray(array $arr = null, $class_name = null)
         {
-            if (null === $class_name) {
-                $instance = new self();
-            } else {
-                $instance = new $class_name();
-            }
+            $instance = null === $class_name ? new self() : new $class_name();
             $instance->_basic_make($arr);
 
             return $instance;
         }
 
+        /**
+         *
+         */
         public function _setup_data()
         {
             $preview = VP_Util_Res::get_preview_from_url($this->get_value());
@@ -29,6 +37,12 @@
             parent::_setup_data();
         }
 
+        /**
+         * @param bool $is_compact
+         *
+         * @return string
+         * @throws \Exception
+         */
         public function render($is_compact = false)
         {
             $this->_setup_data();

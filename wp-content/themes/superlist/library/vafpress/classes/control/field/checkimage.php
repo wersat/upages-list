@@ -19,7 +19,6 @@
          * @param bool $is_compact
          *
          * @return string
-         *
          * @throws \Exception
          */
         public function render($is_compact = false)
@@ -37,7 +36,7 @@
          *
          * @return \VP_Control_Field_CheckImage
          */
-        public static function withArray($arr = [], $class_name = null)
+        public static function withArray(array $arr = null, $class_name = null)
         {
             $instance = null === $class_name ? new self() : new $class_name();
             $instance->_basic_make($arr);

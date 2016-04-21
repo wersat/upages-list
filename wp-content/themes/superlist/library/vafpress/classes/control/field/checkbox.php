@@ -5,6 +5,9 @@
      */
     class VP_Control_Field_CheckBox extends VP_Control_FieldMulti implements VP_MultiSelectable
     {
+        /**
+         * VP_Control_Field_CheckBox constructor.
+         */
         public function __construct()
         {
             parent::__construct();
@@ -12,6 +15,12 @@
             $this->add_container_extra_classes('vp-checked-field');
         }
 
+        /**
+         * @param bool $is_compact
+         *
+         * @return string
+         * @throws \Exception
+         */
         public function render($is_compact = false)
         {
             $this->_setup_data();
@@ -21,7 +30,13 @@
                           ->load('control/checkbox', $this->get_data());
         }
 
-        public static function withArray($arr = [], $class_name = null)
+        /**
+         * @param array $arr
+         * @param null  $class_name
+         *
+         * @return \VP_Control_Field_CheckBox
+         */
+        public static function withArray(array $arr = null, $class_name = null)
         {
             $instance = null === $class_name ? new self() : new $class_name();
             $instance->_basic_make($arr);

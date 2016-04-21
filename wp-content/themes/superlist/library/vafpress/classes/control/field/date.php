@@ -9,12 +9,10 @@
          * @type
          */
         private $_min_date;
-
         /**
          * @type
          */
         private $_max_date;
-
         /**
          * @type
          */
@@ -29,12 +27,12 @@
         }
 
         /**
-         * @param array $arr
-         * @param null  $class_name
+         * @param array|null $arr
+         * @param null       $class_name
          *
          * @return \VP_Control_Field_Date
          */
-        public static function withArray($arr = [], $class_name = null)
+        public static function withArray(array $arr = null, $class_name = null)
         {
             $instance = null === $class_name ? new self() : new $class_name();
             $instance->_basic_make($arr);
@@ -68,7 +66,6 @@
          */
         public function render($is_compact = false)
         {
-            // Setup Data
             $this->_setup_data();
             $this->add_data('is_compact', $is_compact);
 
@@ -77,8 +74,7 @@
         }
 
         /**
-         * Get Minimum Date.
-         * @return string Minimum Date
+         * @return mixed
          */
         public function get_min_date()
         {
@@ -86,9 +82,7 @@
         }
 
         /**
-         * Set Minimum Date.
-         *
-         * @param string $_min_date Minimum Date
+         * @param $_min_date
          *
          * @return $this
          */
@@ -100,8 +94,7 @@
         }
 
         /**
-         * Get Maximum Date.
-         * @return string Maximum Date
+         * @return mixed
          */
         public function get_max_date()
         {
@@ -109,9 +102,7 @@
         }
 
         /**
-         * Set Maximum Date.
-         *
-         * @param string $_max_date Maximum Date
+         * @param $_max_date
          *
          * @return $this
          */
@@ -123,8 +114,7 @@
         }
 
         /**
-         * Get Date Format.
-         * @return string Date format
+         * @return mixed
          */
         public function get_format()
         {
@@ -132,9 +122,7 @@
         }
 
         /**
-         * Set Date Format.
-         *
-         * @param string $_format Date format
+         * @param $_format
          *
          * @return $this
          */
@@ -145,7 +133,3 @@
             return $this;
         }
     }
-
-    /*
-     * EOF
-     */

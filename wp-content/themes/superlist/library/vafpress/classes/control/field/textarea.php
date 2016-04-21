@@ -1,7 +1,7 @@
 <?php
 
     /**
-     * Class VP_Control_Field_TextArea.
+     * Class VP_Control_Field_TextArea
      */
     class VP_Control_Field_TextArea extends VP_Control_Field
     {
@@ -17,7 +17,6 @@
          * @param bool $is_compact
          *
          * @return string
-         *
          * @throws \Exception
          */
         public function render($is_compact = false)
@@ -42,24 +41,16 @@
         }
 
         /**
-         * @param array $arr
-         * @param null  $class_name
+         * @param array|null $arr
+         * @param null       $class_name
          *
          * @return \VP_Control_Field_TextArea
          */
-        public static function withArray($arr = [], $class_name = null)
+        public static function withArray(array $arr = null, $class_name = null)
         {
-            if (null === $class_name) {
-                $instance = new self();
-            } else {
-                $instance = new $class_name();
-            }
+            $instance = null === $class_name ? new self() : new $class_name();
             $instance->_basic_make($arr);
 
             return $instance;
         }
     }
-
-    /*
-     * EOF
-     */

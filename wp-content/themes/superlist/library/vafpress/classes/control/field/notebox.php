@@ -6,23 +6,25 @@
     class VP_Control_Field_NoteBox extends VP_Control_Field
     {
         /**
-         * Status of message, can be one of these:
-         * - normal
-         * - info
-         * - warning
-         * - error
-         * - success.
-         *
-         * @var string
+         * @type
          */
         protected $_status;
 
+        /**
+         * VP_Control_Field_NoteBox constructor.
+         */
         public function __construct()
         {
             parent::__construct();
         }
 
-        public static function withArray($arr = [], $class_name = null)
+        /**
+         * @param array|null $arr
+         * @param null       $class_name
+         *
+         * @return \VP_Control_Field_NoteBox
+         */
+        public static function withArray(array $arr = null, $class_name = null)
         {
             $instance = null === $class_name ? new self() : new $class_name();
             $instance->_basic_make($arr);
@@ -30,12 +32,18 @@
             return $instance;
         }
 
+        /**
+         * @param array $arr
+         */
         protected function _basic_make($arr)
         {
             parent::_basic_make($arr);
             $this->set_status($arr['status'] ?? 'normal');
         }
 
+        /**
+         *
+         */
         protected function _setup_data()
         {
             switch ($this->get_status()) {
@@ -62,9 +70,14 @@
             parent::_setup_data();
         }
 
+        /**
+         * @param bool $is_compact
+         *
+         * @return string
+         * @throws \Exception
+         */
         public function render($is_compact = false)
         {
-            // Setup Data
             $this->_setup_data();
             $this->add_data('is_compact', $is_compact);
 
@@ -73,9 +86,7 @@
         }
 
         /**
-         * Get the status of message.
-         *
-         * @return string Status of message
+         * @return mixed
          */
         public function get_status()
         {
@@ -83,9 +94,7 @@
         }
 
         /**
-         * Set the status of message.
-         *
-         * @param string $_status Status of message
+         * @param $_status
          *
          * @return $this
          */
@@ -96,7 +105,3 @@
             return $this;
         }
     }
-
-    /*
-     * EOF
-     */
