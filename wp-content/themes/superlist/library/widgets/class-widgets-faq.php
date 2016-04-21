@@ -9,6 +9,10 @@
 
   use Upages_Objects\Widget_Builder;
 
+  /**
+   * Class Widgets_Faq
+   * @package Upages_Widgets
+   */
   class Widgets_Faq extends Widget_Builder
   {
     /**
