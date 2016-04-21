@@ -1,37 +1,80 @@
 <?php
     namespace Upages_Objects;
 
+        /**
+         * Class Custom_Post_Type
+         * Used to help create custom post types for Wordpress.
+         * @link    https://github.com/Jazz-Man/wp-custom-post-type-class
+         */
     /**
      * Class Custom_Post_Type
-     * Used to help create custom post types for Wordpress.
-     * @link    https://github.com/Jazz-Man/wp-custom-post-type-class
+     * @package Upages_Objects
      */
     class Custom_Post_Type
     {
+        /**
+         * @type
+         */
         public $post_type_name;
 
+        /**
+         * @type string
+         */
         public $singular;
 
+        /**
+         * @type string
+         */
         public $plural;
 
+        /**
+         * @type mixed|null|string
+         */
         public $slug;
 
+        /**
+         * @type array
+         */
         public $options;
 
+        /**
+         * @type
+         */
         public $taxonomies;
 
+        /**
+         * @type
+         */
         public $taxonomy_settings;
 
+        /**
+         * @type
+         */
         public $exisiting_taxonomies;
 
+        /**
+         * @type
+         */
         public $filters;
 
+        /**
+         * @type
+         */
         public $columns;
 
+        /**
+         * @type
+         */
         public $custom_populate_columns;
 
+        /**
+         * @type
+         */
         public $sortable;
 
+        /**
+         * @type string
+         */
         public $textdomain = 'cpt';
 
         /**
@@ -198,6 +241,9 @@
             }
         }
 
+        /**
+         *
+         */
         public function register_post_type()
         {
             $plural        = $this->plural;
@@ -239,6 +285,9 @@
         public function register_taxonomy($taxonomy_names, array $options = [])
         {
             $post_type = $this->post_type_name;
+            $plural    = '';
+            $singular  = '';
+            $slug      = '';
             $names     = [
                 'singular',
                 'plural',
@@ -291,6 +340,9 @@
             $this->taxonomy_settings[$taxonomy_name] = $options;
         }
 
+        /**
+         *
+         */
         public function register_taxonomies()
         {
             if (is_array($this->taxonomy_settings)) {
@@ -304,6 +356,9 @@
             }
         }
 
+        /**
+         *
+         */
         public function register_exisiting_taxonomies()
         {
             if (is_array($this->exisiting_taxonomies)) {
@@ -323,12 +378,12 @@
             if ( ! isset($this->columns)) {
                 $new_columns = [];
                 if ((is_array($this->taxonomies)
-                    && in_array('post_tag', $this->taxonomies))
+                     && in_array('post_tag', $this->taxonomies))
                     || $this->post_type_name === 'post'
                 ) {
                     $after = 'tags';
                 } elseif ((is_array($this->taxonomies)
-                          && in_array('category', $this->taxonomies))
+                           && in_array('category', $this->taxonomies))
                           || $this->post_type_name === 'post'
                 ) {
                     $after = 'categories';
@@ -419,16 +474,15 @@
             $this->filters = $filters;
         }
 
+        /**
+         *
+         */
         public function add_taxonomy_filters()
         {
             global $typenow;
             global $wp_query;
             if ($typenow == $this->post_type_name) {
-                if (is_array($this->filters)) {
-                    $filters = $this->filters;
-                } else {
-                    $filters = $this->taxonomies;
-                }
+                $filters = is_array($this->filters) ? $this->filters : $this->taxonomies;
                 if ( ! empty($filters)) {
                     foreach ($filters as $tax_slug) {
                         $tax   = get_taxonomy($tax_slug);
@@ -441,7 +495,7 @@
                             printf(' &nbsp;<select name="%s" class="postform">', $tax_slug);
                             printf('<option value="0">%s</option>',
                                 sprintf(__('Show all %s', $this->textdomain), $tax->label));
-                            foreach ($terms as $term) {
+                            foreach ((array)$terms as $term) {
                                 if (isset($_GET[$tax_slug]) && $_GET[$tax_slug] === $term->slug) {
                                     printf('<option value="%s" selected="selected">%s (%s)</option>', $term->slug,
                                         $term->name, $term->count);
@@ -494,12 +548,12 @@
          */
         public function make_columns_sortable($columns)
         {
-            foreach ($this->sortable as $column => $values) {
+            $sortable_columns = [];
+            foreach ((array)$this->sortable as $column => $values) {
                 $sortable_columns[$column] = $values[0];
             }
-            $columns = array_merge($sortable_columns, $columns);
 
-            return $columns;
+            return array_merge($sortable_columns, $columns);
         }
 
         /**
@@ -521,16 +575,8 @@
         {
             foreach ((array)$this->sortable as $column => $values) {
                 $meta_key = $values[0];
-                if (taxonomy_exists($meta_key)) {
-                    $key = 'taxonomy';
-                } else {
-                    $key = 'meta_key';
-                }
-                if (isset($values[1]) && true === $values[1]) {
-                    $orderby = 'meta_value_num';
-                } else {
-                    $orderby = 'meta_value';
-                }
+                $key      = taxonomy_exists($meta_key) ? 'taxonomy' : 'meta_key';
+                $orderby  = isset($values[1]) && true === $values[1] ? 'meta_value_num' : 'meta_value';
                 if (isset($vars['post_type']) && $this->post_type_name == $vars['post_type']) {
                     if (isset($vars['orderby']) && $meta_key == $vars['orderby']) {
                         $vars = array_merge($vars, [
@@ -610,6 +656,9 @@
             return $bulk_messages;
         }
 
+        /**
+         *
+         */
         public function flush()
         {
             flush_rewrite_rules();
