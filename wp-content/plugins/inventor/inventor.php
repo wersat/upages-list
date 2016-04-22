@@ -30,7 +30,6 @@
                 $this->load_plugin_textdomain();
                 add_action('init', [__CLASS__, 'start_session'], 1);
                 add_action('activated_plugin', [__CLASS__, 'plugin_order']);
-                add_action('tgmpa_register', [__CLASS__, 'register_plugins']);
             }
 
             /**
@@ -107,7 +106,6 @@
              */
             public static function libraries()
             {
-                require_once INVENTOR_LIB_DIR . '/class-tgm-plugin-activation.php';
                 require_once INVENTOR_LIB_DIR . '/cmb_field_map/cmb-field-map.php';
                 require_once INVENTOR_LIB_DIR . '/cmb_field_street_view/cmb-field-street-view.php';
                 require_once INVENTOR_LIB_DIR . '/cmb_field_taxonomy_multicheck_hierarchy/cmb-field-taxonomy-multicheck-hierarchy.php';
@@ -120,21 +118,6 @@
             public function load_plugin_textdomain()
             {
                 load_plugin_textdomain('inventor', false, plugin_basename(__FILE__) . '/languages');
-            }
-
-            /**
-             * Install plugins.
-             */
-            public static function register_plugins()
-            {
-                $plugins = [
-                    [
-                        'name'     => 'CMB2',
-                        'slug'     => 'cmb2',
-                        'required' => true,
-                    ],
-                ];
-                tgmpa($plugins);
             }
 
             /**

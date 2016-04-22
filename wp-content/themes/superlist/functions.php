@@ -23,7 +23,6 @@
     define('THEME_TPL_DIR', __DIR__ . '/templates');
     define('THEME_WIDGETS_DIR', __DIR__ . '/widgets');
     define('THEME_WIDGETS_TPL_DIR', THEME_WIDGETS_DIR . '/templates');
-    require_once LIB_DIR . '/class-tgm-plugin-activation.php';
     /**
      * Autoload all class from "LIB_DIR.'/class'" dir
      */
@@ -42,7 +41,6 @@
             require_once $objects;
         }
     });
-
     /**
      * Load option framework
      */
@@ -610,10 +608,26 @@
     }
 
     add_action('inventor_review_rating_total_attrs', 'superlist_review_rating_toral_attrs', 10, 1);
-    add_action('registered_post_type', 'add_post_type_to_rest_api', 10, 2);
-    function add_post_type_to_rest_api($post_type, $args)
+    $admin_menu = new Admin_Menu();
+
+    get_listing_post_types();
+
+    function get_listing_post_types()
     {
-        global $wp_post_types;
-        $args->show_in_rest        = true;
-        $wp_post_types[$post_type] = $args;
+        $listing_post_types = [];
+        $args               = [
+            'name_test' => 'name_test'
+        ];
+        $output             = 'objects'; // names or objects
+        $post_types         = get_post_types($args, $output);
+        foreach ($post_types as $post_type) {
+            //echo '<p>' . $post_type->name . '</p>';
+            $listing_post_types[] = $post_type->name;
+        }
+        return $listing_post_types;
+
     }
+
+    //add_action('init', 'get_listing_post_types');
+    //add_filter('init', 'get_listing_post_types');
+    //var_dump(get_listing_post_types());

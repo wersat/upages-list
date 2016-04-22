@@ -64,7 +64,7 @@
         {
             global $wp_post_types;
             foreach ($wp_post_types as $post_type) {
-                if ('listings' === $post_type->show_in_menu) {
+                if ('listings' == $post_type->show_in_menu) {
                     $name                                    = $post_type->name;
                     $published                               = wp_count_posts($name)->publish;
                     $draft                                   = wp_count_posts($name)->draft;
@@ -101,8 +101,10 @@
             add_submenu_page('inventor', __('Categories', 'inventor'), __('Categories', 'inventor'), 'edit_posts',
                 'edit-tags.php?taxonomy=listing_categories', false);
             remove_submenu_page('inventor', 'inventor');
+
             add_menu_page(__('Listings', 'inventor'), __('Listings', 'inventor'), 'edit_posts', 'listings', null, null,
                 '51');
+
             add_menu_page(__('Lexicon', 'inventor'), __('Lexicon', 'inventor'), 'edit_posts', 'lexicon', null, null,
                 '52');
             $taxonomies         = get_taxonomies([], 'objects');

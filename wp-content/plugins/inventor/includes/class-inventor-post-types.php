@@ -113,8 +113,7 @@
         public static function get_listing_post_types($include_abstract = false)
         {
             $listings_types = [];
-            $post_types     = get_post_types([],
-                'objects'); // in this moment, all disabled post types should be removed
+            $post_types     = get_post_types([], 'objects');
             if ( ! empty($post_types)) {
                 foreach ($post_types as $post_type) {
                     if ($post_type->show_in_menu === 'listings') {
