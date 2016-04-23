@@ -23,7 +23,7 @@
          */
         public static function enqueue_frontend()
         {
-            wp_register_script('inventor-coupons', plugins_url('/inventor-coupons/assets/js/inventor-coupons.js'),
+            wp_register_script('inventor-coupons', plugins_url('/inventor-coupons/assets/js/inventor-coupons.min.js'),
                 ['jquery'], false, true);
             wp_enqueue_script('inventor-coupons');
         }
