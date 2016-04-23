@@ -23,7 +23,7 @@
          */
         public static function enqueue_backend()
         {
-            wp_register_script('inventor-fields', plugins_url('/inventor-fields/assets/js/inventor-fields.js'),
+            wp_register_script('inventor-fields', plugins_url('/inventor-fields/assets/js/inventor-fields.min.js'),
                 ['jquery'], false, true);
             wp_enqueue_script('inventor-fields');
         }

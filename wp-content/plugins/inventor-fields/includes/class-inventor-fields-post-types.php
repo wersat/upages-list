@@ -23,9 +23,9 @@
          */
         public static function includes()
         {
-            require_once INVENTOR_FIELDS_DIR . 'includes/post-types/class-inventor-fields-post-type-listing-type.php';
-            require_once INVENTOR_FIELDS_DIR . 'includes/post-types/class-inventor-fields-post-type-metabox.php';
-            require_once INVENTOR_FIELDS_DIR . 'includes/post-types/class-inventor-fields-post-type-field.php';
+            require_once INVENTOR_FIELDS_DIR . '/includes/post-types/class-inventor-fields-post-type-listing-type.php';
+            require_once INVENTOR_FIELDS_DIR . '/includes/post-types/class-inventor-fields-post-type-metabox.php';
+            require_once INVENTOR_FIELDS_DIR . '/includes/post-types/class-inventor-fields-post-type-field.php';
         }
     }
 

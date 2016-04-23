@@ -39,7 +39,7 @@
                 'not_found'          => __('No Fields found', 'inventor-fields'),
                 'not_found_in_trash' => __('No Fields found in Trash', 'inventor-fields'),
                 'parent_item_colon'  => '',
-                'menu_name'          => __('Fields', 'inventor-fields'),
+                'menu_name'          => __('Fields', 'inventor-fields')
             ];
             register_post_type('field', [
                 'labels'              => $labels,
@@ -49,7 +49,7 @@
                 'publicly_queryable'  => false,
                 'show_in_nav_menus'   => false,
                 'show_ui'             => true,
-                'show_in_menu'        => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
+                'show_in_menu'        => 'inventor'
             ]);
         }
 
@@ -64,7 +64,7 @@
                 'title'        => __('Settings', 'inventor-fields'),
                 'object_types' => ['field'],
                 'context'      => 'normal',
-                'priority'     => 'high',
+                'priority'     => 'high'
             ]);
             // Identifier
             $settings->add_field([
@@ -73,27 +73,27 @@
                 'id'          => INVENTOR_FIELDS_FIELD_PREFIX . 'identifier',
                 'type'        => 'text',
                 'attributes'  => [
-                    'required' => 'required',
-                ],
+                    'required' => 'required'
+                ]
             ]);
             // Required
             $settings->add_field([
                 'name' => __('Required', 'inventor-fields'),
                 'id'   => INVENTOR_FIELDS_FIELD_PREFIX . 'required',
-                'type' => 'checkbox',
+                'type' => 'checkbox'
             ]);
             // Skip
             $settings->add_field([
                 'name'        => __('Skip', 'inventor-fields'),
                 'description' => __('From attributes section on listing detail', 'inventor-fields'),
                 'id'          => INVENTOR_FIELDS_FIELD_PREFIX . 'skip',
-                'type'        => 'checkbox',
+                'type'        => 'checkbox'
             ]);
             // Description
             $settings->add_field([
                 'name' => __('Description', 'inventor-fields'),
                 'id'   => INVENTOR_FIELDS_FIELD_PREFIX . 'description',
-                'type' => 'text',
+                'type' => 'text'
             ]);
             // Type
             $settings->add_field([
@@ -127,8 +127,8 @@
                     'select'                           => __('Select', 'inventor-fields'),
                     'file'                             => __('File uploader', 'inventor-fields'),
                     'file_list'                        => __('Files uploader', 'inventor-fields'),
-                    'oembed'                           => __('Embed media', 'inventor-fields'),
-                ],
+                    'oembed'                           => __('Embed media', 'inventor-fields')
+                ]
             ]);
             // Value Type
             $settings->add_field([
@@ -140,15 +140,15 @@
                     'integer'          => __('Integer', 'inventor-fields'),
                     'positive_integer' => __('Positive integer', 'inventor-fields'),
                     'decimal'          => __('Decimal', 'inventor-fields'),
-                    'positive_decimal' => __('Positive decimal', 'inventor-fields'),
-                ],
+                    'positive_decimal' => __('Positive decimal', 'inventor-fields')
+                ]
             ]);
             // Options
             $settings->add_field([
                 'name'        => __('Options', 'inventor-fields'),
                 'id'          => INVENTOR_FIELDS_FIELD_PREFIX . 'options',
                 'type'        => 'textarea',
-                'description' => __('Comma separated options if type support choices'),
+                'description' => __('Comma separated options if type support choices')
             ]);
             // Metaboxes
             $meta_boxes = CMB2_Boxes::get_all();
@@ -168,7 +168,7 @@
                 'name'    => __('Metabox', 'inventor-fields'),
                 'id'      => INVENTOR_FIELDS_FIELD_PREFIX . 'metabox',
                 'type'    => 'multicheck',
-                'options' => $boxes,
+                'options' => $boxes
             ]);
         }
 
@@ -180,7 +180,7 @@
             $query = new WP_Query([
                 'post_type'      => 'field',
                 'posts_per_page' => -1,
-                'post_status'    => 'publish',
+                'post_status'    => 'publish'
             ]);
             foreach ($query->posts as $field) {
                 $metaboxes = get_post_meta($field->ID, INVENTOR_FIELDS_FIELD_PREFIX . 'metabox', true);
@@ -202,7 +202,7 @@
                     'type'        => $type,
                     'description' => $description,
                     'options'     => $options,
-                    'skip'        => $skip,
+                    'skip'        => $skip
                 ];
                 $attributes     = [];
                 $before_field   = null;

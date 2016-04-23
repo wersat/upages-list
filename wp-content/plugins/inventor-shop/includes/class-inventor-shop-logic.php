@@ -123,13 +123,13 @@
                 'title'        => __('Shop configuration', 'inventor-shop'),
                 'object_types' => self::get_allowed_post_types(),
                 'context'      => 'normal',
-                'priority'     => 'high',
+                'priority'     => 'high'
             ]);
             $shop->add_field([
                 'name'        => __('Enabled', 'inventor-shop'),
                 'description' => __('Allow/disallow listing purchasing (also price needs to be set).', 'inventor-shop'),
                 'id'          => INVENTOR_SHOP_PREFIX . 'enabled',
-                'type'        => 'checkbox',
+                'type'        => 'checkbox'
             ]);
             $shop->add_field([
                 'name'        => __('Quantity', 'inventor-shop'),
@@ -139,8 +139,8 @@
                 'attributes'  => [
                     'type'    => 'number',
                     'min'     => '0',
-                    'pattern' => '\d*',
-                ],
+                    'pattern' => '\d*'
+                ]
             ]);
         }
 
@@ -175,7 +175,7 @@
                 'is_enabled'      => $is_enabled,
                 'listing_id'      => $listing_id,
                 'payment_page_id' => $payment_page_id,
-                'is_available'    => $is_available,
+                'is_available'    => $is_available
             ];
             echo Inventor_Template_Loader::load('buy-button', $attrs, $plugin_dir = INVENTOR_SHOP_DIR);
         }
@@ -192,7 +192,7 @@
             $attrs = [
                 'payment_type'    => $payment_type,
                 'object_id'       => $object_id,
-                'payment_gateway' => $payment_gateway,
+                'payment_gateway' => $payment_gateway
             ];
             echo Inventor_Template_Loader::load('payment-form-before', $attrs, INVENTOR_SHOP_DIR);
         }

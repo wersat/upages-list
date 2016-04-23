@@ -34,7 +34,7 @@
              */
             public function constants()
             {
-                define('INVENTOR_FIELDS_DIR', plugin_dir_path(__FILE__));
+                define('INVENTOR_FIELDS_DIR', __DIR__);
                 define('INVENTOR_FIELDS_FIELD_PREFIX', 'field_');
                 define('INVENTOR_FIELDS_METABOX_PREFIX', 'metabox_');
                 define('INVENTOR_FIELDS_LISTING_TYPE_PREFIX', 'listing_type_');
@@ -45,8 +45,8 @@
              */
             public function includes()
             {
-                require_once INVENTOR_FIELDS_DIR . 'includes/class-inventor-fields-post-types.php';
-                require_once INVENTOR_FIELDS_DIR . 'includes/class-inventor-fields-scripts.php';
+                require_once INVENTOR_FIELDS_DIR . '/includes/class-inventor-fields-post-types.php';
+                require_once INVENTOR_FIELDS_DIR . '/includes/class-inventor-fields-scripts.php';
             }
 
             /**

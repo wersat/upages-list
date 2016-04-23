@@ -23,7 +23,7 @@
          */
         public static function enqueue_frontend()
         {
-            wp_register_script('inventor-favorites', plugins_url('/inventor-favorites/assets/js/inventor-favorites.js'),
+            wp_register_script('inventor-favorites', plugins_url('/inventor-favorites/assets/js/inventor-favorites.min.js'),
                 ['jquery'], false, true);
             wp_enqueue_script('inventor-favorites');
         }

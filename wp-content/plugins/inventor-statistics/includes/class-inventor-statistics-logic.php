@@ -43,6 +43,9 @@
 
         /**
          * Returns sort by choices form filter form.
+         *
+         * @param $choices
+         *
          * @return array
          */
         public static function sort_by_choices($choices)
@@ -54,6 +57,10 @@
 
         /**
          * Orders query by post views.
+         *
+         * @param $query
+         * @param $params
+         *
          * @return object
          */
         public static function order_query($query, $params)
@@ -112,20 +119,20 @@
         public static function search_queries_filters_per_day()
         {
             global $wpdb;
-            $data   = [];
-            $data[] = [
+            $data    = [];
+            $data[]  = [
                 'key'    => __('Per day', 'inventor-statistics'),
                 'area'   => true,
                 'values' => [],
             ];
-            $sql = 'SELECT DATE(created) as date, COUNT(*) as count FROM ' . $wpdb->prefix . 'query_stats
+            $sql     = 'SELECT DATE(created) as date, COUNT(*) as count FROM ' . $wpdb->prefix . 'query_stats
                 WHERE `key` = "filter" AND
                       `created` >= DATE_SUB(NOW(), INTERVAL 2 WEEK)
                 GROUP BY date
                 ORDER BY date';
             $results = $wpdb->get_results($sql);
             for ($i = 13; $i >= 0; --$i) {
-                $date = date('Y-m-d', strtotime('-' . $i . ' days'));
+                $date                = date('Y-m-d', strtotime('-' . $i . ' days'));
                 $data[0]['values'][] = [
                     13 - $i,
                     $date,
@@ -133,7 +140,7 @@
                 ];
             }
             $index = 1;
-            foreach ($results as $result) {
+            foreach ((array)$results as $result) {
                 foreach ($data[0]['values'] as $key => $value) {
                     if ($value[1] == $result->date) {
                         $data[0]['values'][$key] = [
@@ -157,7 +164,7 @@
         {
             global $wpdb;
             $granularity = 2;
-            $data = [
+            $data        = [
                 [
                     'key'    => __('Price from', 'inventor-statistics'),
                     'values' => [],
@@ -168,11 +175,11 @@
                 ],
             ];
             // Price from
-            $sql = 'SELECT ROUND(value, -' . $granularity . ') as price, COUNT(*) as count FROM ' . $wpdb->prefix . 'query_stats
+            $sql     = 'SELECT ROUND(value, -' . $granularity . ') as price, COUNT(*) as count FROM ' . $wpdb->prefix . 'query_stats
                 WHERE `key` = "price_from"
                 GROUP BY price';
             $results = $wpdb->get_results($sql);
-            foreach ($results as $result) {
+            foreach ((array)$results as $result) {
                 $data[0]['values'][] = [
                     'x'    => (int)$result->count,
                     'y'    => (int)$result->price,
@@ -180,11 +187,11 @@
                 ];
             }
             // Price to
-            $sql = 'SELECT ROUND(value, -' . $granularity . ') as price, COUNT(*) as count FROM ' . $wpdb->prefix . 'query_stats
+            $sql     = 'SELECT ROUND(value, -' . $granularity . ') as price, COUNT(*) as count FROM ' . $wpdb->prefix . 'query_stats
                 WHERE `key` = "price_to"
                 GROUP BY price';
             $results = $wpdb->get_results($sql);
-            foreach ($results as $result) {
+            foreach ((array)$results as $result) {
                 $data[1]['values'][] = [
                     'x'    => (int)$result->count,
                     'y'    => (int)$result->price,
@@ -197,6 +204,9 @@
 
         /**
          * Search queries statistics by key.
+         *
+         * @param $key
+         *
          * @return array
          */
         public static function search_queries_by_key($key)
@@ -218,19 +228,19 @@
         public static function listing_views_get_statistics_per_day()
         {
             global $wpdb;
-            $data   = [];
-            $data[] = [
+            $data    = [];
+            $data[]  = [
                 'key'    => __('Per day', 'inventor-statistics'),
                 'area'   => true,
                 'values' => [],
             ];
-            $sql = 'SELECT DATE(created) as date, COUNT(*) as count FROM ' . $wpdb->prefix . 'listing_stats
+            $sql     = 'SELECT DATE(created) as date, COUNT(*) as count FROM ' . $wpdb->prefix . 'listing_stats
                 WHERE `created` >= DATE_SUB(NOW(), INTERVAL 2 WEEK)
                 GROUP BY date
                 ORDER BY date';
             $results = $wpdb->get_results($sql);
             for ($i = 13; $i >= 0; --$i) {
-                $date = date('Y-m-d', strtotime('-' . $i . ' days'));
+                $date                = date('Y-m-d', strtotime('-' . $i . ' days'));
                 $data[0]['values'][] = [
                     13 - $i,
                     $date,
@@ -238,7 +248,7 @@
                 ];
             }
             $index = 1;
-            foreach ($results as $result) {
+            foreach ((array)$results as $result) {
                 foreach ($data[0]['values'] as $key => $value) {
                     if ($value[1] == $result->date) {
                         $data[0]['values'][$key] = [
@@ -273,7 +283,8 @@
             if ( ! is_post_type_archive($listing_post_types) || ! $query->is_main_query() || is_admin() || $suppress_filters) {
                 return;
             }
-            if (is_array($_GET) && count($_GET) > 0) {
+            $search_queries_get_count = count($_GET);
+            if (is_array($_GET) && $search_queries_get_count > 0) {
                 foreach ($_GET as $key => $value) {
                     if (substr($key, 0, strlen('filter-')) === 'filter-' && ! empty($value)) {
                         $key = str_replace(['filter-', '-'], ['', '_'], $key);
@@ -309,7 +320,8 @@
                   `value` = "' . session_id() . '" AND
                   `created` > DATE_SUB(NOW(), INTERVAL 15 MINUTE)';
                 $results = $wpdb->get_results($sql);
-                if (count($results) == 0) {
+                $results_count = count($results);
+                if ($results_count == 0) {
                     $wpdb->insert($wpdb->prefix . 'listing_stats', [
                         'key'     => $post_id,
                         'value'   => session_id(),
@@ -338,11 +350,12 @@
             if ($post_id == null) {
                 $post_id = get_the_ID();
             }
-            $sql = 'SELECT `key`, COUNT(*) as count FROM ' . $wpdb->prefix . 'listing_stats
+            $sql     = 'SELECT `key`, COUNT(*) as count FROM ' . $wpdb->prefix . 'listing_stats
                 WHERE `key` = "' . $post_id . '"
                 GROUP BY `key`';
             $results = $wpdb->get_results($sql);
-            if (is_array($results) && count($results) > 0) {
+            $results_count = count($results);
+            if (is_array($results) && $results_count > 0) {
                 return $results[0]->count;
             }
 
@@ -409,7 +422,9 @@
                                 YEAR(created) = YEAR( current_date );';
             $last_week_results = $wpdb->get_results($last_week_sql);
             $last_week_count   = 0;
-            if (is_array($last_week_results) && count($last_week_results) > 0) {
+            $last_week_results_count = count($last_week_results);
+
+            if (is_array($last_week_results) && $last_week_results_count > 0) {
                 $last_week_count = $last_week_results[0]->count;
             }
             // Two weeks ago
@@ -418,7 +433,9 @@
                                 WEEK(created) = WEEK( current_date ) - 2 AND
                                 YEAR(created) = YEAR( current_date );';
             $two_weeks_ago_results = $wpdb->get_results($two_weeks_ago_sql);
-            if (is_array($two_weeks_ago_results) && count($two_weeks_ago_results) > 0) {
+            $two_weeks_ago_results_count = count($two_weeks_ago_results);
+
+            if (is_array($two_weeks_ago_results) && $two_weeks_ago_results_count > 0) {
                 $two_weeks_ago_count = $two_weeks_ago_results[0]->count;
             }
             if ($two_weeks_ago_count == 0 && $last_week_count > 0) {

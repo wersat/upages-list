@@ -47,9 +47,9 @@
                 'meta_query'     => [
                     [
                         'key'   => INVENTOR_FIELDS_LISTING_TYPE_PREFIX . 'identifier',
-                        'value' => $post_type,
-                    ],
-                ],
+                        'value' => $post_type
+                    ]
+                ]
             ]);
             // All custom listing types defined via manager are supported by default
             $supported = count($query->posts) > 0;
@@ -105,9 +105,9 @@
                 'meta_query'     => [
                     [
                         'key'   => INVENTOR_FIELDS_LISTING_TYPE_PREFIX . 'allowed_claiming',
-                        'value' => 'on',
-                    ],
-                ],
+                        'value' => 'on'
+                    ]
+                ]
             ]);
             foreach ($query->posts as $listing_type) {
                 $identifier   = get_post_meta($listing_type->ID, INVENTOR_FIELDS_LISTING_TYPE_PREFIX . 'identifier',
@@ -134,9 +134,9 @@
                 'meta_query'     => [
                     [
                         'key'   => INVENTOR_FIELDS_LISTING_TYPE_PREFIX . 'allowed_purchasing',
-                        'value' => 'on',
-                    ],
-                ],
+                        'value' => 'on'
+                    ]
+                ]
             ]);
             foreach ($query->posts as $listing_type) {
                 $identifier   = get_post_meta($listing_type->ID, INVENTOR_FIELDS_LISTING_TYPE_PREFIX . 'identifier',
@@ -165,7 +165,7 @@
                 'not_found'          => __('No Listing Types found', 'inventor-fields'),
                 'not_found_in_trash' => __('No Listing Types found in Trash', 'inventor-fields'),
                 'parent_item_colon'  => '',
-                'menu_name'          => __('Listing Types', 'inventor-fields'),
+                'menu_name'          => __('Listing Types', 'inventor-fields')
             ];
             register_post_type('listing_type', [
                     'labels'              => $labels,
@@ -175,7 +175,7 @@
                     'publicly_queryable'  => false,
                     'show_in_nav_menus'   => false,
                     'show_ui'             => true,
-                    'show_in_menu'        => class_exists('Inventor_Admin_Menu') ? 'inventor' : true,
+                    'show_in_menu'        => class_exists('Inventor_Admin_Menu') ? 'inventor' : true
                 ]);
         }
 
@@ -190,7 +190,7 @@
                 'title'        => __('Settings', 'inventor-fields'),
                 'object_types' => ['listing_type'],
                 'context'      => 'normal',
-                'priority'     => 'high',
+                'priority'     => 'high'
             ]);
             // Singular name
             $settings->add_field([
@@ -200,8 +200,8 @@
                 'id'          => INVENTOR_FIELDS_LISTING_TYPE_PREFIX . 'singular_name',
                 'type'        => 'text',
                 'attributes'  => [
-                    'required' => 'required',
-                ],
+                    'required' => 'required'
+                ]
             ]);
             // Identifier
             $settings->add_field([
@@ -211,8 +211,8 @@
                 'type'        => 'text',
                 'attributes'  => [
                     'required' => 'required',
-                    'pattern'  => '[a-z0-9]+(?:-[a-z0-9]+)*',
-                ],
+                    'pattern'  => '[a-z0-9]+(?:-[a-z0-9]+)*'
+                ]
             ]);
             // URL Slug
             $settings->add_field([
@@ -221,20 +221,20 @@
                 'id'          => INVENTOR_FIELDS_LISTING_TYPE_PREFIX . 'slug',
                 'type'        => 'text',
                 'attributes'  => [
-                    'required' => 'required',
-                ],
+                    'required' => 'required'
+                ]
             ]);
             // Allowed purchasing
             $settings->add_field([
                 'name' => __('Allowed purchasing', 'inventor-fields'),
                 'id'   => INVENTOR_FIELDS_LISTING_TYPE_PREFIX . 'allowed_purchasing',
-                'type' => 'checkbox',
+                'type' => 'checkbox'
             ]);
             // Allowed claiming
             $settings->add_field([
                 'name' => __('Allowed claiming', 'inventor-fields'),
                 'id'   => INVENTOR_FIELDS_LISTING_TYPE_PREFIX . 'allowed_claiming',
-                'type' => 'checkbox',
+                'type' => 'checkbox'
             ]);
             // Predefined metaboxes
             $settings->add_field([
@@ -264,8 +264,8 @@
                         'inventor-fields'),
                     'time_interval'          => __('Time interval: time from, time to', 'inventor-fields'),
                     'date_and_time_interval' => __('Date and time interval: date, time from, time to',
-                        'inventor-fields'),
-                ],
+                        'inventor-fields')
+                ]
             ]);
         }
 
@@ -277,7 +277,7 @@
             $query = new WP_Query([
                 'post_type'      => 'listing_type',
                 'posts_per_page' => -1,
-                'post_status'    => 'publish',
+                'post_status'    => 'publish'
             ]);
             foreach ($query->posts as $listing_type) {
                 $plural_name   = get_the_title($listing_type->ID);
@@ -299,7 +299,7 @@
                     'not_found'          => sprintf(__('No %s found', 'inventor-fields'), $plural_name),
                     'not_found_in_trash' => sprintf(__('No %s found in Trash', 'inventor-fields'), $plural_name),
                     'parent_item_colon'  => '',
-                    'menu_name'          => $plural_name,
+                    'menu_name'          => $plural_name
                 ];
                 register_post_type($identifier, [
                         'labels'       => $labels,
@@ -309,8 +309,7 @@
                         'rewrite'      => ['slug' => $slug],
                         'public'       => true,
                         'show_ui'      => true,
-//                        'show_in_rest'       => true,
-                        'categories'   => [],
+                        'categories'   => []
                     ]);
             }
         }
@@ -323,7 +322,7 @@
             $query = new WP_Query([
                 'post_type'      => 'listing_type',
                 'posts_per_page' => -1,
-                'post_status'    => 'publish',
+                'post_status'    => 'publish'
             ]);
             foreach ($query->posts as $listing_type) {
                 $identifier = get_post_meta($listing_type->ID, INVENTOR_FIELDS_LISTING_TYPE_PREFIX . 'identifier',

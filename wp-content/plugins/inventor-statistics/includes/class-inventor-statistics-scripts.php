@@ -32,10 +32,10 @@
             wp_register_style('nvd3', plugins_url('/inventor-statistics/libraries/nvd3/nv.d3.min.css'));
             wp_enqueue_style('nvd3');
             wp_register_script('inventor-statistics-charts',
-                plugins_url('/inventor-statistics/assets/js/inventor-statistics.js'), ['jquery'], false, true);
+                plugins_url('/inventor-statistics/assets/js/inventor-statistics.min.js'), ['jquery'], false, true);
             wp_enqueue_script('inventor-statistics-charts');
             wp_register_style('inventor-statistics',
-                plugins_url('/inventor-statistics/assets/css/inventor-statistics.css'));
+                plugins_url('/inventor-statistics/assets/css/inventor-statistics.min.css'));
             wp_enqueue_style('inventor-statistics');
         }
     }
