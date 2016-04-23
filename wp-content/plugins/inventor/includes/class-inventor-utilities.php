@@ -121,7 +121,7 @@
         {
             $pages   = [];
             $pages[] = __('Not set', 'inventor');
-            foreach (get_pages() as $page) {
+            foreach ((array)get_pages() as $page) {
                 $pages[$page->ID] = $page->post_title;
             }
 

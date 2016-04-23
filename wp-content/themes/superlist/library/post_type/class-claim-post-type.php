@@ -17,7 +17,7 @@
         public $post_type_option
             = [
                 'supports' => ['author'],
-                //'show_in_menu' => 'inventor'
+                'show_in_menu' => 'inventor'
             ];
         public $metabox;
         public $metabox_template;
@@ -47,23 +47,14 @@
          */
         public function setMetabox()
         {
-            //var_dump(sanitize_title($this->post_type_name));
             $this->metabox = new \VP_Metabox([
                 'id'          => sanitize_title($this->post_type_name),
                 'types'       => [sanitize_title($this->post_type_name)],
                 'title'       => __('VP Metabox', 'vp_textdomain'),
                 'priority'    => 'high',
                 'is_dev_mode' => true,
-                'template'    => $this->getMetaboxTemplate()
+                'template'    => $this->metabox_template
             ]);
-        }
-
-        /**
-         * @return mixed
-         */
-        public function getMetaboxTemplate()
-        {
-            return $this->metabox_template;
         }
 
         /**

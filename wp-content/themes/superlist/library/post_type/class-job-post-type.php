@@ -1,43 +1,35 @@
 <?php
+    /**
+     * Created by PhpStorm.
+     * User: jazzman
+     * Date: 21.04.16
+     * Time: 5:02
+     */
     namespace Upages_Post_Type;
     
     use Upages_Objects\Custom_Post_Type;
 
-    /**
-     * Class Faq_Post_Type
-     * @package Upages_Post_Type
-     */
-    class Faq_Post_Type
+    class Job_Post_Type
     {
-        /**
-         * @type
-         */
         public $post_type;
-        /**
-         * @type string
-         */
-        public $post_type_name = 'FAQ';
+        public $post_type_name = 'Job Test';
 
-        /**
-         * @type array
-         */
         public $post_type_option
             = [
-                'supports'     => ['title', 'editor'],
-                'show_in_menu' => 'inventor',
+                'supports'     => ['title', 'editor', 'thumbnail', 'comments', 'author'],
+                'show_ui'      => true,
+                'show_in_menu' => 'title',
+                'has_archive'       => true,
                 'name_test' => 'name_test'
             ];
 
-        /**
-         * Faq_Post_Type constructor.
-         */
         public function __construct()
         {
             $this->setPostType();
         }
 
         /**
-         *
+         * @param mixed $post_type
          */
         public function setPostType()
         {

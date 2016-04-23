@@ -25,7 +25,6 @@
             public function __construct()
             {
                 $this->constants();
-                $this->includes();
                 $this->load_plugin_textdomain();
             }
 
@@ -34,19 +33,8 @@
              */
             public function constants()
             {
-                define('INVENTOR_INVOICES_DIR', plugin_dir_path(__FILE__));
+                define('INVENTOR_INVOICES_DIR', __DIR__);
                 define('INVENTOR_INVOICE_PREFIX', 'invoice_');
-            }
-
-            /**
-             * Include classes.
-             */
-            public function includes()
-            {
-                require_once INVENTOR_INVOICES_DIR . 'includes/class-inventor-invoices-customizations.php';
-                require_once INVENTOR_INVOICES_DIR . 'includes/class-inventor-invoices-post-types.php';
-                require_once INVENTOR_INVOICES_DIR . 'includes/class-inventor-invoices-shortcodes.php';
-                require_once INVENTOR_INVOICES_DIR . 'includes/class-inventor-invoices-logic.php';
             }
 
             /**
