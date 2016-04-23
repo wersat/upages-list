@@ -1,6 +1,7 @@
 <?php
     use Upages_Post_Type\Faq_Post_Type;
     use Upages_Post_Type\Invoice_Post_Type;
+    use Upages_Post_Type\Partner_Post_Type;
 
     spl_autoload_register(function ($widgets) {
         $widgets = ltrim($widgets, '\\');
@@ -21,6 +22,7 @@
     new Faq_Post_Type();
     //new Job_Post_Type();
     new Invoice_Post_Type();
+    new Partner_Post_Type();
 
     class Admin_Menu
     {

@@ -2,6 +2,7 @@
     use Upages_Widgets\Widget_Boxes;
     use Upages_Widgets\Widget_Call_To_Action;
     use Upages_Widgets\Widget_Last_News;
+    use Upages_Widgets\Widget_Partners;
     use Upages_Widgets\Widget_Simple_Map;
     use Upages_Widgets\Widget_Video_Home_Cover;
     use Upages_Widgets\Widgets_Faq;
@@ -27,3 +28,4 @@
     new Widget_Video_Home_Cover();
     new Widget_Last_News();
     new Widgets_Faq();
+    new Widget_Partners();
