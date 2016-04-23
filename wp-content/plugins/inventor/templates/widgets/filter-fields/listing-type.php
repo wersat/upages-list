@@ -6,11 +6,14 @@
           'inventor'); ?></label>
     <?php endif; ?>
 
-    <?php $listing_types = Inventor_Post_Types::get_listing_post_types(); ?>
+    <?php
+      $listing_types = Inventor_Post_Types::get_listing_post_types();
+      $listing_types_count = count($listing_types);
+    ?>
     <select class="form-control"
             name="filter-listing_types"
             data-size="10"
-            <?php if (count($listing_types) > 10) : ?>data-live-search="true"<?php endif; ?>
+            <?php if ($listing_types_count > 10) : ?>data-live-search="true"<?php endif; ?>
             id="<?php echo ! empty($field_id_prefix) ? $field_id_prefix
               : ''; ?><?php echo esc_attr($args['widget_id']); ?>_listing_types">
       <option value="">

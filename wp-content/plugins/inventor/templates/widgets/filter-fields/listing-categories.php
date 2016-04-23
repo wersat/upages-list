@@ -8,11 +8,13 @@
 
     <?php $categories = get_terms('listing_categories', [
       'hide_empty' => false,
-    ]); ?>
+    ]);
+      $categories_count = count($categories);
+    ?>
     <select class="form-control"
             name="filter-listing_categories"
             data-size="10"
-            <?php if (count($categories) > 10) : ?>data-live-search="true"<?php endif; ?>
+            <?php if ($categories_count > 10) : ?>data-live-search="true"<?php endif; ?>
             id="<?php echo ! empty($field_id_prefix) ? $field_id_prefix
               : ''; ?><?php echo esc_attr($args['widget_id']); ?>_listing_categories">
       <option value="">

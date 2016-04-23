@@ -32,7 +32,8 @@
                 'orderby' => 'parent',
                 'order'   => 'ASC',
             ]);
-            if (is_array($categories) && count($categories) > 0) {
+            $categories_count = count($categories);
+            if (is_array($categories) && $categories_count > 0) {
                 $category = array_shift($categories);
 
                 return Taxonomy_MetaData::get('listing_categories', $category->term_id, 'poi');

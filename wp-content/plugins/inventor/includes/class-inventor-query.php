@@ -92,7 +92,8 @@
                 'orderby'        => 'rand',
                 'post__not_in'   => [$post_id],
             ];
-            if ( ! empty($categories_ids) && is_array($categories_ids) && count($categories_ids) > 0) {
+            $categories_ids_count = count($categories_ids);
+            if ( ! empty($categories_ids) && is_array($categories_ids) && $categories_ids_count > 0) {
                 $args['tax_query'] = [
                     [
                         'taxonomy' => 'listing_categories',
@@ -137,10 +138,11 @@
                 'orderby' => 'parent',
                 'order'   => 'ASC',
             ]);
-            if (is_array($locations) && count($locations) > 0) {
+            $locations_count = count($locations);
+            if (is_array($locations) && $locations_count > 0) {
                 $output = '';
                 if (true === $hierarchical) {
-                    foreach ($locations as $key => $location) {
+                    foreach ((array)$locations as $key => $location) {
                         $output .= '<a href="' . get_term_link($location,
                                 'locations') . '">' . $location->name . '</a>';
                         if (array_key_exists($key + 1, $locations)) {
@@ -169,9 +171,10 @@
         public static function get_listing_category_name($post_id = null)
         {
             $types = wp_get_post_terms($post_id, 'listing_categories');
-            if (is_array($types) && count($types) > 0) {
+            $types_count = count($types);
+            if (is_array($types) && $types_count > 0) {
                 $depth = -1;
-                foreach ($types as $type) {
+                foreach ((array)$types as $type) {
                     $current_depth = count(get_ancestors($type->term_id, 'listing_categories'));
                     if ($current_depth > $depth) {
                         $listing_type = $type;

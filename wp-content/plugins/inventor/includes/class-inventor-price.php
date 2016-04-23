@@ -78,8 +78,10 @@
             $currency         = self::current_currency();
             $amount           = $amount * $currency['rate'];
             $amount_parts_dot = explode('.', $amount);
+            $amount_parts_dot_count = count($amount_parts_dot);
             $amount_parts_col = explode(',', $amount);
-            if (count($amount_parts_dot) > 1 || count($amount_parts_col) > 1) {
+            $amount_parts_col_count = count($amount_parts_col);
+            if ($amount_parts_dot_count > 1 || $amount_parts_col_count > 1) {
                 $decimals = $currency['money_decimals'];
             } else {
                 $decimals = 0;

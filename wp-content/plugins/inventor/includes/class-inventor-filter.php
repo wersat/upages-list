@@ -252,7 +252,8 @@
             }
             // Post IDs
             if (is_array($ids)) {
-                if (count($ids) > 0) {
+                $ids_count = count($ids);
+                if ($ids_count > 0) {
                     $query->set('post__in', $ids);
                 } else {
                     $query->set('post__in', [0]);
@@ -280,7 +281,8 @@
             if ( ! is_array($haystack)) {
                 $haystack = [];
             }
-            if (is_array($haystack) && count($haystack) > 0) {
+            $haystack_count = count($haystack);
+            if (is_array($haystack) && $haystack_count > 0) {
                 return array_intersect($haystack, $ids);
             } else {
                 $haystack = $ids;

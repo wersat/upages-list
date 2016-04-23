@@ -186,9 +186,11 @@
          */
         public static function add_metabox($post_type, array $metaboxes)
         {
-            if (count($metaboxes) > 0) {
+            $metaboxes_count = count($metaboxes);
+            if ($metaboxes_count > 0) {
                 foreach ($metaboxes as $metabox) {
-                    if (2 === count(explode('::', $metabox))) {
+                    $metabox_count = count(explode('::', $metabox));
+                    if (2 === $metabox_count) {
                         $parts = explode('::', $metabox);
                         $name  = 'metabox_' . $parts[1];
                         $parts[0]::$name($post_type);

@@ -119,7 +119,8 @@
          */
         public static function load($name, $args = [], $plugin_dir = INVENTOR_DIR)
         {
-            if (is_array($args) && count($args) > 0) {
+            $args_count = count($args);
+            if (is_array($args) && $args_count > 0) {
                 extract($args, EXTR_SKIP);
             }
             $path = self::locate($name, $plugin_dir);

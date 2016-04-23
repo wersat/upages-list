@@ -56,7 +56,9 @@
                 'hide_empty' => false,
                 'parent'     => 0,
             ];
-            if ( ! empty($instance['listing_categories']) && is_array($instance['listing_categories']) && count($instance['listing_categories']) > 0) {
+            $listing_categories_count = count($instance['listing_categories']);
+
+            if ( ! empty($instance['listing_categories']) && is_array($instance['listing_categories']) && $listing_categories_count > 0) {
                 $data['include'] = implode(',', $instance['listing_categories']);
             }
             $terms = get_terms('listing_categories', $data);

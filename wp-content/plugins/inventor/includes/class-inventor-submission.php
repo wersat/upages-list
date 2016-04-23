@@ -135,7 +135,8 @@
                     }
                 }
             }
-            if (is_array($data) && count($data) > 0) {
+            $data_count = count($data);
+            if (is_array($data) && $data_count > 0) {
                 $_SESSION['submission'][$step] = $data;
             }
         }

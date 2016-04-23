@@ -45,8 +45,11 @@
       <?php if ( ! empty($price) && $price !== 0) : ?>
         <h2><?php echo __('Payment gateway', 'inventor') ?></h2>
         <input type="hidden" name="price" value="<?php echo esc_attr($price); ?>">
-        <?php $payment_gateways = apply_filters('inventor_payment_gateways', []); ?>
-        <?php if (is_array($payment_gateways) && count($payment_gateways) > 0) : ?>
+        <?php
+        $payment_gateways = apply_filters('inventor_payment_gateways', []);
+        $payment_gateways_count = count($payment_gateways);
+        ?>
+        <?php if (is_array($payment_gateways) && $payment_gateways_count > 0) : ?>
           <input type="hidden" name="process-payment" value="1">
           <?php foreach ($payment_gateways as $gateway) : ?>
             <div class="gateway">

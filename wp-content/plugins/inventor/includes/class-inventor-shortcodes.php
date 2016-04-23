@@ -118,7 +118,8 @@
         {
             $post_type    = ! empty($_GET['type']) ? $_GET['type'] : null;
             $steps        = Inventor_Submission::get_submission_steps($post_type);
-            $first_step   = (is_array($steps) && count($steps) > 0) ? $steps[0]['id'] : null;
+            $steps_count = count($steps);
+            $first_step   = (is_array($steps) && $steps_count > 0) ? $steps[0]['id'] : null;
             $current_step = ! empty($_GET['step']) ? $_GET['step'] : $first_step;
 
             return Inventor_Template_Loader::load('submissions/steps', [
@@ -164,8 +165,9 @@
                 $object_id = 'fake-id';
             }
             $steps = Inventor_Submission::get_submission_steps($post_type);
+            $steps_count = count($steps);
             // No steps defined for current post type
-            if (is_array($steps) && count($steps) === 0) {
+            if (is_array($steps) && $steps_count === 0) {
                 return Inventor_Template_Loader::load('submissions/steps-not-found');
             }
             $current_step     = ! empty($_GET['step']) ? $_GET['step'] : $steps[0]['id'];
