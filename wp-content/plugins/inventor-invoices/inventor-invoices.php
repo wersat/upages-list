@@ -11,40 +11,8 @@
      * License: GNU General Public License v3.0
      * License URI: http://www.gnu.org/licenses/gpl-3.0.html.
      */
-    if ( ! class_exists('Inventor_Invoices') && class_exists('Inventor')) {
-        /**
-         * Class Inventor_Invoices.
-         * @class  Inventor_Invoices
-         * @author Pragmatic Mates
-         */
-        final class Inventor_Invoices
-        {
-            /**
-             * Initialize Inventor_Invoices plugin.
-             */
-            public function __construct()
-            {
-                $this->constants();
-                $this->load_plugin_textdomain();
-            }
 
-            /**
-             * Defines constants.
-             */
-            public function constants()
-            {
-                define('INVENTOR_INVOICES_DIR', __DIR__);
-                define('INVENTOR_INVOICE_PREFIX', 'invoice_');
-            }
-
-            /**
-             * Loads localization files.
-             */
-            public function load_plugin_textdomain()
-            {
-                load_plugin_textdomain('inventor-invoices', false, plugin_basename(__FILE__) . '/languages');
-            }
-        }
-
-        new Inventor_Invoices();
+    add_action('plugins_loaded', 'myplugin_init');
+    function myplugin_init() {
+        load_plugin_textdomain('inventor-invoices', false, plugin_basename(__FILE__) . '/languages');
     }
