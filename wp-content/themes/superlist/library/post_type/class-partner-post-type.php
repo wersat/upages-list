@@ -11,79 +11,87 @@
 
     /**
      * Class Partner_Post_Type
+     *
      * @package Upages_Post_Type
      */
-    class Partner_Post_Type
-    {
-        /**
+class Partner_Post_Type
+{
+    /**
          * @type
          */
-        public $post_type;
-        /**
+    public $post_type;
+    /**
          * @type string
          */
-        public $post_type_name = 'Partner';
-        /**
+    public $post_type_name = 'Partner';
+    /**
          * @type string
          */
-        public $partner_prefix = 'partner_';
-        /**
+    public $post_type_prefix;
+    /**
          * @type string
          */
-        public $post_type_slug;
+    public $post_type_slug;
 
-        /**
+    /**
          * @type array
          */
-        public $post_type_option
-            = [
-                'supports'     => ['title', 'thumbnail'],
-                'public'        => false,
-                'show_ui'       => true,
-                'show_in_menu'  => 'inventor',
-                'menu_icon'     => 'dashicons-businessman',
-                'menu_position' => 55,
-            ];
+    public $post_type_option
+    = [
+        'supports'     => ['title', 'thumbnail'],
+        'public'        => false,
+        'show_ui'       => true,
+        'show_in_menu'  => 'inventor',
+        'menu_icon'     => 'dashicons-businessman',
+        'menu_position' => 55,
+    ];
 
-        /**
+    /**
          * Partner_Post_Type constructor.
          */
-        public function __construct()
-        {
-            $this->post_type_slug = sanitize_title($this->post_type_name);
-            $this->setPostType();
-            add_filter('cmb2_init', [$this, 'fields']);
-        }
+    public function __construct()
+    {
+        $this->post_type_slug = sanitize_title($this->post_type_name);
+        $this->post_type_prefix = sanitize_title($this->post_type_name).'_';
+        $this->setPostType();
+        add_filter('cmb2_init', [$this, 'fields']);
+    }
 
-        /**
+    /**
          * @param mixed $post_type
          */
-        public function setPostType()
-        {
-            $this->post_type = new Custom_Post_Type([
-                'post_type_name' => $this->post_type_slug,
-                'singular'       => $this->post_type_name,
-                'plural'         => $this->post_type_name,
-                'slug'           => $this->post_type_slug
-            ], $this->post_type_option);
-        }
+    public function setPostType()
+    {
+        $this->post_type = new Custom_Post_Type(
+            [
+            'post_type_name' => $this->post_type_slug,
+            'singular'       => $this->post_type_name,
+            'plural'         => $this->post_type_name,
+            'slug'           => $this->post_type_slug
+            ], $this->post_type_option
+        );
+    }
 
-        /**
+    /**
          *
          */
-        public function fields()
-        {
-            $cmb = new_cmb2_box([
-                'id'           => $this->partner_prefix . 'url',
-                'title'        => __('URL', 'inventor-partners'),
-                'object_types' => [$this->post_type_slug],
-                'context'      => 'normal',
-                'priority'     => 'high',
-            ]);
-            $cmb->add_field([
-                'name' => __('URL', 'inventor-partners'),
-                'id'   => $this->partner_prefix . 'url',
-                'type' => 'text_url',
-            ]);
-        }
+    public function fields()
+    {
+        $cmb = new_cmb2_box(
+            [
+            'id'           => $this->post_type_prefix . 'url',
+            'title'        => __('URL', 'inventor-partners'),
+            'object_types' => [$this->post_type_slug],
+            'context'      => 'normal',
+            'priority'     => 'high',
+            ]
+        );
+        $cmb->add_field(
+            [
+            'name' => __('URL', 'inventor-partners'),
+            'id'   => $this->post_type_prefix . 'url',
+            'type' => 'text_url',
+            ]
+        );
     }
+}
