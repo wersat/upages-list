@@ -26,6 +26,9 @@
     /**
      * Autoload all class from "LIB_DIR.'/class'" dir
      */
+    if (is_admin()) {
+        show_admin_bar(true);
+    }
     spl_autoload_register(function ($class) {
         $class = ltrim($class, '\\');
         if (0 !== stripos($class, 'Upages_Objects\\')) {
@@ -44,14 +47,15 @@
     /**
      * Load option framework
      */
-    require_once LIB_DIR . '/vafpress/bootstrap.php';
-    require_once OPTION_DIR . '/option_metabox.php';
+    //require_once LIB_DIR . '/vafpress/bootstrap.php';
+    //require_once OPTION_DIR . '/option_page.php';
     /**
      * Widgets
      */
     require_once THEME_WIDGETS_DIR . '/widget-video-cover.php';
-    require_once LIB_DIR . '/widget_loader.php';
     require_once LIB_DIR . '/post_type_loader.php';
+    require_once LIB_DIR . '/widget_loader.php';
+    require_once LIB_DIR . '/customizer_init.php';
     /**
      * Body classes
      * @filter body_class
@@ -609,9 +613,7 @@
 
     add_action('inventor_review_rating_total_attrs', 'superlist_review_rating_toral_attrs', 10, 1);
     $admin_menu = new Admin_Menu();
-
     get_listing_post_types();
-
     function get_listing_post_types()
     {
         $listing_post_types = [];
@@ -624,6 +626,7 @@
             //echo '<p>' . $post_type->name . '</p>';
             $listing_post_types[] = $post_type->name;
         }
+
         return $listing_post_types;
 
     }
