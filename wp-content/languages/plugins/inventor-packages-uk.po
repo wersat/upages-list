@@ -1,0 +1,360 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Inventor Packages\n"
+"POT-Creation-Date: 2016-04-11 16:22+0300\n"
+"PO-Revision-Date: 2016-04-12 11:52+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"Last-Translator: \n"
+"Language: uk\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/class-inventor-packages-logic.php:53
+#: includes/post-types/class-inventor-packages-post-type-package.php:37
+#: includes/post-types/class-inventor-packages-post-type-package.php:43
+#: includes/post-types/class-inventor-packages-post-type-package.php:49
+#: includes/widgets/class-inventor-packages-widget-packages.php:24
+msgid "Packages"
+msgstr "Тарифні пакети"
+
+#: includes/class-inventor-packages-logic.php:217
+msgid "Listing details"
+msgstr "Сторінка підприємства"
+
+#: includes/class-inventor-packages-logic.php:231
+msgid "week"
+msgstr "тиждень"
+
+#: includes/class-inventor-packages-logic.php:232
+msgid "month"
+msgstr "місяць"
+
+#: includes/class-inventor-packages-logic.php:233
+msgid "year"
+msgstr "рік"
+
+#: includes/class-inventor-packages-logic.php:250
+msgid "Purchase package"
+msgstr "Замовити тарифний план"
+
+#: includes/class-inventor-packages-logic.php:251
+#, php-format
+msgid "Upgrade package to %s"
+msgstr "Змінити тарифний план на %s"
+
+#: includes/class-inventor-packages-logic.php:269
+msgid "Not set"
+msgstr "Не задано"
+
+#: includes/class-inventor-packages-logic.php:416
+msgid "Infinite"
+msgstr "Нескінченна"
+
+#: includes/class-inventor-packages-logic.php:456
+#: includes/class-inventor-packages-logic.php:471
+#: includes/class-inventor-packages-logic.php:517
+#: includes/post-types/class-inventor-packages-post-type-package.php:38
+msgid "Package"
+msgstr "Тарифний пакет"
+
+#: includes/class-inventor-packages-logic.php:465
+msgid "Package Information"
+msgstr "Інформація про тарифний план"
+
+#: includes/class-inventor-packages-logic.php:487
+msgid "Infinite duration"
+msgstr "Нескінченна тривалість"
+
+#: includes/class-inventor-packages-logic.php:494
+msgid "Validity"
+msgstr "Термін дії"
+
+#: includes/class-inventor-packages-logic.php:520
+msgid ""
+"Button will be linked to the purchase page. You must create payment page "
+"(containing [inventor_payment]) which must be set up in customizer."
+msgstr ""
+
+#: includes/class-inventor-packages-logic.php:966
+msgid "Package is not free."
+msgstr "Тарифний план не безкоштовний."
+
+#: includes/class-inventor-packages-logic.php:972
+msgid "Package has been set."
+msgstr "Тарифний план встановлено."
+
+#: includes/class-inventor-packages-logic.php:974
+msgid "Could not set package for user."
+msgstr "Не вдалося встановити тарифний план для користувача."
+
+#: includes/class-inventor-packages-logic.php:995
+msgid "Package has been upgraded."
+msgstr "Тарифний план оновлено."
+
+#: includes/customizations/class-inventor-packages-customizations-packages.php:34
+msgid "Inventor Packages"
+msgstr "Inventor Тарифні плани"
+
+#: includes/customizations/class-inventor-packages-customizations-packages.php:49
+msgid "Default package"
+msgstr "Тарифний план за замовчуванням"
+
+#: includes/customizations/class-inventor-packages-customizations-packages.php:53
+msgid "For newly registered user"
+msgstr "Для зареєстрованих користувачів"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:39
+#: includes/post-types/class-inventor-packages-post-type-package.php:40
+msgid "Add New Package"
+msgstr "Додати новий тарифний пакет"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:41
+msgid "Edit Package"
+msgstr "Редагувати тарифний пакет"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:42
+msgid "New Package"
+msgstr "Новий тарифний пакет"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:44
+msgid "View Package"
+msgstr "Переглянути тарифний пакет"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:45
+msgid "Search Package"
+msgstr "Знайти тарифний пакет"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:46
+msgid "No Packages found"
+msgstr "Тарифний пакет не знайдено"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:47
+msgid "No Packages Found in Trash"
+msgstr "У кошику тарифний пакет не знайдено"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:76
+msgid "General"
+msgstr "Загальні"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:85
+#: includes/post-types/class-inventor-packages-post-type-package.php:186
+#: templates/widgets/packages.php:64
+msgid "Price"
+msgstr "Ціна"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:88
+#, php-format
+msgid "In %s."
+msgstr "В %s."
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:100
+#: includes/post-types/class-inventor-packages-post-type-package.php:187
+#: templates/widgets/packages.php:72
+msgid "Duration"
+msgstr "Тривалість"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:107
+#: includes/post-types/class-inventor-packages-post-type-package.php:188
+#: templates/widgets/packages.php:80
+msgid "Max Listings"
+msgstr "Максимальна кількість підприємств"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:109
+msgid ""
+"If submission type is 'packages'. Use -1 for unlimited amount of listings."
+msgstr "-1 для необмеженої кількості"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:119
+#: includes/post-types/class-inventor-packages-post-type-package.php:190
+msgid "Private"
+msgstr "Приватний"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:121
+msgid ""
+"If checked, package won't be visible in the pricing. Suitable for VIP users "
+"or admins."
+msgstr ""
+"Тарифний план не буде показаний на сайті. Для VIP користувачів чи "
+"адміністраторів."
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:126
+msgid "Permissions"
+msgstr "Дозволи"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:135
+msgid "Video"
+msgstr "Відео"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:141
+msgid "Gallery"
+msgstr "Галерея"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:147
+msgid "Reviews"
+msgstr "Відгуки"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:159
+msgid "Location"
+msgstr "Локація"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:165
+msgid "Opening hours"
+msgstr "Час роботи"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:171
+msgid "Contact"
+msgstr "Контактна інформація"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:185
+#: templates/widgets/packages-admin.php:12
+msgid "Title"
+msgstr "Назва"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:189
+msgid "Type"
+msgstr "Тип"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:191
+msgid "Date"
+msgstr "Дата"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:238
+msgid "Yes"
+msgstr "Так"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:238
+msgid "No"
+msgstr "Ні"
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:243
+msgid "free"
+msgstr ""
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:245
+msgid "regular"
+msgstr ""
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:247
+msgid "simple"
+msgstr ""
+
+#: includes/post-types/class-inventor-packages-post-type-package.php:249
+msgid "trial"
+msgstr ""
+
+#: includes/widgets/class-inventor-packages-widget-packages.php:26
+msgid "Displays available packages."
+msgstr "Показує доступні тарифні плани."
+
+#: templates/package-info.php:13
+msgid ""
+"Site is using packages. Before you can post listing, please upgrade your "
+"package."
+msgstr ""
+"Перед тим, як створити підприємство, Вам потрібно змінити тарифний план."
+
+#: templates/package-info.php:17
+msgid "You don't have any package."
+msgstr "У Вас немає тарифного плану."
+
+#: templates/package-info.php:22
+#, php-format
+msgid "You are using <strong>%s</strong> package."
+msgstr "Ви використовуєте <strong>%s</strong> тарифний план."
+
+#: templates/package-info.php:28
+#, php-format
+msgid "Your membership is valid until <strong>%s</strong>."
+msgstr "Ваше членство діє, поки <strong>%s</strong>."
+
+#: templates/package-info.php:35
+msgid "You can add <strong>unlimited</strong> amount of items"
+msgstr "Ви можете додавати <strong>необмежену кількість підприємств</strong>."
+
+#: templates/package-info.php:37
+#, php-format
+msgid ""
+"You can not add new listings because you spent all of your available "
+"listings. Change your package. First <strong>%s</strong> items has been "
+"disabled from listing."
+msgstr ""
+"Ви не можете додавати нові підприємства, тому що Ви вичерпали ліміт, "
+"встановлений Вашим тарифним планом. <strong>%s</strong> підприємства будуть "
+"недоступними."
+
+#: templates/package-info.php:39
+#, php-format
+msgid "You can add <strong>%s</strong> items."
+msgstr "Ви можете додати <strong>%s</strong>підприємств."
+
+#: templates/package-info.php:45
+#, php-format
+msgid "Your membership already expired at <strong>%s</strong>."
+msgstr "Ваше членство завершилося у <strong>%s</strong>."
+
+#: templates/package-info.php:47
+msgid "All your items has been deactivated until you pay for new membership."
+msgstr ""
+"Усі Ваші підприємства будуть недоступними, поки Ви не оплатите тарифний план."
+
+#: templates/package-info.php:58
+msgid "Payment page has been not set."
+msgstr "Сторінка оплати недоступна."
+
+#: templates/package-info.php:67
+msgid "Select Package"
+msgstr "Виберіть тарифний план"
+
+#: templates/package-info.php:77 templates/widgets/packages.php:55
+msgid "Change"
+msgstr "Змінити"
+
+#: templates/payment-form-before.php:9
+msgid "You can't choose trial package."
+msgstr "Ви не можете вибрати пробний тарифний план."
+
+#: templates/payment-form-before.php:13
+#, php-format
+msgid "You choosed package <strong>\"%s\"</strong>."
+msgstr "Ви вибрали <strong>\"%s\"</strong> тарифний план."
+
+#: templates/payment-form-before.php:17
+#, php-format
+msgid ""
+"You are going to pay <strong>%s</strong> for package <strong>\"%s\"</strong>."
+msgstr "Оплатіть <strong>%s</strong> за <strong>\"%s\"</strong> тарифний план."
+
+#: templates/payment-form-before.php:23 templates/payment-form-fields.php:23
+msgid "Missing package."
+msgstr "Відсутній тарифний план."
+
+#: templates/payment-form-fields.php:8
+msgid ""
+"Trial packages can only be used as a default package. They cannot be "
+"purchased or chosen."
+msgstr "Пробний тарифний план не може бути купленим чи обраним."
+
+#: templates/payment-form-fields.php:16
+msgid "Confirm"
+msgstr "Підтвердити"
+
+#: templates/widgets/packages.php:53
+msgid "Purchase"
+msgstr "Придбати"
+
+#: templates/widgets/packages.php:83
+msgid "Unlimited"
+msgstr "Необмежений"
+
+#: templates/widgets/packages.php:95
+msgid "No packages found."
+msgstr "Тарифні плани не знайдені."

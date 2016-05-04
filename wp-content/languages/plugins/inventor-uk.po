@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Inventor\n"
 "POT-Creation-Date: 2016-04-07 11:43+0300\n"
-"PO-Revision-Date: 2016-04-09 13:51+0300\n"
+"PO-Revision-Date: 2016-04-14 15:03+0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,7 +51,7 @@ msgstr "Категорії підприємств"
 #: includes/widgets/class-inventor-widget-listings.php:24
 #: templates/misc/breadcrumb.php:14 templates/misc/breadcrumb.php:48
 msgid "Listings"
-msgstr "Підприємства"
+msgstr ""
 
 #: includes/admin/class-inventor-admin-menu.php:108
 msgid "Lexicon"
@@ -72,7 +72,7 @@ msgstr "Ім'я"
 
 #: includes/class-inventor-billing.php:36
 msgid "Reg. No."
-msgstr ""
+msgstr "Реєстраційний номер"
 
 #: includes/class-inventor-billing.php:37
 msgid "VAT No."
@@ -187,7 +187,7 @@ msgstr ""
 
 #: includes/class-inventor-filter.php:68 templates/submissions/list.php:44
 msgid "Published"
-msgstr ""
+msgstr "Час додавання"
 
 #: includes/class-inventor-metaboxes.php:50
 #: includes/post-types/class-inventor-post-type-report.php:74
@@ -472,7 +472,7 @@ msgstr "Час"
 
 #: includes/class-inventor-metaboxes.php:673
 msgid "Date interval"
-msgstr "Період"
+msgstr "Проміжок дати"
 
 #: includes/class-inventor-metaboxes.php:680
 msgid "Date from"
@@ -615,11 +615,11 @@ msgstr "Ви вийшли з профілю."
 
 #: includes/class-inventor-shortcodes.php:152
 msgid "Check your package."
-msgstr ""
+msgstr "Перевірте ваш тариф."
 
 #: includes/class-inventor-shortcodes.php:188
 msgid "Proceed to next step"
-msgstr ""
+msgstr "Перейти до наступного кроку"
 
 #: includes/class-inventor-shortcodes.php:188
 msgid "Save"
@@ -631,31 +631,31 @@ msgstr "Зберегти"
 
 #: includes/class-inventor-submission.php:244
 msgid "New submission has been successfully created."
-msgstr ""
+msgstr "Створено нове підприємство."
 
 #: includes/class-inventor-submission.php:250
 msgid "Submission has been successfully updated."
-msgstr ""
+msgstr "Підприємство оновлено."
 
 #: includes/class-inventor-submission.php:342
 msgid "Item has been successfully removed."
-msgstr ""
+msgstr "Підприємство видалено."
 
 #: includes/class-inventor-submission.php:344
 msgid "An error occurred when removing an item."
-msgstr ""
+msgstr "При видаленні виникла помилка."
 
 #: includes/class-inventor-utilities.php:58
 msgid "Please sign in before accessing this page."
-msgstr ""
+msgstr "Увійдіть в систему, щоб отримати доступ до цієї сторінки."
 
 #: includes/class-inventor-utilities.php:66 templates/misc/not-allowed.php:11
 msgid "You are not allowed to access this page."
-msgstr ""
+msgstr "Вам недоступна ця сторінка."
 
 #: includes/class-inventor-utilities.php:124
 msgid "Not set"
-msgstr ""
+msgstr "Не задано"
 
 #: includes/class-inventor-wire-transfer.php:36
 msgid "Wire Transfer"
@@ -1154,7 +1154,7 @@ msgstr ""
 #: includes/post-types/class-inventor-post-type-dating.php:132
 #: templates/payment/transactions.php:23
 msgid "Status"
-msgstr ""
+msgstr "Cтатус"
 
 #: includes/post-types/class-inventor-post-type-dating.php:139
 msgid "Eye color"
@@ -1330,7 +1330,7 @@ msgstr ""
 #: includes/post-types/class-inventor-post-type-food.php:114
 #: templates/submissions/list.php:93
 msgid "Remove"
-msgstr ""
+msgstr "Вилучити"
 
 #: includes/post-types/class-inventor-post-type-food.php:142
 msgid "Serving day"
@@ -1545,65 +1545,65 @@ msgstr ""
 #: includes/post-types/class-inventor-post-type-report.php:43
 #: includes/post-types/class-inventor-post-type-report.php:49
 msgid "Reports"
-msgstr ""
+msgstr "Скарги на підприємство"
 
 #: includes/post-types/class-inventor-post-type-report.php:38
 msgid "Report"
-msgstr ""
+msgstr "Скарга"
 
 #: includes/post-types/class-inventor-post-type-report.php:39
 #: includes/post-types/class-inventor-post-type-report.php:40
 msgid "Add New Report"
-msgstr ""
+msgstr "Додати нову скаргу"
 
 #: includes/post-types/class-inventor-post-type-report.php:41
 msgid "Edit Report"
-msgstr ""
+msgstr "Редагувати скаргу"
 
 #: includes/post-types/class-inventor-post-type-report.php:42
 msgid "New Report"
-msgstr ""
+msgstr "Нова скарга"
 
 #: includes/post-types/class-inventor-post-type-report.php:44
 msgid "View Report"
-msgstr ""
+msgstr "Переглянути скаргу"
 
 #: includes/post-types/class-inventor-post-type-report.php:45
 msgid "Search Report"
-msgstr ""
+msgstr "Знайти скаргу"
 
 #: includes/post-types/class-inventor-post-type-report.php:46
 msgid "No Reports found"
-msgstr ""
+msgstr "Скарги не знайдено"
 
 #: includes/post-types/class-inventor-post-type-report.php:47
 msgid "No Reports Found in Trash"
-msgstr ""
+msgstr "У кошику скарги не знайдено"
 
 #: includes/post-types/class-inventor-post-type-report.php:83
 msgid "Listing ID"
-msgstr ""
+msgstr "ID підприємства"
 
 #: includes/post-types/class-inventor-post-type-report.php:99
 msgid "Email"
-msgstr ""
+msgstr "Електронна пошта"
 
 #: includes/post-types/class-inventor-post-type-report.php:105
 #: includes/post-types/class-inventor-post-type-report.php:127
 msgid "Reason"
-msgstr ""
+msgstr "Причина"
 
 #: includes/post-types/class-inventor-post-type-report.php:111
 #: templates/widgets/listing-author.php:59
 #: templates/widgets/listing-inquire-admin.php:111
 #: templates/widgets/listing-inquire.php:75
 msgid "Message"
-msgstr ""
+msgstr "Повідомлення"
 
 #: includes/post-types/class-inventor-post-type-report.php:128
 #: includes/post-types/class-inventor-post-type-transaction.php:145
 msgid "Author"
-msgstr ""
+msgstr "Автор"
 
 #: includes/post-types/class-inventor-post-type-shopping.php:61
 #: includes/post-types/class-inventor-post-type-shopping.php:67
@@ -1663,74 +1663,74 @@ msgstr ""
 
 #: includes/post-types/class-inventor-post-type-transaction.php:38
 msgid "Transaction"
-msgstr ""
+msgstr "Транзакція"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:39
 #: includes/post-types/class-inventor-post-type-transaction.php:40
 msgid "Add New Transaction"
-msgstr ""
+msgstr "Додати нову транзакцію"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:41
 msgid "Edit Transaction"
-msgstr ""
+msgstr "Редагувати транзакцію"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:42
 msgid "New Transaction"
-msgstr ""
+msgstr "Нова транзакція"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:44
 msgid "View Transaction"
-msgstr ""
+msgstr "Переглянути транзакцію"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:45
 msgid "Search Transaction"
-msgstr ""
+msgstr "Знайти транзакцію"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:46
 msgid "No Transactions found"
-msgstr ""
+msgstr "Транзакції не знайдено"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:47
 msgid "No Transactions Found in Trash"
-msgstr ""
+msgstr "У кошику транзакції не знайдено"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:83
 #: includes/post-types/class-inventor-post-type-transaction.php:140
 msgid "Payment type"
-msgstr ""
+msgstr "Тип оплати"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:89
 #: includes/post-types/class-inventor-post-type-transaction.php:141
 #: templates/payment/transactions.php:20
 msgid "Gateway"
-msgstr ""
+msgstr "Платіжний шлюз"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:95
 msgid "Object ID"
-msgstr ""
+msgstr "ID об'єкту"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:101
 #: includes/post-types/class-inventor-post-type-transaction.php:139
 msgid "Payment ID"
-msgstr ""
+msgstr "ID оплати"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:113
 msgid "Currency"
-msgstr ""
+msgstr "Валюта"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:119
 #: includes/post-types/class-inventor-post-type-transaction.php:144
 msgid "Success"
-msgstr ""
+msgstr "Успішно"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:125
 msgid "Data"
-msgstr ""
+msgstr "Дані"
 
 #: includes/post-types/class-inventor-post-type-transaction.php:143
 #: templates/payment/transactions.php:21
 msgid "Object"
-msgstr ""
+msgstr "Послуга"
 
 #: includes/post-types/class-inventor-post-type-travel.php:60
 #: includes/post-types/class-inventor-post-type-travel.php:66
@@ -1783,7 +1783,7 @@ msgstr ""
 #: includes/post-types/class-inventor-post-type-user.php:79
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:96
 msgid "Image"
-msgstr "Аватар"
+msgstr "Зображення"
 
 #: includes/post-types/class-inventor-post-type-user.php:85
 msgid "First name"
@@ -1832,27 +1832,28 @@ msgstr "Не вдалось відправити повідомлення."
 #: includes/post-types/class-inventor-post-type-user.php:344
 msgid "Please check inbox for more information."
 msgstr ""
+"Будь ласка, перевірте поштову скриньку для отримання додаткової інформації."
 
 #: includes/post-types/class-inventor-post-type-user.php:363
 msgid "Username and e-mail are required."
-msgstr ""
+msgstr "Логін та електронна пошта обов'язкові для заповнення."
 
 #: includes/post-types/class-inventor-post-type-user.php:370
 msgid "Username already exists."
-msgstr ""
+msgstr "Такий логін вже існує."
 
 #: includes/post-types/class-inventor-post-type-user.php:377
 msgid "Email already exists."
-msgstr ""
+msgstr "Така електронна пошта вже існує."
 
 #: includes/post-types/class-inventor-post-type-user.php:383
 #: includes/post-types/class-inventor-post-type-user.php:397
 msgid "Passwords must be same."
-msgstr ""
+msgstr "Паролі повинні бути одинаковими."
 
 #: includes/post-types/class-inventor-post-type-user.php:415
 msgid "You have been successfully registered."
-msgstr ""
+msgstr "Ви успішно зареєстровані."
 
 #: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:34
 #: includes/taxonomies/class-inventor-taxonomy-car-body-styles.php:44
@@ -2056,11 +2057,11 @@ msgstr ""
 
 #: includes/taxonomies/class-inventor-taxonomy-colors.php:36
 msgid "Search Color"
-msgstr ""
+msgstr "Знайти колір"
 
 #: includes/taxonomies/class-inventor-taxonomy-colors.php:37
 msgid "All Colors"
-msgstr ""
+msgstr "Всі кольори"
 
 #: includes/taxonomies/class-inventor-taxonomy-colors.php:38
 msgid "Parent Color"
@@ -2072,23 +2073,23 @@ msgstr ""
 
 #: includes/taxonomies/class-inventor-taxonomy-colors.php:40
 msgid "Edit Color"
-msgstr ""
+msgstr "Редагувати колір"
 
 #: includes/taxonomies/class-inventor-taxonomy-colors.php:41
 msgid "Update Color"
-msgstr ""
+msgstr "Оновити колір"
 
 #: includes/taxonomies/class-inventor-taxonomy-colors.php:42
 msgid "Add New Color"
-msgstr ""
+msgstr "Додати новий колір"
 
 #: includes/taxonomies/class-inventor-taxonomy-colors.php:43
 msgid "New Color"
-msgstr ""
+msgstr "Новий колір"
 
 #: includes/taxonomies/class-inventor-taxonomy-colors.php:45
 msgid "No colors found."
-msgstr ""
+msgstr "Кольори не знайдено."
 
 #: includes/taxonomies/class-inventor-taxonomy-colors.php:52
 msgctxt "URL slug"
@@ -2480,39 +2481,39 @@ msgstr "Категорія"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:37
 msgid "Search Categories"
-msgstr ""
+msgstr "Знайти категорію"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:38
 msgid "All Categories"
-msgstr ""
+msgstr "Всі категорії"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:39
 msgid "Parent Category"
-msgstr ""
+msgstr "Предок"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:40
 msgid "Parent Category:"
-msgstr ""
+msgstr "Предок:"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:41
 msgid "Edit Category"
-msgstr ""
+msgstr "Редагувати категорію"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:42
 msgid "Update Category"
-msgstr ""
+msgstr "Оновити категорію"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:43
 msgid "Add New Category"
-msgstr ""
+msgstr "Додати нову категорію"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:44
 msgid "New Category"
-msgstr ""
+msgstr "Нова категорія"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:46
 msgid "No categories found."
-msgstr ""
+msgstr "Категорії не знайдено"
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:53
 msgctxt "URL slug"
@@ -2525,43 +2526,43 @@ msgstr ""
 
 #: includes/taxonomies/class-inventor-taxonomy-listing-categories.php:201
 msgid "Listing Category Options"
-msgstr ""
+msgstr "Параметри категорії підприємства"
 
 #: includes/taxonomies/class-inventor-taxonomy-locations.php:36
 msgid "Search Location"
-msgstr ""
+msgstr "Знайти локацію"
 
 #: includes/taxonomies/class-inventor-taxonomy-locations.php:37
 msgid "All Locations"
-msgstr ""
+msgstr "Всі локації"
 
 #: includes/taxonomies/class-inventor-taxonomy-locations.php:38
 msgid "Parent Location"
-msgstr ""
+msgstr "Предок"
 
 #: includes/taxonomies/class-inventor-taxonomy-locations.php:39
 msgid "Parent Location:"
-msgstr ""
+msgstr "Предок:"
 
 #: includes/taxonomies/class-inventor-taxonomy-locations.php:40
 msgid "Edit Location"
-msgstr ""
+msgstr "Редагувати локацію"
 
 #: includes/taxonomies/class-inventor-taxonomy-locations.php:41
 msgid "Update Location"
-msgstr ""
+msgstr "Оновити локацію"
 
 #: includes/taxonomies/class-inventor-taxonomy-locations.php:42
 msgid "Add New Location"
-msgstr ""
+msgstr "Додати нову локацію"
 
 #: includes/taxonomies/class-inventor-taxonomy-locations.php:43
 msgid "New Location"
-msgstr ""
+msgstr "Нова локація"
 
 #: includes/taxonomies/class-inventor-taxonomy-locations.php:45
 msgid "No locations found."
-msgstr ""
+msgstr "Локації не знайдено."
 
 #: includes/taxonomies/class-inventor-taxonomy-locations.php:52
 msgctxt "URL slug"
@@ -2770,7 +2771,7 @@ msgstr ""
 
 #: includes/widgets/class-inventor-widget-filter.php:24
 msgid "Filter"
-msgstr "Пошук"
+msgstr ""
 
 #: includes/widgets/class-inventor-widget-filter.php:26
 msgid "Filter for filtering listings."
@@ -2877,7 +2878,7 @@ msgstr "Зареєструватися"
 
 #: templates/accounts/register.php:54
 msgid "Registrations are not allowed."
-msgstr ""
+msgstr "Реєстрація заборонена."
 
 #: templates/accounts/reset.php:10
 msgid "Username or E-mail:"
@@ -2893,7 +2894,7 @@ msgstr ""
 
 #: templates/admin/purchase-code.php:10
 msgid "Confirm"
-msgstr ""
+msgstr "Підтвердити"
 
 #: templates/admin/purchase-code.php:17
 msgid "How to find purchase code."
@@ -2901,11 +2902,11 @@ msgstr ""
 
 #: templates/archive-listing.php:66 templates/taxonomy-listing.php:66
 msgid "Previous"
-msgstr ""
+msgstr "Попередня"
 
 #: templates/archive-listing.php:67 templates/taxonomy-listing.php:67
 msgid "Next"
-msgstr ""
+msgstr "Наступна"
 
 #: templates/controls/opening-hours.php:2
 #: templates/listings/detail/section-opening-hours.php:12
@@ -2964,11 +2965,11 @@ msgstr "Мапа"
 
 #: templates/listings/detail/section-google-map.php:37
 msgid "See Inside"
-msgstr ""
+msgstr "Вигляд зсередини"
 
 #: templates/listings/detail/section-google-map.php:44
 msgid "Directions"
-msgstr ""
+msgstr "Показати маршрут"
 
 #: templates/listings/detail/section-report.php:7
 msgid "Report spam, abuse, or inappropriate content"
@@ -2981,11 +2982,11 @@ msgstr ""
 #: templates/misc/breadcrumb.php:3 templates/misc/breadcrumb.php:6
 #: templates/misc/breadcrumb.php:9
 msgid "Home"
-msgstr ""
+msgstr "Головна сторінка"
 
 #: templates/misc/breadcrumb.php:84
 msgid "Page not found"
-msgstr ""
+msgstr "Сторінку не знайдено"
 
 #: templates/misc/breadcrumb.php:91 templates/misc/breadcrumb.php:93
 #: templates/misc/breadcrumb.php:95
@@ -3002,19 +3003,19 @@ msgstr ""
 
 #: templates/misc/breadcrumb.php:101
 msgid "Search Results"
-msgstr ""
+msgstr "Результати пошуку"
 
 #: templates/misc/not-allowed.php:9
 msgid "You need to log in at first."
-msgstr ""
+msgstr "Спочатку увійдіть в систему."
 
 #: templates/misc/not-allowed.php:21
 msgid "Login"
-msgstr ""
+msgstr "Увійти"
 
 #: templates/misc/not-allowed.php:26
 msgid "Register"
-msgstr ""
+msgstr "Зареєструватись"
 
 #: templates/misc/object-does-not-exist.php:8
 msgid "Object does not exist."
@@ -3030,7 +3031,7 @@ msgstr ""
 
 #: templates/misc/remove-form.php:15
 msgid "Delete"
-msgstr ""
+msgstr "Видалити"
 
 #: templates/misc/report-form.php:6
 #, php-format
@@ -3095,7 +3096,7 @@ msgstr "Надіслати скаргу"
 
 #: templates/misc/share.php:3 templates/misc/share.php:7
 msgid "Share"
-msgstr ""
+msgstr "Поділитися"
 
 #: templates/notices/welcome.php:3
 msgid ""
@@ -3125,7 +3126,7 @@ msgstr ""
 #: templates/payment/gateways/wire-transfer.php:10
 #, php-format
 msgid "for package \"%s\""
-msgstr ""
+msgstr "за тарифний план \"%s\""
 
 #: templates/payment/gateways/wire-transfer.php:16
 msgid "Beneficiary's account number"
@@ -3149,7 +3150,7 @@ msgstr ""
 
 #: templates/payment/gateways/wire-transfer.php:48
 msgid "Postcode (ZIP)"
-msgstr ""
+msgstr "Поштовий індекс (ZIP)."
 
 #: templates/payment/gateways/wire-transfer.php:65
 msgid "Your payment will be manually reviewed when transfer will be completed."
@@ -3157,7 +3158,7 @@ msgstr ""
 
 #: templates/payment/payment-form.php:16
 msgid "You are missing payment type."
-msgstr ""
+msgstr "Невизначений тип оплати."
 
 #: templates/payment/payment-form.php:20
 msgid "Invalid payment type."
@@ -3181,7 +3182,7 @@ msgstr ""
 
 #: templates/payment/payment-form.php:113
 msgid "Back to"
-msgstr ""
+msgstr "Повернутись до "
 
 #: templates/payment/transactions.php:18
 msgid "ID"
@@ -3189,23 +3190,23 @@ msgstr ""
 
 #: templates/payment/transactions.php:22
 msgid "Payment Type"
-msgstr ""
+msgstr "Тип оплати"
 
 #: templates/payment/transactions.php:48
 msgid "Package"
-msgstr ""
+msgstr "Тариф"
 
 #: templates/payment/transactions.php:72 templates/submissions/list.php:105
 msgid "Previous page"
-msgstr ""
+msgstr "Попередня сторінка"
 
 #: templates/payment/transactions.php:73 templates/submissions/list.php:106
 msgid "Next page"
-msgstr ""
+msgstr "Наступна сторінка"
 
 #: templates/payment/transactions.php:74 templates/submissions/list.php:107
 msgid "Page"
-msgstr ""
+msgstr "Сторінка"
 
 #: templates/payment/transactions.php:77
 msgid "No transactions found."
@@ -3213,19 +3214,19 @@ msgstr ""
 
 #: templates/submissions/list.php:11
 msgid "Create listing"
-msgstr ""
+msgstr "Додати підприємство"
 
 #: templates/submissions/list.php:26
 msgid "Listing published"
-msgstr ""
+msgstr "Підприємство опубліковано"
 
 #: templates/submissions/list.php:27
 msgid "Waiting for review"
-msgstr ""
+msgstr "В очікуванні розгляду"
 
 #: templates/submissions/list.php:28
 msgid "Listing disabled"
-msgstr ""
+msgstr "Підприємство відмінено"
 
 #: templates/submissions/list.php:40
 msgid "Pending"
@@ -3237,15 +3238,15 @@ msgstr ""
 
 #: templates/submissions/list.php:87
 msgid "Edit"
-msgstr ""
+msgstr "Редагувати"
 
 #: templates/submissions/list.php:113
 msgid "You don't have any listings, yet. Start by creating new one."
-msgstr ""
+msgstr "У вас немає жодного підприємства."
 
 #: templates/submissions/step-title.php:8
 msgid "step"
-msgstr ""
+msgstr "крок"
 
 #: templates/submissions/steps-not-found.php:1
 msgid "Custom post type does not have any metaboxes."
@@ -3257,7 +3258,7 @@ msgstr ""
 
 #: templates/submissions/type-not-found.php:3
 msgid "Please define type of your submission"
-msgstr ""
+msgstr "Вкажіть тип підприємства"
 
 #: templates/widgets/advanced-options-admin.php:16
 msgid "Advanced Options"
@@ -3343,27 +3344,27 @@ msgstr "Вартість до"
 
 #: templates/widgets/filter-form.php:39
 msgid "Sort"
-msgstr ""
+msgstr "Сортувати"
 
 #: templates/widgets/filter-form.php:55 templates/widgets/listings-admin.php:91
 msgid "Order"
-msgstr ""
+msgstr "Впорядкувати за"
 
 #: templates/widgets/filter-form.php:61
 msgid "Asc"
-msgstr ""
+msgstr "Зрост"
 
 #: templates/widgets/filter-form.php:67
 msgid "Desc"
-msgstr ""
+msgstr "Спад"
 
 #: templates/widgets/filter-form.php:77
 msgid "Rows"
-msgstr ""
+msgstr "Список"
 
 #: templates/widgets/filter-form.php:84
 msgid "Grid"
-msgstr ""
+msgstr "Сітка"
 
 #: templates/widgets/filter.php:43
 #, php-format
@@ -3374,8 +3375,14 @@ msgid_plural ""
 "<span class=\"match\">%d</span> listings from <span class=\"total\">%d</"
 "span> match your search criteria"
 msgstr[0] ""
+"<span class=\"match\">%d</span> підприємство із <span class=\"total\">%d</"
+"span> відповідає Вашому пошуковому запиту"
 msgstr[1] ""
+"<span class=\"match\">%d</span> підприємства із <span class=\"total\">%d</"
+"span> відповідають Вашому пошуковому запиту"
 msgstr[2] ""
+"<span class=\"match\">%d</span> підприємств із <span class=\"total\">%d</"
+"span> відповідають Вашому пошуковому запиту"
 
 #: templates/widgets/filter.php:45
 #, php-format
@@ -3383,8 +3390,14 @@ msgid "<span class=\"match\">%d</span> listing matches your search criteria"
 msgid_plural ""
 "<span class=\"match\">%d</span> listings match your search criteria"
 msgstr[0] ""
+"<span class=\"match\">%d</span> підприємство відповідає Вашому пошуковому "
+"запиту"
 msgstr[1] ""
+"<span class=\"match\">%d</span> підприємства відповідають Вашому пошуковому "
+"запиту"
 msgstr[2] ""
+"<span class=\"match\">%d</span> підприємств відповідають Вашому пошуковому "
+"запиту"
 
 #: templates/widgets/listing-categories-admin.php:64
 msgid "Show count"
@@ -3426,7 +3439,7 @@ msgstr ""
 
 #: templates/widgets/listing-inquire.php:80
 msgid "Send Message"
-msgstr ""
+msgstr "Відправити повідомлення"
 
 #: templates/widgets/listings-admin.php:47
 msgid "Count"
@@ -3493,7 +3506,7 @@ msgstr ""
 
 #: templates/widgets/listings.php:80
 msgid "No listings found."
-msgstr ""
+msgstr "Підприємства не знайдені."
 
 #: templates/widgets/opening-hours.php:10
 msgid "Mon"
