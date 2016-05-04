@@ -1,6 +1,9 @@
+/wp-content/themes/superlist/library/widgets/class-my-widget-test.php
 /wp-content/plugins/wp-php-console
 /wp-content/plugins/*debug-*
 # Created by .ignore support plugin (hsz.mobi)
+/wp-content/themes/superlist/library/customizer-library
+/wp-content/themes/superlist/library/customizer-library-demo
 ### Sass template
 .sass-cache/
 *.css.map
