@@ -19,7 +19,6 @@
         {
             add_action('customize_register', [$this, 'setCustomize']);
             $this->setOption($options);
-            var_dump($options);
         }
 
         /**
