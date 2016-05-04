@@ -1,56 +1,53 @@
 <?php
+    namespace PayPal\Api;
 
-namespace PayPal\Api;
-
-use PayPal\Common\PayPalModel;
-
-/**
- * Class Image
- *
- * @package PayPal\Api
- *
- * @property string image
- */
-class Image extends PayPalModel
-{
-    /**
-     * List of invoices belonging to a merchant.
-     *
-     * @param string $imageBase64String
-     * 
-     * @return $this
-     */
-    public function setImage($imageBase64String)
-    {
-        $this->image = $imageBase64String;
-        return $this;
-    }
+    use PayPal\Common\PayPalModel;
 
     /**
-     * Get Image as Base-64 encoded String
-     *
-     * @return string
+     * Class Image.
+     * @property string image
      */
-    public function getImage()
+    class Image extends PayPalModel
     {
-        return $this->image;
-    }
+        /**
+         * List of invoices belonging to a merchant.
+         *
+         * @param string $imageBase64String
+         *
+         * @return $this
+         */
+        public function setImage($imageBase64String)
+        {
+            $this->image = $imageBase64String;
 
-    /**
-     * Stores the Image to file
-     *
-     * @param string $name File Name
-     * @return string File name
-     */
-    public function saveToFile($name = null)
-    {
-        // Self Generate File Location
-        if (!$name) {
-            $name = uniqid() . '.png';
+            return $this;
         }
-        // Save to File
-        file_put_contents($name, base64_decode($this->getImage()));
-        return $name;
-    }
 
-}
+        /**
+         * Stores the Image to file.
+         *
+         * @param string $name File Name
+         *
+         * @return string File name
+         */
+        public function saveToFile($name = null)
+        {
+            // Self Generate File Location
+            if ( ! $name) {
+                $name = uniqid() . '.png';
+            }
+            // Save to File
+            file_put_contents($name, base64_decode($this->getImage()));
+
+            return $name;
+        }
+
+        /**
+         * Get Image as Base-64 encoded String.
+         * @return string
+         */
+        public function getImage()
+        {
+            return $this->image;
+        }
+    }

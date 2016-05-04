@@ -1,51 +1,42 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+if (! defined('ABSPATH')) {
+    exit;
 }
 
-/**
- * Class Inventor_Customizations
- *
- * @access public
- * @package Inventor/Classes/Customizations
- * @return void
- */
-class Inventor_Customizations {
-	/**
-	 * Initialize customizations
-	 *
-	 * @access public
-	 * @return void
-	 */
-	public static function init() {
-		add_action( 'customize_register', array( __CLASS__, 'types' ) );
-		self::includes();
-	}
+    /**
+     * Class Inventor_Customizations.
+     */
+class Inventor_Customizations
+{
+    /**
+         * Initialize customizations.
+         */
+    public static function init()
+    {
+        add_action('customize_register', [__CLASS__, 'types']);
+        self::includes();
+    }
 
-	/**
-	 * Register new types for customizer
-	 *
-	 * @return void
-	 */
-	public static function types() {
-		require_once INVENTOR_DIR . 'includes/customizations/class-inventor-customizations-types.php';
-	}
+    /**
+         * Include all customizations.
+         */
+    public static function includes()
+    {
+        include_once INVENTOR_CUSTOM_DIR . '/class-inventor-customizations-general.php';
+        include_once INVENTOR_CUSTOM_DIR . '/class-inventor-customizations-currency.php';
+        include_once INVENTOR_CUSTOM_DIR . '/class-inventor-customizations-measurement.php';
+        include_once INVENTOR_CUSTOM_DIR . '/class-inventor-customizations-pages.php';
+        include_once INVENTOR_CUSTOM_DIR . '/class-inventor-customizations-submission.php';
+        include_once INVENTOR_CUSTOM_DIR . '/class-inventor-customizations-wire-transfer.php';
+    }
 
-	/**
-	 * Include all customizations
-	 *
-	 * @access public
-	 * @return void
-	 */
-	public static function includes() {
-		require_once INVENTOR_DIR . 'includes/customizations/class-inventor-customizations-general.php';
-		require_once INVENTOR_DIR . 'includes/customizations/class-inventor-customizations-currency.php';
-		require_once INVENTOR_DIR . 'includes/customizations/class-inventor-customizations-measurement.php';
-		require_once INVENTOR_DIR . 'includes/customizations/class-inventor-customizations-pages.php';
-		require_once INVENTOR_DIR . 'includes/customizations/class-inventor-customizations-submission.php';
-		require_once INVENTOR_DIR . 'includes/customizations/class-inventor-customizations-wire-transfer.php';
-	}
+    /**
+         * Register new types for customizer.
+         */
+    public static function types()
+    {
+        include_once INVENTOR_CUSTOM_DIR . '/class-inventor-customizations-types.php';
+    }
 }
 
-Inventor_Customizations::init();
+    Inventor_Customizations::init();

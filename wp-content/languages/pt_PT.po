@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the 4.4.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-04-07 13:35:36+0000\n"
+"PO-Revision-Date: 2016-04-11 14:36:11+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -5383,15 +5383,15 @@ msgstr "Nenhuma imagem definida"
 
 #: wp-includes/customize/class-wp-customize-header-image-control.php:179
 msgid "While you can crop images to your liking after clicking <strong>Add new image</strong>, your theme recommends a header size of <strong>%s &times; %s</strong> pixels."
-msgstr "Embora possa cortar imagens ao seu gosto depois de clicar em <strong>Adicionar nova imagem</strong>, este tema recomenda um cabeçalho de <strong>%s &times; %s</strong> pixeis."
+msgstr "Embora possa cortar imagens ao seu gosto depois de clicar em <strong>Adicionar nova imagem</strong>, o seu tema recomenda um cabeçalho com tamanho de <strong>%s &times; %s</strong> píxeis."
 
 #: wp-includes/customize/class-wp-customize-header-image-control.php:181
 msgid "While you can crop images to your liking after clicking <strong>Add new image</strong>, your theme recommends a header width of <strong>%s</strong> pixels."
-msgstr "Embora possa cortar imagens ao seu gosto depois de clicar em <strong>Adicionar nova imagem</strong>, o seu tema recomenda um cabeçalho com a largura de <strong>%s</strong> pixeis."
+msgstr "Embora possa cortar imagens ao seu gosto depois de clicar em <strong>Adicionar nova imagem</strong>, o seu tema recomenda um cabeçalho com a largura de <strong>%s</strong> píxeis."
 
 #: wp-includes/customize/class-wp-customize-header-image-control.php:183
 msgid "While you can crop images to your liking after clicking <strong>Add new image</strong>, your theme recommends a header height of <strong>%s</strong> pixels."
-msgstr "Embora possa cortar imagens ao seu gosto depois de clicar em <strong>Adicionar nova imagem</strong>, o seu tema recomenda um cabeçalho com a altura de <strong>%s</strong> pixeis."
+msgstr "Embora possa cortar imagens ao seu gosto depois de clicar em <strong>Adicionar nova imagem</strong>, o seu tema recomenda um cabeçalho com a altura de <strong>%s</strong> píxeis."
 
 #: wp-includes/customize/class-wp-customize-header-image-control.php:190
 msgid "Current header"

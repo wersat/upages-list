@@ -353,9 +353,7 @@ catch( Exception $e )
 						</div>
 					</div>
 				</div>
-
-				</style>
-				<div class="postbox">
+        <div class="postbox">
 					<div class="inside">
 						<div style="padding:0 20px;">
 							<p>

@@ -1,26 +1,24 @@
 <?php
+    namespace PayPal\Core;
 
-namespace PayPal\Core;
+    /**
+     * Logging Levels.
+     * Class containing all the constants for Logging Levels.
+     */
+    class PayPalLoggingLevel
+    {
+        // DEBUG Logging Level
+        const DEBUG = 4;
 
-/**
- * Logging Levels.
- * Class containing all the constants for Logging Levels.
- */
-class PayPalLoggingLevel
-{
+        // FINE Logging Level
+        const FINE = 3;
 
-    // DEBUG Logging Level
-    const DEBUG = 4;
+        // INFO Logging Level
+        const INFO = 2;
 
-    // FINE Logging Level
-    const FINE = 3;
+        // WARN Logging Level
+        const WARN = 1;
 
-    // INFO Logging Level
-    const INFO = 2;
-
-    // WARN Logging Level
-    const WARN = 1;
-
-    // ERROR Logging Level
-    const ERROR = 0;
-}
+        // ERROR Logging Level
+        const ERROR = 0;
+    }

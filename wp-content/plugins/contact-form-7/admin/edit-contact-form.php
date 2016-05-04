@@ -86,7 +86,7 @@ if ( $post ) :
 
 	echo sprintf( '<input %s />', wpcf7_format_atts( $posttitle_atts ) );
 ?>
-</div><!-- #titlewrap -->
+</div>
 
 <div class="inside">
 <?php
@@ -108,8 +108,8 @@ if ( $post ) :
 	endif;
 ?>
 </div>
-</div><!-- #titlediv -->
-</div><!-- #post-body-content -->
+</div>
+</div>
 
 <div id="postbox-container-1" class="postbox-container">
 <?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) ) : ?>
@@ -130,7 +130,7 @@ if ( $post ) :
 ?>
 	<input type="submit" name="wpcf7-copy" class="copy button" value="<?php echo esc_attr( __( 'Duplicate', 'contact-form-7' ) ); ?>" <?php echo "onclick=\"this.form._wpnonce.value = '$copy_nonce'; this.form.action.value = 'copy'; return true;\""; ?> />
 <?php endif; ?>
-</div><!-- #minor-publishing-actions -->
+</div>
 
 <div id="major-publishing-actions">
 
@@ -140,7 +140,7 @@ if ( $post ) :
 ?>
 <div id="delete-action">
 	<input type="submit" name="wpcf7-delete" class="delete submitdelete" value="<?php echo esc_attr( __( 'Delete', 'contact-form-7' ) ); ?>" <?php echo "onclick=\"if (confirm('" . esc_js( __( "You are about to delete this contact form.\n  'Cancel' to stop, 'OK' to delete.", 'contact-form-7' ) ) . "')) {this.form._wpnonce.value = '$delete_nonce'; this.form.action.value = 'delete'; return true;} return false;\""; ?> />
-</div><!-- #delete-action -->
+</div>
 <?php endif; ?>
 
 <div id="publishing-action">
@@ -148,10 +148,10 @@ if ( $post ) :
 	<?php wpcf7_admin_save_button( $post_id ); ?>
 </div>
 <div class="clear"></div>
-</div><!-- #major-publishing-actions -->
-</div><!-- #submitpost -->
 </div>
-</div><!-- #submitdiv -->
+</div>
+</div>
+</div>
 <?php endif; ?>
 
 <div id="informationdiv" class="postbox">
@@ -163,9 +163,9 @@ if ( $post ) :
 <li><?php echo wpcf7_link( __( 'http://contactform7.com/support/', 'contact-form-7' ), __( 'Support', 'contact-form-7' ) ); ?></li>
 </ul>
 </div>
-</div><!-- #informationdiv -->
+</div>
 
-</div><!-- #postbox-container-1 -->
+</div>
 
 <div id="postbox-container-2" class="postbox-container">
 <div id="contact-form-editor">
@@ -210,22 +210,22 @@ if ( $post ) :
 
 	$editor->display();
 ?>
-</div><!-- #contact-form-editor -->
+</div>
 
 <?php if ( current_user_can( 'wpcf7_edit_contact_form', $post_id ) ) : ?>
 <p class="submit"><?php wpcf7_admin_save_button( $post_id ); ?></p>
 <?php endif; ?>
 
-</div><!-- #postbox-container-2 -->
+</div>
 
-</div><!-- #post-body -->
+</div>
 <br class="clear" />
-</div><!-- #poststuff -->
+</div>
 </form>
 
 <?php endif; ?>
 
-</div><!-- .wrap -->
+</div>
 
 <?php
 

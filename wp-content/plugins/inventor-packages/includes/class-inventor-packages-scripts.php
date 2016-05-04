@@ -1,37 +1,32 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-
-/**
- * Class Inventor_Packages_Scripts
- *
- * @class Inventor_Scripts
- * @package Inventor_Packages/Classes
- * @author Pragmatic Mates
- */
-class Inventor_Packages_Scripts {
-    /**
-     * Initialize scripts
-     *
-     * @access public
-     * @return void
-     */
-    public static function init() {
-        add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_backend' ) );
+    if ( ! defined('ABSPATH')) {
+        exit;
     }
 
     /**
-     * Loads backend files
-     *
-     * @access public
-     * @return void
+     * Class Inventor_Packages_Scripts.
+     * @class  Inventor_Scripts
+     * @author Pragmatic Mates
      */
-    public static function enqueue_backend( $hook ) {
-        wp_register_script( 'inventor-packages-admin', plugins_url( '/inventor-packages/assets/js/inventor-packages-admin.js' ), array( 'jquery' ), false, true );
-        wp_enqueue_script( 'inventor-packages-admin' );
-    }
-}
+    class Inventor_Packages_Scripts
+    {
+        /**
+         * Initialize scripts.
+         */
+        public static function init()
+        {
+            add_action('admin_enqueue_scripts', [__CLASS__, 'enqueue_backend']);
+        }
 
-Inventor_Packages_Scripts::init();
+        /**
+         * Loads backend files.
+         */
+        public static function enqueue_backend($hook)
+        {
+            wp_register_script('inventor-packages-admin',
+                plugins_url('/inventor-packages/assets/js/inventor-packages-admin.js'), ['jquery'], false, true);
+            wp_enqueue_script('inventor-packages-admin');
+        }
+    }
+
+    Inventor_Packages_Scripts::init();

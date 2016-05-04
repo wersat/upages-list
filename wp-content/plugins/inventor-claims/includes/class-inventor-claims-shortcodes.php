@@ -1,46 +1,40 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-
-/**
- * Class Inventor_Claims_Shortcodes
- *
- * @class Inventor_Claims_Shortcodes
- * @package Inventor/Classes
- * @author Pragmatic Mates
- */
-class Inventor_Claims_Shortcodes {
-    /**
-     * Initialize shortcodes
-     *
-     * @access public
-     * @return void
-     */
-    public static function init() {
-        add_shortcode( 'inventor_claim_form', array( __CLASS__, 'claim_form' ) );
+    if ( ! defined('ABSPATH')) {
+        exit;
     }
 
     /**
-     * Claim form
-     *
-     * @access public
-     * @param $atts
-     * @return void
+     * Class Inventor_Claims_Shortcodes.
+     * @class  Inventor_Claims_Shortcodes
+     * @author Pragmatic Mates
      */
-    public static function claim_form( $atts ) {
-        if ( ! is_user_logged_in() ) {
-            echo Inventor_Template_Loader::load( 'misc/not-allowed' );
-            return;
+    class Inventor_Claims_Shortcodes
+    {
+        /**
+         * Initialize shortcodes.
+         */
+        public static function init()
+        {
+            add_shortcode('inventor_claim_form', [__CLASS__, 'claim_form']);
         }
 
-        $atts = array(
-            'listing' => Inventor_Post_Types::get_listing( $_GET['id'] )
-        );
+        /**
+         * Claim form.
+         *
+         * @param $atts
+         */
+        public static function claim_form($atts)
+        {
+            if ( ! is_user_logged_in()) {
+                echo Inventor_Template_Loader::load('misc/not-allowed');
 
-        echo Inventor_Template_Loader::load( 'claims-form', $atts, $plugin_dir = INVENTOR_CLAIMS_DIR );
+                return;
+            }
+            $atts = [
+                'listing' => Inventor_Post_Types::get_listing($_GET['id']),
+            ];
+            echo Inventor_Template_Loader::load('claims-form', $atts, $plugin_dir = INVENTOR_CLAIMS_DIR);
+        }
     }
-}
 
-Inventor_Claims_Shortcodes::init();
+    Inventor_Claims_Shortcodes::init();

@@ -1,35 +1,31 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-/**
- * Class Inventor_Jobs_Taxonomies
- *
- * @class Inventor_Jobs_Taxonomies
- * @package Inventor_Jobs/Classes/Taxonomies
- * @author Pragmatic Mates
- */
-class Inventor_Jobs_Taxonomies {
-    /**
-     * Initialize taxonomies
-     *
-     * @access public
-     * @return void
-     */
-    public static function init() {
-        self::includes();
+    if ( ! defined('ABSPATH')) {
+        exit;
     }
 
     /**
-     * Includes all taxonomies
-     *
-     * @access public
-     * @return void
+     * Class Inventor_Jobs_Taxonomies.
+     * @class  Inventor_Jobs_Taxonomies
+     * @author Pragmatic Mates
      */
-    public static function includes() {
-        require_once INVENTOR_JOBS_DIR . 'includes/taxonomies/class-inventor-jobs-taxonomy-job-positions.php';
-        require_once INVENTOR_JOBS_DIR . 'includes/taxonomies/class-inventor-jobs-taxonomy-job-skills.php';
-    }
-}
+    class Inventor_Jobs_Taxonomies
+    {
+        /**
+         * Initialize taxonomies.
+         */
+        public static function init()
+        {
+            self::includes();
+        }
 
-Inventor_Jobs_Taxonomies::init();
+        /**
+         * Includes all taxonomies.
+         */
+        public static function includes()
+        {
+            require_once INVENTOR_JOBS_DIR . 'includes/taxonomies/class-inventor-jobs-taxonomy-job-positions.php';
+            require_once INVENTOR_JOBS_DIR . 'includes/taxonomies/class-inventor-jobs-taxonomy-job-skills.php';
+        }
+    }
+
+    Inventor_Jobs_Taxonomies::init();

@@ -1,73 +1,62 @@
 <?php
+    if ( ! defined('ABSPATH')) {
+        exit;
+    }
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+    /**
+     * Class Inventor_Pricing_Widget_Pricing_Tables.
+     * @class  Inventor_Pricing_Widget_Pricing_Tables
+     * @author Pragmatic Mates
+     */
+    class Inventor_Pricing_Widget_Pricing_Tables extends WP_Widget
+    {
+        /**
+         * Initialize widget.
+         */
+        public function __construct()
+        {
+            parent::__construct('pricing', __('Pricing Tables', 'inventor-pricing'), [
+                'description' => __('Displays pricing tables', 'inventor-pricing'),
+            ]);
+        }
 
-/**
- * Class Inventor_Pricing_Widget_Pricing_Tables
- *
- * @class Inventor_Pricing_Widget_Pricing_Tables
- * @package Inventor_Pricing/Classes/Widgets
- * @author Pragmatic Mates
- */
-class Inventor_Pricing_Widget_Pricing_Tables extends WP_Widget {
-	/**
-	 * Initialize widget
-	 *
-	 * @access public
-	 * @return void
-	 */
-	function Inventor_Pricing_Widget_Pricing_Tables() {
-		parent::__construct(
-			'pricing',
-			__( 'Pricing Tables', 'inventor-pricing' ),
-			array(
-				'description' => __( 'Displays pricing tables', 'inventor-pricing' ),
-			)
-		);
-	}
+        /**
+         * Backend.
+         *
+         * @param array $instance
+         */
+        public function form($instance)
+        {
+            include Inventor_Template_Loader::locate('widgets/pricing-admin', INVENTOR_PRICING_DIR);
+            include Inventor_Template_Loader::locate('widgets/advanced-options-admin');
+        }
 
-	/**
-	 * Frontend
-	 *
-	 * @access public
-	 * @param array $args
-	 * @param array $instance
-	 * @return void
-	 */
-	function widget( $args, $instance ) {
-		query_posts( array(
-			'post_type'         => 'pricing_table',
-            'posts_per_page'    => -1,
-		) );
+        /**
+         * Update.
+         *
+         * @param array $new_instance
+         * @param array $old_instance
+         *
+         * @return array
+         */
+        public function update($new_instance, $old_instance)
+        {
+            return $new_instance;
+        }
 
-		include Inventor_Template_Loader::locate( 'widgets/pricing', INVENTOR_PRICING_DIR );
-
-		wp_reset_query();
-	}
-
-	/**
-	 * Update
-	 *
-	 * @access public
-	 * @param array $new_instance
-	 * @param array $old_instance
-	 * @return array
-	 */
-	function update( $new_instance, $old_instance ) {
-		return $new_instance;
-	}
-
-	/**
-	 * Backend
-	 *
-	 * @access public
-	 * @param array $instance
-	 * @return void
-	 */
-	function form( $instance ) {
-		include Inventor_Template_Loader::locate( 'widgets/pricing-admin', INVENTOR_PRICING_DIR );
-        include Inventor_Template_Loader::locate( 'widgets/advanced-options-admin' );
-	}
-}
+        /**
+         * Frontend.
+         *
+         * @param array $args
+         * @param array $instance
+         */
+        public function widget($args, $instance)
+        {
+            query_posts([
+                'post_type'      => 'pricing_table',
+                'posts_per_page' => -1,
+            ]);
+            include Inventor_Template_Loader::locate('widgets/pricing', INVENTOR_PRICING_DIR);
+            wp_reset_query();
+        }
+    }

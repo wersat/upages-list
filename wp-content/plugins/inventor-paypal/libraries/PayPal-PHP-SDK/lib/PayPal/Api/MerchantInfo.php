@@ -1,257 +1,251 @@
 <?php
+    namespace PayPal\Api;
 
-namespace PayPal\Api;
-
-use PayPal\Common\PayPalModel;
-
-/**
- * Class MerchantInfo
- *
- * Business information of the merchant that will appear on the invoice.
- *
- * @package PayPal\Api
- *
- * @property string email
- * @property string first_name
- * @property string last_name
- * @property \PayPal\Api\InvoiceAddress address
- * @property string business_name
- * @property \PayPal\Api\Phone phone
- * @property \PayPal\Api\Phone fax
- * @property string website
- * @property string tax_id
- * @property string additional_info
- */
-class MerchantInfo extends PayPalModel
-{
-    /**
-     * Email address of the merchant. 260 characters max.
-     *
-     * @param string $email
-     * 
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-        return $this;
-    }
+    use PayPal\Common\PayPalModel;
 
     /**
-     * Email address of the merchant. 260 characters max.
-     *
-     * @return string
+     * Class MerchantInfo.
+     * Business information of the merchant that will appear on the invoice.
+     * @property string                     email
+     * @property string                     first_name
+     * @property string                     last_name
+     * @property \PayPal\Api\InvoiceAddress address
+     * @property string                     business_name
+     * @property \PayPal\Api\Phone          phone
+     * @property \PayPal\Api\Phone          fax
+     * @property string                     website
+     * @property string                     tax_id
+     * @property string                     additional_info
      */
-    public function getEmail()
+    class MerchantInfo extends PayPalModel
     {
-        return $this->email;
-    }
+        /**
+         * Email address of the merchant. 260 characters max.
+         *
+         * @param string $email
+         *
+         * @return $this
+         */
+        public function setEmail($email)
+        {
+            $this->email = $email;
 
-    /**
-     * First name of the merchant. 30 characters max.
-     *
-     * @param string $first_name
-     * 
-     * @return $this
-     */
-    public function setFirstName($first_name)
-    {
-        $this->first_name = $first_name;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * First name of the merchant. 30 characters max.
-     *
-     * @return string
-     */
-    public function getFirstName()
-    {
-        return $this->first_name;
-    }
+        /**
+         * First name of the merchant. 30 characters max.
+         *
+         * @param string $first_name
+         *
+         * @return $this
+         */
+        public function setFirstName($first_name)
+        {
+            $this->first_name = $first_name;
 
-    /**
-     * Last name of the merchant. 30 characters max.
-     *
-     * @param string $last_name
-     * 
-     * @return $this
-     */
-    public function setLastName($last_name)
-    {
-        $this->last_name = $last_name;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Last name of the merchant. 30 characters max.
-     *
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->last_name;
-    }
+        /**
+         * Last name of the merchant. 30 characters max.
+         *
+         * @param string $last_name
+         *
+         * @return $this
+         */
+        public function setLastName($last_name)
+        {
+            $this->last_name = $last_name;
 
-    /**
-     * Address of the merchant.
-     *
-     * @param \PayPal\Api\InvoiceAddress $address
-     * 
-     * @return $this
-     */
-    public function setAddress($address)
-    {
-        $this->address = $address;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Address of the merchant.
-     *
-     * @return \PayPal\Api\InvoiceAddress
-     */
-    public function getAddress()
-    {
-        return $this->address;
-    }
+        /**
+         * Address of the merchant.
+         *
+         * @param \PayPal\Api\InvoiceAddress $address
+         *
+         * @return $this
+         */
+        public function setAddress($address)
+        {
+            $this->address = $address;
 
-    /**
-     * Company business name of the merchant. 100 characters max.
-     *
-     * @param string $business_name
-     * 
-     * @return $this
-     */
-    public function setBusinessName($business_name)
-    {
-        $this->business_name = $business_name;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Company business name of the merchant. 100 characters max.
-     *
-     * @return string
-     */
-    public function getBusinessName()
-    {
-        return $this->business_name;
-    }
+        /**
+         * Company business name of the merchant. 100 characters max.
+         *
+         * @param string $business_name
+         *
+         * @return $this
+         */
+        public function setBusinessName($business_name)
+        {
+            $this->business_name = $business_name;
 
-    /**
-     * Phone number of the merchant.
-     *
-     * @param \PayPal\Api\Phone $phone
-     * 
-     * @return $this
-     */
-    public function setPhone($phone)
-    {
-        $this->phone = $phone;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Phone number of the merchant.
-     *
-     * @return \PayPal\Api\Phone
-     */
-    public function getPhone()
-    {
-        return $this->phone;
-    }
+        /**
+         * Phone number of the merchant.
+         *
+         * @param \PayPal\Api\Phone $phone
+         *
+         * @return $this
+         */
+        public function setPhone($phone)
+        {
+            $this->phone = $phone;
 
-    /**
-     * Fax number of the merchant.
-     *
-     * @param \PayPal\Api\Phone $fax
-     * 
-     * @return $this
-     */
-    public function setFax($fax)
-    {
-        $this->fax = $fax;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Fax number of the merchant.
-     *
-     * @return \PayPal\Api\Phone
-     */
-    public function getFax()
-    {
-        return $this->fax;
-    }
+        /**
+         * Fax number of the merchant.
+         *
+         * @param \PayPal\Api\Phone $fax
+         *
+         * @return $this
+         */
+        public function setFax($fax)
+        {
+            $this->fax = $fax;
 
-    /**
-     * Website of the merchant. 2048 characters max.
-     *
-     * @param string $website
-     * 
-     * @return $this
-     */
-    public function setWebsite($website)
-    {
-        $this->website = $website;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Website of the merchant. 2048 characters max.
-     *
-     * @return string
-     */
-    public function getWebsite()
-    {
-        return $this->website;
-    }
+        /**
+         * Website of the merchant. 2048 characters max.
+         *
+         * @param string $website
+         *
+         * @return $this
+         */
+        public function setWebsite($website)
+        {
+            $this->website = $website;
 
-    /**
-     * Tax ID of the merchant. 100 characters max.
-     *
-     * @param string $tax_id
-     * 
-     * @return $this
-     */
-    public function setTaxId($tax_id)
-    {
-        $this->tax_id = $tax_id;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Tax ID of the merchant. 100 characters max.
-     *
-     * @return string
-     */
-    public function getTaxId()
-    {
-        return $this->tax_id;
-    }
+        /**
+         * Tax ID of the merchant. 100 characters max.
+         *
+         * @param string $tax_id
+         *
+         * @return $this
+         */
+        public function setTaxId($tax_id)
+        {
+            $this->tax_id = $tax_id;
 
-    /**
-     * Option to display additional information such as business hours. 40 characters max.
-     *
-     * @param string $additional_info
-     * 
-     * @return $this
-     */
-    public function setAdditionalInfo($additional_info)
-    {
-        $this->additional_info = $additional_info;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Option to display additional information such as business hours. 40 characters max.
-     *
-     * @return string
-     */
-    public function getAdditionalInfo()
-    {
-        return $this->additional_info;
-    }
+        /**
+         * Option to display additional information such as business hours. 40 characters max.
+         *
+         * @param string $additional_info
+         *
+         * @return $this
+         */
+        public function setAdditionalInfo($additional_info)
+        {
+            $this->additional_info = $additional_info;
 
-}
+            return $this;
+        }
+
+        /**
+         * Email address of the merchant. 260 characters max.
+         * @return string
+         */
+        public function getEmail()
+        {
+            return $this->email;
+        }
+
+        /**
+         * First name of the merchant. 30 characters max.
+         * @return string
+         */
+        public function getFirstName()
+        {
+            return $this->first_name;
+        }
+
+        /**
+         * Last name of the merchant. 30 characters max.
+         * @return string
+         */
+        public function getLastName()
+        {
+            return $this->last_name;
+        }
+
+        /**
+         * Address of the merchant.
+         * @return \PayPal\Api\InvoiceAddress
+         */
+        public function getAddress()
+        {
+            return $this->address;
+        }
+
+        /**
+         * Company business name of the merchant. 100 characters max.
+         * @return string
+         */
+        public function getBusinessName()
+        {
+            return $this->business_name;
+        }
+
+        /**
+         * Phone number of the merchant.
+         * @return \PayPal\Api\Phone
+         */
+        public function getPhone()
+        {
+            return $this->phone;
+        }
+
+        /**
+         * Fax number of the merchant.
+         * @return \PayPal\Api\Phone
+         */
+        public function getFax()
+        {
+            return $this->fax;
+        }
+
+        /**
+         * Website of the merchant. 2048 characters max.
+         * @return string
+         */
+        public function getWebsite()
+        {
+            return $this->website;
+        }
+
+        /**
+         * Tax ID of the merchant. 100 characters max.
+         * @return string
+         */
+        public function getTaxId()
+        {
+            return $this->tax_id;
+        }
+
+        /**
+         * Option to display additional information such as business hours. 40 characters max.
+         * @return string
+         */
+        public function getAdditionalInfo()
+        {
+            return $this->additional_info;
+        }
+    }

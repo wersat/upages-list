@@ -1,4 +1,5 @@
 <?php
-class NewException extends Exception
-{
-}
+
+    class NewException extends Exception
+    {
+    }

@@ -1,19 +1,19 @@
 <?php
 
-/**
- * @coversDefaultClass \NamespaceOne
- * @coversDefaultClass \AnotherDefault\Name\Space\Does\Not\Work
- */
-class CoverageTwoDefaultClassAnnotations
-{
-
     /**
-     * @covers Foo\CoveredClass::<public>
+     * @coversDefaultClass \NamespaceOne
+     * @coversDefaultClass \AnotherDefault\Name\Space\Does\Not\Work
      */
-    public function testSomething()
+    class CoverageTwoDefaultClassAnnotations
     {
-        $o = new Foo\CoveredClass;
-        $o->publicMethod();
-    }
 
-}
+        /**
+         * @covers Foo\CoveredClass::<public>
+         */
+        public function testSomething()
+        {
+            $o = new Foo\CoveredClass;
+            $o->publicMethod();
+        }
+
+    }

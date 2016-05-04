@@ -1,236 +1,231 @@
 <?php
+    namespace PayPal\Api;
 
-namespace PayPal\Api;
-
-use PayPal\Common\PayPalModel;
-use PayPal\Validation\UrlValidator;
-
-/**
- * Class Incentive
- *
- * A resource representing a incentive.
- *
- * @package PayPal\Api
- *
- * @property string               id
- * @property string               code
- * @property string               name
- * @property string               description
- * @property \PayPal\Api\Currency minimum_purchase_amount
- * @property string               logo_image_url
- * @property string               expiry_date
- * @property string               type
- * @property string               terms
- */
-class Incentive extends PayPalModel
-{
-    /**
-     * Identifier of the instrument in PayPal Wallet
-     *
-     * @param string $id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-        return $this;
-    }
+    use PayPal\Common\PayPalModel;
+    use PayPal\Validation\UrlValidator;
 
     /**
-     * Identifier of the instrument in PayPal Wallet
-     *
-     * @return string
+     * Class Incentive
+     * A resource representing a incentive.
+     * @property string               id
+     * @property string               code
+     * @property string               name
+     * @property string               description
+     * @property \PayPal\Api\Currency minimum_purchase_amount
+     * @property string               logo_image_url
+     * @property string               expiry_date
+     * @property string               type
+     * @property string               terms
      */
-    public function getId()
+    class Incentive extends PayPalModel
     {
-        return $this->id;
-    }
+        /**
+         * Identifier of the instrument in PayPal Wallet.
+         *
+         * @param string $id
+         *
+         * @return $this
+         */
+        public function setId($id)
+        {
+            $this->id = $id;
 
-    /**
-     * Code that identifies the incentive.
-     *
-     * @param string $code
-     *
-     * @return $this
-     */
-    public function setCode($code)
-    {
-        $this->code = $code;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Code that identifies the incentive.
-     *
-     * @return string
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
+        /**
+         * Code that identifies the incentive.
+         *
+         * @param string $code
+         *
+         * @return $this
+         */
+        public function setCode($code)
+        {
+            $this->code = $code;
 
-    /**
-     * Name of the incentive.
-     *
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Name of the incentive.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
+        /**
+         * Name of the incentive.
+         *
+         * @param string $name
+         *
+         * @return $this
+         */
+        public function setName($name)
+        {
+            $this->name = $name;
 
-    /**
-     * Description of the incentive.
-     *
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Description of the incentive.
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
+        /**
+         * Description of the incentive.
+         *
+         * @param string $description
+         *
+         * @return $this
+         */
+        public function setDescription($description)
+        {
+            $this->description = $description;
 
-    /**
-     * Indicates incentive is applicable for this minimum purchase amount.
-     *
-     * @param \PayPal\Api\Currency $minimum_purchase_amount
-     *
-     * @return $this
-     */
-    public function setMinimumPurchaseAmount($minimum_purchase_amount)
-    {
-        $this->minimum_purchase_amount = $minimum_purchase_amount;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Indicates incentive is applicable for this minimum purchase amount.
-     *
-     * @return \PayPal\Api\Currency
-     */
-    public function getMinimumPurchaseAmount()
-    {
-        return $this->minimum_purchase_amount;
-    }
+        /**
+         * Indicates incentive is applicable for this minimum purchase amount.
+         *
+         * @param \PayPal\Api\Currency $minimum_purchase_amount
+         *
+         * @return $this
+         */
+        public function setMinimumPurchaseAmount($minimum_purchase_amount)
+        {
+            $this->minimum_purchase_amount = $minimum_purchase_amount;
 
-    /**
-     * Logo image url for the incentive.
-     *
-     * @param string $logo_image_url
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setLogoImageUrl($logo_image_url)
-    {
-        UrlValidator::validate($logo_image_url, "LogoImageUrl");
-        $this->logo_image_url = $logo_image_url;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Logo image url for the incentive.
-     *
-     * @return string
-     */
-    public function getLogoImageUrl()
-    {
-        return $this->logo_image_url;
-    }
+        /**
+         * Logo image url for the incentive.
+         *
+         * @param string $logo_image_url
+         *
+         * @throws \InvalidArgumentException
+         * @return $this
+         */
+        public function setLogoImageUrl($logo_image_url)
+        {
+            UrlValidator::validate($logo_image_url, 'LogoImageUrl');
+            $this->logo_image_url = $logo_image_url;
 
-    /**
-     * expiry date of the incentive.
-     *
-     * @param string $expiry_date
-     *
-     * @return $this
-     */
-    public function setExpiryDate($expiry_date)
-    {
-        $this->expiry_date = $expiry_date;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * expiry date of the incentive.
-     *
-     * @return string
-     */
-    public function getExpiryDate()
-    {
-        return $this->expiry_date;
-    }
+        /**
+         * expiry date of the incentive.
+         *
+         * @param string $expiry_date
+         *
+         * @return $this
+         */
+        public function setExpiryDate($expiry_date)
+        {
+            $this->expiry_date = $expiry_date;
 
-    /**
-     * Specifies type of incentive
-     * Valid Values: ["COUPON", "GIFT_CARD", "MERCHANT_SPECIFIC_BALANCE", "VOUCHER"]
-     *
-     * @param string $type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * Specifies type of incentive
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
+        /**
+         * Specifies type of incentive
+         * Valid Values: ["COUPON", "GIFT_CARD", "MERCHANT_SPECIFIC_BALANCE", "VOUCHER"].
+         *
+         * @param string $type
+         *
+         * @return $this
+         */
+        public function setType($type)
+        {
+            $this->type = $type;
 
-    /**
-     * URI to the associated terms
-     *
-     * @param string $terms
-     *
-     * @return $this
-     */
-    public function setTerms($terms)
-    {
-        $this->terms = $terms;
-        return $this;
-    }
+            return $this;
+        }
 
-    /**
-     * URI to the associated terms
-     *
-     * @return string
-     */
-    public function getTerms()
-    {
-        return $this->terms;
-    }
+        /**
+         * URI to the associated terms.
+         *
+         * @param string $terms
+         *
+         * @return $this
+         */
+        public function setTerms($terms)
+        {
+            $this->terms = $terms;
 
-}
+            return $this;
+        }
+
+        /**
+         * Identifier of the instrument in PayPal Wallet.
+         * @return string
+         */
+        public function getId()
+        {
+            return $this->id;
+        }
+
+        /**
+         * Code that identifies the incentive.
+         * @return string
+         */
+        public function getCode()
+        {
+            return $this->code;
+        }
+
+        /**
+         * Name of the incentive.
+         * @return string
+         */
+        public function getName()
+        {
+            return $this->name;
+        }
+
+        /**
+         * Description of the incentive.
+         * @return string
+         */
+        public function getDescription()
+        {
+            return $this->description;
+        }
+
+        /**
+         * Indicates incentive is applicable for this minimum purchase amount.
+         * @return \PayPal\Api\Currency
+         */
+        public function getMinimumPurchaseAmount()
+        {
+            return $this->minimum_purchase_amount;
+        }
+
+        /**
+         * Logo image url for the incentive.
+         * @return string
+         */
+        public function getLogoImageUrl()
+        {
+            return $this->logo_image_url;
+        }
+
+        /**
+         * expiry date of the incentive.
+         * @return string
+         */
+        public function getExpiryDate()
+        {
+            return $this->expiry_date;
+        }
+
+        /**
+         * Specifies type of incentive.
+         * @return string
+         */
+        public function getType()
+        {
+            return $this->type;
+        }
+
+        /**
+         * URI to the associated terms.
+         * @return string
+         */
+        public function getTerms()
+        {
+            return $this->terms;
+        }
+    }

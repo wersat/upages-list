@@ -1,44 +1,39 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-
-/**
- * Class Inventor_Watchdogs_Shortcodes
- *
- * @class Inventor_Watchdogs_Shortcodes
- * @package Inventor/Classes
- * @author Pragmatic Mates
- */
-class Inventor_Watchdogs_Shortcodes {
-    /**
-     * Initialize shortcodes
-     *
-     * @access public
-     * @return void
-     */
-    public static function init() {
-        add_shortcode( 'inventor_watchdogs', array( __CLASS__, 'watchdogs' ) );
+    if ( ! defined('ABSPATH')) {
+        exit;
     }
 
     /**
-     * Watchdogs
-     *
-     * @access public
-     * @param $atts
-     * @return void
+     * Class Inventor_Watchdogs_Shortcodes.
+     * @class   Inventor_Watchdogs_Shortcodes
+     * @author  Pragmatic Mates
      */
-    public static function watchdogs( $atts ) {
-        if ( ! is_user_logged_in() ) {
-            echo Inventor_Template_Loader::load( 'misc/not-allowed' );
-            return;
+    class Inventor_Watchdogs_Shortcodes
+    {
+        /**
+         * Initialize shortcodes.
+         */
+        public static function init()
+        {
+            add_shortcode('inventor_watchdogs', [__CLASS__, 'watchdogs']);
         }
 
-        Inventor_Watchdogs_Logic::loop_my_watchdogs();
-        echo Inventor_Template_Loader::load( 'watchdogs', $atts, $plugin_dir = INVENTOR_WATCHDOGS_DIR );
-        wp_reset_query();
-    }
-}
+        /**
+         * Watchdogs.
+         *
+         * @param $atts
+         */
+        public static function watchdogs($atts)
+        {
+            if ( ! is_user_logged_in()) {
+                echo Inventor_Template_Loader::load('misc/not-allowed');
 
-Inventor_Watchdogs_Shortcodes::init();
+                return;
+            }
+            Inventor_Watchdogs_Logic::loop_my_watchdogs();
+            echo Inventor_Template_Loader::load('watchdogs', $atts, $plugin_dir = INVENTOR_WATCHDOGS_DIR);
+            wp_reset_query();
+        }
+    }
+
+    Inventor_Watchdogs_Shortcodes::init();

@@ -9,6 +9,7 @@ abstract class SingletonApiResource extends ApiResource
         $opts = Util\RequestOptions::parse($options);
         $instance = new static(null, $opts);
         $instance->refresh();
+
         return $instance;
     }
 
@@ -18,6 +19,7 @@ abstract class SingletonApiResource extends ApiResource
     public static function classUrl()
     {
         $base = static::className();
+
         return "/v1/${base}";
     }
 

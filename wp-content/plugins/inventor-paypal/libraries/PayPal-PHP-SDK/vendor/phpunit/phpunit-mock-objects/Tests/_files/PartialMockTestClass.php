@@ -1,18 +1,19 @@
 <?php
-class PartialMockTestClass
-{
-    public $constructorCalled = FALSE;
 
-    public function __construct()
+    class PartialMockTestClass
     {
-        $this->constructorCalled = TRUE;
-    }
+        public $constructorCalled = false;
 
-    public function doSomething()
-    {
-    }
+        public function __construct()
+        {
+            $this->constructorCalled = true;
+        }
 
-    public function doAnotherThing()
-    {
+        public function doSomething()
+        {
+        }
+
+        public function doAnotherThing()
+        {
+        }
     }
-}

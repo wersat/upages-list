@@ -1,36 +1,28 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-
-/**
- * Class Inventor_Properties_Customizations
- *
- * @access public
- * @package Inventor_Properties/Classes/Customizations
- * @return void
- */
-class Inventor_Properties_Customizations {
-    /**
-     * Initialize customizations
-     *
-     * @access public
-     * @return void
-     */
-    public static function init() {
-        self::includes();
+    if ( ! defined('ABSPATH')) {
+        exit;
     }
 
     /**
-     * Include all customizations
-     *
-     * @access public
-     * @return void
+     * Class Inventor_Properties_Customizations.
      */
-    public static function includes() {
-        require_once INVENTOR_PROPERTIES_DIR . 'includes/customizations/class-inventor-properties-customizations-properties.php';
-    }
-}
+    class Inventor_Properties_Customizations
+    {
+        /**
+         * Initialize customizations.
+         */
+        public static function init()
+        {
+            self::includes();
+        }
 
-Inventor_Properties_Customizations::init();
+        /**
+         * Include all customizations.
+         */
+        public static function includes()
+        {
+            require_once INVENTOR_PROPERTIES_DIR . 'includes/customizations/class-inventor-properties-customizations-properties.php';
+        }
+    }
+
+    Inventor_Properties_Customizations::init();

@@ -1,9 +1,8 @@
 <?php
-function functionCallback()
-{
-    $args = func_get_args();
-
-    if ($args == array('foo', 'bar')) {
-        return 'pass';
+    function functionCallback()
+    {
+        $args = func_get_args();
+        if ($args == ['foo', 'bar']) {
+            return 'pass';
+        }
     }
-}

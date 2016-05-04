@@ -1,28 +1,29 @@
 <?php
-class Mockable
-{
-    public $constructorArgs;
-    public $cloned;
 
-    public function __construct($arg1 = NULL, $arg2 = NULL)
+    class Mockable
     {
-        $this->constructorArgs = array($arg1, $arg2);
-    }
+        public $constructorArgs;
+        public $cloned;
 
-    public function mockableMethod()
-    {
-        // something different from NULL
-        return TRUE;
-    }
+        public function __construct($arg1 = null, $arg2 = null)
+        {
+            $this->constructorArgs = [$arg1, $arg2];
+        }
 
-    public function anotherMockableMethod()
-    {
-        // something different from NULL
-        return TRUE;
-    }
+        public function mockableMethod()
+        {
+            // something different from NULL
+            return true;
+        }
 
-    public function __clone()
-    {
-        $this->cloned = TRUE;
+        public function anotherMockableMethod()
+        {
+            // something different from NULL
+            return true;
+        }
+
+        public function __clone()
+        {
+            $this->cloned = true;
+        }
     }
-}

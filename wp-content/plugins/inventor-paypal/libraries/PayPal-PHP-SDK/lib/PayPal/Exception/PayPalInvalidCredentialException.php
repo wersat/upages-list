@@ -1,36 +1,31 @@
 <?php
-
-namespace PayPal\Exception;
-
-/**
- * Class PayPalInvalidCredentialException
- *
- * @package PayPal\Exception
- */
-class PayPalInvalidCredentialException extends \Exception
-{
+    namespace PayPal\Exception;
 
     /**
-     * Default Constructor
-     *
-     * @param string|null $message
-     * @param int  $code
+     * Class PayPalInvalidCredentialException.
      */
-    public function __construct($message = null, $code = 0)
+    class PayPalInvalidCredentialException extends \Exception
     {
-        parent::__construct($message, $code);
-    }
+        /**
+         * Default Constructor.
+         *
+         * @param string|null $message
+         * @param int         $code
+         */
+        public function __construct($message = null, $code = 0)
+        {
+            parent::__construct($message, $code);
+        }
 
-    /**
-     * prints error message
-     *
-     * @return string
-     */
-    public function errorMessage()
-    {
-        $errorMsg = 'Error on line ' . $this->getLine() . ' in ' . $this->getFile()
-            . ': <b>' . $this->getMessage() . '</b>';
-        return $errorMsg;
-    }
+        /**
+         * prints error message.
+         * @return string
+         */
+        public function errorMessage()
+        {
+            $errorMsg
+                = 'Error on line ' . $this->getLine() . ' in ' . $this->getFile() . ': <b>' . $this->getMessage() . '</b>';
 
-}
+            return $errorMsg;
+        }
+    }

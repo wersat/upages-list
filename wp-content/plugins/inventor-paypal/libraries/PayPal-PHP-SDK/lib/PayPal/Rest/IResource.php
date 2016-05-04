@@ -1,12 +1,9 @@
 <?php
+    namespace PayPal\Rest;
 
-namespace PayPal\Rest;
-
-/**
- * Interface IResource
- *
- * @package PayPal\Rest
- */
-interface IResource
-{
-}
+    /**
+     * Interface IResource.
+     */
+    interface IResource
+    {
+    }
