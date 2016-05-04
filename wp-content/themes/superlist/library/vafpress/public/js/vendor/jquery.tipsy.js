@@ -10,10 +10,10 @@
     };
     
     function isElementInDOM(ele) {
-      while (ele = ele.parentNode) {
-        if (ele == document) return true;
-      }
-      return false;
+        while (ele = ele.parentNode) {
+            if (ele == document) { return true; }
+        }
+        return false;
     };
     
     function Tipsy(element, options) {
@@ -33,10 +33,12 @@
                 $tip[0].className = 'tipsy'; // reset classname in case of dynamic gravity
                 $tip.remove().css({top: 0, left: 0, visibility: 'hidden', display: 'block'}).prependTo(document.body);
                 
-                var pos = $.extend({}, this.$element.offset(), {
-                    width: this.$element[0].offsetWidth,
-                    height: this.$element[0].offsetHeight
-                });
+                var pos = $.extend(
+                    {}, this.$element.offset(), {
+                        width: this.$element[0].offsetWidth,
+                        height: this.$element[0].offsetHeight
+                    }
+                );
                 
                 var actualWidth = $tip[0].offsetWidth,
                     actualHeight = $tip[0].offsetHeight,
@@ -44,17 +46,17 @@
                 
                 var tp;
                 switch (gravity.charAt(0)) {
-                    case 'n':
-                        tp = {top: pos.top + pos.height + this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
+                case 'n':
+                    tp = {top: pos.top + pos.height + this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
                         break;
-                    case 's':
-                        tp = {top: pos.top - actualHeight - this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
+                case 's':
+                    tp = {top: pos.top - actualHeight - this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
                         break;
-                    case 'e':
-                        tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth - this.options.offset};
+                case 'e':
+                    tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth - this.options.offset};
                         break;
-                    case 'w':
-                        tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width + this.options.offset};
+                case 'w':
+                    tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width + this.options.offset};
                         break;
                 }
                 
@@ -135,7 +137,7 @@
             return this.data('tipsy');
         } else if (typeof options == 'string') {
             var tipsy = this.data('tipsy');
-            if (tipsy) tipsy[options]();
+            if (tipsy) { tipsy[options](); }
             return this;
         }
         
@@ -157,7 +159,7 @@
                 tipsy.show();
             } else {
                 tipsy.fixTitle();
-                setTimeout(function() { if (tipsy.hoverState == 'in') tipsy.show(); }, options.delayIn);
+                setTimeout(function() { if (tipsy.hoverState == 'in') { tipsy.show(); } }, options.delayIn);
             }
         };
         
@@ -167,11 +169,11 @@
             if (options.delayOut == 0) {
                 tipsy.hide();
             } else {
-                setTimeout(function() { if (tipsy.hoverState == 'out') tipsy.hide(); }, options.delayOut);
+                setTimeout(function() { if (tipsy.hoverState == 'out') { tipsy.hide(); } }, options.delayOut);
             }
         };
         
-        if (!options.live) this.each(function() { get(this); });
+        if (!options.live) { this.each(function() { get(this); } });
         
         if (options.trigger != 'manual') {
             var binder   = options.live ? 'live' : 'bind',
@@ -200,12 +202,14 @@
     };
     
     $.fn.tipsy.revalidate = function() {
-      $('.tipsy').each(function() {
-        var pointee = $.data(this, 'tipsy-pointee');
-        if (!pointee || !isElementInDOM(pointee)) {
-          $(this).remove();
-        }
-      });
+        $('.tipsy').each(
+            function() {
+                var pointee = $.data(this, 'tipsy-pointee');
+                if (!pointee || !isElementInDOM(pointee)) {
+                    $(this).remove();
+                }
+            }
+        );
     };
     
     // Overwrite this method to provide options on a per-element basis.
@@ -240,19 +244,19 @@
      *        component.
      */
      $.fn.tipsy.autoBounds = function(margin, prefer) {
-		return function() {
-			var dir = {ns: prefer[0], ew: (prefer.length > 1 ? prefer[1] : false)},
-			    boundTop = $(document).scrollTop() + margin,
-			    boundLeft = $(document).scrollLeft() + margin,
-			    $this = $(this);
+        return function() {
+               var dir = {ns: prefer[0], ew: (prefer.length > 1 ? prefer[1] : false)},
+             boundTop = $(document).scrollTop() + margin,
+             boundLeft = $(document).scrollLeft() + margin,
+             $this = $(this);
 
-			if ($this.offset().top < boundTop) dir.ns = 'n';
-			if ($this.offset().left < boundLeft) dir.ew = 'w';
-			if ($(window).width() + $(document).scrollLeft() - $this.offset().left < margin) dir.ew = 'e';
-			if ($(window).height() + $(document).scrollTop() - $this.offset().top < margin) dir.ns = 's';
+            if ($this.offset().top < boundTop) { dir.ns = 'n'; }
+            if ($this.offset().left < boundLeft) { dir.ew = 'w'; }
+            if ($(window).width() + $(document).scrollLeft() - $this.offset().left < margin) { dir.ew = 'e'; }
+            if ($(window).height() + $(document).scrollTop() - $this.offset().top < margin) { dir.ns = 's'; }
 
-			return dir.ns + (dir.ew ? dir.ew : '');
-		}
-	};
+               return dir.ns + (dir.ew ? dir.ew : '');
+        }
+     };
     
 })(jQuery);

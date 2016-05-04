@@ -1,7 +1,7 @@
 <?php
-  if ( ! defined('ABSPATH')) {
+if (! defined('ABSPATH')) {
     exit;
-  }
+}
 ?>
 
 <?php $title = ! empty($instance['title']) ? $instance['title'] : ''; ?>

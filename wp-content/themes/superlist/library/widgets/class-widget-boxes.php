@@ -11,10 +11,11 @@
 
   /**
    * Class Widgets_Boxes
+   *
    * @package Upages_Widgets
    */
-  class Widget_Boxes extends Widget_Builder
-  {
+class Widget_Boxes extends Widget_Builder
+{
     /**
      * @param $args
      */
@@ -25,12 +26,12 @@
      */
     public function __construct()
     {
-      $this->setBoxesFields();
-      $args             = [
+        $this->setBoxesFields();
+        $args             = [
         'label'       => __('Boxes', 'superlist'),
         'description' => __('Text boxes with icons.', 'superlist'),
-      ];
-      $args['fields']   = [
+        ];
+        $args['fields']   = [
         [
           'name' => __('Title', 'superlist'),
           'id'   => 'title',
@@ -92,12 +93,12 @@
           'type'   => 'select',
           'fields' => $this->getPageList()
         ],
-      ];
-      $advanced_options = $this->add_advanced_options();
-      foreach ($advanced_options as $option) {
-        $args['fields'][] = $option;
-      }
-      parent::__construct($args);
+        ];
+        $advanced_options = $this->add_advanced_options();
+        foreach ($advanced_options as $option) {
+            $args['fields'][] = $option;
+        }
+        parent::__construct($args);
     }
 
     /**
@@ -105,13 +106,13 @@
      */
     public function setBoxesFields()
     {
-      $boxes_fields_count = 3;
-      for ($i = 1; $i <= $boxes_fields_count; $i++) {
-        $this->boxes_fields[] = [
-          [
+        $boxes_fields_count = 3;
+        for ($i = 1; $i <= $boxes_fields_count; $i++) {
+            $this->boxes_fields[] = [
+            [
             'name' => $i . '.' . __('Title:', 'superlist'),
             'type' => 'text',
-          ],
+            ],
           [
             'name' => $i . '.' . __('Content:', 'superlist'),
             'type' => 'textarea'
@@ -125,10 +126,10 @@
             'type'   => 'select',
             'fields' => $this->getPageList()
           ]
-        ];
-      }
+            ];
+        }
 
-      return $this->boxes_fields;
+        return $this->boxes_fields;
     }
 
     /**
@@ -137,11 +138,11 @@
      */
     public function widget($args, $instance)
     {
-      echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
+        echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
       <div <?php echo $this->advanced_style($instance) ?>>
         <?= $this->advanced_widget_title_and_description($instance) ?>
         <div class="row">
-          <?php for ($i = 1; $i <= 3; $i++) : ?>
+            <?php for ($i = 1; $i <= 3; $i++) : ?>
             <?php $title_id = $i . '-nazva'; ?>
             <?php $content_id = $i . '-vmist'; ?>
             <?php $icon_id = $i . '-icon-class'; ?>
@@ -156,20 +157,20 @@
                   <div class="box-content">
                     <?php echo wp_kses($instance[$content_id], wp_kses_allowed_html('post')); ?>
                   </div>
-                  <?php $read_more = $instance[$link_id]; ?>
-                  <?php if ( ! empty($read_more)) : ?>
+                    <?php $read_more = $instance[$link_id]; ?>
+                    <?php if (! empty($read_more)) : ?>
                     <a href="<?php echo wp_kses($read_more, wp_kses_allowed_html('post')); ?>" class="box-read-more">
-                      <?php echo esc_attr__('Read More', 'superlist'); ?>
+                        <?php echo esc_attr__('Read More', 'superlist'); ?>
                       <i class="fa fa-angle-right"></i>
                     </a>
-                  <?php endif; ?>
+                    <?php endif; ?>
                 </div>
               </div>
             </div>
-          <?php endfor; ?>
+            <?php endfor; ?>
         </div>
       </div>
-      <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post'));
+        <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post'));
     }
 
-  }
+}

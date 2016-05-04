@@ -1,6 +1,6 @@
 <?php $session = $_SESSION; ?>
-<?php if ( ! empty($session['messages']) && is_array($session['messages'])) : ?>
-  <?php $session['messages'] = Inventor_Utilities::array_unique_multidimensional($session['messages']); ?>
+<?php if (! empty($session['messages']) && is_array($session['messages'])) : ?>
+    <?php $session['messages'] = Inventor_Utilities::array_unique_multidimensional($session['messages']); ?>
   <div class="alerts">
     <?php foreach ($session['messages'] as $message) : ?>
       <div class="alert-primary alert alert-dismissible alert-<?php echo esc_attr($message[0]); ?>">
@@ -15,5 +15,5 @@
       </div>
     <?php endforeach; ?>
   </div>
-  <?php unset($_SESSION['messages']); ?>
+    <?php unset($_SESSION['messages']); ?>
 <?php endif; ?>

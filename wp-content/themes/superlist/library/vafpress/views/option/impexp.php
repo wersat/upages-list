@@ -16,14 +16,14 @@
                class="vp-button button"
                type="button"
                value="<?php _e('Import', 'upages') ?>"/>
-				<span style="margin-left: 10px;">
-					<span id="vp-js-import-loader"
+                <span style="margin-left: 10px;">
+                    <span id="vp-js-import-loader"
                 class="vp-field-loader"
                 style="display: none;"><img src="<?php VP_Util_Res::img_out('ajax-loader.gif', ''); ?>"
                                             style="vertical-align: middle;"></span>
-					<span id="vp-js-import-status"
+                    <span id="vp-js-import-status"
                 style="display: none;"></span>
-				</span>
+                </span>
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@
      data-vp-type="vp-textarea">
   <div class="label">
     <label>
-      <?php _e('Export', 'upages') ?>
+        <?php _e('Export', 'upages') ?>
     </label>
     <div class="description">
       <p><?php _e('Export Options', 'upages') ?></p>
@@ -48,14 +48,14 @@
                class="vp-button button"
                type="button"
                value="<?php _e('Export', 'upages') ?>"/>
-				<span style="margin-left: 10px;">
-					<span id="vp-js-export-loader"
+                <span style="margin-left: 10px;">
+                    <span id="vp-js-export-loader"
                 class="vp-field-loader"
                 style="display: none;"><img src="<?php VP_Util_Res::img_out('ajax-loader.gif', ''); ?>"
                                             style="vertical-align: middle;"></span>
-					<span id="vp-js-export-status"
+                    <span id="vp-js-export-status"
                 style="display: none;"></span>
-				</span>
+                </span>
       </div>
     </div>
   </div>

@@ -7,7 +7,7 @@
 ?>
 
 <?php if ('package' === $payment_type) : ?>
-  <?php $reference = sprintf(__('for package "%s"', 'inventor'), $title); ?>
+    <?php $reference = sprintf(__('for package "%s"', 'inventor'), $title); ?>
 <?php endif; ?>
 <div class="wire-transfer clearfix">
   <div class=".wire-transfer-section wire-transfer-section-one">
@@ -52,5 +52,5 @@
   </div>
 </div>
 <div class="alert alert-info">
-  <?php echo __('Your payment will be manually reviewed when transfer will be completed.', 'inventor'); ?>
+    <?php echo __('Your payment will be manually reviewed when transfer will be completed.', 'inventor'); ?>
 </div>

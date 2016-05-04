@@ -5,8 +5,11 @@
         : ''; ?><?php echo esc_attr($args['widget_id']); ?>_title"><?php echo __('Title', 'inventor'); ?></label>
     <?php endif; ?>
     <input type="text" name="filter-title"
-           <?php if ('placeholders' === $input_titles) : ?>placeholder="<?php echo __('Title',
-             'inventor'); ?>"<?php endif; ?>
+            <?php if ('placeholders' === $input_titles) : ?>placeholder="<?php echo __(
+                'Title',
+                'inventor'
+            ); ?>"<?php 
+            endif; ?>
            class="form-control" value="<?php echo ! empty($_GET['filter-title']) ? $_GET['filter-title'] : ''; ?>"
            id="<?php echo ! empty($field_id_prefix) ? $field_id_prefix
              : ''; ?><?php echo esc_attr($args['widget_id']); ?>_title">

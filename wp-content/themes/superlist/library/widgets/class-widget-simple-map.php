@@ -11,21 +11,22 @@
 
   /**
    * Class Widget_Simple_Map
+   *
    * @package Upages_Widgets
    */
-  class Widget_Simple_Map extends Widget_Builder
-  {
+class Widget_Simple_Map extends Widget_Builder
+{
 
     /**
      * @param $args
      */
     public function __construct()
     {
-      $args             = [
+        $args             = [
         'label'       => __('Simple Map', 'superlist'),
         'description' => __('Displays 1 place in the map.', 'superlist'),
-      ];
-      $args['fields']   = [
+        ];
+        $args['fields']   = [
         [
           'name' => __('Latitude', 'superlist'),
           'id'   => 'latitude',
@@ -60,12 +61,12 @@
           'type'   => 'select',
           'fields' => $this->google_map_styles()
         ]
-      ];
-      $advanced_options = $this->add_advanced_options();
-      foreach ($advanced_options as $option) {
-        $args['fields'][] = $option;
-      }
-      parent::__construct($args);
+        ];
+        $advanced_options = $this->add_advanced_options();
+        foreach ($advanced_options as $option) {
+            $args['fields'][] = $option;
+        }
+        parent::__construct($args);
     }
 
     /**
@@ -73,16 +74,16 @@
      */
     public function google_map_styles()
     {
-      $maps_list = [];
-      $maps      = \Inventor_Google_Map_Styles::styles();
-      foreach ((array)$maps as $map) {
-        $maps_list[] = [
-          'name'  => $map['title'],
-          'value' => $map['slug']
-        ];
-      }
+        $maps_list = [];
+        $maps      = \Inventor_Google_Map_Styles::styles();
+        foreach ((array)$maps as $map) {
+            $maps_list[] = [
+            'name'  => $map['title'],
+            'value' => $map['slug']
+            ];
+        }
 
-      return $maps_list;
+        return $maps_list;
     }
 
     /**
@@ -91,7 +92,7 @@
      */
     public function widget($args, $instance)
     {
-      echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
+        echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
       <div <?php echo $this->advanced_style($instance) ?>>
         <?php $style = ! empty($instance['style']) ? $instance['style'] : ''; ?>
         <?php $style_slug = ( ! empty($_GET['map-style'])) ? esc_attr($_GET['map-style'])
@@ -103,12 +104,13 @@
                data-latitude="<?php echo esc_attr($instance['latitude']); ?>"
                data-longitude="<?php echo esc_attr($instance['longitude']); ?>"
                data-zoom="<?php echo esc_attr($instance['zoom']); ?>"
-               <?php if (class_exists('Inventor_Google_Map_Styles')) : ?>data-styles='<?php echo esc_attr(\Inventor_Google_Map_Styles::get_style($style_slug)); ?>'<?php endif; ?>
+                <?php if (class_exists('Inventor_Google_Map_Styles')) : ?>data-styles='<?php echo esc_attr(\Inventor_Google_Map_Styles::get_style($style_slug)); ?>'<?php 
+                endif; ?>
                data-geolocation='false'>
           </div>
         </div>
       </div>
-      <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post'));
+        <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post'));
     }
 
-  }
+}

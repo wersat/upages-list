@@ -1,7 +1,7 @@
 <?php
-  if ( ! defined('ABSPATH')) {
+if (! defined('ABSPATH')) {
     exit;
-  }
+}
   $background_color = ! empty($instance['background_color']) ? $instance['background_color'] : '';
   $background_image = ! empty($instance['background_image']) ? $instance['background_image'] : '';
   $padding_top      = isset($instance['padding_top']) ? $instance['padding_top'] : '';
@@ -12,8 +12,10 @@
   <div class="widget-top" style="background-color: transparent;">
     <div class="widget-title" style="cursor: pointer;">
       <h4 style="color: #333">
-        <span class="dashicons dashicons-admin-generic" style="margin: -3px 0px -4px -2px; font-size: 18px;"></span> <?php echo __('Advanced Options',
-          'inventor'); ?></h4>
+        <span class="dashicons dashicons-admin-generic" style="margin: -3px 0px -4px -2px; font-size: 18px;"></span> <?php echo __(
+            'Advanced Options',
+            'inventor'
+        ); ?></h4>
     </div>
   </div>
   <div class="widget-inside">

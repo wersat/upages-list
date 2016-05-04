@@ -1,7 +1,7 @@
 <?php
-  if ( ! defined('ABSPATH')) {
+if (! defined('ABSPATH')) {
     exit;
-  }
+}
   $title                  = ! empty($instance['title']) ? $instance['title'] : '';
   $button_text            = ! empty($instance['button_text']) ? $instance['button_text'] : '';
   $input_titles           = ! empty($instance['input_titles']) ? $instance['input_titles'] : '';
@@ -33,7 +33,8 @@
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('sorting_options')); ?>">
     <input type="checkbox"
-           <?php if ( ! empty($sorting_options)) : ?>checked="checked"<?php endif; ?>
+            <?php if (! empty($sorting_options)) : ?>checked="checked"<?php 
+            endif; ?>
            name="<?php echo esc_attr($this->get_field_name('sorting_options')); ?>"
            id="<?php echo esc_attr($this->get_field_id('sorting_options')); ?>">
     <?php echo __('Sorting Options', 'inventor'); ?>
@@ -49,7 +50,7 @@
         <?php echo (empty($input_titles) || 'labels' === $input_titles) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('input_titles')); ?>"
              name="<?php echo esc_attr($this->get_field_name('input_titles')); ?>">
-      <?php echo __('Labels', 'inventor'); ?>
+        <?php echo __('Labels', 'inventor'); ?>
     </label>
   </li>
   <li>
@@ -60,7 +61,7 @@
         <?php echo ('placeholders' === $input_titles) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('input_titles')); ?>"
              name="<?php echo esc_attr($this->get_field_name('input_titles')); ?>">
-      <?php echo __('Placeholders', 'inventor'); ?>
+        <?php echo __('Placeholders', 'inventor'); ?>
     </label>
   </li>
 </ul>
@@ -74,7 +75,7 @@
              type="checkbox"
              value=1
         <?php checked($result_numbers_enabled, 1); ?>>
-      <?php echo __('Show result numbers', 'inventor'); ?>
+        <?php echo __('Show result numbers', 'inventor'); ?>
     </label>
   </li>
   <li>
@@ -85,12 +86,12 @@
              type="checkbox"
              value=1
         <?php checked($result_numbers_total, 1); ?>>
-      <?php echo __('Show total count', 'inventor'); ?>
+        <?php echo __('Show total count', 'inventor'); ?>
     </label>
   </li>
 </ul>
 <hr>
-<?php include Inventor_Template_Loader::locate('widgets/filter-fields'); ?>
+<?php require Inventor_Template_Loader::locate('widgets/filter-fields'); ?>
 <script type="text/javascript">
   jQuery(document).ready(function ($) {
     var enabled_selector = "[id$='result_numbers_enabled']";

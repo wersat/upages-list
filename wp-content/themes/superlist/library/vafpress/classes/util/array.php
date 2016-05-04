@@ -1,33 +1,33 @@
 <?php
 
-    class VP_Util_Array
+class VP_Util_Array
+{
+    public static function first($array)
     {
-        public static function first($array)
-        {
-            if (!empty($array) and !is_null($array)) {
-                return reset($array);
-            }
-
-            return;
+        if (!empty($array) and !is_null($array)) {
+            return reset($array);
         }
 
-        public static function deep_values($array, $the_key)
-        {
-            $result = [];
-            foreach ($array as $key => $value) {
-                if (is_object($value)) {
-                    $result[] = $value->$the_key;
-                } elseif (is_array($value)) {
-                    $result[] = $value[$the_key];
-                } else {
-                    $result[] = $value;
-                }
-            }
+        return;
+    }
 
-            return $result;
+    public static function deep_values($array, $the_key)
+    {
+        $result = [];
+        foreach ($array as $key => $value) {
+            if (is_object($value)) {
+                $result[] = $value->$the_key;
+            } elseif (is_array($value)) {
+                $result[] = $value[$the_key];
+            } else {
+                $result[] = $value;
+            }
         }
 
-        /**
+        return $result;
+    }
+
+    /**
          * Combine array with the same $left to single array item
          * from
          * array( [0] => array( "name" => "a", "value" => "1" ),
@@ -43,77 +43,77 @@
          *
          * @return array United Array
          */
-        public static function unite($array, $left, $right)
-        {
-            $result = [];
-            if (is_array($array)) {
-                foreach ($array as $item) {
-                    if (isset($result[$item[$left]])) {
-                        if (is_array($result[$item[$left]])) {
-                            $result[$item[$left]][] = $item[$right];
-                        } else {
-                            $result[$item[$left]] = [$result[$item[$left]], $item[$right]];
-                        }
+    public static function unite($array, $left, $right)
+    {
+        $result = [];
+        if (is_array($array)) {
+            foreach ($array as $item) {
+                if (isset($result[$item[$left]])) {
+                    if (is_array($result[$item[$left]])) {
+                        $result[$item[$left]][] = $item[$right];
                     } else {
-                        $result[$item[$left]] = $item[$right];
+                        $result[$item[$left]] = [$result[$item[$left]], $item[$right]];
                     }
+                } else {
+                    $result[$item[$left]] = $item[$right];
                 }
             }
-
-            return $result;
         }
 
-        public static function array_merge_recursive_all($paArray1, $paArray2)
-        {
-            if (!is_array($paArray1) or !is_array($paArray2)) {
-                return $paArray2;
-            }
-            foreach ($paArray2 as $sKey2 => $sValue2) {
-                $paArray1[$sKey2] = self::array_merge_recursive_all(@$paArray1[$sKey2], $sValue2);
-            }
+        return $result;
+    }
 
-            return $paArray1;
+    public static function array_merge_recursive_all($paArray1, $paArray2)
+    {
+        if (!is_array($paArray1) or !is_array($paArray2)) {
+            return $paArray2;
+        }
+        foreach ($paArray2 as $sKey2 => $sValue2) {
+            $paArray1[$sKey2] = self::array_merge_recursive_all(@$paArray1[$sKey2], $sValue2);
         }
 
-        public static function array_replace_recursive($array, $array1)
-        {
-            if (!function_exists('array_replace_recursive')) {
-                if (!function_exists('recurse')) {
-                    function recurse($array, $array1)
-                    {
-                        foreach ($array1 as $key => $value) {
-                            // create new key in $array, if it is empty or not an array
-                            if (!isset($array[$key]) || (isset($array[$key]) && !is_array($array[$key]))) {
-                                $array[$key] = [];
-                            }
-                            // overwrite the value in the base array
-                            if (is_array($value)) {
-                                $value = recurse($array[$key], $value);
-                            }
-                            $array[$key] = $value;
+        return $paArray1;
+    }
+
+    public static function array_replace_recursive($array, $array1)
+    {
+        if (!function_exists('array_replace_recursive')) {
+            if (!function_exists('recurse')) {
+                function recurse($array, $array1)
+                {
+                    foreach ($array1 as $key => $value) {
+                        // create new key in $array, if it is empty or not an array
+                        if (!isset($array[$key]) || (isset($array[$key]) && !is_array($array[$key]))) {
+                            $array[$key] = [];
                         }
-
-                        return $array;
+                        // overwrite the value in the base array
+                        if (is_array($value)) {
+                            $value = recurse($array[$key], $value);
+                        }
+                        $array[$key] = $value;
                     }
-                }
-                // handle the arguments, merge one by one
-                $args = func_get_args();
-                $array = $args[0];
-                if (!is_array($array)) {
+
                     return $array;
                 }
-                for ($i = 1; $i < count($args); ++$i) {
-                    if (is_array($args[$i])) {
-                        $array = recurse($array, $args[$i]);
-                    }
-                }
-
-                return $array;
-            } else {
-                return array_replace_recursive($array, $array1);
             }
+            // handle the arguments, merge one by one
+            $args = func_get_args();
+            $array = $args[0];
+            if (!is_array($array)) {
+                return $array;
+            }
+            for ($i = 1; $i < count($args); ++$i) {
+                if (is_array($args[$i])) {
+                    $array = recurse($array, $args[$i]);
+                }
+            }
+
+            return $array;
+        } else {
+            return array_replace_recursive($array, $array1);
         }
     }
+}
 
     /*
      * EOF

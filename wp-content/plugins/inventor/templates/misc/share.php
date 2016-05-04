@@ -11,9 +11,11 @@
       </a>
     </li>
     <li>
-      <a class="facebook" href="https://www.facebook.com/share.php?u=<?php the_permalink(); ?>&amp;title=<?php echo str_replace(' ',
-        '%20',
-        get_the_title()); ?>#sthash.BUkY1jCE.dpuf" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+      <a class="facebook" href="https://www.facebook.com/share.php?u=<?php the_permalink(); ?>&amp;title=<?php echo str_replace(
+          ' ',
+          '%20',
+          get_the_title()
+      ); ?>#sthash.BUkY1jCE.dpuf" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
         <i class="fa fa-facebook"></i>
       </a>
     </li>
@@ -23,8 +25,10 @@
       </a>
     </li>
     <li>
-      <a class="twitter" href="https://twitter.com/home?status=<?php echo str_replace(' ', '%20',
-        get_the_title()); ?>+<?php the_permalink(); ?>#sthash.BUkY1jCE.dpuf" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+      <a class="twitter" href="https://twitter.com/home?status=<?php echo str_replace(
+          ' ', '%20',
+          get_the_title()
+      ); ?>+<?php the_permalink(); ?>#sthash.BUkY1jCE.dpuf" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
         <i class="fa fa-twitter"></i>
       </a>
     </li>

@@ -1,5 +1,5 @@
-<?php if ( ! $is_compact) {
-  echo VP_View::instance()
+<?php if (! $is_compact) {
+    echo VP_View::instance()
               ->load('control/template_control_head', $head_info);
 } ?>
 <input type="text"
@@ -10,7 +10,7 @@
 <div class="vp-js-slider slidebar"
      id="<?php echo $name; ?>"
      data-vp-opt="<?php echo $opt; ?>"></div>
-<?php if ( ! $is_compact) {
-  echo VP_View::instance()
+<?php if (! $is_compact) {
+    echo VP_View::instance()
               ->load('control/template_control_foot');
 } ?>

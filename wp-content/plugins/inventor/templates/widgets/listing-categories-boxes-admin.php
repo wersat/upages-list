@@ -1,7 +1,7 @@
 <?php
-  if ( ! defined('ABSPATH')) {
+if (! defined('ABSPATH')) {
     exit;
-  }
+}
   $title              = ! empty($instance['title']) ? $instance['title'] : '';
   $description        = ! empty($instance['description']) ? $instance['description'] : '';
   $listing_categories = ! empty($instance['listing_categories']) ? $instance['listing_categories'] : [];
@@ -22,7 +22,7 @@
     <?php echo __('Description', 'inventor'); ?>
   </label>
 
-	<textarea class="widefat"
+    <textarea class="widefat"
             rows="4"
             id="<?php echo esc_attr($this->get_field_id('description')); ?>"
             name="<?php echo esc_attr($this->get_field_name('description')); ?>"><?php echo esc_attr($description); ?></textarea>
@@ -37,10 +37,13 @@
     <?php $terms = get_terms('listing_categories', ['parent' => 0, 'hide_empty' => false]); ?>
 
     <?php if (is_array($terms)) : ?>
-      <?php foreach ($terms as $term) : ?>
-        <option value="<?php echo esc_attr($term->term_id); ?>" <?php if (in_array($term->term_id,
-          $listing_categories)) : ?>selected="selected"<?php endif; ?>><?php echo esc_attr($term->name); ?></option>
-      <?php endforeach; ?>
+        <?php foreach ($terms as $term) : ?>
+        <option value="<?php echo esc_attr($term->term_id); ?>" <?php if (in_array(
+            $term->term_id,
+            $listing_categories
+        )) : ?>selected="selected"<?php 
+       endif; ?>><?php echo esc_attr($term->name); ?></option>
+        <?php endforeach; ?>
     <?php endif; ?>
   </select>
 </p>

@@ -5,7 +5,7 @@
 ?>
 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 <?php query_posts([
-  'post_type' => 'transaction',
+  'post_type' => 'transaction-new',
   'paged'     => $paged,
   'author'    => get_current_user_id(),
 ]); ?>

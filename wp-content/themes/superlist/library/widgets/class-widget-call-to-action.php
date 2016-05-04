@@ -9,18 +9,18 @@
 
   use Upages_Objects\Widget_Builder;
 
-  class Widget_Call_To_Action extends Widget_Builder
-  {
+class Widget_Call_To_Action extends Widget_Builder
+{
     /**
      * @param $args
      */
     public function __construct()
     {
-      $args             = [
+        $args             = [
         'label'       => __('Call to action', 'superlist'),
         'description' => __('Call to action widget.', 'superlist'),
-      ];
-      $args['fields']   = [
+        ];
+        $args['fields']   = [
         [
           'name' => __('Title', 'inventor'),
           'id'   => 'title',
@@ -47,17 +47,17 @@
           'type'   => 'select',
           'fields' => $this->getPageList()
         ]
-      ];
-      $advanced_options = $this->add_advanced_options();
-      foreach ($advanced_options as $option) {
-        $args['fields'][] = $option;
-      }
-      parent::__construct($args);
+        ];
+        $advanced_options = $this->add_advanced_options();
+        foreach ($advanced_options as $option) {
+            $args['fields'][] = $option;
+        }
+        parent::__construct($args);
     }
 
     public function widget($args, $instance)
     {
-      echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
+        echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
       <div <?php echo $this->advanced_style($instance) ?>>
         <?= $this->advanced_widget_title_and_description($instance) ?>
         <div class="row">
@@ -67,12 +67,12 @@
           <div class="col-sm-3">
             <a href="<?php echo wp_kses($instance['button_link'], wp_kses_allowed_html('post')); ?>"
                class="btn btn-primary">
-              <?php echo esc_attr($instance['button_text']); ?>
+                <?php echo esc_attr($instance['button_text']); ?>
             </a>
           </div>
         </div>
       </div>
-      <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post'));
+        <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post'));
     }
 
-  }
+}

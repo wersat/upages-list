@@ -7,7 +7,7 @@
         <button type="submit" class="button inventor-update-plugin-message-submit"
                 data-preloader="<?php echo site_url('/wp-admin/images/wpspin_light.gif'); ?>"
                 data-action="<?php echo admin_url('admin-ajax.php'); ?>">
-          <?php echo __('Confirm', 'inventor'); ?>
+            <?php echo __('Confirm', 'inventor'); ?>
         </button>
       </div>
       <div class="inventor-update-plugin-message-how-to">

@@ -38,20 +38,22 @@
         setColor: function(val) {
             val = val.toLowerCase();
             var that = this;
-            $.each(CPGlobal.stringParsers, function(i, parser) {
-                var match = parser.re.exec(val),
+            $.each(
+                CPGlobal.stringParsers, function(i, parser) {
+                    var match = parser.re.exec(val),
                     values = match && parser.parse(match),
                     space = parser.space || 'rgba';
-                if (values) {
-                    if (space === 'hsla') {
-                        that.value = CPGlobal.RGBtoHSB.apply(null, CPGlobal.HSLtoRGB.apply(null, values));
-                    } else {
-                        that.value = CPGlobal.RGBtoHSB.apply(null, values);
+                    if (values) {
+                        if (space === 'hsla') {
+                            that.value = CPGlobal.RGBtoHSB.apply(null, CPGlobal.HSLtoRGB.apply(null, values));
+                        } else {
+                            that.value = CPGlobal.RGBtoHSB.apply(null, values);
+                        }
+                        return false;
                     }
-                    return false;
+                    return true;
                 }
-                return true;
-            });
+            );
         },
 
         setHue: function(h) {
@@ -143,18 +145,24 @@
             .on('mousedown', $.proxy(this.mousedown, this));
 
         if (this.isInput) {
-            this.element.on({
-                'focus': $.proxy(this.show, this),
-                'keyup': $.proxy(this.update, this)
-            });
+            this.element.on(
+                {
+                    'focus': $.proxy(this.show, this),
+                    'keyup': $.proxy(this.update, this)
+                }
+            );
         } else if (this.component) {
-            this.component.on({
-                'click': $.proxy(this.show, this)
-            });
+            this.component.on(
+                {
+                    'click': $.proxy(this.show, this)
+                }
+            );
         } else {
-            this.element.on({
-                'click': $.proxy(this.show, this)
-            });
+            this.element.on(
+                {
+                    'click': $.proxy(this.show, this)
+                }
+            );
         }
         if (format === 'rgba' || format === 'hsla') {
             this.picker.addClass('alpha');
@@ -186,13 +194,17 @@
                     e.preventDefault();
                 }
             }
-            $(document).on({
-                'mousedown': $.proxy(this.hide, this)
-            });
-            this.element.trigger({
-                type: 'show',
-                color: this.color
-            });
+            $(document).on(
+                {
+                    'mousedown': $.proxy(this.hide, this)
+                }
+            );
+            this.element.trigger(
+                {
+                    type: 'show',
+                    color: this.color
+                }
+            );
         },
 
         update: function() {
@@ -212,9 +224,11 @@
             this.picker.hide();
             $(window).off('resize', this.place);
             if (!this.isInput) {
-                $(document).off({
-                    'mousedown': this.hide
-                });
+                $(document).off(
+                    {
+                        'mousedown': this.hide
+                    }
+                );
                 if (this.component) {
                     this.element.find('input').prop('value', this.format.call(this));
                 }
@@ -225,18 +239,22 @@
                     this.element.prop('value', this.format.call(this));
                 }
             }
-            this.element.trigger({
-                type: 'hide',
-                color: this.color
-            });
+            this.element.trigger(
+                {
+                    type: 'hide',
+                    color: this.color
+                }
+            );
         },
 
         place: function() {
             var offset = this.component ? this.component.offset() : this.element.offset();
-            this.picker.css({
-                top: offset.top + this.height,
-                left: offset.left
-            });
+            this.picker.css(
+                {
+                    top: offset.top + this.height,
+                    left: offset.left
+                }
+            );
         },
 
         //preview color change
@@ -288,10 +306,12 @@
                     top: e.pageY
                 };
                 //trigger mousemove to move the knob to the current position
-                $(document).on({
-                    mousemove: $.proxy(this.mousemove, this),
-                    mouseup: $.proxy(this.mouseup, this)
-                }).trigger('mousemove');
+                $(document).on(
+                    {
+                        mousemove: $.proxy(this.mousemove, this),
+                        mouseup: $.proxy(this.mouseup, this)
+                    }
+                ).trigger('mousemove');
             }
             return false;
         },
@@ -330,34 +350,40 @@
                 this.element.val(this.color.toHex());
             }
 
-            this.element.trigger({
-                type: 'changeColor',
-                color: this.color
-            });
+            this.element.trigger(
+                {
+                    type: 'changeColor',
+                    color: this.color
+                }
+            );
             return false;
         },
 
         mouseup: function(e) {
             e.stopPropagation();
             e.preventDefault();
-            $(document).off({
-                mousemove: this.mousemove,
-                mouseup: this.mouseup
-            });
+            $(document).off(
+                {
+                    mousemove: this.mousemove,
+                    mouseup: this.mouseup
+                }
+            );
             return false;
         }
     };
 
     $.fn.colorpicker = function(option, value) {
-        return this.each(function() {
-            var $this = $(this),
+        return this.each(
+            function() {
+                var $this = $(this),
                 data = $this.data('colorpicker'),
                 options = typeof option === 'object' && option;
-            if (!data) {
-                $this.data('colorpicker', (data = new Colorpicker(this, $.extend({}, $.fn.colorpicker.defaults, options))));
+                if (!data) {
+                    $this.data('colorpicker', (data = new Colorpicker(this, $.extend({}, $.fn.colorpicker.defaults, options))));
+                }
+                if (typeof option === 'string') { data[option](value); }
             }
-            if (typeof option === 'string') data[option](value);
-        });
+        );
     };
 
     $.fn.colorpicker.defaults = {
@@ -438,19 +464,19 @@
         },
 
         HueToRGB: function(p, q, h) {
-            if (h < 0)
-                h += 1;
-            else if (h > 1)
-                h -= 1;
+            if (h < 0) {
+                h += 1; }
+            else if (h > 1) {
+                h -= 1; }
 
-            if ((h * 6) < 1)
-                return p + (q - p) * h * 6;
-            else if ((h * 2) < 1)
-                return q;
-            else if ((h * 3) < 2)
-                return p + (q - p) * ((2 / 3) - h) * 6;
-            else
-                return p;
+            if ((h * 6) < 1) {
+                return p + (q - p) * h * 6; }
+            else if ((h * 2) < 1) {
+                return q; }
+            else if ((h * 3) < 2) {
+                return p + (q - p) * ((2 / 3) - h) * 6; }
+            else {
+                return p; }
         },
 
         HSLtoRGB: function(h, s, l, a) {
@@ -490,7 +516,7 @@
                         execResult[ 4 ]
                     ];
                 }
-            },
+        },
             {
                 re: /rgba?\(\s*(\d+(?:\.\d+)?)\%\s*,\s*(\d+(?:\.\d+)?)\%\s*,\s*(\d+(?:\.\d+)?)\%\s*(?:,\s*(\d+(?:\.\d+)?)\s*)?\)/,
                 parse: function(execResult) {
@@ -501,7 +527,7 @@
                         execResult[ 4 ]
                     ];
                 }
-            },
+        },
             {
                 re: /#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/,
                 parse: function(execResult) {
@@ -511,7 +537,7 @@
                         parseInt(execResult[ 3 ], 16)
                     ];
                 }
-            },
+        },
             {
                 re: /#([a-fA-F0-9])([a-fA-F0-9])([a-fA-F0-9])/,
                 parse: function(execResult) {
@@ -521,7 +547,7 @@
                         parseInt(execResult[ 3 ] + execResult[ 3 ], 16)
                     ];
                 }
-            },
+        },
             {
                 re: /hsla?\(\s*(\d+(?:\.\d+)?)\s*,\s*(\d+(?:\.\d+)?)\%\s*,\s*(\d+(?:\.\d+)?)\%\s*(?:,\s*(\d+(?:\.\d+)?)\s*)?\)/,
                 space: 'hsla',
@@ -533,7 +559,7 @@
                         execResult[4]
                     ];
                 }
-            }
+        }
         ],
         template: '<div class="colorpicker dropdown-menu">' +
             '<div class="colorpicker-saturation"><i><b></b></i></div>' +

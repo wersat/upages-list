@@ -26,15 +26,15 @@
         <?php $custom = ''; ?>
 
         <?php if (is_array($field->value)) : ?>
-          <?php foreach ($field->value as $opening_hours) : ?>
+            <?php foreach ($field->value as $opening_hours) : ?>
             <?php if ($opening_hours['listing_day'] === $key) : ?>
-              <?php
-              $time_from = ! empty($opening_hours['listing_time_from']) ? $opening_hours['listing_time_from'] : '';
-              $time_to   = ! empty($opening_hours['listing_time_to']) ? $opening_hours['listing_time_to'] : '';
-              $custom    = ! empty($opening_hours['listing_custom']) ? $opening_hours['listing_custom'] : '';
-              ?>
+                <?php
+                $time_from = ! empty($opening_hours['listing_time_from']) ? $opening_hours['listing_time_from'] : '';
+                $time_to   = ! empty($opening_hours['listing_time_to']) ? $opening_hours['listing_time_to'] : '';
+                $custom    = ! empty($opening_hours['listing_custom']) ? $opening_hours['listing_custom'] : '';
+                ?>
             <?php endif; ?>
-          <?php endforeach; ?>
+            <?php endforeach; ?>
         <?php endif; ?>
         <td>
           <label for="listing_opening_hours_<?php echo $index; ?>_listing_day"></label>
@@ -53,7 +53,7 @@
           <input type="text" class="regular-text" name="listing_opening_hours[<?php echo $index; ?>][listing_custom]" id="listing_opening_hours_<?php echo $index; ?>_listing_custom" value="<?php echo $custom; ?>">
         </td>
       </tr>
-      <?php ++$index; ?>
+        <?php ++$index; ?>
     <?php endforeach; ?>
   </tbody>
 </table>

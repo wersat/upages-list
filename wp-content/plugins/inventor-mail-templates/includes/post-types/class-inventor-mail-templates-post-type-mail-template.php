@@ -111,4 +111,4 @@
         }
     }
 
-    Inventor_Post_Type_Mail_template::init();
+    Inventor_Post_Type_Mail_Template::init();

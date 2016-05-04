@@ -7,10 +7,13 @@
       </label>
     <?php endif; ?>
     <input type="text" name="filter-description"
-           <?php if ('placeholders' === $input_titles) : ?>placeholder="<?php echo __('Description',
-             'inventor'); ?>"<?php endif; ?>
+            <?php if ('placeholders' === $input_titles) : ?>placeholder="<?php echo __(
+                'Description',
+                'inventor'
+            ); ?>"<?php 
+            endif; ?>
            class="form-control" value="<?php echo ! empty($_GET['filter-description']) ? $_GET['filter-description']
-      : ''; ?>"
+            : ''; ?>"
            id="<?php echo ! empty($field_id_prefix) ? $field_id_prefix
              : ''; ?><?php echo esc_attr($args['widget_id']); ?>_description">
   </div>

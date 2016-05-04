@@ -9,8 +9,8 @@
 
   use Upages_Objects\Widget_Builder;
 
-  class Widget_Partners extends Widget_Builder
-  {
+class Widget_Partners extends Widget_Builder
+{
     /**
      * Widget_Partners constructor.
      *
@@ -19,11 +19,11 @@
      */
     public function __construct()
     {
-      $args             = [
+        $args             = [
         'label'       => __('Partners', 'inventor-partners'),
         'description' => __('Displays partners widget', 'inventor-partners'),
-      ];
-      $args['fields']   = [
+        ];
+        $args['fields']   = [
         [
           'name' => __('Title', 'inventor'),
           'id'   => 'title',
@@ -44,8 +44,10 @@
           'name' => __('IDs', 'inventor'),
           'id'   => 'ids',
           'type' => 'text',
-          'desc' => __('For specific partners please insert post ids, separated by comma. Example: 1,2,3',
-            'inventor-partners')
+          'desc' => __(
+              'For specific partners please insert post ids, separated by comma. Example: 1,2,3',
+              'inventor-partners'
+          )
         ],
         [
           'name'   => __('Items per row', 'inventor-partners'),
@@ -79,12 +81,12 @@
             ],
           ]
         ],
-      ];
-      $advanced_options = $this->add_advanced_options();
-      foreach ($advanced_options as $option) {
-        $args['fields'][] = $option;
-      }
-      parent::__construct($args);
+        ];
+        $advanced_options = $this->add_advanced_options();
+        foreach ($advanced_options as $option) {
+            $args['fields'][] = $option;
+        }
+        parent::__construct($args);
     }
 
     /**
@@ -93,42 +95,42 @@
      */
     public function widget($args, $instance)
     {
-      $query = [
+        $query = [
         'post_type'      => 'partner',
         'posts_per_page' => ! empty($instance['count']) ? $instance['count'] : 3,
-      ];
-      if ( ! empty($instance['ids'])) {
-        $ids               = explode(',', $instance['ids']);
-        $query['post__in'] = $ids;
-      }
-      query_posts($query);
+        ];
+        if (! empty($instance['ids'])) {
+            $ids               = explode(',', $instance['ids']);
+            $query['post__in'] = $ids;
+        }
+        query_posts($query);
 
-      echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
+        echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
       <div <?php echo $this->advanced_style($instance) ?>>
         <?= $this->advanced_widget_title_and_description($instance) ?>
 
         <?php
-          if (have_posts()) : ?>
+        if (have_posts()) : ?>
             <div class="items-per-row-<?php echo esc_attr($instance['per_row']); ?>">
-              <?php if ($instance['per_row'] != 1) : ?>
+                <?php if ($instance['per_row'] != 1) : ?>
               <div class="partners-row">
                 <?php endif; ?>
 
                 <?php $index = 0; ?>
                 <?php while (have_posts()) :
-                  the_post(); ?>
+                    the_post(); ?>
                 <div class="partners-container">
-                  <?php if (has_post_thumbnail()) : ?>
+                    <?php if (has_post_thumbnail()) : ?>
                     <div class="partner-featured-image">
                       <a href="<?php echo get_post_meta(get_the_ID(), 'partner_url', true); ?>">
                         <?php the_post_thumbnail(); ?>
                       </a>
                     </div>
-                  <?php else : ?>
+                    <?php else : ?>
                     <div class="alert alert-warning">
-                      <?php echo __('Featured image not found.', 'inventor-partners'); ?>
+                        <?php echo __('Featured image not found.', 'inventor-partners'); ?>
                     </div>
-                  <?php endif; ?>
+                    <?php endif; ?>
                 </div>
                 <?php if (($index + 1) % $instance['per_row'] == 0 && $instance['per_row'] != 1 && \Inventor_Query::loop_has_next()) : ?>
               </div>
@@ -138,16 +140,16 @@
                 <?php endwhile; ?>
                 <?php if ($instance['per_row'] != 1) : ?>
               </div>
-            <?php endif; ?>
+                <?php endif; ?>
             </div>
-          <?php else : ?>
+            <?php else : ?>
             <div class="alert alert-warning">
-              <?php echo __('No partners found.', 'inventor-partners'); ?>
+                <?php echo __('No partners found.', 'inventor-partners'); ?>
             </div>
-          <?php endif; ?>
+            <?php endif; ?>
       </div>
-      <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post'));
-      wp_reset_query();
+        <?php echo wp_kses($args['after_widget'], wp_kses_allowed_html('post'));
+        wp_reset_query();
     }
 
-  }
+}

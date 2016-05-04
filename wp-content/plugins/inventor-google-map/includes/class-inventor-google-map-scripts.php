@@ -36,18 +36,18 @@
                 ['jquery'], false, true);
             wp_enqueue_script('infobox');
             wp_register_script('markerclusterer',
-                plugins_url('/inventor-google-map/libraries/jquery-google-map/markerclusterer.min.js'), ['jquery'], false,
+                plugins_url('/inventor-google-map/libraries/jquery-google-map/markerclusterer.js'), ['jquery'], false,
                 true);
             wp_enqueue_script('markerclusterer');
-            wp_register_script('cookie', plugins_url('/inventor-google-map/libraries/js-cookie.min.js'), ['jquery'], false,
+            wp_register_script('cookie', plugins_url('/inventor-google-map/libraries/js-cookie.js'), ['jquery'], false,
                 true);
             wp_enqueue_script('cookie');
             wp_register_script('jquery-google-map',
-                plugins_url('/inventor-google-map/libraries/jquery-google-map/jquery-google-map.min.js'), ['jquery'], false,
+                plugins_url('/inventor-google-map/libraries/jquery-google-map/jquery-google-map.js'), ['jquery'], false,
                 true);
             wp_enqueue_script('jquery-google-map');
             wp_register_script('inventor-google-map',
-                plugins_url('/inventor-google-map/assets/js/inventor-google-map.min.js'), ['jquery'], false, true);
+                plugins_url('/inventor-google-map/assets/js/inventor-google-map.js'), ['jquery'], false, true);
             wp_enqueue_script('inventor-google-map');
         }
     }

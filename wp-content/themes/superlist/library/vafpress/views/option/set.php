@@ -14,59 +14,63 @@
              class="vp-menus">
           <ul class="vp-menu-level-1">
             <?php foreach ($set->get_menus() as $menu): ?>
-              <?php $menus = $set->get_menus(); ?>
-              <?php $is_first_lvl_1 = $menu === reset($menus); ?>
-              <?php if ($is_first_lvl_1): ?>
+                <?php $menus = $set->get_menus(); ?>
+                <?php $is_first_lvl_1 = $menu === reset($menus); ?>
+                <?php if ($is_first_lvl_1) : ?>
                 <li class="vp-current">
-              <?php else: ?>
+                <?php else: ?>
                 <li>
-              <?php endif; ?>
-              <?php if ($menu->get_menus()): ?>
+                <?php endif; ?>
+                <?php if ($menu->get_menus()) : ?>
               <a href="#<?php echo $menu->get_name(); ?>"
                  class="vp-js-menu-dropdown vp-menu-dropdown">
-              <?php else: ?>
+                <?php else: ?>
               <a href="#<?php echo $menu->get_name(); ?>"
                  class="vp-js-menu-goto vp-menu-goto">
-            <?php endif; ?>
-              <?php
-              $icon         = $menu->get_icon();
-              $font_awesome = VP_Util_Res::is_font_awesome($icon);
-              if ($font_awesome !== false):
-                VP_Util_Text::print_if_exists($font_awesome, '<i class="fa %s"></i>');
+                <?php endif; ?>
+                <?php
+                $icon         = $menu->get_icon();
+                $font_awesome = VP_Util_Res::is_font_awesome($icon);
+                if ($font_awesome !== false) :
+                    VP_Util_Text::print_if_exists($font_awesome, '<i class="fa %s"></i>');
               else:
-                VP_Util_Text::print_if_exists(VP_Util_Res::img($icon),
-                  '<i class="custom-menu-icon" style="background-image: url(\'%s\');"></i>');
+                    VP_Util_Text::print_if_exists(
+                        VP_Util_Res::img($icon),
+                        '<i class="custom-menu-icon" style="background-image: url(\'%s\');"></i>'
+                    );
               endif;
-              ?>
+                ?>
               <span><?php echo $menu->get_title(); ?></span>
               </a>
-              <?php if ($menu->get_menus()): ?>
+                <?php if ($menu->get_menus()) : ?>
                 <ul class="vp-menu-level-2">
-                  <?php foreach ($menu->get_menus() as $submenu): ?>
+                    <?php foreach ($menu->get_menus() as $submenu): ?>
                     <?php $submenus = $menu->get_menus(); ?>
-                    <?php if ($is_first_lvl_1 and $submenu === reset($submenus)): ?>
+                    <?php if ($is_first_lvl_1 and $submenu === reset($submenus)) : ?>
                       <li class="vp-current">
                     <?php else: ?>
                       <li>
                     <?php endif; ?>
                     <a href="#<?php echo $submenu->get_name(); ?>"
                        class="vp-js-menu-goto vp-menu-goto">
-                      <?php
+                        <?php
                         $sub_icon     = $submenu->get_icon();
                         $font_awesome = VP_Util_Res::is_font_awesome($sub_icon);
-                        if ($font_awesome !== false):
-                          VP_Util_Text::print_if_exists($font_awesome, '<i class="fa %s"></i>');
+                        if ($font_awesome !== false) :
+                            VP_Util_Text::print_if_exists($font_awesome, '<i class="fa %s"></i>');
                         else:
-                          VP_Util_Text::print_if_exists(VP_Util_Res::img($sub_icon),
-                            '<i class="custom-menu-icon" style="background-image: url(\'%s\');"></i>');
+                            VP_Util_Text::print_if_exists(
+                                VP_Util_Res::img($sub_icon),
+                                '<i class="custom-menu-icon" style="background-image: url(\'%s\');"></i>'
+                            );
                         endif;
-                      ?>
+                        ?>
                       <span><?php echo $submenu->get_title(); ?></span>
                     </a>
                     </li>
-                  <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </ul>
-              <?php endif; ?>
+                <?php endif; ?>
               </li>
             <?php endforeach; ?>
           </ul>
@@ -90,14 +94,14 @@
                  style="display: none;"></p>
             </div>
           </div>
-          <?php foreach ($set->get_menus() as $menu): ?>
+            <?php foreach ($set->get_menus() as $menu): ?>
             <?php $menus = $set->get_menus(); ?>
-            <?php if ($menu === reset($menus)): ?>
-              <?php echo $menu->render(['current' => 1]); ?>
+            <?php if ($menu === reset($menus)) : ?>
+                <?php echo $menu->render(['current' => 1]); ?>
             <?php else: ?>
-              <?php echo $menu->render(['current' => 0]); ?>
+                <?php echo $menu->render(['current' => 0]); ?>
             <?php endif; ?>
-          <?php endforeach; ?>
+            <?php endforeach; ?>
           <div id="vp-submit-bottom"
                class="vp-submit bottom">
             <div class="inner">
@@ -117,8 +121,12 @@
     </div>
     <div id="vp-copyright"
          class="vp-copyright">
-      <p><?php printf(__('This option panel is built using <a href="http://vafpress.com/vafpress-framework">Vafpress Framework %s</a> powered by <a href="http://vafpress.com">Vafpress</a>',
-          'upages'), VP_VERSION); ?></p>
+      <p><?php printf(
+          __(
+              'This option panel is built using <a href="http://vafpress.com/vafpress-framework">Vafpress Framework %s</a> powered by <a href="http://vafpress.com">Vafpress</a>',
+              'upages'
+          ), VP_VERSION
+      ); ?></p>
     </div>
   </div>
 </div>

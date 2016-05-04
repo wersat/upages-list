@@ -11,10 +11,11 @@
 
   /**
    * Class Widgets_Faq
+   *
    * @package Upages_Widgets
    */
-  class Widgets_Faq extends Widget_Builder
-  {
+class Widgets_Faq extends Widget_Builder
+{
     /**
      * Widgets_Faq constructor.
      *
@@ -23,11 +24,11 @@
      */
     public function __construct()
     {
-      $args             = [
+        $args             = [
         'label'       => __('FAQ New', 'inventor-faq'),
         'description' => __('Displays FAQ.', 'inventor-faq'),
-      ];
-      $args['fields']   = [
+        ];
+        $args['fields']   = [
         [
           'name' => __('Title', 'inventor'),
           'id'   => 'title',
@@ -38,12 +39,12 @@
           'id'   => 'description',
           'type' => 'textarea',
         ]
-      ];
-      $advanced_options = $this->add_advanced_options();
-      foreach ($advanced_options as $option) {
-        $args['fields'][] = $option;
-      }
-      parent::__construct($args);
+        ];
+        $advanced_options = $this->add_advanced_options();
+        foreach ($advanced_options as $option) {
+            $args['fields'][] = $option;
+        }
+        parent::__construct($args);
     }
 
     /**
@@ -52,18 +53,20 @@
      */
     public function widget($args, $instance)
     {
-      query_posts([
-        'post_type'      => 'faq',
-        'posts_per_page' => -1,
-      ]);
-      echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
+        query_posts(
+            [
+            'post_type'      => 'faq',
+            'posts_per_page' => -1,
+            ]
+        );
+        echo wp_kses($args['before_widget'], wp_kses_allowed_html('post')); ?>
       <div <?= $this->advanced_style($instance) ?>>
         <?= $this->advanced_widget_title_and_description($instance) ?>
         <?php
-          if (have_posts()) { ?>
+        if (have_posts()) { ?>
             <div class="faq">
-              <?php while (have_posts()) {
-                the_post(); ?>
+                <?php while (have_posts()) {
+                    the_post(); ?>
                 <div class="faq-item">
                   <div class="faq-item-question">
                     <h2><?php the_title(); ?></h2>
@@ -72,15 +75,15 @@
                     <p><?php the_content(); ?></p>
                   </div>
                 </div>
-              <?php } ?>
+                <?php } ?>
             </div>
-          <?php } else { ?>
+        <?php } else { ?>
             <div class="alert alert-warning">
-              <?= __('No FAQ found.', 'inventor-faq'); ?>
+                <?= __('No FAQ found.', 'inventor-faq'); ?>
             </div>
-          <?php } ?>
+        <?php } ?>
       </div>
-      <?= wp_kses($args['after_widget'], wp_kses_allowed_html('post'));
-      wp_reset_query();
+        <?= wp_kses($args['after_widget'], wp_kses_allowed_html('post'));
+        wp_reset_query();
     }
-  }
+}

@@ -1,7 +1,7 @@
 <?php
-  if ( ! defined('ABSPATH')) {
+if (! defined('ABSPATH')) {
     exit;
-  }
+}
 ?>
 
 <?php $title = ! empty($instance['title']) ? $instance['title'] : ''; ?>
@@ -30,7 +30,7 @@
     <?php echo __('Description', 'inventor'); ?>
   </label>
 
-	<textarea class="widefat"
+    <textarea class="widefat"
             rows="4"
             id="<?php echo esc_attr($this->get_field_id('description')); ?>"
             name="<?php echo esc_attr($this->get_field_name('description')); ?>"><?php echo esc_attr($description); ?></textarea>
@@ -54,8 +54,10 @@
          name="<?php echo esc_attr($this->get_field_name('ids')); ?>"
          type="text"
          value="<?php echo esc_attr($ids); ?>">
-  <i><?php echo __('For specific listings please insert post ids, separated by comma. Example: 1,2,3',
-      'inventor'); ?></i>
+  <i><?php echo __(
+      'For specific listings please insert post ids, separated by comma. Example: 1,2,3',
+      'inventor'
+  ); ?></i>
 </p>
 <p>
   <label for="<?php echo esc_attr($this->get_field_id('per_row')); ?>">
@@ -81,7 +83,7 @@
         <?php echo (empty($order) || 'on' === $order) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('order')); ?>"
              name="<?php echo esc_attr($this->get_field_name('order')); ?>">
-      <?php echo __('Default', 'inventor'); ?>
+        <?php echo __('Default', 'inventor'); ?>
     </label>
   </li>
   <li>
@@ -92,7 +94,7 @@
         <?php echo ('rand' === $order) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('order')); ?>"
              name="<?php echo esc_attr($this->get_field_name('order')); ?>">
-      <?php echo __('Random', 'inventor'); ?>
+        <?php echo __('Random', 'inventor'); ?>
     </label>
   </li>
   <li>
@@ -103,7 +105,7 @@
         <?php echo ('ids' === $order) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('order')); ?>"
              name="<?php echo esc_attr($this->get_field_name('order')); ?>">
-      <?php echo __('IDs', 'inventor'); ?>
+        <?php echo __('IDs', 'inventor'); ?>
     </label>
   </li>
 </ul>
@@ -118,7 +120,7 @@
         <?php echo (empty($attribute) || 'on' === $attribute) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('attribute')); ?>"
              name="<?php echo esc_attr($this->get_field_name('attribute')); ?>">
-      <?php echo __('None', 'inventor'); ?>
+        <?php echo __('None', 'inventor'); ?>
     </label>
   </li>
   <li>
@@ -129,7 +131,7 @@
         <?php echo ('featured' === $attribute) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('attribute')); ?>"
              name="<?php echo esc_attr($this->get_field_name('attribute')); ?>">
-      <?php echo __('Featured only', 'inventor'); ?>
+        <?php echo __('Featured only', 'inventor'); ?>
     </label>
   </li>
   <li>
@@ -140,7 +142,7 @@
         <?php echo ('reduced' === $attribute) ? 'checked="checked"' : ''; ?>
              id="<?php echo esc_attr($this->get_field_id('attribute')); ?>"
              name="<?php echo esc_attr($this->get_field_name('attribute')); ?>">
-      <?php echo __('Reduced only', 'inventor'); ?>
+        <?php echo __('Reduced only', 'inventor'); ?>
     </label>
   </li>
 </ul>
@@ -153,10 +155,14 @@
           name="<?php echo esc_attr($this->get_field_name('display')); ?>">
     <option value="small" <?php echo ('small' === $display || empty($display)) ? 'selected="selected"'
       : ''; ?>><?php echo __('Small', 'inventor'); ?></option>
-    <option value="box" <?php echo ('box' === $display) ? 'selected="selected"' : ''; ?>><?php echo __('Box',
-        'inventor'); ?></option>
-    <option value="row" <?php echo ('row' === $display) ? 'selected="selected"' : ''; ?>><?php echo __('Row',
-        'inventor'); ?></option>
+    <option value="box" <?php echo ('box' === $display) ? 'selected="selected"' : ''; ?>><?php echo __(
+        'Box',
+        'inventor'
+    ); ?></option>
+    <option value="row" <?php echo ('row' === $display) ? 'selected="selected"' : ''; ?>><?php echo __(
+        'Row',
+        'inventor'
+    ); ?></option>
     <option value="masonry" <?php echo ('masonry' === $display) ? 'selected="selected"'
       : ''; ?>><?php echo __('Masonry', 'inventor'); ?></option>
   </select>
@@ -171,10 +177,13 @@
     <?php $terms = get_terms('listing_categories', ['hide_empty' => false]);?>
 
     <?php if (is_array($terms)) : ?>
-      <?php foreach ($terms as $term) : ?>
-        <option value="<?php echo esc_attr($term->term_id); ?>" <?php if (in_array($term->term_id,
-          $listing_categories)) : ?>selected="selected"<?php endif; ?>><?php echo esc_attr($term->name); ?></option>
-      <?php endforeach; ?>
+        <?php foreach ($terms as $term) : ?>
+        <option value="<?php echo esc_attr($term->term_id); ?>" <?php if (in_array(
+            $term->term_id,
+            $listing_categories
+        )) : ?>selected="selected"<?php 
+       endif; ?>><?php echo esc_attr($term->name); ?></option>
+        <?php endforeach; ?>
     <?php endif; ?>
   </select>
 </p>
@@ -188,13 +197,16 @@
     <?php $types = Inventor_Post_types::get_listing_post_types(); ?>
 
     <?php if (is_array($types)) : ?>
-      <?php foreach ($types as $type) : ?>
+        <?php foreach ($types as $type) : ?>
         <?php $obj = get_post_type_object($type); ?>
-        <option value="<?php echo esc_attr($type); ?>" <?php if (in_array($type,
-          $listing_types)) : ?>selected="selected"<?php endif; ?>>
-          <?php echo esc_attr($obj->labels->name); ?>
+        <option value="<?php echo esc_attr($type); ?>" <?php if (in_array(
+            $type,
+            $listing_types
+        )) : ?>selected="selected"<?php 
+       endif; ?>>
+            <?php echo esc_attr($obj->labels->name); ?>
         </option>
-      <?php endforeach; ?>
+        <?php endforeach; ?>
     <?php endif; ?>
   </select>
 </p>
@@ -208,10 +220,13 @@
     <?php $terms = get_terms('locations', ['hide_empty' => false]); ?>
 
     <?php if (is_array($terms)) : ?>
-      <?php foreach ($terms as $term) : ?>
-        <option value="<?php echo esc_attr($term->term_id); ?>" <?php if (in_array($term->term_id,
-          $locations)) : ?>selected="selected"<?php endif; ?>><?php echo esc_attr($term->name); ?></option>
-      <?php endforeach; ?>
+        <?php foreach ($terms as $term) : ?>
+        <option value="<?php echo esc_attr($term->term_id); ?>" <?php if (in_array(
+            $term->term_id,
+            $locations
+        )) : ?>selected="selected"<?php 
+       endif; ?>><?php echo esc_attr($term->name); ?></option>
+        <?php endforeach; ?>
     <?php endif; ?>
   </select>
 </p>

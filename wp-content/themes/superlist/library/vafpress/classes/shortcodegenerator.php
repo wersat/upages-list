@@ -1,7 +1,7 @@
 <?php
 
-  class VP_ShortcodeGenerator
-  {
+class VP_ShortcodeGenerator
+{
     public static $pool = [];
 
     public $name;
@@ -22,161 +22,161 @@
 
     public function __construct($arr)
     {
-      $this->main_image     = VP_PUBLIC_URL . '/img/vp_shortcode_icon.png';
-      $this->sprite_image   = VP_PUBLIC_URL . '/img/vp_shortcode_icon_sprite.png';
-      $this->types          = ['post', 'page'];
-      $this->included_pages = [];
-      if (is_array($arr)) {
-        foreach ($arr as $n => $v) {
-          $this->$n = $v;
+        $this->main_image     = VP_PUBLIC_URL . '/img/vp_shortcode_icon.png';
+        $this->sprite_image   = VP_PUBLIC_URL . '/img/vp_shortcode_icon_sprite.png';
+        $this->types          = ['post', 'page'];
+        $this->included_pages = [];
+        if (is_array($arr)) {
+            foreach ($arr as $n => $v) {
+                $this->$n = $v;
+            }
+            if (empty($this->name)) {
+                die('Unique name required');
+            }
+            if (empty($this->template)) {
+                die('Template array / path required');
+            }
         }
-        if (empty($this->name)) {
-          die('Unique name required');
+        if (is_string($this->template) and is_file($this->template)) {
+            $this->template = include $this->template;
         }
-        if (empty($this->template)) {
-          die('Template array / path required');
+        if (! empty($this->template)) {
+            $this->normalize();
+            add_action('current_screen', [$this, 'init_mce_plugin']);
         }
-      }
-      if (is_string($this->template) and is_file($this->template)) {
-        $this->template = include $this->template;
-      }
-      if ( ! empty($this->template)) {
-        $this->normalize();
-        add_action('current_screen', [$this, 'init_mce_plugin']);
-      }
-      self::$pool[$this->name] = $this;
+        self::$pool[$this->name] = $this;
     }
 
     public function normalize()
     {
-      if (is_array($this->template)) {
-        foreach ($this->template as &$shortcode) {
-          foreach ($shortcode['elements'] as &$elements) {
-            if (isset($elements['attributes'])) {
-              foreach ($elements['attributes'] as &$f) {
-                if ($f['type'] === 'codeeditor') {
-                  $f['type'] = 'textarea';
+        if (is_array($this->template)) {
+            foreach ($this->template as &$shortcode) {
+                foreach ($shortcode['elements'] as &$elements) {
+                    if (isset($elements['attributes'])) {
+                        foreach ($elements['attributes'] as &$f) {
+                            if ($f['type'] === 'codeeditor') {
+                                $f['type'] = 'textarea';
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
         }
-      }
     }
 
     public function init_mce_plugin()
     {
-      if ($this->can_output()) {
-        // print modal dialog dom
-        add_action('admin_footer', [$this, 'print_modal']);
-        // populate scripts and styles dependencies
-        $loader = VP_WP_Loader::instance();
-        $loader->add_types($this->get_field_types(), 'shortcodegenerator');
-      }
+        if ($this->can_output()) {
+            // print modal dialog dom
+            add_action('admin_footer', [$this, 'print_modal']);
+            // populate scripts and styles dependencies
+            $loader = VP_WP_Loader::instance();
+            $loader->add_types($this->get_field_types(), 'shortcodegenerator');
+        }
     }
 
     public function can_output()
     {
-      $screen = '';
-      $can    = true;
-      if (function_exists('get_current_screen')) {
-        $screen = get_current_screen();
-        if ( ! is_null($screen)) {
-          $screen = $screen->id;
+        $screen = '';
+        $can    = true;
+        if (function_exists('get_current_screen')) {
+            $screen = get_current_screen();
+            if (! is_null($screen)) {
+                $screen = $screen->id;
+            }
         }
-      }
-      // if in post / page
-      if (VP_Metabox::_is_post_or_page()) {
-        // then consider the types
-        if ( ! in_array('*', $this->types)) {
-          // if wildcard exists, then always shows
-          $can &= in_array(VP_Metabox::_get_current_post_type(), $this->types);
+        // if in post / page
+        if (VP_Metabox::_is_post_or_page()) {
+            // then consider the types
+            if (! in_array('*', $this->types)) {
+                // if wildcard exists, then always shows
+                $can &= in_array(VP_Metabox::_get_current_post_type(), $this->types);
+            } else {
+                $can &= true;
+            }
         } else {
-          $can &= true;
+            // if not, only consider the screen id
+            if (! empty($screen)) {
+                $can &= in_array($screen, $this->included_pages);
+            } else {
+                if (! is_admin()) {
+                    $can &= false;
+                }
+            }
         }
-      } else {
-        // if not, only consider the screen id
-        if ( ! empty($screen)) {
-          $can &= in_array($screen, $this->included_pages);
-        } else {
-          if ( ! is_admin()) {
-            $can &= false;
-          }
-        }
-      }
 
-      return $can;
+        return $can;
     }
 
     public function get_field_types()
     {
-      $field_types = [];
-      if (is_array($this->template)) {
-        foreach ($this->template as $shortcode) {
-          foreach ($shortcode['elements'] as $elements) {
-            if (isset($elements['attributes'])) {
-              foreach ($elements['attributes'] as $f) {
-                if ( ! in_array($f['type'], $field_types)) {
-                  $field_types[] = $f['type'];
+        $field_types = [];
+        if (is_array($this->template)) {
+            foreach ($this->template as $shortcode) {
+                foreach ($shortcode['elements'] as $elements) {
+                    if (isset($elements['attributes'])) {
+                        foreach ($elements['attributes'] as $f) {
+                            if (! in_array($f['type'], $field_types)) {
+                                $field_types[] = $f['type'];
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
         }
-      }
 
-      return $field_types;
+        return $field_types;
     }
 
     public static function get_pool()
     {
-      return self::$pool;
+        return self::$pool;
     }
 
     public static function pool_supports_editor()
     {
-      foreach (self::$pool as $sg) {
-        if ($sg->supports_editor()) {
-          return true;
+        foreach (self::$pool as $sg) {
+            if ($sg->supports_editor()) {
+                return true;
+            }
         }
-      }
 
-      return false;
+        return false;
     }
 
     public function supports_editor()
     {
-      $post_type  = VP_Metabox::_get_current_post_type();
-      $has_editor = post_type_supports($post_type, 'editor');
+        $post_type  = VP_Metabox::_get_current_post_type();
+        $has_editor = post_type_supports($post_type, 'editor');
 
-      return $has_editor;
+        return $has_editor;
     }
 
     public static function pool_can_output()
     {
-      foreach (self::$pool as $sg) {
-        if ($sg->can_output()) {
-          return true;
+        foreach (self::$pool as $sg) {
+            if ($sg->can_output()) {
+                return true;
+            }
         }
-      }
 
-      return false;
+        return false;
     }
 
     public function print_modal()
     {
-      $modal_id = $this->name . '_modal';
-      ?>
+        $modal_id = $this->name . '_modal';
+        ?>
       <div id="<?php echo $modal_id;
-      ?>"
+        ?>"
            class="vp-sc-dialog reveal-modal xlarge">
         <h1><?php echo $this->modal_title;
-          ?></h1>
+            ?></h1>
         <div class="vp-sc-scroll-container">
           <div class="vp-sc-wrapper">
             <ul class="vp-sc-menu">
-              <?php foreach ($this->template as $title => $menu): ?>
-                <?php if (reset($this->template) == $menu): ?>
+                <?php foreach ($this->template as $title => $menu): ?>
+                <?php if (reset($this->template) == $menu) : ?>
                   <li class="current">
                     <a href="#<?php echo str_replace(' ', '_', $title);
                     ?>"><?php echo $title ?>
@@ -188,50 +188,51 @@
                   </li></a>
                 <?php endif;
                 ?>
-              <?php endforeach;
-              ?>
+                <?php endforeach;
+                ?>
             </ul>
             <div class="vp-sc-main">
-              <?php foreach ($this->template as $title => $menu): ?>
-              <?php if (reset($this->template) == $menu) : ?>
+                <?php foreach ($this->template as $title => $menu): ?>
+                <?php if (reset($this->template) == $menu) : ?>
               <ul class="current vp-sc-sub-menu-list vp-sc-sub-menu-<?php echo str_replace(' ', '_', $title);
-              ?>">
+                ?>">
                 <?php else : ?>
                 <ul class="vp-hide vp-sc-sub-menu-list vp-sc-sub-menu-<?php echo str_replace(' ', '_', $title);
                 ?>">
-                  <?php endif;
-                  ?>
-                  <?php foreach ($menu['elements'] as $name => $element): ?>
+                <?php endif;
+                    ?>
+                    <?php foreach ($menu['elements'] as $name => $element): ?>
                     <li class="vp-sc-element postbox<?php if (isset($element['attributes'])) {
-                      echo ' has-options';
-                    }
+                        echo ' has-options';
+}
                     ?><?php if (isset($element['active']) && $element['active'] == true) {
                       echo ' active';
                     }
                     ?>">
                       <h3 class="hndle vp-sc-element-heading">
                         <a href="#">
-                          <?php echo $element['title'];
-                          ?>
-                          <?php if (isset($element['attributes'])) {
-                            echo '<i class="fa fa-arrow-down"></i>';
-                          }
-                          ?>
+                            <?php echo $element['title'];
+                            ?>
+                            <?php if (isset($element['attributes'])) {
+                                echo '<i class="fa fa-arrow-down"></i>';
+}
+                            ?>
                         </a>
                       </h3>
                       <div class="hidden vp-sc-code"><?php echo htmlentities($element['code']);
                         ?></div>
-                      <?php if (isset($element['attributes']) and ! empty($element['attributes'])): ?>
-                        <form class="vp-sc-element-form <?php if ( ! isset($element['active']) || isset($element['active']) && $element['active'] == false): ?>vp-hide<?php endif;
+                        <?php if (isset($element['attributes']) and ! empty($element['attributes'])) : ?>
+                        <form class="vp-sc-element-form <?php if (! isset($element['active']) || isset($element['active']) && $element['active'] == false) : ?>vp-hide<?php 
+                       endif;
                         ?> inside">
-                          <?php echo $this->print_form($element['attributes']);
-                          ?>
+                            <?php echo $this->print_form($element['attributes']);
+                            ?>
                         </form>
-                      <?php endif;
-                      ?>
+                        <?php endif;
+                        ?>
                     </li>
-                  <?php endforeach;
-                  ?>
+                    <?php endforeach;
+                    ?>
                 </ul>
                 <?php endforeach;
                 ?>
@@ -240,31 +241,31 @@
           <a class="close-reveal-modal">&#215;</a>
         </div>
       </div>
-      <?php
+        <?php
 
     }
 
     public function print_form($attributes)
     {
-      ?>
+        ?>
       <div class="vp-sc-fields">
         <?php
-          foreach ($attributes as $attr) {
+        foreach ($attributes as $attr) {
             // create the object
             $make = VP_Util_Reflection::field_class_from_type($attr['type']);
             // prefix name
             $attr['name'] = '_' . $attr['name'];
             $field        = call_user_func("$make::withArray", $attr);
             $default      = $field->get_default();
-            if ( ! is_null($default)) {
-              $field->set_value($default);
+            if (! is_null($default)) {
+                $field->set_value($default);
             }
             ?>
-            <?php if ($attr['type'] !== 'notebox'): ?>
+            <?php if ($attr['type'] !== 'notebox') : ?>
               <div class="vp-sc-field vp-<?php echo $attr['type'];
-              ?>"
+                ?>"
                    data-vp-type="vp-<?php echo $attr['type'];
-                   ?>">
+                    ?>">
                 <div class="label">
                   <label><?php echo $attr['label'];
                     ?></label>
@@ -275,65 +276,65 @@
                 </div>
               </div>
             <?php else: ?>
-              <?php $status = isset($attr['status']) ? $attr['status'] : 'normal';
-              ?>
+                <?php $status = isset($attr['status']) ? $attr['status'] : 'normal';
+                ?>
               <div class="vp-sc-field vp-<?php echo $attr['type'];
-              ?> note-<?php echo $status;
-              ?>"
+                ?> note-<?php echo $status;
+                ?>"
                    data-vp-type="vp-<?php echo $attr['type'];
-                   ?>">
+                    ?>">
                 <?php echo $field->render(true);
                 ?>
               </div>
             <?php endif;
-            ?>
+        ?>
             <?php
 
-          }
+        }
         ?>
       </div>
       <div class="vp-sc-action">
         <button class="vp-sc-insert button"><?php _e('Insert', 'upages');
-          ?></button>
+            ?></button>
         <button class="vp-sc-cancel button"><?php _e('Cancel', 'upages') ?></button>
       </div>
-      <?php
+        <?php
 
     }
 
     public static function build_localize()
     {
-      $localize = [];
-      foreach (self::$pool as $sg) {
-        $localize[] = [
-          'name'         => $sg->name,
-          'modal_title'  => $sg->modal_title,
-          'button_title' => $sg->button_title,
-          'main_image'   => $sg->main_image,
-          'sprite_image' => $sg->sprite_image,
-        ];
-      }
+        $localize = [];
+        foreach (self::$pool as $sg) {
+            $localize[] = [
+            'name'         => $sg->name,
+            'modal_title'  => $sg->modal_title,
+            'button_title' => $sg->button_title,
+            'main_image'   => $sg->main_image,
+            'sprite_image' => $sg->sprite_image,
+            ];
+        }
 
-      return $localize;
+        return $localize;
     }
 
     public static function init_buttons()
     {
-      if (VP_Metabox::_is_post_or_page() && ! current_user_can('edit_posts')
-          && ! current_user_can('edit_pages')
-          && get_user_option('rich_editing') == 'true'
-      ) {
-        return;
-      }
-      add_filter('mce_external_plugins', [__CLASS__, 'add_buttons']);
-      add_filter('mce_buttons', [__CLASS__, 'register_buttons']);
-      add_filter('wp_fullscreen_buttons', [__CLASS__, 'fullscreen_buttons']);
-      add_filter('admin_print_styles', [__CLASS__, 'print_styles']);
+        if (VP_Metabox::_is_post_or_page() && ! current_user_can('edit_posts')
+            && ! current_user_can('edit_pages')
+            && get_user_option('rich_editing') == 'true'
+        ) {
+            return;
+        }
+        add_filter('mce_external_plugins', [__CLASS__, 'add_buttons']);
+        add_filter('mce_buttons', [__CLASS__, 'register_buttons']);
+        add_filter('wp_fullscreen_buttons', [__CLASS__, 'fullscreen_buttons']);
+        add_filter('admin_print_styles', [__CLASS__, 'print_styles']);
     }
 
     public static function print_styles($buttons)
     {
-      ?>
+        ?>
       <style type="text/css">
         <?php foreach (self::$pool as $sg): ?>
         #qt_content_<?php echo $sg->name;
@@ -352,70 +353,70 @@
         <?php endforeach;
     ?>
       </style>
-      <?php
+        <?php
 
     }
 
     public static function register_buttons($buttons)
     {
-      foreach (self::$pool as $sg) {
-        if ($sg->can_output()) {
-          $vp_buttons[] = $sg->name;
+        foreach (self::$pool as $sg) {
+            if ($sg->can_output()) {
+                $vp_buttons[] = $sg->name;
+            }
         }
-      }
-      $buttons = array_merge($buttons, $vp_buttons);
+        $buttons = array_merge($buttons, $vp_buttons);
 
-      return $buttons;
+        return $buttons;
     }
 
     public static function add_buttons($plugin_array)
     {
-      $plugin_array['vp_sc_button'] = VP_PUBLIC_URL . '/js/shortcodes.js';
-      foreach (self::$pool as $sg) {
-        if ($sg->can_output()) {
-          $plugin_array[$sg->name] = VP_PUBLIC_URL . '/js/dummy.js';
+        $plugin_array['vp_sc_button'] = VP_PUBLIC_URL . '/js/shortcodes.js';
+        foreach (self::$pool as $sg) {
+            if ($sg->can_output()) {
+                $plugin_array[$sg->name] = VP_PUBLIC_URL . '/js/dummy.js';
+            }
         }
-      }
 
-      return $plugin_array;
+        return $plugin_array;
     }
 
     public static function fullscreen_buttons($buttons)
     {
-      foreach (self::$pool as $sg) {
-        if ($sg->can_output()) {
-          // add a separator
-          $buttons[] = 'separator';
-          // format: title, onclick, show in both editors
-          $buttons[$sg->name] = [
-            // Title of the button
-            'title'   => $sg->button_title,
-            // Command to execute
-            'onclick' => "tinyMCE.execCommand('{$sg->name}_cmd');",
-            // Show on visual AND html mode
-            'both'    => true,
-          ];
+        foreach (self::$pool as $sg) {
+            if ($sg->can_output()) {
+                // add a separator
+                $buttons[] = 'separator';
+                // format: title, onclick, show in both editors
+                $buttons[$sg->name] = [
+                // Title of the button
+                'title'   => $sg->button_title,
+                // Command to execute
+                'onclick' => "tinyMCE.execCommand('{$sg->name}_cmd');",
+                // Show on visual AND html mode
+                'both'    => true,
+                ];
+            }
         }
-      }
 
-      return $buttons;
+        return $buttons;
     }
 
     public function get_shortcode_tags()
     {
-      $shortcodes = $this->template;
-      $tags       = [];
-      foreach ($shortcodes as $menu) {
-        foreach ($menu['elements'] as $sc) {
-          $code = $sc['code'];
-          preg_match('/\[(\w+).*\]/', $code, $matches);
-          $tags[] = $matches[1];
+        $shortcodes = $this->template;
+        $tags       = [];
+        foreach ($shortcodes as $menu) {
+            foreach ($menu['elements'] as $sc) {
+                $code = $sc['code'];
+                preg_match('/\[(\w+).*\]/', $code, $matches);
+                $tags[] = $matches[1];
+            }
         }
-      }
 
-      return $tags;
+        return $tags;
     }
-  }
+}
 
 /*
  * EOF

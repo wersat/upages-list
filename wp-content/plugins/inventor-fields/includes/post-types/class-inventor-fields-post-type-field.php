@@ -61,15 +61,15 @@
             // Settings
             $settings = new_cmb2_box([
                 'id'           => INVENTOR_FIELDS_FIELD_PREFIX . 'settings',
-                'title'        => __('Settings', 'inventor-fields'),
+                'title'        => __('Settings', 'inventor-fields-test'),
                 'object_types' => ['field'],
                 'context'      => 'normal',
                 'priority'     => 'high'
             ]);
             // Identifier
             $settings->add_field([
-                'name'        => __('Identifier', 'inventor-fields'),
-                'description' => __('Unique identifier', 'inventor-fields'),
+                'name'        => __('Identifier', 'inventor-fields-test'),
+                'description' => __('Unique identifier', 'inventor-fields-test'),
                 'id'          => INVENTOR_FIELDS_FIELD_PREFIX . 'identifier',
                 'type'        => 'text',
                 'attributes'  => [
@@ -78,74 +78,74 @@
             ]);
             // Required
             $settings->add_field([
-                'name' => __('Required', 'inventor-fields'),
+                'name' => __('Required', 'inventor-fields-test'),
                 'id'   => INVENTOR_FIELDS_FIELD_PREFIX . 'required',
                 'type' => 'checkbox'
             ]);
             // Skip
             $settings->add_field([
-                'name'        => __('Skip', 'inventor-fields'),
-                'description' => __('From attributes section on listing detail', 'inventor-fields'),
+                'name'        => __('Skip', 'inventor-fields-test'),
+                'description' => __('From attributes section on listing detail', 'inventor-fields-test'),
                 'id'          => INVENTOR_FIELDS_FIELD_PREFIX . 'skip',
                 'type'        => 'checkbox'
             ]);
             // Description
             $settings->add_field([
-                'name' => __('Description', 'inventor-fields'),
+                'name' => __('Description', 'inventor-fields-test'),
                 'id'   => INVENTOR_FIELDS_FIELD_PREFIX . 'description',
                 'type' => 'text'
             ]);
             // Type
             $settings->add_field([
-                'name'    => __('Type', 'inventor-fields'),
+                'name'    => __('Type', 'inventor-fields-test'),
                 'id'      => INVENTOR_FIELDS_FIELD_PREFIX . 'type',
                 'type'    => 'select',
                 'options' => [
-                    //                'title'                             => __( 'Title (A large title (useful for breaking up sections of fields in metabox).', 'inventor-fields' ),
-                    'text'                             => __('Text', 'inventor-fields'),
-                    'text_small'                       => __('Small text', 'inventor-fields'),
-                    'text_medium'                      => __('Medium text', 'inventor-fields'),
-                    'text_email'                       => __('Email address', 'inventor-fields'),
-                    'text_url'                         => __('URL', 'inventor-fields'),
-                    'text_money'                       => __('Money', 'inventor-fields'),
-                    'textarea'                         => __('Textarea', 'inventor-fields'),
-                    'textarea_small'                   => __('Smaller textarea', 'inventor-fields'),
-                    'textarea_code'                    => __('Code textarea', 'inventor-fields'),
-                    'wysiwyg'                          => __('TinyMCE wysiwyg editor', 'inventor-fields'),
-                    'text_time'                        => __('Time picker', 'inventor-fields'),
-                    'select_timezone'                  => __('Timezone', 'inventor-fields'),
-                    'text_date_timestamp'              => __('Date', 'inventor-fields'),
-                    'text_datetime_timestamp'          => __('Date and time', 'inventor-fields'),
-                    'text_datetime_timestamp_timezone' => __('Date, time and timezone', 'inventor-fields'),
-                    //                'hidden'                            => __( 'Hidden input type', 'inventor-fields' ),
-                    'colorpicker'                      => __('Colorpicker', 'inventor-fields'),
-                    'checkbox'                         => __('Checkbox', 'inventor-fields'),
-                    'multicheck'                       => __('Multicheck', 'inventor-fields'),
-                    'multicheck_inline'                => __('Multicheck inline', 'inventor-fields'),
-                    'radio'                            => __('Radio', 'inventor-fields'),
-                    'radio_inline'                     => __('Radio inline', 'inventor-fields'),
-                    'select'                           => __('Select', 'inventor-fields'),
-                    'file'                             => __('File uploader', 'inventor-fields'),
-                    'file_list'                        => __('Files uploader', 'inventor-fields'),
-                    'oembed'                           => __('Embed media', 'inventor-fields')
+                    'title'                            => __('Title (A large title (useful for breaking up sections of fields in metabox).', 'inventor-fields-test'),
+                    'text'                             => __('Text', 'inventor-fields-test'),
+                    'text_small'                       => __('Small text', 'inventor-fields-test'),
+                    'text_medium'                      => __('Medium text', 'inventor-fields-test'),
+                    'text_email'                       => __('Email address', 'inventor-fields-test'),
+                    'text_url'                         => __('URL', 'inventor-fields-test'),
+                    'text_money'                       => __('Money', 'inventor-fields-test'),
+                    'textarea'                         => __('Textarea', 'inventor-fields-test'),
+                    'textarea_small'                   => __('Smaller textarea', 'inventor-fields-test'),
+                    'textarea_code'                    => __('Code textarea', 'inventor-fields-test'),
+                    'wysiwyg'                          => __('TinyMCE wysiwyg editor', 'inventor-fields-test'),
+                    'text_time'                        => __('Time picker', 'inventor-fields-test'),
+                    'select_timezone'                  => __('Timezone', 'inventor-fields-test'),
+                    'text_date_timestamp'              => __('Date', 'inventor-fields-test'),
+                    'text_datetime_timestamp'          => __('Date and time', 'inventor-fields-test'),
+                    'text_datetime_timestamp_timezone' => __('Date, time and timezone', 'inventor-fields-test'),
+                    'hidden'                            => __( 'Hidden input type', 'inventor-fields' ),
+                    'colorpicker'                      => __('Colorpicker', 'inventor-fields-test'),
+                    'checkbox'                         => __('Checkbox', 'inventor-fields-test'),
+                    'multicheck'                       => __('Multicheck', 'inventor-fields-test'),
+                    'multicheck_inline'                => __('Multicheck inline', 'inventor-fields-test'),
+                    'radio'                            => __('Radio', 'inventor-fields-test'),
+                    'radio_inline'                     => __('Radio inline', 'inventor-fields-test'),
+                    'select'                           => __('Select', 'inventor-fields-test'),
+                    'file'                             => __('File uploader', 'inventor-fields-test'),
+                    'file_list'                        => __('Files uploader', 'inventor-fields-test'),
+                    'oembed'                           => __('Embed media', 'inventor-fields-test')
                 ]
             ]);
             // Value Type
             $settings->add_field([
-                'name'    => __('Value Type', 'inventor-fields'),
+                'name'    => __('Value Type', 'inventor-fields-test'),
                 'id'      => INVENTOR_FIELDS_FIELD_PREFIX . 'value_type',
                 'type'    => 'select',
                 'options' => [
-                    'characters'       => __('Characters', 'inventor-fields'),
-                    'integer'          => __('Integer', 'inventor-fields'),
-                    'positive_integer' => __('Positive integer', 'inventor-fields'),
-                    'decimal'          => __('Decimal', 'inventor-fields'),
-                    'positive_decimal' => __('Positive decimal', 'inventor-fields')
+                    'characters'       => __('Characters', 'inventor-fields-test'),
+                    'integer'          => __('Integer', 'inventor-fields-test'),
+                    'positive_integer' => __('Positive integer', 'inventor-fields-test'),
+                    'decimal'          => __('Decimal', 'inventor-fields-test'),
+                    'positive_decimal' => __('Positive decimal', 'inventor-fields-test')
                 ]
             ]);
             // Options
             $settings->add_field([
-                'name'        => __('Options', 'inventor-fields'),
+                'name'        => __('Options', 'inventor-fields-test'),
                 'id'          => INVENTOR_FIELDS_FIELD_PREFIX . 'options',
                 'type'        => 'textarea',
                 'description' => __('Comma separated options if type support choices')
@@ -165,7 +165,7 @@
             }
             ksort($boxes);
             $settings->add_field([
-                'name'    => __('Metabox', 'inventor-fields'),
+                'name'    => __('Metabox', 'inventor-fields-test'),
                 'id'      => INVENTOR_FIELDS_FIELD_PREFIX . 'metabox',
                 'type'    => 'multicheck',
                 'options' => $boxes

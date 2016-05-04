@@ -3,7 +3,8 @@
     /*
      * Instantiate our taxonomy meta classes
      */
-    new Taxonomy_MetaData('category', [
+    new Taxonomy_MetaData(
+        'category', [
         // Term option key
         'sidebar' => [
             // Option label
@@ -13,8 +14,10 @@
             // Field type
             'type'     => 'checkbox',
         ],
-    ], __('Category Settings', 'taxonomy-metadata') /* Settings heading */);
-    new Taxonomy_MetaData('post_tag', [
+        ], __('Category Settings', 'taxonomy-metadata') /* Settings heading */
+    );
+    new Taxonomy_MetaData(
+        'post_tag', [
         'arbitrary_text' => [
             'label'       => __('Arbitrary text for tags', 'taxonomy-metadata'),
             // Optional input description
@@ -22,7 +25,8 @@
             // Optional placeholder text if no value is saved
             'placeholder' => __('Placeholder text', 'taxonomy-metadata'),
         ],
-    ]);
+        ]
+    );
 
     /*
      * Available methods:
