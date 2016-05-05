@@ -32,21 +32,21 @@ class Inventor_Customizations_Currency
             'priority' => 1,
             ]
         );
-        // Currency symbol
-        $wp_customize->add_setting(
-            'inventor_currencies[0][symbol]', [
-            'default'           => '$',
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'sanitize_text_field',
-            ]
-        );
-        $wp_customize->add_control(
-            'inventor_currencies[0][symbol]', [
-            'label'    => __('Currency Symbol', 'inventor'),
-            'section'  => 'inventor_currencies[0]',
-            'settings' => 'inventor_currencies[0][symbol]',
-            ]
-        );
+//        // Currency symbol
+//        $wp_customize->add_setting(
+//            'inventor_currencies[0][symbol]', [
+//            'default'           => '$',
+//            'capability'        => 'edit_theme_options',
+//            'sanitize_callback' => 'sanitize_text_field',
+//            ]
+//        );
+//        $wp_customize->add_control(
+//            'inventor_currencies[0][symbol]', [
+//            'label'    => __('Currency Symbol', 'inventor'),
+//            'section'  => 'inventor_currencies[0]',
+//            'settings' => 'inventor_currencies[0][symbol]',
+//            ]
+//        );
         // Currency code
         $wp_customize->add_setting(
             'inventor_currencies[0][code]', [

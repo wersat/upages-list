@@ -7,18 +7,18 @@
      */
     use Upages_Objects\Customizer_Library;
 
-    $section             = 'logo_new_test';
-    $sections[]          = [
-        'id'       => $section,
-        'title'    => __('Logo Example', 'demo'),
-        'priority' => '30'
+    $section                                   = 'logo_new_test';
+    $sections[]                                = [
+        'id'       => 'inventor_currencies[0]',
+        'title'    => __('Inventor Currency', 'inventor'),
+        'priority' => 1,
     ];
-    $options['logo_new_test']     = [
-        'id'      => 'logo_new_test',
-        'label'   => __('Logo Example', 'demo'),
-        'section' => $section,
-        'type'    => 'upload',
-        'default' => '',
+    $options['inventor_currencies[0][symbol]'] = [
+        'id'      => 'inventor_currencies[0][symbol]',
+        'label'   => __('Currency Symbol', 'inventor'),
+        'section' => 'inventor_currencies[0]',
+        'type'    => 'text',
+        'default' => '$',
     ];
-    $options['sections'] = $sections;
-    $test_custom         = new Customizer_Library($options);
+    $options['sections']                       = $sections;
+    $test_custom                               = new Customizer_Library($options);

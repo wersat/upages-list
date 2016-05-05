@@ -92,14 +92,7 @@
                             ]));
                             break;
                         case 'textarea':
-                            $wp_customize->add_control('setting_id', [
-                                $wp_customize->add_control($option['id'], $option)
-                            ]);
-                            break;
-                        case 'content':
-                        case 'line':
-                            $wp_customize->add_control(new \Customizer_Library_Content($wp_customize, $option['id'],
-                                $option));
+                            $wp_customize->add_control($option['id'], $option);
                             break;
 
                     }
