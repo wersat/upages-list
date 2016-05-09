@@ -34,15 +34,15 @@ class Shop_Post_Type
 		            /**
          * Initialize property system.
          */
-        public function init()
+        public function _construct()
         {
-            add_action('cmb2_init', [__CLASS__, 'fields']);
-            add_action('inventor_after_listing_price', [__CLASS__, 'render_listing_buy_button'], 10, 1);
-            add_action('inventor_payment_form_before', [__CLASS__, 'payment_form_before'], 10, 3);
-            add_action('inventor_payment_processed', [__CLASS__, 'catch_payment'], 10, 9);
-            add_filter('inventor_payment_types', [__CLASS__, 'add_payment_type']);
-            add_filter('inventor_prepare_payment', [__CLASS__, 'prepare_payment'], 10, 3);
-            add_filter('inventor_payment_form_price_value', [__CLASS__, 'payment_price_value'], 10, 3);
+            add_action('cmb2_init', [$this, 'fields']);
+            add_action('inventor_after_listing_price', [$this, 'render_listing_buy_button'], 10, 1);
+            add_action('inventor_payment_form_before', [$this, 'payment_form_before'], 10, 3);
+            add_action('inventor_payment_processed', [$this, 'catch_payment'], 10, 9);
+            add_filter('inventor_payment_types', [$this, 'add_payment_type']);
+            add_filter('inventor_prepare_payment', [$this, 'prepare_payment'], 10, 3);
+            add_filter('inventor_payment_form_price_value', [$this, 'payment_price_value'], 10, 3);
         }
 
         /**
