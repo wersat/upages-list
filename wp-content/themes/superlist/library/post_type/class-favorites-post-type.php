@@ -39,14 +39,20 @@ class Favorites_Post_Type
                 $this->constants();
                 $this->includes();
                 $this->load_plugin_textdomain();
+                add_action('customize_register', [$this, 'customizations']);
+                add_shortcode('inventor_favorites', [$this, 'favorites']);
+                add_action('wp_enqueue_scripts', [$this, 'enqueue_frontend']);
+                add_filter('query_vars', [$this, 'add_query_vars']);
+                add_action('template_redirect', [$this, 'feed_catch_template'], 0);
+                add_action('wp_ajax_nopriv_inventor_favorites_remove_favorite', [$this, 'remove_favorite']);
+                add_action('wp_ajax_inventor_favorites_remove_favorite', [$this, 'remove_favorite']);
+                add_action('wp_ajax_nopriv_inventor_favorites_add_favorite', [$this, 'add_favorite']);
+                add_action('wp_ajax_inventor_favorites_add_favorite', [$this, 'add_favorite']);
+                add_action('inventor_listing_detail', [$this, 'render_total_favorite_users'], 1, 1);
+                
             }
-			        /**
-         * Initialize customization type.
-         */
-        public function init()
-        {
-            add_action('customize_register', [__CLASS__, 'customizations']);
-        }
+			       
+        
 
         /**
          * Customizations.
@@ -70,13 +76,8 @@ class Favorites_Post_Type
                 'choices'  => $pages,
             ]);
         }
-		        /**
-         * Initialize shortcodes.
-         */
-        public static function init()
-        {
-            add_shortcode('inventor_favorites', [__CLASS__, 'favorites']);
-        }
+	
+       
 
         /**
          * Favorites.
@@ -139,13 +140,7 @@ class Favorites_Post_Type
             include Inventor_Template_Loader::locate('widgets/favorites', $plugin_dir = INVENTOR_FAVORITES_DIR);
             wp_reset_query();
         }
-		        /**
-         * Initialize scripts.
-         */
-        public function init()
-        {
-            add_action('wp_enqueue_scripts', [__CLASS__, 'enqueue_frontend']);
-        }
+
 
         /**
          * Loads frontend files.
@@ -156,19 +151,7 @@ class Favorites_Post_Type
                 ['jquery'], false, true);
             wp_enqueue_script('inventor-favorites');
         }
-		        /**
-         * Initialize Favorites functionality.
-         */
-        public function init()
-        {
-            add_filter('query_vars', [__CLASS__, 'add_query_vars']);
-            add_action('template_redirect', [__CLASS__, 'feed_catch_template'], 0);
-            add_action('wp_ajax_nopriv_inventor_favorites_remove_favorite', [__CLASS__, 'remove_favorite']);
-            add_action('wp_ajax_inventor_favorites_remove_favorite', [__CLASS__, 'remove_favorite']);
-            add_action('wp_ajax_nopriv_inventor_favorites_add_favorite', [__CLASS__, 'add_favorite']);
-            add_action('wp_ajax_inventor_favorites_add_favorite', [__CLASS__, 'add_favorite']);
-            add_action('inventor_listing_detail', [__CLASS__, 'render_total_favorite_users'], 1, 1);
-        }
+
 
         /**
          * Adds query vars.
@@ -415,5 +398,5 @@ class Favorites_Post_Type
 
             return 0;
         }
-	new Favorites();
+	
 }
