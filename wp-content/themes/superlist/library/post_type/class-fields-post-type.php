@@ -41,7 +41,7 @@ class Fields_Post_Type
        
 
         /**
-		посттайп
+		*посттайп
 		*/
         /**
          * Initialize custom post type.
@@ -372,7 +372,7 @@ class Fields_Post_Type
             }
         }
 		/**
-		метабокс
+		*метабокс
 		*/
 		
 		 public function init()
