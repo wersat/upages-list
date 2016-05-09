@@ -19,16 +19,8 @@ class Fields_Post_Type
 				* @type string
 				*/
 			public $post_type_name = 'Fields';
-
-
-            public function __construct()
-            {
-                $this->constants();
-                $this->includes();
-                $this->load_plugin_textdomain();
-            }
-			
-			public $post_type_option
+                        
+                        public $post_type_option
 		            =[
                     'supports'            => ['title'],
                     'exclude_from_search' => true,
@@ -38,25 +30,35 @@ class Fields_Post_Type
                     'show_in_menu'        => class_exists('Inventor_Admin_Menu') ? 'inventor' : true
 	                 ]
 
+            public function __construct()
+            {
+                $this->constants();
+                $this->includes();
+                $this->load_plugin_textdomain();
+                add_action('init', [$this, 'definition']);
+                add_action('init', [$this, 'register_listing_types'], 11);
+                add_action('transition_post_status', [$this, 'listing_type_transition'], 10, 3);
+                add_action('cmb2_init', [$this, 'fields'], 11);
+                add_action('cmb2_init', [$this, 'add_metaboxes_to_listing_type'], 12);
+                add_filter('inventor_shop_allowed_listing_post_types', [$this, 'allowed_purchasing']);
+                add_filter('inventor_claims_allowed_listing_post_types', [$this, 'allowed_claiming']);
+                add_filter('inventor_listing_type_supported', [$this, 'listing_type_supported'], 11, 2);
+                add_action('init', [$this, 'definition']);
+                add_action('cmb2_init', [$this, 'fields'], 13);
+                add_action('cmb2_init', [$this, 'add_metaboxes_to_listing_types'], 14);
+                add_action('init', [$this, 'definition']);
+            # has to be executed later than Inventor_Fields_Post_Type_Metabox::add_metaboxes_to_post_types()
+                add_action('cmb2_init', [$this, 'fields'], 14);
+                add_action('cmb2_init', [$this, 'add_fields_to_metaboxes'], 15);
+                add_action('admin_enqueue_scripts', [$this, 'enqueue_backend']);
+            }
+			
+			
+
        
 
-        /**
-		*посттайп
-		*/
-        /**
-         * Initialize custom post type.
-         */
-        public function init()
-        {
-            add_action('init', [__CLASS__, 'definition']);
-            add_action('init', [__CLASS__, 'register_listing_types'], 11);
-            add_action('transition_post_status', [__CLASS__, 'listing_type_transition'], 10, 3);
-            add_action('cmb2_init', [__CLASS__, 'fields'], 11);
-            add_action('cmb2_init', [__CLASS__, 'add_metaboxes_to_listing_type'], 12);
-            add_filter('inventor_shop_allowed_listing_post_types', [__CLASS__, 'allowed_purchasing']);
-            add_filter('inventor_claims_allowed_listing_post_types', [__CLASS__, 'allowed_claiming']);
-            add_filter('inventor_listing_type_supported', [__CLASS__, 'listing_type_supported'], 11, 2);
-        }
+      
+     
 
         /**
          * Checks if listing post type is supported.
@@ -371,16 +373,7 @@ class Fields_Post_Type
                 Inventor_Post_Types::add_metabox($identifier, $metaboxes);
             }
         }
-		/**
-		*метабокс
-		*/
-		
-		 public function init()
-        {
-            add_action('init', [__CLASS__, 'definition']);
-            add_action('cmb2_init', [__CLASS__, 'fields'], 13);
-            add_action('cmb2_init', [__CLASS__, 'add_metaboxes_to_listing_types'], 14);
-        }
+
 
         /**
          * Custom post type definition.
@@ -483,17 +476,7 @@ class Fields_Post_Type
             }
         }
 		
-		/**
-		*файлед
-		*/
-		
-		public function init()
-        {
-            add_action('init', [__CLASS__, 'definition']);
-            # has to be executed later than Inventor_Fields_Post_Type_Metabox::add_metaboxes_to_post_types()
-            add_action('cmb2_init', [__CLASS__, 'fields'], 14);
-            add_action('cmb2_init', [__CLASS__, 'add_fields_to_metaboxes'], 15);
-        }
+
 
         /**
          * Custom post type definition.
@@ -733,13 +716,7 @@ class Fields_Post_Type
             }
         }
 		
-		 /**
-         *кін посттайп
-         */
-        public function init()
-        {
-            add_action('admin_enqueue_scripts', [__CLASS__, 'enqueue_backend']);
-        }
+
 
         /**
          * Loads backend files.
