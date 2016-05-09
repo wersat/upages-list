@@ -30,20 +30,15 @@ class Shop_Post_Type
                 $this->constants();
                 $this->includes();
                 $this->load_plugin_textdomain();
+                add_action('cmb2_init', [$this, 'fields']);
+                add_action('inventor_after_listing_price', [$this, 'render_listing_buy_button'], 10, 1);
+                add_action('inventor_payment_form_before', [$this, 'payment_form_before'], 10, 3);
+                add_action('inventor_payment_processed', [$this, 'catch_payment'], 10, 9);
+                add_filter('inventor_payment_types', [$this, 'add_payment_type']);
+                add_filter('inventor_prepare_payment', [$this, 'prepare_payment'], 10, 3);
+                add_filter('inventor_payment_form_price_value', [$this, 'payment_price_value'], 10, 3);
             }
-		            /**
-         * Initialize property system.
-         */
-        public function _construct()
-        {
-            add_action('cmb2_init', [$this, 'fields']);
-            add_action('inventor_after_listing_price', [$this, 'render_listing_buy_button'], 10, 1);
-            add_action('inventor_payment_form_before', [$this, 'payment_form_before'], 10, 3);
-            add_action('inventor_payment_processed', [$this, 'catch_payment'], 10, 9);
-            add_filter('inventor_payment_types', [$this, 'add_payment_type']);
-            add_filter('inventor_prepare_payment', [$this, 'prepare_payment'], 10, 3);
-            add_filter('inventor_payment_form_price_value', [$this, 'payment_price_value'], 10, 3);
-        }
+
 
         /**
          * Adds package payment type.
@@ -217,5 +212,5 @@ class Shop_Post_Type
             echo Inventor_Template_Loader::load('payment-form-before', $attrs, INVENTOR_SHOP_DIR);
         }
 
-	new Inventor_Shop();
+
 }
