@@ -484,7 +484,7 @@ class Fields_Post_Type
         }
 		
 		/**
-		файлед
+		*файлед
 		*/
 		
 		public function init()
@@ -734,7 +734,7 @@ class Fields_Post_Type
         }
 		
 		 /**
-         кін посттайп
+         *кін посттайп
          */
         public function init()
         {
