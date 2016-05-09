@@ -43,14 +43,12 @@ class Stripe_Post_Type
                 $this->constants();
                 $this->includes();
                 $this->load_plugin_textdomain();
+                add_action('customize_register', [$this, 'customizations']);
+                add_action('init', [$this, 'process_payment'], 9999);
+                add_filter('inventor_payment_gateways', [$this, 'payment_gateways']);
+                
             }
-			/**
-         * Initialize customization type.
-         */
-        public function init()
-        {
-            add_action('customize_register', [__CLASS__, 'customizations']);
-        }
+
 
         /**
          * Customizations.
@@ -86,14 +84,7 @@ class Stripe_Post_Type
                 'settings' => 'inventor_stripe_publishable_key',
             ]);
         }
-		/**
-         * Initialize Stripe functionality.
-         */
-        public function init()
-        {
-            add_action('init', [__CLASS__, 'process_payment'], 9999);
-            add_filter('inventor_payment_gateways', [__CLASS__, 'payment_gateways']);
-        }
+
 
         /**
          * Adds payments gateways.
